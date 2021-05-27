@@ -1,0 +1,50 @@
+extends: substitution
+message: Use '%s' instead of '%s'
+ignorecase: true
+level: error
+swap:
+    band-limit: bandlimit
+    band-limited: bandlimited
+    band-pass: bandpass
+    co-latitude: colatitude
+    co-latitudinal: colatitudinal
+    hard threshold: hard-threshold
+    hard thresholded: hard-thresholded
+    hard thresholding: hard-thresholding
+    harmonic-space: harmonic space
+    high frequency: high-frequency
+    left hand: left-hand
+    line of sight: line-of-sight
+    low frequency: low-frequency
+    near Gaussian: near-Gaussian
+    noise free: noise-free
+    non commutative: non-commutative
+    non directional: non-directional
+    non zero: non-zero
+    one dimensional: one-dimensional
+    pixel space: real space
+    pixel-space: real space
+    real-space: real space
+    right hand: right-hand
+    scaledependent: scale-dependent
+    scale dependent: scale-dependent
+    scalediscretised: scale-discretised
+    scale discretised: scale-discretised
+    signal to noise: signal-to-noise
+    spherical multiple: spherical multipole
+    spectral domain: spectral-domain
+    space-time: spacetime
+    square integrable: square-integrable
+    time frequency: time-frequency
+    top to bottom: top-to-bottom
+    two dimensional: two-dimensional
+    wave number: wavenumber
+    wave-number: wavenumber
+    wave numbers: wavenumbers
+    wave-numbers: wavenumbers
+    wave vector: wavevector
+    wave-vector: wavevector
+    wave vectors: wavevectors
+    wave-vectors: wavevectors
+    well localised: well-localised
+    zero mean: zero-mean
