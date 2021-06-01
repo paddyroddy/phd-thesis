@@ -59,16 +59,16 @@
 %  LaTeX uses "packages" to add extra commands and features.
 %  There are quite a few useful ones, so we've put them in a
 %   separate file.
-\input{config/MainPackages}
+\input{MainPackages}
 
 % Sets up links within your document, for e.g. contents page entries
 %  and references, and also PDF metadata.
 % You should edit this!
-\input{config/LinksAndMetadata}
+\input{LinksAndMetadata}
 
 % And then some settings in separate files.
-\input{config/FloatSettings} % For things like figures and tables
-\input{config/BibSettings}   % For bibliographies
+\input{FloatSettings} % For things like figures and tables
+\input{BibSettings}   % For bibliographies
 
 % These control how many number sections your subsections will take
 %    e.g. Section 2.3.1.5.6.3
@@ -94,12 +94,12 @@
 
 % At last, content! Remember filenames are case-sensitive and
 %  *must not* include spaces.
-\include{content/Preamble}
-\include{content/Introduction}
-\include{content/Chapter2}
-\include{content/Chapter3}
-\include{content/Conclusions}
-\include{content/Appendices}
+\include{Preamble}
+\include{Introduction}
+\include{Chapter2}
+\include{Chapter3}
+\include{Conclusions}
+\include{Appendices}
 % You could separate these out into different files if you have
 %  particularly large appendices.
 

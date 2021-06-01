@@ -13,10 +13,7 @@ jobs:
               uses: xu-cheng/texlive-action/full@v1
               with:
                   run: |
-                      for file in $(ls *.tex); do \
-                      echo $file; \
-                      chktex $file | tee /dev/stderr | (! grep -q ^); \
-                      done
+                      chktex main.tex | tee /dev/stderr | (! grep -q ^); \
 
     vale:
         runs-on: ubuntu-latest
@@ -39,10 +36,7 @@ jobs:
               uses: xu-cheng/texlive-action/full@v1
               with:
                   run: |
-                      for file in $(ls *.tex); do \
-                      echo $file; \
-                      latexmk -quiet -pdf $file; \
-                      done
+                      latexmk -quiet -pdf main.tex
 
             - name: Upload PDFs
               uses: actions/upload-artifact@v2
@@ -78,7 +72,4 @@ jobs:
 
             - name: Upload PDFs
               run: |
-                  for file in $(ls *.pdf); do \
-                  echo $file; \
-                  ./dropbox_uploader.sh upload $file $file; \
-                  done
+                  ./dropbox_uploader.sh upload main.pdf thesis.pdf
