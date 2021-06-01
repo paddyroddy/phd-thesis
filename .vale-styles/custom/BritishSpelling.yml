@@ -1,8 +1,0 @@
-extends: spelling
-message: "'%s' is a typo!"
-level: error
-dicpath: .vale-styles/custom/dict
-dictionaries:
-    - en_GB
-ignore:
-    - custom/ignore/dictionary.txt
