@@ -1,0 +1,77 @@
+extends: substitution
+message: Use '%s' instead of '%s'
+ignorecase: true
+level: error
+swap:
+    band-limit: bandlimit
+    band-limited: bandlimited
+    band-pass: bandpass
+    bi-spectrum: bispectrum
+    co-latitude: colatitude
+    co-latitudinal: colatitudinal
+    co-moving: comoving
+    e folds: e-folds
+    efolds: e-folds
+    energy momentum: energy-momentum
+    ensemble averaged: ensemble-averaged
+    four dimensional: four-dimensional
+    four momentum: four-momentum
+    four velocity: four-velocity
+    full sky: full-sky
+    general relatively: general relativity
+    hard threshold: hard-threshold
+    hard thresholded: hard-thresholded
+    hard thresholding: hard-thresholding
+    harmonic-space: harmonic space
+    high frequency: high-frequency
+    large scale: large-scale
+    last-scattering: last scattering
+    left hand: left-hand
+    line of sight: line-of-sight
+    low frequency: low-frequency
+    near Gaussian: near-Gaussian
+    noise free: noise-free
+    non commutative: non-commutative
+    non directional: non-directional
+    non zero: non-zero
+    one dimensional: one-dimensional
+    over-density: overdensity
+    pixel space: real space
+    pixel-space: real space
+    position-space: position space
+    preexisting: pre-existing
+    pseudo rotations: pseudo-rotations
+    real-space: real space
+    reenter: re-enter
+    right hand: right-hand
+    scaledependent: scale-dependent
+    scale dependent: scale-dependent
+    scalediscretised: scale-discretised
+    scale discretised: scale-discretised
+    scalefactor: scale factor
+    signal cutting: signal-cutting
+    signal to noise: signal-to-noise
+    slow roll: slow-roll
+    spherical multiple: spherical multipole
+    small scale: small-scale
+    spectral domain: spectral-domain
+    space-time: spacetime
+    square integrable: square-integrable
+    three dimensional: three-dimensional
+    three point: three-point
+    three variable: three-variable
+    time frequency: time-frequency
+    top to bottom: top-to-bottom
+    two dimensional: two-dimensional
+    two point: two-point
+    two variable: two-variable
+    wave number: wavenumber
+    wave-number: wavenumber
+    wave numbers: wavenumbers
+    wave-numbers: wavenumbers
+    wave vector: wavevector
+    wave-vector: wavevector
+    wave vectors: wavevectors
+    wave-vectors: wavevectors
+    well localised: well-localised
+    zero mean: zero-mean

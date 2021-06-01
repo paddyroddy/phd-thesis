@@ -1,45 +1,42 @@
 % UCL Thesis LaTeX Template
 %  (c) Ian Kirker, 2014
 %
-% This is a template/skeleton for PhD/MPhil/MRes theses.
+% A template/skeleton for PhD/MPhil/MRes theses.
 %
 % It uses a rather split-up file structure because this tends to
 %  work well for large, complex documents.
-% We suggest using one file per chapter, but you may wish to use more
+% It is suggested to use one file per chapter, but you may wish to use more
 %  or fewer separate files than that.
-% We've also separated out various bits of configuration into their
+% Various bits of configuration have been separated into their
 %  own files, to keep everything neat.
 % Note that the \input command just streams in whatever file you give
 %  it, while the \include command adds a page break, and does some
-%  extra organisation to make compilation faster. Note that you can't
+%  extra organisation to make compilation faster. Note that you cannot
 %  use \include inside an \include-d file.
-% We suggest using \input for settings and configuration files that
+% It is suggested to use \input for settings and configuration files that
 %  you always want to use, and \include for each section of content.
 % If you do that, it also means you can use the \includeonly statement
-%  to only compile up the section you're currently interested in.
+%  to only compile up the section you are interested in.
 % You might also want to put figures into their own files to be \input.
-
-% For more information on \input and \include, see:
-%  http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
 
 
 % Formatting and binding rules for theses are here:
 %  https://www.ucl.ac.uk/students/exams-and-assessments/research-assessments/format-bind-and-submit-your-thesis-general-guidance
 
-% This package goes first and foremost, because it checks all
+% This package goes first, because it checks all
 %  your syntax for mistakes and some old-fashioned LaTeX commands.
-% Note that normally you should load your documentclass before
+% Note that you load your documentclass before
 %  packages, because some packages change behaviour based on
 %  your document settings.
 % Also, for those confused by the RequirePackage here vs usepackage
 %  elsewhere, usepackage cannot be used before the documentclass
-%  command, while RequirePackage can. That's the only functional
-%  difference as far as I'm aware.
+%  command, while RequirePackage can. That is the only functional
+%  difference.
 \RequirePackage[l2tabu, orthodox]{nag}
 
 
 % ------ Main document class specification ------
-% The draft option here prevents images being inserted,
+% The draft option here prevents the insertion of images,
 %  and adds chunky black bars to boxes that are exceeding
 %  the page width (to show that they are).
 % The oneside option can optionally be replaced by twoside if
@@ -47,7 +44,7 @@
 %  *specifically permitted* by the UCL thesis formatting
 %  guidelines.
 %
-% Valid options in terms of type are:
+% Valid options are:
 %  phd
 %  mres
 %  mphil
@@ -57,13 +54,13 @@
 
 % Package configuration:
 %  LaTeX uses "packages" to add extra commands and features.
-%  There are quite a few useful ones, so we've put them in a
+%  Several useful ones exist, so they have been put in a
 %   separate file.
 \input{config/MainPackages}
 
-% Sets up links within your document, for e.g. contents page entries
+% Sets up links within your document, for contents page entries
 %  and references, and also PDF metadata.
-% You should edit this!
+% Edit this!
 \input{config/LinksAndMetadata}
 
 % And then some settings in separate files.
@@ -71,7 +68,7 @@
 \input{config/BibSettings}   % For bibliographies
 
 % These control how many number sections your subsections will take
-%    e.g. Section 2.3.1.5.6.3
+%    such as Section 2.3.1.5.6.3
 %  and how many of those will get put into the contents pages.
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -80,14 +77,14 @@
 \begin{document}
 
 \nobibliography*
-% ^-- This is a dumb trick that works with the bibentry package to let
-%  you put bibliography entries whereever you like.
-% I used this to put references to papers a chapter's work was
+% ^-- A trick that works with the bibentry package to let
+%  you put bibliography entries wherever you like.
+% Use this to put references to papers a chapter's work was
 %  published in at the end of that chapter.
 % For more information, see: http://stefaanlippens.net/bibentry
 
-% If you haven't finished making your full BibTex file yet, you
-%  might find this useful -- it'll just replace all your
+% If you have not finished making your full BibTex file yet, you
+%  might find this useful -- it will just replace all your
 %  citations with little superscript notes.
 % Uncomment to use.
 %\renewcommand{\cite}[1]{\emph{\textsuperscript{[#1]}}}
@@ -101,10 +98,10 @@
 \include{content/Conclusions}
 \include{content/Appendices}
 % You could separate these out into different files if you have
-%  particularly large appendices.
+%  large appendices.
 
-% Actually generates your bibliography. The fact that \include is
-% the last thing before this ensures that it is on a clear page.
+% Actually generates your bibliography. The last thing before this is
+% \include which ensures that it is on a clear page.
 \bibliography{example}
 
 % All done. \o/

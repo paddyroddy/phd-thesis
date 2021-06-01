@@ -10,4 +10,5 @@ __latexindent_temp.tex
 *.out
 *.pdf
 *.synctex.gz
+*.synctex(busy)
 *.toc
