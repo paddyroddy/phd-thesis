@@ -26,8 +26,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               with:
-                  files: |
-                      '["main.tex", "content/"]'
+                  files: '["main.tex", "content"]'
 
     build-pdfs:
         runs-on: ubuntu-latest
