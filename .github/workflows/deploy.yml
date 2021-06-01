@@ -70,6 +70,11 @@ jobs:
                   OAUTH_APP_SECRET: ${{secrets.OAUTH_APP_SECRET}}
                   OAUTH_REFRESH_TOKEN: ${{secrets.OAUTH_REFRESH_TOKEN}}
 
+            - name: echo
+              run: |
+                  pwd
+                  ls
+
             - name: Upload PDFs
               run: |
                   ./dropbox_uploader.sh upload main.pdf thesis.pdf
