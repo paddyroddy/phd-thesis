@@ -1,0 +1,47 @@
+% axisymmetric spherical harmonic indices
+\newcommand{\axiHarmonic}[2][]{{#2}_{\ell#1 0}}
+
+% conjugate
+\newcommand{\conj}[1]{#1^{\ast}}
+
+% sifting convolution of two functions
+\newcommand{\convolution}[2]{(#1 \circledcirc{} #2)}
+
+% spherical harmonic indices
+\newcommand{\harmonic}[2][]{{#2}_{\ell#1 m#1}}
+
+% spherical harmonic sum
+\newcommand{\harmonicSum}[1][]{\sum\limits_{\ell#1 m#1}}
+
+% Hilbert space
+\newcommand{\hilbert}[1]{L^{2}(#1)} % chktex 36
+
+% intergral over SO3
+\newcommand{\integrateRotation}[1]{\int\limits_{\text{SO(3)}} \dd{\rho(#1)}} % chktex 36
+
+% integral over S2
+\newcommand{\integrateSphere}[1]{\int\limits_{\mathbb{S}^{2}} \dd{\Omega(#1)}}
+
+% inverse spherical harmonic factor
+\newcommand{\inverseFactor}[1][]{\frac{4\pi}{2\ell#1+1}}
+
+% real space
+\newcommand{\pixel}[2][]{#2(\omega#1)}
+
+% rotated function
+\newcommand{\rotation}[1]{\mathcal{R}_{#1}}
+
+% SO3
+\newcommand{\rotationGroup}{\text{SO(3)}} % chktex 36
+
+% set of inputs
+\newcommand{\set}[1]{\{#1\}} % chktex 21
+
+% translated function
+\newcommand{\translation}[1]{\mathcal{T}_{#1}}
+
+% S2
+\newcommand{\twoSphere}{\mathbb{S}^{2}}
+
+% Wigner D matrices
+\newcommand{\wigner}[4][]{D^{#2#1}_{#3#4}}
