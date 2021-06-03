@@ -50,7 +50,9 @@ exceptions:
     - PPV
     - PST
     - SGML
+    - SSHT
     - SSN
+    - SVD
     - TNT
     - TODO
     - UCL

@@ -33,7 +33,7 @@ tokens:
     - cautiously
     - cheerfully
     - cleverly
-    - closely
+    # - closely
     - coaxingly
     - colorfully
     - continually
@@ -166,7 +166,7 @@ tokens:
     - quirkily
     - quizzically
     - randomly
-    - rapidly
+    # - rapidly
     - rarely
     - readily
     - really
@@ -199,14 +199,14 @@ tokens:
     - silently
     - sleepily
     - slowly
-    - smoothly
+    # - smoothly
     - softly
     - solemnly
     - solidly
     - speedily
     - stealthily
     - sternly
-    - strictly
+    # - strictly
     - suddenly
     - supposedly
     - surprisingly

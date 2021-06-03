@@ -106,7 +106,7 @@ swap:
     previously: "'before'"
     prioritize: "'rank'"
     procure: "'buy'"
-    provide: "'give' or 'offer'"
+    # provide: "'give' or 'offer'"
     purchase: "'buy'"
     relocate: "'move'"
     request: "'ask'"

@@ -96,7 +96,7 @@ tokens:
     - formulate
     - have a tendency to
     - honest truth
-    - however
+    # - however
     - if and when
     - impacted
     - implement
@@ -143,7 +143,7 @@ tokens:
     - minimum
     - modify
     - monitor
-    - multiple
+    # - multiple
     - necessitate
     - nevertheless
     - not certain
@@ -183,13 +183,13 @@ tokens:
     - refer back
     - regarding
     - relocate
-    - remainder
+    # - remainder
     - remuneration
     - requirement
     - reside
     - residence
     - retain
-    - satisfy
+    # - satisfy
     - shall
     - should you wish
     - similar to
@@ -203,7 +203,7 @@ tokens:
     - terminate
     - the month of
     - the point I am trying to make
-    - therefore
+    # - therefore
     - time period
     - took advantage of
     - transmit

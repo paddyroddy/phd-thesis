@@ -29,7 +29,7 @@ tokens:
     - cautiously
     - cheerfully
     - clearly
-    - closely
+    # - closely
     - coldly
     - completely
     - consequently
@@ -56,7 +56,7 @@ tokens:
     - equally
     - especially
     - eventually
-    - exactly
+    # - exactly
     - exceedingly
     - exclusively
     - extremely
@@ -66,7 +66,7 @@ tokens:
     - fiercely
     - finally
     - fondly
-    - few
+    # - few
     - foolishly
     - fortunately
     - frankly
@@ -140,14 +140,14 @@ tokens:
     - quarterly
     - quickly
     - quietly
-    - rapidly
+    # - rapidly
     - rarely
     - really
-    - recently
+    # - recently
     - recklessly
     - regularly
     - remarkably
-    - relatively
+    # - relatively
     - reluctantly
     - repeatedly
     - rightfully
@@ -163,12 +163,12 @@ tokens:
     - shyly
     - significantly
     - silently
-    - simply
+    # - simply
     - sleepily
     - slowly
     - smartly
     - smelly
-    - smoothly
+    # - smoothly
     - softly
     - solemnly
     - sparkly
