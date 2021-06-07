@@ -9,7 +9,7 @@ __latexindent_temp.tex
 *.log
 *.lot
 *.out
-*.pdf
 *.synctex.gz
 *.synctex(busy)
 *.toc
+main.pdf
