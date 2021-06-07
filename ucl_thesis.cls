@@ -19,7 +19,7 @@
 %%   there are many choices made here that no longer have to be set this way.
 %%  Regardless, they are (in every case I've noticed) sound stylistic choices.
 %%  It's a good idea to check the page above before changing something.
-%%   
+%%
 %%  This file may be distributed and/or modified under the conditions of the
 %%   LaTeX Project Public License, either version 1.3 of this license or (at
 %%   your option) any later version. The latest version of this license is
@@ -34,9 +34,9 @@
 %
 %  \changes{v1.4}{1998/04/02}{Discovered that there were changes needed to openbib processing
 %    consequent on the upgrade to \LaTeXe\ (1997/12/01).}
-%  
-%  \changes{v1.7}{2021/05/21}{Since 1.4: fixes margins, adds Impact Statement 
-%    environment, makes headers ragged-right, removes obsolete times package, 
+%
+%  \changes{v1.7}{2021/05/21}{Since 1.4: fixes margins, adds Impact Statement
+%    environment, makes headers ragged-right, removes obsolete times package,
 %    corrects some links. (See GitHub commits at UCL/ucl-latex-thesis-template
 %    for full change information.)}
 %
@@ -161,7 +161,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions
 \LoadClass{book}
-\RequirePackage{mathptmx}
+\RequirePackage{helvet}
 %    \end{macrocode}
 %
 %  \subsection{Page Layout}
@@ -169,13 +169,13 @@
 %  Define the standard layout of a thesis page.
 %
 %  First define the page area and it's location on the page. These used to be very exactly controlled
-%   in thesis submissions, but standards are a bit more lax these days. 
+%   in thesis submissions, but standards are a bit more lax these days.
 %
-%    "A4 size paper (210 x 297 mm) should be used. Plain white paper must be used, 
-%      of good quality and of sufficient opacity for normal reading. 
-%    "Both sides of the paper may be used. 
-%    "Margins at the binding edge must be not less than 40 mm (1.5 inches) and other margins 
-%      not less than 20 mm (.75 inches)." 
+%    "A4 size paper (210 x 297 mm) should be used. Plain white paper must be used,
+%      of good quality and of sufficient opacity for normal reading.
+%    "Both sides of the paper may be used.
+%    "Margins at the binding edge must be not less than 40 mm (1.5 inches) and other margins
+%      not less than 20 mm (.75 inches)."
 %
 %    \begin{macrocode}
 
@@ -195,8 +195,8 @@
 %  Define a new style so that all the standard styles are available.
 %    \begin{macrocode}
 \def \ps@headings{%
-    \def \@oddhead{\normalfont \rmfamily \slshape \hfill \rightmark \hfill \thepage}%
-    \def \@evenhead{\normalfont \rmfamily \slshape \thepage \hfill \leftmark \hfill}%
+    \def \@oddhead{\normalfont \sffamily \slshape \hfill \rightmark \hfill \thepage}%
+    \def \@evenhead{\normalfont \sffamily \slshape \thepage \hfill \leftmark \hfill}%
     \let \@oddfoot = \@empty%
     \let \@evenfoot = \@empty%
     \let \@mkboth = \markboth%
@@ -256,7 +256,7 @@
 \hfuzz = 2\p@
 \flushbottom
 %    \end{macrocode}
-%  "Double or one-and-a-half spacing should be used in typescripts, except for indented 
+%  "Double or one-and-a-half spacing should be used in typescripts, except for indented
 %   quotations or footnotes where single spacing may be used."
 %
 %  One and a half is a sensible choice for theses, especially with a wide margin.
@@ -324,7 +324,7 @@
 %%%  \chapter* call does not put the bibliography into the table of
 %%%  contents.
 %%%
-%%% This line manually adds the Bibliography to the table of contents. 
+%%% This line manually adds the Bibliography to the table of contents.
 %%% Adding it like this means that it doesn't get a chapter or appendix number.
     \addcontentsline{toc}{chapter}{\bibname}%
 %%%
