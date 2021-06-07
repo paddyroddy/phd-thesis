@@ -19,7 +19,7 @@ A possible approach to solve this problem is to construct wavelets that are conc
 Extracting non-trivial patterns and structures of interest is a common problem in data analysis.
 To overcome this problem the data may be projected onto an appropriate basis.
 In Fourier analyses one considers oscillatory features; whereas wavelets extract the contributions of scale-dependent features in both space and scale concurrently.
-Wavelets on the sphere have been effectively applied in fields such as astrophysics and cosmology~\cite{Pen1999,Barreiro2001,Rocha2004,McEwen2004a}, where datasets are increasingly large and require analysis at high resolutions for accurate theoretical predictions.
+Wavelets on the sphere have been effectively applied in fields such as astrophysics and cosmology~\cite{Pen1999,Barreiro2001,Rocha2004,McEwen2004}, where datasets are increasingly large and require analysis at high resolutions for accurate theoretical predictions.
 Wavelet theory is well established in the Euclidean domain.
 In the spherical domain, however, few wavelet frameworks lead to exact transforms in both the continuous and discrete settings.
 Scale-discretised wavelets~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} lean on a tiling of the harmonic line to produce an exact wavelet transform in both the continuous and discrete settings.
@@ -28,17 +28,17 @@ Functions cannot simultaneously have finite support in both the spatial (time) a
 Slepian, Landau and Pollak solved the fundamental problem of finding and representing the functions which are optimally energy concentrated in both the time and frequency domains~\cite{Slepian1961,Landau1961,Landau1962}.
 The \emph{Slepian spatial-spectral concentration problem}, or \emph{Slepian concentration problem} for short, produces the orthogonal functions optimally concentrated in the spatial (spectral) domain and exactly limited in the spectral (spatial) domain.
 The \emph{Slepian functions} and their multidimensional counterparts~\cite{Slepian1964,Simons2011a} have been used in many branches of science and engineering (\eg{} signal processing~\cite{Mathews1985,Thomson1982}, geophysics~\cite{Thomson1976,Simons2006a,Simons2011}, medical imaging~\cite{Jackson1991}).
-In particular, these functions have been used in solving partial differential equations~\cite{Boyd2003,Chen2005}, inverse problems~\cite{DeVilliers2001,Abdelmoula2015}, interpolation~\cite{Moore2004,Shkolnisky2006} and extrapolation~\cite{Xu1983}.
+In particular, these functions have been used in solving partial differential equations~\cite{Boyd2003,Chen2005}, inverse problems~\cite{Villiers2001,Abdelmoula2015}, interpolation~\cite{Moore2004,Shkolnisky2006} and extrapolation~\cite{Xu1983}.
 In fields with spatially limited observations, the functions have become the dominant spatial or spectral windows for regularisation of quadratic inverse problems of power spectral estimation~\cite{Thomson1976}.
 
 The initial formulation of the Slepian concentration problem was developed in the Euclidean domain; however, this has since been generalised to other geometries~\cite{Simons2006,Wieczorek2005,Albertella1999,Cohen1989,Meaney1984,Daubechies1988}.
 The Slepian concentration problem for functions defined on the 2-sphere has been extensively investigated~\cite{Simons2006,Wieczorek2005,Albertella1999}; often simplifying to the axisymmetric case~\cite{Simons2006a,Simons2013}.
-The ensuing bandlimited, spatially concentrated functions have been applied for localised spectral analysis~\cite{Wieczorek2005}, and spectral estimation of signals~\cite{Wieczorek2013} defined on the sphere.
+The ensuing bandlimited, spatially concentrated functions have been applied for localised spectral analysis~\cite{Wieczorek2005}, and spectral estimation of signals~\cite{Wieczorek2007} defined on the sphere.
 
 Various wavelet-like analysis techniques to simultaneously probe signal content localised in space and scale have been considered before.
 Wavelets constructed on Slepian functions in the Euclidean setting (\ie{} prolate spheroidal wave functions) have been constructed to yield a multiresolution analysis~\cite{Walter2004}.
 Many techniques on the sphere have also been developed, often motivated by applications in geophysics or cosmology.
-Sometimes the Slepian functions on the sphere themselves have been used~\cite{Simons2009a}; whereas other times, spatially localised spherical harmonic transforms are used instead (\eg{}~\cite{Simons1997,Wieczorek2005,Khalid2012a,Khalid2013a}).
+Sometimes the Slepian functions on the sphere themselves have been used~\cite{Simons2009}; whereas other times, spatially localised spherical harmonic transforms are used instead (\eg{}~\cite{Simons1997,Wieczorek2005,Khalid2013,Khalid2013a}).
 Slepian frames on the sphere are constructed in~\cite{Simons2011}, which provide a wavelet-like representation but do not constitute a tight frame with an explicit inverse transform.
 An approach to solve inverse problems with regional data on the sphere is presented in~\cite{Michel2017}, which results in Slepian functions that can be used to derive a singular value decomposition (SVD) approach.
 Standard regularisation techniques based on a known SVD can then be applied to inverse problems where data are only defined on a region.
