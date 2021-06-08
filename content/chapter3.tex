@@ -143,7 +143,7 @@ may be adopted.
 The \emph{addition theorem} of the spherical harmonics states
 %
 \begin{equation}\label{eq:chapter3_addition_theorem}
-	\sum\limits_{m} \pixel{\harmonic{Y}} \pixel[']{\harmonic{Y}}
+	\sum\limits_{m} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
 	%
 	= \factor P_{\ell}(\omega \cdot \omega'),
 \end{equation}
@@ -267,7 +267,7 @@ This simplifies to a harmonic sum
 \begin{equation}\label{eq:chapter3_spatial_concentration_ratio}
 	\mu
 	%
-	= \frac{\harmonicSum \harmonic{f} \harmonicSum['] \Dmatrix \harmonic[']{f}}{\harmonicSum \abs{\harmonic{f}}^{2}},
+	= \frac{\harmonicSum \harmonic{f} \harmonicSum['] \Dmatrix \conj{\harmonic[']{f}}}{\harmonicSum \abs{\harmonic{f}}^{2}},
 \end{equation}
 %
 where
@@ -275,7 +275,7 @@ where
 \begin{equation}
 	\Dmatrix
 	%
-	= \integrateRegion{\omega} \pixel{\harmonic{Y}} \pixel{\harmonic[']{Y}}
+	= \integrateRegion{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
 \end{equation}
 %
 is an \(L^{2} \times{} L^{2}\) matrix if including all \(\ell{}\) and \(m\).
@@ -317,7 +317,7 @@ Consider the sum of the eigenvalues
 	%
 	= \harmonicSum D_{\ell m,\ell m}
 	%
-	 & = \integrateRegion{\omega} \pixel{\harmonic{Y}} \pixel{\harmonic{Y}} \nonumber \\
+	 & = \integrateRegion{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
 	%
 	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\omega} \nonumber    \\
 	%
