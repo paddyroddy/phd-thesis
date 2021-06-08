@@ -41,10 +41,24 @@ Lastly, \cref{sec:chapter2_conclusion} sets out some concluding remarks.
 
 \subsubsection{Signals on the Sphere}
 
-Consider a complex valued square-integrable function \(\pixel{f}\) on the 2-sphere \(\twoSphere{} = \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1}\).
+Consider a complex valued square-integrable function \(\pixel{f}\) on the 2-sphere
+%
+\begin{equation}
+	\twoSphere{}
+	%
+	= \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1}.
+\end{equation}
+%
 Here \(\omega=(\theta,\phi)\) parameterise a point on the unit sphere, where \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
 The functions \(\pixel{f}\) form the Hilbert space \(\hilbert{\twoSphere}\).
-The complex inner product induces a norm \(\norm{f} = \sqrt{\braket{f}}\).
+The complex inner product induces a norm
+%
+\begin{equation}
+	\norm{f}
+	%
+	= \sqrt{\braket{f}}.
+\end{equation}
+%
 Signals on the sphere are functions with a finite induced norm.
 
 \subsubsection{Spherical Harmonics}
@@ -56,13 +70,58 @@ By the completeness of spherical harmonics, any \(f \in \hilbert{\twoSphere}\) m
 	\pixel{f} = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
 \end{equation}
 %
-where \(\harmonic{f}\) are the spherical harmonic coefficients given by \(\harmonic{f} = \braket{f}{\harmonic{Y}}\).
-The phase convention adopted here is \(\conj{\harmonic{Y}} = {(-1)}^{m} Y_{\ell(-m)}\) such that \({\conj{\harmonic{f}} = {(-1)}^{m} f_{\ell(-m)}}\) for a real field.
-One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signals such that \(\harmonic{f} = 0,\ \forall \ell \geq L\); and adopts the shorthand notation \(\harmonic{\sum} = \sum_{\ell=0}^{L-1} \sum_{m=-\ell}^{\ell}\).
+where \(\harmonic{f}\) are the spherical harmonic coefficients given by
+%
+\begin{equation}
+	\harmonic{f}
+	%
+	= \braket{f}{\harmonic{Y}}.
+\end{equation}
+%
+The phase convention adopted here is
+%
+\begin{equation}
+	\conj{\harmonic{Y}}
+	%
+	= {(-1)}^{m} Y_{\ell(-m)}
+\end{equation}
+%
+such that
+%
+\begin{equation}
+	\conj{\harmonic{f}}
+	%
+	= {(-1)}^{m} f_{\ell(-m)}
+\end{equation}
+%
+for a real field.
+One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signals such that \(\harmonic{f} = 0,\ \forall \ell \geq L\); and adopts the shorthand notation
+%
+\begin{equation}
+	\harmonicSum
+	%
+	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell}.
+\end{equation}
 
 \subsubsection{Dirac Delta}
 
-The Dirac delta on the sphere satisfies the following normalisation and sifting properties, respectively: \(\int_{\twoSphere{}} \dd{\pixel{\Omega}} \pixel{\delta} = 1\) and \(\braket{\delta_{\omega'}}{\conj{f}} = \pixel[']{f}\), where \(\pixel{\delta_{\omega'}}\) represents the Dirac delta rotated to some \(\omega'=(\theta',\phi')\).
+The Dirac delta on the sphere satisfies the following normalisation and sifting properties, respectively:
+%
+\begin{equation}
+	\integrateSphere{\omega} \dd{\pixel{\Omega}} \pixel{\delta}
+	%
+	= 1
+\end{equation}
+%
+and
+%
+\begin{equation}
+	\braket{\delta_{\omega'}}{\conj{f}}
+	%
+	= \pixel[']{f},
+\end{equation}
+%
+where \(\pixel{\delta_{\omega'}}\) represents the Dirac delta rotated to some \(\omega'=(\theta',\phi')\).
 The harmonic expansion of the Dirac delta is
 %
 \begin{equation}\label{eq:chapter2_dirac_omega}
@@ -82,7 +141,15 @@ The rotation operator \(\rotation{\rho}\) consists of the sequence of rotations:
 	\item \({\alpha}\) rotation about the \(z\)-axis.
 \end{inparaenum}
 %
-The rotation of a function on the sphere is defined by \(\pixel{(\rotation{\rho}f)} = f(\vb{R}_{\rho}^{-1} \omega)\), where \(\vb{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
+The rotation of a function on the sphere is defined by
+%
+\begin{equation}
+	\pixel{(\rotation{\rho}f)}
+	%
+	= f(\vb{R}_{\rho}^{-1} \omega),
+\end{equation}
+%
+where \(\vb{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
 The spherical harmonic coefficients of a rotated function read
 %
 \begin{equation}\label{eq:chapter2_rotation_matrix}
@@ -100,7 +167,12 @@ The conventional convolution between two functions on two-dimensional Euclidean 
 \end{equation}
 %
 where \(x,\ y \in \mathbb{R}^{n}\).
-The convolution is commutative \({f \star g = g \star f}\).
+The convolution is commutative
+%
+\begin{equation}
+	f \star g = g \star f.
+\end{equation}
+%
 A spherical counterpart of the convolution is required for functions defined on the sphere.
 Alternative definitions of such a convolution exist in the literature but, while already useful, lack certain desirable properties.
 
@@ -248,8 +320,20 @@ In real space, the rotation operator on the sphere is the usual analogue of the 
 One may define an alternative operator, \(\translation{\omega}\), which follows as the analogue of the Euclidean setting but in harmonic space.
 This translation is in contrast to the standard rotation as it considers two angles rather than three and thereby its output remains on the sphere.
 In practice the translation operator is defined as a product of basis functions.
-In the Euclidean setting, \eg{} \(\mathbb{R}\), the complex exponentials \(\phi_{u}(x) = \exp{iux}\), with \(x,\ u \in \mathbb{R}\) form the standard orthonormal basis.
-A shift of coordinates defines the translation of the basis functions: \(\phi_{u}(x + x') = \phi_{u}(x') \phi_{u}(x)\), with \(x' \in \mathbb{R}\) and where the final equality follows by the standard rule for exponents.
+In the Euclidean setting, \eg{} \(\mathbb{R}\), the complex exponentials
+%
+\begin{equation}
+	\phi_{u}(x) = \exp{iux},
+\end{equation}
+%
+with \(x,\ u \in \mathbb{R}\) form the standard orthonormal basis.
+A shift of coordinates defines the translation of the basis functions:
+%
+\begin{equation}
+	\phi_{u}(x + x') = \phi_{u}(x') \phi_{u}(x),
+\end{equation}
+%
+with \(x' \in \mathbb{R}\) and where the final equality follows by the standard rule for exponents.
 The definition of the translation of the spherical harmonics on the sphere follows by analogy with the representation as a product of basis functions:
 %
 \begin{equation}

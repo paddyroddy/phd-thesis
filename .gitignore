@@ -2,6 +2,7 @@ __latexindent_temp.tex
 .vscode
 *.aux
 *.bbl
+*.bcf
 *.blg
 *.fdb_latexmk
 *.fls
@@ -9,6 +10,7 @@ __latexindent_temp.tex
 *.log
 *.lot
 *.out
+*.run.xml
 *.synctex.gz
 *.synctex(busy)
 *.toc
