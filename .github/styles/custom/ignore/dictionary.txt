@@ -13,7 +13,6 @@ chktex
 circledast
 circledcirc
 circleddash
-columnwidth
 config
 conj
 cref
@@ -91,6 +90,7 @@ tex
 textit
 textsuperscript
 texttt
+textwidth
 tikzpicture
 toc
 tocdepth

@@ -78,10 +78,20 @@ Lastly, in \cref{sec:chapter3_slepian_concentration_problem} the Slepian spatial
 
 \subsubsection{Signals on the Sphere}
 
-The 2-sphere \(\twoSphere{}\) is defined as such \(\twoSphere{} = \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1}\).
+The 2-sphere \(\twoSphere{}\) is defined as such
+%
+\begin{equation}
+	\twoSphere{} = \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1}.
+\end{equation}
+%
 A point on the unit sphere is parameterised by \(\omega=(\theta,\phi)\), where the colatitude is \(\theta \in \interval{0}{\pi}\) and the longitude is \(\phi \in \interval[open right]{0}{2\pi}\).
 The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex valued square-integrable functions \(\pixel{f}\).
-The inner product induces a norm \(\norm{f} = \sqrt{\braket*{f}}\).
+The inner product induces a norm
+%
+\begin{equation}
+	\norm{f} = \sqrt{\braket*{f}}.
+\end{equation}
+%
 Functions with a finite induced norm are signals on the sphere.
 
 \subsubsection{Spherical Harmonics}
@@ -95,10 +105,41 @@ By the completeness of the spherical harmonics one may decompose any signal \(f 
 	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
 \end{equation}
 %
-where \(\harmonic{f}\) are the spherical harmonic coefficients given by the usual projection onto the basis functions \(\harmonic{f} = \braket{f}{\harmonic{Y}}\).
-The phase convention adopted here is \(\pixel{\conj{\harmonic{Y}}} = {(-1)}^{m} \pixel{Y_{\ell(-m)}}\), such that \({\conj{\harmonic{f}} = {(-1)}^{m} f_{\ell(-m)}}\) for a real field.
+where \(\harmonic{f}\) are the spherical harmonic coefficients given by the usual projection onto the basis functions
+%
+\begin{equation}
+	\harmonic{f}
+	%
+	= \braket{f}{\harmonic{Y}}.
+\end{equation}
+%
+The phase convention adopted here is
+%
+\begin{equation}
+	\pixel{\conj{\harmonic{Y}}}
+	%
+	= {(-1)}^{m} \pixel{Y_{\ell(-m)}},
+\end{equation}
+%
+such that
+%
+\begin{equation}
+	\conj{\harmonic{f}}
+	%
+	= {(-1)}^{m} f_{\ell(-m)}
+\end{equation}
+%
+for a real field.
 One often considers functions bandlimited at \(L\), \ie{} signals such that \(\harmonic{f} = 0,\ \forall \ell \geq L\).
-The shorthand convention \(\sum_{\ell m} = \sum_{\ell=0}^{L-1} \sum_{m=-\ell}^{\ell}\) may be adopted.
+The shorthand convention
+%
+\begin{equation}
+	\harmonicSum
+	%
+	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell}
+\end{equation}
+%
+may be adopted.
 The \emph{addition theorem} of the spherical harmonics states
 %
 \begin{equation}\label{eq:chapter3_addition_theorem}
@@ -120,7 +161,15 @@ A rotation \(\rotation{\rho}\) consists of the sequence of rotations:
 	\item \({\alpha}\) rotation about the \(z\)-axis.
 \end{inparaenum}
 %
-A function rotated on the sphere is defined by \(\pixel{(\rotation{\rho}f)} = f(\vb*{R}_{\rho}^{-1} \omega)\) where the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\) is \(\vb*{R}_{\rho}\).
+A function rotated on the sphere is defined by
+%
+\begin{equation}
+	\pixel{(\rotation{\rho}f)}
+	%
+	= f(\vb*{R}_{\rho}^{-1} \omega)
+\end{equation}
+%
+where the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\) is \(\vb*{R}_{\rho}\).
 A rotated function in harmonic space is
 %
 \begin{equation}
@@ -248,7 +297,18 @@ where \(\vb*{f}\), the harmonic coefficients of \(\pixel{f}\), are the solutions
 %
 The matrix \(\vb*{D}\) is real, symmetric and positive definite; hence, the eigenvalues \(\slepian{\mu}\) are always real.
 The eigenvalues are a measure of how well concentrated the given eigenvector is.
-Hence, the eigenvalues satisfy \(1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{L^{2}} > 0\), with corresponding eigenvectors \(\vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{L^{2}}\). % chktex 11
+Hence, the eigenvalues satisfy
+%
+\begin{equation}
+	1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{L^{2}} > 0,
+\end{equation}
+%
+with corresponding eigenvectors
+%
+\begin{equation}
+	\vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{L^{2}}.
+\end{equation}
+%
 The largest eigenvalue \(\mu_{1}\) is strictly less than one as no bandlimited function may be restricted exactly within a region \(R\), and the smallest eigenvalue \(\mu_{L^{2}}\) is strictly greater than zero due to the positive definiteness of the matrix \(\vb*{D}\).
 Consider the sum of the eigenvalues
 %
@@ -288,8 +348,14 @@ If the function is well-localised in the region \(R\) (\ie{} \(f \in \hilbert{R}
 \end{equation}
 %
 where a shorthand notation has been introduced.
-The usual projection onto the basis functions permits one to calculate the Slepian coefficients \(\slepian{f} = \braket{f}{\slepian{S}}\).
-
+The usual projection onto the basis functions permits one to calculate the Slepian coefficients
+%
+\begin{equation}
+	\slepian{f}
+	%
+	= \braket{f}{\slepian{S}}.
+\end{equation}
+%
 For a well-localised function one instead may compute the Slepian coefficients with an integral over the region \(R\) rather than \(\twoSphere{}\)
 %
 \begin{equation}
@@ -894,7 +960,11 @@ The wavelet/scaling coefficients of \cref{eq:chapter3_noised_signal} are given b
 	= \pixel{S^{\varphi}} + \pixel{N^{\varphi}}.
 \end{equation}
 %
-Here capital letters denote the wavelet coefficients, \ie{} \(\pixel{X^{\varphi}} = \pixel{\convolution{\varphi}{x}}\).
+Here capital letters denote the wavelet coefficients, \ie{}
+%
+\begin{equation}
+	\pixel{X^{\varphi}} = \pixel{\convolution{\varphi}{x}}.
+\end{equation}
 %
 The noise in wavelet space is as before
 %
@@ -908,7 +978,13 @@ The noise in wavelet space is as before
 %
 where the quantity \(\sigma^{\varphi}\) defines the standard deviation of the noise in wavelet space.
 One may perform denoising by hard-thresholding the wavelet/scaling coefficients with a threshold \(T\) proportional to the standard deviation of the noise \(\sigma^{\varphi}\).
-The denoised wavelet coefficients \(\pixel{D^{\varphi}} = \pixel{\convolution{\varphi}{d}}\) become
+The denoised wavelet coefficients
+%
+\begin{equation}
+	\pixel{D^{\varphi}} = \pixel{\convolution{\varphi}{d}}
+\end{equation}
+%
+become
 %
 \begin{equation}
 	\pixel{D^{\varphi}} =
@@ -924,7 +1000,15 @@ The denoised wavelet coefficients \(\pixel{D^{\varphi}} = \pixel{\convolution{\v
 	\end{cases}
 \end{equation}
 %
-where \(\pixel{T^{\varphi}} = N_{\sigma}\pixel{\sigma^{\varphi}}\), with \(N_{\sigma} \in \realPosParam{}\).
+where
+%
+\begin{equation}
+	\pixel{T^{\varphi}}
+	%
+	= N_{\sigma}\pixel{\sigma^{\varphi}},
+\end{equation}
+%
+with \(N_{\sigma} \in \realPosParam{}\).
 The denoised signal \(d\) may then be reconstructed from its wavelet/scaling coefficients.
 The denoising formalism described above is straightforward, and more sophisticated denoising strategies can be developed; this procedure is merely provided to show a practical use case of Slepian wavelets.
 
