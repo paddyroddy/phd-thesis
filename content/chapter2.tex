@@ -56,7 +56,7 @@ The complex inner product induces a norm
 \begin{equation}
 	\norm{f}
 	%
-	= \sqrt{\braket{f}}.
+	= \sqrt{\braket*{f}}.
 \end{equation}
 %
 Signals on the sphere are functions with a finite induced norm.
@@ -67,7 +67,9 @@ The spherical harmonics are the complete orthonormal set of basis functions of t
 By the completeness of spherical harmonics, any \(f \in \hilbert{\twoSphere}\) may be decomposed as
 %
 \begin{equation}
-	\pixel{f} = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
+	\pixel{f}
+	%
+	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
 \end{equation}
 %
 where \(\harmonic{f}\) are the spherical harmonic coefficients given by
@@ -75,7 +77,7 @@ where \(\harmonic{f}\) are the spherical harmonic coefficients given by
 \begin{equation}
 	\harmonic{f}
 	%
-	= \braket{f}{\harmonic{Y}}.
+	= \braket*{f}{\harmonic{Y}}.
 \end{equation}
 %
 The phase convention adopted here is
@@ -108,7 +110,7 @@ One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signa
 The Dirac delta on the sphere satisfies the following normalisation and sifting properties, respectively:
 %
 \begin{equation}
-	\integrateSphere{\omega} \dd{\pixel{\Omega}} \pixel{\delta}
+	\integrateSphere{\omega} \pixel{\delta}
 	%
 	= 1
 \end{equation}
@@ -116,7 +118,7 @@ The Dirac delta on the sphere satisfies the following normalisation and sifting 
 and
 %
 \begin{equation}
-	\braket{\delta_{\omega'}}{\conj{f}}
+	\braket*{\delta_{\omega'}}{\conj{f}}
 	%
 	= \pixel[']{f},
 \end{equation}
@@ -125,7 +127,9 @@ where \(\pixel{\delta_{\omega'}}\) represents the Dirac delta rotated to some \(
 The harmonic expansion of the Dirac delta is
 %
 \begin{equation}\label{eq:chapter2_dirac_omega}
-	\pixel{\delta_{\omega'}} = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}},
+	\pixel{\delta_{\omega'}}
+	%
+	= \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}},
 \end{equation}
 %
 which follows trivially by the sifting property.
@@ -146,14 +150,16 @@ The rotation of a function on the sphere is defined by
 \begin{equation}
 	\pixel{(\rotation{\rho}f)}
 	%
-	= f(\vb{R}_{\rho}^{-1} \omega),
+	= f(\vb*{R}_{\rho}^{-1} \omega),
 \end{equation}
 %
-where \(\vb{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
+where \(\vb*{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
 The spherical harmonic coefficients of a rotated function read
 %
 \begin{equation}\label{eq:chapter2_rotation_matrix}
-	\harmonic{(\rotation{\rho}f)} = \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) f_{\ell m'},
+	\harmonic{(\rotation{\rho}f)}
+	%
+	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) f_{\ell m'},
 \end{equation}
 %
 where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
@@ -163,14 +169,18 @@ where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} which form the
 The conventional convolution between two functions on two-dimensional Euclidean space \(\mathbb{R}^{n}\) is
 %
 \begin{equation}
-	(f \star g)(x) = \int\limits_{\mathbb{R}^{2}} \dd{y} f(x-y) g(y),
+	(f \star g)(x)
+	%
+	= \int\limits_{\mathbb{R}^{2}} \dd{y} f(x-y) g(y),
 \end{equation}
 %
 where \(x,\ y \in \mathbb{R}^{n}\).
 The convolution is commutative
 %
 \begin{equation}
-	f \star g = g \star f.
+	f \star g
+	%
+	= g \star f.
 \end{equation}
 %
 A spherical counterpart of the convolution is required for functions defined on the sphere.
@@ -193,13 +203,17 @@ A summary of existing spherical convolutions and their properties follows.
 In real space the isotropic convolution (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2011}) is
 %
 \begin{equation}
-	\pixel{(f \odot g)} = \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}},
+	\pixel{(f \odot g)}
+	%
+	= \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}},
 \end{equation}
 %
 which in harmonic space becomes (\eg{}~\cite{McEwen2007})
 %
 \begin{equation}\label{eq:chapter2_isotropic_harmonic}
-	\harmonic{(f \odot g)} = \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}}.
+	\harmonic{(f \odot g)}
+	%
+	= \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}}.
 \end{equation}
 %
 The isotropic convolution has the following properties:
@@ -215,14 +229,18 @@ The isotropic convolution has the following properties:
 The definition of the left convolution~\cite{Kennedy2011,Driscoll1994} in real space is
 %
 \begin{equation}
-	\pixel{(f \circleddash g)} = \integrateRotation{\rho} f(\rho\eta) g(\rho^{-1}\omega),
+	\pixel{(f \circleddash g)}
+	%
+	= \integrateRotation{\rho} f(\rho\eta) g(\rho^{-1}\omega),
 \end{equation}
 %
 where \({\eta}\) is the north pole, and \(\dd{\rho(\rho)}=\sin{\beta} \dd{\alpha} \dd{\beta} \dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
 The harmonic representation of this convolution is
 %
 \begin{equation}
-	\harmonic{(f \circleddash g)} = 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
+	\harmonic{(f \circleddash g)}
+	%
+	= 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
 \end{equation}
 %
 As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
@@ -241,13 +259,17 @@ Rotations on the sphere are the spherical counterpart of translations in the Euc
 Hence, the standard directional convolution is
 %
 \begin{equation}\label{eq:chapter2_directional_convolution}
-	(f \circledast g)(\rho) = \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}}.
+	(f \circledast g)(\rho)
+	%
+	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}}.
 \end{equation}
 %
 Upon expanding in harmonic space, this becomes (\eg{}~\cite{McEwen2007,Wandelt2001})
 %
 \begin{equation}
-	(f \circledast g) (\rho) = \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \harmonic{f} \conj{\left( \wigner{\ell}{m'}{m}(\rho) g_{\ell m'} \right)},
+	(f \circledast g) (\rho)
+	%
+	= \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \harmonic{f} \conj{\left( \wigner{\ell}{m'}{m}(\rho) g_{\ell m'} \right)},
 \end{equation}
 %
 and hence, the output is on \(\rotationGroup{}\).
@@ -265,13 +287,17 @@ The directional convolution has the following properties:
 The definition of the commutative anisotropic convolution~\cite{Sadeghi2012,Khalid2012} is
 %
 \begin{equation}
-	\pixel{(f \oplus g)} = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g},
+	\pixel{(f \oplus g)}
+	%
+	= \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g},
 \end{equation}
 %
 which on expansion reads
 %
 \begin{equation}
-	\pixel{(f \oplus g)} = \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
+	\pixel{(f \oplus g)}
+	%
+	= \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
 \end{equation}
 %
 The limitation here is that one must specify the initial rotation as \({\gamma=\pi-\alpha}\) in order for the convolution to be commutative.
@@ -323,14 +349,18 @@ In practice the translation operator is defined as a product of basis functions.
 In the Euclidean setting, \eg{} \(\mathbb{R}\), the complex exponentials
 %
 \begin{equation}
-	\phi_{u}(x) = \exp{iux},
+	\phi_{u}(x)
+	%
+	= \exp{iux},
 \end{equation}
 %
 with \(x,\ u \in \mathbb{R}\) form the standard orthonormal basis.
 A shift of coordinates defines the translation of the basis functions:
 %
 \begin{equation}
-	\phi_{u}(x + x') = \phi_{u}(x') \phi_{u}(x),
+	\phi_{u}(x + x')
+	%
+	= \phi_{u}(x') \phi_{u}(x),
 \end{equation}
 %
 with \(x' \in \mathbb{R}\) and where the final equality follows by the standard rule for exponents.
@@ -345,14 +375,19 @@ where \(\omega'=(\theta',\phi')\).
 This leads to a natural harmonic expression for the translation of a general arbitrary function \(f \in \hilbert{\twoSphere}\)
 %
 \begin{equation}\label{eq:chapter2_translation_real}
-	\pixel{(\translation{\omega'}f)} = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
+	\pixel{(\translation{\omega'}f)}
+	%
+	= \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
 \end{equation}
 %
 implying
 %
 \begin{equation}\label{eq:chapter2_translation_harmonic}
-	\harmonic{(\translation{\omega'}f)} = \harmonic{f} \pixel[']{\harmonic{Y}}.
+	\harmonic{(\translation{\omega'}f)}
+	%
+	= \harmonic{f} \pixel[']{\harmonic{Y}}.
 \end{equation}
+%
 This translation operator is considered further in \cref{sec:chapter2_translation_interpretation} to build greater intuition.
 
 \subsection{Convolution Operator}
@@ -360,24 +395,33 @@ This translation operator is considered further in \cref{sec:chapter2_translatio
 With a translation operator to hand, one may define the sifting convolution on the sphere of \(f,\ g \in \hilbert{\twoSphere}\) in the usual manner by the inner product
 %
 \begin{equation}\label{eq:chapter2_convolution_real}
-	\pixel{\convolution{f}{g}} \equiv \braket{\translation{\omega}f}{g},
+	\pixel{\convolution{f}{g}}
+	%
+	\equiv \braket*{\translation{\omega}f}{g},
 \end{equation}
+%
 noting the use of the alternative translation operator defined in \cref{sec:chapter2_translation_operator}.
 
 In harmonic space this simplifies to the product
 %
 \begin{equation}\label{eq:chapter2_convolution_harmonic}
-	\harmonic{\convolution{f}{g}} = \harmonic{f} \conj{\harmonic{g}},
+	\harmonic{\convolution{f}{g}}
+	%
+	= \harmonic{f} \conj{\harmonic{g}},
 \end{equation}
+%
 as
+%
 \begin{align}
-	\pixel{(f & \circledcirc g)} = \braket{\translation{\omega}f}{g} \nonumber{}                                                                                                                        \\
+	\pixel{(f \circledcirc g)}
 	%
-	          & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                          \\
+	& = \braket*{\translation{\omega}f}{g} \nonumber{} \\
 	%
-	          & = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	& = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}} \nonumber{} \\
 	%
-	          & = \harmonicSum \harmonic{f} \conj{\harmonic{g}} \pixel{\harmonic{Y}}.
+	& = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	%
+	& = \harmonicSum \harmonic{f} \conj{\harmonic{g}} \pixel{\harmonic{Y}}.
 \end{align}
 %
 Since the harmonic representation of the convolution is simply a product (again by analogy with the harmonic representation of the Euclidean convolution), it is efficient to compute.
@@ -418,7 +462,9 @@ This section demonstrates the effect of the sifting convolution through the appl
 Define the \emph{harmonic Gaussian} as a two-dimensional Gaussian in harmonic space by
 %
 \begin{equation}
-	\harmonic{f} = \exp(-\left(\frac{{\ell}^{2}}{2\sigma_{\ell}^{2}} + \frac{{m}^{2}}{2\sigma_{m}^{2}}\right)).
+	\harmonic{f}
+	%
+	= \exp(-\left(\frac{{\ell}^{2}}{2\sigma_{\ell}^{2}} + \frac{{m}^{2}}{2\sigma_{m}^{2}}\right)).
 \end{equation}
 %
 In effect, this function is the standard axisymmetric Gaussian in \(\ell{}\) modulated by a Gaussian in \(m\).
