@@ -319,7 +319,7 @@ Consider the sum of the eigenvalues
 	%
 	 & = \integrateRegion{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
 	%
-	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\omega} \nonumber    \\
+	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\omega} \nonumber           \\
 	%
 	 & = \frac{A}{4\pi} L^{2},
 \end{align}
@@ -534,7 +534,7 @@ The function \(f\) may be reconstructed from its wavelet and scaling coefficient
 \begin{align}\label{eq:chapter3_synthesis}
 	\pixel{f}
 	%
-	 & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Phi)} \pixel[']{W^{\Phi\ast}} \nonumber                         \\
+	 & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Phi)} \pixel[']{W^{\Phi\ast}} \nonumber            \\
 	%
 	 & + \waveletSum \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{W^{\Psi^{j}\ast}},
 \end{align}
@@ -1026,15 +1026,15 @@ Thus, it is clear that this hard-thresholding scheme increases the power of the 
 	\hfill
 	\subfloat[Denoised \(N_{\sigma}=2\) \newline
 		\(\snr{d} = \SI{5.67}{\dB}\)]
-	{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{slepian_south_america_snr-10_n2_2smoothed_denoised_L128_res512_real.pdf}}
+	{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{slepian_south_america_2smoothed_L128_-10snr_2n_denoised_res512_real.pdf}}
 	\newline
 	\subfloat[Denoised \(N_{\sigma}=3\) \newline
 		\(\snr{d} = \SI{4.60}{\dB}\)]
-	{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{slepian_south_america_snr-10_n3_2smoothed_denoised_L128_res512_real.pdf}}
+	{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{slepian_south_america_2smoothed_L128_-10snr_3n_denoised_res512_real.pdf}}
 	\hfill
 	\subfloat[Denoised \(N_{\sigma}=5\) \newline
 		\(\snr{d} = \SI{1.27}{\dB}\)]
-	{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{slepian_south_america_snr-10_n5_2smoothed_denoised_L128_res512_real.pdf}}
+	{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{slepian_south_america_2smoothed_L128_-10snr_5n_denoised_res512_real.pdf}}
 	\caption{
 		Panel (a) shows the initial noisy signal of the South America region with a signal-to-noise ratio of \(\SI{4.11}{\dB}\).
 		The scaling and wavelet coefficients of the noisy signal are calculated and are then hard-thresholded for a few \(N_{\sigma}\) values.
