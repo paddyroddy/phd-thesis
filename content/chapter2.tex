@@ -415,13 +415,13 @@ as
 \begin{align}
 	\pixel{(f \circledcirc g)}
 	%
-	& = \braket*{\translation{\omega}f}{g} \nonumber{} \\
+	 & = \braket*{\translation{\omega}f}{g} \nonumber{}                                                                                                                                        \\
 	%
-	& = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}} \nonumber{} \\
+	 & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                          \\
 	%
-	& = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	 & = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
 	%
-	& = \harmonicSum \harmonic{f} \conj{\harmonic{g}} \pixel{\harmonic{Y}}.
+	 & = \harmonicSum \harmonic{f} \conj{\harmonic{g}} \pixel{\harmonic{Y}}.
 \end{align}
 %
 Since the harmonic representation of the convolution is simply a product (again by analogy with the harmonic representation of the Euclidean convolution), it is efficient to compute.
@@ -477,9 +477,9 @@ Consider two differently sized harmonic Gaussians on the sphere to see the effec
 
 \begin{figure}[htp]
 	\centering
-	\subfloat[\(\Re{\pixel{(\translation{\omega'}f_{A})}}\)]{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{harmonic_gaussian_100lsig_10msig_L128_translate_alpha3pi4_beta1pi8_res512_real_norm.pdf}}
+	\subfloat[\(\Re{\pixel{(\translation{\omega'}f_{A})}}\)]{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{harmonic_gaussian_100lsig_10msig_L128_translate_alpha3pi4_beta1pi8_res512_real_norm.pdf}}
 	\hfill
-	\subfloat[\(\Re{\pixel{(\translation{\omega'}f_{B})}}\)]{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{harmonic_gaussian_10lsig_10msig_L128_translate_alpha3pi4_beta1pi8_res512_real_norm.pdf}}
+	\subfloat[\(\Re{\pixel{(\translation{\omega'}f_{B})}}\)]{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{harmonic_gaussian_10lsig_10msig_L128_translate_alpha3pi4_beta1pi8_res512_real_norm.pdf}}
 	\caption{
 		A harmonic Gaussian translated to some \(\omega'=(\theta',\phi')\) (bandlimited at \(L=128\)).
 		Panel (a) corresponds to a more elongated kernel \(f_{A}\), where \((\sigma_{\ell},\sigma_{m}) = (10^{2}, 10^{1})\); whereas panel (b) corresponds to a more symmetric kernel \(f_{B}\), where \((\sigma_{\ell},\sigma_{m}) = (10^{1}, 10^{1})\).
@@ -493,7 +493,7 @@ This dataset is the topographic map of the Earth.
 %
 \begin{figure}[htp]
 	\centering
-	\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{earth_L128_res512_real_norm.pdf}
+	\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{earth_L128_res512_real_norm.pdf}
 	\caption{
 		EGM2008 dataset centred on a view of South America (bandlimited at \(L=128\)).
 		The colour is between zero and one, reflecting the scaled intensity of the field.
@@ -506,9 +506,9 @@ It is clear that the sifting convolution supports directional kernels to perform
 
 \begin{figure}[htp]
 	\centering
-	\subfloat[\(\Re{\pixel{\convolution{f_{A}}{g}}}\)]{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{harmonic_gaussian_100lsig_10msig_L128_convolved_earth_L128_res512_real_norm.pdf}}
+	\subfloat[\(\Re{\pixel{\convolution{f_{A}}{g}}}\)]{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{harmonic_gaussian_100lsig_10msig_L128_convolved_earth_L128_res512_real_norm.pdf}}
 	\hfill
-	\subfloat[\(\Re{\pixel{\convolution{f_{B}}{g}}}\)]{\includegraphics[trim={22 6 7 1},clip,width=.5\textwidth]{harmonic_gaussian_10lsig_10msig_L128_convolved_earth_L128_res512_real_norm.pdf}}
+	\subfloat[\(\Re{\pixel{\convolution{f_{B}}{g}}}\)]{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{harmonic_gaussian_10lsig_10msig_L128_convolved_earth_L128_res512_real_norm.pdf}}
 	\caption{
 		The real part of the sifting convolution between the EGM2008 dataset and the harmonic Gaussian, rotated to view of South America (bandlimited at \(L=128\)).
 		Panel (a) corresponds to a more elongated kernel \(f_{A}\), where \((\sigma_{\ell},\sigma_{m}) = (10^{2}, 10^{1})\); whereas panel (b) corresponds to a more symmetric kernel \(f_{B}\), where \((\sigma_{\ell},\sigma_{m}) = (10^{1}, 10^{1})\).
