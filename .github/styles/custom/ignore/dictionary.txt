@@ -29,6 +29,7 @@ emph
 eq
 essinfo
 expval
+fionn
 forall
 frac
 fwhm
@@ -72,6 +73,7 @@ parseval
 phantomsection
 phd
 pollak
+postaction
 rceil
 renewcommand
 roddy
