@@ -38,7 +38,7 @@ jobs:
               uses: xu-cheng/texlive-action/full@v1
               with:
                   run: |
-                      latexmk -quiet -pdf main.tex
+                      latexmk -lualatex -quiet main.tex
 
             - name: Upload PDFs
               uses: actions/upload-artifact@v2
