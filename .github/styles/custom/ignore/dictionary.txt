@@ -24,6 +24,7 @@ dirac
 dmatrix
 documentclass
 eg
+eigenhomers
 eigenproblem
 emph
 eq
