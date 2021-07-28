@@ -235,21 +235,7 @@ These basis functions are defined in \cref{sec:chapter3_slepian_concentration_pr
 A function cannot be strictly spacelimited as well as strictly bandlimited~\cite{Slepian1961,Slepian1983}.
 This work considers optimally concentrated functions within a region \(R\), an example of which is given in \cref{fig:chapter3_region}.
 
-\begin{figure}[htp]
-	\centering
-	\begin{tikzpicture}
-		\draw  (0,0) circle (2cm);
-		\draw[use Hobby shortcut,closed=true,pattern=north east lines,even odd rule]  (0,0) circle (2cm)
-		(-0.2,0.3) .. (0.2,0.2) .. (1.1,0.6) .. (1.1,1) .. (0.3,1.4) .. (-0.4,1.2) .. (-0.3,0.8);
-		\draw (-2,0) arc (180:360:2 and 0.6);
-		\draw[dashed] (2,0) arc (0:180:2 and 0.6);
-		\fill[fill=black] (0,0) circle (1pt);
-		\node at (0.4,0.8) {\(R\)};
-	\end{tikzpicture}
-	\caption{
-		In many application domains, data are observed on a partial region of the sphere only, such as \(R\).
-	}\label{fig:chapter3_region}
-\end{figure}
+\input{figures/scripts/chapter3/example_region_sphere}
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
 
@@ -640,15 +626,7 @@ The scaling function \(\Phi{}\) is constructed to extract the modes that cannot 
 The lowest wavelet scale \(J_{0}\) is arbitrary provided \(0 \leq J_{0} < J\).
 The Slepian wavelets are constructed by the tiling of the Slepian line as shown in \cref{fig:chapter3_tiling}.
 
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=\textwidth]{south_america_slepian_tiling_L128.pdf}
-	\caption{
-		The tiling of the Slepian line with parameters \(\lambda=3\) and \(J_{0}=2\) with bandlimit \(L=128\).
-		The black dashed line marks the Shannon number for the South America region \(N=690\).
-		It is clear that the scaling function and the first five wavelets are non-zero as the coefficients are within the Shannon number.
-	}\label{fig:chapter3_tiling}
-\end{figure}
+\input{figures/scripts/chapter3/south_america_tiling}
 
 \subsection{Properties}\label{sec:chapter3_properties}
 
@@ -798,21 +776,7 @@ A masked region \(R\) is constructed by centring a polar cap of angular opening 
 %
 The resulting region is shown in the right panel of \cref{fig:chapter3_south_america_region}.
 
-\begin{figure}[htp]
-	\centering
-	\subfloat[EGM2008]
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{earth_2smoothed_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[\(R\)]
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_2smoothed_L128_res512_real.pdf}}
-	\caption{
-		Panel (a) corresponds to a topographic map of the Earth (from the EGM2008 dataset) centred on a view of South America.
-		The dataset is bandlimited at \(L=128\), and smoothed with \(\fwhm{1.17}\).
-		Panel (b) presents the region \(R\), which is constructed from the Slepian coefficients of the South America mask.
-		The field value outside the region in panel (b) is set to negative infinity for illustrative purposes.
-		The amplitude of the right panel is set by the height of the Andes, rather than the lowest depths of the sea.
-	}\label{fig:chapter3_south_america_region}
-\end{figure}
+\input{figures/scripts/chapter3/south_america_region}
 
 The Slepian functions of this region are found by solving the eigenproblem \cref{eq:chapter3_eigenproblem}, and then performing an inverse spherical harmonic transform.
 The Shannon number \cref{eq:chapter3_shannon} of \(R\) is \(N=690\).
@@ -821,39 +785,9 @@ It is clear that the Slepian functions initially peak in the middle of the regio
 The corresponding \(N\) eigenvalues are shown in \cref{fig:chapter3_eigenvalues}, where the eigenvalues remain \(\almost{1}\) for many \(p\) values until decreasing towards zero.
 Were the plot to extend to \(L^{2}\) the latter eigenvalues would all be \(\almost{0}\).
 
-\begin{figure}[htp]
-	\centering
-	\subfloat[\(\Re\big\{\pixel{S_{1}}\big\},\ \mu=1.00\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_rank0_lam1-003338e00_L128_res512_real.pdf}} % chktex 8
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{S_{10}}\big\},\ \mu=1.00\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_rank9_lam1-000000e00_L128_res512_real.pdf}} % chktex 8
-	\newline
-	\subfloat[\(\Re\big\{\pixel{S_{25}}\big\},\ \mu=1.00\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_rank24_lam1-000000e00_L128_res512_real.pdf}} % chktex 8
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{S_{50}}\big\},\ \mu=1.00\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_rank49_lam1-000000e00_L128_res512_real.pdf}} % chktex 8
-	\newline
-	\subfloat[\(\Re\big\{\pixel{S_{100}}\big\},\ \mu=1.00\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_rank99_lam1-000000e00_L128_res512_real.pdf}} % chktex 8
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{S_{200}}\big\},\ \mu=1.00\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_rank199_lam1-000000e00_L128_res512_real.pdf}} % chktex 8
-	\caption{
-		The Slepian functions of the South America region \(S_p(\omega)\) for \(p \in \set{1, 10, 25, 50, 100, 200}\) shown left-to-right, top-to-bottom.
-		The corresponding eigenvalue \(\slepian{\mu}\) is a measure of the concentration within the given region \(R\) which remain \(\almost{1}\) for many \(p\) values before decreasing towards zero.
-	}\label{fig:chapter3_eigenfunctions}
-\end{figure}
+\input{figures/scripts/chapter3/south_america_slepian_functions}
 
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=\textwidth]{south_america_eigenvalues_L128.pdf}
-	\caption{
-		The eigenvalues of the South America region concentrated within the Shannon number \(N=690\).
-		The majority of the eigenvalues are \(\almost{1}\) before decreasing rapidly towards zero around the Shannon number.
-	}\label{fig:chapter3_eigenvalues}
-\end{figure}
+\input{figures/scripts/chapter3/south_america_eigenvalues}
 
 \subsection{Wavelets and Wavelet Coefficients}\label{sec:chapter3_south_america_wavelets}
 
@@ -867,56 +801,9 @@ In contrast, the higher wavelet scales are focused towards the boundaries of the
 One may calculate the corresponding scaling and wavelet coefficients using the wavelet transforms in \cref{eq:chapter3_slepian_scaling_omega} and \cref{eq:chapter3_slepian_wavelet_omega} respectively.
 The wavelet and scaling coefficients for the Earth topographic data of the South America region are shown in \cref{fig:chapter3_slepian_wavelet_coefficients}.
 
-\begin{figure}[htp]
-	\centering
-	\subfloat[\(\Re\big\{\pixel{\Phi}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelets_south_america_3B_2jmin_scaling_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{\Psi^{2j}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelets_south_america_3B_2jmin_2j_L128_res512_real.pdf}}
-	\newline
-	\subfloat[\(\Re\big\{\pixel{\Psi^{3j}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelets_south_america_3B_2jmin_3j_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{\Psi^{4j}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelets_south_america_3B_2jmin_4j_L128_res512_real.pdf}}
-	\newline
-	\subfloat[\(\Re\big\{\pixel{\Psi^{5j}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelets_south_america_3B_2jmin_5j_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{\Psi^{6j}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelets_south_america_3B_2jmin_6j_L128_res512_real.pdf}}
-	\caption{
-		The scaling function and the wavelets for scales \(j \in \set{2, 3, 4, 5, 6}\) for the South America region shown left-to-right, top-to-bottom.
-		The wavelets are constructed through a tiling of the Slepian line using scale-discretised functions, with parameters \(\lambda=3\), \(J_{0}=2\), and bandlimit \(L=128\).
-	}\label{fig:chapter3_slepian_wavelets}
-\end{figure}
+\input{figures/scripts/chapter3/south_america_wavelets}
 
-\begin{figure}[htp]
-	\centering
-	\subfloat[\(\Re\big\{\pixel{W^{\Phi}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelet_coefficients_south_america_3B_2jmin_scaling_2smoothed_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{W^{\Psi^{2j}}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelet_coefficients_south_america_3B_2jmin_2j_2smoothed_L128_res512_real.pdf}}
-	\newline
-	\subfloat[\(\Re\big\{\pixel{W^{\Psi^{3j}}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelet_coefficients_south_america_3B_2jmin_3j_2smoothed_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{W^{\Psi^{4j}}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelet_coefficients_south_america_3B_2jmin_4j_2smoothed_L128_res512_real.pdf}}
-	\newline
-	\subfloat[\(\Re\big\{\pixel{W^{\Psi^{5j}}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelet_coefficients_south_america_3B_2jmin_5j_2smoothed_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[\(\Re\big\{\pixel{W^{\Psi^{6j}}}\big\}\)] % chktex 21
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_wavelet_coefficients_south_america_3B_2jmin_6j_2smoothed_L128_res512_real.pdf}}
-	\caption{
-		The scale-discretised wavelet transform of the topographic map of South America for parameters \(\lambda=3\), \(J_{0}=2\), and bandlimit \(L=128\); \ie{} with the wavelets shown in \cref{fig:chapter3_slepian_wavelets}.
-		Spatially localised, scale-dependent features of the bandlimited signal may be extracted by the wavelet coefficients given by the wavelet transform.
-		The scaling coefficients are given in the top left plot, while the wavelet coefficients at scales \(j \in \set{2, 3, 4, 5, 6}\) are shown left-to-right, top-to-bottom.
-	}\label{fig:chapter3_slepian_wavelet_coefficients}
-\end{figure}
+\input{figures/scripts/chapter3/south_america_wavelet_coefficients}
 
 \subsection{Wavelet Denoising}\label{sec:chapter3_wavelet_denoising}
 
@@ -1018,32 +905,7 @@ The denoising procedure described above is performed with \(N_{\sigma} \in \set{
 This leads to a signal-to-noise ratio of \(\SI{5.67}{\dB}\), \(\SI{4.60}{\dB}\) and \(\SI{1.27}{\dB}\) respectively.
 Thus, it is clear that this hard-thresholding scheme increases the power of the signal, unless a significant amount of signal is removed at which point the signal-to-noise begins to decrease.
 
-\begin{figure}[htp]
-	\centering
-	\subfloat[Initial Noisy Data \newline
-		\(\snr{x} = \SI{4.11}{\dB}\)]
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_-10noise_2smoothed_L128_res512_real.pdf}}
-	\hfill
-	\subfloat[Denoised \(N_{\sigma}=2\) \newline
-		\(\snr{d} = \SI{5.67}{\dB}\)]
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_2smoothed_L128_-10snr_2n_denoised_res512_real.pdf}}
-	\newline
-	\subfloat[Denoised \(N_{\sigma}=3\) \newline
-		\(\snr{d} = \SI{4.60}{\dB}\)]
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_2smoothed_L128_-10snr_3n_denoised_res512_real.pdf}}
-	\hfill
-	\subfloat[Denoised \(N_{\sigma}=5\) \newline
-		\(\snr{d} = \SI{1.27}{\dB}\)]
-	{\includegraphics[trim={22 9 7 6},clip,width=.5\textwidth]{slepian_south_america_2smoothed_L128_-10snr_5n_denoised_res512_real.pdf}}
-	\caption{
-		Panel (a) shows the initial noisy signal of the South America region with a signal-to-noise ratio of \(\SI{4.11}{\dB}\).
-		The scaling and wavelet coefficients of the noisy signal are calculated and are then hard-thresholded for a few \(N_{\sigma}\) values.
-		The corresponding denoised plots for \(N_{\sigma} \in \set{2, 3, 5}\) are shown in panels (b-d).
-		At \(N_{\sigma}=2\) the signal-to-noise ratio is boosted by \(\SI{1.56}{\dB}\) to \(\SI{5.67}{\dB}\).
-		As more signal is removed the signal-to-noise ratio decreases to \(\SI{4.60}{\dB}\) at \(N_{\sigma}=3\), which is still higher than the initial noisy signal.
-		At \(N_{\sigma}=5\) the signal-to-noise ratio is \(\SI{1.27}{\dB}\), where only the Andes remains.
-	}\label{fig:chapter3_denoising}
-\end{figure}
+\input{figures/scripts/chapter3/south_america_denoising}
 
 \section{Conclusions}\label{sec:chapter3_conclusion}
 
