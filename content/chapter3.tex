@@ -235,7 +235,7 @@ These basis functions are defined in \cref{sec:chapter3_slepian_concentration_pr
 A function cannot be strictly spacelimited as well as strictly bandlimited~\cite{Slepian1961,Slepian1983}.
 This work considers optimally concentrated functions within a region \(R\), an example of which is given in \cref{fig:chapter3_region}.
 
-\input{figures/scripts/chapter3/example_region_sphere}
+\input{figures/chapter3/example_region_sphere}
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
 
@@ -626,7 +626,7 @@ The scaling function \(\Phi{}\) is constructed to extract the modes that cannot 
 The lowest wavelet scale \(J_{0}\) is arbitrary provided \(0 \leq J_{0} < J\).
 The Slepian wavelets are constructed by the tiling of the Slepian line as shown in \cref{fig:chapter3_tiling}.
 
-\input{figures/scripts/chapter3/south_america_tiling}
+\input{figures/chapter3/south_america_tiling}
 
 \subsection{Properties}\label{sec:chapter3_properties}
 
@@ -776,7 +776,7 @@ A masked region \(R\) is constructed by centring a polar cap of angular opening 
 %
 The resulting region is shown in the right panel of \cref{fig:chapter3_south_america_region}.
 
-\input{figures/scripts/chapter3/south_america_region}
+\input{figures/chapter3/south_america_region}
 
 The Slepian functions of this region are found by solving the eigenproblem \cref{eq:chapter3_eigenproblem}, and then performing an inverse spherical harmonic transform.
 The Shannon number \cref{eq:chapter3_shannon} of \(R\) is \(N=690\).
@@ -785,9 +785,9 @@ It is clear that the Slepian functions initially peak in the middle of the regio
 The corresponding \(N\) eigenvalues are shown in \cref{fig:chapter3_eigenvalues}, where the eigenvalues remain \(\almost{1}\) for many \(p\) values until decreasing towards zero.
 Were the plot to extend to \(L^{2}\) the latter eigenvalues would all be \(\almost{0}\).
 
-\input{figures/scripts/chapter3/south_america_slepian_functions}
+\input{figures/chapter3/south_america_slepian_functions}
 
-\input{figures/scripts/chapter3/south_america_eigenvalues}
+\input{figures/chapter3/south_america_eigenvalues}
 
 \subsection{Wavelets and Wavelet Coefficients}\label{sec:chapter3_south_america_wavelets}
 
@@ -801,9 +801,9 @@ In contrast, the higher wavelet scales are focused towards the boundaries of the
 One may calculate the corresponding scaling and wavelet coefficients using the wavelet transforms in \cref{eq:chapter3_slepian_scaling_omega} and \cref{eq:chapter3_slepian_wavelet_omega} respectively.
 The wavelet and scaling coefficients for the Earth topographic data of the South America region are shown in \cref{fig:chapter3_slepian_wavelet_coefficients}.
 
-\input{figures/scripts/chapter3/south_america_wavelets}
+\input{figures/chapter3/south_america_wavelets}
 
-\input{figures/scripts/chapter3/south_america_wavelet_coefficients}
+\input{figures/chapter3/south_america_wavelet_coefficients}
 
 \subsection{Wavelet Denoising}\label{sec:chapter3_wavelet_denoising}
 
@@ -905,7 +905,7 @@ The denoising procedure described above is performed with \(N_{\sigma} \in \set{
 This leads to a signal-to-noise ratio of \(\SI{5.67}{\dB}\), \(\SI{4.60}{\dB}\) and \(\SI{1.27}{\dB}\) respectively.
 Thus, it is clear that this hard-thresholding scheme increases the power of the signal, unless a significant amount of signal is removed at which point the signal-to-noise begins to decrease.
 
-\input{figures/scripts/chapter3/south_america_denoising}
+\input{figures/chapter3/south_america_denoising}
 
 \section{Conclusions}\label{sec:chapter3_conclusion}
 

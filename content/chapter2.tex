@@ -475,19 +475,19 @@ All later computations use the \texttt{SSHT}\footnote{\url{http://astro-informat
 Consider two differently sized harmonic Gaussians on the sphere to see the effect on the sifting convolution.
 \cref{fig:chapter2_translated} shows both an elongated (left panel) and symmetric (right panel) translated harmonic Gaussian.
 
-\input{figures/scripts/chapter2/translated_harmonic_gaussian}
+\input{figures/chapter2/translated_harmonic_gaussian}
 
 To study the effect of the sifting convolution, consider the \emph{Earth Gravitational Model EGM2008} dataset~\cite{Pavlis2013}.
 This dataset is the topographic map of the Earth.
 \cref{fig:chapter2_earth} presents the dataset up to an order of \(L=128\).
 %
-\input{figures/scripts/chapter2/egm2008_dataset}
+\input{figures/chapter2/egm2008_dataset}
 %
 The sifting convolution is then performed between the Earth representation and the harmonic Gaussian with the resultant plot given in \cref{fig:chapter2_convolved}.
 As expected, when the elongated kernel is considered, as shown in the left panel, the result exhibits greater anisotropic smoothing than when considering the symmetric kernel, as shown in the right panel.
 It is clear that the sifting convolution supports directional kernels to perform anisotropic filtering (smoothing), while the output remains on the sphere.
 
-\input{figures/scripts/chapter2/convolved_harmonic_gaussian}
+\input{figures/chapter2/convolved_harmonic_gaussian}
 
 \section{Conclusion}\label{sec:chapter2_conclusion}
 
