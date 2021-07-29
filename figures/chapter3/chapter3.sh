@@ -3,8 +3,7 @@ B=3
 J_MIN=2
 J_RANGE=$(seq 0 4)
 L_ARBITRARY=128
-LOC=$(dirname $(realpath $0))
-MATPLOTLIB_PLOTS=$LOC/../../../src/s2sleplet/pys2sleplet/plotting/arbitrary
+MATPLOTLIB_PLOTS=$HOME/project/src/s2sleplet/pys2sleplet/plotting/arbitrary
 P_RANGE=(
     0
     9
