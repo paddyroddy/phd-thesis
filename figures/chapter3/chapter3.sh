@@ -28,44 +28,51 @@ echo figure: 3, Earth
 sphere earth \
     -L $L_ARBITRARY \
     -s $SMOOTHING \
-    -t $TYPE
+    -t $TYPE \
+    -u
 echo figure: 3, Slepian South America
 sphere slepian_south_america \
     -L $L_ARBITRARY \
     -s $SMOOTHING \
-    -t $TYPE
+    -t $TYPE \
+    -u
 
 for p in ${P_RANGE[@]}; do
     echo figure: 4, p: $p
     sphere slepian \
         -e $p \
         -L $L_ARBITRARY \
-        -t $TYPE
+        -t $TYPE \
+        -u
 done
 
 echo figure: 6, scaling
 sphere slepian_wavelets \
     -L $L_ARBITRARY \
-    -t $TYPE
+    -t $TYPE \
+    -u
 echo figure: 7, scaling
 sphere slepian_wavelet_coefficients \
     -L $L_ARBITRARY \
     -s $SMOOTHING \
-    -t $TYPE
+    -t $TYPE \
+    -u
 
 for j in $J_RANGE; do
     echo figure: 6, j: $j
     sphere slepian_wavelets \
         -e $B $J_MIN $j \
         -L $L_ARBITRARY \
-        -t $TYPE
+        -t $TYPE \
+        -u
 
     echo figure: 7, j: $j
     sphere slepian_wavelet_coefficients \
         -e $B $J_MIN $j \
         -L $L_ARBITRARY \
         -s $SMOOTHING \
-        -t $TYPE
+        -t $TYPE \
+        -u
 done
 
 echo figure: 8, noised
@@ -73,7 +80,8 @@ sphere slepian_south_america \
     -L $L_ARBITRARY \
     -n $SNR \
     -s $SMOOTHING \
-    -t $TYPE
+    -t $TYPE \
+    -u
 
 for s in ${SIGMA[@]}; do
     echo figure: 8, sigma: $s
