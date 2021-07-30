@@ -92,6 +92,7 @@ for s in ${SIGMA[@]}; do
     echo figure: 10, sigma: $s
     python \
         $MATPLOTLIB_PLOTS/denoising_slepian_mesh.py \
+        $MESH \
         -n $SNR \
         -s $s
 done
