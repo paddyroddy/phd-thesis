@@ -44,7 +44,8 @@ for p in ${P_RANGE[@]}; do
     mesh $MESH \
         -m slepian \
         -e $p \
-        -u
+        -u \
+        -z
 done
 
 echo figure: 6
@@ -54,39 +55,47 @@ python \
 
 echo figure: 7, field
 mesh $MESH \
-    -m field
+    -m field \
+    -u
 echo figure: 7, Slepian field
 mesh $MESH \
-    -m slepian_field
+    -m slepian_field \
+    -u \
+    -z
 
 echo figure: 8, scaling
 mesh $MESH \
     -m wavelets \
-    -u
+    -u \
+    -z
 echo figure: 9, scaling
 mesh $MESH \
     -m coefficients \
-    -u
+    -u \
+    -z
 
 for j in $J_RANGE; do
     echo figure: 8, j: $j
     mesh $MESH \
         -e $B $J_MIN $j \
         -m wavelets \
-        -u
+        -u \
+        -z
 
     echo figure: 9, j: $j
     mesh $MESH \
         -e $B $J_MIN $j \
         -m coefficients \
-        -u
+        -u \
+        -z
 done
 
 echo figure: 10, noised
 mesh $MESH \
     -m slepian_field \
     -n $SNR \
-    -u
+    -u \
+    -z
 
 for s in ${SIGMA[@]}; do
     echo figure: 10, sigma: $s
