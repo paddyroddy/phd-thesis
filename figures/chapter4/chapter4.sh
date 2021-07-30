@@ -20,7 +20,7 @@ P_RANGE=(
     199
 )
 RANK_RANGE=$(seq 2 9)
-SIGMA = $(seq 1 2)
+SIGMA=$(seq 1 2)
 SNR=-10
 
 for r in ${RANK_RANGE[@]}; do
@@ -31,12 +31,12 @@ done
 
 echo figure: 3
 python \
-    $MATPLOTLIB_PLOTS\mesh_tiling.py \
+    $MATPLOTLIB_PLOTS/mesh_tiling.py \
     $MESH
 
 echo figure: 4
 python \
-    $MATPLOTLIB_PLOTS\mesh_region.py \
+    $MATPLOTLIB_PLOTS/mesh_region.py \
     $MESH
 
 for p in ${P_RANGE[@]}; do
@@ -49,7 +49,7 @@ done
 
 echo figure: 6
 python \
-    $MATPLOTLIB_PLOTS\mesh_slepian_eigenvalues.py \
+    $MATPLOTLIB_PLOTS/mesh_slepian_eigenvalues.py \
     $MESH
 
 echo figure: 7, field
@@ -99,6 +99,6 @@ done
 for f in ${OTHER_MESHES[@]}; do
     echo figure: 11, mesh: $f
     python \
-        $MATPLOTLIB_PLOTS\mesh_region.py \
+        $MATPLOTLIB_PLOTS/mesh_region.py \
         $f
 done
