@@ -1,23 +1,6 @@
 \begin{figure}[htp]
-	% Inspired by Fionn Fitzmaurice's differential geometry notes
-	% https://gist.github.com/fionn/f27ddeadba97f3dabbf97527b05b33e5
 	\centering
-	\begin{tikzpicture}
-		\begin{scope}
-			\draw [postaction={stipple={amplitude=0.5cm}},
-				postaction={stipple={amplitude=0.25cm}}]
-			(0, 0) .. controls ++(65:-1.5) and ++(95:1) .. (-1.5, -4)
-			(-1.5, -4) .. controls ++(195:-1.3) and ++(195:1) .. (3, -4)
-			(3, -4) .. controls ++(95:2) and ++(95:-1) .. (4, 0)
-			node[below right] {$\mathcal{M}$}
-			(4, 0) .. controls ++(195:1) and ++(195:-1) .. (0, 0);
-		\end{scope}
-		\draw [use Hobby shortcut, % .. syntax
-			closed=true, % connects region outline
-			pattern=north east lines] % direction of lines
-		(0.7,-2.3) .. (1.2,-2.6) .. (2.3,-2.2) .. (2,-1.8) .. (1.2,-1.3) .. (0.7,-1.4) .. (0.8,-1.9);
-		\node at (1.8,-1.3) {\(R\)};
-	\end{tikzpicture}
+	\includegraphics{scripts/create_example_region_manifold.pdf}
 	\caption{
 		An example region \(R\) on a manifold \(\mathcal{M}\).
 	}\label{fig:region}

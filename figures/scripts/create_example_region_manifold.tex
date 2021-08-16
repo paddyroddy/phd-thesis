@@ -1,0 +1,56 @@
+% Inspired by Fionn Fitzmaurice's differential geometry notes
+% https://gist.github.com/fionn/f27ddeadba97f3dabbf97527b05b33e5
+\documentclass[tikz]{standalone}
+
+\usetikzlibrary{decorations,hobby,patterns}
+
+\pgfkeys{/pgf/decoration/.cd,
+	stipple density/.store in=\pgfstippledensity,
+	stipple density=.1,
+	stipple scaling function/.store in=\pgfstipplescalingfunction,
+	stipple scaling function=sin(\pgfstipplex*180)*0.875+0.125, % chktex 36
+	stipple radius/.store in=\pgfstippleradius,
+	stipple radius=0.25pt
+}
+\pgfdeclaredecoration{stipple}{draw}{
+	\state{draw}[width=\pgfdecorationsegmentlength]{%
+		\pgfmathparse{\pgfdecoratedcompleteddistance/\pgfdecoratedpathlength}%
+		\let\pgfstipplex=\pgfmathresult%
+		\pgfmathparse{int(\pgfstippledensity*100)}% chktex 36
+		\let\pgfstipplen=\pgfmathresult%
+		\pgfmathloop%
+		\ifnum\pgfmathcounter<\pgfmathresult\relax%
+		\pgfpathcircle{%
+			\pgfpoint{(rnd)*\pgfdecorationsegmentlength}%
+			{(\pgfstipplescalingfunction)*(rnd^4)*\pgfdecorationsegmentamplitude+\pgfstippleradius}}% chktex 36
+		{\pgfstippleradius}%
+		\repeatpgfmathloop%
+	}
+}
+
+\tikzset{
+	stipple/.style={
+		decoration={stipple, segment length=2pt, #1},
+		decorate,
+		fill
+	}
+}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{scope}
+			\draw [postaction={stipple={amplitude=0.5cm}},
+				postaction={stipple={amplitude=0.25cm}}]
+			(0, 0) .. controls ++(65:-1.5) and ++(95:1) .. (-1.5, -4)
+			(-1.5, -4) .. controls ++(195:-1.3) and ++(195:1) .. (3, -4)
+			(3, -4) .. controls ++(95:2) and ++(95:-1) .. (4, 0)
+			node[below right] {$\mathcal{M}$}
+			(4, 0) .. controls ++(195:1) and ++(195:-1) .. (0, 0);
+		\end{scope}
+		\draw [use Hobby shortcut, % .. syntax
+			closed=true, % connects region outline
+			pattern=north east lines] % direction of lines
+		(0.7,-2.3) .. (1.2,-2.6) .. (2.3,-2.2) .. (2,-1.8) .. (1.2,-1.3) .. (0.7,-1.4) .. (0.8,-1.9);
+		\node at (1.8,-1.3) {\(R\)};
+	\end{tikzpicture}
+\end{document}
