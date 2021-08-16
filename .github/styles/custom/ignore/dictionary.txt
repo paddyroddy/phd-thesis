@@ -37,6 +37,7 @@ fwhm
 gaussian
 gaussians
 geq
+helvetica
 hfill
 hilbert
 ie
