@@ -42,6 +42,7 @@ hfill
 hilbert
 ie
 impactstatement
+includegraphics
 includeonly
 infty
 inparaenum
