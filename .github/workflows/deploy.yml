@@ -26,7 +26,13 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               with:
-                  files: '["thesis.tex", "content"]'
+                  files: '[
+                      "thesis.tex",
+                      "content",
+                      "figures/chapter2",
+                      "figures/chapter3",
+                      "figures/chapter4"
+                      ]'
 
     build-pdfs:
         runs-on: ubuntu-latest
