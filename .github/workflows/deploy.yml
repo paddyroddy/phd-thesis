@@ -13,7 +13,7 @@ jobs:
               uses: xu-cheng/texlive-action/full@v1
               with:
                   run: |
-                      chktex main.tex | tee /dev/stderr | (! grep -q ^); \
+                      chktex thesis.tex | tee /dev/stderr | (! grep -q ^); \
 
     vale:
         runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               with:
-                  files: '["main.tex", "content"]'
+                  files: '["thesis.tex", "content"]'
 
     build-pdfs:
         runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
               uses: xu-cheng/texlive-action/full@v1
               with:
                   run: |
-                      latexmk -pdf -quiet main.tex
+                      latexmk -pdf -quiet thesis.tex
 
             - name: Upload PDFs
               uses: actions/upload-artifact@v2
@@ -74,4 +74,4 @@ jobs:
 
             - name: Upload PDFs
               run: |
-                  ./dropbox_uploader.sh upload main.pdf thesis.pdf
+                  ./dropbox_uploader.sh upload thesis.pdf thesis.pdf
