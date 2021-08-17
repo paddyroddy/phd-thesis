@@ -45,6 +45,9 @@ for p in ${P_RANGE[@]}; do
         -u
 done
 
+echo figure: 5
+python $MATPLOTLIB_PLOTS/eigenvalues_south_america.py
+
 echo figure: 6, scaling
 sphere slepian_wavelets \
     -L $L_ARBITRARY \
