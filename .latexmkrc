@@ -5,7 +5,7 @@ $clean_ext = "auxlock bbl";
 @default_files = ('thesis.tex');
 
 # lualatex options
-$lualatex = "lualatex --shell-escape %O %S";
+$lualatex = "lualatex -interaction=nonstopmode --shell-escape -synctex=1 %O %S";
 
 # use lualatex
 $pdf_mode = 4;
