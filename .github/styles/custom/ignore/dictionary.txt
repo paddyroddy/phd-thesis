@@ -79,6 +79,7 @@ pollak
 postaction
 rceil
 renewcommand
+resizebox
 roddy
 scriptsize
 se
