@@ -1,5 +1,5 @@
 # clean all files -c
-$clean_ext = "auxlock bbl";
+$clean_ext = "auxlock bak* bbl";
 
 # file to build
 @default_files = ('thesis.tex');
