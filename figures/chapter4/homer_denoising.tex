@@ -12,5 +12,10 @@
 		\(\snr{d} = \SI{-0.08}{\dB}\)]
 	{\includegraphics[trim={101 0 3 3},clip,width=.33\textwidth]{homer_-10snr_2n_denoised.pdf}}
 	\caption{
+		Panel (a) shows the initial noisy signal of the Homer head region with a signal-to-noise ratio of \(-\SI{4.68}{\dB}\).
+		The scaling and wavelet coefficients of the noisy signal are calculated and are then hard-thresholded for a few \(N_{\sigma}\) values.
+		The corresponding denoised plots for \(N_{\sigma} \in \set{1, 2}\) are shown in panels (b-c).
+		At \(N_{\sigma}=1\) the signal-to-noise ratio is boosted by \(\SI{3.86}{\dB}\) to \(-\SI{0.82}{\dB}\).
+		As more signal is removed the signal-to-noise ratio increases further to \(-\SI{0.08}{\dB}\) at \(N_{\sigma}=2\), where very little signal remains.
 	}\label{fig:chapter4_denoising}
 \end{figure}
