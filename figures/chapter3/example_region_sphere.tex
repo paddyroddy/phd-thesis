@@ -1,6 +1,16 @@
 \begin{figure}[htp]
 	\centering
-	\includegraphics{create_example_region_sphere.pdf}
+	\resizebox{.5\textwidth}{!}{%
+		\begin{tikzpicture}
+			\draw  (0,0) circle (2cm);
+			\draw[use Hobby shortcut,closed=true,pattern=north east lines,even odd rule]  (0,0) circle (2cm)
+			(-0.2,0.3) .. (0.2,0.2) .. (1.1,0.6) .. (1.1,1) .. (0.3,1.4) .. (-0.4,1.2) .. (-0.3,0.8);
+			\draw (-2,0) arc (180:360:2 and 0.6);
+			\draw[dashed] (2,0) arc (0:180:2 and 0.6);
+			\fill[fill=black] (0,0) circle (1pt);
+			\node at (0.4,0.8) {\(R\)};
+		\end{tikzpicture}%
+	}
 	\caption{
 		In many application domains, data are observed on a partial region of the sphere only, such as \(R\).
 	}\label{fig:chapter3_region}

@@ -40,3 +40,44 @@
 		{figures/chapter3/}
 		{figures/chapter4/}
 }
+
+% tikz graphics
+\usetikzlibrary{decorations,hobby,patterns}
+
+% externalise tikz figures
+\usepgfplotslibrary{external}
+\tikzexternalize[prefix=tikz/]
+
+% pgf manifold plot
+\pgfkeys{/pgf/decoration/.cd,
+	stipple density/.store in=\pgfstippledensity,
+	stipple density=.1,
+	stipple scaling function/.store in=\pgfstipplescalingfunction,
+	stipple scaling function=sin(\pgfstipplex*180)*0.875+0.125, % chktex 36
+	stipple radius/.store in=\pgfstippleradius,
+	stipple radius=0.25pt
+}
+\pgfdeclaredecoration{stipple}{draw}{
+	\state{draw}[width=\pgfdecorationsegmentlength]{%
+		\pgfmathparse{\pgfdecoratedcompleteddistance/\pgfdecoratedpathlength}%
+		\let\pgfstipplex=\pgfmathresult%
+		\pgfmathparse{int(\pgfstippledensity*100)}% chktex 36
+		\let\pgfstipplen=\pgfmathresult%
+		\pgfmathloop%
+		\ifnum\pgfmathcounter<\pgfmathresult\relax%
+		\pgfpathcircle{%
+			\pgfpoint{(rnd)*\pgfdecorationsegmentlength}%
+			{(\pgfstipplescalingfunction)*(rnd^4)*\pgfdecorationsegmentamplitude+\pgfstippleradius}}% chktex 36
+		{\pgfstippleradius}%
+		\repeatpgfmathloop%
+	}
+}
+
+% tikz manifold plot
+\tikzset{
+	stipple/.style={
+		decoration={stipple, segment length=2pt, #1},
+		decorate,
+		fill
+	}
+}

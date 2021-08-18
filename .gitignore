@@ -1,6 +1,6 @@
 __latexindent_temp.tex
 .vscode
-*.aux
+*.aux*
 *.bak*
 *.bbl
 *.bcf

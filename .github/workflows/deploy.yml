@@ -44,7 +44,7 @@ jobs:
               uses: xu-cheng/texlive-action/full@v1
               with:
                   run: |
-                      latexmk -pdf -quiet thesis.tex
+                      latexmk
 
             - name: Upload PDFs
               uses: actions/upload-artifact@v2
