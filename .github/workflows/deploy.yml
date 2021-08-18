@@ -78,4 +78,4 @@ jobs:
 
             - name: Upload PDFs
               run: |
-                  ./dropbox_uploader.sh upload thesis.pdf thesis.pdf
+                  ./dropbox_uploader.sh upload thesis.pdf patrick_roddy_thesis.pdf
