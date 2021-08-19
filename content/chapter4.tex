@@ -80,6 +80,32 @@ and the scaling function generating function is
 	\equiv \sqrt{k_{\lambda}(t)}.
 \end{equation}
 
+An instinctive approach is to define the wavelets \(\slepian{\Psi}^{j}\) from the generating functions \(\kappa_{\lambda}\) to have support on \(\interval{\lambda^{j-1}}{\lambda^{j+1}}\), yielding
+%
+\begin{equation}
+	\slepian{\Psi}^{j}
+	%
+	\equiv \kappa_{\lambda}\bigg(\frac{p}{\lambda^{j}}\bigg).
+\end{equation}
+%
+For \(p \geq \lambda^{J_{0}}\) the admissibility condition \cref{eq:chapter3_admissibility} is satisfied for these wavelets, where \(J_{0}\) is the lowest wavelet scale used in the decomposition.
+Modes that cannot be probed by wavelets can be extracted through the construction of a scaling function \(\Phi{}\) (\ie{} modes with \(p < \lambda^{J_{0}}\)):
+%
+\begin{equation}
+	\slepian{\Phi}
+	%
+	\equiv \eta_{\lambda}\bigg(\frac{p}{\lambda^{J_{0}}}\bigg).
+\end{equation}
+%
+Exact reconstruction can be achieved by setting \(J\) appropriately
+%
+\begin{equation}
+	J = \lceil{} \log_{\lambda}(N)\rceil{}.
+\end{equation}
+%
+Provided that \(0 \leq J_{0} < J\) is satisfied, the lowest wavelet scale \(J_{0}\) is arbitrary.
+The Slepian wavelets are constructed by the tiling of the Slepian line as shown in \cref{fig:chapter4_tiling}.
+
 \input{figures/chapter4/homer_tiling}
 
 \section{Numerical Illustration}
