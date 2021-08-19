@@ -21,7 +21,7 @@ P_RANGE=(
 )
 RANK_RANGE=$(seq 2 9)
 SIGMA=$(seq 1 2)
-SNR=-10
+SNR=-5
 
 for r in ${RANK_RANGE[@]}; do
     echo figure: 2, r: $r
