@@ -67,6 +67,7 @@ multiresolution
 nobibliography
 nonumber
 notin
+num
 odot
 oneside
 oplus

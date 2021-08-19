@@ -29,7 +29,8 @@ jobs:
                   files: '[
                       "thesis.tex",
                       "content",
-                      "figures"
+                      "figures",
+                      "tables"
                       ]'
 
     build-pdfs:
