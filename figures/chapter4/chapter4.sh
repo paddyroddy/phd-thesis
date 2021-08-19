@@ -24,7 +24,7 @@ SIGMA=$(seq 1 2)
 SNR=-5
 
 for r in ${RANK_RANGE[@]}; do
-    echo figure: 2, r: $r
+    echo figure: 1, r: $r
     mesh $MESH \
         -e $r
 done
