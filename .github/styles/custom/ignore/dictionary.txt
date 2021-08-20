@@ -47,8 +47,11 @@ includeonly
 infty
 inparaenum
 int
+isom
+isometries
 iux
 kirker
+laplacian
 lceil
 ldots
 leq
@@ -110,4 +113,3 @@ usepackage
 varphi
 vb
 wigner
-laplacian
