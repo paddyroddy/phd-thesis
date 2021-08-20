@@ -110,3 +110,4 @@ usepackage
 varphi
 vb
 wigner
+laplacian
