@@ -1,5 +1,28 @@
-% absolute
+% ---------------------------
+%% renew commands first
+% ---------------------------
+
+% fixed size absolute
 \renewcommand{\abs}[1]{\big\lvert#1\big\rvert}
+
+% fixed size braket
+\NewCommandCopy{\oldbraket}{\braket}
+\renewcommand{\braket}[1]{\oldbraket*{#1}}
+
+% fixed size expectation
+\NewCommandCopy{\oldexpval}{\expval}
+\renewcommand{\expval}[1]{\oldexpval*{#1}}
+
+% fixed size 2-norm
+\renewcommand{\norm}[1]{{\big\lVert#1\big\rVert}_{2}}
+
+% bold matrices should be italic
+\NewCommandCopy{\oldvb}{\vb}
+\renewcommand{\vb}[1]{\oldvb*{#1}}
+
+% ---------------------------
+%% then new commands
+% ---------------------------
 
 % nice tilde
 \newcommand{\almost}[1]{{\thicksim}#1}
@@ -34,6 +57,9 @@
 % Hilbert space
 \newcommand{\hilbert}[1]{L^{2}(#1)} % chktex 36
 
+% integrate over the manifold
+\newcommand{\integrateManifold}[1]{\int\limits_{\mathcal{M}} \dd{\vb{#1}}}
+
 % integrate over the region
 \newcommand{\integrateRegion}[1]{\int\limits_{R} #1}
 
@@ -53,10 +79,13 @@
 \newcommand{\manifold}{\mathcal{M}}
 
 % pixel space on mesh
-\newcommand{\mesh}[1]{#1(x)}
+\newcommand{\mesh}[1]{#1(\vb{x})}
 
-% 2-norm
-\renewcommand{\norm}[1]{{\big\lVert#1\big\rVert}_{2}}
+% summing in harmonic space of the mesh
+\newcommand{\meshSum}[1][]{\sum\limits_{i#1}}
+
+% volume element of the mesh
+\newcommand{\meshVolume}{\dd{\vb{x}}}
 
 % real space
 \newcommand{\pixel}[2][]{#2(\omega#1)}
@@ -87,6 +116,9 @@
 
 % translated function
 \newcommand{\translation}[1]{\mathcal{T}_{#1}}
+
+% transpose matrix
+\newcommand{\transpose}[1]{{#1}^{\mathsf{T}}}
 
 % S2
 \newcommand{\twoSphere}{\mathbb{S}^{2}}

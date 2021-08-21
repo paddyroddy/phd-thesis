@@ -9,7 +9,7 @@
 \subsubsection{Riemannian Manifolds}
 
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
-The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\dd{x}\).
+The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume\).
 The geodesic distance between two points is denoted \(r(x,x')\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplacian{}\).
 Let the set of all isometries between two manifolds \(\manifold{}\) and \(\manifold'\) be denoted \(\isom{\manifold,\manifold'}\), and set \(\isom{\manifold} = \isom{\manifold,\manifold}\) to be the isometry group of \(\manifold{}\).
 Similarly, \(\diff{\manifold} = \diff{\manifold,\manifold}\) is set to be the diffeomorphism group on \(\manifold{}\).
@@ -43,6 +43,46 @@ This work considers optimally concentrated functions within a region \(R\) of a 
 \input{figures/chapter4/example_region_manifold}
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
+
+To maximise the spatial energy concentration of a bandlimited signal \(f \in \hilbert{\manifold}\), the following ratio must be maximised:
+%
+\begin{equation}
+	\mu
+	%
+	= \frac{\integrateRegion{\meshVolume} \abs{\mesh{f}}^{2}}{\integrateManifold{x} \abs{\mesh{f}}^{2}},
+\end{equation}
+%
+where spatial concentration is measured by \(0 < \mu < 1\).
+In harmonic space this can be simplified to a sum
+%
+\begin{equation}\label{eq:chapter4_spatial_concentration_ratio}
+	\mu
+	%
+	= \frac{\sum\limits_{i} f_{i} \sum\limits_{j} D_{i,j} f_{j}}{\meshSum \abs{f_{i}}^{2}},
+\end{equation}
+%
+where
+%
+\begin{equation}
+	D_{i,j}
+	%
+	= \integrateRegion{\meshVolume \mesh{\phi_{i}} \mesh{\phi_{j}}}
+\end{equation}
+%
+is a square matrix including all basis functions of the manifold.
+Rewriting \cref{eq:chapter4_spatial_concentration_ratio} as a matrix variational problem
+%
+\begin{equation}
+	\mu
+	%
+	= \frac{\transpose{\vb{f}} \vb{D} \vb{f}}{\transpose{\vb{f}} \vb{f}},
+\end{equation}
+%
+where \(\vb{f}\) are the harmonic coefficients of \(\mesh{f}\), and are the solutions to the eigenproblem
+%
+\begin{equation}
+	\vb{D}\vb{f} = \mu \vb{f}.
+\end{equation}
 
 \subsubsection{Slepian Decomposition}
 

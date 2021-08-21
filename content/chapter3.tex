@@ -89,7 +89,7 @@ The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex valued squar
 The inner product induces a norm
 %
 \begin{equation}
-	\norm{f} = \sqrt{\braket*{f}}.
+	\norm{f} = \sqrt{\braket{f}}.
 \end{equation}
 %
 Functions with a finite induced norm are signals on the sphere.
@@ -166,10 +166,10 @@ A function rotated on the sphere is defined by
 \begin{equation}
 	\pixel{(\rotation{\rho}f)}
 	%
-	= f(\vb*{R}_{\rho}^{-1} \omega)
+	= f(\vb{R}_{\rho}^{-1} \omega)
 \end{equation}
 %
-where the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\) is \(\vb*{R}_{\rho}\).
+where the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\) is \(\vb{R}_{\rho}\).
 A rotated function in harmonic space is
 %
 \begin{equation}
@@ -270,18 +270,18 @@ One may rewrite \cref{eq:chapter3_spatial_concentration_ratio} as a classical ma
 \begin{equation}
 	\mu
 	%
-	= \frac{\vb*{f}^{\dagger} \vb*{D} \vb*{f}}{\vb*{f}^{\dagger}\vb*{f}},
+	= \frac{\vb{f}^{\dagger} \vb{D} \vb{f}}{\vb{f}^{\dagger}\vb{f}},
 \end{equation}
 %
-where \(\vb*{f}\), the harmonic coefficients of \(\pixel{f}\), are the solutions to the \(L^{2} \times{} L^{2}\) eigenproblem
+where \(\vb{f}\), the harmonic coefficients of \(\pixel{f}\), are the solutions to the \(L^{2} \times{} L^{2}\) eigenproblem
 %
 \begin{equation}\label{eq:chapter3_eigenproblem}
-	\vb*{D}\vb*{f}
+	\vb{D}\vb{f}
 	%
-	= \mu\vb*{f}.
+	= \mu\vb{f}.
 \end{equation}
 %
-The matrix \(\vb*{D}\) is real, symmetric and positive definite; hence, the eigenvalues \(\slepian{\mu}\) are always real.
+The matrix \(\vb{D}\) is real, symmetric and positive definite; hence, the eigenvalues \(\slepian{\mu}\) are always real.
 The eigenvalues are a measure of how well concentrated the given eigenvector is.
 Hence, the eigenvalues satisfy
 %
@@ -292,10 +292,10 @@ Hence, the eigenvalues satisfy
 with corresponding eigenvectors
 %
 \begin{equation}
-	\vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{L^{2}}.
+	\vb{f}_{1},\ \vb{f}_{2},\ \ldots,\ \vb{f}_{L^{2}}.
 \end{equation}
 %
-The largest eigenvalue \(\mu_{1}\) is strictly less than one as no bandlimited function may be restricted exactly within a region \(R\), and the smallest eigenvalue \(\mu_{L^{2}}\) is strictly greater than zero due to the positive definiteness of the matrix \(\vb*{D}\).
+The largest eigenvalue \(\mu_{1}\) is strictly less than one as no bandlimited function may be restricted exactly within a region \(R\), and the smallest eigenvalue \(\mu_{L^{2}}\) is strictly greater than zero due to the positive definiteness of the matrix \(\vb{D}\).
 Consider the sum of the eigenvalues
 %
 \begin{align}\label{eq:chapter3_shannon}
@@ -357,18 +357,18 @@ as
 	%
 	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\sphereVolume} \pixel{\slepian[']{S}} \pixel{\conj{\slepian{S}}} \nonumber \\
 	%
-	 & = \slepianSum['] \slepian[']{f} \slepian{\vb*{S}}^{\dagger} \vb*{D} \slepian[']{\vb*{S}} \nonumber                   \\
+	 & = \slepianSum['] \slepian[']{f} \slepian{\vb{S}}^{\dagger} \vb{D} \slepian[']{\vb{S}} \nonumber                   \\
 	%
 	 & = \slepian{f} \slepian{\mu},
 \end{align}
 %
-where \(\slepian{\vb*{S}}\) are the harmonic coefficients of \(\pixel{\slepian{S}}\).
+where \(\slepian{\vb{S}}\) are the harmonic coefficients of \(\pixel{\slepian{S}}\).
 Note the use of the orthogonality results
 %
 \begin{equation}\label{eq:chapter3_orthogonality_sphere}
 	\integrateSphere{\omega} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
 	%
-	= \slepian[']{\vb*{S}}^{\dagger} \slepian{\vb*{S}}
+	= \slepian[']{\vb{S}}^{\dagger} \slepian{\vb{S}}
 	%
 	= \delta_{pp'},
 \end{equation}
@@ -378,9 +378,9 @@ and
 \begin{equation}
 	\integrateRegion{\sphereVolume} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
 	%
-	= \slepian[']{\vb*{S}}^{\dagger} \vb*{D} \slepian{\vb*{S}}
+	= \slepian[']{\vb{S}}^{\dagger} \vb{D} \slepian{\vb{S}}
 	%
-	= \slepian{\mu} \slepian[']{\vb*{S}}^{\dagger} \slepian{\vb*{S}}
+	= \slepian{\mu} \slepian[']{\vb{S}}^{\dagger} \slepian{\vb{S}}
 	%
 	= \slepian{\mu} \delta_{pp'}.
 \end{equation}
@@ -667,9 +667,9 @@ Slepian scale-discretised wavelets on the sphere satisfy the following \emph{Par
 \begin{align}
 	A\norm{f}^{2} \leq
 	%
-	 & \integrateSphere{\omega} \abs{\braket*{\translation{\omega}\Phi}{f}}^{2} \nonumber         \\
+	 & \integrateSphere{\omega} \abs{\braket{\translation{\omega}\Phi}{f}}^{2} \nonumber         \\
 	%
-	 & + \waveletSum \integrateSphere{\omega} \abs{\braket*{\translation{\omega}\Psi^{j}}{f}}^{2}
+	 & + \waveletSum \integrateSphere{\omega} \abs{\braket{\translation{\omega}\Psi^{j}}{f}}^{2}
 	%
 	\leq B\norm{f}^{2},
 \end{align}
@@ -702,17 +702,17 @@ The variance of the wavelet/scaling coefficients is given by
 \begin{equation}
 	\variance{\pixel{W^{\varphi}}}
 	%
-	= \expval*{\abs{\pixel{W^{\varphi}}}^{2}}
+	= \expval{\abs{\pixel{W^{\varphi}}}^{2}}
 	%
-	-\abs{\expval*{\pixel{W^{\varphi}}}}^{2},
+	-\abs{\expval{\pixel{W^{\varphi}}}}^{2},
 \end{equation}
 %
 where the expected value of the wavelet/scaling coefficients is
 %
 \begin{equation}\label{eq:chapter3_expected_wavelet}
-	\expval*{\pixel{W^{\varphi}}}
+	\expval{\pixel{W^{\varphi}}}
 	%
-	= \slepianSum \slepian{\varphi} \pixel{\slepian{S}} \expval*{\conj{\slepian{f}}}.
+	= \slepianSum \slepian{\varphi} \pixel{\slepian{S}} \expval{\conj{\slepian{f}}}.
 \end{equation}
 %
 For the common case of zero-mean Gaussian noise the expected value of the Slepian coefficients is zero, and hence the wavelet/scaling coefficient expectation \cref{eq:chapter3_expected_wavelet} is zero.
@@ -721,13 +721,13 @@ Thus, the variance of the wavelet/scaling coefficients is
 \begin{equation}\label{eq:chapter3_slepian_isotropic_noise}
 	\variance{\pixel{W^{\varphi}}}
 	%
-	= \slepianSum \slepianSum['] \slepian{\varphi} \conj{\slepian[']{\varphi}} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}} \expval*{\conj{\slepian{f}} \slepian[']{f}}.
+	= \slepianSum \slepianSum['] \slepian{\varphi} \conj{\slepian[']{\varphi}} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}} \expval{\conj{\slepian{f}} \slepian[']{f}}.
 \end{equation}
 
 To simplify \cref{eq:chapter3_slepian_isotropic_noise} further, consider homogenous and isotropic noise defined by its power spectrum
 %
 \begin{equation}
-	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+	\expval{\harmonic{f} \conj{\harmonic[']{f}}}
 	%
 	= C_{\ell} \delta_{\ell\ell'} \delta_{mm'},
 \end{equation}
@@ -736,9 +736,9 @@ where \(C_{\ell} = \sigma^{2}\) for white noise.
 The power spectrum in harmonic space may be converted to the Slepian space by:
 %
 \begin{align}
-	\expval*{\slepian{f} \conj{\slepian[']{f}}}
+	\expval{\slepian{f} \conj{\slepian[']{f}}}
 	%
-	 & = \harmonicSum \harmonicSum['] \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \conj{\harmonic{(\slepian{S})}} \harmonic[']{(\slepian[']{S})} \nonumber \\
+	 & = \harmonicSum \harmonicSum['] \expval{\harmonic{f} \conj{\harmonic[']{f}}} \conj{\harmonic{(\slepian{S})}} \harmonic[']{(\slepian[']{S})} \nonumber \\
 	%
 	 & = \sigma^{2} \delta_{pp'},
 \end{align}
@@ -822,7 +822,7 @@ where \(\pixel{s}\) and \(\pixel{n}\) are the signal and noise respectively.
 The power spectrum of the noise in Slepian space is as before
 %
 \begin{equation}
-	\expval*{\slepian{n} \conj{\slepian[']{n}}}
+	\expval{\slepian{n} \conj{\slepian[']{n}}}
 	%
 	= \sigma^{2} \delta_{pp'}.
 \end{equation}
