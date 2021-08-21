@@ -35,7 +35,7 @@
 \newcommand{\hilbert}[1]{L^{2}(#1)} % chktex 36
 
 % integrate over the region
-\newcommand{\integrateRegion}[1]{\int\limits_{R} \dd{\Omega(#1)}}
+\newcommand{\integrateRegion}[1]{\int\limits_{R} #1}
 
 % intergral over SO3
 \newcommand{\integrateRotation}[1]{\int\limits_{\text{SO(3)}} \dd{\rho(#1)}} % chktex 36
@@ -81,6 +81,9 @@
 
 % signal-to-noise
 \newcommand{\snr}[1]{\text{SNR}(#1)} % chktex 36
+
+% sphere volume element
+\newcommand{\sphereVolume}{\dd{\Omega(\omega)}}
 
 % translated function
 \newcommand{\translation}[1]{\mathcal{T}_{#1}}

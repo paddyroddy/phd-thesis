@@ -244,7 +244,7 @@ To maximise the spatial concentration of a bandlimited function \(f \in \hilbert
 \begin{equation}
 	\mu
 	%
-	= \frac{\integrateRegion{\omega} \abs{\pixel{f}}^{2}}{\integrateSphere{\omega} \abs{\pixel{f}}^{2}},
+	= \frac{\integrateRegion{\sphereVolume} \abs{\pixel{f}}^{2}}{\integrateSphere{\omega} \abs{\pixel{f}}^{2}},
 \end{equation}
 %
 where \(0 < \mu < 1\) is a measure of the spatial concentration.
@@ -261,7 +261,7 @@ where
 \begin{equation}
 	\Dmatrix
 	%
-	= \integrateRegion{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
+	= \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
 \end{equation}
 %
 is an \(L^{2} \times{} L^{2}\) matrix if including all \(\ell{}\) and \(m\).
@@ -303,9 +303,9 @@ Consider the sum of the eigenvalues
 	%
 	= \harmonicSum D_{\ell m,\ell m}
 	%
-	 & = \integrateRegion{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
+	 & = \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
 	%
-	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\omega} \nonumber           \\
+	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\sphereVolume} \nonumber           \\
 	%
 	 & = \frac{A}{4\pi} L^{2},
 \end{align}
@@ -347,15 +347,15 @@ For a well-localised function one instead may compute the Slepian coefficients w
 \begin{equation}
 	\slepian{f}
 	%
-	= \frac{1}{\slepian{\mu}} \integrateRegion{\omega} \pixel{f} \pixel{\conj{\slepian{S}}},
+	= \frac{1}{\slepian{\mu}} \integrateRegion{\sphereVolume} \pixel{f} \pixel{\conj{\slepian{S}}},
 \end{equation}
 %
 as
 %
 \begin{align}
-	\integrateRegion{\omega} \pixel{f} \pixel{\conj{\slepian{S}}}
+	\integrateRegion{\sphereVolume} \pixel{f} \pixel{\conj{\slepian{S}}}
 	%
-	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\omega} \pixel{\slepian[']{S}} \pixel{\conj{\slepian{S}}} \nonumber \\
+	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\sphereVolume} \pixel{\slepian[']{S}} \pixel{\conj{\slepian{S}}} \nonumber \\
 	%
 	 & = \slepianSum['] \slepian[']{f} \slepian{\vb*{S}}^{\dagger} \vb*{D} \slepian[']{\vb*{S}} \nonumber                   \\
 	%
@@ -376,7 +376,7 @@ Note the use of the orthogonality results
 and
 %
 \begin{equation}
-	\integrateRegion{\omega} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
+	\integrateRegion{\sphereVolume} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
 	%
 	= \slepian[']{\vb*{S}}^{\dagger} \vb*{D} \slepian{\vb*{S}}
 	%
