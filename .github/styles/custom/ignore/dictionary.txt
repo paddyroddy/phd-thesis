@@ -41,6 +41,7 @@ helvetica
 hfill
 hilbert
 ie
+imax
 impactstatement
 includegraphics
 includeonly
