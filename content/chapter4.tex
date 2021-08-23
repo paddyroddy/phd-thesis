@@ -119,7 +119,7 @@ The Slepian functions provide an alternative orthogonal basis of the manifold, d
 \end{equation}
 %
 where the sum is over all basis functions of the manifold.
-For a well-localised function in the region \(R\) (\ie{} \(f \in \hilbert{R}\)) the sum may be stopped at the Shannon number
+For a well-localised function in the region \(R\) (\ie{} \(f \in \hilbert{R}\)) the sum may be truncated at the Shannon number
 %
 \begin{equation}
 	\mesh{f}
@@ -136,6 +136,49 @@ The Slepian coefficients \(\slepian{f}\) are calculated through the usual projec
 	\slepian{f}
 	%
 	= \braket{f}{\slepian{S}}.
+\end{equation}
+
+The Slepian coefficients of a well-localised function may be computed with an integral over the region \(R\) rather than an integral over the whole manifold \(\manifold{}\):
+%
+\begin{equation}
+	\slepian{f}
+	%
+	= \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\slepian{S}},
+\end{equation}
+%
+as
+%
+\begin{align}
+	\integrateRegion{\meshVolume} \mesh{f} \mesh{\slepian{S}}
+	%
+	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\meshVolume} \mesh{\slepian[']{S}} \mesh{\slepian{S}} \nonumber \\
+	%
+	 & = \slepianSum['] \slepian[']{f} \transpose{\slepian{\vb{S}}} \vb{D} \slepian[']{\vb{S}} \nonumber                             \\
+	%
+	 & = \slepian{f} \slepian{\mu},
+\end{align}
+%
+where \(\vb{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\).
+Note the use of the orthogonality results
+%
+\begin{equation}
+	\integrateManifold{x} \mesh{\slepian{S}} \mesh{\slepian[']{S}}
+	%
+	= \transpose{\slepian[']{\vb{S}}} \slepian{\vb{S}}
+	%
+	= \delta_{pp'},
+\end{equation}
+%
+and
+%
+\begin{equation}
+	\integrateRegion{\meshVolume} \mesh{\slepian{S}} \mesh{\slepian[']{S}}
+	%
+	= \transpose{\slepian[']{\vb{S}}} \vb{D} \slepian{\vb{S}}
+	%
+	= \slepian{\mu} \transpose{\slepian[']{\vb{S}}} \slepian{\vb{S}}
+	%
+	= \slepian{\mu} \delta_{pp'}.
 \end{equation}
 
 \input{figures/chapter4/homer_region}
