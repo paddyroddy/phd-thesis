@@ -83,6 +83,30 @@ where \(\vb{f}\) are the harmonic coefficients of \(\mesh{f}\), and are the solu
 \begin{equation}
 	\vb{D}\vb{f} = \mu \vb{f}.
 \end{equation}
+%
+The eigenvalues \(\mu_{i}\) act as a measure of the relative spatial concentration
+%
+\begin{equation}
+	1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{\imax} > 0, % chktex 11
+\end{equation}
+%
+of the corresponding eigenvectors
+%
+\begin{equation}
+	\vb{f}_{1},\ \vb{f}_{2},\ \ldots,\ \vb{f}_{\imax}.
+\end{equation}
+%
+No bandlimited function can be restricted perfectly within a region \(R\) and hence \(\mu_{1}<1\).
+Due to the positive definiteness of \(\vb{D}\) the smallest eigenvalue \(\mu_{\imax}\) is strictly greater than zero.
+A manifold analogue of the \emph{Shannon number} can be constructed by
+%
+\begin{equation}
+	N
+	%
+	= \frac{\integrateRegion{\meshVolume}}{\integrateManifold{x}} \imax,
+\end{equation}
+%
+which is a good estimate of the number of significant eigenvalues ~\cite{Percival1993}.
 
 \subsubsection{Slepian Decomposition}
 
