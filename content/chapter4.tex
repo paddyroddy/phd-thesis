@@ -211,15 +211,45 @@ The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
 	= \sum\limits_{i} f_{i} {(\slepian{S})}_{i}.
 \end{equation}
 
+\subsection{Sifting Convolution on Manifolds}\label{sec:chapter4_sifting_convolution_manifolds}
+
+A central part of wavelet transforms is the convolution.
+On \(\mathbb{R}^{d}\), the convolution of a signal \(f \in \hilbert{\mathbb{R}^{d}}\) with a filter \(g \in \hilbert{\mathbb{R}^{d}}\) is defined by translating \(g\) against \(f\); however, general manifolds do not have well-defined translations.
+Recently developed by the authors of this work, the sifting convolution~\cite{Roddy2021} is built on a translation which simply involves a product of the basis functions.
+Initially defined in the spherical setting, the sifting convolution can be arbitrarily extended to other domains.
+
+The translation operator on the manifold is
+%
+\begin{equation}
+	\mesh{(\translation{\vb{x'}}\phi_{i})}
+	%
+	\equiv \mesh[']{\phi_{i}} \mesh{\phi_{i}},
+\end{equation}
+%
+where \(\vb{x'}\) is a point on the manifold.
+An arbitrary function \(f \in \hilbert{\manifold}\) is translated thus
+%
+\begin{equation}
+	\mesh{(\translation{\vb{x'}}f)}
+	%
+	= \sum\limits_{i} f_{i} \mesh[']{\phi_{i}} \mesh{\phi_{i}},
+\end{equation}
+%
+implying
+%
+\begin{equation}
+	{(\translation{\vb{x'}}f)}_{i}
+	%
+	= f_{i} \mesh[']{\phi_{i}}.
+\end{equation}
+
+\section{Slepian Wavelets on Manifolds}
+
 \input{figures/chapter4/homer_region}
 
 \input{figures/chapter4/homer_slepian_functions}
 
 \input{figures/chapter4/homer_slepian_eigenvalues}
-
-\subsection{Sifting Convolution on Manifolds}\label{sec:chapter4_sifting_convolution_manifolds}
-
-\section{Slepian Wavelets on Manifolds}
 
 \subsubsection{Generating Functions}
 
