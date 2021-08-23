@@ -58,7 +58,7 @@
 \newcommand{\hilbert}[1]{L^{2}(#1)} % chktex 36
 
 % integrate over the manifold
-\newcommand{\integrateManifold}[1]{\int\limits_{\mathcal{M}} \dd{\vb{#1}}}
+\newcommand{\integrateManifold}[1]{\int\limits_{\mathcal{M}} \dd{#1}}
 
 % integrate over the region
 \newcommand{\integrateRegion}[1]{\int\limits_{R} #1}
@@ -82,13 +82,13 @@
 \newcommand{\imax}{i_{\text{max}}}
 
 % pixel space on mesh
-\newcommand{\mesh}[2][]{#2(\vb{x#1})}
+\newcommand{\mesh}[1]{#1(x)}
 
 % summing in harmonic space of the mesh
 \newcommand{\meshSum}[1][]{\sum\limits_{i#1}}
 
 % volume element of the mesh
-\newcommand{\meshVolume}{\dd{\vb{x}}}
+\newcommand{\meshVolume}{\dd{x}}
 
 % real space
 \newcommand{\pixel}[2][]{#2(\omega#1)}

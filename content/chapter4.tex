@@ -10,7 +10,7 @@
 
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
 The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume{}\).
-The geodesic distance between two points is denoted \(r(x,x')\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplacian{}\).
+The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplacian{}\).
 Let the set of all isometries between two manifolds \(\manifold{}\) and \(\manifold'\) be denoted \(\isom{\manifold,\manifold'}\), and set \(\isom{\manifold} = \isom{\manifold,\manifold}\) to be the isometry group of \(\manifold{}\).
 Similarly, \(\diff{\manifold} = \diff{\manifold,\manifold}\) is set to be the diffeomorphism group on \(\manifold{}\).
 
@@ -221,27 +221,45 @@ Initially defined in the spherical setting, the sifting convolution can be arbit
 The translation operator on the manifold is
 %
 \begin{equation}
-	\mesh{(\translation{\vb{x'}}\phi_{i})}
+	\mesh{(\translation{y}\phi_{i})}
 	%
-	\equiv \mesh[']{\phi_{i}} \mesh{\phi_{i}},
+	\equiv \phi_{i}(y) \mesh{\phi_{i}},
 \end{equation}
 %
-where \(\vb{x'}\) is a point on the manifold.
+where \(y\) is a point on the manifold.
 An arbitrary function \(f \in \hilbert{\manifold}\) is translated thus
 %
 \begin{equation}
-	\mesh{(\translation{\vb{x'}}f)}
+	\mesh{(\translation{y}f)}
 	%
-	= \sum\limits_{i} f_{i} \mesh[']{\phi_{i}} \mesh{\phi_{i}},
+	= \sum\limits_{i} f_{i} \phi_{i}(y) \mesh{\phi_{i}},
 \end{equation}
 %
 implying
 %
 \begin{equation}
-	{(\translation{\vb{x'}}f)}_{i}
+	{(\translation{y}f)}_{i}
 	%
-	= f_{i} \mesh[']{\phi_{i}}.
+	= f_{i} \phi_{i}(y).
 \end{equation}
+%
+The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows by the inner product
+%
+\begin{equation}
+	\mesh{\convolution{f}{g}}
+	%
+	\equiv \integrateManifold{y} (\translation{x}f)(y) g(y),
+\end{equation}
+%
+which is a product in harmonic space
+%
+\begin{equation}
+	{\convolution{f}{g}}_{i}
+	%
+	= f_{i} g_{i}.
+\end{equation}
+%
+This convolution can be used to define wavelets restricted to a region of the manifold using the basis functions introduced in \cref{sec:chapter4_slepian_concentration_problem_manifolds} in the translation.
 
 \section{Slepian Wavelets on Manifolds}
 
