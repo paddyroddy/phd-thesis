@@ -80,8 +80,10 @@ Rewriting \cref{eq:chapter4_spatial_concentration_ratio} as a matrix variational
 %
 where \(\vb{f}\) are the harmonic coefficients of \(\mesh{f}\), and are the solutions to the eigenproblem
 %
-\begin{equation}
-	\vb{D}\vb{f} = \mu \vb{f}.
+\begin{equation}\label{eq:chapter4_eigenproblem}
+	\vb{D}\vb{f}
+	%
+	= \mu \vb{f}.
 \end{equation}
 %
 The eigenvalues \(\mu_{i}\) act as a measure of the relative spatial concentration
@@ -153,7 +155,7 @@ as
 	%
 	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\meshVolume} \mesh{\slepian[']{S}} \mesh{\slepian{S}} \nonumber \\
 	%
-	 & = \slepianSum['] \slepian[']{f} \transpose{\slepian{\vb{S}}} \vb{D} \slepian[']{\vb{S}} \nonumber                             \\
+	 & = \slepianSum['] \slepian[']{f} \transpose{\slepian{\vb{S}}} \vb{D} \slepian[']{\vb{S}} \nonumber                \\
 	%
 	 & = \slepian{f} \slepian{\mu},
 \end{align}
@@ -179,6 +181,34 @@ and
 	= \slepian{\mu} \transpose{\slepian[']{\vb{S}}} \slepian{\vb{S}}
 	%
 	= \slepian{\mu} \delta_{pp'}.
+\end{equation}
+
+To transform from Slepian coefficients to the basis functions of the manifold
+%
+\begin{equation}\label{eq:chapter4_slepian_to_harmonic}
+	f_{i}
+	%
+	= \integrateManifold{x} \mesh{f} \mesh{\phi_{i}}
+	%
+	= \slepianSum \slepian{f} {(\slepian{S})}_{i},
+\end{equation}
+%
+where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:chapter4_eigenproblem}:
+%
+\begin{equation}
+	{(\slepian{S})}_{i}
+	%
+	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\phi_{i}}.
+\end{equation}
+%
+The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
+%
+\begin{equation}
+	\slepian{f}
+	%
+	= \integrateManifold{x} \mesh{f} \mesh{\slepian{S}}
+	%
+	= \sum\limits_{i} f_{i} {(\slepian{S})}_{i}.
 \end{equation}
 
 \input{figures/chapter4/homer_region}
