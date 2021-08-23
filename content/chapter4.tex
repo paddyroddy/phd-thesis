@@ -110,6 +110,34 @@ which is a good estimate of the number of significant eigenvalues ~\cite{Perciva
 
 \subsubsection{Slepian Decomposition}
 
+The Slepian functions provide an alternative orthogonal basis of the manifold, decomposing a function \(f \in \hilbert{\manifold}\) into this basis
+%
+\begin{equation}
+	\mesh{f}
+	%
+	= \sum\limits_{p=1}^{\imax} \slepian{f} \mesh{\slepian{S}},
+\end{equation}
+%
+where the sum is over all basis functions of the manifold.
+For a well-localised function in the region \(R\) (\ie{} \(f \in \hilbert{R}\)) the sum may be stopped at the Shannon number
+%
+\begin{equation}
+	\mesh{f}
+	%
+	\approx \sum\limits_{p=1}^{N} \slepian{f} \mesh{\slepian{S}}
+	%
+	= \slepianSum \slepian{f} \mesh{\slepian{S}},
+\end{equation}
+%
+where the last line introduces a shorthand notation.
+The Slepian coefficients \(\slepian{f}\) are calculated through the usual projection on to the basis functions
+%
+\begin{equation}
+	\slepian{f}
+	%
+	= \braket{f}{\slepian{S}}.
+\end{equation}
+
 \input{figures/chapter4/homer_region}
 
 \input{figures/chapter4/homer_slepian_functions}
