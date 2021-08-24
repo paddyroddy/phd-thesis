@@ -264,13 +264,104 @@ This convolution can be used to define wavelets restricted to a region of the ma
 
 \section{Slepian Wavelets on Manifolds}
 
-\input{figures/chapter4/homer_region}
+\subsection{Slepian Sifting Convolution}
 
-\input{figures/chapter4/homer_slepian_functions}
+To construct wavelets in a region of the manifold a suitable convolution is required.
+The sifting convolution on the manifold defined in \cref{sec:chapter4_slepian_concentration_problem_manifolds} and developed by the authors of the current article~\cite{Roddy2021}, can be extended to work with the Slepian functions as a basis.
 
-\input{figures/chapter4/homer_slepian_eigenvalues}
+Consider the sifting convolution of a region on a manifold with the Slepian functions as a localised basis.
+The translation is defined as such
+%
+\begin{equation}
+	\mesh{(\translation{y}\slepian{S})}
+	%
+	\equiv \slepian{S}(y) \mesh{\slepian{S}},
+\end{equation}
+%
+where \(y\) is a point on the manifold and \(\mesh{\slepian{S}}\) are the Slepian functions defined in \cref{sec:chapter4_slepian_concentration_problem_manifolds}.
+Hence, the translation of an arbitrary function \(f \in \hilbert{R}\) is
+%
+\begin{equation}
+	\mesh{(\translation{y}f)}
+	%
+	= \slepianSum \slepian{f} \slepian{S}(y) \mesh{\slepian{S}},
+\end{equation}
+%
+which is the following in Slepian space
+%
+\begin{equation}
+	\slepian{(\translation{y}f)}
+	%
+	= \slepian{f} \slepian{S}(y).
+\end{equation}
+%
+As before, the sifting convolution between two functions \(f,\ g \in \hilbert{R}\) is
+%
+\begin{equation}
+	\mesh{\convolution{f}{g}}
+	%
+	\equiv \integrateManifold{y} (\translation{x}f)(y) g(y),
+\end{equation}
+%
+which becomes a product in Slepian space
+%
+\begin{equation}
+	\slepian{\convolution{f}{g}}
+	%
+	= \slepian{f} \slepian{g},
+\end{equation}
+%
+and hence is efficient to compute.
+Slepian wavelets may now be defined utilising this convolution in Slepian space.
 
-\subsubsection{Generating Functions}
+\subsection{Slepian Scale-Discretised Wavelets}
+
+A Slepian wavelet transform can be constructed through a tiling of Slepian space, where \(p\) is restricted to \(N=\imax A_{R}/A_{\manifold}\) (or \(\imax\) for whole manifold).
+Spatially localised, scale-dependent content of a signal may be probed through a scale-discretised wavelet transform.
+The construction of these wavelets is in an analogous manner to~\cite{Wiaux2008,McEwen2018} but are computed in the Slepian basis rather than the basis functions of the sphere (\cf{} manifold).
+
+For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\), the wavelet coefficients \(W^{\Psi^{j}} \in \hilbert{R}\) are defined through a sifting convolution of \(f\) with the wavelet \(\Psi^{j} \in \hilbert{R}\) for wavelet scale \(j\):
+%
+\begin{align}
+	\mesh{W^{\Psi^{j}}}
+	%
+	 & = \mesh{\convolution{\Psi^{j}}{f}} \nonumber               \\
+	%
+	 & = \integrateManifold{y} (\translation{x}\Psi^{j})(y) f(y).
+\end{align}
+%
+In Slepian space this becomes
+%
+\begin{equation}
+	\slepian{W}^{\Psi^{j}}
+	%
+	= \slepian{\Psi}^{j} \slepian{f},
+\end{equation}
+%
+where \(\slepian{\Psi}^{j}\) are the Slepian harmonic coefficients of the wavelet at scale \(j\).
+
+Wavelets are usually paired with a scaling function, each capturing different underlying scales of the signal.
+Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\):
+%
+\begin{align}
+	\mesh{W^{\Phi}}
+	%
+	 & = \mesh{\convolution{\Phi}{f}} \nonumber               \\
+	%
+	 & = \integrateManifold{y} (\translation{x}\Phi)(y) f(y),
+\end{align}
+%
+or in Slepian space
+%
+\begin{equation}
+	\slepian{W}^{\Phi}
+	%
+	= \slepian{\Phi} \slepian{f},
+\end{equation}
+%
+where \(\slepian{\Phi}\) are the Slepian coefficients of the scaling function.
+
+\subsection{Generating Functions}
 
 Consider the smooth generating functions defined by~\cite{Wiaux2008} to tile the Slepian line.
 Consider the \(C^{\infty}\) Schwartz function with compact support on \(\interval{-1}{1}\):
@@ -351,6 +442,12 @@ The Slepian wavelets are constructed by the tiling of the Slepian line as shown 
 \input{figures/chapter4/homer_tiling}
 
 \section{Numerical Illustration}
+
+\input{figures/chapter4/homer_region}
+
+\input{figures/chapter4/homer_slepian_functions}
+
+\input{figures/chapter4/homer_slepian_eigenvalues}
 
 \input{figures/chapter4/homer_field}
 
