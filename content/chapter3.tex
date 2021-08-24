@@ -26,7 +26,7 @@ In Fourier analyses one considers oscillatory features; whereas wavelets extract
 Wavelets on the sphere have been effectively applied in fields such as astrophysics and cosmology~\cite{Pen1999,Barreiro2001,Rocha2004,McEwen2004}, where datasets are increasingly large and require analysis at high resolutions for accurate theoretical predictions.
 Wavelet theory is well established in the Euclidean domain.
 In the spherical domain, however, few wavelet frameworks lead to exact transforms in both the continuous and discrete settings.
-Scale-discretised wavelets~\cite{McEwen2013,Wiaux2008,McEwen2018,Leistedt2013,McEwen2015} lean on a tiling of the harmonic line to produce an exact wavelet transform in both the continuous and discrete settings.
+Scale-discretised wavelets~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} lean on a tiling of the harmonic line to produce an exact wavelet transform in both the continuous and discrete settings.
 
 Functions cannot simultaneously have finite support in both the spatial (time) and spectral (frequency) domains~\cite{Slepian1961,Slepian1983}.
 Slepian, Landau and Pollak solved the fundamental problem of finding and representing the functions which are optimally energy concentrated in both the time and frequency domains~\cite{Slepian1961,Landau1961,Landau1962}.
@@ -42,13 +42,13 @@ The ensuing bandlimited, spatially concentrated functions have been applied for 
 Various wavelet-like analysis techniques to simultaneously probe signal content localised in space and scale have been considered before.
 Wavelets constructed on Slepian functions in the Euclidean setting (\ie{} prolate spheroidal wave functions) have been constructed to yield a multiresolution analysis~\cite{Walter2004}.
 Many techniques on the sphere have also been developed, often motivated by applications in geophysics or cosmology.
-Sometimes the Slepian functions on the sphere themselves have been used~\cite{Simons2009}; whereas other times, spatially localised spherical harmonic transforms are used instead (\eg{}~\cite{Wieczorek2005,Simons1997,Khalid2013,Khalid2013a}).
+Sometimes the Slepian functions on the sphere themselves have been used~\cite{Simons2009}; whereas other times, spatially localised spherical harmonic transforms are used instead (\eg{}~\cite{Simons1997,Wieczorek2005,Khalid2013,Khalid2013a}).
 Slepian frames on the sphere are constructed in~\cite{Simons2011}, which provide a wavelet-like representation but do not constitute a tight frame with an explicit inverse transform.
 An approach to solve inverse problems with regional data on the sphere is presented in~\cite{Michel2017}, which results in Slepian functions that can be used to derive a singular value decomposition (SVD) approach.
 Standard regularisation techniques based on a known SVD can then be applied to inverse problems where data are only defined on a region.
 
 This work presents a novel spherical wavelet basis designed for incomplete spherical datasets.
-Here, the scale-discretised wavelet construction on the sphere~\cite{McEwen2013,Wiaux2008,McEwen2018,Leistedt2013,McEwen2015} is extended to support situations where data is only defined over a partial region of the sphere.
+Here, the scale-discretised wavelet construction on the sphere~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} is extended to support situations where data is only defined over a partial region of the sphere.
 Scale-discretised wavelets have the advantage that they constitute a tight frame, exhibit an explicit inversion formula, and have excellent localisation properties in both spatial and spectral domains.
 The eigenfunctions of the Slepian concentration problem provide the orthogonal basis functions (the Slepian functions) for the region from which they are constructed, on which the scale-discretised wavelet transform is constructed.
 A tiling of the Slepian line --- akin to the spherical harmonic line --- allows one to define Slepian scale-discretised wavelets.
