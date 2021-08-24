@@ -363,22 +363,26 @@ where \(\slepian{\Phi}\) are the Slepian coefficients of the scaling function.
 
 Supposing that the wavelets and scaling function satisfy an admissibility condition, a function \(f\) may be reconstructed from its wavelet and scaling coefficients by
 %
-\begin{align}\label{eq:chapter4_synthesis}
+\begin{equation}\label{eq:chapter4_synthesis}
 	\mesh{f}
 	%
-	 & = \integrateManifold{y} \pixel[']{(\translation{\omega}\Phi)} \pixel[']{W^{\Phi\ast}} \nonumber                \\
+	= \integrateManifold{y} \bigg(
 	%
-	 & + \waveletSum \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{W^{\Psi^{j}\ast}},
-\end{align}
+	\meshY{(\translation{x}\Phi)} \meshY{W^{\Phi}}
+	%
+	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}}}
+	%
+	\bigg),
+\end{equation}
 %
 or in Slepian space
 %
 \begin{equation}
 	\slepian{f}
 	%
-	= \slepian{W}^{\Phi\ast} \slepian{\Phi}
+	= \slepian{W}^{\Phi} \slepian{\Phi}
 	%
-	+ \waveletSum \slepian{W}^{\Psi^{j}\ast} \slepian{\Psi}^{j}.
+	+ \waveletSum \slepian{W}^{\Psi^{j}} \slepian{\Psi}^{j}.
 \end{equation}
 %
 The parameters \(J_{0}\) and \(J\) represent the lowest and highest scales \(j\) of the wavelet decomposition respectively --- to ensure exact reconstruction these parameters must be set consistently.
