@@ -164,7 +164,7 @@ as
 where \(\vb{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\).
 Note the use of the orthogonality results
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_orthogonality_manifold}
 	\integrateManifold{x} \mesh{\slepian{S}} \mesh{\slepian[']{S}}
 	%
 	= \transpose{\slepian[']{\vb{S}}} \slepian{\vb{S}}
@@ -332,7 +332,7 @@ For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\
 %
 In Slepian space this becomes
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_slepian_wavelet_p}
 	\slepian{W}^{\Psi^{j}}
 	%
 	= \slepian{\Psi}^{j} \slepian{f},
@@ -353,7 +353,7 @@ Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a 
 %
 or in Slepian space
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_slepian_scaling_p}
 	\slepian{W}^{\Phi}
 	%
 	= \slepian{\Phi} \slepian{f},
@@ -388,7 +388,7 @@ or in Slepian space
 The parameters \(J_{0}\) and \(J\) represent the lowest and highest scales \(j\) of the wavelet decomposition respectively --- to ensure exact reconstruction these parameters must be set consistently.
 The admissibility condition required for synthesis \cref{eq:chapter4_synthesis} to hold is thus
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_admissibility}
 	\abs{\slepian{\Phi}}^{2}
 	%
 	+ \waveletSum \abs{\slepian{\Psi}^{j}}^{2}
@@ -458,7 +458,7 @@ An instinctive approach is to define the wavelets \(\slepian{\Psi}^{j}\) from th
 	\equiv \kappa_{\lambda}\bigg(\frac{p}{\lambda^{j}}\bigg).
 \end{equation}
 %
-For \(p \geq \lambda^{J_{0}}\) the admissibility condition \cref{eq:chapter3_admissibility} is satisfied for these wavelets, where \(J_{0}\) is the lowest wavelet scale used in the decomposition.
+For \(p \geq \lambda^{J_{0}}\) the admissibility condition \cref{eq:chapter4_admissibility} is satisfied for these wavelets, where \(J_{0}\) is the lowest wavelet scale used in the decomposition.
 Modes that cannot be probed by wavelets can be extracted through the construction of a scaling function \(\Phi{}\) (\ie{} modes with \(p < \lambda^{J_{0}}\)):
 %
 \begin{equation}
@@ -477,6 +477,68 @@ Assuming that \(0 \leq J_{0} < J\) is satisfied, the lowest wavelet scale \(J_{0
 The Slepian wavelets are constructed by the tiling of the Slepian line as shown in \cref{fig:chapter4_tiling}.
 
 \input{figures/chapter4/homer_tiling}
+
+\subsection{Properties}
+
+The properties of Slepian wavelets on manifolds are reviewed here.
+In comparison to standard scale-discretised wavelets, the properties are often similar, but not always.
+
+\subsubsection{Localisation}
+
+A tiling of the harmonic line leads to the usual construction of scale-discretised wavelets.
+Hence, the value of \(j\) in the wavelets \(\Psi^{j}\) corresponds to increasingly smaller scales (higher frequencies).
+However, in the Slepian setting \(p\) is a measure of spatial concentration, where a lower \(p\) corresponds to better localisation of the Slepian function.
+As Slepian wavelets are built on a tiling of the Slepian harmonic line, the localisation is captured in the wavelets and wavelet coefficients.
+
+\subsubsection{Wavelet Energy}
+
+The wavelet energy is
+%
+\begin{equation}
+	\norm{\Psi^{j}}^{2}
+	%
+	= \integrateManifold{x} \abs{\mesh{\Psi^{j}}}^{2}
+	%
+	= \slepianSum \abs{\slepian{\Psi}^{j}}^{2}.
+\end{equation}
+%
+Similarly, the scaling function energy is
+%
+\begin{equation}
+	\norm{\Phi}^{2}
+	%
+	= \slepianSum \abs{\slepian{\Phi}}^{2}.
+\end{equation}
+
+\subsubsection{Parseval Frame}
+
+A \emph{Parseval frame} is satisfied by Slepian scale-discretised wavelets on manifolds
+%
+\begin{equation}
+	A\norm{f}^{2} \leq \integrateManifold{x} \bigg(
+	%
+	\abs{\braket{\translation{x}\Phi}{f}}^{2}
+	%
+	+ \waveletSum \abs{\braket{\translation{x}\Psi^{j}}{f}}^{2}
+	%
+	\bigg) \leq B\norm{f}^{2},
+\end{equation}
+%
+where \(A,\ B \in \realPosParam{}\).
+Proving this requires the definition in Slepian space of the scaling coefficients \cref{eq:chapter4_slepian_scaling_p} and the wavelet coefficients \cref{eq:chapter4_slepian_wavelet_p}, along with the orthogonality of the Slepian functions \cref{eq:chapter4_orthogonality_manifold}
+%
+\begin{equation}
+	\slepianSum \abs{\slepian{\Phi}}^{2} \abs{\slepian{f}}^{2}
+	%
+	+ \waveletSum \abs{\slepian{\Psi}^{j}}^{2} \abs{\slepian{f}}^{2}
+	%
+	= \norm{f}^{2},
+\end{equation}
+%
+where the admissibility condition \cref{eq:chapter4_admissibility} results in the final equality.
+Therefore, a Parseval frame holds for scale-discretised wavelets with \(A = B = 1\), which implies that the energy of \(f\) is conserved in wavelet space.
+
+\subsubsection{Wavelet Domain Variance}
 
 \section{Numerical Illustration}
 
