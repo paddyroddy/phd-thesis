@@ -361,6 +361,39 @@ or in Slepian space
 %
 where \(\slepian{\Phi}\) are the Slepian coefficients of the scaling function.
 
+Supposing that the wavelets and scaling function satisfy an admissibility condition, a function \(f\) may be reconstructed from its wavelet and scaling coefficients by
+%
+\begin{align}\label{eq:chapter4_synthesis}
+	\mesh{f}
+	%
+	 & = \integrateManifold{y} \pixel[']{(\translation{\omega}\Phi)} \pixel[']{W^{\Phi\ast}} \nonumber                \\
+	%
+	 & + \waveletSum \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{W^{\Psi^{j}\ast}},
+\end{align}
+%
+or in Slepian space
+%
+\begin{equation}
+	\slepian{f}
+	%
+	= \slepian{W}^{\Phi\ast} \slepian{\Phi}
+	%
+	+ \waveletSum \slepian{W}^{\Psi^{j}\ast} \slepian{\Psi}^{j}.
+\end{equation}
+%
+The parameters \(J_{0}\) and \(J\) represent the lowest and highest scales \(j\) of the wavelet decomposition respectively --- to ensure exact reconstruction these parameters must be set consistently.
+The admissibility condition required for synthesis \cref{eq:chapter4_synthesis} to hold is thus
+%
+\begin{equation}
+	\abs{\slepian{\Phi}}^{2}
+	%
+	+ \waveletSum \abs{\slepian{\Psi}^{j}}^{2}
+	%
+	= 1,\ \forall p.
+\end{equation}
+%
+Wavelets and a scaling function that satisfy this admissibility condition may now be defined.
+
 \subsection{Generating Functions}
 
 Consider the smooth generating functions defined by~\cite{Wiaux2008} to tile the Slepian line.
