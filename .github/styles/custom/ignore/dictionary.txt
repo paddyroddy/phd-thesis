@@ -9,6 +9,7 @@ bottomrule
 braket
 cdot
 centering
+cf
 chktex
 circledast
 circledcirc
