@@ -224,7 +224,7 @@ The translation operator on the manifold is
 \begin{equation}
 	\mesh{(\translation{y}\phi_{i})}
 	%
-	\equiv \phi_{i}(y) \mesh{\phi_{i}},
+	\equiv \meshY{\phi_{i}} \mesh{\phi_{i}},
 \end{equation}
 %
 where \(y\) is a point on the manifold.
@@ -233,7 +233,7 @@ An arbitrary function \(f \in \hilbert{\manifold}\) is translated thus
 \begin{equation}
 	\mesh{(\translation{y}f)}
 	%
-	= \sum\limits_{i} f_{i} \phi_{i}(y) \mesh{\phi_{i}},
+	= \sum\limits_{i} f_{i} \meshY{\phi_{i}} \mesh{\phi_{i}},
 \end{equation}
 %
 implying
@@ -241,7 +241,7 @@ implying
 \begin{equation}
 	{(\translation{y}f)}_{i}
 	%
-	= f_{i} \phi_{i}(y).
+	= f_{i} \meshY{\phi_{i}}.
 \end{equation}
 %
 The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows by the inner product
@@ -249,7 +249,7 @@ The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) fol
 \begin{equation}
 	\mesh{\convolution{f}{g}}
 	%
-	\equiv \integrateManifold{y} (\translation{x}f)(y) g(y),
+	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{g},
 \end{equation}
 %
 which is a product in harmonic space
@@ -275,7 +275,7 @@ The translation is defined as such
 \begin{equation}
 	\mesh{(\translation{y}\slepian{S})}
 	%
-	\equiv \slepian{S}(y) \mesh{\slepian{S}},
+	\equiv \meshY{\slepian{S}} \mesh{\slepian{S}},
 \end{equation}
 %
 where \(y\) is a point on the manifold and \(\mesh{\slepian{S}}\) are the Slepian functions defined in \cref{sec:chapter4_slepian_concentration_problem_manifolds}.
@@ -284,7 +284,7 @@ Hence, the translation of an arbitrary function \(f \in \hilbert{R}\) is
 \begin{equation}
 	\mesh{(\translation{y}f)}
 	%
-	= \slepianSum \slepian{f} \slepian{S}(y) \mesh{\slepian{S}},
+	= \slepianSum \slepian{f} \meshY{\slepian{S}} \mesh{\slepian{S}},
 \end{equation}
 %
 which is the following in Slepian space
@@ -292,7 +292,7 @@ which is the following in Slepian space
 \begin{equation}
 	\slepian{(\translation{y}f)}
 	%
-	= \slepian{f} \slepian{S}(y).
+	= \slepian{f} \mesh{\slepian{S}}.
 \end{equation}
 %
 As before, the sifting convolution between two functions \(f,\ g \in \hilbert{R}\) is
@@ -300,7 +300,7 @@ As before, the sifting convolution between two functions \(f,\ g \in \hilbert{R}
 \begin{equation}
 	\mesh{\convolution{f}{g}}
 	%
-	\equiv \integrateManifold{y} (\translation{x}f)(y) g(y),
+	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{g},
 \end{equation}
 %
 which becomes a product in Slepian space
@@ -327,7 +327,7 @@ For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\
 	%
 	 & = \mesh{\convolution{\Psi^{j}}{f}} \nonumber               \\
 	%
-	 & = \integrateManifold{y} (\translation{x}\Psi^{j})(y) f(y).
+	 & = \integrateManifold{y} \meshY{(\translation{x}\Psi^{j})} \meshY{f}.
 \end{align}
 %
 In Slepian space this becomes
@@ -348,7 +348,7 @@ Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a 
 	%
 	 & = \mesh{\convolution{\Phi}{f}} \nonumber               \\
 	%
-	 & = \integrateManifold{y} (\translation{x}\Phi)(y) f(y),
+	 & = \integrateManifold{y} \meshY{(\translation{x}\Phi)} \meshY{f},
 \end{align}
 %
 or in Slepian space
