@@ -398,7 +398,7 @@ The admissibility condition required for synthesis \cref{eq:chapter4_synthesis} 
 %
 Wavelets and a scaling function that satisfy this admissibility condition may now be defined.
 
-\subsection{Generating Functions}
+\subsection{Generating Functions}\label{sec:chapter4_generating_functions}
 
 Consider the smooth generating functions defined by~\cite{Wiaux2008} to tile the Slepian line.
 Consider the \(C^{\infty}\) Schwartz function with compact support on \(\interval{-1}{1}\):
@@ -598,17 +598,29 @@ and as such the variance depends on the position on the manifold.
 
 \section{Numerical Illustration}
 
+In this section the construction and application of Slepian wavelets for an example region on a mesh (\cf{} manifold) is demonstrated.
+The Slepian functions and eigenvalues of a region of a Homer Simpson mesh are presented in \cref{sec:chapter4_homer_region}.
+A field is constructed on the region of the mesh in \cref{sec:chapter4_wavelets_wavelet_coefficients}, and the resulting wavelets and wavelet coefficients are computed.
+A possible use of Slepian wavelets is shown in \cref{sec:chapter4_wavelet_denoising} through a simple denoising procedure.
+All subsequent computations are performed with the \texttt{S2LET}\footnote{\url{http://astro-informatics.github.io/s2let/}}~\cite{Leistedt2013} code, which enables the construction of the wavelet generating functions discussed in \cref{sec:chapter4_generating_functions}.
+
+\subsection{Homer Region}\label{sec:chapter4_homer_region}
+
 \input{figures/chapter4/homer_region}
 
 \input{figures/chapter4/homer_slepian_functions}
 
 \input{figures/chapter4/homer_slepian_eigenvalues}
 
+\subsection{Wavelets and Wavelet Coefficients}\label{sec:chapter4_wavelets_wavelet_coefficients}
+
 \input{figures/chapter4/homer_field}
 
 \input{figures/chapter4/homer_wavelets}
 
 \input{figures/chapter4/homer_wavelet_coefficients}
+
+\subsection{Wavelet Denoising}\label{sec:chapter4_wavelet_denoising}
 
 \input{figures/chapter4/homer_denoising}
 
