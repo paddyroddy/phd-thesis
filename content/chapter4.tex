@@ -314,7 +314,7 @@ which becomes a product in Slepian space
 and hence is efficient to compute.
 Slepian wavelets may now be defined utilising this convolution in Slepian space.
 
-\subsection{Slepian Scale-Discretised Wavelets}
+\subsection{Slepian Scale-Discretised Wavelets}\label{sec:chapter4_slepian_scale_discretised_wavelets}
 
 A Slepian wavelet transform can be constructed through a tiling of Slepian space, where \(p\) is restricted to \(N=\imax A_{R}/A_{\manifold}\) (or \(\imax{}\) for whole manifold).
 Spatially localised, scale-dependent content of a signal may be probed through a scale-discretised wavelet transform.
@@ -610,6 +610,7 @@ A region of a manifold is created on a mesh of Homer Simpson, \cref{fig:chapter4
 The Slepian functions of this region are computed by solving the eigenproblem \cref{eq:chapter4_eigenproblem}, and then performing an inverse harmonic transform.
 The resulting Shannon number \cref{eq:chapter4_shannon} of the region \(R\) is \(N=329\).
 A set of Slepian functions of the mesh are shown in \cref{fig:chapter4_slepian_functions} for \(p \in \set{1, 10, 25, 50, 100, 200}\).
+Comparing panel (f) to panel (a) one can see that the latter Slepian functions are more spread out in the region, representing worse concentration.
 The corresponding eigenvalues \(\slepian{\mu}\) are a measure of spatial concentration, which remain \(\almost{1}\) for many \(p\) values before sharply decreasing towards zero around \(N\).
 The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter4_slepian_eigenvalues}, were the plot to extend to all \(\imax{}\) Slepian eigenvalues then the rest of the eigenvalues would be \(\almost{0}\).
 
@@ -621,9 +622,17 @@ The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter4
 
 \subsection{Wavelets and Wavelet Coefficients}\label{sec:chapter4_wavelets_wavelet_coefficients}
 
-\input{figures/chapter4/homer_field}
+The Slepian scaling function and wavelets defined in \cref{sec:chapter4_slepian_scale_discretised_wavelets} are built on a tiling of the Slepian line with parameters \(\lambda=3\) and \(J_{0}=2\).
+This tiling is shown in \cref{fig:chapter4_tiling} for \(\num{1275}\) basis functions of the Homer mesh, where the Shannon number \(N=329\) is highlighted.
+Hence, for this region the scaling function and wavelets for scales \(j \in \set{2, 3, 4, 5, 6}\) are the only non-zero functions.
+These wavelets are presented in \cref{fig:chapter4_wavelets}, which show a similar pattern to the Slepian functions where the scaling function is more concentrated in the region than the wavelet scale \(j=6\).
+To perform a scale-discretised wavelet transform one requires a signal on the mesh.
+\cref{fig:chapter4_homer_data} presents the such a signal, the \(z\)-component of the per vertex normals of the Homer mesh.
+With some data to hand, the scaling and wavelet coefficients of the Homer head region are given in \cref{fig:chapter4_wavelet_coefficients}.
 
 \input{figures/chapter4/homer_wavelets}
+
+\input{figures/chapter4/homer_field}
 
 \input{figures/chapter4/homer_wavelet_coefficients}
 
