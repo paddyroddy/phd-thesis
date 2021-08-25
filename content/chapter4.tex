@@ -483,7 +483,7 @@ The Slepian wavelets are constructed by the tiling of the Slepian line as shown 
 The properties of Slepian wavelets on manifolds are reviewed here.
 In comparison to standard scale-discretised wavelets, the properties are often similar, but not always.
 
-\subsubsection{Localisation}
+\subsubsection{Localisation}\label{sec:chapter4_localisation}
 
 A tiling of the harmonic line leads to the usual construction of scale-discretised wavelets.
 Hence, the value of \(j\) in the wavelets \(\Psi^{j}\) corresponds to increasingly smaller scales (higher frequencies).
@@ -637,6 +637,40 @@ With some data to hand, the scaling and wavelet coefficients of the Homer head r
 \input{figures/chapter4/homer_wavelet_coefficients}
 
 \subsection{Wavelet Denoising}\label{sec:chapter4_wavelet_denoising}
+
+Wavelets are used in a variety of contexts in signal processing, one common use case is for denoising a signal.
+Localised features in the data can be extracted to different wavelet scales, and hence the desired parts of the signal can be preserved whilst isolating the noise.
+To showcase Slepian wavelets, white noise is added to the signal in the right panel of \cref{fig:chapter4_homer_data}.
+A straightforward hard-thresholding denoising procedure follows.
+
+Consider a signal localised in the region \(R\) in the presence of noise
+%
+\begin{equation}
+	\mesh{z}
+	%
+	= \mesh{s} + \mesh{n},
+\end{equation}
+%
+where the signal and noise are represented by \(\mesh{s}\) and \(\mesh{n}\) respectively.
+The power spectrum of noise in Slepian space is as before
+%
+\begin{equation}
+	\expval{\slepian{n} \slepian[']{n}}
+	%
+	= \sigma^{2} \delta_{pp'}.
+\end{equation}
+%
+To assess the recovery of the initial data, a signal-to-noise ratio for the region is defined
+%
+\begin{equation}
+	\snr{z}
+	%
+	\equiv 10 \log_{10} \frac{\norm{s}^{2}}{\norm{z - s}^{2}}.
+\end{equation}
+%
+A denoised version of \(z\) is desired, denoted by \(d \in \hilbert{R}\), with a large \(\snr{d}\) such that \(d\) extracts the informative signal \(s\).
+Often the scaling coefficients are \emph{not} used in hard-thresholding; however, in the Slepian setting the scaling function and wavelets are treated equally.
+The scaling function in the Slepian setting is not a low-frequency representation of the signal due to the localisation of the Slepian functions (see \cref{sec:chapter4_localisation}).
 
 \input{figures/chapter4/homer_denoising}
 
