@@ -31,11 +31,16 @@ done
 
 echo figure: 3
 python \
+    $MATPLOTLIB_PLOTS/mesh_tiling.py \
+    $MESH
+
+echo figure: 4
+python \
     $MATPLOTLIB_PLOTS/mesh_region.py \
     $MESH
 
 for p in ${P_RANGE[@]}; do
-    echo figure: 4, p: $p
+    echo figure: 5, p: $p
     mesh $MESH \
         -m slepian \
         -e $p \
@@ -43,14 +48,9 @@ for p in ${P_RANGE[@]}; do
         -z
 done
 
-echo figure: 5
-python \
-    $MATPLOTLIB_PLOTS/mesh_slepian_eigenvalues.py \
-    $MESH
-
 echo figure: 6
 python \
-    $MATPLOTLIB_PLOTS/mesh_tiling.py \
+    $MATPLOTLIB_PLOTS/mesh_slepian_eigenvalues.py \
     $MESH
 
 echo figure: 7, field
