@@ -204,7 +204,7 @@ where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:
 %
 The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_harmonic_to_slepian}
 	\slepian{f}
 	%
 	= \integrateManifold{x} \mesh{f} \mesh{\slepian{S}}
@@ -539,6 +539,62 @@ where the admissibility condition \cref{eq:chapter4_admissibility} results in th
 Therefore, a Parseval frame holds for scale-discretised wavelets with \(A = B = 1\), which implies that the energy of \(f\) is conserved in wavelet space.
 
 \subsubsection{Wavelet Domain Variance}
+
+For notational brevity define a quantity
+%
+\begin{equation}
+	\varphi \in \set{\Phi,\Psi^{j}}
+\end{equation}
+%
+to represent both the scaling function and the wavelets.
+The variance of the wavelet/scaling coefficients is given by
+%
+\begin{equation}
+	\variance{\mesh{W^{\varphi}}}
+	%
+	= \expval{\abs{\mesh{W^{\varphi}}}^{2}}
+	%
+	-\abs{\expval{\mesh{W^{\varphi}}}}^{2},
+\end{equation}
+%
+where the expected value of the wavelet/scaling coefficients is zero for the common case of zero-mean Gaussian noise.
+Thus, the variance can be expanded to become
+%
+\begin{equation}\label{eq:chapter4_slepian_isotropic_noise}
+	\variance{\mesh{W^{\varphi}}}
+	%
+	= \slepianSum \slepianSum['] \slepian{\varphi} \slepian[']{\varphi} \mesh{\slepian{S}} \mesh{\slepian[']{S}} \expval{\slepian{f} \slepian[']{f}}.
+\end{equation}
+
+Consider homogenous and isotropic noise defined by its power spectrum
+%
+\begin{equation}
+	\expval{f_{i} f_{j}}
+	%
+	= C_{i} \delta_{ij},
+\end{equation}
+%
+where \(C_{i} = \sigma^{2}\) for white noise.
+The power expression in Slepian space can be found by
+%
+\begin{align}
+	\expval{\slepian{f} \slepian[']{f}}
+	%
+	 & = \sum\limits_{i} \sum\limits_{j} \expval{f_{i} f_{j}} \empty{} {(\slepian{S})}_{i} {(\slepian[']{S})}_{j} \nonumber \\
+	%
+	 & = \sigma^{2} \delta_{pp'},
+\end{align}
+%
+where the first line follows from \cref{eq:chapter4_harmonic_to_slepian}, and the last line follows from the orthogonality of the Slepian functions \cref{eq:chapter4_orthogonality_manifold}.
+Hence, the final expression for the wavelet domain variance is
+%
+\begin{equation}
+	\variance{\mesh{W^{\varphi}}}
+	%
+	= \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\mesh{\slepian{S}}}^{2},
+\end{equation}
+%
+and as such the variance depends on the position on the manifold.
 
 \section{Numerical Illustration}
 
