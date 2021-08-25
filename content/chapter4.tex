@@ -571,7 +571,7 @@ Consider homogenous and isotropic noise defined by its power spectrum
 \begin{equation}
 	\expval{f_{i} f_{j}}
 	%
-	= C_{i} \delta_{ij},
+	= C_{i} \delta_{i j},
 \end{equation}
 %
 where \(C_{i} = \sigma^{2}\) for white noise.
@@ -601,8 +601,8 @@ and as such the variance depends on the position on the manifold.
 In this section the construction and application of Slepian wavelets for an example region on a mesh (\cf{} manifold) is demonstrated.
 The Slepian functions and eigenvalues of a region of a Homer Simpson mesh are presented in \cref{sec:chapter4_homer_region}.
 A field is constructed on the region of the mesh in \cref{sec:chapter4_wavelets_wavelet_coefficients}, and the resulting wavelets and wavelet coefficients are computed.
-A possible use of Slepian wavelets is shown in \cref{sec:chapter4_wavelet_denoising} through a simple denoising procedure.
-All subsequent computations are performed with the \texttt{S2LET}\footnote{\url{http://astro-informatics.github.io/s2let/}}~\cite{Leistedt2013} code, which enables the construction of the wavelet generating functions discussed in \cref{sec:chapter4_generating_functions}.
+A possible use of Slepian wavelets is shown in \cref{sec:chapter4_wavelet_denoising} through a straightforward denoising procedure.
+All computations are performed with the \texttt{S2LET}\footnote{\url{http://astro-informatics.github.io/s2let/}}~\cite{Leistedt2013} code, which enables the construction of the wavelet generating functions discussed in \cref{sec:chapter4_generating_functions}.
 
 \subsection{Homer Region}\label{sec:chapter4_homer_region}
 
@@ -611,7 +611,7 @@ The Slepian functions of this region are computed by solving the eigenproblem \c
 The resulting Shannon number \cref{eq:chapter4_shannon} of the region \(R\) is \(N=329\).
 A set of Slepian functions of the mesh are shown in \cref{fig:chapter4_slepian_functions} for \(p \in \set{1, 10, 25, 50, 100, 200}\).
 Comparing panel (f) to panel (a) one can see that the latter Slepian functions are more spread out in the region, representing worse concentration.
-The corresponding eigenvalues \(\slepian{\mu}\) are a measure of spatial concentration, which remain \(\almost{1}\) for many \(p\) values before sharply decreasing towards zero around \(N\).
+The corresponding eigenvalues \(\slepian{\mu}\) are a measure of spatial concentration, which remain \(\almost{1}\) for many \(p\) values before rapidly decreasing towards zero around \(N\).
 The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter4_slepian_eigenvalues}, were the plot to extend to all \(\imax{}\) Slepian eigenvalues then the rest of the eigenvalues would be \(\almost{0}\).
 
 \input{figures/chapter4/homer_region}
