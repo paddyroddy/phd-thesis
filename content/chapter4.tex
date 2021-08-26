@@ -268,7 +268,7 @@ Here, the Slepian wavelet theory is developed.
 Initially, \cref{sec:chapter4_slepian_sifting_convolution} extends the sifting convolution~\cite{Roddy2021} to the Slepian domain.
 With a convolution to hand, the Slepian wavelet transform is developed in \cref{sec:chapter4_slepian_scale_discretised_wavelets} --- where an appropriate admissibility condition must hold for exact reconstruction.
 The generating functions that define the wavelets are presented in \cref{sec:chapter4_generating_functions}.
-Finally, some properties of the wavelets are discussed in \cref{sec:chapter4_properties}.
+Lastly, some properties of the wavelets are discussed in \cref{sec:chapter4_properties}.
 
 \subsection{Slepian Sifting Convolution}\label{sec:chapter4_slepian_sifting_convolution}
 
@@ -735,14 +735,14 @@ This procedure merely demonstrates a practical use case of Slepian wavelets, mor
 
 To perform the denoising, Gaussian white noise is added to the data in the right panel of \cref{fig:chapter4_homer_data}.
 The noised signal is shown in panel (a) of \cref{fig:chapter4_denoising} with an initial signal-to-noise ratio of \(\SI{0.32}{\dB}\).
-Panels (b-c) show the results of the denoising procedure describe previously for \(N_{\sigma} \in \set{1,2}\), with signal-to-noise ratios of \(\SI{2.29}{\dB}\) and \(\SI{0.98}{\dB}\) respectively.
+Panels (b-c) show the results of the denoising procedure describe above for \(N_{\sigma} \in \set{1,2}\), with signal-to-noise ratios of \(\SI{2.29}{\dB}\) and \(\SI{0.98}{\dB}\) respectively.
 At \(N_{\sigma}=1\) an initial boost in signal-to-noise ratio is observed; however, as more signal is removed the hard-thresholding scheme experiences diminishing returns.
 
 The same denoising procedure was conducted for a series of other meshes, the Slepian regions of which are shown in \cref{fig:chapter4_other_meshes}.
 These meshes are comparable in size to the \(\num{5103}\) vertex Homer mesh, and an appropriate region \(R\) has been highlighted in black for each.
 \cref{tab:chapter4_denoising} presents the Shannon number, the number of non-zero wavelets, and the denoising results for each mesh for the same wavelet parameters as before --- \(\lambda=3\) and \(J_{0}=2\).
 In general, the hard-thresholding scheme boosts the signal-to-noise ratio of the signal on the mesh, in particular for higher Shannon numbers (more wavelets).
-Fine-tuning the wavelet parameters \(\lambda{}\) and \(J_{0}\) would likely result in a larger signal-to-noise boost for each mesh.
+Fine-tuning the wavelet parameters \(\lambda{}\) and \(J_{0}\) would result in a larger signal-to-noise boost for each mesh.
 
 \input{figures/chapter4/homer_denoising}
 
