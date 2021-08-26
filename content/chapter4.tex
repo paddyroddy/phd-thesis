@@ -677,14 +677,55 @@ Since the wavelet transform is linear, the individual elements sum to give the w
 \begin{equation}
 	\mesh{Z^{\varphi}}
 	%
-	= \mesh{S^{\varphi}} + \mesh{N^{\varphi}}.
+	= \mesh{S^{\varphi}} + \mesh{N^{\varphi}},
 \end{equation}
 %
-The wavelet coefficients are denoted by capital letters, \ie{}
+where the wavelet coefficients are denoted by capital letters, \ie{}
 %
 \begin{equation}
-	\mesh{Z^{\varphi}} = \pixel{\convolution{\varphi}{z}}.
+	\mesh{Z^{\varphi}} = \mesh{\convolution{\varphi}{z}}.
 \end{equation}
+%
+In wavelet space the noise is
+%
+%
+\begin{equation}
+	\variance{\mesh{N^{\varphi}}}
+	%
+	= \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\mesh{\slepian{S}}}^{2}
+	%
+	\equiv {\mesh{\sigma^{\varphi}}}^{2},
+\end{equation}
+%
+where \(\sigma^{\varphi}\) represents the standard deviation of the noise in wavelet space.
+To denoise the signal one may hard-threshold the scaling/wavelet coefficients with a threshold \(T\) proportional to the standard deviation of the noise.
+Hence, the denoised wavelet coefficients \(\mesh{D^{\varphi}} = \mesh{\convolution{\varphi}{d}}\) are
+%
+\begin{equation}
+	\mesh{D^{\varphi}} =
+	%
+	\begin{cases}
+		0,
+		%
+		 & \mesh{Z^{\varphi}} < \mesh{T^{\varphi}},    \\
+		%
+		\mesh{Z^{\varphi}},
+		%
+		 & \mesh{X^{\varphi}} \geq \mesh{T^{\varphi}},
+	\end{cases}
+\end{equation}
+%
+where
+%
+\begin{equation}
+	\mesh{T^{\varphi}}
+	%
+	= N_{\sigma}\mesh{\sigma^{\varphi}},
+\end{equation}
+%
+with \(N_{\sigma} \in \realPosParam{}\).
+Reconstruction of the signal \(d\) follows by an inverse wavelet transform with these thresholded wavelet coefficients.
+This procedure merely demonstrates a practical use case of Slepian wavelets, more sophisticated denoising formalisms may be developed.
 
 \input{figures/chapter4/homer_denoising}
 
