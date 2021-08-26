@@ -262,9 +262,15 @@ which is a product in harmonic space
 %
 This convolution can be used to define wavelets restricted to a region of the manifold using the basis functions introduced in \cref{sec:chapter4_slepian_concentration_problem_manifolds} in the translation.
 
-\section{Slepian Wavelets on Manifolds}
+\section{Slepian Wavelets}
 
-\subsection{Slepian Sifting Convolution}
+Here, the Slepian wavelet theory is developed.
+Initially, \cref{sec:chapter4_slepian_sifting_convolution} extends the sifting convolution~\cite{Roddy2021} to the Slepian domain.
+With a convolution to hand, the Slepian wavelet transform is developed in \cref{sec:chapter4_slepian_scale_discretised_wavelets} --- where an appropriate admissibility condition must hold for exact reconstruction.
+The generating functions that define the wavelets are presented in \cref{sec:chapter4_generating_functions}.
+Finally, some properties of the wavelets are discussed in \cref{sec:chapter4_properties}.
+
+\subsection{Slepian Sifting Convolution}\label{sec:chapter4_slepian_sifting_convolution}
 
 To construct wavelets in a region of the manifold a suitable convolution is required.
 The sifting convolution on the manifold defined in \cref{sec:chapter4_slepian_concentration_problem_manifolds} and developed by the authors of the current article~\cite{Roddy2021}, can be extended to work with the Slepian functions as a basis.
@@ -478,7 +484,7 @@ The Slepian wavelets are constructed by the tiling of the Slepian line as shown 
 
 \input{figures/chapter4/homer_tiling}
 
-\subsection{Properties}
+\subsection{Properties}\label{sec:chapter4_properties}
 
 The properties of Slepian wavelets on manifolds are reviewed here.
 In comparison to standard scale-discretised wavelets, the properties are often similar, but not always.
@@ -600,7 +606,7 @@ and as such the variance depends on the position on the manifold.
 
 In this section the construction and application of Slepian wavelets for an example region on a mesh (\cf{} manifold) is demonstrated.
 The Slepian functions and eigenvalues of a region of a Homer Simpson mesh are presented in \cref{sec:chapter4_homer_region}.
-A field is constructed on the region of the mesh in \cref{sec:chapter4_wavelets_wavelet_coefficients}, and the resulting wavelets and wavelet coefficients are computed.
+A field is constructed on the region of the mesh in \cref{sec:chapter4_wavelet_transform}, and the resulting wavelets and wavelet coefficients are computed.
 A possible use of Slepian wavelets is shown in \cref{sec:chapter4_wavelet_denoising} through a straightforward denoising procedure.
 All computations are performed with the \texttt{S2LET}\footnote{\url{http://astro-informatics.github.io/s2let/}}~\cite{Leistedt2013} code, which enables the construction of the wavelet generating functions discussed in \cref{sec:chapter4_generating_functions}.
 
@@ -620,7 +626,7 @@ The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter4
 
 \input{figures/chapter4/homer_slepian_eigenvalues}
 
-\subsection{Wavelets and Wavelet Coefficients}\label{sec:chapter4_wavelets_wavelet_coefficients}
+\subsection{Wavelet Transform}\label{sec:chapter4_wavelet_transform}
 
 The Slepian scaling function and wavelets defined in \cref{sec:chapter4_slepian_scale_discretised_wavelets} are built on a tiling of the Slepian line with parameters \(\lambda=3\) and \(J_{0}=2\).
 This tiling is shown in \cref{fig:chapter4_tiling} for \(\num{1275}\) basis functions of the Homer mesh, where the Shannon number \(N=329\) is highlighted.
@@ -734,8 +740,8 @@ At \(N_{\sigma}=1\) an initial boost in signal-to-noise ratio is observed; howev
 
 The same denoising procedure was conducted for a series of other meshes, the Slepian regions of which are shown in \cref{fig:chapter4_other_meshes}.
 These meshes are comparable in size to the \(\num{5103}\) vertex Homer mesh, and an appropriate region \(R\) has been highlighted in black for each.
-\cref{tab:chapter4_denoising} presents the Shannon number, the number of non-zero wavelets, and the denoising results for each mesh for the same wavelet parameters as before, \(\lambda=3\) and \(J_{0}=2\).
-In general, the hard-thresholding scheme boosts the signal-to-noise ratio of the signal on the mesh, in particular for higher Shannon numbers.
+\cref{tab:chapter4_denoising} presents the Shannon number, the number of non-zero wavelets, and the denoising results for each mesh for the same wavelet parameters as before --- \(\lambda=3\) and \(J_{0}=2\).
+In general, the hard-thresholding scheme boosts the signal-to-noise ratio of the signal on the mesh, in particular for higher Shannon numbers (more wavelets).
 Fine-tuning the wavelet parameters \(\lambda{}\) and \(J_{0}\) would likely result in a larger signal-to-noise boost for each mesh.
 
 \input{figures/chapter4/homer_denoising}
