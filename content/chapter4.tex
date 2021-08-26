@@ -732,6 +732,12 @@ The noised signal is shown in panel (a) of \cref{fig:chapter4_denoising} with an
 Panels (b-c) show the results of the denoising procedure describe previously for \(N_{\sigma} \in \set{1,2}\), with signal-to-noise ratios of \(\SI{2.29}{\dB}\) and \(\SI{0.98}{\dB}\) respectively.
 At \(N_{\sigma}=1\) an initial boost in signal-to-noise ratio is observed; however, as more signal is removed the hard-thresholding scheme experiences diminishing returns.
 
+The same denoising procedure was conducted for a series of other meshes, the Slepian regions of which are shown in \cref{fig:chapter4_other_meshes}.
+These meshes are comparable in size to the \(\num{5103}\) vertex Homer mesh, and an appropriate region \(R\) has been highlighted in black for each.
+\cref{tab:chapter4_denoising} presents the Shannon number, the number of non-zero wavelets, and the denoising results for each mesh for the same wavelet parameters as before, \(\lambda=3\) and \(J_{0}=2\).
+In general, the hard-thresholding scheme boosts the signal-to-noise ratio of the signal on the mesh, in particular for higher Shannon numbers.
+Fine-tuning the wavelet parameters \(\lambda{}\) and \(J_{0}\) would likely result in a larger signal-to-noise boost for each mesh.
+
 \input{figures/chapter4/homer_denoising}
 
 \input{figures/chapter4/other_mesh_regions}
