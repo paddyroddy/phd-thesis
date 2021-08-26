@@ -725,7 +725,12 @@ where
 %
 with \(N_{\sigma} \in \realPosParam{}\).
 Reconstruction of the signal \(d\) follows by an inverse wavelet transform with these thresholded wavelet coefficients.
-This procedure merely demonstrates a practical use case of Slepian wavelets, more sophisticated denoising formalisms may be developed.
+This procedure merely demonstrates a practical use case of Slepian wavelets, more sophisticated denoising formalisms can be developed.
+
+To perform the denoising, Gaussian white noise is added to the data in the right panel of \cref{fig:chapter4_homer_data}.
+The noised signal is shown in panel (a) of \cref{fig:chapter4_denoising} with an initial signal-to-noise ratio of \(\SI{0.32}{\dB}\).
+Panels (b-c) show the results of the denoising procedure describe previously for \(N_{\sigma} \in \set{1,2}\), with signal-to-noise ratios of \(\SI{2.29}{\dB}\) and \(\SI{0.98}{\dB}\) respectively.
+At \(N_{\sigma}=1\) an initial boost in signal-to-noise ratio is observed; however, as more signal is removed the hard-thresholding scheme experiences diminishing returns.
 
 \input{figures/chapter4/homer_denoising}
 
