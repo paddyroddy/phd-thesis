@@ -23,13 +23,20 @@ A review of graphs is presented in \cref{sec:chapter4_graphs}.
 
 \input{figures/chapter4/eigenhomers}
 
-\subsection{Slepian Scale-Discretised Wavelets on the Sphere}\label{sec:chapter4_slepian_scale_discretised_wavelets_sphere}
+\subsection{Problem Formulation}\label{sec:chapter4_problem_formulation}
 
-\subsection{Problem Formulation}
+This work generalises Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} to arbitrary manifolds.
+Here, the basis functions of the Slepian concentration problem are built from the eigenvectors of the Laplace-Beltrami operator of the manifold, as opposed to the spherical harmonics.
+In the aforesaid work, the wavelets are constructed through a tiling of the Slepian line (akin to the harmonic line) in an analogous manner to~\cite{Wiaux2008,McEwen2018}.
+The sifting convolution~\cite{Roddy2021} allows one to perform convolutions where both inputs are directional, whilst the output remains on the sphere.
+By leveraging this convolution, the wavelet transforms in the Slepian domain are built on a region of the sphere (\cf{} manifold) to ensure exact reconstruction.
+Convolutions are typically not well-defined on manifolds.
+The sifting convolution, however, is a product in harmonic space and as such can be applied effectively to manifolds.
 
-This work generalises Slepian scale-discretised wavelets on the sphere, defined in \cref{sec:chapter4_slepian_scale_discretised_wavelets_sphere}, to arbitrary manifolds.
+In \cref{sec:chapter4_working_with_manifolds}, the Slepian spatial-spectral concentration problem is presented in the manifold setting --- in particular, the spatial concentration of a bandlimited function.
+The sifting convolution~\cite{Roddy2021} is then defined similarly, allowing for wavelet transforms on the manifold to be constructed.
 
-\section{Working with Manifolds}
+\section{Working with Manifolds}\label{sec:chapter4_working_with_manifolds}
 
 In this section a review of the Slepian spatial-spectral concentration problem adapted to manifolds is presented in \cref{sec:chapter4_slepian_concentration_problem_manifolds}.
 A review of the sifting convolution follows in \cref{sec:chapter4_sifting_convolution_manifolds} which allows one to perform convolutions on manifolds.
