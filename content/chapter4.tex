@@ -58,6 +58,40 @@ A review of graphs is presented in \cref{sec:chapter4_graphs}.
 
 \subsubsection{Graphs}\label{sec:chapter4_graphs}
 
+Consider a graph
+%
+\begin{equation}
+	\mathcal{G}
+	%
+	= (\mathcal{V}, \mathcal{E})
+\end{equation}
+%
+consisting of a set of \(N\) vertices
+%
+\begin{equation}
+	\mathcal{V}
+	%
+	\in \set{1,2,\ldots,N},
+\end{equation}
+%
+and a set of weighted edges
+%
+\begin{equation}
+	\mathcal{E}
+	%
+	= \set{a_{ij}}_{i,j \in \mathcal{V}},
+\end{equation}
+%
+such that \(a_{ij} > 0\) if a link from node \(j\) to node \(i\) exists, and \(a_{ij} = 0\) otherwise.
+The adjacency matrix \(\vb{A}\) of a graph describes all the weights \(a_{ij},\ i,j = 1,\ldots,N\).
+The degree matrix \(\vb{K} = \text{diag}\set{k_{1},\ldots,k_{N}}\) is a diagonal matrix where the degree of a given node is given by
+%
+\begin{equation}
+	k_{i}
+	%
+	= \sum\limits_{j=1}^{N} a_{ij}.
+\end{equation}
+
 \subsubsection{Polygonal Meshes}
 
 \subsubsection{Laplace-Beltrami Operator}
