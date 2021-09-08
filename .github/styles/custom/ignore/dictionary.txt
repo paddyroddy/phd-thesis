@@ -22,11 +22,13 @@ denoise
 denoised
 denoising
 dirac
+div
 dmatrix
 documentclass
 eg
 eigenhomers
 eigenproblem
+eigensystem
 emph
 eq
 essinfo

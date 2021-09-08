@@ -62,6 +62,48 @@ A review of graphs is presented in \cref{sec:chapter4_graphs}.
 
 \subsubsection{Laplace-Beltrami Operator}
 
+Let \(f \in \hilbert{\manifold}\) be a real-valued function defined on a Riemannian manifold \(\manifold{}\).
+The \emph{Laplace-Beltrami} operator \(\laplacian{}\) is
+%
+\begin{equation}
+	\laplacian f
+	%
+	= \div{\grad{f}},
+\end{equation}
+%
+where \(\div{}\) and \(\grad{}\) are the divergence and gradient operators on the manifold \(\manifold{}\) respectively.
+The Laplacian eigenproblem is defined as
+%
+\begin{equation}
+	\laplacian f
+	%
+	= -\mu f,
+\end{equation}
+%
+which admits an orthogonal eigensystem due to the semi-positive definiteness of the Laplace-Beltrami operator.
+This eigensystem forms the square-integrable basis of the manifold \(\manifold{}\), with real eigenvalues
+%
+\begin{equation}
+	0 \leq \mu_{1} \leq \mu_{2} \leq \ldots < \infty, % chktex 11
+\end{equation}
+%
+and eigenfunctions \(\phi_{i}\).
+A function \(f \in \hilbert{\manifold}\) can therefore be decomposed into this basis by
+%
+\begin{equation}
+	\mesh{f}
+	%
+	= \sum\limits_{i} f_{i} \mesh{\phi_{i}},
+\end{equation}
+%
+where \(f_{i}\) are the Fourier coefficients given by the usual projection onto the basis functions
+%
+\begin{equation}
+	f_{i}
+	%
+	= \braket{f}{\phi_{i}}.
+\end{equation}
+
 \input{figures/chapter4/eigenhomers}
 
 \subsection{Problem Formulation}\label{sec:chapter4_problem_formulation}
