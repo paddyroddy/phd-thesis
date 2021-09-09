@@ -95,11 +95,11 @@ and a set of weighted edges
 \begin{equation}
 	\mathcal{E}
 	%
-	= \set{a_{ij}}_{i,j \in \mathcal{V}},
+	= \set{a_{i j}}_{i,j \in \mathcal{V}},
 \end{equation}
 %
-such that \(a_{ij} > 0\), if a link from node \(j\) to node \(i\) exists, and \(a_{ij} = 0\) otherwise.
-The adjacency matrix \(\vb{A}\) of a graph describes all the weights \(a_{ij},\ i,j = 1,\ldots,N\).
+such that \(a_{i j} > 0\), if a link from node \(j\) to node \(i\) exists, and \(a_{i j} = 0\) otherwise.
+The adjacency matrix \(\vb{A}\) of a graph describes all the weights \(a_{i j},\ i,j = 1,\ldots,N\).
 The degree matrix
 %
 \begin{equation}
@@ -113,7 +113,7 @@ is a diagonal matrix where the degree of a given node is given by
 \begin{equation}
 	k_{i}
 	%
-	= \sum\limits_{j=1}^{N} a_{ij}.
+	= \sum\limits_{j=1}^{N} a_{i j}.
 \end{equation}
 
 \subsubsection{Polygonal Meshes}
