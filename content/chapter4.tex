@@ -50,8 +50,24 @@ This work extends Slepian scale-discretised wavelets on the sphere to manifolds,
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
 The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume{}\).
 The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplacian{}\).
-Let the set of all isometries between two manifolds \(\manifold{}\) and \(\manifold'\) be denoted \(\isom{\manifold,\manifold'}\), and set \(\isom{\manifold} = \isom{\manifold,\manifold}\) to be the isometry group of \(\manifold{}\).
-Similarly, \(\diff{\manifold} = \diff{\manifold,\manifold}\) is set to be the diffeomorphism group on \(\manifold{}\).
+Let the set of all isometries between two manifolds \(\manifold{}\) and \(\manifold'\) be denoted \(\isom{\manifold,\manifold'}\), and set
+%
+\begin{equation}
+	\isom{\manifold}
+	%
+	= \isom{\manifold,\manifold}
+\end{equation}
+%
+to be the isometry group of \(\manifold{}\).
+Similarly,
+%
+\begin{equation}
+	\diff{\manifold}
+	%
+	= \diff{\manifold,\manifold}
+\end{equation}
+%
+is set to be the diffeomorphism group on \(\manifold{}\).
 
 In practice, one must discretise the manifolds and represent them as graphs.
 A review of graphs is presented in \cref{sec:chapter4_graphs}.
@@ -84,7 +100,15 @@ and a set of weighted edges
 %
 such that \(a_{ij} > 0\), if a link from node \(j\) to node \(i\) exists, and \(a_{ij} = 0\) otherwise.
 The adjacency matrix \(\vb{A}\) of a graph describes all the weights \(a_{ij},\ i,j = 1,\ldots,N\).
-The degree matrix \(\vb{K} = \diag{k_{1},\ldots,k_{N}}\) is a diagonal matrix where the degree of a given node is given by
+The degree matrix
+%
+\begin{equation}
+	\vb{K}
+	%
+	= \diag{k_{1},\ldots,k_{N}}
+\end{equation}
+%
+is a diagonal matrix where the degree of a given node is given by
 %
 \begin{equation}
 	k_{i}
@@ -496,13 +520,11 @@ Supposing that the wavelets and scaling function satisfy an admissibility condit
 \begin{equation}\label{eq:chapter4_synthesis}
 	\mesh{f}
 	%
-	= \integrateManifold{y} \bigg(
+	= \integrateManifold{y}
 	%
 	\meshY{(\translation{x}\Phi)} \meshY{W^{\Phi}}
 	%
-	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}}}
-	%
-	\bigg),
+	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}}},
 \end{equation}
 %
 or in Slepian space
@@ -645,13 +667,13 @@ Similarly, the scaling function energy is
 A \emph{Parseval frame} is satisfied by Slepian scale-discretised wavelets on manifolds
 %
 \begin{equation}
-	A\norm{f}^{2} \leq \integrateManifold{x} \bigg(
+	A\norm{f}^{2} \leq \integrateManifold{x}
 	%
 	\abs{\braket{\translation{x}\Phi}{f}}^{2}
 	%
 	+ \waveletSum \abs{\braket{\translation{x}\Psi^{j}}{f}}^{2}
 	%
-	\bigg) \leq B\norm{f}^{2},
+	\leq B\norm{f}^{2},
 \end{equation}
 %
 where \(A,\ B \in \realPosParam{}\).

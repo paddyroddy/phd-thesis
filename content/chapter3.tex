@@ -522,13 +522,11 @@ The function \(f\) may be reconstructed from its wavelet and scaling coefficient
 \begin{equation}\label{eq:chapter3_synthesis}
 	\pixel{f}
 	%
-	= \integrateSphere{\omega'} \bigg(
+	= \integrateSphere{\omega'}
 	%
 	\pixel[']{(\translation{\omega}\Phi)} \pixel[']{W^{\Phi\ast}}
 	%
-	+ \waveletSum \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{W^{\Psi^{j}\ast}}
-	%
-	\bigg),
+	+ \waveletSum \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{W^{\Psi^{j}\ast}},
 \end{equation}
 %
 or in Slepian space
@@ -671,13 +669,13 @@ Similarly, the scaling function energy is
 Slepian scale-discretised wavelets on the sphere satisfy the following \emph{Parseval frame} property
 %
 \begin{equation}
-	A\norm{f}^{2} \leq \integrateSphere{\omega} \bigg(
+	A\norm{f}^{2} \leq \integrateSphere{\omega}
 	%
 	\abs{\braket{\translation{\omega}\Phi}{f}}^{2}
 	%
 	+ \waveletSum \abs{\braket{\translation{\omega}\Psi^{j}}{f}}^{2}
 	%
-	\bigg) \leq B\norm{f}^{2},
+	\leq B\norm{f}^{2},
 \end{equation}
 %
 with \(A,\ B \in \realPosParam{}\).
