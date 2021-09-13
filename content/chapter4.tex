@@ -206,7 +206,7 @@ In harmonic space this can be simplified to a sum
 \begin{equation}\label{eq:chapter4_spatial_concentration_ratio}
 	\mu
 	%
-	= \frac{\sum\limits_{i} f_{i} \sum\limits_{j} D_{i,j} f_{j}}{\meshSum \abs{f_{i}}^{2}},
+	= \frac{\sum\limits_{i} f_{i} \sum\limits_{j} D_{i,j} \conj{f}_{j}}{\meshSum \abs{f_{i}}^{2}},
 \end{equation}
 %
 where
@@ -214,7 +214,7 @@ where
 \begin{equation}
 	D_{i,j}
 	%
-	= \integrateRegion{\meshVolume \mesh{\phi_{i}} \mesh{\phi_{j}}}
+	= \integrateRegion{\meshVolume \mesh{\phi_{i}} \mesh{\conj{\phi}_{j}}}
 \end{equation}
 %
 is a square matrix including all basis functions of the manifold.
@@ -223,7 +223,7 @@ Rewriting \cref{eq:chapter4_spatial_concentration_ratio} as a matrix variational
 \begin{equation}
 	\mu
 	%
-	= \frac{\transpose{\vb{f}} \vb{D} \vb{f}}{\transpose{\vb{f}} \vb{f}},
+	= \frac{\hermitian{\vb{f}} \vb{D} \vb{f}}{\hermitian{\vb{f}} \vb{f}},
 \end{equation}
 %
 where \(\vb{f}\) are the harmonic coefficients of \(\mesh{f}\), and are the solutions to the eigenproblem
@@ -294,17 +294,17 @@ The Slepian coefficients of a well-localised function may be computed with an in
 \begin{equation}
 	\slepian{f}
 	%
-	= \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\slepian{S}},
+	= \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}},
 \end{equation}
 %
 as
 %
 \begin{align}
-	\integrateRegion{\meshVolume} \mesh{f} \mesh{\slepian{S}}
+	\integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}}
 	%
-	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\meshVolume} \mesh{\slepian[']{S}} \mesh{\slepian{S}} \nonumber \\
+	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\meshVolume} \mesh{\slepian[']{S}} \mesh{\conj{\slepian{S}}} \nonumber \\
 	%
-	 & = \slepianSum['] \slepian[']{f} \transpose{\slepian{\vb{S}}} \vb{D} \slepian[']{\vb{S}} \nonumber                \\
+	 & = \slepianSum['] \slepian[']{f} \hermitian{\slepian{\vb{S}}} \vb{D} \slepian[']{\vb{S}} \nonumber                       \\
 	%
 	 & = \slepian{f} \slepian{\mu},
 \end{align}
@@ -313,9 +313,9 @@ where \(\vb{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\).
 Note the use of the orthogonality results
 %
 \begin{equation}\label{eq:chapter4_orthogonality_manifold}
-	\integrateManifold{x} \mesh{\slepian{S}} \mesh{\slepian[']{S}}
+	\integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\slepian[']{S}}}
 	%
-	= \transpose{\slepian[']{\vb{S}}} \slepian{\vb{S}}
+	= \hermitian{\slepian[']{\vb{S}}} \slepian{\vb{S}}
 	%
 	= \delta_{pp'},
 \end{equation}
@@ -323,11 +323,11 @@ Note the use of the orthogonality results
 and
 %
 \begin{equation}
-	\integrateRegion{\meshVolume} \mesh{\slepian{S}} \mesh{\slepian[']{S}}
+	\integrateRegion{\meshVolume} \mesh{\slepian{S}} \mesh{\conj{\slepian[']{S}}}
 	%
-	= \transpose{\slepian[']{\vb{S}}} \vb{D} \slepian{\vb{S}}
+	= \hermitian{\slepian[']{\vb{S}}} \vb{D} \slepian{\vb{S}}
 	%
-	= \slepian{\mu} \transpose{\slepian[']{\vb{S}}} \slepian{\vb{S}}
+	= \slepian{\mu} \hermitian{\slepian[']{\vb{S}}} \slepian{\vb{S}}
 	%
 	= \slepian{\mu} \delta_{pp'}.
 \end{equation}
@@ -337,7 +337,7 @@ To transform from Slepian coefficients to the basis functions of the manifold
 \begin{equation}\label{eq:chapter4_slepian_to_harmonic}
 	f_{i}
 	%
-	= \integrateManifold{x} \mesh{f} \mesh{\phi_{i}}
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\phi_{i}}}
 	%
 	= \slepianSum \slepian{f} {(\slepian{S})}_{i},
 \end{equation}
@@ -347,7 +347,7 @@ where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:
 \begin{equation}
 	{(\slepian{S})}_{i}
 	%
-	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\phi_{i}}.
+	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\phi_{i}}}.
 \end{equation}
 %
 The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
@@ -355,9 +355,9 @@ The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
 \begin{equation}\label{eq:chapter4_harmonic_to_slepian}
 	\slepian{f}
 	%
-	= \integrateManifold{x} \mesh{f} \mesh{\slepian{S}}
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}
 	%
-	= \sum\limits_{i} f_{i} {(\slepian{S})}_{i}.
+	= \sum\limits_{i} f_{i} \conj{(\slepian{S})}_{i}.
 \end{equation}
 
 \subsection{Sifting Convolution on Manifolds}\label{sec:chapter4_sifting_convolution_manifolds}
@@ -397,7 +397,7 @@ The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) fol
 \begin{equation}
 	\mesh{\convolution{f}{g}}
 	%
-	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{g},
+	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}},
 \end{equation}
 %
 which is a product in harmonic space
@@ -405,7 +405,7 @@ which is a product in harmonic space
 \begin{equation}
 	{\convolution{f}{g}}_{i}
 	%
-	= f_{i} g_{i}.
+	= f_{i} \conj{g_{i}}.
 \end{equation}
 %
 This convolution can be used to define wavelets restricted to a region of the manifold using the basis functions introduced in \cref{sec:chapter4_slepian_concentration_problem_manifolds} in the translation.
@@ -454,7 +454,7 @@ As before, the sifting convolution between two functions \(f,\ g \in \hilbert{R}
 \begin{equation}
 	\mesh{\convolution{f}{g}}
 	%
-	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{g},
+	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}},
 \end{equation}
 %
 which becomes a product in Slepian space
@@ -462,7 +462,7 @@ which becomes a product in Slepian space
 \begin{equation}
 	\slepian{\convolution{f}{g}}
 	%
-	= \slepian{f} \slepian{g},
+	= \slepian{f} \conj{\slepian{g}},
 \end{equation}
 %
 and hence is efficient to compute.
@@ -479,9 +479,9 @@ For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\
 \begin{align}
 	\mesh{W^{\Psi^{j}}}
 	%
-	 & = \mesh{\convolution{\Psi^{j}}{f}} \nonumber                         \\
+	 & = \mesh{\convolution{\Psi^{j}}{f}} \nonumber                                \\
 	%
-	 & = \integrateManifold{y} \meshY{(\translation{x}\Psi^{j})} \meshY{f}.
+	 & = \integrateManifold{y} \meshY{(\translation{x}\Psi^{j})} \meshY{\conj{f}}.
 \end{align}
 %
 In Slepian space this becomes
@@ -489,7 +489,7 @@ In Slepian space this becomes
 \begin{equation}\label{eq:chapter4_slepian_wavelet_p}
 	\slepian{W}^{\Psi^{j}}
 	%
-	= \slepian{\Psi}^{j} \slepian{f},
+	= \slepian{\Psi}^{j} \conj{\slepian{f}},
 \end{equation}
 %
 where \(\slepian{\Psi}^{j}\) are the Slepian harmonic coefficients of the wavelet at scale \(j\).
@@ -500,9 +500,9 @@ Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a 
 \begin{align}
 	\mesh{W^{\Phi}}
 	%
-	 & = \mesh{\convolution{\Phi}{f}} \nonumber                         \\
+	 & = \mesh{\convolution{\Phi}{f}} \nonumber                                \\
 	%
-	 & = \integrateManifold{y} \meshY{(\translation{x}\Phi)} \meshY{f},
+	 & = \integrateManifold{y} \meshY{(\translation{x}\Phi)} \meshY{\conj{f}},
 \end{align}
 %
 or in Slepian space
@@ -510,7 +510,7 @@ or in Slepian space
 \begin{equation}\label{eq:chapter4_slepian_scaling_p}
 	\slepian{W}^{\Phi}
 	%
-	= \slepian{\Phi} \slepian{f},
+	= \slepian{\Phi} \conj{\slepian{f}},
 \end{equation}
 %
 where \(\slepian{\Phi}\) are the Slepian coefficients of the scaling function.
@@ -522,9 +522,9 @@ Supposing that the wavelets and scaling function satisfy an admissibility condit
 	%
 	= \integrateManifold{y}
 	%
-	\meshY{(\translation{x}\Phi)} \meshY{W^{\Phi}}
+	\meshY{(\translation{x}\Phi)} \meshY{W^{\Phi\ast}}
 	%
-	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}}},
+	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}\ast}},
 \end{equation}
 %
 or in Slepian space
@@ -532,9 +532,9 @@ or in Slepian space
 \begin{equation}
 	\slepian{f}
 	%
-	= \slepian{W}^{\Phi} \slepian{\Phi}
+	= \slepian{W}^{\Phi\ast} \slepian{\Phi}
 	%
-	+ \waveletSum \slepian{W}^{\Psi^{j}} \slepian{\Psi}^{j}.
+	+ \waveletSum \slepian{W}^{\Psi^{j}\ast} \slepian{\Psi}^{j}.
 \end{equation}
 %
 The parameters \(J_{0}\) and \(J\) represent the lowest and highest scales \(j\) of the wavelet decomposition respectively --- to ensure exact reconstruction these parameters must be set consistently.
@@ -715,13 +715,13 @@ Thus, the variance can be expanded to become
 \begin{equation}\label{eq:chapter4_slepian_isotropic_noise}
 	\variance{\mesh{W^{\varphi}}}
 	%
-	= \slepianSum \slepianSum['] \slepian{\varphi} \slepian[']{\varphi} \mesh{\slepian{S}} \mesh{\slepian[']{S}} \expval{\slepian{f} \slepian[']{f}}.
+	= \slepianSum \slepianSum['] \slepian{\varphi} \conj{\slepian[']{\varphi}} \mesh{\slepian{S}} \mesh{\conj{\slepian[']{S}}} \expval{\conj{\slepian{f}} \slepian[']{f}}.
 \end{equation}
 
 Consider homogenous and isotropic noise defined by its power spectrum
 %
 \begin{equation}
-	\expval{f_{i} f_{j}}
+	\expval{f_{i} \conj{f}_{j}}
 	%
 	= C_{i} \delta_{i j},
 \end{equation}
@@ -730,9 +730,9 @@ where \(C_{i} = \sigma^{2}\) for white noise.
 The power expression in Slepian space can be found by
 %
 \begin{align}
-	\expval{\slepian{f} \slepian[']{f}}
+	\expval{\slepian{f} \conj{\slepian[']{f}}}
 	%
-	 & = \sum\limits_{i} \sum\limits_{j} \expval{f_{i} f_{j}} \empty{} {(\slepian{S})}_{i} {(\slepian[']{S})}_{j} \nonumber \\
+	 & = \sum\limits_{i} \sum\limits_{j} \expval{f_{i} \conj{f}_{j}} \empty{} \conj{(\slepian{S})}_{i} {(\slepian[']{S})}_{j} \nonumber \\
 	%
 	 & = \sigma^{2} \delta_{pp'},
 \end{align}
@@ -807,7 +807,7 @@ where the signal and noise are represented by \(\mesh{s}\) and \(\mesh{n}\) resp
 The power spectrum of noise in Slepian space is as before
 %
 \begin{equation}
-	\expval{\slepian{n} \slepian[']{n}}
+	\expval{\slepian{n} \conj{\slepian[']{n}}}
 	%
 	= \sigma^{2} \delta_{pp'}.
 \end{equation}
