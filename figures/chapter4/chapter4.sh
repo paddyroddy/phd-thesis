@@ -20,7 +20,7 @@ P_RANGE=(
     199
 )
 RANK_RANGE=$(seq 2 9)
-SIGMA=$(seq 1 2)
+SIGMA=1
 SNR=-5
 
 for r in ${RANK_RANGE[@]}; do
@@ -97,14 +97,12 @@ mesh $MESH \
     -u \
     -z
 
-for s in ${SIGMA[@]}; do
-    echo figure: 10, sigma: $s
-    python \
-        $MATPLOTLIB_PLOTS/denoising_slepian_mesh.py \
-        $MESH \
-        -n $SNR \
-        -s $s
-done
+echo figure: 10
+python \
+    $MATPLOTLIB_PLOTS/denoising_slepian_mesh.py \
+    $MESH \
+    -n $SNR \
+    -s $SIGMA
 
 for f in ${OTHER_MESHES[@]}; do
     echo figure: 11, mesh: $f
