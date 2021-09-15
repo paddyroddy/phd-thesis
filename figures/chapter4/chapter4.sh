@@ -53,17 +53,12 @@ python \
     $MATPLOTLIB_PLOTS/mesh_slepian_eigenvalues.py \
     $MESH
 
-echo figure: 7, field
+echo figure: 8, field
 mesh $MESH \
     -m field \
     -u
-echo figure: 7, Slepian field
-mesh $MESH \
-    -m slepian_field \
-    -u \
-    -z
 
-echo figure: 8, scaling
+echo figure: 7, scaling
 mesh $MESH \
     -m wavelets \
     -u \
@@ -75,7 +70,7 @@ mesh $MESH \
     -z
 
 for j in $J_RANGE; do
-    echo figure: 8, j: $j
+    echo figure: 7, j: $j
     mesh $MESH \
         -e $B $J_MIN $j \
         -m wavelets \
@@ -90,6 +85,12 @@ for j in $J_RANGE; do
         -z
 done
 
+echo figure: 10, original
+mesh $MESH \
+    -m slepian_field \
+    -u \
+    -z
+
 echo figure: 10, noised
 mesh $MESH \
     -m slepian_field \
@@ -97,7 +98,7 @@ mesh $MESH \
     -u \
     -z
 
-echo figure: 10
+echo figure: 10, denoised
 python \
     $MATPLOTLIB_PLOTS/denoising_slepian_mesh.py \
     $MESH \
