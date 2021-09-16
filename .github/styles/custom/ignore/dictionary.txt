@@ -107,6 +107,7 @@ textsuperscript
 texttt
 textwidth
 thresholded
+thresholding
 tikzpicture
 toc
 tocdepth
@@ -119,4 +120,3 @@ usepackage
 varphi
 vb
 wigner
-thresholding
