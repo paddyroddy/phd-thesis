@@ -562,40 +562,8 @@ Wavelets and a scaling function that satisfy this admissibility condition may no
 
 \subsection{Generating Functions}\label{sec:chapter4_generating_functions}
 
-Consider the smooth generating functions defined by~\cite{Wiaux2008} to tile the Slepian line.
-Consider the \(C^{\infty}\) Schwartz function with compact support on \(\interval{-1}{1}\):
-%
-\begin{equation}
-	s(t) \equiv
-	%
-	\begin{cases}
-		\exp(1/(t^{2}-1)), & t \in \interval{-1}{1}    \\
-		%
-		0,                 & t \notin \interval{-1}{1}
-	\end{cases}
-\end{equation}
-%
-for \(t \in \mathbb{R}\).
-The positive real parameter \(\lambda \in \realPosParam{}\) may then be introduced to map \(s(t)\) to
-%
-\begin{equation}
-	s_{\lambda}(t)
-	%
-	\equiv s\bigg(\frac{2\lambda}{\lambda-1}(t-\lambda^{-1}) - 1\bigg),
-\end{equation}
-%
-which has compact support in \(\interval{1/\lambda}{1}\).
-One can define the smoothly decreasing function \(k_{\lambda}\) by
-%
-\begin{equation}
-	k_{\lambda}(t)
-	%
-	\equiv \frac{\int_{t}^{1} \dd{t'} s^{2}_{\lambda}(t')/t'}
-	%
-	{\int_{1/\lambda}^{1} \dd{t'} s^{2}_{\lambda}(t')/t'},
-\end{equation}
-%
-which is unity for \(t < 1/\lambda{}\), zero for \(t > 1\), and smoothly decreasing from unity to zero for \(t \in \interval{1/\lambda}{1}\).
+A tiling of the Slepian line defines the wavelets through smooth generating functions --- in an identical manner to \cref{sec:chapter3_generating_functions}.
+A smoothly decreasing function \(k_{\lambda}\), defined in~\cite{Wiaux2008}, is unity for \(t < 1/\lambda\), zero for \(t > 1\), and smoothly decreasing in between.
 The wavelet generating function is defined as
 %
 \begin{equation}
