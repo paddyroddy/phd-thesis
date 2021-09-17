@@ -27,17 +27,19 @@ Wavelets, however, simultaneously extract contributions of scale-dependent featu
 Wavelets on the sphere (\cf{} manifold) have been applied in fields such as: astrophysics and cosmology~\cite{Pen1999,Barreiro2001,Rocha2004,McEwen2004}, planetary science~\cite{Audet2011,Audet2014}, and geophysics~\cite{Loris2010,Simons2011,Simons2011b}.
 Scale-discretised wavelets (on the sphere)~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} lean on a tiling of the harmonic line to produce an exact wavelet transform in both the continuous and discrete settings.
 
-A new research direction, \emph{geometric deep learning}, has evolved from an increasing interest in non-Euclidean data geometries; where convolutional networks are generalised to graph and manifold structured data (\eg{}~\cite{Bronstein2017}).
+A new research direction, \emph{geometric deep learning}, has evolved from an increasing interest in non-Euclidean data geometries; where convolutional networks are generalised to graph and manifold structured data (\eg{}~\cite{Bronstein2017,Perlmutter2020}).
 In general, geometric learning problems are split into two categories: characterising the structure of the data, and analysing functions defined on a non-Euclidean domain.
 Manifold learning models (\eg{}~\cite{Tenenbaum2000,Coifman2006b,VanDerMaaten2008}) are a set of unsupervised algorithms which capture the intrinsic structure in the data through data-driven geometries.
 Moreover, signals on manifolds are increasingly prevalent in areas such as shape matching and computer graphics.
-Thus, many works are emerging to generalise spectral and signal processing methods to manifolds~\cite{Coifman2006} and graphs (\eg{}~\cite{Shuman2013}).
+Thus, many works are emerging to generalise spectral and signal processing methods to manifolds~\cite{Coifman2006} and graphs~\cite{Shuman2013}.
 In these settings, functions are supported on the manifold/the vertices of the graph, and the Fourier harmonics are the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian.
 
 Graphs are a fundamental data structure, which are useful in describing geometric structures of data in domains such as: social~\cite{Nettleton2013}, transportation~\cite{Mohan2014}, sensor~\cite{Kenniche2010}, and neuronal~\cite{Tang2012} networks.
 Each edge in a graph is associated with a weight, which is often a measure of the similarity between two connected vertices in a graph.
 The physics of the problem or the data at hand dictate which vertices are connected and their respective weights, \ie{} the weight may not necessarily be the physical distance between two vertices.
 A \emph{graph signal} is a finite collection of samples with some value at each vertex at a graph.
+In computer graphics, working with intrinsically geometric shapes is commonplace.
+In this field, 3D shapes are often modelled as Riemannian manifolds and discretised as polygonal meshes.
 
 It is well-known that functions cannot have finite support in the spatial and spectral domains simultaneously~\cite{Slepian1961,Slepian1983}.
 In the early 1960s, Slepian, Landau and Pollak solved the fundamental problem of finding and representing signals which are optimally concentrated in both domains~\cite{Slepian1961,Landau1961,Landau1962}.
