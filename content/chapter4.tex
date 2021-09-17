@@ -47,17 +47,17 @@ The so-called \emph{Slepian functions} arise in many fields within science and e
 Notably, these functions have been used in interpolation~\cite{Moore2004,Shkolnisky2006}, extrapolation~\cite{Xu1983}, inverse problems~\cite{Villiers2001,Abdelmoula2015}, and solving partial differential equations~\cite{Boyd2003,Chen2005}.
 
 The remainder of the article is as follows.
-\cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and triangular meshes.
+\cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and polygonal meshes.
 A brief review of Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} follows, which this works builds upon.
-In \cref{sec:chapter4_working_with_manifolds} the Slepian spatial-spectral problem is adapted to the manifold setting, which results in the basis functions of a region of the manifold, the Slepian functions.
+In \cref{sec:chapter4_working_with_manifolds} the Slepian concentration problem is adapted to the manifold setting, which results in the basis functions of a region of the manifold, \ie{} the Slepian functions.
 A review of the sifting convolution~\cite{Roddy2021} follows, which allows one to perform convolutions on the manifold (as well as in the region) --- which are typically not well-defined.
 The Slepian wavelet theory is developed in \cref{sec:chapter4_slepian_wavelets}.
 Initially the sifting convolution is expressed in the Slepian domain, which is a product in the Slepian harmonic space.
 The scale-discretised framework is then introduced, followed by the generating functions which define the wavelets themselves.
 The section concludes with some properties of the wavelets.
 A numerical illustration is presented in \cref{sec:chapter4_numerical_illustration}, in which the Slepian functions of the head region of a mesh of Homer Simpson are computed.
-A field is then placed on the mesh, and the resulting wavelets and wavelet coefficients are shown.
-A straightforward hard-thresholding denoising scheme is developed, and is performed on the Homer mesh as well as some other meshes.
+A field is then placed on the mesh, and the resulting wavelets and wavelet coefficients are found.
+A straightforward hard-thresholding denoising scheme is developed and performed on the Homer mesh, along with some other meshes.
 A boost in signal-to-noise ratio is observed, showcasing a possible use of these wavelets.
 Lastly, some concluding remarks are given in \cref{sec:chapter4_conclusions}.
 
