@@ -48,6 +48,15 @@ The Slepian concentration problem was initially formed in the Euclidean domain; 
 The so-called \emph{Slepian functions} arise in many fields within science and engineering, such as: medical imaging~\cite{Jackson1991}, signal processing~\cite{Mathews1985,Thomson1982}, and geophysics~\cite{Thomson1976,Simons2006a,Simons2011}.
 Notably, these functions have been used in interpolation~\cite{Moore2004,Shkolnisky2006}, extrapolation~\cite{Xu1983}, inverse problems~\cite{Villiers2001,Abdelmoula2015}, and solving partial differential equations~\cite{Boyd2003,Chen2005}.
 
+Due to recent interest in geometric deep learning, many fields are extending existing methods developed in the Euclidean domain to manifolds or graphs, \ie{}~\cite{Perlmutter2020}.
+This work generalises Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} to Riemannian manifolds.
+These wavelets constitute a basis designed for incomplete data on manifolds or graphs.
+Here, the scale-discretised wavelet construction on the sphere~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} is extended to the Slepian domain; however, the Slepian functions are now constructed on a region of a general manifold (rather than strictly the sphere).
+As before, scale-discretised wavelets exhibit an explicit inversion formula, constitute a tight frame, and have excellent localisation properties in both spectral and spatial domains.
+The wavelets themselves are constructed through a tiling of the Slepian harmonic line --- built from the eigenfunctions of the Slepian concentration problem.
+The wavelet transform follows through a generalisation of the \emph{sifting convolution}~\cite{Roddy2021}, which allows one to perform convolutions on (incomplete) manifolds.
+The wavelet construction is analogous to the spherical case, but with the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
+
 The remainder of the article is as follows.
 \cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and polygonal meshes.
 A brief review of Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} follows, which this works builds upon.
@@ -192,7 +201,7 @@ where \(f_{i}\) are the Fourier coefficients given by the usual projection onto 
 \subsection{Problem Formulation}\label{sec:chapter4_problem_formulation}
 
 This work generalises Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} to arbitrary manifolds.
-Here, the basis functions of the Slepian concentration problem are built from the eigenvectors of the Laplace-Beltrami operator of the manifold, as opposed to the spherical harmonics.
+Here, the basis functions of the Slepian concentration problem are built from the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, as opposed to the spherical harmonics.
 In the aforesaid work, the wavelets are constructed through a tiling of the Slepian line (akin to the harmonic line) in an analogous manner to~\cite{Wiaux2008,McEwen2018}.
 The sifting convolution~\cite{Roddy2021} allows one to perform convolutions where both inputs are directional, whilst the output remains on the sphere.
 By leveraging this convolution, the wavelet transforms in the Slepian domain are built on a region of the sphere (\cf{} manifold) to ensure exact reconstruction.
