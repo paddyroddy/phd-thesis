@@ -2,7 +2,7 @@
 
 \section*{Abstract}
 
-Inspired by recent interest in geometric deep learning, this work generalises the recently defined Slepian scale-discretised wavelets on the sphere to Riemannian manifolds.
+Inspired by recent interest in geometric deep learning, this work generalises the recently developed Slepian scale-discretised wavelets on the sphere to Riemannian manifolds.
 Through the sifting convolution, one may define translations and, thus, convolutions on manifolds --- which are not well-defined in general.
 Slepian wavelets are constructed on a region of a manifold, and are therefore suited to problems where data only exists, or is missing in a particular region.
 The Slepian functions, on which Slepian wavelets are built, are the basis functions of the Slepian spatial-spectral concentration problem.
@@ -14,7 +14,7 @@ Through a wavelet transform, the wavelet coefficients of a field defined on the 
 
 Many fields measure data which are intrinsically non-Euclidean in structure and are better modelled by manifolds or graphs.
 One manifold, in particular, which is in commonplace in science and engineering is the sphere, such as in cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, computer graphics~\cite{Ramamoorthi2004}, and signal processing~\cite{Roddy2021a}.
-Often data are not observed/are missing in some region of the manifold, and hence methods which work over the whole manifold may not be appropriate.
+Often data are not observed or are missing in some region of the manifold, and hence methods which work over the whole manifold may not be appropriate.
 One such example, in the spherical setting, is in cosmic microwave background analyses where foreground microwave emissions dominate the region around the  Galactic plane and are often removed~\cite{Mortlock2002}.
 Wavelets are a typical approach to deal with problems of this form, which allow the probing of spatially localised, scale-dependent features of the signal.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.
@@ -39,7 +39,12 @@ Each edge in a graph is associated with a weight, which is often a measure of th
 The physics of the problem or the data at hand dictate which vertices are connected and their respective weights, \ie{} the weight may not necessarily be the physical distance between two vertices.
 A \emph{graph signal} is a finite collection of samples with some value at each vertex at a graph.
 
-The Slepian concentration problem was initially formed in the Euclidean domain; however, it has since been generalised to other manifolds, such as: the sphere~\cite{Simons2006,Wieczorek2005,Albertella1999,Cohen1989,Meaney1984,Daubechies1988}, and graphs~\cite{VanDeVille2017,VanDeVille2017a,Bolton2018}.
+It is well-known that functions cannot have finite support in the spatial and spectral domains simultaneously~\cite{Slepian1961,Slepian1983}.
+In the early 1960s, Slepian, Landau and Pollak solved the fundamental problem of finding and representing signals which are optimally concentrated in both domains~\cite{Slepian1961,Landau1961,Landau1962}.
+The \emph{Slepian spatial-spectral concentration problem} (or, equally, the \emph{Slepian concentration problem}) results in the families of functions which are optimally concentrated in the spatial (spectral) domain, and exactly limited in the spectral (spatial) domain.
+The Slepian concentration problem was initially formed in the Euclidean domain; however, it has since been generalised to other geometries, such as: the sphere~\cite{Simons2006,Wieczorek2005,Albertella1999,Cohen1989,Meaney1984,Daubechies1988}, and graphs~\cite{VanDeVille2017,VanDeVille2017a,Bolton2018}.
+The so-called \emph{Slepian functions} arise in many fields within science and engineering, such as: medical imaging~\cite{Jackson1991}, signal processing~\cite{Mathews1985,Thomson1982}, and geophysics~\cite{Thomson1976,Simons2006a,Simons2011}.
+Notably, these functions have been used in interpolation~\cite{Moore2004,Shkolnisky2006}, extrapolation~\cite{Xu1983}, inverse problems~\cite{Villiers2001,Abdelmoula2015}, and solving partial differential equations~\cite{Boyd2003,Chen2005}.
 
 The remainder of the article is as follows.
 \cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and triangular meshes.
