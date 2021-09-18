@@ -52,8 +52,6 @@ includeonly
 infty
 inparaenum
 int
-isom
-isometries
 iux
 kirker
 laplacian

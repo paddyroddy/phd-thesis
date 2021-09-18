@@ -42,8 +42,8 @@ In computer graphics, working with intrinsically geometric shapes is commonplace
 In this field, 3D shapes are often modelled as Riemannian manifolds and discretised as polygonal meshes.
 
 It is well-known that functions cannot have finite support in the spatial and spectral domains simultaneously~\cite{Slepian1961,Slepian1983}.
-In the early 1960s, Slepian, Landau and Pollak solved the fundamental problem of finding and representing signals which are optimally concentrated in both domains~\cite{Slepian1961,Landau1961,Landau1962}.
-The \emph{Slepian spatial-spectral concentration problem} (or, equally, the \emph{Slepian concentration problem}) results in the families of functions which are optimally concentrated in the spatial (spectral) domain, and exactly limited in the spectral (spatial) domain.
+In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of finding and representing signals which are optimally concentrated in both domains~\cite{Slepian1961,Landau1961,Landau1962}.
+The \emph{Slepian spatial-spectral concentration problem} (or the \emph{Slepian concentration problem} for short) results in the families of functions which are optimally concentrated in the spatial (spectral) domain, and exactly limited in the spectral (spatial) domain.
 The Slepian concentration problem was initially formed in the Euclidean domain; however, it has since been generalised to other geometries, such as: the sphere~\cite{Simons2006,Wieczorek2005,Albertella1999,Cohen1989,Meaney1984,Daubechies1988}, and graphs~\cite{VanDeVille2017,VanDeVille2017a,Bolton2018}.
 The so-called \emph{Slepian functions} arise in many fields within science and engineering, such as: medical imaging~\cite{Jackson1991}, signal processing~\cite{Mathews1985,Thomson1982}, and geophysics~\cite{Thomson1976,Simons2006a,Simons2011}.
 Notably, these functions have been used in interpolation~\cite{Moore2004,Shkolnisky2006}, extrapolation~\cite{Xu1983}, inverse problems~\cite{Villiers2001,Abdelmoula2015}, and solving partial differential equations~\cite{Boyd2003,Chen2005}.
@@ -57,7 +57,7 @@ The wavelets themselves are constructed through a tiling of the Slepian harmonic
 The wavelet transform follows through a generalisation of the \emph{sifting convolution}~\cite{Roddy2021}, which allows one to perform convolutions on (incomplete) manifolds.
 The wavelet construction is analogous to the spherical case, but with the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
 
-Clearly, wavelets in the Slepian domain have been considered before --- this work generalises prior work on the sphere to general manifolds~\cite{Roddy2021a}.
+Plainly, wavelets in the Slepian domain have been considered before --- this work generalises prior work on the sphere to general manifolds~\cite{Roddy2021a}.
 Multiresolution analyses have been performed with prolate spheroidal wave functions~\cite{Walter2004} in the Euclidean setting.
 In spherical settings, spatially localised spherical harmonic transforms are sometimes used (\eg{}~\cite{Simons1997,Wieczorek2005,Khalid2013,Khalid2013a}).
 Other times, the Slepian functions on the sphere are used directly~\cite{Simons2009}.
@@ -82,7 +82,8 @@ Lastly, some concluding remarks are given in \cref{sec:chapter4_conclusions}.
 
 \section{Mathematical Background and Problem Formulation}\label{sec:chapter4_mathematical_background_problem_formulation}
 
-Some mathematical preliminaries are introduced in \cref{sec:chapter4_mathematical_preliminaries} with a recap of Riemannian manifolds, their representation as graphs, and triangular meshes (a popular choice of graph).
+Some mathematical preliminaries are introduced in \cref{sec:chapter4_mathematical_preliminaries} with a recap of Riemannian manifolds, their representation as graphs, and polygonal meshes (a popular choice of graph).
+Following this is a review of the Laplace-Beltrami operator (on manifolds) and the graph Laplacian in \cref{sec:chapter4_laplacian}.
 This work extends Slepian scale-discretised wavelets on the sphere to manifolds, a brief review of which is given in \cref{sec:chapter4_problem_formulation}.
 
 \subsection{Mathematical Preliminaries}\label{sec:chapter4_mathematical_preliminaries}
@@ -92,24 +93,6 @@ This work extends Slepian scale-discretised wavelets on the sphere to manifolds,
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
 The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume{}\).
 The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplacian{}\).
-Let the set of all isometries between two manifolds \(\manifold{}\) and \(\manifold'\) be denoted \(\isom{\manifold,\manifold'}\), and set
-%
-\begin{equation}
-	\isom{\manifold}
-	%
-	= \isom{\manifold,\manifold}
-\end{equation}
-%
-to be the isometry group of \(\manifold{}\).
-Similarly,
-%
-\begin{equation}
-	\diff{\manifold}
-	%
-	= \diff{\manifold,\manifold}
-\end{equation}
-%
-is set to be the diffeomorphism group on \(\manifold{}\).
 
 In practice, one must discretise the manifolds and represent them as graphs.
 A review of graphs is presented in \cref{sec:chapter4_graphs}.
@@ -160,10 +143,12 @@ is a diagonal matrix where the degree of a given node is given by
 
 \subsubsection{Polygonal Meshes}
 
+\subsection{The Laplacian}\label{sec:chapter4_laplacian}
+
 \subsubsection{Laplace-Beltrami Operator}
 
 Let \(f \in \hilbert{\manifold}\) be a real-valued function defined on a Riemannian manifold \(\manifold{}\).
-The \emph{Laplace-Beltrami} operator \(\laplacian{}\) is
+The \emph{Laplace-Beltrami} operator is
 %
 \begin{equation}
 	\laplacian f
