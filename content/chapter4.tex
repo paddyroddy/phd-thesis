@@ -13,7 +13,7 @@ Through a wavelet transform, the wavelet coefficients of a field defined on the 
 \section{Introduction}
 
 Many fields measure data which are intrinsically non-Euclidean in structure and are better modelled by manifolds or graphs.
-One manifold, in particular, which is in commonplace in science and engineering is the sphere, such as in cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, computer graphics~\cite{Ramamoorthi2004}, and signal processing~\cite{Roddy2021a}.
+One manifold, in particular, which is in commonplace in science and engineering is the sphere; such as in: cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, computer graphics~\cite{Ramamoorthi2004}, and signal processing~\cite{Roddy2021a}.
 Often data are not observed or are missing in some region of the manifold, and hence methods which work over the whole manifold may not be appropriate.
 One such example, in the spherical setting, is in cosmic microwave background analyses where foreground microwave emissions dominate the region around the  Galactic plane and are often removed~\cite{Mortlock2002}.
 Wavelets are a typical approach to deal with problems of this form, which allow the probing of spatially localised, scale-dependent features of the signal.
@@ -57,16 +57,24 @@ The wavelets themselves are constructed through a tiling of the Slepian harmonic
 The wavelet transform follows through a generalisation of the \emph{sifting convolution}~\cite{Roddy2021}, which allows one to perform convolutions on (incomplete) manifolds.
 The wavelet construction is analogous to the spherical case, but with the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
 
+Clearly, wavelets in the Slepian domain have been considered before --- this work generalises prior work on the sphere to general manifolds~\cite{Roddy2021a}.
+Multiresolution analyses have been performed with prolate spheroidal wave functions~\cite{Walter2004} in the Euclidean setting.
+In spherical settings, spatially localised spherical harmonic transforms are sometimes used (\eg{}~\cite{Simons1997,Wieczorek2005,Khalid2013,Khalid2013a}).
+Other times, the Slepian functions on the sphere are used directly~\cite{Simons2009}.
+A variety of other approaches include: established regularisation techniques based on a known singular value decomposition~\cite{Michel2017}, and wavelet-like representations without explicit inverse transforms~\cite{Simons2011}.
+Extending wavelets and wavelet techniques to manifold and graph domains has been extensively reviewed (\eg{}~\cite{Dahmen1999,Coifman2006a}).
+
 The remainder of the article is as follows.
 \cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and polygonal meshes.
+The Laplace-Beltrami operator and the graph Laplacian are then introduced.
 A brief review of Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} follows, which this works builds upon.
 In \cref{sec:chapter4_working_with_manifolds} the Slepian concentration problem is adapted to the manifold setting, which results in the basis functions of a region of the manifold, \ie{} the Slepian functions.
-A review of the sifting convolution~\cite{Roddy2021} follows, which allows one to perform convolutions on the manifold (as well as in the region) --- which are typically not well-defined.
+A review of the sifting convolution~\cite{Roddy2021} follows, which allows one to perform convolutions on the (incomplete) manifold --- which are typically not well-defined.
 The Slepian wavelet theory is developed in \cref{sec:chapter4_slepian_wavelets}.
-Initially the sifting convolution is expressed in the Slepian domain, which is a product in the Slepian harmonic space.
+Initially, the sifting convolution is expressed in the Slepian domain, which is a product in the Slepian harmonic space.
 The scale-discretised framework is then introduced, followed by the generating functions which define the wavelets themselves.
 The section concludes with some properties of the wavelets.
-A numerical illustration is presented in \cref{sec:chapter4_numerical_illustration}, in which the Slepian functions of the head region of a mesh of Homer Simpson are computed.
+A numerical illustration is presented in \cref{sec:chapter4_numerical_illustration}, in which the Slepian functions of the head region of a polygonal mesh of Homer Simpson are computed.
 A field is then placed on the mesh, and the resulting wavelets and wavelet coefficients are found.
 A straightforward hard-thresholding denoising scheme is developed and performed on the Homer mesh, along with some other meshes.
 A boost in signal-to-noise ratio is observed, showcasing a possible use of these wavelets.
