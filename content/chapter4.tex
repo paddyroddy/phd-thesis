@@ -83,7 +83,7 @@ Lastly, some concluding remarks are given in \cref{sec:chapter4_conclusions}.
 \section{Mathematical Background and Problem Formulation}\label{sec:chapter4_mathematical_background_problem_formulation}
 
 Some mathematical preliminaries are introduced in \cref{sec:chapter4_mathematical_preliminaries} with a recap of Riemannian manifolds, their representation as graphs, and polygonal meshes (a popular choice of graph).
-Following this is a review of the Laplace-Beltrami operator (on manifolds) and the graph Laplacian in \cref{sec:chapter4_laplacian}.
+Following this is a review of the Laplace-Beltrami operator (on manifolds) and the graph Laplacian is presented.
 This work extends Slepian scale-discretised wavelets on the sphere to manifolds, a brief review of which is given in \cref{sec:chapter4_problem_formulation}.
 
 \subsection{Mathematical Preliminaries}\label{sec:chapter4_mathematical_preliminaries}
@@ -92,7 +92,7 @@ This work extends Slepian scale-discretised wavelets on the sphere to manifolds,
 
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
 The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume{}\).
-The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplacian{}\).
+The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplace{M}\).
 
 In practice, one must discretise the manifolds and represent them as graphs.
 A review of graphs is presented in \cref{sec:chapter4_graphs}.
@@ -143,9 +143,12 @@ is a diagonal matrix where the degree of a given node is given by
 
 \subsubsection{Polygonal Meshes}
 
-\subsection{The Laplacian}\label{sec:chapter4_laplacian}
+\subsubsection{The Laplacian}
 
-\subsubsection{Laplace-Beltrami Operator}
+Here, a brief review of the Laplace-Beltrami operator on manifolds and the graph Laplacian is presented.
+The graph Laplacian converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
+
+\paragraph{Laplace-Beltrami Operator}
 
 Let \(f \in \hilbert{\manifold}\) be a real-valued function defined on a Riemannian manifold \(\manifold{}\).
 The \emph{Laplace-Beltrami} operator is
@@ -186,10 +189,12 @@ where \(f_{i}\) are the Fourier coefficients given by the usual projection onto 
 \begin{equation}
 	f_{i}
 	%
-	= \braket{f}{\phi_{i}}.
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\phi_{i}}}.
 \end{equation}
 
 \input{figures/chapter4/eigenhomers}
+
+\paragraph{Graph Laplacian}
 
 \subsection{Problem Formulation}\label{sec:chapter4_problem_formulation}
 
@@ -233,7 +238,7 @@ In harmonic space this can be simplified to a sum
 \begin{equation}\label{eq:chapter4_spatial_concentration_ratio}
 	\mu
 	%
-	= \frac{\sum\limits_{i} f_{i} \sum\limits_{j} D_{i,j} \conj{f}_{j}}{\meshSum \abs{f_{i}}^{2}},
+	= \frac{\sum\limits_{i} f_{i} \sum\limits_{j} D_{i,j} \conj{f_{j}}}{\meshSum \abs{f_{i}}^{2}},
 \end{equation}
 %
 where
@@ -241,7 +246,7 @@ where
 \begin{equation}
 	D_{i,j}
 	%
-	= \integrateRegion{\meshVolume \mesh{\phi_{i}} \mesh{\conj{\phi}_{j}}}
+	= \integrateRegion{\meshVolume \mesh{\phi_{i}} \mesh{\conj{\phi_{j}}}}
 \end{equation}
 %
 is a square matrix including all basis functions of the manifold.
@@ -716,7 +721,7 @@ Thus, the variance can be expanded to become
 Consider homogenous and isotropic noise defined by its power spectrum
 %
 \begin{equation}
-	\expval{f_{i} \conj{f}_{j}}
+	\expval{f_{i} \conj{f_{j}}}
 	%
 	= C_{i} \delta_{i j},
 \end{equation}
@@ -727,7 +732,7 @@ The power expression in Slepian space can be found by
 \begin{align}
 	\expval{\slepian{f} \conj{\slepian[']{f}}}
 	%
-	 & = \sum\limits_{i} \sum\limits_{j} \expval{f_{i} \conj{f}_{j}} \empty{} \conj{(\slepian{S})}_{i} {(\slepian[']{S})}_{j} \nonumber \\
+	 & = \sum\limits_{i} \sum\limits_{j} \expval{f_{i} \conj{f_{j}}} \empty{} \conj{(\slepian{S})}_{i} {(\slepian[']{S})}_{j} \nonumber \\
 	%
 	 & = \sigma^{2} \delta_{pp'},
 \end{align}
