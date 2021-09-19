@@ -32,7 +32,7 @@ In general, geometric learning problems are split into two categories: character
 Manifold learning models (\eg{}~\cite{Tenenbaum2000,Coifman2006b,VanDerMaaten2008}) are a set of unsupervised algorithms which capture the intrinsic structure in the data through data-driven geometries.
 Moreover, signals on manifolds are increasingly prevalent in areas such as shape matching and computer graphics.
 Thus, many works are emerging to generalise spectral and signal processing methods to manifolds~\cite{Coifman2006} and graphs~\cite{Shuman2013}.
-In these settings, functions are supported on the manifold/the vertices of the graph, and the Fourier harmonics are the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian.
+In these settings, functions are supported on the manifold/the vertices of the graph, and the Fourier harmonics are the eigenfunctions of the \emph{Laplace-Beltrami operator}/eigenvectors of the \emph{graph Laplacian}.
 
 Graphs are a fundamental data structure, which are useful in describing geometric structures of data in domains such as: social~\cite{Nettleton2013}, transportation~\cite{Mohan2014}, sensor~\cite{Kenniche2010}, and neuronal~\cite{Tang2012} networks.
 Each edge in a graph is associated with a weight, which is often a measure of the similarity between two connected vertices in a graph.
@@ -90,65 +90,12 @@ This work extends Slepian scale-discretised wavelets on the sphere to manifolds,
 
 \subsubsection{Riemannian Manifolds}
 
+Put simply, a manifold is a space that is locally Euclidean.
+For example, at a point on the surface of the Earth (\ie{} \(\twoSphere{}\)) the Earth's surface appears planar --- leading to the so-called \emph{Flat Earth} theory.
+More formally, a \(d\)-dimensional manifold \(\manifold{}\) is a topological space where each point \(x\) exists in a neighbourhood that is topologically homeomorphic to a \(d\)-dimensional Euclidean space --- called the \emph{tangent space}.
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
 The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume{}\).
 The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplace{M}\).
-
-In practice, one must discretise the manifolds and represent them as graphs.
-A review of graphs is presented in \cref{sec:chapter4_graphs}.
-
-\subsubsection{Graphs}\label{sec:chapter4_graphs}
-
-Consider a graph
-%
-\begin{equation}
-	\mathcal{G}
-	%
-	= (\mathcal{V}, \mathcal{E})
-\end{equation}
-%
-consisting of a set of \(N\) vertices
-%
-\begin{equation}
-	\mathcal{V}
-	%
-	\in \set{1,2,\ldots,N},
-\end{equation}
-%
-and a set of weighted edges
-%
-\begin{equation}
-	\mathcal{E}
-	%
-	= \set{a_{i j}}_{i,j \in \mathcal{V}},
-\end{equation}
-%
-such that \(a_{i j} > 0\), if a link from node \(j\) to node \(i\) exists, and \(a_{i j} = 0\) otherwise.
-The adjacency matrix \(\vb{A}\) of a graph describes all the weights \(a_{i j},\ i,j = 1,\ldots,N\).
-The degree matrix
-%
-\begin{equation}
-	\vb{K}
-	%
-	= \diag{k_{1},\ldots,k_{N}}
-\end{equation}
-%
-is a diagonal matrix where the degree of a given node is given by
-%
-\begin{equation}
-	k_{i}
-	%
-	= \sum\limits_{j=1}^{N} a_{i j}.
-\end{equation}
-
-\subsubsection{Polygonal Meshes}
-
-\subsubsection{The Laplacian}
-
-Here, a brief review of the Laplace-Beltrami operator on manifolds and the graph Laplacian is presented.
-The graph Laplacian converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
-
-\paragraph{Laplace-Beltrami Operator}
 
 Let \(f \in \hilbert{\manifold}\) be a real-valued function defined on a Riemannian manifold \(\manifold{}\).
 The \emph{Laplace-Beltrami} operator is
@@ -191,10 +138,93 @@ where \(f_{i}\) are the Fourier coefficients given by the usual projection onto 
 	%
 	= \integrateManifold{x} \mesh{f} \mesh{\conj{\phi_{i}}}.
 \end{equation}
+%
+In practice, one must discretise the manifolds and represent them as graphs.
+A review of graphs is presented in \cref{sec:chapter4_graphs}.
+
+\subsubsection{Graphs}\label{sec:chapter4_graphs}
+
+For simplicity, consider a weighted undirected graph
+%
+\begin{equation}
+	\graph
+	%
+	= (\vertices, \edges),
+\end{equation}
+%
+consisting of a set of \(n\) vertices
+%
+\begin{equation}
+	\vertices
+	%
+	\in \set{1,2,\ldots,n},
+\end{equation}
+%
+and the set of edges
+%
+\begin{equation}
+	\edges
+	%
+	\subseteq \vertices \times \vertices.
+\end{equation}
+%
+A weight \(a_{i} > 0\) is associated with each vertex \(i \in \vertices\), and a weight \(w_{i j} \geq 0\) with each edge \((i,j) \in \edges\).
+The Hilbert spaces \(\hilbert{\vertices}\) and \(\hilbert{\edges}\) are formed by the sets of functions \(f: \vertices \to \mathbb{R}\) and \(F: \edges \to \mathbb{R}\) respectively.
+The graph gradient operator \(\grad: \hilbert{\vertices} \to \hilbert{\edges}\) is mapping of functions defined on the vertices to edges
+%
+\begin{equation}\label{eq:chapter4_graph_grad}
+	{(\grad{f})}_{i j}
+	%
+	= f_{i} - f_{j}.
+\end{equation}
+%
+The graph divergence operator \(\div: \hilbert{\edges} \to \hilbert{\vertices}\) reverses this mapping
+%
+\begin{equation}\label{eq:chapter4_graph_div}
+	{\div{F}}_{i}
+	%
+	= \frac{1}{a_{i}} \sum\limits_{j : (i,j) \in \edges} w_{i j} F_{i j}.
+\end{equation}
+
+The graph Laplacian
+%
+\begin{equation}\label{eq:chapter4_graph_laplace}
+	\laplace{G} f
+	%
+	= \div{\grad{f}}
+\end{equation}
+%
+is an operator \(\laplace{G} : \hilbert{\vertices} \to \hilbert{\vertices}\).
+By substituting the definitions of the gradient \cref{eq:chapter4_graph_grad} and divergence operators \cref{eq:chapter4_graph_div} on the graph into \cref{eq:chapter4_graph_laplace}
+%
+\begin{equation}
+	{(\laplace{G} f)}_{i}
+	%
+	= \frac{1}{a_{i}} \sum\limits_{(i,j) \in \edges} w_{i j} (f_{i} - f_{j}).
+\end{equation}
+
+The \emph{non-normalised graph Laplacian} is defined as
+%
+\begin{equation}
+	\laplace{G}
+	%
+	= \vb{K} - \vb{W},
+\end{equation}
+%
+where \(\vb{K}\) is the degree matrix, and \(\vb{W}\) is the weight matrix.
+In essence, the graph Laplacian is a difference operator for any signal \(f \in \hilbert{\graph}\)
+%
+\begin{equation}
+	{(\laplace{G} f)}_{i}
+	%
+	= \sum\limits_{j \in \mathcal{n}_{i}} W_{i j} [f(i) - f(j)]
+\end{equation}
+%
+The graph Laplacian converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
+
+\subsubsection{Polygonal Meshes}
 
 \input{figures/chapter4/eigenhomers}
-
-\paragraph{Graph Laplacian}
 
 \subsection{Problem Formulation}\label{sec:chapter4_problem_formulation}
 
