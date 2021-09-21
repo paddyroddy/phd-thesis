@@ -144,33 +144,10 @@ A review of graphs is presented in \cref{sec:chapter4_graphs}.
 
 \subsubsection{Graphs}\label{sec:chapter4_graphs}
 
-For simplicity, consider a weighted undirected graph
-%
-\begin{equation}
-	\graph
-	%
-	= (\vertices, \edges),
-\end{equation}
-%
-consisting of a set of \(n\) vertices
-%
-\begin{equation}
-	\vertices
-	%
-	\in \set{1,2,\ldots,n},
-\end{equation}
-%
-and the set of edges
-%
-\begin{equation}
-	\edges
-	%
-	\subseteq \vertices \times \vertices.
-\end{equation}
-%
+For simplicity, consider a weighted undirected graph \(\graph = (\vertices, \edges)\), consisting of a set of \(n\) vertices \(\vertices \in \set{1,\ldots,n}\), and the set of edges \(\edges \subseteq \vertices \times \vertices\).
 A weight \(a_{i} > 0\) is associated with each vertex \(i \in \vertices{}\), and a weight \(w_{i j} \geq 0\) with each edge \((i,j) \in \edges{}\).
 The Hilbert spaces \(\hilbert{\vertices}\) and \(\hilbert{\edges}\) are formed by the sets of functions \(f: \vertices \to \mathbb{R}\) and \(F: \edges \to \mathbb{R}\) respectively.
-The graph gradient operator \(\grad: \hilbert{\vertices} \to \hilbert{\edges}\) is mapping of functions defined on the vertices to edges
+The graph gradient operator \(\grad: \hilbert{\vertices} \to \hilbert{\edges}\) maps functions defined on the vertices to edges
 %
 \begin{equation}\label{eq:chapter4_graph_grad}
 	{(\grad{f})}_{i j}
@@ -185,42 +162,36 @@ The graph divergence operator \(\div: \hilbert{\edges} \to \hilbert{\vertices}\)
 	%
 	= \frac{1}{a_{i}} \sum\limits_{j : (i,j) \in \edges} w_{i j} F_{i j}.
 \end{equation}
-
-The graph Laplacian
+%
+The graph Laplacian is an operator \(\laplace{G} : \hilbert{\vertices} \to \hilbert{\vertices}\) defined as
 %
 \begin{equation}\label{eq:chapter4_graph_laplace}
 	\laplace{G} f
 	%
-	= \div{\grad{f}}
+	= \div{\grad{f}}.
 \end{equation}
 %
-is an operator \(\laplace{G} : \hilbert{\vertices} \to \hilbert{\vertices}\).
-By substituting the definitions of the gradient \cref{eq:chapter4_graph_grad} and divergence operators \cref{eq:chapter4_graph_div} on the graph into \cref{eq:chapter4_graph_laplace}
+The graph Laplacian converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
+
+By substituting the definitions of the gradient \cref{eq:chapter4_graph_grad} and divergence operators \cref{eq:chapter4_graph_div} on the graph into \cref{eq:chapter4_graph_laplace} one finds
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_graph_laplace_indices}
 	{(\laplace{G} f)}_{i}
 	%
 	= \frac{1}{a_{i}} \sum\limits_{(i,j) \in \edges} w_{i j} (f_{i} - f_{j}).
 \end{equation}
-
-The \emph{non-normalised graph Laplacian} is defined as
 %
-\begin{equation}
-	\laplace{G}
+Intuitively, this captures the geometric interpretation of the Laplacian --- as the difference between the local average of a function around a point and the value of the function itself at that point.
+\cref{eq:chapter4_graph_laplace_indices} can be rewritten in matrix form as
+%
+\begin{equation}\label{eq:chapter4_graph_laplace_matrix}
+	\vb{\Delta} \vb{f}
 	%
-	= \vb{K} - \vb{W},
+	= \vb{A}^{-1} (\vb{K} - \vb{W}) \vb{f},
 \end{equation}
 %
-where \(\vb{K}\) is the degree matrix, and \(\vb{W}\) is the weight matrix.
-In essence, the graph Laplacian is a difference operator for any signal \(f \in \hilbert{\graph}\)
-%
-\begin{equation}
-	{(\laplace{G} f)}_{i}
-	%
-	= \sum\limits_{j \in \mathcal{n}_{i}} W_{i j} [f(i) - f(j)]
-\end{equation}
-%
-The graph Laplacian converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
+where \(\vb{W} = (w_{i j})\) are the edge weights, \(\vb{A} = \diag{a_{1},\ldots,a_{n}}\) are the vertex weights, \(\vb{K} = \diag{\sum_{j: j \neq i} w_{i j}}\) is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb{f}\).
+The \emph{non-normalised graph Laplacian} refers to setting \(\vb{A} = \vb{I}\) in \cref{eq:chapter4_graph_laplace_matrix}; other choices exist, such as the random walk Laplacian which occurs when \(\vb{A} = \vb{K}\)~\cite{VonLuxburg2007}.
 
 \subsubsection{Polygonal Meshes}
 
