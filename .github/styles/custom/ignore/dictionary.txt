@@ -54,6 +54,7 @@ inparaenum
 int
 iux
 kirker
+laplace
 laplacian
 lceil
 ldots
@@ -97,6 +98,7 @@ slepian
 snr
 spacelimited
 ssht
+subseteq
 subsubsection
 tableofcontents
 tex
