@@ -24,6 +24,7 @@ denoising
 diag
 dirac
 div
+neq
 dmatrix
 documentclass
 eg
