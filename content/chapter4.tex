@@ -7,7 +7,7 @@ Through the sifting convolution, one may define translations and, thus, convolut
 Slepian wavelets are constructed on a region of a manifold, and are therefore suited to problems where data only exists, or is missing in a particular region.
 The Slepian functions, on which Slepian wavelets are built, are the basis functions of the Slepian spatial-spectral concentration problem.
 A tiling of the Slepian harmonic line with smoothly decreasing generating functions defines the scale-discretised wavelets; allowing one to probe spatially localised, scale-dependent features of a signal.
-By discretising manifolds as graphs, the Slepian functions and wavelets of a polygonal mesh are presented.
+By discretising manifolds as graphs, the Slepian functions and wavelets of a triangular mesh are presented.
 Through a wavelet transform, the wavelet coefficients of a field defined on the mesh are found and used in a straightforward thresholding denoising scheme.
 
 \section{Introduction}
@@ -193,7 +193,20 @@ Intuitively, this captures the geometric interpretation of the Laplacian --- as 
 where \(\vb{W} = (w_{i j})\) are the edge weights, \(\vb{A} = \diag{a_{1},\ldots,a_{n}}\) are the vertex weights, \(\vb{K} = \diag{\sum_{j: j \neq i} w_{i j}}\) is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb{f}\).
 The \emph{non-normalised graph Laplacian} refers to setting \(\vb{A} = \vb{I}\) in \cref{eq:chapter4_graph_laplace_matrix}; other choices exist, such as the random walk Laplacian which occurs when \(\vb{A} = \vb{K}\)~\cite{VonLuxburg2007}.
 
-\subsubsection{Polygonal Meshes}
+\subsubsection{Triangular Meshes}
+
+In computer graphics applications, 3D shapes are often modelled by 2D manifolds.
+Usually the manifold is sampled at \(n\) points, a graph is then constructed on these points (vertices) where the edges represent the local connectivity of the manifold.
+A set of edge weights are then computed, for example Gaussian weights
+%
+\begin{equation}
+	w_{i j}
+	%
+	= \exp(-\left(\frac{\norm{\vb{x}_{i} - \vb{x}_{j}}^{2}}{2\sigma^{2}}\right));
+\end{equation}
+%
+however, this does not capture the geometry of continuous underlying manifold.
+By introducing an additional structure of faces \(\mathcal{F} \in \vertices \times \vertices \times \vertices\), one can construct a geometrically consistent discretisation as possible.
 
 \input{figures/chapter4/eigenhomers}
 
