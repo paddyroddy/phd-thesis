@@ -14,6 +14,7 @@ chktex
 circledast
 circledcirc
 circleddash
+color
 config
 conj
 cref
@@ -24,7 +25,6 @@ denoising
 diag
 dirac
 div
-neq
 dmatrix
 documentclass
 eg
@@ -72,6 +72,7 @@ midrule
 mphil
 mres
 multiresolution
+neq
 nobibliography
 nonumber
 notin
@@ -79,6 +80,7 @@ num
 odot
 oneside
 oplus
+overpic
 parameterise
 parameterised
 parseval

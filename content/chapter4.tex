@@ -92,7 +92,7 @@ This work extends Slepian scale-discretised wavelets on the sphere to manifolds,
 
 In short, a manifold is a space that is locally Euclidean.
 For example, at a point on the surface of the Earth (\ie{} \(\twoSphere{}\)) the Earth's surface appears planar --- leading to the so-called \emph{Flat Earth} theory.
-More formally, a \(d\)-dimensional manifold \(\manifold{}\) is a topological space where each point \(x\) exists in a neighbourhood that is topologically homeomorphic to a \(d\)-dimensional Euclidean space --- called the \emph{tangent space}.
+More formally, a \(d\)-dimensional manifold \(\manifold{}\) is a topological space, where each point \(x\) exists in a neighbourhood that is topologically homeomorphic to a \(d\)-dimensional Euclidean space --- called the \emph{tangent space}.
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
 The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume{}\).
 The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplace{M}\).
@@ -168,12 +168,12 @@ The graph Laplacian is an operator \(\laplace{G} : \hilbert{\vertices} \to \hilb
 \begin{equation}\label{eq:chapter4_graph_laplace}
 	\laplace{G} f
 	%
-	= \div(\grad{f}).
+	= \div(\grad{f}),
 \end{equation}
 %
-The graph Laplacian converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
+which converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
 
-By substituting the definitions of the gradient \cref{eq:chapter4_graph_grad} and divergence operators \cref{eq:chapter4_graph_div} on the graph into \cref{eq:chapter4_graph_laplace} one finds
+By substituting the definitions of the gradient \cref{eq:chapter4_graph_grad} and divergence operators \cref{eq:chapter4_graph_div} on the graph into \cref{eq:chapter4_graph_laplace}, one finds
 %
 \begin{equation}\label{eq:chapter4_graph_laplace_indices}
 	{(\laplace{G} f)}_{i}
@@ -196,28 +196,28 @@ The \emph{non-normalised graph Laplacian} refers to setting \(\vb{A} = \vb{I}\) 
 \subsubsection{Triangular Meshes}
 
 In computer graphics applications, 3D shapes are often modelled by 2D manifolds.
-A manifold is sampled at \(n\) points, and a graph is then constructed on these points (vertices) where the edges represent the local connectivity of the manifold.
+A manifold is sampled at a set of \(n\) points, and a graph is then constructed on these points (vertices) where the edges represent the local connectivity of the manifold.
 A set of edge weights are then computed, for example Gaussian weights
 %
 \begin{equation}
 	w_{i j}
 	%
-	= \exp(-\left(\frac{\norm{\vb{x}_{i} - \vb{x}_{j}}^{2}}{2\sigma^{2}}\right));
+	= \exp(-\left(\frac{\norm{\vb{x}_{i} - \vb{x}_{j}}^{2}}{2\sigma^{2}}\right)).
 \end{equation}
 %
 However, this discretisation does not capture the geometry of continuous underlying manifold; hence, the graph Laplacian would not converge to the Laplace-Beltrami operator at the limit of many of samples~\cite{Wardetzky2007}.
 By introducing another structure of faces \(\faces \in \vertices \times \vertices \times \vertices{}\), one can construct as geometrically consistent discretisation as possible.
 The continuous manifold is represented by the polyhedral surface of connected triangles.
 
-For triangular meshes, the most straightforward discretisation of the Riemannian metric is performed by assigning each edge a length \(l_{i j}>0\).
+For triangular meshes, the most straightforward discretisation of the Riemannian metric is performed by assigning each edge a length \(\ell_{i j}>0\).
 The mesh Laplacian is then found by substituting
 %
 \begin{equation}\label{eq:chapter4_mesh_laplace_weights}
 	w_{i j}
 	%
-	= \frac{-l_{i j}^{2} + l_{j k}^{2} + l_{i k}^{2}}{8 a_{ijk}}
+	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{8 a_{i j k}}
 	%
-	+ \frac{-l_{i j}^{2} + l_{j h}^{2} + l_{i h}^{2}}{8 a_{ijh}}
+	+ \frac{-\ell_{i j}^{2} + \ell_{j h}^{2} + \ell_{i h}^{2}}{8 a_{i j h}}
 \end{equation}
 %
 and
@@ -225,29 +225,29 @@ and
 \begin{equation}
 	a_{i}
 	%
-	= \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{ijk}
+	= \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{i j k}
 \end{equation}
 %
 into \cref{eq:chapter4_graph_laplace_indices}, where the area of a triangle is
 %
 \begin{equation}
-	a_{ijk}
+	a_{i j k}
 	%
-	= \sqrt{s_{ijk}(s_{ijk}-l_{ij})(s_{ijk}-l_{jk})(s_{ijk}-l_{ik})},
+	= \sqrt{s_{i j k}(s_{i j k}-\ell_{i j})(s_{i j k}-\ell_{j k})(s_{i j k}-\ell_{i k})},
 \end{equation}
 %
 and the corresponding semi-perimeter is
 %
 \begin{equation}
-	s_{ijk}
+	s_{i j k}
 	%
-	= \frac{1}{2}(l_{i j} + l_{j k} + l_{k i}).
+	= \frac{1}{2}(\ell_{i j} + \ell_{j k} + \ell_{k i}).
 \end{equation}
 %
 A discrete metric
 %
 \begin{equation}
-	l_{i j}
+	\ell_{i j}
 	%
 	= \norm{\vb{x}_{i} - \vb{x}_{j}}
 \end{equation}
@@ -260,8 +260,11 @@ is induced by an embedding of the mesh, which changes \cref{eq:chapter4_mesh_lap
 	= \frac{1}{2}(\cot{\alpha_{i j}} + \cot{\beta_{i j}}),
 \end{equation}
 %
-where \(\alpha_{i j}\) and \(\beta_{i j}\) are the internal angles opposite to the corresponding edge.
+where \(\alpha_{i j}\) and \(\beta_{i j}\) are the internal angles opposite to the corresponding edge \(\ell_{i j}\) (\cf{} \cref{fig:chapter4_mesh_laplace}).
 This \emph{cotangent Laplacian} is used extensively in computer graphics~\cite{Pinkall1993}, and in the rest of this work.
+A demonstration of the mesh Laplacian eigenvectors for a given mesh is presented in \cref{fig:chapter4_eigenhomers}.
+
+\input{figures/chapter4/mesh_laplace}
 
 \input{figures/chapter4/eigenhomers}
 
