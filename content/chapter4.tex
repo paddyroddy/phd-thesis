@@ -39,7 +39,7 @@ Each edge in a graph is associated with a weight, which is often a measure of th
 The physics of the problem or the data at hand dictate which vertices are connected and their respective weights, \ie{} the weight may not necessarily be the physical distance between two vertices.
 A \emph{graph signal} is a finite collection of samples with some value at each vertex at a graph.
 In computer graphics, working with intrinsically geometric shapes is commonplace.
-In this field, 3D shapes are often modelled as Riemannian manifolds and discretised as polygonal meshes.
+In this field, 3D shapes are often modelled as Riemannian manifolds and discretised as triangular meshes.
 
 It is well-known that functions cannot have finite support in the spatial and spectral domains simultaneously~\cite{Slepian1961,Slepian1983}.
 In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of finding and representing signals which are optimally concentrated in both domains~\cite{Slepian1961,Landau1961,Landau1962}.
@@ -65,8 +65,8 @@ A variety of other approaches include: established regularisation techniques bas
 Extending wavelets and wavelet techniques to manifold and graph domains has been extensively reviewed (\eg{}~\cite{Dahmen1999,Coifman2006a}).
 
 The remainder of the article is as follows.
-\cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and polygonal meshes.
-The Laplace-Beltrami operator and the graph Laplacian are then introduced.
+\cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and triangular meshes.
+The Laplace-Beltrami operator and the graph/mesh Laplacian are also introduced.
 A brief review of Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} follows, which this works builds upon.
 In \cref{sec:chapter4_working_with_manifolds} the Slepian concentration problem is adapted to the manifold setting, which results in the basis functions of a region of the manifold, \ie{} the Slepian functions.
 A review of the sifting convolution~\cite{Roddy2021} follows, which allows one to perform convolutions on the (incomplete) manifold --- which are typically not well-defined.
@@ -74,7 +74,7 @@ The Slepian wavelet theory is developed in \cref{sec:chapter4_slepian_wavelets}.
 Initially, the sifting convolution is expressed in the Slepian domain, which is a product in the Slepian harmonic space.
 The scale-discretised framework is then introduced, followed by the generating functions which define the wavelets themselves.
 The section concludes with some properties of the wavelets.
-A numerical illustration is presented in \cref{sec:chapter4_numerical_illustration}, in which the Slepian functions of the head region of a polygonal mesh of Homer Simpson are computed.
+A numerical illustration is presented in \cref{sec:chapter4_numerical_illustration}, in which the Slepian functions of the head region of a triangular mesh of Homer Simpson are computed.
 A field is then placed on the mesh, and the resulting wavelets and wavelet coefficients are found.
 A straightforward hard-thresholding denoising scheme is developed and performed on the Homer mesh, along with some other meshes.
 A boost in signal-to-noise ratio is observed, showcasing a possible use of these wavelets.
@@ -82,8 +82,8 @@ Lastly, some concluding remarks are given in \cref{sec:chapter4_conclusions}.
 
 \section{Mathematical Background and Problem Formulation}\label{sec:chapter4_mathematical_background_problem_formulation}
 
-Some mathematical preliminaries are introduced in \cref{sec:chapter4_mathematical_preliminaries} with a recap of Riemannian manifolds, their representation as graphs, and polygonal meshes (a popular choice of graph).
-Following this is a review of the Laplace-Beltrami operator (on manifolds) and the graph Laplacian is presented.
+Some mathematical preliminaries are introduced in \cref{sec:chapter4_mathematical_preliminaries} with a recap of Riemannian manifolds, their representation as graphs, and triangular meshes (a popular choice of graph).
+This includes a review of the Laplace-Beltrami operator (on manifolds) and the graph/mesh Laplacian.
 This work extends Slepian scale-discretised wavelets on the sphere to manifolds, a brief review of which is given in \cref{sec:chapter4_problem_formulation}.
 
 \subsection{Mathematical Preliminaries}\label{sec:chapter4_mathematical_preliminaries}
@@ -119,7 +119,7 @@ which admits an orthogonal eigensystem due to the semi-positive definiteness of 
 This eigensystem forms the square-integrable basis of the manifold \(\manifold{}\), with real eigenvalues
 %
 \begin{equation}
-	0 \leq \mu_{1} \leq \mu_{2} \leq \ldots < \infty, % chktex 11
+	0 \leq \mu_{1} \leq \mu_{2} \leq \ldots < \mu_{\imax} < \infty, % chktex 11
 \end{equation}
 %
 and eigenfunctions \(\phi_{i}\).
@@ -128,7 +128,7 @@ A function \(f \in \hilbert{\manifold}\) can therefore be decomposed into this b
 \begin{equation}
 	\mesh{f}
 	%
-	= \sum\limits_{i} f_{i} \mesh{\phi_{i}},
+	= \sum\limits_{i=1}^{\imax} f_{i} \mesh{\phi_{i}},
 \end{equation}
 %
 where \(f_{i}\) are the Fourier coefficients given by the usual projection onto the basis functions
@@ -144,7 +144,7 @@ A review of graphs is presented in \cref{sec:chapter4_graphs}.
 
 \subsubsection{Graphs}\label{sec:chapter4_graphs}
 
-For simplicity, consider a weighted undirected graph \(\graph = (\vertices, \edges)\), consisting of a set of \(n\) vertices \(\vertices \in \set{1,\ldots,n}\), and the set of edges \(\edges \subseteq \vertices \times \vertices{}\).
+For simplicity, consider a weighted undirected graph \(\graph = (\vertices, \edges)\), consisting of a set of \(n\) vertices \(\vertices \in \set{1,2,\ldots,n}\), and the set of edges \(\edges \subseteq \vertices \times \vertices{}\).
 A weight \(a_{i} > 0\) is associated with each vertex \(i \in \vertices{}\), and a weight \(w_{i j} \geq 0\) with each edge \((i,j) \in \edges{}\).
 The Hilbert spaces \(\hilbert{\vertices}\) and \(\hilbert{\edges}\) are formed by the sets of functions \(f: \vertices \to \mathbb{R}\) and \(F: \edges \to \mathbb{R}\) respectively.
 The graph gradient operator \(\grad{}: \hilbert{\vertices} \to \hilbert{\edges}\) maps functions defined on the vertices to edges
@@ -190,7 +190,7 @@ Intuitively, this captures the geometric interpretation of the Laplacian --- as 
 	= \vb{A}^{-1} (\vb{K} - \vb{W}) \vb{f},
 \end{equation}
 %
-where \(\vb{W} = (w_{i j})\) are the edge weights, \(\vb{A} = \diag{a_{1},\ldots,a_{n}}\) are the vertex weights, \(\vb{K} = \diag{\sum_{j: j \neq i} w_{i j}}\) is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb{f}\).
+where \(\vb{W} = (w_{i j})\) are the edge weights, \(\vb{A} = \diag{a_{1},a_{2},\ldots,a_{n}}\) are the vertex weights, \(\vb{K} = \diag{\sum_{j: j \neq i} w_{i j}}\) is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb{f}\).
 The \emph{non-normalised graph Laplacian} refers to setting \(\vb{A} = \vb{I}\) in \cref{eq:chapter4_graph_laplace_matrix}; other choices exist, such as the random walk Laplacian which occurs when \(\vb{A} = \vb{K}\)~\cite{VonLuxburg2007}.
 
 \subsubsection{Triangular Meshes}
@@ -277,9 +277,10 @@ The sifting convolution~\cite{Roddy2021} allows one to perform convolutions wher
 By leveraging this convolution, the wavelet transforms in the Slepian domain are built on a region of the sphere (\cf{} manifold) to ensure exact reconstruction.
 Convolutions are typically not well-defined on manifolds.
 The sifting convolution, however, is a product in harmonic space and as such can be applied effectively to manifolds.
-
 In \cref{sec:chapter4_working_with_manifolds}, the Slepian spatial-spectral concentration problem is presented in the manifold setting --- in particular, the spatial concentration of a bandlimited function.
 The sifting convolution~\cite{Roddy2021} is then defined similarly, allowing for wavelet transforms on the manifold to be constructed.
+Whilst all formulae are given explicitly in the manifold setting (through continuous integrals), they can be trivially extended to graphs through summations.
+Moreover, the eigenvectors of the graph Laplacian are real, and hence complex conjugate operators are superfluous.
 
 \section{Working with Manifolds}\label{sec:chapter4_working_with_manifolds}
 
@@ -322,7 +323,7 @@ where
 \end{equation}
 %
 is a square matrix including all basis functions of the manifold.
-Rewriting \cref{eq:chapter4_spatial_concentration_ratio} as a matrix variational problem
+\cref{eq:chapter4_spatial_concentration_ratio} can be rewritten as a matrix variational problem
 %
 \begin{equation}
 	\mu
@@ -338,7 +339,7 @@ where \(\vb{f}\) are the harmonic coefficients of \(\mesh{f}\), and are the solu
 	= \mu \vb{f}.
 \end{equation}
 %
-The eigenvalues \(\mu_{i}\) act as a measure of the relative spatial concentration
+The eigenvalues \(\mu_{p}\) act as a measure of the relative spatial concentration
 %
 \begin{equation}
 	1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{\imax} > 0, % chktex 11
@@ -390,7 +391,7 @@ The Slepian coefficients \(\slepian{f}\) are calculated through the usual projec
 \begin{equation}
 	\slepian{f}
 	%
-	= \braket{f}{\slepian{S}}.
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}.
 \end{equation}
 
 The Slepian coefficients of a well-localised function may be computed with an integral over the region \(R\) rather than an integral over the whole manifold \(\manifold{}\):
