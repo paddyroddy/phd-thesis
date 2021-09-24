@@ -280,7 +280,7 @@ The sifting convolution, however, is a product in harmonic space and as such can
 In \cref{sec:chapter4_working_with_manifolds}, the Slepian spatial-spectral concentration problem is presented in the manifold setting --- in particular, the spatial concentration of a bandlimited function.
 The sifting convolution~\cite{Roddy2021} is then defined similarly, allowing for wavelet transforms on the manifold to be constructed.
 Whilst all formulae are given explicitly in the manifold setting (through continuous integrals), they can be trivially extended to graphs through summations.
-Moreover, the eigenvectors of the graph Laplacian are real, and hence complex conjugate operators are superfluous.
+Moreover, the eigenvectors of the graph Laplacian are real, and hence the complex conjugate operators are superfluous.
 
 \section{Working with Manifolds}\label{sec:chapter4_working_with_manifolds}
 
@@ -393,7 +393,7 @@ The Slepian coefficients \(\slepian{f}\) are calculated through the usual projec
 	%
 	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}.
 \end{equation}
-
+%
 The Slepian coefficients of a well-localised function may be computed with an integral over the region \(R\) rather than an integral over the whole manifold \(\manifold{}\):
 %
 \begin{equation}
@@ -402,22 +402,10 @@ The Slepian coefficients of a well-localised function may be computed with an in
 	= \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}},
 \end{equation}
 %
-as
-%
-\begin{align}
-	\integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}}
-	%
-	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\meshVolume} \mesh{\slepian[']{S}} \mesh{\conj{\slepian{S}}} \nonumber \\
-	%
-	 & = \slepianSum['] \slepian[']{f} \hermitian{\slepian{\vb{S}}} \vb{D} \slepian[']{\vb{S}} \nonumber                       \\
-	%
-	 & = \slepian{f} \slepian{\mu},
-\end{align}
-%
 where \(\vb{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\).
 Note the use of the orthogonality results
 %
-\begin{equation}\label{eq:chapter4_orthogonality_manifold}
+\begin{equation}
 	\integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\slepian[']{S}}}
 	%
 	= \hermitian{\slepian[']{\vb{S}}} \slepian{\vb{S}}
@@ -434,9 +422,10 @@ and
 	%
 	= \slepian{\mu} \hermitian{\slepian[']{\vb{S}}} \slepian{\vb{S}}
 	%
-	= \slepian{\mu} \delta_{pp'}.
+	= \slepian{\mu} \delta_{pp'},
 \end{equation}
-
+%
+as before.
 To transform from Slepian coefficients to the basis functions of the manifold
 %
 \begin{equation}\label{eq:chapter4_slepian_to_harmonic}
@@ -457,7 +446,7 @@ where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:
 %
 The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
 %
-\begin{equation}\label{eq:chapter4_harmonic_to_slepian}
+\begin{equation}
 	\slepian{f}
 	%
 	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}
@@ -470,7 +459,7 @@ The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
 A central part of wavelet transforms is the convolution.
 On \(\mathbb{R}^{d}\), the convolution of a signal \(f \in \hilbert{\mathbb{R}^{d}}\) with a filter \(g \in \hilbert{\mathbb{R}^{d}}\) is defined by translating \(g\) against \(f\); however, general manifolds do not have well-defined translations.
 Recently developed by the authors of this work, the sifting convolution~\cite{Roddy2021} is built on a translation which simply involves a product of the basis functions.
-Initially defined in the spherical setting, the sifting convolution can be arbitrarily extended to other domains.
+Initially defined in the spherical setting, the sifting convolution can be arbitrarily extended to other domains, including manifolds.
 
 The translation operator on the manifold is
 %
@@ -522,6 +511,8 @@ Initially, \cref{sec:chapter4_slepian_sifting_convolution} extends the sifting c
 With a convolution to hand, the Slepian wavelet transform is developed in \cref{sec:chapter4_slepian_scale_discretised_wavelets} --- where an appropriate admissibility condition must hold for exact reconstruction.
 The generating functions that define the wavelets are presented in \cref{sec:chapter4_generating_functions}.
 Lastly, some properties of the wavelets are discussed in \cref{sec:chapter4_properties}.
+The construction here is the same as before in \cref{sec:chapter3_slepian_wavelets}, where now the integrals are over the manifold (graph) rather than strictly the sphere.
+For brevity, the formulae will be presented just in real space and not also Fourier space.
 
 \subsection{Slepian Sifting Convolution}\label{sec:chapter4_slepian_sifting_convolution}
 
@@ -543,15 +534,7 @@ Hence, the translation of an arbitrary function \(f \in \hilbert{R}\) is
 \begin{equation}
 	\mesh{(\translation{y}f)}
 	%
-	= \slepianSum \slepian{f} \meshY{\slepian{S}} \mesh{\slepian{S}},
-\end{equation}
-%
-which is the following in Slepian space
-%
-\begin{equation}
-	\slepian{(\translation{y}f)}
-	%
-	= \slepian{f} \mesh{\slepian{S}}.
+	= \slepianSum \slepian{f} \meshY{\slepian{S}} \mesh{\slepian{S}}.
 \end{equation}
 %
 As before, the sifting convolution between two functions \(f,\ g \in \hilbert{R}\) is
@@ -562,15 +545,7 @@ As before, the sifting convolution between two functions \(f,\ g \in \hilbert{R}
 	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}},
 \end{equation}
 %
-which becomes a product in Slepian space
-%
-\begin{equation}
-	\slepian{\convolution{f}{g}}
-	%
-	= \slepian{f} \conj{\slepian{g}},
-\end{equation}
-%
-and hence is efficient to compute.
+which becomes a product in Slepian space, and hence is efficient to compute.
 Slepian wavelets may now be defined utilising this convolution in Slepian space.
 
 \subsection{Slepian Scale-Discretised Wavelets}\label{sec:chapter4_slepian_scale_discretised_wavelets}
@@ -589,16 +564,6 @@ For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\
 	 & = \integrateManifold{y} \meshY{(\translation{x}\Psi^{j})} \meshY{\conj{f}}.
 \end{align}
 %
-In Slepian space this becomes
-%
-\begin{equation}\label{eq:chapter4_slepian_wavelet_p}
-	\slepian{W}^{\Psi^{j}}
-	%
-	= \slepian{\Psi}^{j} \conj{\slepian{f}},
-\end{equation}
-%
-where \(\slepian{\Psi}^{j}\) are the Slepian harmonic coefficients of the wavelet at scale \(j\).
-
 Wavelets are typically paired with a scaling function, each capturing different underlying scales of the signal.
 Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\):
 %
@@ -607,19 +572,9 @@ Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a 
 	%
 	 & = \mesh{\convolution{\Phi}{f}} \nonumber                                \\
 	%
-	 & = \integrateManifold{y} \meshY{(\translation{x}\Phi)} \meshY{\conj{f}},
+	 & = \integrateManifold{y} \meshY{(\translation{x}\Phi)} \meshY{\conj{f}}.
 \end{align}
 %
-or in Slepian space
-%
-\begin{equation}\label{eq:chapter4_slepian_scaling_p}
-	\slepian{W}^{\Phi}
-	%
-	= \slepian{\Phi} \conj{\slepian{f}},
-\end{equation}
-%
-where \(\slepian{\Phi}\) are the Slepian coefficients of the scaling function.
-
 Supposing that the wavelets and scaling function satisfy an admissibility condition, a function \(f\) may be reconstructed from its wavelet and scaling coefficients by
 %
 \begin{equation}\label{eq:chapter4_synthesis}
@@ -629,20 +584,10 @@ Supposing that the wavelets and scaling function satisfy an admissibility condit
 	%
 	\meshY{(\translation{x}\Phi)} \meshY{W^{\Phi\ast}}
 	%
-	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}\ast}},
+	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}\ast}}.
 \end{equation}
 %
-or in Slepian space
-%
-\begin{equation}
-	\slepian{f}
-	%
-	= \slepian{W}^{\Phi\ast} \slepian{\Phi}
-	%
-	+ \waveletSum \slepian{W}^{\Psi^{j}\ast} \slepian{\Psi}^{j}.
-\end{equation}
-%
-The parameters \(J_{0}\) and \(J\) represent the lowest and highest scales \(j\) of the wavelet decomposition respectively --- to ensure exact reconstruction these parameters must be set consistently.
+The parameters \(J_{0}\) and \(J\) here represent the lowest and highest scales \(j\) of the wavelet decomposition respectively --- to ensure exact reconstruction these parameters must be set consistently.
 The admissibility condition required for synthesis \cref{eq:chapter4_synthesis} to hold is thus
 %
 \begin{equation}\label{eq:chapter4_admissibility}
@@ -658,7 +603,7 @@ Wavelets and a scaling function that satisfy this admissibility condition may no
 \subsection{Generating Functions}\label{sec:chapter4_generating_functions}
 
 A tiling of the Slepian line defines the wavelets through smooth generating functions --- in an analogous manner to \cref{sec:chapter3_generating_functions}.
-A smoothly decreasing function \(k_{\lambda}\), defined in~\cite{Wiaux2008}, is unity for \(t < 1/\lambda{}\), zero for \(t > 1\), and smoothly decreasing otherwise.
+Defined in~\cite{Wiaux2008}, \(k_{\lambda}\) is a smoothly decreasing function which is unity for \(t < 1/\lambda{}\), zero for \(t > 1\), and smoothly decreasing otherwise.
 The wavelet generating function is defined as
 %
 \begin{equation}
@@ -674,7 +619,7 @@ and the scaling function generating function is
 	%
 	\equiv \sqrt{k_{\lambda}(t)}.
 \end{equation}
-
+%
 An instinctive approach is to define the wavelets \(\slepian{\Psi}^{j}\) from the generating functions \(\kappa_{\lambda}\) to have support on \(\interval{\lambda^{j-1}}{\lambda^{j+1}}\), yielding
 %
 \begin{equation}
@@ -706,14 +651,13 @@ The Slepian wavelets are constructed by the tiling of the Slepian line as shown 
 \subsection{Properties}\label{sec:chapter4_properties}
 
 The properties of Slepian wavelets on manifolds are reviewed here.
+These properties are the same as the spherical case and are extensively discussed in \cref{sec:chapter3_properties}.
 In comparison to standard scale-discretised wavelets, the properties are often similar, but not always.
 
 \subsubsection{Localisation}\label{sec:chapter4_localisation}
 
-A tiling of the harmonic line leads to the usual construction of scale-discretised wavelets.
-Hence, the value of \(j\) in the wavelets \(\Psi^{j}\) corresponds to increasingly smaller scales (higher frequencies).
-However, in the Slepian setting \(p\) is a measure of spatial concentration, where a lower \(p\) corresponds to better localisation of the Slepian function.
-As Slepian wavelets are built on a tiling of the Slepian harmonic line, the localisation is captured in the wavelets and wavelet coefficients.
+Standard scale-discretised wavelet constructions are built on a tiling of the harmonic line, and hence a higher value of \(j\) in the wavelets \(\Psi^{j}\) corresponds to smaller scales.
+In contrast, Slepian wavelets are built on the Slepian harmonic line, and thus \(j\) is a measure of localisation rather than frequency.
 
 \subsubsection{Wavelet Energy}
 
@@ -722,18 +666,10 @@ The wavelet energy is
 \begin{equation}
 	\norm{\Psi^{j}}^{2}
 	%
-	= \integrateManifold{x} \abs{\mesh{\Psi^{j}}}^{2}
-	%
-	= \slepianSum \abs{\slepian{\Psi}^{j}}^{2}.
+	= \slepianSum \abs{\slepian{\Psi^{j}}}^{2}.
 \end{equation}
 %
-Similarly, the scaling function energy is
-%
-\begin{equation}
-	\norm{\Phi}^{2}
-	%
-	= \slepianSum \abs{\slepian{\Phi}}^{2}.
-\end{equation}
+A similar expression exists for the scaling function energy.
 
 \subsubsection{Parseval Frame}
 
@@ -750,18 +686,7 @@ A \emph{Parseval frame} is satisfied by Slepian scale-discretised wavelets on ma
 \end{equation}
 %
 where \(A,\ B \in \realPosParam{}\).
-Proving this requires the definition in Slepian space of the scaling coefficients \cref{eq:chapter4_slepian_scaling_p} and the wavelet coefficients \cref{eq:chapter4_slepian_wavelet_p}, along with the orthogonality of the Slepian functions \cref{eq:chapter4_orthogonality_manifold}
-%
-\begin{equation}
-	\slepianSum \abs{\slepian{\Phi}}^{2} \abs{\slepian{f}}^{2}
-	%
-	+ \waveletSum \abs{\slepian{\Psi}^{j}}^{2} \abs{\slepian{f}}^{2}
-	%
-	= \norm{f}^{2},
-\end{equation}
-%
-where the admissibility condition \cref{eq:chapter4_admissibility} results in the final equality.
-Therefore, a Parseval frame holds for scale-discretised wavelets with \(A = B = 1\), which implies that the energy of \(f\) is conserved in wavelet space.
+It can be shown that this holds true for \(A = B = 1\), implying that the energy of \(f\) is conserved in wavelet space.
 
 \subsubsection{Wavelet Domain Variance}
 
@@ -772,25 +697,6 @@ For notational brevity define a quantity
 \end{equation}
 %
 to represent both the scaling function and the wavelets.
-The variance of the wavelet/scaling coefficients is given by
-%
-\begin{equation}
-	\variance{\mesh{W^{\varphi}}}
-	%
-	= \expval{\abs{\mesh{W^{\varphi}}}^{2}}
-	%
-	-\abs{\expval{\mesh{W^{\varphi}}}}^{2},
-\end{equation}
-%
-where the expected value of the wavelet/scaling coefficients is zero for the common case of zero-mean Gaussian noise.
-Thus, the variance can be expanded to become
-%
-\begin{equation}\label{eq:chapter4_slepian_isotropic_noise}
-	\variance{\mesh{W^{\varphi}}}
-	%
-	= \slepianSum \slepianSum['] \slepian{\varphi} \conj{\slepian[']{\varphi}} \mesh{\slepian{S}} \mesh{\conj{\slepian[']{S}}} \expval{\conj{\slepian{f}} \slepian[']{f}}.
-\end{equation}
-
 Consider homogenous and isotropic noise defined by its power spectrum
 %
 \begin{equation}
@@ -800,18 +706,15 @@ Consider homogenous and isotropic noise defined by its power spectrum
 \end{equation}
 %
 where \(C_{i} = \sigma^{2}\) for white noise.
-The power expression in Slepian space can be found by
+The corresponding power spectrum in Slepian space is
 %
-\begin{align}
+\begin{equation}
 	\expval{\slepian{f} \conj{\slepian[']{f}}}
 	%
-	 & = \sum\limits_{i} \sum\limits_{j} \expval{f_{i} \conj{f_{j}}} \empty{} \conj{(\slepian{S})}_{i} {(\slepian[']{S})}_{j} \nonumber \\
-	%
-	 & = \sigma^{2} \delta_{pp'},
-\end{align}
+	= \sigma^{2} \delta_{pp'}.
+\end{equation}
 %
-where the first line follows from \cref{eq:chapter4_harmonic_to_slepian}, and the last line follows from the orthogonality of the Slepian functions \cref{eq:chapter4_orthogonality_manifold}.
-Hence, the final expression for the wavelet domain variance is
+For the common case of zero-mean Gaussian noise the expected value of the wavelet/scaling coefficients is zero, and hence the wavelet domain variance is
 %
 \begin{equation}
 	\variance{\mesh{W^{\varphi}}}
