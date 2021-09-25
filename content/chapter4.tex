@@ -726,11 +726,11 @@ and as such the variance depends on the position on the manifold.
 
 \section{Numerical Illustration}\label{sec:chapter4_numerical_illustration}
 
-In this section the construction and application of Slepian wavelets for an example region on a mesh (\cf{} manifold) is demonstrated.
+In this section the construction and application of Slepian wavelets for an example region on a mesh (\cf{} manifold) is demonstrated, similarly to before \cref{sec:chapter3_numerical_illustration}.
 The Slepian functions and eigenvalues of a region of a Homer Simpson mesh are presented in \cref{sec:chapter4_homer_region}.
 A field is constructed on the region of the mesh in \cref{sec:chapter4_wavelet_transform}, and the resulting wavelets and wavelet coefficients are computed.
 A possible use of Slepian wavelets is shown in \cref{sec:chapter4_wavelet_denoising} through a straightforward denoising procedure.
-All computations are performed with the \texttt{S2LET}\footnote{\url{http://astro-informatics.github.io/s2let/}}~\cite{Leistedt2013} code, which enables the construction of the wavelet generating functions discussed in \cref{sec:chapter4_generating_functions}.
+All computations are performed with the \texttt{S2LET}\footnote{\url{http://astro-informatics.github.io/s2let/}}~\cite{Leistedt2013} code, which enables the construction of the wavelet generating functions discussed in \cref{sec:chapter3_generating_functions}.
 
 \subsection{Homer Region}\label{sec:chapter4_homer_region}
 
@@ -738,7 +738,7 @@ A region of a manifold is created on a mesh of Homer Simpson, \cref{fig:chapter4
 The Slepian functions of this region are computed by solving the eigenproblem \cref{eq:chapter4_eigenproblem}, and then performing an inverse harmonic transform.
 The resulting Shannon number \cref{eq:chapter4_shannon} of the region \(R\) is \(N=329\).
 A set of Slepian functions of the mesh are shown in \cref{fig:chapter4_slepian_functions} for \(p \in \set{1, 10, 25, 50, 100, 200}\).
-Comparing panel (f) to panel (a) one can see that the latter Slepian functions are more spread out in the region, representing worse concentration.
+Comparing panel (f) to the earlier panels, one can see that the Slepian functions become more spread out in the region, representing worse concentration.
 The corresponding eigenvalues \(\slepian{\mu}\) are a measure of spatial concentration, which remain \(\almost{1}\) for many \(p\) values before rapidly decreasing towards zero around \(N\).
 The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter4_slepian_eigenvalues}, were the plot to extend to all \(\imax{}\) Slepian eigenvalues then the rest of the eigenvalues would be \(\almost{0}\).
 
@@ -755,7 +755,7 @@ This tiling is shown in \cref{fig:chapter4_tiling} for \(\num{1275}\) basis func
 Hence, for this region the scaling function and wavelets for scales \(j \in \set{2, 3, 4, 5, 6}\) are the only non-zero functions.
 These wavelets are presented in \cref{fig:chapter4_wavelets}, which show a similar pattern to the Slepian functions where the scaling function is more concentrated in the region than the wavelet scale \(j=6\).
 To perform a scale-discretised wavelet transform one requires a signal on the mesh.
-\cref{fig:chapter4_homer_data} presents the such a signal, the \(z\)-component of the per vertex normals of the Homer mesh.
+\cref{fig:chapter4_homer_data} presents such a signal, the \(z\)-component of the per vertex normals of the Homer mesh.
 With some data to hand, the scaling and wavelet coefficients of the Homer head region are given in \cref{fig:chapter4_wavelet_coefficients}.
 
 \input{figures/chapter4/homer_wavelets}
@@ -768,7 +768,7 @@ With some data to hand, the scaling and wavelet coefficients of the Homer head r
 
 Wavelets are used in a variety of contexts in signal processing, one common use case is for denoising a signal.
 Localised features in the data can be extracted to different wavelet scales, and hence the desired parts of the signal can be preserved whilst isolating the noise.
-To showcase Slepian wavelets, white noise is added to the signal in the right panel of \cref{fig:chapter4_homer_data}.
+To showcase Slepian wavelets, white noise is added to the signal in \cref{fig:chapter4_homer_data}.
 A straightforward hard-thresholding denoising procedure follows.
 
 Consider a signal localised in the region \(R\) in the presence of noise
@@ -788,17 +788,9 @@ The power spectrum of noise in Slepian space is as before
 	= \sigma^{2} \delta_{pp'}.
 \end{equation}
 %
-To assess the recovery of the initial data, a signal-to-noise ratio for the region is defined
-%
-\begin{equation}
-	\snr{z}
-	%
-	\equiv 10 \log_{10} \frac{\norm{s}^{2}}{\norm{z - s}^{2}}.
-\end{equation}
-%
-A denoised version of \(z\) is desired, denoted by \(d \in \hilbert{R}\), with a large \(\snr{d}\) such that \(d\) extracts the informative signal \(s\).
-Often the scaling coefficients are \emph{not} used in hard-thresholding; however, in the Slepian setting the scaling function and wavelets are treated equivalently.
-The scaling function in the Slepian setting is not a low-frequency representation of the signal due to the localisation of the Slepian functions (see \cref{sec:chapter4_localisation}).
+A denoised version of \(z\) is desired, denoted by \(d \in \hilbert{R}\), with a large \(\snr{d}\) (defined in \cref{eq:chapter3_signal_to_noise}) such that \(d\) extracts the informative signal \(s\).
+As before, the scaling function and wavelets are treated equivalently in the Slepian setting.
+The scaling function in the Slepian setting is not a low-frequency representation of the signal due to the localisation of the Slepian functions (see \cref{sec:chapter3_localisation}).
 
 Since the wavelet transform is linear, the individual elements sum to give the wavelet/scaling coefficients of \cref{eq:chapter4_noised_signal}
 %
@@ -808,14 +800,8 @@ Since the wavelet transform is linear, the individual elements sum to give the w
 	= \mesh{S^{\varphi}} + \mesh{N^{\varphi}},
 \end{equation}
 %
-where the wavelet coefficients are denoted by capital letters, \ie{}
-%
-\begin{equation}
-	\mesh{Z^{\varphi}} = \mesh{\convolution{\varphi}{z}}.
-\end{equation}
-%
+where the wavelet coefficients are denoted by capital letters.
 In wavelet space the noise is
-%
 %
 \begin{equation}
 	\variance{\mesh{N^{\varphi}}}
@@ -827,7 +813,7 @@ In wavelet space the noise is
 %
 where \(\sigma^{\varphi}\) represents the standard deviation of the noise in wavelet space.
 To denoise the signal one may hard-threshold the scaling/wavelet coefficients with a threshold \(T\) proportional to the standard deviation of the noise.
-Hence, the denoised wavelet coefficients \(\mesh{D^{\varphi}} = \mesh{\convolution{\varphi}{d}}\) are
+Hence, the denoised wavelet coefficients \(\mesh{D^{\varphi}}\) are
 %
 \begin{equation}
 	\mesh{D^{\varphi}} =
@@ -855,16 +841,14 @@ with \(N_{\sigma} \in \realPosParam{}\).
 Reconstruction of the signal \(d\) follows by an inverse wavelet transform with these thresholded wavelet coefficients.
 This procedure merely demonstrates a practical use case of Slepian wavelets, more sophisticated denoising formalisms can be developed.
 
-To perform the denoising, Gaussian white noise is added to the data in the right panel of \cref{fig:chapter4_homer_data}.
-The noised signal is shown in panel (a) of \cref{fig:chapter4_denoising} with an initial signal-to-noise ratio of \(\SI{0.32}{\dB}\).
-Panels (b-c) show the results of the denoising procedure describe above for \(N_{\sigma} \in \set{1,2}\), with signal-to-noise ratios of \(\SI{2.29}{\dB}\) and \(\SI{0.98}{\dB}\) respectively.
-At \(N_{\sigma}=1\) an initial boost in signal-to-noise ratio is observed; however, as more signal is removed the hard-thresholding scheme experiences diminishing returns.
-
+To perform the denoising, Gaussian white noise is added to the data in panel (a) of \cref{fig:chapter4_denoising}.
+Panel (b) presents this noised signal with an initial signal-to-noise ratio of \(\SI{0.32}{\dB}\).
+The result of the denoising procedure describe above for \(N_{\sigma}=1\) is shown in panel (c), where a signal-to-noise ratio of \(\SI{2.29}{\dB}\) represents a boost of \(\SI{1.97}{\dB}\).
 The same denoising procedure was conducted for a series of other meshes, the Slepian regions of which are shown in \cref{fig:chapter4_other_meshes}.
-These meshes are comparable in size to the \(\num{5103}\) vertex Homer mesh, and an appropriate region \(R\) has been highlighted in black for each.
+These meshes are comparable in size to the \(\num{5103}\) vertex Homer mesh, and an appropriate region \(R\) has been highlighted for each.
 \cref{tab:chapter4_denoising} presents the Shannon number, the number of non-zero wavelets, and the denoising results for each mesh for the same wavelet parameters as before --- \(\lambda=3\) and \(J_{0}=2\).
-In general, the hard-thresholding scheme boosts the signal-to-noise ratio of the signal on the mesh, in particular for higher Shannon numbers (more wavelets).
-Fine-tuning the wavelet parameters \(\lambda{}\) and \(J_{0}\) would result in a larger signal-to-noise boost for each mesh.
+This straightforward hard-thresholding scheme boosts the signal-to-noise ratio of all signals on the meshes.
+The wavelet parameters \(\lambda{}\) and \(J_{0}\) have not been optimised for this denoising procedure.
 
 \input{figures/chapter4/homer_denoising}
 
