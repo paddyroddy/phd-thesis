@@ -24,12 +24,12 @@ The \emph{directional convolution} has an output which is not on the sphere (\eg
 Lastly, the \emph{commutative anisotropic convolution}~\cite{Sadeghi2012,Khalid2012} and the \emph{directional convolution} are computationally demanding.
 No existing spherical convolution satisfies all three desirable properties.
 
-This letter presents an alternative spherical convolution, the \emph{sifting convolution}, defined through the sifting property of the Dirac delta --- in analogy to the Euclidean definition.
+This work presents an alternative spherical convolution, the \emph{sifting convolution}, defined through the sifting property of the Dirac delta --- in analogy to the Euclidean definition.
 The convolution is anisotropic in nature and supports directional kernels.
 The output remains on the sphere, even when both inputs are directional.
 Moreover, the convolution is efficient to compute, and is commutative up to a complex conjugate.
 
-The remainder of this letter is as follows.
+The remainder of this chapter is as follows.
 \cref{sec:chapter2_preliminaries} includes some mathematical preliminaries and reviews existing spherical convolutions in the literature.
 \cref{sec:chapter2_sifting_convolution} introduces the proposed sifting convolution.
 \cref{sec:chapter2_numerical_illustration} presents a demonstration of the convolution with a directional kernel.
@@ -77,7 +77,7 @@ where \(\harmonic{f}\) are the spherical harmonic coefficients given by
 \begin{equation}
 	\harmonic{f}
 	%
-	= \braket{f}{\harmonic{Y}}.
+	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
 \end{equation}
 %
 The phase convention adopted here is
@@ -118,7 +118,7 @@ The Dirac delta on the sphere satisfies the following normalisation and sifting 
 and
 %
 \begin{equation}
-	\braket{\delta_{\omega'}}{\conj{f}}
+	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{\conj{f}}
 	%
 	= \pixel[']{f},
 \end{equation}
@@ -442,6 +442,12 @@ The \emph{harmonic Gaussian} introduced in \cref{sec:chapter2_numerical_illustra
 \section{Numerical Illustration}\label{sec:chapter2_numerical_illustration}
 
 This section demonstrates the effect of the sifting convolution through the application of a directional kernel to an example signal on the sphere.
+A set of kernels are created and then translated in \cref{sec:chapter2_kernels}.
+The convolution is then demonstrated with one of these kernels in \cref{sec:chapter2_conclusion} on a topographic map of the Earth.
+
+\subsection{Kernels}\label{sec:chapter2_kernels}
+
+\subsubsection{Harmonic Gaussian}
 
 Define the \emph{harmonic Gaussian} as a two-dimensional Gaussian in harmonic space by
 %
@@ -461,15 +467,16 @@ Consider two differently sized harmonic Gaussians on the sphere to see the effec
 
 \input{figures/chapter2/translated_harmonic_gaussian}
 
+\subsection{Convolution}\label{sec:chapter2_convolution}
+
 To study the effect of the sifting convolution, consider the \emph{Earth Gravitational Model EGM2008} dataset~\cite{Pavlis2013}.
 This dataset is the topographic map of the Earth.
 \cref{fig:chapter2_earth} presents the dataset up to an order of \(L=128\).
-%
-\input{figures/chapter2/egm2008_dataset}
-%
 The sifting convolution is then performed between the Earth representation and the harmonic Gaussian with the resultant plot given in \cref{fig:chapter2_convolved}.
 As expected, when the elongated kernel is considered, as shown in the left panel, the result exhibits greater anisotropic smoothing than when considering the symmetric kernel, as shown in the right panel.
 It is clear that the sifting convolution supports directional kernels to perform anisotropic filtering (smoothing), while the output remains on the sphere.
+
+\input{figures/chapter2/egm2008_dataset}
 
 \input{figures/chapter2/convolved_harmonic_gaussian}
 
