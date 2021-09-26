@@ -4,7 +4,7 @@
 
 Inspired by recent interest in geometric deep learning, this work generalises the recently developed Slepian scale-discretised wavelets on the sphere to Riemannian manifolds.
 Through the sifting convolution, one may define translations and, thus, convolutions on manifolds --- which are not well-defined in general.
-Slepian wavelets are constructed on a region of a manifold, and are therefore suited to problems where data only exists, or is missing in a particular region.
+Slepian wavelets are constructed on a region of a manifold, and are therefore suited to problems where data only exists, or are missing in a particular region.
 The Slepian functions, on which Slepian wavelets are built, are the basis functions of the Slepian spatial-spectral concentration problem.
 A tiling of the Slepian harmonic line with smoothly decreasing generating functions defines the scale-discretised wavelets; allowing one to probe spatially localised, scale-dependent features of a signal.
 By discretising manifolds as graphs, the Slepian functions and wavelets of a triangular mesh are presented.
@@ -75,7 +75,7 @@ Initially, the sifting convolution is expressed in the Slepian domain, which is 
 The scale-discretised framework is then introduced, followed by the generating functions which define the wavelets themselves.
 The section concludes with some properties of the wavelets.
 A numerical illustration is presented in \cref{sec:chapter4_numerical_illustration}, in which the Slepian functions of the head region of a triangular mesh of Homer Simpson are computed.
-A field is then placed on the mesh, and the resulting wavelets and wavelet coefficients are found.
+A field is then placed on the mesh, and the resulting wavelets and wavelet coefficients are found through a wavelet transform.
 A straightforward hard-thresholding denoising scheme is developed and performed on the Homer mesh, along with some other meshes.
 A boost in signal-to-noise ratio is observed, showcasing a possible use of these wavelets.
 Lastly, some concluding remarks are given in \cref{sec:chapter4_conclusions}.
@@ -290,7 +290,7 @@ A review of the sifting convolution follows in \cref{sec:chapter4_sifting_convol
 \subsection{Slepian Concentration Problem on Manifolds}\label{sec:chapter4_slepian_concentration_problem_manifolds}
 
 The problem of spatial concentration of bandlimited signals (likewise spectral concentration of spacelimited signals) was first studied by Slepian, Landau and Pollak in the 1960s~\cite{Slepian1961,Landau1961,Landau1962}.
-Initially for time domain signals, it has since been extended to other domains such as signals on the sphere~\cite{Simons2006,Roddy2021a,Xu1983,Wieczorek2005}.
+Initially considered for time domain signals, it has since been extended to other domains such as signals on the sphere~\cite{Simons2006,Roddy2021a,Xu1983,Wieczorek2005}.
 This work considers optimally concentrated functions within a region \(R\) of a manifold \(\manifold{}\), an example of which is shown in \cref{fig:chapter4_region}.
 
 \input{figures/chapter4/example_region_manifold}
@@ -352,7 +352,7 @@ of the corresponding eigenvectors
 \end{equation}
 %
 No bandlimited function can be restricted exactly within a region \(R\) and hence \(\mu_{1}<1\).
-Due to the positive definiteness of \(\vb{D}\) the smallest eigenvalue \(\mu_{\imax}\) is strictly greater than zero.
+Due to the positive definiteness of \(\vb{D}\), the smallest eigenvalue \(\mu_{\imax}\) is strictly greater than zero.
 A manifold analogue of the \emph{Shannon number} can be constructed by
 %
 \begin{equation}\label{eq:chapter4_shannon}
@@ -402,24 +402,7 @@ The Slepian coefficients of a well-localised function may be computed with an in
 	= \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}},
 \end{equation}
 %
-where \(\vb{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\).
-Note the use of the orthogonality results
-%
-\begin{equation}
-	\hermitian{\slepian[']{\vb{S}}} \slepian{\vb{S}}
-	%
-	= \delta_{pp'},
-\end{equation}
-%
-and
-%
-\begin{equation}
-	\hermitian{\slepian[']{\vb{S}}} \vb{D} \slepian{\vb{S}}
-	%
-	= \slepian{\mu} \delta_{pp'},
-\end{equation}
-%
-as before.
+where \(\vb{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\) (see \cref{eq:chapter3_integrate_region_proof} for proof).
 To transform from Slepian coefficients to the basis functions of the manifold
 %
 \begin{equation}\label{eq:chapter4_slepian_to_harmonic}
@@ -452,7 +435,7 @@ The inverse operation of \cref{eq:chapter4_slepian_to_harmonic} is
 
 A central part of wavelet transforms is the convolution.
 On \(\mathbb{R}^{d}\), the convolution of a signal \(f \in \hilbert{\mathbb{R}^{d}}\) with a filter \(g \in \hilbert{\mathbb{R}^{d}}\) is defined by translating \(g\) against \(f\); however, general manifolds do not have well-defined translations.
-Recently developed by the authors of this work, the sifting convolution~\cite{Roddy2021} is built on a translation which simply involves a product of the basis functions.
+Recently developed by the authors of this work, the sifting convolution~\cite{Roddy2021} is built on a translation which simply involves a product of the basis functions in Fourier space.
 Initially defined in the spherical setting, the sifting convolution can be arbitrarily extended to other domains, including manifolds.
 
 The translation operator on the manifold is
@@ -596,7 +579,7 @@ Wavelets and a scaling function that satisfy this admissibility condition may no
 
 \subsection{Generating Functions}\label{sec:chapter4_generating_functions}
 
-A tiling of the Slepian line defines the wavelets through smooth generating functions --- in an analogous manner to \cref{sec:chapter3_generating_functions}.
+A tiling of the Slepian line defines the wavelets through smooth generating functions --- introduced in \cref{sec:chapter3_generating_functions}.
 Defined in~\cite{Wiaux2008}, \(k_{\lambda}\) is a smoothly decreasing function which is unity for \(t < 1/\lambda{}\), zero for \(t > 1\), and smoothly decreasing otherwise.
 The wavelet generating function is defined as
 %
@@ -645,7 +628,7 @@ The Slepian wavelets are constructed by the tiling of the Slepian line as shown 
 \subsection{Properties}\label{sec:chapter4_properties}
 
 The properties of Slepian wavelets on manifolds are reviewed here.
-These properties are the same as the spherical case and are extensively discussed in \cref{sec:chapter3_properties}.
+These properties are the same as the spherical case, and are extensively discussed in \cref{sec:chapter3_properties}.
 In comparison to standard scale-discretised wavelets, the properties are often similar, but not always.
 
 \subsubsection{Localisation}\label{sec:chapter4_localisation}
@@ -720,7 +703,7 @@ and as such the variance depends on the position on the manifold.
 
 \section{Numerical Illustration}\label{sec:chapter4_numerical_illustration}
 
-In this section the construction and application of Slepian wavelets for an example region on a mesh (\cf{} manifold) is demonstrated, similarly to before \cref{sec:chapter3_numerical_illustration}.
+In this section the construction and application of Slepian wavelets for an example region on a mesh (\cf{} manifold) is demonstrated, as before in \cref{sec:chapter3_numerical_illustration}.
 The Slepian functions and eigenvalues of a region of a Homer Simpson mesh are presented in \cref{sec:chapter4_homer_region}.
 A field is constructed on the region of the mesh in \cref{sec:chapter4_wavelet_transform}, and the resulting wavelets and wavelet coefficients are computed.
 A possible use of Slepian wavelets is shown in \cref{sec:chapter4_wavelet_denoising} through a straightforward denoising procedure.
@@ -748,7 +731,7 @@ The Slepian scaling function and wavelets defined in \cref{sec:chapter4_slepian_
 This tiling is shown in \cref{fig:chapter4_tiling} for \(\imax=\num{1275}\) basis functions of the Homer mesh, where the Shannon number \(N=329\) is highlighted.
 Hence, for this region the scaling function and wavelets for scales \(j \in \set{2, 3, 4, 5, 6}\) are the only non-zero functions.
 These wavelets are presented in \cref{fig:chapter4_wavelets}, which show a similar pattern to the Slepian functions where the scaling function is more concentrated in the region than the wavelet scale \(j=6\).
-To perform a scale-discretised wavelet transform one requires a signal on the mesh.
+To perform a scale-discretised wavelet transform, one requires a signal on the mesh.
 \cref{fig:chapter4_homer_data} presents such a signal, the \(z\)-component of the per vertex normals of the Homer mesh.
 With some data to hand, the scaling and wavelet coefficients of the Homer head region are given in \cref{fig:chapter4_wavelet_coefficients}.
 
@@ -854,7 +837,7 @@ The wavelet parameters \(\lambda{}\) and \(J_{0}\) have not been optimised for t
 
 Due to recent interest in geometric deep learning, many fields are extending existing methods in the Euclidean domain to the manifolds or graphs settings.
 This work generalises the recently developed \emph{Slepian scale-discretised wavelets on the sphere}~\cite{Roddy2021a} to Riemannian manifolds, whereby the wavelets themselves are restricted to a region of the manifold.
-Slepian wavelets have many possible use cases in various fields of science and engineering, where data only exists, or is missing in a particular region.
+Slepian wavelets have many possible use cases in various fields of science and engineering, where data only exists, or are missing in a particular region.
 A typical approach to problems of this kind is to analyse the signal with wavelets defined over the whole manifold, where spatially localised, scale-dependent features of the signal may be extracted.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.
 Slepian scale-discretised wavelets (on manifolds) offer a potential solution to this obstacle.
@@ -862,7 +845,7 @@ Slepian scale-discretised wavelets (on manifolds) offer a potential solution to 
 The wavelets are built on the eigenfunctions of the Slepian spatial-spectral concentration problem (on the manifold), which are the basis functions of the region.
 A tiling of the Slepian harmonic line allows one to construct scale-discretised wavelets, which: exhibit an explicit inversion formula, constitute a tight frame, and have excellent localisation properties in both spectral and spatial domains.
 The wavelet transform is built on the sifting convolution~\cite{Roddy2021} which allows one to perform convolutions on (incomplete) manifolds --- which, in general, are not well-defined.
-The wavelet construction here is analogous to the spherical setting, but where the basis functions here are the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
+The wavelet construction here is analogous to the spherical setting, but where the basis functions are the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
 
 In computer graphics applications, 3D shapes are often modelled as 2D manifolds, which are then discretised as meshes.
 A region is constructed on a mesh of Homer Simpson and the resulting Slepian functions are found.
