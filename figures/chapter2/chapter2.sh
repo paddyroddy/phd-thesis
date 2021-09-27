@@ -5,7 +5,7 @@ FUNCTIONS=(gaussian elongated_gaussian squashed_gaussian)
 L=128
 L_SIGMA=$(seq 1 2)
 
-for f in $FUNCTIONS; do
+for f in ${FUNCTIONS[@]}; do
     echo figure: $f north
     sphere $f \
         -L $L
@@ -14,6 +14,7 @@ for f in $FUNCTIONS; do
     sphere $f \
     -a $ALPHA \
     -b $BETA \
+    -L $L \
     -m translate \
     -o
 done
