@@ -468,24 +468,26 @@ This function has no directional components and is therefore unsuitable for gene
 
 \subsubsection{Squashed Gaussian}
 
+Define the \emph{squashed Gaussian} as a Gaussian in real space modulated by a sinusoidal function in the azimuthal angle
+%
 \begin{equation}
 	\pixel{\mathcal{SG}}
 	%
-	= \mathcal{SG}(\theta,\phi)
-	%
 	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\theta_{0}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
 	%
-	\sin(\nu_{\phi}\phi)
+	\sin(\nu_{\phi}\phi),
 \end{equation}
+%
+where \(\sigma_{\theta}\) and \(\nu_{\phi}\) are parameters controlling the standard deviation of the Gaussian and frequency of the sine wave respectively.
 
 \input{figures/chapter2/squashed_gaussian}
 
 \subsubsection{Elongated Gaussian}
 
+Define the \emph{elongated Gaussian}
+
 \begin{equation}
 	\pixel{\mathcal{EG}}
-	%
-	= \mathcal{EG}(\theta,\phi)
 	%
 	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\theta_{0}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
 	%
