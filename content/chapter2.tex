@@ -458,9 +458,10 @@ First, consider the standard axisymmetric Gaussian on the sphere, \ie{}
 \begin{equation}
 	\harmonic{\mathcal{G}}
 	%
-	= \exp(-\frac{{\ell}^{2}}{2\sigma^{2}}).
+	= \exp(-\frac{{\ell}^{2}}{2\sigma^{2}}),
 \end{equation}
 %
+where \(\sigma{}\) is the standard deviation of the Gaussian.
 This function has no directional components and is therefore unsuitable for general convolution purposes.
 \cref{fig:chapter2_gaussian} presents the Gaussian kernel (left panel) and the result of the translation (right panel); where it is clear that the axisymmetric symmetry is preserved.
 
@@ -468,7 +469,7 @@ This function has no directional components and is therefore unsuitable for gene
 
 \subsubsection{Squashed Gaussian}
 
-Define the \emph{squashed Gaussian} as the standard Gaussian in real space (\ie{} in the polar angle \(\theta{}\)) modulated by a sinusoidal function in the azimuthal angle
+Define the \emph{squashed Gaussian} in real space as the standard Gaussian (\ie{} in the polar angle \(\theta{}\)) modulated by a sinusoidal function in the azimuthal angle \(\phi{}\) by
 %
 \begin{equation}
 	\pixel{\mathcal{SG}}
@@ -486,15 +487,18 @@ The initial odd symmetry in the kernel definition results in the axisymmetric tr
 
 \subsubsection{Elongated Gaussian}
 
-Define the \emph{elongated Gaussian}
-
+Define the \emph{elongated Gaussian} in the real space as a Gaussian in the polar angle \(\theta{}\) modulated by a Gaussian in the azimuthal angle \(\phi{}\) by
+%
 \begin{equation}
 	\pixel{\mathcal{EG}}
 	%
 	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\theta_{0}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
 	%
-	\exp\Bigg(-\frac{1}{2}{\bigg(\frac{\phi-\phi_{0}}{\sigma_{\phi}}\bigg)}^{2}\Bigg)
+	\exp\Bigg(-\frac{1}{2}{\bigg(\frac{\phi-\phi_{0}}{\sigma_{\phi}}\bigg)}^{2}\Bigg),
 \end{equation}
+%
+where the \(\sigma_{\theta}\) and \(\sigma_{\phi}\) are the standard deviations of the respective Gaussians.
+\cref{fig:chapter2_elongagted_gaussian} presents the elongated Gaussian on the sphere
 
 \input{figures/chapter2/elongated_gaussian}
 
