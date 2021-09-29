@@ -449,7 +449,7 @@ All later computations use the \texttt{SSHT}\footnote{\url{http://astro-informat
 \subsection{Kernels}\label{sec:chapter2_kernels}
 
 As discussed in \cref{sec:chapter2_properties}, the translation preserves symmetries from the initial kernel definition.
-Hence, one must carefully consider the desired properties in the translated kernel, \eg{} spatial localisation.
+Hence, one must consider the desired properties in the translated kernel, \eg{} spatial localisation.
 
 \subsubsection{Gaussian}
 
@@ -462,8 +462,8 @@ First, consider the standard axisymmetric Gaussian on the sphere, \ie{}
 \end{equation}
 %
 where \(\sigma{}\) is the standard deviation of the Gaussian.
-This function has no directional components and is therefore unsuitable for general convolution purposes.
 \cref{fig:chapter2_gaussian} presents the Gaussian kernel (left panel) and the result of the translation (right panel); where it is clear that the axisymmetric symmetry is preserved.
+This function has no directional components and is therefore unsuitable for general convolution purposes.
 
 \input{figures/chapter2/gaussian}
 
@@ -472,7 +472,7 @@ This function has no directional components and is therefore unsuitable for gene
 Define the \emph{squashed Gaussian} in real space as the standard Gaussian (\ie{} in the polar angle \(\theta{}\)) modulated by a sinusoidal function in the azimuthal angle \(\phi{}\) by
 %
 \begin{equation}
-	\pixel{\mathcal{SG}}
+	\mathcal{SG}(\theta,\phi)
 	%
 	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\theta_{0}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
 	%
@@ -480,8 +480,8 @@ Define the \emph{squashed Gaussian} in real space as the standard Gaussian (\ie{
 \end{equation}
 %
 where \(\sigma_{\theta}\) and \(\nu_{\phi}\) are parameters controlling the standard deviation of the Gaussian and frequency of the sine wave respectively.
-The squashed Gaussian kernel is shown in the left panel of \cref{fig:chapter2_squashed_gaussian}, and the translated kernel is shown in the right.
-The initial odd symmetry in the kernel definition results in the axisymmetric translated function.
+The squashed Gaussian kernel is shown in the left panel of \cref{fig:chapter2_squashed_gaussian}, and the translated kernel is shown in the right panel.
+The odd symmetry in the kernel definition results in the axisymmetric translated function.
 
 \input{figures/chapter2/squashed_gaussian}
 
@@ -490,7 +490,7 @@ The initial odd symmetry in the kernel definition results in the axisymmetric tr
 Define the \emph{elongated Gaussian} in the real space as a Gaussian in the polar angle \(\theta{}\) modulated by a Gaussian in the azimuthal angle \(\phi{}\) by
 %
 \begin{equation}
-	\pixel{\mathcal{EG}}
+	\mathcal{EG}(\theta,\phi)
 	%
 	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\theta_{0}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
 	%
@@ -498,7 +498,9 @@ Define the \emph{elongated Gaussian} in the real space as a Gaussian in the pola
 \end{equation}
 %
 where the \(\sigma_{\theta}\) and \(\sigma_{\phi}\) are the standard deviations of the respective Gaussians.
-\cref{fig:chapter2_elongagted_gaussian} presents the elongated Gaussian on the sphere
+The left panel of \cref{fig:chapter2_elongated_gaussian} presents the elongated Gaussian, and the right panel shows the result of the translation.
+The elongated Gaussian has even azimuthal symmetry which results in two localised components at \(\phi'\) and \(-\phi'\) upon translation.
+Thus, this kernel is not suitable for anisotropic smoothing.
 
 \input{figures/chapter2/elongated_gaussian}
 
