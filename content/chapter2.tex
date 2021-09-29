@@ -213,7 +213,31 @@ which in harmonic space becomes (\eg{}~\cite{McEwen2007})
 \begin{equation}\label{eq:chapter2_isotropic_harmonic}
 	\harmonic{(f \odot g)}
 	%
-	= \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}}.
+	= \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}},
+\end{equation}
+%
+as
+%
+\begin{align}
+	\pixel{(f \odot g)}
+	%
+	 & = \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}} \nonumber{}                                                                                           \\
+	%
+	 & = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\omega}g)}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	%
+	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\omega}g)}} \nonumber                                                                                                          \\
+	%
+	 & = \harmonicSum \harmonic{f} \conj{(\wigner{\ell}{m}{0}(\phi,\theta,0) \axiHarmonic{g})} \nonumber{}                                                                                   \\
+	%
+	 & = \harmonicSum \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}} \pixel{\harmonic{Y}},
+\end{align}
+%
+where the last line follows through the relation
+%
+\begin{equation}
+	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
+	%
+	= \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.
 \end{equation}
 %
 The isotropic convolution has the following properties:
