@@ -227,7 +227,7 @@ as
 	%
 	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\omega}g)}} \nonumber                                                                                                          \\
 	%
-	 & = \harmonicSum \harmonic{f} \conj{(\wigner{\ell}{m}{0}(\phi,\theta,0) \axiHarmonic{g})} \nonumber{}                                                                                   \\
+	 & = \harmonicSum \harmonic{f} \conj{\big(\wigner{\ell}{m}{0}(\phi,\theta,0) \axiHarmonic{g}\big)} \nonumber{}                                                                           \\
 	%
 	 & = \harmonicSum \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}} \pixel{\harmonic{Y}},
 \end{align}
@@ -264,7 +264,7 @@ The harmonic representation of this convolution is
 \begin{equation}
 	\harmonic{(f \circleddash g)}
 	%
-	= 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
+	= 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g}.
 \end{equation}
 %
 As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
@@ -293,8 +293,22 @@ Upon expanding in harmonic space, this becomes (\eg{}~\cite{McEwen2007,Wandelt20
 \begin{equation}
 	(f \circledast g) (\rho)
 	%
-	= \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \harmonic{f} \conj{\big( \wigner{\ell}{m'}{m}(\rho) g_{\ell m'} \big)},
+	= \harmonicSum \harmonic{f} \sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m'}{m}(\rho) g_{\ell m'}\big)},
 \end{equation}
+%
+as
+%
+\begin{align}
+	(f \circledast g)(\rho)
+	%
+	 & = \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}} \nonumber{}                                                                                           \\
+	%
+	 & = \integrateSphere{\omega} \harmonicSum \harmonic{f} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\rho}g)}} \pixel{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	%
+	 & = \harmonicSum \harmonic{f} \conj{\harmonic[']{(\rotation{\rho}g)}} \nonumber{}                                                                                              \\
+	%
+	 & = \harmonicSum \harmonic{f} \sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m'}{m}(\rho) g_{\ell m'}\big)},
+\end{align}
 %
 and hence, the output is on \(\rotationGroup{}\).
 Fast algorithms exist~\cite{McEwen2007,Wandelt2001,Wiaux2007,McEwen2013}, but the convolution remains less efficient than a spherical harmonic transform.
