@@ -5,7 +5,7 @@ ignorecase: true
 level: error
 nonword: true
 tokens:
-    - (?:^|\s)I\s
+    # - (?:^|\s)I\s
     - (?:^|\s)I,\s
     - \bI'm\b
     - \bme\b
