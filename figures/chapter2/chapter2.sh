@@ -5,12 +5,16 @@ FUNCTIONS=(gaussian elongated_gaussian squashed_gaussian)
 L=128
 L_SIGMA=$(seq 1 2)
 
+echo earth
+sphere earth \
+    -L $L
+
 for f in ${FUNCTIONS[@]}; do
-    echo figure: $f north
+    echo $f north
     sphere $f \
         -L $L
 
-    echo figure: $f translated
+    echo $f translated
     sphere $f \
     -a $ALPHA \
     -b $BETA \
@@ -20,12 +24,12 @@ for f in ${FUNCTIONS[@]}; do
 done
 
 for ell in $L_SIGMA; do
-    echo figure: harmonic Gaussian north, l_sigma: $ell
+    echo harmonic Gaussian north, l_sigma: $ell
     sphere harmonic_gaussian \
         -e $ell 1 \
         -L $L
 
-    echo figure: harmonic Gaussian translated, l_sigma: $ell
+    echo harmonic Gaussian translated, l_sigma: $ell
     sphere harmonic_gaussian \
         -a $ALPHA \
         -b $BETA \
@@ -34,7 +38,7 @@ for ell in $L_SIGMA; do
         -m translate \
         -o
 
-    echo figure: harmonic Gaussian convolved, l_sigma: $ell
+    echo harmonic Gaussian convolved, l_sigma: $ell
     sphere harmonic_gaussian \
         -c earth \
         -e $ell 1 \
