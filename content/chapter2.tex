@@ -472,32 +472,37 @@ This function has no directional components and is therefore unsuitable for gene
 Define the \emph{squashed Gaussian} in real space as the standard Gaussian (\ie{} in the polar angle \(\theta{}\)) modulated by a sinusoidal function in the azimuthal angle \(\phi{}\) by
 %
 \begin{equation}
-	\mathcal{SG}(\theta,\phi)
+	\pixel{\mathcal{SG}}
 	%
-	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\theta_{0}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
+	= \mathcal{SG}(\theta,\phi)
+	%
+	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\mean{\theta}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
 	%
 	\sin(\nu_{\phi}\phi),
 \end{equation}
 %
-where \(\sigma_{\theta}\) and \(\nu_{\phi}\) are parameters controlling the standard deviation of the Gaussian and frequency of the sine wave respectively.
+where \(\mean{\theta}\)/\(\sigma_{\theta}\) and \(\nu_{\phi}\) are parameters controlling the mean/standard deviation of the Gaussian and the frequency of the sine wave respectively.
 The squashed Gaussian kernel is shown in the left panel of \cref{fig:chapter2_squashed_gaussian}, and the translated kernel is shown in the right panel.
 The odd symmetry in the kernel definition results in the axisymmetric translated function.
+Evidently, the squashed Gaussian is not suitable for smoothing purposes as the behaviour is similar to the axisymmetric Gaussian case.
 
 \input{figures/chapter2/squashed_gaussian}
 
 \subsubsection{Elongated Gaussian}
 
-Define the \emph{elongated Gaussian} in the real space as a Gaussian in the polar angle \(\theta{}\) modulated by a Gaussian in the azimuthal angle \(\phi{}\) by
+Define the \emph{elongated Gaussian} as a two-dimensional Gaussian in real space in the polar angle \(\theta{}\) and the azimuthal angle \(\phi{}\) by
 %
 \begin{equation}
-	\mathcal{EG}(\theta,\phi)
+	\pixel{\mathcal{EG}}
 	%
-	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\theta_{0}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
+	= \mathcal{EG}(\theta,\phi)
 	%
-	\exp\Bigg(-\frac{1}{2}{\bigg(\frac{\phi-\phi_{0}}{\sigma_{\phi}}\bigg)}^{2}\Bigg),
+	= \exp\bigg(-\bigg(\frac{{(\theta-\mean{\theta})}^{2}}{2\sigma_{\theta}^{2}}
+	%
+	+ \frac{{(\phi-\mean{\phi})}^{2}}{2\sigma_{\phi}^{2}}\bigg)\bigg),
 \end{equation}
 %
-where the \(\sigma_{\theta}\) and \(\sigma_{\phi}\) are the standard deviations of the respective Gaussians.
+where \(\set{\mean{\theta},\mean{\phi}}\) are the means, and \(\set{\sigma_{\theta},\sigma_{\phi}}\) are the standard deviations of the respective Gaussians.
 The left panel of \cref{fig:chapter2_elongated_gaussian} presents the elongated Gaussian, and the right panel shows the result of the translation.
 The elongated Gaussian has even azimuthal symmetry which results in two localised components at \(\phi'\) and \(-\phi'\) upon translation.
 Thus, this kernel is not suitable for anisotropic smoothing.
