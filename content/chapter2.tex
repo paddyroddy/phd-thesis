@@ -159,7 +159,16 @@ The spherical harmonic coefficients of a rotated function read
 	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) f_{\ell m'},
 \end{equation}
 %
-where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
+where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} given by
+%
+\begin{equation}
+	\wigner{\ell}{m'}{m}(\rho)
+	%
+	= \exp(-i m'\alpha) \redWigner{\ell}{m'}{m}(\beta) \exp(-i m\gamma),
+\end{equation}
+%
+which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
+The \(\redWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention.
 
 \subsection{Spherical Convolutions}\label{sec:chapter2_spherical_convolutions}
 
