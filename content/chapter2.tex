@@ -161,14 +161,14 @@ The spherical harmonic coefficients of a rotated function read
 %
 where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} given by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_reduced_wigner}
 	\wigner{\ell}{m'}{m}(\rho)
 	%
-	= \exp(-i m'\alpha) \redWigner{\ell}{m'}{m}(\beta) \exp(-i m\gamma),
+	= \exp(-i m'\alpha) \reducedWigner{\ell}{m'}{m}(\beta) \exp(-i m\gamma),
 \end{equation}
 %
 which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
-The \(\redWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention.
+The \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention.
 
 \subsection{Spherical Convolutions}\label{sec:chapter2_spherical_convolutions}
 
@@ -272,6 +272,32 @@ The harmonic representation of this convolution is
 	%
 	= 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g}.
 \end{equation}
+%
+To prove this, first consider the forward harmonic transform
+%
+\begin{align}
+	\harmonic{(f \circleddash g)}
+	%
+	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rho\eta) g(\rho^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
+	%
+	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \conj{\harmonic{Y}}(\rho\omega) \nonumber{} \\
+	%
+	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \sum\limits_{m'=-\ell}^{\ell} \conj{\big( \wigner{\ell}{m'}{m}(\rho^{-1}) \pixel{Y_{\ell m'}} \big)} \nonumber{} \\
+	%
+	 & = \sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho),
+\end{align}
+%
+where the last line follows by (\cf{} \cref{eq:chapter2_reduced_wigner})
+%
+\begin{align}
+	\wigner{\ell}{m'}{m} (\rho^{-1})
+	%
+	&= \exp(-im'(-\gamma)) \reducedWigner{\ell}{m'}{m}(-\beta) \exp(-im(-\alpha)) \nonumber{} \\
+	%
+	&= \conj{\big(\exp(-im\alpha) \reducedWigner{\ell}{m}{m'}(\beta) \exp(-im'\gamma)\big)} \nonumber{} \\
+	%
+	&= \wigner[\ast]{\ell}{m}{m'}(\rho).
+\end{align}
 %
 As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
 Hence, the properties are similar.
@@ -379,7 +405,7 @@ In the Euclidean setting, \eg{} \(\mathbb{R}\), the complex exponentials
 \begin{equation}
 	\phi_{u}(x)
 	%
-	= \exp{iux},
+	= \exp(iux),
 \end{equation}
 %
 with \(x,\ u \in \mathbb{R}\) form the standard orthonormal basis.
