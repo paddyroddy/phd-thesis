@@ -161,14 +161,28 @@ The spherical harmonic coefficients of a rotated function read
 %
 where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} given by
 %
-\begin{equation}\label{eq:chapter2_reduced_wigner}
+\begin{equation}\label{eq:chapter2_reduced_wigner_define}
 	\wigner{\ell}{m'}{m}(\rho)
 	%
 	= \exp(-i m'\alpha) \reducedWigner{\ell}{m'}{m}(\beta) \exp(-i m\gamma),
 \end{equation}
 %
 which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
-The \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are even functions and real in this phase convention.
+The \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention, and satisfy
+%
+\begin{equation}\label{eq:chapter2_reduced_wigner_symmetry}
+	\reducedWigner{\ell}{m'}{m}(-\beta)
+	%
+	= \reducedWigner{\ell}{m}{m'}(\beta).
+\end{equation}
+%
+Note the proportionality of the axisymmetric rotation matrices and the spherical harmonics:
+%
+\begin{equation}\label{eq:chapter2_wigner_axisymmetric}
+	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
+	%
+	= \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.
+\end{equation}
 
 \subsection{Spherical Convolutions}\label{sec:chapter2_spherical_convolutions}
 
@@ -238,14 +252,7 @@ as
 	 & = \harmonicSum \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}} \pixel{\harmonic{Y}},
 \end{align}
 %
-where the last line follows through the relation
-%
-\begin{equation}
-	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
-	%
-	= \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.
-\end{equation}
-%
+where the last line follows by \cref{eq:chapter2_wigner_axisymmetric}.
 The isotropic convolution has the following properties:
 %
 \begin{inparaenum}[(i)]
@@ -287,7 +294,7 @@ To prove this, first consider the forward harmonic transform
 	 & = \sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho),
 \end{align}
 %
-where the last line follows by (\cf{} \cref{eq:chapter2_reduced_wigner})
+where the last line follows by (\cf{} \cref{eq:chapter2_reduced_wigner_define,eq:chapter2_reduced_wigner_symmetry})
 %
 \begin{align}
 	\wigner{\ell}{m'}{m} (\rho^{-1})
