@@ -401,8 +401,22 @@ which on expansion reads
 \begin{equation}
 	\pixel{(f \oplus g)}
 	%
-	= \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
+	= \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}},
 \end{equation}
+%
+as
+%
+\begin{align}
+	\pixel{(f \oplus g)}
+	%
+	 & = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g} \nonumber{}                                                                                                  \\
+	%
+	 & = \integrateSphere{\omega'} \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	%
+	 & = \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \conj{\harmonic{g}} \nonumber{}                                                                                                        \\
+	%
+	 & = \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
+\end{align}
 %
 The limitation here is that one must specify the initial rotation as \({\gamma=\pi-\alpha}\) in order for the convolution to be commutative.
 The complexity of the convolution is \(\mathcal{O}(L^{3}\log{L})\), and hence, it is less efficient than a spherical harmonic transform.
