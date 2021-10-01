@@ -306,6 +306,32 @@ where the last line follows by (\cf{} \cref{eq:chapter2_reduced_wigner_define,eq
 	 & = \wigner[\ast]{\ell}{m}{m'}(\rho).
 \end{align}
 %
+Due to the invariant measure \(\dd{\rho(\rho)}\) and considering a right rotation about the \(z\)-axis by \({\chi}\), \ie{} \(\rho = (\alpha,\beta,\gamma) \rightarrow \rho' = (\alpha,\beta,\gamma+\chi)\), it follows
+%
+\begin{align}\label{eq:chapter2_so3_integral}
+	\integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho)
+	%
+	 & = \integrateRotation{\rho} f(\rho'\eta) \wigner{\ell}{m}{m'}(\rho') \nonumber{}            \\
+	%
+	 & = \integrateRotation{\rho} f(\rho\eta) e^{-im'\chi} \wigner{\ell}{m}{m'}(\rho) \nonumber{} \\
+	%
+	 & = \exp(-im'\chi) \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho),
+\end{align}
+%
+where the penultimate line follows since a rotation of \({\eta}\) about the \(z\)-axis leaves \({\eta}\) unchanged, \ie{} \(f(\rho'\eta) = f(\rho\eta)\).
+Thus, as \cref{eq:chapter2_so3_integral} holds for all \(\chi{}\), it must be the case that \(m'=0\) unless the integral is zero, \ie{}:
+%
+\begin{align}
+	\harmonic{(f \circleddash g)}
+	%
+	 & = \axiHarmonic{g} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                               \\
+	%
+	 & = \axiHarmonic{g} \int\limits_{0}^{2\pi} \dd{\gamma} \integrateSphere{\omega} \pixel{f} \sqrt{\inverseFactor} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
+	%
+	 & = 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
+\end{align}
+%
+where the penultimate line follows by \cref{eq:chapter2_wigner_axisymmetric}.
 As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
 Hence, the properties are similar.
 The left convolution has the following properties:
