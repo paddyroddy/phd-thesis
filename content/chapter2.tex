@@ -168,7 +168,7 @@ where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} given by
 \end{equation}
 %
 which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
-The \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention.
+The \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are even functions and real in this phase convention.
 
 \subsection{Spherical Convolutions}\label{sec:chapter2_spherical_convolutions}
 
@@ -278,9 +278,9 @@ To prove this, first consider the forward harmonic transform
 \begin{align}
 	\harmonic{(f \circleddash g)}
 	%
-	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rho\eta) g(\rho^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
+	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rho\eta) g(\rho^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                 \\
 	%
-	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \conj{\harmonic{Y}}(\rho\omega) \nonumber{} \\
+	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \conj{\harmonic{Y}}(\rho\omega) \nonumber{}                                                                      \\
 	%
 	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \sum\limits_{m'=-\ell}^{\ell} \conj{\big( \wigner{\ell}{m'}{m}(\rho^{-1}) \pixel{Y_{\ell m'}} \big)} \nonumber{} \\
 	%
@@ -292,11 +292,11 @@ where the last line follows by (\cf{} \cref{eq:chapter2_reduced_wigner})
 \begin{align}
 	\wigner{\ell}{m'}{m} (\rho^{-1})
 	%
-	&= \exp(-im'(-\gamma)) \reducedWigner{\ell}{m'}{m}(-\beta) \exp(-im(-\alpha)) \nonumber{} \\
+	 & = \exp(-im'(-\gamma)) \reducedWigner{\ell}{m'}{m}(-\beta) \exp(-im(-\alpha)) \nonumber{}           \\
 	%
-	&= \conj{\big(\exp(-im\alpha) \reducedWigner{\ell}{m}{m'}(\beta) \exp(-im'\gamma)\big)} \nonumber{} \\
+	 & = \conj{\big(\exp(-im\alpha) \reducedWigner{\ell}{m}{m'}(\beta) \exp(-im'\gamma)\big)} \nonumber{} \\
 	%
-	&= \wigner[\ast]{\ell}{m}{m'}(\rho).
+	 & = \wigner[\ast]{\ell}{m}{m'}(\rho).
 \end{align}
 %
 As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
