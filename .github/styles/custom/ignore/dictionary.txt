@@ -4,6 +4,7 @@ ast
 bandlimit
 bandlimited
 bibentry
+bibintoc
 bigg
 bottomrule
 braket
