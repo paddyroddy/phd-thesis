@@ -6,9 +6,9 @@
 
 % Some hacks are necessary to make bibentry and hyperref play nicely.
 % See: http://tex.stackexchange.com/questions/65348/clash-between-bibentry-and-hyperref-with-bibstyle-elsart-harv
-\usepackage[pdftex,hidelinks]{hyperref}
 % \usepackage{bibentry}
 % \makeatletter\let\saved@bibitem\@bibitem\makeatother % chktex 21
+\usepackage[luatex]{hyperref}
 % \makeatletter\let\@bibitem\saved@bibitem\makeatother % chktex 21
 \makeatletter
 \AtBeginDocument{
