@@ -91,6 +91,7 @@ postaction
 rceil
 renewcommand
 resizebox
+rightarrow
 roddy
 scriptsize
 se
