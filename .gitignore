@@ -5,6 +5,7 @@ __latexindent_temp.tex
 *.bbl
 *.bcf
 *.blg
+*.brf
 *.fdb_latexmk
 *.fls
 *.lof
