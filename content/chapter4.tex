@@ -37,7 +37,7 @@ Each edge in a graph is associated with a weight, which is often a measure of th
 The physics of the problem or the data at hand dictate which vertices are connected and their respective weights, \ie{} the weight may not necessarily be the physical distance between two vertices.
 A \emph{graph signal} is a finite collection of samples with some value at each vertex at a graph.
 In computer graphics, working with intrinsically geometric shapes is commonplace.
-In this field, 3D shapes are often modelled as Riemannian manifolds and discretised as triangular meshes.
+In this field, three-dimensional shapes are often modelled as Riemannian manifolds and discretised as triangular meshes.
 
 It is well-known that functions cannot have finite support in the spatial and spectral domains simultaneously~\cite{Slepian1961,Slepian1983}.
 In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of finding and representing signals which are optimally concentrated in both domains~\cite{Slepian1961,Landau1961,Landau1962}.
@@ -193,7 +193,7 @@ The \emph{non-normalised graph Laplacian} refers to setting \(\vb{A} = \vb{I}\) 
 
 \subsubsection{Triangular Meshes}
 
-In computer graphics applications, 3D shapes are often modelled by 2D manifolds.
+In computer graphics applications, three-dimensional shapes are often modelled by two-dimensional manifolds.
 A manifold is sampled at a set of \(n\) points, and a graph is then constructed on these points (vertices) where the edges represent the local connectivity of the manifold.
 A set of edge weights are then computed, for example Gaussian weights
 %
@@ -845,7 +845,7 @@ A tiling of the Slepian harmonic line allows one to construct scale-discretised 
 The wavelet transform is built on the sifting convolution~\cite{Roddy2021} which allows one to perform convolutions on (incomplete) manifolds --- which, in general, are not well-defined.
 The wavelet construction here is analogous to the spherical setting, but where the basis functions are the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
 
-In computer graphics applications, 3D shapes are often modelled as 2D manifolds, which are then discretised as meshes.
+In computer graphics applications, three-dimensional shapes are often modelled as two-dimensional manifolds, which are then discretised as meshes.
 A region is constructed on a mesh of Homer Simpson and the resulting Slepian functions are found.
 A field is then placed on this mesh, and through a wavelet transform, the wavelets and corresponding wavelet coefficients of the field are presented.
 The signal on the mesh is distorted with Gaussian white noise, and a straightforward denoising procedure is developed --- a common wavelet technique.
