@@ -5,20 +5,20 @@ The so-called sifting convolution is defined by the inner product of one functio
 This translation operator follows by analogy with the Euclidean translation when viewed in harmonic space.
 The sifting convolution satisfies a variety of desirable properties that are lacking in alternate definitions, namely: it supports directional kernels; it has an output which remains on the sphere; and is efficient to compute.
 An illustration of the sifting convolution on a topographic map of the Earth demonstrates that it supports directional kernels to perform anisotropic filtering, while its output remains on the sphere.
-This chapter is adapted from~\cite{Roddy2021}, in which I was the lead author.
+This chapter is adapted from~\autocite{Roddy2021}, in which I was the lead author.
 
 \section{Introduction}
 
-Many fields in science and engineering measure data on spherical manifolds, such as computer graphics~\cite{Ramamoorthi2004}, planetary science~\cite{Turcotte1981}, geophysics~\cite{Simons2006}, quantum chemistry~\cite{Choi1999}, cosmology~\cite{Bennett1996}, and computer vision~\cite{Cohen2018,Esteves2020,Cobb2021}.
+Many fields in science and engineering measure data on spherical manifolds, such as computer graphics~\autocite{Ramamoorthi2004}, planetary science~\autocite{Turcotte1981}, geophysics~\autocite{Simons2006}, quantum chemistry~\autocite{Choi1999}, cosmology~\autocite{Bennett1996}, and computer vision~\autocite{Cohen2018,Esteves2020,Cobb2021}.
 Possible extensions to signal processing techniques developed in the Euclidean domain may be transferred to the spherical domain.
 The convolution is an important signal processing technique between two signals defined on the 2-sphere, which is central to filtering --- an integral part of spherical analyses.
 
 Many definitions of spherical convolutions exist in the literature.
 A spherical convolution operator would ideally exhibit a variety of desirable properties --- such a spherical convolution would accept directional inputs (\ie{} functions that are \emph{not} invariant under azimuthal rotation), whilst having the output remain on the sphere.
 Moreover, the convolution would be efficient to compute.
-Existing convolutions such as the \emph{isotropic convolution} (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2011}) and the \emph{left convolution}~\cite{Kennedy2011,Driscoll1994} restrict themselves to an axisymmetric kernel (\ie{} kernels that are invariant under azimuthal rotation).
-The \emph{directional convolution} has an output which is not on the sphere (\eg{}~\cite{McEwen2007,Wandelt2001}).
-Lastly, the \emph{commutative anisotropic convolution}~\cite{Sadeghi2012,Khalid2012} and the \emph{directional convolution} are computationally demanding.
+Existing convolutions such as the \emph{isotropic convolution} (\eg{}~\autocite{McEwen2007,Wei2011,Kennedy2011}) and the \emph{left convolution}~\autocite{Kennedy2011,Driscoll1994} restrict themselves to an axisymmetric kernel (\ie{} kernels that are invariant under azimuthal rotation).
+The \emph{directional convolution} has an output which is not on the sphere (\eg{}~\autocite{McEwen2007,Wandelt2001}).
+Lastly, the \emph{commutative anisotropic convolution}~\autocite{Sadeghi2012,Khalid2012} and the \emph{directional convolution} are computationally demanding.
 No existing spherical convolution satisfies all three desirable properties.
 
 This work presents an alternative spherical convolution, the \emph{sifting convolution}, defined through the sifting property of the Dirac delta --- in analogy to the Euclidean definition.
@@ -214,13 +214,13 @@ The properties desired in the spherical extension of the convolution include:
 	\item efficient computation.
 \end{inparaenum}
 %
-A convolution is considered computationally efficient here if its computational cost is no greater than the cost of fast spherical harmonic transforms, \ie{} \(\mathcal{O}(L^{3})\) (\eg{}~\cite{Driscoll1994,McEwen2011}).
+A convolution is considered computationally efficient here if its computational cost is no greater than the cost of fast spherical harmonic transforms, \ie{} \(\mathcal{O}(L^{3})\) (\eg{}~\autocite{Driscoll1994,McEwen2011}).
 Formulations of spherical convolutions exist in the literature, but none satisfy all these properties.
 A summary of existing spherical convolutions and their properties follows.
 
 \subsubsection{Isotropic Convolution}
 
-In real space the isotropic convolution (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2011}) is
+In real space the isotropic convolution (\eg{}~\autocite{McEwen2007,Wei2011,Kennedy2011}) is
 %
 \begin{equation}
 	\pixel{(f \odot g)}
@@ -228,7 +228,7 @@ In real space the isotropic convolution (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2
 	= \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}},
 \end{equation}
 %
-which in harmonic space becomes (\eg{}~\cite{McEwen2007})
+which in harmonic space becomes (\eg{}~\autocite{McEwen2007})
 %
 \begin{equation}\label{eq:chapter2_isotropic_harmonic}
 	\harmonic{(f \odot g)}
@@ -263,7 +263,7 @@ The isotropic convolution has the following properties:
 
 \subsubsection{Left Convolution}
 
-The definition of the left convolution~\cite{Kennedy2011,Driscoll1994} in real space is
+The definition of the left convolution~\autocite{Kennedy2011,Driscoll1994} in real space is
 %
 \begin{equation}
 	\pixel{(f \circleddash g)}
@@ -333,7 +333,7 @@ Thus, as \cref{eq:chapter2_so3_integral} holds for all \(\chi{}\), it must be th
 %
 where the penultimate line follows by \cref{eq:chapter2_wigner_axisymmetric}.
 
-As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
+As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\autocite{Kennedy2011}.
 Hence, the properties are similar.
 The left convolution has the following properties:
 %
@@ -354,7 +354,7 @@ Hence, the standard directional convolution is
 	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}}.
 \end{equation}
 %
-Upon expanding in harmonic space, this becomes (\eg{}~\cite{McEwen2007,Wandelt2001})
+Upon expanding in harmonic space, this becomes (\eg{}~\autocite{McEwen2007,Wandelt2001})
 %
 \begin{equation}
 	(f \circledast g) (\rho)
@@ -377,7 +377,7 @@ as
 \end{align}
 %
 and hence, the output is on \(\rotationGroup{}\).
-Fast algorithms exist~\cite{McEwen2007,Wandelt2001,Wiaux2007,McEwen2013}, but the convolution remains less efficient than a spherical harmonic transform.
+Fast algorithms exist~\autocite{McEwen2007,Wandelt2001,Wiaux2007,McEwen2013}, but the convolution remains less efficient than a spherical harmonic transform.
 The directional convolution has the following properties:
 %
 \begin{inparaenum}[(i)]
@@ -388,7 +388,7 @@ The directional convolution has the following properties:
 
 \subsubsection{Commutative Anisotropic Convolution}
 
-The definition of the commutative anisotropic convolution~\cite{Sadeghi2012,Khalid2012} is
+The definition of the commutative anisotropic convolution~\autocite{Sadeghi2012,Khalid2012} is
 %
 \begin{equation}
 	\pixel{(f \oplus g)}
@@ -527,7 +527,7 @@ as
 \end{align}
 %
 Since the harmonic representation of the convolution is simply a product (again by analogy with the harmonic representation of the Euclidean convolution), it is efficient to compute.
-Note that harmonic multiplication has been considered before~\cite{Kennedy2011}; although it has been used here to define a new anisotropic convolution operator, introducing a conjugation and elaborating a real space interpretation.
+Note that harmonic multiplication has been considered before~\autocite{Kennedy2011}; although it has been used here to define a new anisotropic convolution operator, introducing a conjugation and elaborating a real space interpretation.
 
 \subsection{Translation Interpretation}\label{sec:chapter2_translation_interpretation}
 
@@ -562,7 +562,7 @@ The \emph{harmonic Gaussian} introduced in \cref{sec:chapter2_numerical_illustra
 This section demonstrates the effect of the sifting convolution through the application of a directional kernel to an example signal on the sphere.
 Some potential kernels are defined in \cref{sec:chapter2_kernels}, where the effect of the translation is explored.
 The convolution is then demonstrated with one of these kernels in \cref{sec:chapter2_convolution} on a topographic map of the Earth.
-All later computations use the \texttt{SSHT}\footnote{\url{http://astro-informatics.github.io/ssht/}} code~\cite{McEwen2011}.
+All later computations use the \texttt{SSHT}\footnote{\url{http://astro-informatics.github.io/ssht/}} code~\autocite{McEwen2011}.
 
 \subsection{Kernels}\label{sec:chapter2_kernels}
 
@@ -647,7 +647,7 @@ Consider two differently sized harmonic Gaussians on the sphere to see the effec
 
 \subsection{Convolution}\label{sec:chapter2_convolution}
 
-To study the effect of the sifting convolution, consider the \emph{Earth Gravitational Model EGM2008} dataset~\cite{Pavlis2013}.
+To study the effect of the sifting convolution, consider the \emph{Earth Gravitational Model EGM2008} dataset~\autocite{Pavlis2013}.
 This dataset is the topographic map of the Earth.
 \cref{fig:chapter2_earth} presents the dataset up to an order of \(L=128\).
 The sifting convolution is then performed between the Earth representation and the harmonic Gaussian with the resultant plot given in \cref{fig:chapter2_convolved}.
