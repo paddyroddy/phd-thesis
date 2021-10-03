@@ -1,6 +1,7 @@
 addcontentsline
 america
 ast
+autocite
 bandlimit
 bandlimited
 bibentry
@@ -81,6 +82,7 @@ num
 odot
 oneside
 oplus
+overfullrule
 overpic
 parameterise
 parameterised
