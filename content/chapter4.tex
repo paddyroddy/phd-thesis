@@ -140,7 +140,7 @@ may be adopted.
 The \emph{addition theorem} of the spherical harmonics states
 %
 \begin{equation}\label{eq:chapter4_addition_theorem}
-	\sum\limits_{m} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
+	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
 	%
 	= \factor P_{\ell}(\omega \cdot \omega'),
 \end{equation}
@@ -302,9 +302,9 @@ Consider the sum of the eigenvalues
 	%
 	= \harmonicSum D_{\ell m,\ell m}
 	%
-	 & = \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
+	 & = \harmonicSum \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
 	%
-	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\sphereVolume} \nonumber           \\
+	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\sphereVolume} \nonumber                        \\
 	%
 	 & = \frac{A}{4\pi} L^{2},
 \end{align}
