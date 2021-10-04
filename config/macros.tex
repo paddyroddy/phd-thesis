@@ -5,26 +5,14 @@
 % fixed size absolute
 \renewcommand{\abs}[1]{\big\lvert#1\big\rvert}
 
-% fixed size braket
-\NewCommandCopy{\oldbraket}{\braket}
-\renewcommand{\braket}[1]{\oldbraket*{#1}}
-
 % divergence
 \renewcommand{\div}{\text{div}}
-
-% fixed size expectation
-\NewCommandCopy{\oldexpval}{\expval}
-\renewcommand{\expval}[1]{\oldexpval*{#1}}
 
 % gradient
 \renewcommand{\grad}[1]{\nabla#1}
 
 % fixed size 2-norm
 \renewcommand{\norm}[1]{{\big\lVert#1\big\rVert}_{2}}
-
-% bold matrices should be italic
-\NewCommandCopy{\oldvb}{\vb}
-\renewcommand{\vb}[1]{\oldvb*{#1}}
 
 % ---------------------------
 %% then new commands

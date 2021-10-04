@@ -53,7 +53,7 @@ The complex inner product induces a norm
 \begin{equation}
 	\norm{f}
 	%
-	= \sqrt{\braket{f}}.
+	= \sqrt{\braket*{f}}.
 \end{equation}
 %
 Signals on the sphere are functions with a finite induced norm.
@@ -147,10 +147,10 @@ The rotation of a function on the sphere is defined by
 \begin{equation}
 	\pixel{(\rotation{\rho}f)}
 	%
-	= f(\vb{R}_{\rho}^{-1} \omega),
+	= f(\vb*{R}_{\rho}^{-1} \omega),
 \end{equation}
 %
-where \(\vb{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
+where \(\vb*{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
 The spherical harmonic coefficients of a rotated function read
 %
 \begin{equation}\label{eq:chapter2_rotation_matrix}
@@ -499,7 +499,7 @@ With a translation operator to hand, one may define the sifting convolution on t
 \begin{equation}\label{eq:chapter2_convolution_real}
 	\pixel{\convolution{f}{g}}
 	%
-	\equiv \braket{\translation{\omega}f}{g},
+	\equiv \braket*{\translation{\omega}f}{g},
 \end{equation}
 %
 noting the use of the alternative translation operator defined in \cref{sec:chapter2_translation_operator}.
@@ -517,7 +517,7 @@ as
 \begin{align}
 	\pixel{(f \circledcirc g)}
 	%
-	 & = \braket{\translation{\omega}f}{g} \nonumber{}                                                                                                                                         \\
+	 & = \braket*{\translation{\omega}f}{g} \nonumber{}                                                                                                                                         \\
 	%
 	 & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                          \\
 	%

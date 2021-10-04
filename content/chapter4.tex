@@ -183,13 +183,13 @@ Intuitively, this captures the geometric interpretation of the Laplacian --- as 
 \cref{eq:chapter4_graph_laplace_indices} can be rewritten in matrix form as
 %
 \begin{equation}\label{eq:chapter4_graph_laplace_matrix}
-	\vb{\Delta} \vb{f}
+	\vb*{\Delta} \vb*{f}
 	%
-	= \vb{A}^{-1} (\vb{K} - \vb{W}) \vb{f},
+	= \vb*{A}^{-1} (\vb*{K} - \vb*{W}) \vb*{f},
 \end{equation}
 %
-where \(\vb{W} = (w_{i j})\) are the edge weights, \(\vb{A} = \diag{a_{1},a_{2},\ldots,a_{n}}\) are the vertex weights, \(\vb{K} = \diag{\sum_{j: j \neq i} w_{i j}}\) is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb{f}\).
-The \emph{non-normalised graph Laplacian} refers to setting \(\vb{A} = \vb{I}\) in \cref{eq:chapter4_graph_laplace_matrix}; other choices exist, such as the random walk Laplacian which occurs when \(\vb{A} = \vb{K}\)~\autocite{VonLuxburg2007}.
+where \(\vb*{W} = (w_{i j})\) are the edge weights, \(\vb*{A} = \diag{a_{1},a_{2},\ldots,a_{n}}\) are the vertex weights, \(\vb*{K} = \diag{\sum_{j: j \neq i} w_{i j}}\) is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb*{f}\).
+The \emph{non-normalised graph Laplacian} refers to setting \(\vb*{A} = \vb*{I}\) in \cref{eq:chapter4_graph_laplace_matrix}; other choices exist, such as the random walk Laplacian which occurs when \(\vb*{A} = \vb*{K}\)~\autocite{VonLuxburg2007}.
 
 \subsubsection{Triangular Meshes}
 
@@ -200,7 +200,7 @@ A set of edge weights are then computed, for example Gaussian weights
 \begin{equation}
 	w_{i j}
 	%
-	= \exp(-\left(\frac{\norm{\vb{x}_{i} - \vb{x}_{j}}^{2}}{2\sigma^{2}}\right)).
+	= \exp(-\left(\frac{\norm{\vb*{x}_{i} - \vb*{x}_{j}}^{2}}{2\sigma^{2}}\right)).
 \end{equation}
 %
 However, this discretisation does not capture the geometry of continuous underlying manifold; hence, the graph Laplacian would not converge to the Laplace-Beltrami operator at the limit of many of samples~\autocite{Wardetzky2007}.
@@ -247,7 +247,7 @@ A discrete metric
 \begin{equation}
 	\ell_{i j}
 	%
-	= \norm{\vb{x}_{i} - \vb{x}_{j}}
+	= \norm{\vb*{x}_{i} - \vb*{x}_{j}}
 \end{equation}
 %
 is induced by an embedding of the mesh, which changes \cref{eq:chapter4_mesh_laplace_weights} to
@@ -326,15 +326,15 @@ is a square matrix including all basis functions of the manifold.
 \begin{equation}
 	\mu
 	%
-	= \frac{\hermitian{\vb{f}} \vb{D} \vb{f}}{\hermitian{\vb{f}} \vb{f}},
+	= \frac{\hermitian{\vb*{f}} \vb*{D} \vb*{f}}{\hermitian{\vb*{f}} \vb*{f}},
 \end{equation}
 %
-where \(\vb{f}\) are the harmonic coefficients of \(\mesh{f}\), and are the solutions to the eigenproblem
+where \(\vb*{f}\) are the harmonic coefficients of \(\mesh{f}\), and are the solutions to the eigenproblem
 %
 \begin{equation}\label{eq:chapter4_eigenproblem}
-	\vb{D}\vb{f}
+	\vb*{D}\vb*{f}
 	%
-	= \mu \vb{f}.
+	= \mu \vb*{f}.
 \end{equation}
 %
 The eigenvalues \(\mu_{p}\) act as a measure of the relative spatial concentration
@@ -346,11 +346,11 @@ The eigenvalues \(\mu_{p}\) act as a measure of the relative spatial concentrati
 of the corresponding eigenvectors
 %
 \begin{equation}
-	\vb{f}_{1},\ \vb{f}_{2},\ \ldots,\ \vb{f}_{\imax}.
+	\vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{\imax}.
 \end{equation}
 %
 No bandlimited function can be restricted exactly within a region \(R\) and hence \(\mu_{1}<1\).
-Due to the positive definiteness of \(\vb{D}\), the smallest eigenvalue \(\mu_{\imax}\) is strictly greater than zero.
+Due to the positive definiteness of \(\vb*{D}\), the smallest eigenvalue \(\mu_{\imax}\) is strictly greater than zero.
 A manifold analogue of the \emph{Shannon number} can be constructed by
 %
 \begin{equation}\label{eq:chapter4_shannon}
@@ -400,7 +400,7 @@ The Slepian coefficients of a well-localised function may be computed with an in
 	= \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}},
 \end{equation}
 %
-where \(\vb{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\) (see \cref{eq:chapter3_integrate_region_proof} for proof).
+where \(\vb*{S}\) are the harmonic coefficients of \(\mesh{\slepian{S}}\) (see \cref{eq:chapter3_integrate_region_proof} for proof).
 To transform from Slepian coefficients to the basis functions of the manifold
 %
 \begin{equation}\label{eq:chapter4_slepian_to_harmonic}
@@ -653,9 +653,9 @@ A \emph{Parseval frame} is satisfied by Slepian scale-discretised wavelets on ma
 \begin{equation}
 	A\norm{f}^{2} \leq \integrateManifold{x}
 	%
-	\abs{\braket{\translation{x}\Phi}{f}}^{2}
+	\abs{\braket*{\translation{x}\Phi}{f}}^{2}
 	%
-	+ \waveletSum \abs{\braket{\translation{x}\Psi^{j}}{f}}^{2}
+	+ \waveletSum \abs{\braket*{\translation{x}\Psi^{j}}{f}}^{2}
 	%
 	\leq B\norm{f}^{2},
 \end{equation}
@@ -675,7 +675,7 @@ to represent both the scaling function and the wavelets.
 Consider homogenous and isotropic noise defined by its power spectrum
 %
 \begin{equation}
-	\expval{f_{i} \conj{f_{j}}}
+	\expval*{f_{i} \conj{f_{j}}}
 	%
 	= C_{i} \delta_{i j},
 \end{equation}
@@ -684,7 +684,7 @@ where \(C_{i} = \sigma^{2}\) for white noise.
 The corresponding power spectrum in Slepian space is
 %
 \begin{equation}
-	\expval{\slepian{f} \conj{\slepian[']{f}}}
+	\expval*{\slepian{f} \conj{\slepian[']{f}}}
 	%
 	= \sigma^{2} \delta_{pp'}.
 \end{equation}
@@ -758,7 +758,7 @@ where the signal and noise are represented by \(\mesh{s}\) and \(\mesh{n}\) resp
 The power spectrum of noise in Slepian space is as before
 %
 \begin{equation}
-	\expval{\slepian{n} \conj{\slepian[']{n}}}
+	\expval*{\slepian{n} \conj{\slepian[']{n}}}
 	%
 	= \sigma^{2} \delta_{pp'}.
 \end{equation}
