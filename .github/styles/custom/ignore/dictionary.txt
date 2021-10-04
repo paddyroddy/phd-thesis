@@ -9,6 +9,7 @@ bibintoc
 bigg
 bottomrule
 braket
+capstart
 cdot
 centering
 cf
