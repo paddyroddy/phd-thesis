@@ -56,7 +56,6 @@ includeonly
 infty
 inparaenum
 int
-iux
 kirker
 laplace
 laplacian
