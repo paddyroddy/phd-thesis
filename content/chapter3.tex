@@ -60,7 +60,15 @@ Signals on the sphere are functions with a finite induced norm.
 
 \subsubsection{Spherical Harmonics}
 
-The spherical harmonics are the complete orthonormal set of basis functions of the Hilbert space \(\hilbert{\twoSphere}\).
+The spherical harmonics are the complete orthonormal set of basis functions of the Hilbert space \(\hilbert{\twoSphere}\):
+%
+\begin{equation}\label{eq:chapter3_spherical_harmonic}
+	\pixel{\harmonic{Y}}
+	%
+	= \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos(\theta)) \exp(im\phi),
+\end{equation}
+%
+where \(P^{m}_{\ell}(x)\) are the \emph{associated Legendre polynomials}.
 By the completeness of spherical harmonics, any \(f \in \hilbert{\twoSphere}\) may be decomposed as
 %
 \begin{equation}
@@ -79,7 +87,7 @@ where \(\harmonic{f}\) are the spherical harmonic coefficients given by
 %
 The phase convention adopted here is
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter3_ylm_phase}
 	\conj{\harmonic{Y}}
 	%
 	= {(-1)}^{m} Y_{\ell(-m)}
@@ -87,7 +95,7 @@ The phase convention adopted here is
 %
 such that
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter3_flm_phase}
 	\conj{\harmonic{f}}
 	%
 	= {(-1)}^{m} f_{\ell(-m)}
@@ -104,15 +112,53 @@ One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signa
 
 \subsubsection{Dirac Delta}
 
-The Dirac delta on the sphere satisfies the following normalisation and sifting properties, respectively:
+In harmonic space the Dirac delta on the sphere rotated to some \(\omega'=(\theta',\phi')\) is
 %
 \begin{equation}
-	\integrateSphere{\omega} \pixel{\delta}
+	\pixel{\delta_{\omega'}}
 	%
-	= 1
+	= \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}},
 \end{equation}
 %
-and
+which can be shown to be real
+%
+\begin{align}\label{eq:chapter3_dirac_delta_real}
+	\pixel{\delta_{\omega'}}
+	%
+	 & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                       \\
+	%
+	 & = \harmonicSum {(-1)}^{m} \pixel[']{Y_{\ell(-m)}} {(-1)}^{m} \pixel{\conj{Y_{\ell(-m)}}} \nonumber{} \\
+	%
+	 & = \sum\limits_{\ell m'} \pixel[']{Y_{\ell m'}} \pixel{\conj{Y_{\ell m'}}} \nonumber{}                \\
+	%
+	 & = \pixel{\conj{\delta_{\omega'}}},
+\end{align}
+%
+where the second line follows by \cref{eq:chapter3_ylm_phase}.
+The Dirac delta on the sphere is normalised
+%
+\begin{equation}
+	\integrateSphere{\omega} \pixel{\delta_{\omega'}}
+	%
+	= 1,
+\end{equation}
+%
+as
+%
+\begin{align}
+	\integrateSphere{\omega} \pixel{\delta_{\omega'}}
+	%
+	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                            \\
+	%
+	 & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{Y_{00}} \sqrt{4\pi} \nonumber{} \\
+	%
+	 & = \sqrt{4\pi} \pixel[']{\conj{Y_{00}}} \nonumber{}                                                                                 \\
+	%
+	 & = 1,
+\end{align}
+%
+where \(\sqrt{4\pi}\pixel{Y_{00}}=1\) follows by \cref{eq:chapter3_spherical_harmonic}.
+The sifting property of the Dirac delta is
 %
 \begin{equation}
 	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{\conj{f}}
@@ -120,16 +166,25 @@ and
 	= \pixel[']{f},
 \end{equation}
 %
-where \(\pixel{\delta_{\omega'}}\) represents the Dirac delta rotated to some \(\omega'=(\theta',\phi')\).
-The harmonic expansion of the Dirac delta is
+as
 %
-\begin{equation}\label{eq:chapter3_dirac_omega}
-	\pixel{\delta_{\omega'}}
+\begin{align}
+	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{\conj{f}}
 	%
-	= \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}},
-\end{equation}
+	 & = 	\integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{\conj{f}} \nonumber{}                                      \\
+	%
+	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \pixel{\conj{f}} \nonumber{}     \\
+	%
+	 & = \harmonicSum \pixel[']{\harmonic{Y}} \integrateSphere{\omega} {(-1)}^{m} \pixel{Y_{\ell(-m)}} \pixel{\conj{f}} \nonumber{} \\
+	%
+	 & = \harmonicSum \pixel[']{\harmonic{Y}} {(-1)}^{m} \conj{f_{\ell(-m)}} \nonumber{}                                            \\
+	%
+	 & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \nonumber{}                                                              \\
+	%
+	 & = \pixel[']{f},
+\end{align}
 %
-which follows trivially by the sifting property.
+where the first line follows by the reality of the Dirac delta \cref{eq:chapter3_dirac_delta_real}, and the later lines follow by the phase conventions \cref{eq:chapter3_ylm_phase,eq:chapter3_flm_phase}.
 
 \subsubsection{Rotation of a Signal on the 2-Sphere}
 
@@ -503,7 +558,6 @@ With a translation operator to hand, one may define the sifting convolution on t
 \end{equation}
 %
 noting the use of the alternative translation operator defined in \cref{sec:chapter3_translation_operator}.
-
 In harmonic space this simplifies to the product
 %
 \begin{equation}\label{eq:chapter3_convolution_harmonic}
@@ -592,8 +646,6 @@ Define the \emph{squashed Gaussian} in real space as the standard Gaussian (\ie{
 \begin{equation}
 	\pixel{\mathcal{SG}}
 	%
-	= \mathcal{SG}(\theta,\phi)
-	%
 	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\mean{\theta}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
 	%
 	\sin(\nu_{\phi}\phi),
@@ -612,8 +664,6 @@ Define the \emph{elongated Gaussian} as a two-dimensional Gaussian in real space
 %
 \begin{equation}
 	\pixel{\mathcal{EG}}
-	%
-	= \mathcal{EG}(\theta,\phi)
 	%
 	= \exp\bigg(-\bigg(\frac{{(\theta-\mean{\theta})}^{2}}{2\sigma_{\theta}^{2}}
 		%
