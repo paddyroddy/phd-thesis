@@ -181,50 +181,8 @@ where the \emph{Wigner D matrices} \(\wigner{\ell}{m'}{m}(\rho)\) form the \(2\e
 
 Convolutions are a central part of a wavelet transform.
 To construct wavelets in a region of the sphere, a directional convolution with an output which remains on the sphere is required.
-The sifting convolution~\autocite{Roddy2021} is such a convolution which was recently developed by the authors of this work.
-
-This convolution builds on a translation operator defined on the sphere, which is a product of the basis functions (\ie{} the spherical harmonics)
-%
-\begin{equation}\label{eq:chapter4_translation_harmonic}
-	\pixel{(\translation{\omega'}\harmonic{Y})}
-	%
-	\equiv \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
-\end{equation}
-%
-where \(\omega'=(\theta',\phi')\).
-The translation of an arbitrary function \(f \in \hilbert{\twoSphere}\) is thus
-%
-\begin{equation}
-	\pixel{(\translation{\omega'}f)}
-	%
-	= \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
-\end{equation}
-%
-which implies
-%
-\begin{equation}
-	\harmonic{(\translation{\omega'}f)} = \harmonic{f} \pixel[']{\harmonic{Y}}.
-\end{equation}
-%
-The sifting convolution on the sphere of \(f,\ g \in \hilbert{\twoSphere}\) follows by the inner product
-%
-\begin{equation}\label{eq:chapter4_sifting_convolution}
-	\pixel{\convolution{f}{g}}
-	%
-	\equiv \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}},
-\end{equation}
-%
-which becomes in harmonic space
-%
-\begin{equation}
-	\harmonic{\convolution{f}{g}}
-	%
-	= \harmonic{f} \conj{\harmonic{g}}.
-\end{equation}
-%
-This convolution permits directional kernels, whose output remains on the sphere, and is efficient to compute --- as it is a product in harmonic space.
-
-The translation \cref{eq:chapter4_translation_harmonic} is a product of basis functions and hence follows as the analogue of the Euclidean setting.
+The sifting convolution~\autocite{Roddy2021}, discussed in \cref{sec:chapter3}, is such a convolution.
+The translation \cref{eq:chapter3_translation_basis_functions} is a product of basis functions and hence follows as the analogue of the Euclidean setting.
 This translation can be extended to any set of arbitrary basis functions.
 Thus, to create wavelets restricted to a region of the sphere, one must seek the basis functions of a region on the sphere.
 These basis functions are defined in \cref{sec:chapter4_slepian_concentration_problem}.
