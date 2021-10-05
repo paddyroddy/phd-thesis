@@ -65,7 +65,7 @@ The spherical harmonics are the complete orthonormal set of basis functions of t
 \begin{equation}\label{eq:chapter3_spherical_harmonic}
 	\pixel{\harmonic{Y}}
 	%
-	= \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos(\theta)) \exp(im\phi),
+	= \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos(\theta)) \exp(i m\phi),
 \end{equation}
 %
 where \(P^{m}_{\ell}(x)\) are the \emph{associated Legendre polynomials}.
@@ -87,7 +87,7 @@ where \(\harmonic{f}\) are the spherical harmonic coefficients given by
 %
 The phase convention adopted here is
 %
-\begin{equation}\label{eq:chapter3_ylm_phase}
+\begin{equation}\label{eq:chapter3_spherical_harmonic_phase}
 	\conj{\harmonic{Y}}
 	%
 	= {(-1)}^{m} Y_{\ell(-m)}
@@ -95,7 +95,7 @@ The phase convention adopted here is
 %
 such that
 %
-\begin{equation}\label{eq:chapter3_flm_phase}
+\begin{equation}\label{eq:chapter3_f_phase}
 	\conj{\harmonic{f}}
 	%
 	= {(-1)}^{m} f_{\ell(-m)}
@@ -134,7 +134,7 @@ which can be shown to be real
 	 & = \pixel{\conj{\delta_{\omega'}}},
 \end{align}
 %
-where the second line follows by \cref{eq:chapter3_ylm_phase}.
+where the second line follows by \cref{eq:chapter3_spherical_harmonic_phase}.
 The Dirac delta on the sphere is normalised
 %
 \begin{equation}
@@ -157,7 +157,7 @@ as
 	 & = 1,
 \end{align}
 %
-where \(\sqrt{4\pi}\pixel{Y_{00}}=1\) follows by \cref{eq:chapter3_spherical_harmonic}.
+where the second and third lines follow by: substituting \(\sqrt{4\pi}\pixel{Y_{00}}=1\) (\cf{} \cref{eq:chapter3_spherical_harmonic}) and the orthonormality of the spherical harmonics respectively.
 The sifting property of the Dirac delta is
 %
 \begin{equation}
@@ -171,7 +171,7 @@ as
 \begin{align}
 	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{\conj{f}}
 	%
-	 & = 	\integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{\conj{f}} \nonumber{}                                      \\
+	 & = \integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{\conj{f}} \nonumber{}                                      \\
 	%
 	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \pixel{\conj{f}} \nonumber{}     \\
 	%
@@ -184,7 +184,7 @@ as
 	 & = \pixel[']{f},
 \end{align}
 %
-where the first line follows by the reality of the Dirac delta \cref{eq:chapter3_dirac_delta_real}, and the later lines follow by the phase conventions \cref{eq:chapter3_ylm_phase,eq:chapter3_flm_phase}.
+where the first line holds due to the reality of the Dirac delta \cref{eq:chapter3_dirac_delta_real}, and the middle lines follow by the phase conventions \cref{eq:chapter3_spherical_harmonic_phase,eq:chapter3_f_phase}.
 
 \subsubsection{Rotation of a Signal on the 2-Sphere}
 
