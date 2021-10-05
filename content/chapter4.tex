@@ -296,7 +296,7 @@ The usual projection onto the basis functions permits one to calculate the Slepi
 \begin{equation}
 	\slepian{f}
 	%
-	= \braket*{f}{\slepian{S}}.
+	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\slepian{S}}}.
 \end{equation}
 %
 For a well-localised function one instead may compute the Slepian coefficients with an integral over the region \(R\) rather than \(\twoSphere{}\)
