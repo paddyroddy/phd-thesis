@@ -1,6 +1,6 @@
 \chapter{Slepian Scale-Discretised Wavelets on Manifolds}\label{sec:chapter5}
 
-Inspired by recent interest in geometric deep learning, this work generalises the recently developed Slepian scale-discretised wavelets on the sphere to Riemannian manifolds.
+Inspired by recent interest in geometric deep learning, this chapter generalises the recently developed Slepian scale-discretised wavelets on the sphere to Riemannian manifolds.
 Through the sifting convolution, one may define translations and, thus, convolutions on manifolds --- which are not well-defined in general.
 Slepian wavelets are constructed on a region of a manifold, and are therefore suited to problems where data only exists, or are missing in a particular region.
 The Slepian functions, on which Slepian wavelets are built, are the basis functions of the Slepian spatial-spectral concentration problem.
@@ -47,7 +47,7 @@ The so-called \emph{Slepian functions} arise in many fields within science and e
 Notably, these functions have been used in interpolation~\autocite{Moore2004,Shkolnisky2006}, extrapolation~\autocite{Xu1983}, inverse problems~\autocite{Villiers2001,Abdelmoula2015}, and solving partial differential equations~\autocite{Boyd2003,Chen2005}.
 
 Due to recent interest in geometric deep learning, many fields are extending existing methods developed in the Euclidean domain to manifolds or graphs, \ie{}~\autocite{Perlmutter2020}.
-This work generalises Slepian scale-discretised wavelets on the sphere~\autocite{Roddy2021a} to Riemannian manifolds.
+This chapter generalises Slepian scale-discretised wavelets on the sphere~\autocite{Roddy2021a} to Riemannian manifolds.
 These wavelets constitute a basis designed for incomplete data on manifolds or graphs.
 Here, the scale-discretised wavelet construction on the sphere~\autocite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} is extended to the Slepian domain; however, the Slepian functions are now constructed on a region of a general manifold (rather than strictly the sphere).
 As before, scale-discretised wavelets exhibit an explicit inversion formula, constitute a tight frame, and have excellent localisation properties in both spectral and spatial domains.
@@ -55,7 +55,7 @@ The wavelets themselves are constructed through a tiling of the Slepian harmonic
 The wavelet transform follows through a generalisation of the \emph{sifting convolution}~\autocite{Roddy2021}, which allows one to perform convolutions on (incomplete) manifolds.
 The wavelet construction is analogous to the spherical case, but with the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
 
-Plainly, wavelets in the Slepian domain have been considered before --- this work generalises prior work on the sphere to general manifolds~\autocite{Roddy2021a}.
+Plainly, wavelets in the Slepian domain have been considered before --- this chapter generalises prior work on the sphere to general manifolds~\autocite{Roddy2021a}.
 Multiresolution analyses have been performed with prolate spheroidal wave functions~\autocite{Walter2004} in the Euclidean setting.
 In spherical settings, spatially localised spherical harmonic transforms are sometimes used (\eg{}~\autocite{Simons1997,Wieczorek2005,Khalid2013,Khalid2013a}).
 Other times, the Slepian functions on the sphere are used directly~\autocite{Simons2009}.
@@ -82,7 +82,7 @@ Lastly, some concluding remarks are given in \cref{sec:chapter5_conclusions}.
 
 Some mathematical preliminaries are introduced in \cref{sec:chapter5_mathematical_preliminaries} with a recap of Riemannian manifolds, their representation as graphs, and triangular meshes (a popular choice of graph).
 This includes a review of the Laplace-Beltrami operator (on manifolds) and the graph/mesh Laplacian.
-This work extends Slepian scale-discretised wavelets on the sphere to manifolds, a brief review of which is given in \cref{sec:chapter5_problem_formulation}.
+This chapter extends Slepian scale-discretised wavelets on the sphere to manifolds, a brief review of which is given in \cref{sec:chapter5_problem_formulation}.
 
 \subsection{Mathematical Preliminaries}\label{sec:chapter5_mathematical_preliminaries}
 
@@ -259,7 +259,7 @@ is induced by an embedding of the mesh, which changes \cref{eq:chapter5_mesh_lap
 \end{equation}
 %
 where \(\alpha_{i j}\) and \(\beta_{i j}\) are the internal angles opposite to the corresponding edge \(\ell_{i j}\) (\cf{} \cref{fig:chapter5_mesh_laplace}).
-This \emph{cotangent Laplacian} is used extensively in computer graphics~\autocite{Pinkall1993}, and in the rest of this work.
+This \emph{cotangent Laplacian} is used extensively in computer graphics~\autocite{Pinkall1993}, and in the rest of this chapter.
 A demonstration of the mesh Laplacian eigenvectors for a given mesh is presented in \cref{fig:chapter5_eigenhomers}.
 
 \input{figures/chapter5/mesh_laplace}
@@ -268,7 +268,7 @@ A demonstration of the mesh Laplacian eigenvectors for a given mesh is presented
 
 \subsection{Problem Formulation}\label{sec:chapter5_problem_formulation}
 
-This work generalises Slepian scale-discretised wavelets on the sphere~\autocite{Roddy2021a} to arbitrary manifolds.
+This chapter generalises Slepian scale-discretised wavelets on the sphere~\autocite{Roddy2021a} to arbitrary manifolds.
 Here, the basis functions of the Slepian concentration problem are built from the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, as opposed to the spherical harmonics.
 In the aforesaid work, the wavelets are constructed through a tiling of the Slepian line (akin to the harmonic line) in an analogous manner to~\autocite{Wiaux2008,McEwen2018}.
 The sifting convolution~\autocite{Roddy2021} allows one to perform convolutions where both inputs are directional, whilst the output remains on the sphere.
@@ -289,7 +289,7 @@ A review of the sifting convolution follows in \cref{sec:chapter5_sifting_convol
 
 The problem of spatial concentration of bandlimited signals (likewise spectral concentration of spacelimited signals) was first studied by Slepian, Landau and Pollak in the 1960s~\autocite{Slepian1961,Landau1961,Landau1962}.
 Initially considered for time domain signals, it has since been extended to other domains such as signals on the sphere~\autocite{Simons2006,Roddy2021a,Xu1983,Wieczorek2005}.
-This work considers optimally concentrated functions within a region \(R\) of a manifold \(\manifold{}\), an example of which is shown in \cref{fig:chapter5_region}.
+This chapter considers optimally concentrated functions within a region \(R\) of a manifold \(\manifold{}\), an example of which is shown in \cref{fig:chapter5_region}.
 
 \input{figures/chapter5/example_region_manifold}
 
@@ -834,7 +834,7 @@ The wavelet parameters \(\lambda{}\) and \(J_{0}\) have not been optimised for t
 \section{Conclusions}\label{sec:chapter5_conclusions}
 
 Due to recent interest in geometric deep learning, many fields are extending existing methods in the Euclidean domain to the manifolds or graphs settings.
-This work generalises the recently developed \emph{Slepian scale-discretised wavelets on the sphere}~\autocite{Roddy2021a} to Riemannian manifolds, whereby the wavelets themselves are restricted to a region of the manifold.
+This chapter generalises the recently developed \emph{Slepian scale-discretised wavelets on the sphere}~\autocite{Roddy2021a} to Riemannian manifolds, whereby the wavelets themselves are restricted to a region of the manifold.
 Slepian wavelets have many possible use cases in various fields of science and engineering, where data only exists, or are missing in a particular region.
 A typical approach to problems of this kind is to analyse the signal with wavelets defined over the whole manifold, where spatially localised, scale-dependent features of the signal may be extracted.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.
