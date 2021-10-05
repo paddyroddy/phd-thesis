@@ -55,7 +55,6 @@ impactstatement
 includegraphics
 includeonly
 infty
-inparaenum
 int
 kirker
 laplace
@@ -78,6 +77,7 @@ multiresolution
 neq
 nobibliography
 nonumber
+nosep
 notin
 num
 odot

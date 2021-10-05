@@ -75,7 +75,7 @@ tokens:
     - elucidate
     - employ
     - endeavor
-    - enumerate
+    # - enumerate
     - equitable
     - equivalent
     - evaluate
