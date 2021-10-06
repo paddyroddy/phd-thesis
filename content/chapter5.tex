@@ -1,9 +1,9 @@
 \chapter{Slepian Scale-Discretised Wavelets on Manifolds}\label{sec:chapter5}
 
 Inspired by recent interest in geometric deep learning, this chapter generalises the recently developed Slepian scale-discretised wavelets on the sphere to Riemannian manifolds.
-Through the sifting convolution, one may define translations and, thus, convolutions on manifolds --- which are not well-defined in general.
-Slepian wavelets are constructed on a region of a manifold, and are therefore suited to problems where data only exists, or are missing in a particular region.
-The Slepian functions, on which Slepian wavelets are built, are the basis functions of the Slepian spatial-spectral concentration problem.
+Through the sifting convolution, one may define translations and, thus, convolutions on manifolds --- which are otherwise not well-defined in general.
+Slepian wavelets are constructed on a region of a manifold, and are therefore suited to problems where data only exists in a particular region.
+The Slepian functions, on which Slepian wavelets are built, are the basis functions of the Slepian spatial-spectral concentration problem on the manifold.
 A tiling of the Slepian harmonic line with smoothly decreasing generating functions defines the scale-discretised wavelets; allowing one to probe spatially localised, scale-dependent features of a signal.
 By discretising manifolds as graphs, the Slepian functions and wavelets of a triangular mesh are presented.
 Through a wavelet transform, the wavelet coefficients of a field defined on the mesh are found and used in a straightforward thresholding denoising scheme.
@@ -12,7 +12,7 @@ Through a wavelet transform, the wavelet coefficients of a field defined on the 
 
 Many fields measure data which are intrinsically non-Euclidean in structure and are better modelled by manifolds or graphs.
 One manifold, in particular, which is in commonplace in science and engineering is the sphere; such as in: cosmology~\autocite{Bennett1996}, geophysics~\autocite{Simons2006}, planetary science~\autocite{Turcotte1981}, computer graphics~\autocite{Ramamoorthi2004}, and signal processing~\autocite{Roddy2021a}.
-Often data are not observed or are missing in some region of the manifold, and hence methods which work over the whole manifold may not be appropriate.
+Often data are not observed in some region of the manifold, and hence methods which work over the whole manifold may not be appropriate.
 One such example, in the spherical setting, is in cosmic microwave background analyses where foreground microwave emissions dominate the region around the  Galactic plane and are often removed~\autocite{Mortlock2002}.
 Wavelets are a typical approach to deal with problems of this form, which allow the probing of spatially localised, scale-dependent features of the signal.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.
@@ -51,8 +51,8 @@ This chapter generalises Slepian scale-discretised wavelets on the sphere~\autoc
 These wavelets constitute a basis designed for incomplete data on manifolds or graphs.
 Here, the scale-discretised wavelet construction on the sphere~\autocite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} is extended to the Slepian domain; however, the Slepian functions are now constructed on a region of a general manifold (rather than strictly the sphere).
 As before, scale-discretised wavelets exhibit an explicit inversion formula, constitute a tight frame, and have excellent localisation properties in both spectral and spatial domains.
-The wavelets themselves are constructed through a tiling of the Slepian harmonic line --- built from the eigenfunctions of the Slepian concentration problem.
-The wavelet transform follows through a generalisation of the \emph{sifting convolution}~\autocite{Roddy2021}, which allows one to perform convolutions on (incomplete) manifolds.
+The wavelets themselves are constructed through a tiling of the Slepian harmonic line --- built from the eigenfunctions of the Slepian concentration problem on the manifold.
+The wavelet transform follows through a generalisation of the \emph{sifting convolution}~\autocite{Roddy2021}, discussed in \cref{sec:chapter3}, which allows one to perform convolutions on (incomplete) manifolds.
 The wavelet construction is analogous to the spherical case, but with the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
 
 Plainly, wavelets in the Slepian domain have been considered before --- this chapter generalises prior work on the sphere to general manifolds~\autocite{Roddy2021a}.
@@ -137,7 +137,7 @@ where \(f_{i}\) are the Fourier coefficients given by the usual projection onto 
 	= \integrateManifold{x} \mesh{f} \mesh{\conj{\phi_{i}}}.
 \end{equation}
 %
-In practice, one must discretise the manifolds and represent them as graphs.
+In practice, one may discretise the manifolds and represent them as graphs.
 A review of graphs is presented in \cref{sec:chapter5_graphs}.
 
 \subsubsection{Graphs}\label{sec:chapter5_graphs}
@@ -193,7 +193,7 @@ The \emph{non-normalised graph Laplacian} refers to setting \(\vb*{A} = \vb*{I}\
 
 \subsubsection{Triangular Meshes}
 
-In computer graphics applications, three-dimensional shapes are often modelled by two-dimensional manifolds.
+In computer graphics applications, three-dimensional shapes are often modelled by locally two-dimensional manifolds.
 A manifold is sampled at a set of \(n\) points, and a graph is then constructed on these points (vertices) where the edges represent the local connectivity of the manifold.
 A set of edge weights are then computed, for example Gaussian weights
 %
@@ -481,7 +481,7 @@ This convolution can be used to define wavelets restricted to a region of the ma
 
 \section{Slepian Wavelets}\label{sec:chapter5_slepian_wavelets}
 
-Here, the Slepian wavelet theory is developed.
+Here, the Slepian wavelet theory on manifolds is developed.
 Initially, \cref{sec:chapter5_slepian_sifting_convolution} extends the sifting convolution~\autocite{Roddy2021} to the Slepian domain.
 With a convolution to hand, the Slepian wavelet transform is developed in \cref{sec:chapter5_slepian_scale_discretised_wavelets} --- where an appropriate admissibility condition must hold for exact reconstruction.
 The generating functions that define the wavelets are presented in \cref{sec:chapter5_generating_functions}.
@@ -632,7 +632,7 @@ In comparison to standard scale-discretised wavelets, the properties are often s
 \subsubsection{Localisation}\label{sec:chapter5_localisation}
 
 Standard scale-discretised wavelet constructions are built on a tiling of the harmonic line, and hence a higher value of \(j\) in the wavelets \(\Psi^{j}\) corresponds to smaller scales.
-In contrast, Slepian wavelets are built on the Slepian harmonic line, and thus \(j\) is a measure of localisation rather than frequency.
+In contrast, Slepian wavelets are built on the Slepian harmonic line, and thus \(j\) is a measure of localisation rather than scale.
 
 \subsubsection{Wavelet Energy}
 
@@ -709,13 +709,13 @@ All computations are performed with the \texttt{S2LET}\footnote{\url{http://astr
 
 \subsection{Homer Region}\label{sec:chapter5_homer_region}
 
-A region of a manifold is created on a mesh of Homer Simpson, \cref{fig:chapter5_homer_region} presents the masked region of Homer's head.
+A region of a manifold is created on a mesh of Homer Simpson; \cref{fig:chapter5_homer_region} presents the masked region of Homer's head.
 The Slepian functions of this region are computed by solving the eigenproblem \cref{eq:chapter5_eigenproblem}, and then performing an inverse harmonic transform.
 The resulting Shannon number \cref{eq:chapter5_shannon} of the region \(R\) is \(N=329\).
 A set of Slepian functions of the mesh are shown in \cref{fig:chapter5_slepian_functions} for \(p \in \set{1, 10, 25, 50, 100, 200}\).
 Comparing panel (f) to the earlier panels, one can see that the Slepian functions become more spread out in the region, representing worse concentration.
 The corresponding eigenvalues \(\slepian{\mu}\) are a measure of spatial concentration, which remain \(\almost{1}\) for many \(p\) values before rapidly decreasing towards zero around \(N\).
-The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter5_slepian_eigenvalues}, were the plot to extend to all \(\imax{}\) Slepian eigenvalues then the rest of the eigenvalues would be \(\almost{0}\).
+The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter5_slepian_eigenvalues}; were the plot to extend to all \(\imax{}\) Slepian eigenvalues then the rest of the eigenvalues would be \(\almost{0}\).
 
 \input{figures/chapter5/homer_region}
 
@@ -835,7 +835,7 @@ The wavelet parameters \(\lambda{}\) and \(J_{0}\) have not been optimised for t
 
 Due to recent interest in geometric deep learning, many fields are extending existing methods in the Euclidean domain to the manifolds or graphs settings.
 This chapter generalises the recently developed \emph{Slepian scale-discretised wavelets on the sphere}~\autocite{Roddy2021a} to Riemannian manifolds, whereby the wavelets themselves are restricted to a region of the manifold.
-Slepian wavelets have many possible use cases in various fields of science and engineering, where data only exists, or are missing in a particular region.
+Slepian wavelets have many possible use cases in various fields of science and engineering, where data only exists in a particular region.
 A typical approach to problems of this kind is to analyse the signal with wavelets defined over the whole manifold, where spatially localised, scale-dependent features of the signal may be extracted.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.
 Slepian scale-discretised wavelets (on manifolds) offer a potential solution to this obstacle.
@@ -851,4 +851,4 @@ A field is then placed on this mesh, and through a wavelet transform, the wavele
 The signal on the mesh is distorted with Gaussian white noise, and a straightforward denoising procedure is developed --- a common wavelet technique.
 The wavelet coefficients are hard-thresholded with \(N_{\sigma}=1\), in which a boost in signal-to-noise ratio is observed.
 This same denoising formalism is performed on a series of other meshes, resulting in a signal boost in all.
-As before, Slepian wavelets on manifolds can be used many standard wavelet applications; for example, solving inverse problems via sparse regularisation~\autocite{McEwen2013a,Wallis2017,Price2021}.
+As before, Slepian wavelets on manifolds can be used for many standard wavelet applications; for example, solving inverse problems via sparse regularisation~\autocite{McEwen2013a,Wallis2017,Price2021}.
