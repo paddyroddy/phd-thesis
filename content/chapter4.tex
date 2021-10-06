@@ -68,7 +68,7 @@ Lastly, \cref{sec:chapter4_conclusion} sets out some concluding remarks.
 \section{Mathematical Background and Problem Formulation}\label{sec:chapter4_mathematical_background_problem_formulation}
 
 Some mathematical preliminaries are introduced in \cref{sec:chapter4_mathematical_preliminaries} with a recap of signals on the sphere, the spherical harmonic basis functions, and rotations on the sphere.
-A directional convolution on the sphere, the sifting convolution, is introduced in \cref{sec:chapter4_sifting_convolution_sphere} which was recently developed by the authors of this work.
+A directional convolution on the sphere, the sifting convolution, is reviewed in \cref{sec:chapter4_sifting_convolution_sphere} which was discussed in \cref{sec:chapter3}.
 Lastly, in \cref{sec:chapter4_slepian_concentration_problem} the Slepian spatial concentration problem is presented, which results in the Slepian functions which are the basis functions of a region.
 
 \subsection{Mathematical Preliminaries}\label{sec:chapter4_mathematical_preliminaries}
@@ -107,7 +107,7 @@ where \(\harmonic{f}\) are the spherical harmonic coefficients given by the usua
 \begin{equation}
 	\harmonic{f}
 	%
-	= \braket*{f}{\harmonic{Y}}.
+	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
 \end{equation}
 %
 The phase convention adopted here is
@@ -374,7 +374,7 @@ The corresponding transform from spherical harmonic coefficients to Slepian coef
 \section{Slepian Wavelets}\label{sec:chapter4_slepian_wavelets}
 
 This section develops the theory behind Slepian wavelets.
-The sifting convolution~\autocite{Roddy2021} is first extended to the Slepian basis in \cref{sec:chapter4_slepian_sifting_convolution}.
+The sifting convolution~\autocite{Roddy2021}, discussed in \cref{sec:chapter3}, is first extended to the Slepian basis in \cref{sec:chapter4_slepian_sifting_convolution}.
 This convolution is then used to define the Slepian wavelet transform in \cref{sec:chapter4_slepian_scale_discretised_wavelets_sphere} with a suitable admissibility condition to ensure exact reconstruction.
 The generating functions used to construct Slepian wavelets that satisfy the admissibility condition are presented in \cref{sec:chapter4_generating_functions}.
 Lastly, in \cref{sec:chapter4_properties} some properties of the wavelets are discussed.
@@ -382,7 +382,7 @@ Lastly, in \cref{sec:chapter4_properties} some properties of the wavelets are di
 \subsection{Slepian Sifting Convolution}\label{sec:chapter4_slepian_sifting_convolution}
 
 The central part of a wavelet transform is a convolution, and thus the Slepian functions can be used as a basis to define wavelets in the region.
-The sifting convolution on the sphere~\autocite{Roddy2021}, defined in \cref{sec:chapter4_sifting_convolution_sphere}, can be extended to any arbitrary basis.
+The sifting convolution on the sphere~\autocite{Roddy2021}, defined in \cref{sec:chapter3}, can be extended to any arbitrary basis.
 Consider the sifting convolution of a region on the sphere with a localised basis given by the Slepian functions.
 The translation can be defined by
 %
@@ -876,7 +876,7 @@ Slepian wavelets offer a solution to this problem.
 
 Slepian wavelets are constructed on the eigenfunctions of the Slepian spatial-spectral concentration problem on the sphere, which are the basis functions of the region.
 Through a tiling of the Slepian line one may define Slepian scale-discretised wavelets that are localised within the region of interest.
-The current chapter generalises the \emph{sifting convolution}~\autocite{Roddy2021} on the sphere beyond the spherical harmonic setting to any basis, where here the Slepian functions define the basis.
+The current chapter generalises the \emph{sifting convolution}~\autocite{Roddy2021} on the sphere (introduced in \cref{sec:chapter3}) beyond the spherical harmonic setting to any basis, where here the Slepian functions define the basis.
 The Slepian wavelet transform then follows by performing convolutions over the incomplete sphere with the Slepian wavelets.
 The original function can then be reconstructed from its Slepian wavelet coefficients.
 
