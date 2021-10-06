@@ -492,35 +492,8 @@ For brevity, the formulae will be presented just in real space and not also Four
 \subsection{Slepian Sifting Convolution}\label{sec:chapter5_slepian_sifting_convolution}
 
 To construct wavelets in a region of the manifold a suitable convolution is required.
-The sifting convolution~\autocite{Roddy2021} on the manifold, defined in \cref{sec:chapter5_slepian_concentration_problem_manifolds}, can be extended to work with the Slepian functions as a basis.
-
-Consider the sifting convolution of a region on a manifold with the Slepian functions as a localised basis.
-The translation is defined as such
-%
-\begin{equation}
-	\mesh{(\translation{y}\slepian{S})}
-	%
-	\equiv \meshY{\slepian{S}} \mesh{\slepian{S}},
-\end{equation}
-%
-where \(y\) is a point on the manifold and \(\mesh{\slepian{S}}\) are the Slepian functions defined in \cref{sec:chapter5_slepian_concentration_problem_manifolds}.
-Hence, the translation of an arbitrary function \(f \in \hilbert{R}\) is
-%
-\begin{equation}
-	\mesh{(\translation{y}f)}
-	%
-	= \slepianSum \slepian{f} \meshY{\slepian{S}} \mesh{\slepian{S}}.
-\end{equation}
-%
-As before, the sifting convolution between two functions \(f,\ g \in \hilbert{R}\) is
-%
-\begin{equation}
-	\mesh{\convolution{f}{g}}
-	%
-	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}},
-\end{equation}
-%
-which becomes a product in Slepian space, and hence is efficient to compute.
+The sifting convolution~\autocite{Roddy2021} on the manifold, defined in \cref{sec:chapter5_sifting_convolution_manifolds} and adapted from \cref{sec:chapter3}, can be extended to work with the Slepian functions as a basis.
+The construction of the Slepian sifting convolution on manifolds is analogous to before in \cref{sec:chapter4_slepian_sifting_convolution}, but with the Slepian functions of the manifold defined in \cref{sec:chapter5_slepian_concentration_problem_manifolds}.
 Slepian wavelets may now be defined utilising this convolution in Slepian space.
 
 \subsection{Slepian Scale-Discretised Wavelets}\label{sec:chapter5_slepian_scale_discretised_wavelets}
