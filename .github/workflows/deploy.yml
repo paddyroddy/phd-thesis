@@ -51,7 +51,9 @@ jobs:
               with:
                   run: |
                       sed -i 's#glob="false" ##' thesis.bcf
-                      echo ::set-output name=uncited::$(cat checkcites -b biber thesis -u | grep -c "=>")
+                      echo ::set-output name=uncited::$(\
+                        checkcites -b biber thesis -u | \
+                        grep -c "=>")
 
             - name: Check all references cited
               if: ${{ steps.references.outputs.uncited > 0 }}
