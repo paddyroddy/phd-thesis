@@ -48,6 +48,7 @@ hangparas
 helvetica
 hfill
 hilbert
+hspace
 ie
 imax
 impactstatement

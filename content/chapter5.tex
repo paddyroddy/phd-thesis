@@ -122,13 +122,13 @@ This eigensystem forms the square-integrable basis of the manifold \(\manifold{}
 	0 \leq \mu_{1} \leq \mu_{2} \leq \ldots < \mu_{\imax} < \infty, % chktex 11
 \end{equation}
 %
-and eigenfunctions \(\phi_{i}\).
+and eigenfunctions \(\psi_{i}\).
 A function \(f \in \hilbert{\manifold}\) can therefore be decomposed into this basis by
 %
 \begin{equation}
 	\mesh{f}
 	%
-	= \sum\limits_{i=1}^{\imax} f_{i} \mesh{\phi_{i}},
+	= \sum\limits_{i=1}^{\imax} f_{i} \mesh{\psi_{i}},
 \end{equation}
 %
 where \(f_{i}\) are the Fourier coefficients given by the usual projection onto the basis functions
@@ -136,7 +136,7 @@ where \(f_{i}\) are the Fourier coefficients given by the usual projection onto 
 \begin{equation}
 	f_{i}
 	%
-	= \integrateManifold{x} \mesh{f} \mesh{\conj{\phi_{i}}}.
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\psi_{i}}}.
 \end{equation}
 %
 In practice, one may discretise the manifolds and represent them as graphs.
@@ -321,7 +321,7 @@ where
 \begin{equation}
 	D_{i,j}
 	%
-	= \integrateRegion{\meshVolume \mesh{\phi_{i}} \mesh{\conj{\phi_{j}}}}
+	= \integrateRegion{\meshVolume \mesh{\psi_{i}} \mesh{\conj{\psi_{j}}}}
 \end{equation}
 %
 is a square matrix including all basis functions of the manifold.
@@ -410,7 +410,7 @@ To transform from Slepian coefficients to the basis functions of the manifold
 \begin{equation}\label{eq:chapter5_slepian_to_harmonic}
 	f_{i}
 	%
-	= \integrateManifold{x} \mesh{f} \mesh{\conj{\phi_{i}}}
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\psi_{i}}}
 	%
 	= \slepianSum \slepian{f} {(\slepian{S})}_{i},
 \end{equation}
@@ -420,7 +420,7 @@ where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:
 \begin{equation}
 	{(\slepian{S})}_{i}
 	%
-	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\phi_{i}}}.
+	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\psi_{i}}}.
 \end{equation}
 %
 The inverse operation of \cref{eq:chapter5_slepian_to_harmonic} is
@@ -440,12 +440,14 @@ On \(\mathbb{R}^{d}\), the convolution of a signal \(f \in \hilbert{\mathbb{R}^{
 Defined in \cref{sec:chapter3}, the sifting convolution~\cite{Roddy2021} is built on a translation which simply involves a product of the basis functions in Fourier space.
 Initially defined in the spherical setting, the sifting convolution can be arbitrarily extended to other domains, including manifolds.
 
-The translation operator on the manifold is
+The complex exponentials (\eg{} \cref{eq:chapter3_complex_exponentials}) form the standard orthonormal basis in the Euclidean setting.
+A translation is defined through a shift of coordinates, which results in a product of basis functions following the standard rule of exponents, \ie{} \cref{eq:chapter3_exponentials_shift}.
+In an analogous manner, a translation operator on the manifold may be defined
 %
 \begin{equation}
-	\mesh{(\translation{y}\phi_{i})}
+	\mesh{(\translation{y}\psi_{i})}
 	%
-	\equiv \meshY{\phi_{i}} \mesh{\phi_{i}},
+	\equiv \meshY{\psi_{i}} \mesh{\psi_{i}},
 \end{equation}
 %
 where \(y\) is a point on the manifold.
@@ -454,7 +456,7 @@ An arbitrary function \(f \in \hilbert{\manifold}\) is translated thus
 \begin{equation}
 	\mesh{(\translation{y}f)}
 	%
-	= \sum\limits_{i} f_{i} \meshY{\phi_{i}} \mesh{\phi_{i}},
+	= \sum\limits_{i} f_{i} \meshY{\psi_{i}} \mesh{\psi_{i}},
 \end{equation}
 %
 implying
@@ -462,7 +464,7 @@ implying
 \begin{equation}
 	{(\translation{y}f)}_{i}
 	%
-	= f_{i} \meshY{\phi_{i}}.
+	= f_{i} \meshY{\psi_{i}}.
 \end{equation}
 %
 The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows by the inner product
