@@ -47,10 +47,10 @@ jobs:
 
             - name: Fix regex for checkcites
               run: |
-                sed -i 's#glob="false"##' thesis.bcf
+                  sed -i 's#glob="false"##' thesis.bcf
 
             - name: Check all references cited
-              if: ${{ $(checkcites -b biber thesis -u | grep -c "=>") > 0}}
+              if: ${{ `checkcites -b biber thesis -u | grep -c "=>"` > 0}}
               uses: actions/github-script@v5
               with:
                   script: |
