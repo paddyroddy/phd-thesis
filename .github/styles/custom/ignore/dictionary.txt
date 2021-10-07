@@ -1,7 +1,6 @@
 addcontentsline
 america
 ast
-autocite
 bandlimit
 bandlimited
 bibentry
@@ -52,13 +51,11 @@ hilbert
 ie
 imax
 impactstatement
-includegraphics
 includeonly
 infty
 int
 kirker
 laplace
-laplacian
 lceil
 ldots
 leq
@@ -92,7 +89,6 @@ phantomsection
 phd
 pollak
 postaction
-printbibliography
 rceil
 renewcommand
 resizebox
