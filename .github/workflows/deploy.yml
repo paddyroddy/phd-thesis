@@ -47,9 +47,10 @@ jobs:
 
             - name: Fix regex for checkcites
               uses: xu-cheng/texlive-action/full@v1
-              run: |
-                  sed -i 's#glob="false" ##' thesis.bcf
-                  checkcites -b biber thesis -u | grep -c "=>" > tmp
+              with:
+                  run: |
+                      sed -i 's#glob="false" ##' thesis.bcf
+                      checkcites -b biber thesis -u | grep -c "=>" > tmp
 
             - name: Check all references cited
               if: ${{ tmp > 0 }}
