@@ -55,10 +55,6 @@ jobs:
                         checkcites -b biber thesis -u | \
                         grep -c "=>")
 
-            - name: Test
-              run: |
-                echo ${{ steps.references.outputs.uncited }}
-
             - name: Check all references cited
               if: ${{ steps.references.outputs.uncited > 0 }}
               uses: actions/github-script@v5
