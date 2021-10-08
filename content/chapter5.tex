@@ -453,7 +453,7 @@ In an analogous manner, a translation operator on the manifold may be defined
 where \(y\) is a point on the manifold.
 A natural way to define the translation of an arbitrary function \(f \in \hilbert{\manifold}\) is thus
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter5_translation_mesh}
 	\mesh{(\translation{y}f)}
 	%
 	= \meshSum f_{i} \meshY{\psi_{i}} \mesh{\psi_{i}},
@@ -466,7 +466,7 @@ which implies
 	%
 	= f_{i} \meshY{\psi_{i}}.
 \end{equation}
-%
+
 The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows in the usual manner by the inner product
 %
 \begin{equation}
@@ -477,7 +477,7 @@ The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) fol
 %
 which is a product in Fourier space
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter5_harmonic_convolution}
 	{\convolution{f}{g}}_{i}
 	%
 	= f_{i} \conj{g_{i}},
@@ -488,15 +488,31 @@ as
 \begin{align}
 	\mesh{\convolution{f}{g}}
 	%
-	& = \braket*{\translation{x}f}{g} \nonumber{} \\
+	 & = \braket*{\translation{x}f}{g} \nonumber{}                                                                                        \\
 	%
-	& = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{} \\
+	 & = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{}                                                    \\
 	%
-	& = \integrateManifold{y} \meshSum f_{i} \mesh{\psi_{i}} \meshY{\psi_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\psi_{j}}} \nonumber{} \\
+	 & = \integrateManifold{y} \meshSum f_{i} \mesh{\psi_{i}} \meshY{\psi_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\psi_{j}}} \nonumber{} \\
 	%
-	& = \meshSum f_{i} \conj{g_{i}} \mesh{\psi_{i}}
+	 & = \meshSum f_{i} \conj{g_{i}} \mesh{\psi_{i}}.
 \end{align}
 %
+Note that the Fourier representation of the convolution is a product and, hence, is efficient to compute.
+It can be shown that the translation operator is a sifting convolution of a function with the shifted Dirac delta function:
+%
+\begin{align}
+	\mesh{\convolution{f}{\delta_{y}}}
+	%
+	 & = \meshSum f_{i} \conj{{(\delta_{y})}_{i}} \mesh{\psi_{i}} \nonumber{} \\
+	%
+	 & = \meshSum f_{i} \meshY{\psi_{i}} \mesh{\psi_{i}} \nonumber{}          \\
+	%
+	 & = \mesh{(\translation{y}f)},
+\end{align}
+%
+where the first and last lines follow by \cref{eq:chapter5_harmonic_convolution} and \cref{eq:chapter5_translation_mesh} respectively.
+The sifting convolution and translation of the manifold are therefore natural analogues of their respective Euclidean operators.
+
 This convolution can be used to define wavelets restricted to a region of the manifold using the basis functions introduced in \cref{sec:chapter5_slepian_concentration_problem_manifolds} in the translation.
 
 \section{Slepian Wavelets}\label{sec:chapter5_slepian_wavelets}
