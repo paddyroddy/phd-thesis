@@ -193,7 +193,7 @@ where the first line holds due to the reality of the Dirac delta \cref{eq:chapte
 The Euler angles may parameterise three-dimensional rotations with \(\rho = (\alpha,\beta,\gamma) \in \rotationGroup{}\), where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
 The rotation operator \(\rotation{\rho}\) consists of the sequence of rotations:
 %
-\begin{enumerate}[(i),nosep]
+\begin{enumerate}[(i),nosep,left=\parindent]
 	\item \({\gamma}\) rotation about the \(z\)-axis;
 	\item \({\beta}\) rotation about the \(y\)-axis; and
 	\item \({\alpha}\) rotation about the \(z\)-axis.
@@ -265,7 +265,7 @@ Alternative definitions of such a convolution exist in the literature but, while
 
 The properties desired in the spherical extension of the convolution include:
 %
-\begin{enumerate}[(i),nosep]
+\begin{enumerate}[(i),nosep,left=\parindent]
 	\item the support of directional kernels;
 	\item an output which remains on the sphere; and
 	\item efficient computation.
@@ -310,10 +310,9 @@ as
 \end{align}
 %
 where the last line follows by \cref{eq:chapter3_wigner_axisymmetric}.
-
 The isotropic convolution has the following properties:
 %
-\begin{enumerate}[(i),nosep]
+\begin{enumerate}[(i),nosep,left=\parindent]
 	\item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
 	\item an output which remains on the sphere; and
 	\item efficient computation since it is a product in harmonic space.
@@ -395,7 +394,7 @@ As the harmonic representations suggest, the isotropic and left convolutions are
 Hence, the properties are similar.
 The left convolution has the following properties:
 %
-\begin{enumerate}[(i),nosep]
+\begin{enumerate}[(i),nosep,left=\parindent]
 	\item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
 	\item an output which remains on the sphere; and
 	\item efficient computation since it is a product in harmonic space.
@@ -435,11 +434,10 @@ as
 \end{align}
 %
 and hence, the output is on \(\rotationGroup{}\).
-
 Fast algorithms exist~\cite{McEwen2007,Wandelt2001,Wiaux2007,McEwen2013}, but the convolution remains less efficient than a spherical harmonic transform.
 The directional convolution has the following properties:
 %
-\begin{enumerate}[(i),nosep]
+\begin{enumerate}[(i),nosep,left=\parindent]
 	\item does support directional kernels;
 	\item an output which does not remain on the sphere due to the three-dimensional rotation of the kernel; and
 	\item expensive computation.
@@ -476,12 +474,12 @@ as
 	%
 	 & = \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
 \end{align}
-
+%
 The limitation here is that one must specify the initial rotation as \({\gamma=\pi-\alpha}\) in order for the convolution to be commutative.
 The complexity of the convolution is \(\mathcal{O}(L^{3}\log{L})\), and hence, it is less efficient than a spherical harmonic transform.
 The convolution has the following properties:
 %
-\begin{enumerate}[(i),nosep]
+\begin{enumerate}[(i),nosep,left=\parindent]
 	\item it supports directional kernels;
 	\item an output which remains on the sphere; and
 	\item expensive computation.
