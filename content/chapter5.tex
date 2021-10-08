@@ -222,7 +222,7 @@ The mesh Laplacian is then found by substituting
 %
 and
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter5_vertex_weight}
 	a_{i}
 	%
 	= \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{i j k}
@@ -230,7 +230,7 @@ and
 %
 into \cref{eq:chapter5_graph_laplace_indices}, where the area of a triangle is
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter5_triangle_area}
 	a_{i j k}
 	%
 	= \sqrt{s_{i j k}(s_{i j k}-\ell_{i j})(s_{i j k}-\ell_{j k})(s_{i j k}-\ell_{i k})},
@@ -256,7 +256,7 @@ A discrete metric
 %
 is induced by an embedding of the mesh, which changes \cref{eq:chapter5_mesh_laplace_weights} to
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter5_cotangent_laplacian}
 	w_{i j}
 	%
 	= \frac{1}{2}(\cot{\alpha_{i j}} + \cot{\beta_{i j}}),
