@@ -210,25 +210,18 @@ By introducing another structure of faces \(\faces \in \vertices \times \vertice
 The continuous manifold is represented by the polyhedral surface of connected triangles.
 
 For triangular meshes, the most straightforward discretisation of the Riemannian metric is performed by assigning each edge a length \(\ell_{i j}>0\).
-The mesh Laplacian is then found by substituting
+The mesh Laplacian is then found by first substituting the edge weights into \cref{eq:chapter5_graph_laplace_indices}
 %
 \begin{equation}\label{eq:chapter5_mesh_laplace_weights}
 	w_{i j}
 	%
 	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{8 a_{i j k}}
 	%
-	+ \frac{-\ell_{i j}^{2} + \ell_{j h}^{2} + \ell_{i h}^{2}}{8 a_{i j h}}
+	+ \frac{-\ell_{i j}^{2} + \ell_{j h}^{2} + \ell_{i h}^{2}}{8 a_{i j h}},
 \end{equation}
 %
-and
-%
-\begin{equation}\label{eq:chapter5_vertex_weight}
-	a_{i}
-	%
-	= \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{i j k}
-\end{equation}
-%
-into \cref{eq:chapter5_graph_laplace_indices}, where the area of a triangle is
+where \(a_{i j k}\) represents the area of the triangluar face connecting the \(i\), \(j\) and \(k\) vertices.
+Through Heron's formula, the area of the triangle \(a_{i j k}\) is
 %
 \begin{equation}\label{eq:chapter5_triangle_area}
 	a_{i j k}
@@ -236,7 +229,7 @@ into \cref{eq:chapter5_graph_laplace_indices}, where the area of a triangle is
 	= \sqrt{s_{i j k}(s_{i j k}-\ell_{i j})(s_{i j k}-\ell_{j k})(s_{i j k}-\ell_{i k})},
 \end{equation}
 %
-and the corresponding semi-perimeter is
+where the semi-perimeter \(s_{i j k}\) is given by
 %
 \begin{equation}
 	s_{i j k}
@@ -244,6 +237,15 @@ and the corresponding semi-perimeter is
 	= \frac{1}{2}(\ell_{i j} + \ell_{j k} + \ell_{k i}).
 \end{equation}
 %
+The corresponding vertex weights of the mesh Laplacian are
+%
+\begin{equation}\label{eq:chapter5_vertex_weight}
+	a_{i}
+	%
+	= \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{i j k},
+\end{equation}
+%
+which results in the hexagonal region in \cref{fig:chapter5_mesh_laplace}.
 Such a construction can be shown to converge to the continuous Laplacian of the underlying manifold under some specific conditions~\cite{Wardetzky2008}.
 
 A discrete metric
