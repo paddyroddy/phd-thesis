@@ -285,10 +285,10 @@ A set of mesh Laplacian eigenvectors for a given mesh are presented in \cref{fig
 
 \subsection{Problem Formulation}\label{sec:chapter5_problem_formulation}
 
-This chapter generalises Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} to arbitrary manifolds.
+This chapter generalises Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a}, discussed in \cref{sec:chapter4}, to arbitrary manifolds.
 Here, the basis functions of the Slepian concentration problem are built from the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, as opposed to the spherical harmonics.
-In the aforesaid work, the wavelets are constructed through a tiling of the Slepian line (akin to the harmonic line) in an analogous manner to~\cite{Wiaux2008,McEwen2018}.
-The sifting convolution~\cite{Roddy2021} allows one to perform convolutions where both inputs are directional, whilst the output remains on the sphere.
+The wavelets are constructed through a tiling of the Slepian line (akin to the harmonic line) in an analogous manner to~\cite{Wiaux2008,McEwen2018}.
+The sifting convolution~\cite{Roddy2021}, defined in \cref{sec:chapter3}, allows one to perform convolutions where both inputs are directional, whilst the output remains on the sphere.
 By leveraging this convolution, the wavelet transforms in the Slepian domain are built on a region of the sphere (\cf{} manifold) to ensure exact reconstruction.
 Convolutions are typically not well-defined on manifolds.
 The sifting convolution, however, is a product in Fourier space and as such can be applied effectively to manifolds.
