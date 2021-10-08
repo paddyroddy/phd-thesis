@@ -202,7 +202,7 @@ A set of edge weights are then computed, for example Gaussian weights
 \begin{equation}
 	w_{i j}
 	%
-	= \exp(-\left(\frac{\norm{\vb*{x}_{i} - \vb*{x}_{j}}^{2}}{2\sigma^{2}}\right)).
+	= \exp(-\Bigg(\frac{\norm{\vb*{x}_{i} - \vb*{x}_{j}}^{2}}{2\sigma^{2}}\Bigg)).
 \end{equation}
 %
 However, this discretisation does not fully capture the geometry of continuous underlying manifold; hence, the graph Laplacian would typically not converge to the Laplace-Beltrami operator at the limit of many of samples~\cite{Wardetzky2007}.
