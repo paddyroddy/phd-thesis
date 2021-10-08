@@ -221,22 +221,6 @@ The mesh Laplacian is then found by first substituting the edge weights into \cr
 \end{equation}
 %
 where \(a_{i j k}\) represents the area of the triangular face connecting the \(i\), \(j\) and \(k\) vertices.
-Through Heron's formula, the area of the triangle \(a_{i j k}\) is
-%
-\begin{equation}\label{eq:chapter5_triangle_area}
-	a_{i j k}
-	%
-	= \sqrt{s_{i j k}(s_{i j k}-\ell_{i j})(s_{i j k}-\ell_{j k})(s_{i j k}-\ell_{i k})},
-\end{equation}
-%
-where the semi-perimeter \(s_{i j k}\) is given by
-%
-\begin{equation}
-	s_{i j k}
-	%
-	= \frac{1}{2}(\ell_{i j} + \ell_{j k} + \ell_{k i}).
-\end{equation}
-%
 The corresponding vertex weights of the mesh Laplacian are
 %
 \begin{equation}\label{eq:chapter5_vertex_weight}
@@ -264,7 +248,34 @@ is induced by an embedding of the mesh, which changes \cref{eq:chapter5_mesh_lap
 	= \frac{1}{2}(\cot{\alpha_{i j}} + \cot{\beta_{i j}}),
 \end{equation}
 %
-where \(\alpha_{i j}\) and \(\beta_{i j}\) are the internal angles opposite to the corresponding edge \(\ell_{i j}\) (\cf{} \cref{fig:chapter5_mesh_laplace}).
+where \(\alpha_{i j}\) and \(\beta_{i j}\) are the internal angles opposite to the corresponding edge \(\ell_{i j}\) as shown in \cref{fig:chapter5_mesh_laplace}.
+To prove this, recall the law of cosines
+%
+\begin{equation}\label{eq:chapter5_cosine}
+	\cos(\alpha_{i j})
+	%
+	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{2\ell_{j k}\ell_{i k}},
+\end{equation}
+%
+and the usual expression of the area of a triangle
+%
+\begin{equation}\label{eq:chapter5_sine}
+	\sin(\alpha_{i j})
+	%
+	= \frac{2a_{i j k}}{\ell_{j k} \ell_{i k}}.
+\end{equation}
+%
+\cref{eq:chapter5_cosine,eq:chapter5_sine} may then be combined to find an expression for the cotangent of the interior angle
+%
+\begin{equation}
+	\cot(\alpha_{i j})
+	%
+	= \frac{\cos(\alpha_{i j})}{\sin(\alpha_{i j})}
+	%
+	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{4a_{i j k}}.
+\end{equation}
+%
+Through an analogous expression for the interior angle \(\beta_{i j}\), it is clear that \cref{eq:chapter5_cotangent_laplace} follows from \cref{eq:chapter5_mesh_laplace_weights}~\cite{Meyer2003}.
 This \emph{cotangent Laplacian} is used extensively in computer graphics~\cite{Pinkall1993}, and in the rest of this chapter.
 A set of mesh Laplacian eigenvectors for a given mesh are presented in \cref{fig:chapter5_eigenhomers}.
 
