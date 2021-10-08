@@ -313,7 +313,7 @@ In Fourier space this can be simplified to a sum
 \begin{equation}\label{eq:chapter5_spatial_concentration_ratio}
 	\mu
 	%
-	= \frac{\sum\limits_{i} f_{i} \sum\limits_{j} D_{i,j} \conj{f_{j}}}{\meshSum \abs{f_{i}}^{2}},
+	= \frac{\meshSum f_{i} \meshYSum D_{i,j} \conj{f_{j}}}{\meshSum \abs{f_{i}}^{2}},
 \end{equation}
 %
 where
@@ -430,7 +430,7 @@ The inverse operation of \cref{eq:chapter5_slepian_to_harmonic} is
 	%
 	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}
 	%
-	= \sum\limits_{i} f_{i} \conj{(\slepian{S})}_{i}.
+	= \meshSum f_{i} \conj{(\slepian{S})}_{i}.
 \end{equation}
 
 \subsection{Sifting Convolution on Manifolds}\label{sec:chapter5_sifting_convolution_manifolds}
@@ -451,15 +451,15 @@ In an analogous manner, a translation operator on the manifold may be defined
 \end{equation}
 %
 where \(y\) is a point on the manifold.
-An arbitrary function \(f \in \hilbert{\manifold}\) is translated thus
+A natural way to define the translation of an arbitrary function \(f \in \hilbert{\manifold}\) is thus
 %
 \begin{equation}
 	\mesh{(\translation{y}f)}
 	%
-	= \sum\limits_{i} f_{i} \meshY{\psi_{i}} \mesh{\psi_{i}},
+	= \meshSum f_{i} \meshY{\psi_{i}} \mesh{\psi_{i}},
 \end{equation}
 %
-implying
+which implies
 %
 \begin{equation}
 	{(\translation{y}f)}_{i}
@@ -467,12 +467,12 @@ implying
 	= f_{i} \meshY{\psi_{i}}.
 \end{equation}
 %
-The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows by the inner product
+The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows in the usual manner by the inner product
 %
 \begin{equation}
 	\mesh{\convolution{f}{g}}
 	%
-	\equiv \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}},
+	\equiv \braket*{\translation{x}f}{g},
 \end{equation}
 %
 which is a product in Fourier space
@@ -480,8 +480,22 @@ which is a product in Fourier space
 \begin{equation}
 	{\convolution{f}{g}}_{i}
 	%
-	= f_{i} \conj{g_{i}}.
+	= f_{i} \conj{g_{i}},
 \end{equation}
+%
+as
+%
+\begin{align}
+	\mesh{\convolution{f}{g}}
+	%
+	& = \braket*{\translation{x}f}{g} \nonumber{} \\
+	%
+	& = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{} \\
+	%
+	& = \integrateManifold{y} \meshSum f_{i} \mesh{\psi_{i}} \meshY{\psi_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\psi_{j}}} \nonumber{} \\
+	%
+	& = \meshSum f_{i} \conj{g_{i}} \mesh{\psi_{i}}
+\end{align}
 %
 This convolution can be used to define wavelets restricted to a region of the manifold using the basis functions introduced in \cref{sec:chapter5_slepian_concentration_problem_manifolds} in the translation.
 
