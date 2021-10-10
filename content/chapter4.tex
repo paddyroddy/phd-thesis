@@ -808,7 +808,7 @@ The wavelet/scaling coefficients of \cref{eq:chapter4_noised_signal} are given b
 %
 Here capital letters denote the wavelet coefficients, \ie{}
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_capital_letters}
 	\pixel{X^{\varphi}} = \pixel{\convolution{\varphi}{x}}.
 \end{equation}
 %
@@ -826,7 +826,7 @@ where the quantity \(\sigma^{\varphi}\) defines the standard deviation of the no
 One may perform denoising by hard-thresholding the wavelet/scaling coefficients with a threshold \(T\) proportional to the standard deviation of the noise \(\sigma^{\varphi}\).
 The denoised wavelet coefficients
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter4_denoised_wavelet_coefficients}
 	\pixel{D^{\varphi}} = \pixel{\convolution{\varphi}{d}}
 \end{equation}
 %
