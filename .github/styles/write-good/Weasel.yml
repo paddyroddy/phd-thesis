@@ -48,7 +48,7 @@ tokens:
     - doubtfully
     - dumbly
     - eagerly
-    - early
+    # - early
     - easily
     - elegantly
     - enormously
@@ -165,7 +165,7 @@ tokens:
     - silently
     # - simply
     - sleepily
-    - slowly
+    # - slowly
     - smartly
     - smelly
     # - smoothly

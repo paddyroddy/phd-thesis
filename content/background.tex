@@ -22,18 +22,18 @@ These three assumptions mean that the metric takes the form
 %
 \begin{equation}\label{eq:original_metric}
 	\dd{s^{2}}
-    %
-    = g_{\mu\nu} \dd{X^{\mu}} \dd{X^{\nu}}
-    %
-    = -\dd{t^{2}} + a^{2}(t) \dd{\ell^{2}}
+	%
+	= g_{\mu\nu} \dd{X^{\mu}} \dd{X^{\nu}}
+	%
+	= -\dd{t^{2}} + a^{2}(t) \dd{\ell^{2}}
 \end{equation}
 %
 where \(a(t)\) is the scale factor and
 %
 \begin{equation}
 	\dd{\ell^{2}}
-    %
-    = \gamma_{i j} \dd{x^{i}} \dd{x^{j}}
+	%
+	= \gamma_{i j} \dd{x^{i}} \dd{x^{j}}
 \end{equation}
 %
 is the constant curvature 3-metric.
@@ -44,11 +44,11 @@ This metric can take three forms: flat space, positive curvature and negative cu
 The line element of three-dimensional Euclidean space \(\mathbb{E}^{3}\) is just
 %
 \begin{equation}
-    \dd{\ell^{2}}
-    %
-    = \dd{\vb{x}^{2}}
-    %
-    = \delta_{i j} \dd{x^{i}} \dd{x^{j}}
+	\dd{\ell^{2}}
+	%
+	= \dd{\vb{x}^{2}}
+	%
+	= \delta_{i j} \dd{x^{i}} \dd{x^{j}}
 \end{equation}
 %
 which is invariant under spatial translations and rotations.
@@ -58,11 +58,11 @@ which is invariant under spatial translations and rotations.
 One can represent a 3-space with constant positive curvature as a 3-sphere \(\mathbb{S}^{3}\) embedded in four-dimensional Euclidean space \(\mathbb{E}^{4}\),
 %
 \begin{equation}
-    \dd{\ell^{2}}
-    %
-    = \dd{\vb{x}^{2}} + \dd{u^{2}},\ \abs{\vb{x}}^{2} + u^{2}
-    %
-    = R^{2}
+	\dd{\ell^{2}}
+	%
+	= \dd{\vb{x}^{2}} + \dd{u^{2}},\ \abs{\vb{x}}^{2} + u^{2}
+	%
+	= R^{2}
 \end{equation}
 %
 where \(R\) is the radius of the 3-sphere.
@@ -73,11 +73,11 @@ Homogeneity and isotropy of the surface of the 3-sphere result from the symmetry
 A hyperboloid \(\mathbb{H}^{3}\) embedded in four-dimensional Lorentzian space \(\mathbb{R}^{1,3}\) can represent a 3-space with constant negative curvature as
 %
 \begin{equation}
-    \dd{\ell^{2}}
-    %
-    = \dd{\vb{x}^{2}} - \dd{u^{2}},\ \abs{\vb{x}}^{2} - u^{2}
-    %
-    = -R^{2}
+	\dd{\ell^{2}}
+	%
+	= \dd{\vb{x}^{2}} - \dd{u^{2}},\ \abs{\vb{x}}^{2} - u^{2}
+	%
+	= -R^{2}
 \end{equation}
 %
 where \(R^{2}\) is an arbitrary constant.
@@ -87,28 +87,28 @@ Rescaling the coordinates, \(\vb{x} \rightarrow R\vb{x}\) and \(u \rightarrow Ru
 %
 \begin{equation}
 	\dd{\ell^{2}}
-    %
-    = R^{2} (\dd{\vb{x}^{2}} \pm \dd{u^{2}}),\
-    %
-    \vb{x}^{2} \pm u^{2}
-    %
-    = \pm 1.
+	%
+	= R^{2} (\dd{\vb{x}^{2}} \pm \dd{u^{2}}),\
+	%
+	\vb{x}^{2} \pm u^{2}
+	%
+	= \pm 1.
 \end{equation}
 %
 Now from the constraint note \(u\dd{u} \mp \vb{x}\dd{\vb{x}}\) which, substituting in \cref{eq:original_metric}, results in
 %
 \begin{equation}\label{eq:frw_metric}
 	\dd{s^{2}}
-    %
-    = -\dd{t^{2}} + a^{2}(t) \bigg( \frac{\dd{r^{2}}}{1-Kr^{2}} + r^{2}\dd{\Omega^{2}} \bigg),\
-    %
-    K =
+	%
+	= -\dd{t^{2}} + a^{2}(t) \bigg( \frac{\dd{r^{2}}}{1-Kr^{2}} + r^{2}\dd{\Omega^{2}} \bigg),\
+	%
+	K =
 	%
 	\begin{cases}
 		\mathbin{\phantom{-}}1 & \mathbb{S}^{3} \\
-        %
+		%
 		\mathbin{\phantom{-}}0 & \mathbb{E}^{3} \\
-        %
+		%
 		-1                     & \mathbb{H}^{3}
 	\end{cases}
 \end{equation}
@@ -123,30 +123,30 @@ The \emph{four-velocity} of a massive particle is
 %
 \begin{equation}
 	U_{\mu}
-    %
-    = \dv{X^{\mu}}{s}.
+	%
+	= \dv{X^{\mu}}{s}.
 \end{equation}
 %
 A geodesic is a curve which extremises the proper time \(\Delta s/c\) between two points in spacetime. The \emph{geodesic equation} defines the motion of the particle through
 %
 \begin{equation}\label{eq:geodesic_equation}
 	\dv{U^{\mu}}{s} + \christoffel{\mu}{\alpha}{\beta} U^{\alpha} U^{\beta}
-    %
-    = 0
+	%
+	= 0
 \end{equation}
 %
 where \(\christoffel{\mu}{\alpha}{\beta}\) are the \emph{Christoffel symbols}
 %
 \begin{equation}
 	\christoffel{\mu}{\alpha}{\beta}
-    %
-    = \frac{1}{2} g^{\mu\lambda}
-    %
-    (\partial_{\alpha}g_{\beta\lambda}
-    %
-    + \partial_{\beta}g_{\alpha\lambda}
-    %
-    - \partial_{\lambda}g_{\alpha\beta})
+	%
+	= \frac{1}{2} g^{\mu\lambda}
+	%
+	(\partial_{\alpha}g_{\beta\lambda}
+	%
+	+ \partial_{\beta}g_{\alpha\lambda}
+	%
+	- \partial_{\lambda}g_{\alpha\beta})
 \end{equation}
 %
 through the use of the notation \(\partial_{\mu} = \partial/\partial X^{\mu}\).
@@ -154,20 +154,20 @@ through the use of the notation \(\partial_{\mu} = \partial/\partial X^{\mu}\).
 %
 \begin{equation}
 	\frac{U^{\mu}}{\dd{s}}
-    %
-    = \dv{X^{\alpha}}{s} \frac{U^{\mu}}{\dd{X^{\alpha}}}
-    %
-    = U^{\alpha} \partial_{\alpha} U^{\mu}
+	%
+	= \dv{X^{\alpha}}{s} \frac{U^{\mu}}{\dd{X^{\alpha}}}
+	%
+	= U^{\alpha} \partial_{\alpha} U^{\mu}
 \end{equation}
 %
 such that the geodesic equation \cref{eq:geodesic_equation} becomes
 %
 \begin{equation}\label{eq:geodesic_covariant}
 	U^{\alpha} (\partial_{\alpha} U^{\mu} + \christoffel{\mu}{\alpha}{\beta} U^{\beta})
-    %
-    = U^{\alpha} \nabla_{\alpha} U^{\mu}
-    %
-    = 0
+	%
+	= U^{\alpha} \nabla_{\alpha} U^{\mu}
+	%
+	= 0
 \end{equation}
 %
 where \(\nabla_{\alpha}\) is the covariant derivative.
@@ -175,8 +175,8 @@ Using the \emph{four-momentum} of the particle \cref{eq:geodesic_covariant} simp
 %
 \begin{equation}
 	P^{\alpha} \partial_{\alpha} P^{\mu}
-    %
-    = -\christoffel{\mu}{\alpha}{\beta} P^{\alpha} P^{\beta}
+	%
+	= -\christoffel{\mu}{\alpha}{\beta} P^{\alpha} P^{\beta}
 \end{equation}
 %
 which also works for massless particles.
@@ -188,8 +188,8 @@ Light emitted at time \(t_{1}\) with wavelength \(\lambda_{1}\) observed at \(t_
 %
 \begin{equation}
 	\lambda_{0}
-    %
-    = \frac{a(t_{0})}{a(t_{1})} \lambda_{1}.
+	%
+	= \frac{a(t_{0})}{a(t_{1})} \lambda_{1}.
 \end{equation}
 %
 Since \(a(t_{0}) > a(t_{1})\), the wavelength of light increases \(\lambda_{0} > \lambda_{1}\).
@@ -197,24 +197,24 @@ The fractional change of light defines the redshift
 %
 \begin{equation}
 	z
-    %
-    = \frac{\lambda_{0} - \lambda_{1}}{\lambda_{1}}
+	%
+	= \frac{\lambda_{0} - \lambda_{1}}{\lambda_{1}}
 \end{equation}
 %
 and if one rescales the scale factor such that \(a_{0}=1\) then
 %
 \begin{equation}
 	1 + z
-    %
-    = \frac{1}{a}.
+	%
+	= \frac{1}{a}.
 \end{equation}
 %
 For nearby sources \(a(t)\)
 %
 \begin{equation}
 	a(t)
-    %
-    = (1 - (t_{0} - t)H_{0} + \ldots)
+	%
+	= (1 - (t_{0} - t)H_{0} + \ldots)
 \end{equation}
 %
 where \(H_{0}\) is the Hubble parameter today.
@@ -222,8 +222,8 @@ By setting the distance \(d = t_{0} - t\) to first order, one recovers Hubble's 
 %
 \begin{equation}
 	z
-    %
-    = H_{0}d.
+	%
+	= H_{0}d.
 \end{equation}
 
 \subsubsection{Dynamics}
@@ -232,8 +232,8 @@ The Einstein equation establishes the evolution of the scale factor
 %
 \begin{equation}\label{eq:einstein_tensor}
 	G_{\mu\nu}
-    %
-    = 8\pi G T_{\mu\nu},
+	%
+	= 8\pi G T_{\mu\nu},
 \end{equation}
 %
 which relates the Einstein tensor \(G_{\mu\nu}\) to the energy-momentum tensor \(T_{\mu\nu}\).
@@ -241,38 +241,40 @@ Due to the assumptions of homogeneity and isotropy the energy-momentum tensor mu
 %
 \begin{equation}\label{eq:energy_momentum}
 	T_{\mu\nu}
-    %
-    = (\rho + P) U_{\mu} U_{\nu} + P g_{\mu\nu}.
+	%
+	= (\rho + P) U_{\mu} U_{\nu} + P g_{\mu\nu}.
 \end{equation}
 %
 The conservation of the energy-momentum tensor
 %
 \begin{equation}
 	\nabla_{\mu} T^{\mu}_{\nu}
-    %
-    = 0
+	%
+	= 0
 \end{equation}
 %
 implies the continuity equation
 %
 \begin{equation}\label{eq:continuity}
 	\dot{\rho} + 3\frac{\dot{a}}{a}(\rho + P)
-    %
-    = 0.
+	%
+	= 0.
 \end{equation}
 %
 Assuming a constant equation of state
 %
 \begin{equation}
 	w
-    %
-    = \frac{\rho}{P}
+	%
+	= \frac{\rho}{P}
 \end{equation}
 %
 \cref{eq:continuity} becomes
 %
 \begin{equation}\label{eq:density_equation}
-	\rho \propto a^{-3(1+w)}.
+	\rho
+	%
+	\propto a^{-3(1+w)}.
 \end{equation}
 %
 The universe comprises a mixture of different matter components.
@@ -283,10 +285,10 @@ The solutions to \cref{eq:density_equation} are
 	\rho =
 	%
 	\begin{cases}
-		a^{-3} & \text{matter, \ie{} cold dark matter and baryons};        \\
-        %
-		a^{-4} & \text{radiation, \ie{} photons, neutrinos and gravitons}; \\
-        %
+		a^{-3} & \text{matter, \ie{} cold dark matter and baryons};           \\
+		%
+		a^{-4} & \text{radiation, \ie{} photons, neutrinos and gravitons};    \\
+		%
 		a^{0}  & \text{and dark energy, \ie{} dark energy or something else}.
 	\end{cases}
 \end{equation}
@@ -294,17 +296,17 @@ The solutions to \cref{eq:density_equation} are
 The non-zero components of the Einstein tensor \cref{eq:einstein_tensor} are \(G_{00}\) and \(G_{i j}\) respectively, which implies
 %
 \begin{equation}
-    3\Bigg[ {\bigg(\frac{\dot{a}}{a}\bigg)}^{2} + \frac{k}{a^{2}} \Bigg]
-    %
-    = 8\pi G\rho,
+	3\Bigg[ {\bigg(\frac{\dot{a}}{a}\bigg)}^{2} + \frac{k}{a^{2}} \Bigg]
+	%
+	= 8\pi G\rho,
 \end{equation}
 %
 and
 %
 \begin{equation}
-    -\Bigg[ 2\frac{\ddot{a}}{a} + {\bigg(\frac{\dot{a}}{a}\bigg)}^{2} + \frac{k}{a^{2}} \Bigg]
-    %
-    = 8\pi G P.
+	-\Bigg[ 2\frac{\ddot{a}}{a} + {\bigg(\frac{\dot{a}}{a}\bigg)}^{2} + \frac{k}{a^{2}} \Bigg]
+	%
+	= 8\pi G P.
 \end{equation}
 %
 Combining these with the energy-momentum tensor \cref{eq:energy_momentum}, retrieves the \emph{Friedmann equations}.
@@ -315,7 +317,7 @@ These are the fundamental equations governing the evolution of the universe:
 %
 \begin{subequations}
 	\begin{align}
-		{\bigg(\frac{\dot{a}}{a}\bigg)}^{2}  & = \frac{8\pi G}{3} \rho - \frac{K}{a^{2}} \tag{F1} \label{eq:F1} \\
+		{\bigg(\frac{\dot{a}}{a}\bigg)}^{2}   & = \frac{8\pi G}{3} \rho - \frac{K}{a^{2}} \tag{F1} \label{eq:F1} \\
 		%
 		\frac{\ddot{a}}{a}                    & = -\frac{4\pi G}{3}(\rho + 3P) \tag{F2}                          \\
 		%
@@ -327,16 +329,16 @@ The first Friedmann equation is often defined through the Hubble parameter
 %
 \begin{equation}
 	H^{2}
-    %
-    = \frac{8\pi G}{3} \rho - \frac{K}{a^{2}},
+	%
+	= \frac{8\pi G}{3} \rho - \frac{K}{a^{2}},
 \end{equation}
 %
 where \(K=0\) results in the critical density for a flat universe
 %
 \begin{equation}
 	\rho_{\text{critical},0}
-    %
-    = \frac{3H_{0}^{2}}{8\pi G},
+	%
+	= \frac{3H_{0}^{2}}{8\pi G},
 \end{equation}
 %
 in which the subscript \(0\) denotes quantities evaluated today.
@@ -344,16 +346,16 @@ Define the fractional density as
 %
 \begin{equation}
 	\Omega_{X}
-    %
-    = \frac{\rho_{X}}{\rho_{\text{critical},0}},
+	%
+	= \frac{\rho_{X}}{\rho_{\text{critical},0}},
 \end{equation}
 %
 such that
 %
 \begin{equation}
-    \sum\limits_{i}\Omega_{i}
-    %
-    = 1
+	\sum\limits_{i}\Omega_{i}
+	%
+	= 1
 \end{equation}
 %
 defines a flat universe.
@@ -361,25 +363,25 @@ The Friedmann equations now become
 %
 \begin{equation}
 	H^{2}
-    %
-    = H_{0}^{2} (\Omega_{r}a^{-4} + \Omega_{m}a^{-3} + \Omega_{k}a^{-2} + \Omega_{\Lambda}),
+	%
+	= H_{0}^{2} (\Omega_{r}a^{-4} + \Omega_{m}a^{-3} + \Omega_{k}a^{-2} + \Omega_{\Lambda}),
 \end{equation}
 %
 where one drops the subscript \(0\), and uses the normalisation of the scale factor \(a_{0}=1\).
 The curvature density parameter is
 %
 \begin{equation}
-    \Omega_{k}
-    %
-    = -\frac{a}{{(aH_{0})}^{2}}.
+	\Omega_{k}
+	%
+	= -\frac{a}{{(aH_{0})}^{2}}.
 \end{equation}
 %
 Such that \cref{eq:F1} becomes
 %
 \begin{equation}
 	{\bigg(\frac{\dot{a}}{a}\bigg)}^{2}
-    %
-    = H_{0}^{2} \Omega a^{-3(1+w)}
+	%
+	= H_{0}^{2} \Omega a^{-3(1+w)}
 \end{equation}
 %
 and solve for the scale factor in each era:
@@ -388,10 +390,399 @@ and solve for the scale factor in each era:
 	a(t) \propto
 	%
 	\begin{cases}
-		t^{1/2}    & \text{radiation dominated}    \\
+		t^{1/2}      & \text{radiation dominated}    \\
 		%
-		t^{1/3}    & \text{matter dominated}       \\
+		t^{1/3}      & \text{matter dominated}       \\
 		%
 		\exp(H_{0}t) & \text{dark energy dominated}.
 	\end{cases}
 \end{equation}
+
+\subsection{Inflation}
+
+The notable success of the Big Bang model include:
+%
+\begin{itemize}
+	\item \textsc{Big Bang Nucleosynthesis (BBN)}:
+	      by assuming a thermal bath of standard model particles with a temperature \(T > \SI{100}{\giga\eV}\) at early times then BBN well predicts the abundance of the light elements.
+
+	\item \textsc{Cosmic Microwave Background (CMB)}:
+	      at early times the temperature of the universe if high enough for electrons to be free and couple to photos via Thomson scattering. As the universe expands it cools and forms neutral hydrogen, the photons then free stream and today form the CMB\@.
+\end{itemize}
+%
+However, problems with the initial conditions exist
+%
+\begin{itemize}
+	\item \textsc{Flatness problem}:
+	      during matter and radiation dominated eras deviations from flatness grow with time.
+	      The universe today appears to be flat which must require fine-tuning of the early universe.
+
+	\item \textsc{Relic particles}:
+	      most Grant Unified Theories (GUT) predict the production of \emph{relic particles}, topological defects from phase transitions, like magnetic monopoles.
+	      Magnetic monopoles are heavy and if produced would cause the universe to collapse.
+
+	\item \textsc{Horizon problem}:
+	      the CMB intensity is uniform to 1 part in \(\num{e5}\) and yet consists of \(\num{30000}\) causally disconnected regions.
+\end{itemize}
+
+\subsubsection{Horizon Problem}
+
+Taking the FRW metric in conformal time, considering just radial motion
+%
+\begin{equation}
+	\dd{s^{2}}
+	%
+	= a^{2}(\tau)(-\dd{\tau^{2}} + \dd{\chi^{2}})
+\end{equation}
+%
+Photons travel on null geodesics \(\dd{s^{2}}=0\), their path is
+%
+\begin{equation}
+	\Delta\chi(\tau)
+	%
+	= \pm\Delta\tau
+\end{equation}
+%
+where the plus and minus signs signify outgoing and incoming photons respectively.
+Assuming the Big Bang started with a singularity at \(t_{i}=0\) the greatest comoving distance from which an observer at time \(t\) receives a photon travelling at the speed of light is
+%
+\begin{equation}\label{eq:particle_horizon}
+	\chi_{\text{ph}}(\tau)
+	%
+	= \tau - \tau_{i} = \int\limits_{t_{i}}^{t} \frac{\dd{t}}{a(t)}
+	%
+	= \int\limits_{\ln{a_{i}}}^{\ln{a}} \mathcal{H}^{-1} \dd{\ln{a}}
+\end{equation}
+%
+which is the particle horizon.
+Defined In \cref{eq:particle_horizon} is the comoving Hubble parameter \(\mathcal{H}=aH\), and \(\mathcal{H}^{-1}\) is the comoving Hubble radius.
+For a perfect fluid \(a \propto t^{2/3(1+w)}\) and
+%
+\begin{equation}
+	\chi_{\text{ph}}(\tau)
+	%
+	= \frac{2}{(1+3w)} \mathcal{H}^{-1}
+\end{equation}
+%
+which means that both the particle horizon and the Hubble radius are both referred to as the \emph{horizon}.
+In matter domination \(\chi_{\text{ph}} \propto \sqrt{a}\) so the comoving horizon grows with time.
+Thus, regions which are out of causal contact with each other become visible.
+The CMB uniform to one part in \(\num{e5}\) however it consists of causally disconnected regions.
+The number of causally disconnected regions grows with volume and hence, assuming matter domination at \(z \approx \num{1100}\),
+%
+\begin{equation}
+	N_{\text{disconnected}}
+	%
+		= {\left(\frac{r_{0}}{r_{\text{CMB}}}\right)}^{3}
+	%
+		= {\left(\frac{a_{0}}{a_{\text{CMB}}}\right)}^{\frac{3}{2}}
+	%
+		= {(1+z)}^{\frac{3}{2}}
+	%
+	\approx \num{30000}.
+\end{equation}
+%
+This mismatch between the number of disconnected patches of space and the uniformity observed is knows as the \emph{horizon problem}.
+
+\subsubsection{Horizon Solution}
+
+The Big Bang model is successful from BBN onwards, so one requires a modification to the evolution of the universe before \(t_{\text{BBN}}\).
+The horizon problem states that the comoving horizon grows with time
+%
+\begin{equation}
+	\dv{t} \left(\mathcal{H}^{-1}\right)
+	%
+	> 0.
+\end{equation}
+%
+As long as this occurs, the observation of causally disconnected regions would break the cosmological principle.
+
+Thus, a solution to the horizon problem is a phase of decreasing Hubble radius in the early universe
+%
+\begin{equation}\label{eq:horizon_solution}
+	\dv{t} \left(\mathcal{H}^{-1}\right)
+	%
+	< 0
+\end{equation}
+%
+which would mean that causally connected regions exit the horizon.
+Hence, when these regions re-enter at late times, when the comoving horizon is growing, the regions look the same.
+\cref{eq:horizon_solution} implies \((1+3w) < 0\) such that
+%
+\begin{equation}
+	\tau_{i} = \frac{2H_{0}^{-1}}{(1+3w)} a_{i}^{\frac{1}{2}(1+3w)} \xrightarrow{a_{i} \rightarrow 0,\ w < -\frac{1}{3}} -\infty
+\end{equation}
+%
+which implies all regions have had contact.
+
+The shrinking Hubble sphere is an important definition of inflation since it directly relates to the horizon problem; and is crucial for the mechanism of generating fluctuations.
+This definition of inflation is akin to other popular ways of describing inflation.
+%
+\begin{itemize}
+	\item \textsc{Accelerated expansion}:
+	      \begin{equation}
+		      \dv{t} \left(\mathcal{H}^{-1}\right)
+		      %
+		      = \dv{t} \left(\dot{a}^{-1}\right)
+		      %
+		      = -\frac{\ddot{a}}{\dot{a}^{2}}
+	      \end{equation}
+	      %
+	      from this relation the shrinking Hubble radius implies accelerated expansion
+	      %
+	      \begin{equation}
+		      \ddot{a}
+		      %
+		      > 0.
+	      \end{equation}
+
+	\item \textsc{Slowly varying Hubble parameter}:
+	      \begin{equation}
+		      \dv{t} \left(\mathcal{H}^{-1}\right)
+		      %
+		      = -\frac{\dot{a}H + a\dot{H}}{\mathcal{H}^{2}}
+		      %
+		      = -\frac{1}{a}(1-\varepsilon)
+	      \end{equation}
+	      %
+	      thus the shrinking Hubble sphere corresponds to
+	      %
+	      \begin{equation}
+		      \varepsilon
+		      %
+		      = -\frac{\dot{H}}{H^{2}}
+		      %
+		      < 1.
+	      \end{equation}
+
+	\item \textsc{Exponential expansion}:
+	      for perfect inflation \(\varepsilon=0\) the spacetime becomes de Sitter space
+	      %
+	      \begin{equation}
+		      \dd{s^{2}}
+		      %
+		      = \dd{t^{2}} - e^{2Ht} \dd{\vb{x}^{2}}
+	      \end{equation}
+	      %
+	      where \(H=constant\).
+	      Inflation has to end and hence cannot be perfect de Sitter space; but for small, finite \({\varepsilon}\) this line element is a good approximation.
+
+	\item \textsc{Negative pressure}:
+	      consider a perfect fluid with pressure \(P\) and density \({\rho}\)
+	      %
+	      \begin{equation}\label{eq:negative_pressure}
+		      \dot{H} + H^{2}
+		      %
+		      = -\frac{1}{6M_{\text{pl}^{2}}}(\rho+3P)
+		      %
+		      = -\frac{H^{2}}{2} \left(1 + \frac{3P}{\rho}\right)
+	      \end{equation}
+	      %
+	      which can rearranged to find
+	      %
+	      \begin{equation}
+		      \varepsilon = -\frac{\dot{H}^{2}}{H^{2}} = \frac{3}{2} \left(1 + \frac{P}{\rho}\right) < 1 \Leftrightarrow w = \frac{P}{\rho} < -\frac{1}{3}.
+	      \end{equation}
+	      %
+	      Hence, inflation requires negative pressure or a violation of the strong energy condition.
+
+	\item \textsc{Constant density}:
+	      combining the continuity equation \cref{eq:continuity} with \cref{eq:negative_pressure}
+	      %
+	      \begin{equation}
+		      \abs{\frac{\dd{\ln{\rho}}}{\dd{\ln{a}}}}
+		      %
+		      = 2\varepsilon
+		      %
+		      < 1.
+	      \end{equation}
+	      %
+	      Assuming \({\varepsilon}\) is small then the energy density is almost constant.
+\end{itemize}
+
+\subsubsection{Physics of Inflation}
+
+For inflation to solve the initial condition problems in the Big Bang model it needs four stages
+%
+\begin{enumerate}
+	\item \textsc{Occur}:
+	      %
+	      a mechanism causing the comoving horizon to shrink, parametrised by
+	      %
+	      \begin{equation}
+		      \varepsilon
+		      %
+		      = -\frac{\dot{H}}{H^{2}}
+		      %
+		      = -\dv{\ln{H}}{\ln{a}}
+		      %
+		      < 1;
+	      \end{equation}
+
+	\item \textsc{Last}:
+	      %
+	      once started inflation must last for 60 e-folds, parametrised by
+	      %
+	      \begin{equation}
+		      \eta
+		      %
+		      = \frac{\dot{\varepsilon}}{H\varepsilon}
+		      %
+		      = \dv{\ln{\varepsilon}}{\ln{a}}
+		      %
+		      < 1;
+	      \end{equation}
+
+	\item \textsc{End}:
+	      %
+	      to solve the horizon problem one requires a natural mechanism for inflation to end --- known as the \emph{graceful exit problem};
+\end{enumerate}
+%
+For a model of inflation one requires a single scalar field \(\phi(t,\vb{x})\) with energy density \(V(\phi)\).
+For a scalar field the following energy-momentum tensor exists
+%
+\begin{equation}
+	T_{\mu\nu}
+	%
+	= \partial_{\mu}\phi \partial_{\nu}\phi - g_{\mu\nu}\left( \frac{1}{2}g^{\alpha\beta} \partial_{\alpha}\phi \partial_{\beta}\phi + V(\phi) \right).
+\end{equation}
+%
+For a homogeneous field, \ie{} \(\phi = \phi(t)\)
+%
+\begin{subequations}
+	\begin{align}
+		\rho_{\phi} & = \frac{1}{2}\dot{\phi}^{2} + V(\phi) \\
+		%
+		P_{\phi}    & = \frac{1}{2}\dot{\phi}^{2} - V(\phi)
+	\end{align}
+\end{subequations}
+%
+which, substituting into the Friedmann equations,
+%
+\begin{subequations}
+	\begin{align}
+		(F1) \implies H^{2}   & = \frac{1}{3M_{\text{pl}}^{2}} \left( \frac{1}{2}\dot{\phi}^{2} + V(\phi) \right) \\
+		%
+		(F2) \implies \dot{H} & = -\frac{1}{2M_{\text{pl}}^{2}} \dot{\phi}^{2}.
+	\end{align}
+\end{subequations}
+%
+By combining these one derives the \emph{Klein-Gordon equation}
+%
+\begin{equation}\label{eq:KG}
+	\ddot{\phi} + 3H\dot{\phi}
+	%
+	= -V_{,\phi}
+\end{equation}
+%{
+where \(V_{,\phi} = \dv{V}{\phi}\).
+The potential acts like a force and the expansion of the universe adds friction.
+The condition for inflation to occur is
+%
+\begin{equation}
+	\varepsilon
+	%
+	= -\frac{\dot{H}}{H^{2}}
+	%
+	= \frac{1}{M_{\text{pl}}^{2}} \frac{\dot{\phi}^{2}}{H^{2}}
+	%
+	< 1
+\end{equation}
+%
+and hence inflation occurs if the kinetic energy is small.
+In order for this \emph{slow-roll inflation} to persist the acceleration of the scalar field must be small.
+Now define
+%
+\begin{equation}
+	\delta
+	%
+	= -\frac{\ddot{\phi}}{H\dot{\phi}}
+	%
+	< 1
+\end{equation}
+%
+which shows
+%
+\begin{equation}
+	\eta
+	%
+	= 2(\varepsilon - \delta)
+\end{equation}
+%
+so the inflationary conditions \((\varepsilon<1,\ \eta<1)\) and \((\varepsilon<1,\ \delta<1)\) are the same.
+The \emph{slow-roll approximations} \(\varepsilon \ll 1\) and \(\delta \ll 1\) mean that one ignores the kinetic term from \cref{eq:F1} and the acceleration term from \cref{eq:KG} resulting in
+%
+\begin{subequations}
+	\begin{align}
+		H^{2}        & \approx \frac{V}{3M_{\text{pl}^{2}}} \\
+		%
+		3H\dot{\phi} & \approx -V_{,\phi}.
+	\end{align}
+\end{subequations}
+%
+Defined through the potential the slow-roll parameters are
+%
+\begin{subequations}
+	\begin{align}
+		\varepsilon & = \frac{M_{\text{pl}}^{2}}{2} {\left( \frac{V_{,\phi}}{V} \right)}^{2} \equiv \epsilon_{V} \\
+		%
+		\eta        & = M_{\text{pl}}^{2} \frac{V_{,\phi\phi}}{V} \equiv \eta_{V}.
+	\end{align}
+\end{subequations}
+%
+Through these parameters the total number of e-folds of accelerated expansion is
+%
+\begin{equation}\label{eq:N_tot}
+	N_{\text{tot}}
+	%
+	= \int\limits_{a_{I}}^{a_{E}} \dd{\ln{a}}
+	%
+	= \int\limits_{t_{I}}^{t_{E}} H \dd{t}
+\end{equation}
+%
+where \(t_{I}\) and \(t_{E}\) are the times when \(\varepsilon(t_{I}) = \varepsilon(t_{E}) \equiv 1\).
+In the slow-roll regime
+%
+\begin{equation}
+	H \dd{t}
+	%
+	= \frac{H}{\dot{\phi}} \dd{\phi}
+	%
+	= \frac{1}{\sqrt{2\varepsilon}} \frac{\abs{\dd{\phi}}}{M_{\text{pl}}}
+	%
+	\approx \frac{1}{\sqrt{2\epsilon_{V}}} \frac{\abs{\dd{\phi}}}{M_{\text{pl}}},
+\end{equation}
+%
+and \cref{eq:N_tot} is an integral in the field space of inflation
+%%
+\begin{equation}
+	N_{\text{tot}}
+	%
+	= \int\limits_{\phi_{I}}^{\phi_{E}}  \frac{1}{\sqrt{2\epsilon_{V}}} \frac{\abs{\dd{\phi}}}{M_{\text{pl}}}
+	%
+	> 60.
+\end{equation}
+
+\subsubsection{Issues with Inflation}
+
+Inflation can solve the initial condition problems of the Big Bang model, \ie{}
+%
+\begin{itemize}
+	\item \textsc{Flatness}: exponential expansion dilutes curvature;
+	\item \textsc{Relics}: exponential expansion dilutes pre-existing particle number densities to zero;
+	\item \textsc{Horizon}: observable universe is inside horizon at the beginning of inflation.
+\end{itemize}
+%
+However, problems with the initial conditions for inflation exist.
+Some of these criticisms include:
+%
+\begin{itemize}
+	\item What is the single scalar field \({\phi}\)? Potential candidates exist --- compactification in string theory produces large numbers of scalar fields.
+	      Why is just the one field dynamical? Is this configuration stable?
+
+	\item Is the potential \(V\) natural.
+	      The potential required for inflation needs to be smooth and flat.
+	      The \(\num{60}\) e-folds of inflation involves moving more than a Planck length in field space so would expect corrections to the potential which would destroy the desired properties.
+
+	\item What is the probability of inflation to occur for a given inflationary model? At the possible positions to start at, what is the likelihood that a combination of \({\phi}\) and \(\dot{\phi}\) exist which let inflation to occur?
+\end{itemize}

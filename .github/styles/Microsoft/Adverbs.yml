@@ -198,7 +198,7 @@ tokens:
     - shyly
     - silently
     - sleepily
-    - slowly
+    # - slowly
     # - smoothly
     - softly
     - solemnly

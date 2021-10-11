@@ -20,6 +20,7 @@ circledcirc
 circleddash
 color
 comoving
+compactification
 config
 conj
 cref
@@ -53,6 +54,7 @@ fwhm
 gaussian
 gaussians
 geq
+giga
 hangparas
 helvetica
 hfill
@@ -137,6 +139,7 @@ ucl
 uk
 url
 usepackage
+varepsilon
 varphi
 vb
 wigner
