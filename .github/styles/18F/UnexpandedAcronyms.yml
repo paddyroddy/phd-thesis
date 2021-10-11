@@ -13,6 +13,7 @@ exceptions:
     - API
     - CBS
     - CIA
+    - CMB
     - CNN
     - CSI
     - CSS
