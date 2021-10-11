@@ -65,7 +65,7 @@ The spherical harmonics are the complete orthonormal set of basis functions of t
 \begin{equation}\label{eq:chapter3_spherical_harmonic}
 	\pixel{\harmonic{Y}}
 	%
-	= \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos(\theta)) \exp(i m\phi),
+	= {(-1)}^{m} \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi),
 \end{equation}
 %
 where \(P^{m}_{\ell}(x)\) are the \emph{associated Legendre polynomials}.
@@ -88,9 +88,9 @@ where \(\harmonic{f}\) are the spherical harmonic coefficients given by
 The phase convention adopted here is
 %
 \begin{equation}\label{eq:chapter3_spherical_harmonic_phase}
-	\conj{\harmonic{Y}}
+	\pixel{\conj{\harmonic{Y}}}
 	%
-	= {(-1)}^{m} Y_{\ell(-m)}
+	= {(-1)}^{m} \pixel{Y_{\ell(-m)}}
 \end{equation}
 %
 such that
