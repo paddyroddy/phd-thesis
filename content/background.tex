@@ -136,7 +136,7 @@ which, substituting in \cref{eq:chapter2_original_metric}, results in
 %
 where
 %
-\begin{equation}\label{eq:chapter2_K}
+\begin{equation}\label{eq:chapter2_k}
 	K =
 	%
 	\begin{cases}
@@ -149,7 +149,7 @@ where
 \end{equation}
 %
 and the scale factor absorbs the radius of curvature of the 3-metric \(a(t)R \rightarrow a(t)\).
-In defining the Friedmann-Robertson-Walker (FRW) metric \cref{eq:chapter2_frw_metric}, the comoving curvature \(K\) \cref{eq:chapter2_K} takes care of the three topologies.
+In defining the Friedmann-Robertson-Walker (FRW) metric \cref{eq:chapter2_frw_metric}, the comoving curvature \(K\) \cref{eq:chapter2_k} takes care of the three topologies.
 
 \subsubsection{Kinematics}
 
@@ -376,9 +376,9 @@ These are the fundamental equations governing the evolution of the Universe:
 %
 \begin{subequations}
 	\begin{align}
-		{\bigg(\frac{\dot{a}}{a}\bigg)}^{2}   & = \frac{8\pi G}{3} \rho - \frac{K}{a^{2}} \tag{F1} \label{eq:chapter2_F1} \\
+		{\bigg(\frac{\dot{a}}{a}\bigg)}^{2}   & = \frac{8\pi G}{3} \rho - \frac{K}{a^{2}} \tag{F1} \label{eq:chapter2_f1} \\
 		%
-		\frac{\ddot{a}}{a}                    & = -\frac{4\pi G}{3}(\rho + 3P) \tag{F2}                                   \\
+		\frac{\ddot{a}}{a}                    & = -\frac{4\pi G}{3}(\rho + 3P) \tag{F2} \label{eq:chapter2_f2}            \\
 		%
 		(\dot{F1}) + (F2) \implies \dot{\rho} & = -3\frac{\dot{a}}{a}(\rho + P). \tag{F3}
 	\end{align}
@@ -435,7 +435,7 @@ The curvature density parameter is
 	= -\frac{a}{{(aH_{0})}^{2}},
 \end{equation}
 %
-such that \cref{eq:chapter2_F1} becomes
+such that \cref{eq:chapter2_f1} becomes
 %
 \begin{equation}
 	{\bigg(\frac{\dot{a}}{a}\bigg)}^{2}
@@ -709,7 +709,7 @@ For inflation to solve the initial condition problems in the Big Bang model it n
 
 	\textbf{Last}:
 	%
-	Once started inflation must last for 60 e-folds, parametrised by
+	Once inflation has started, it must last for 60 e-folds, parametrised by
 	%
 	\begin{equation}
 		\eta
@@ -727,7 +727,7 @@ For inflation to solve the initial condition problems in the Big Bang model it n
 \end{hangparas}
 
 \noindent
-For a model of inflation one requires a single scalar field \(\phi(t,\vb*{x})\) with energy density \(V(\phi)\).
+To satisfy a model of inflation, one requires a single scalar field \(\phi(t,\vb*{x})\) with energy density \(V(\phi)\).
 For a scalar field the following energy-momentum tensor exists
 %
 \begin{equation}
@@ -738,35 +738,55 @@ For a scalar field the following energy-momentum tensor exists
 	- g_{\mu\nu}\bigg( \frac{1}{2}g^{\alpha\beta} \partial_{\alpha}\phi \partial_{\beta}\phi + V(\phi) \bigg).
 \end{equation}
 %
-For a homogeneous field, \ie{} \(\phi = \phi(t)\)
+The density and pressure of a homogeneous field, \ie{} \(\phi = \phi(t)\), are
 %
-\begin{subequations}
-	\begin{align}
-		\rho_{\phi} & = \frac{1}{2}\dot{\phi}^{2} + V(\phi) \\
-		%
-		P_{\phi}    & = \frac{1}{2}\dot{\phi}^{2} - V(\phi)
-	\end{align}
-\end{subequations}
+\begin{equation}
+	\rho_{\phi}
+	%
+	= \frac{1}{2}\dot{\phi}^{2} + V(\phi)
+\end{equation}
 %
-which, substituting into the Friedmann equations,
+and
 %
-\begin{subequations}
-	\begin{align}
-		(F1) \implies H^{2}   & = \frac{1}{3M_{\text{pl}}^{2}} \bigg(\frac{1}{2}\dot{\phi}^{2} + V(\phi) \bigg) \\
-		%
-		(F2) \implies \dot{H} & = -\frac{1}{2M_{\text{pl}}^{2}} \dot{\phi}^{2}.
-	\end{align}
-\end{subequations}
+\begin{equation}
+	P_{\phi}
+	%
+	= \frac{1}{2}\dot{\phi}^{2} - V(\phi)
+\end{equation}
+%
+respectively.
+Substituting these into the Friedmann equations \cref{eq:chapter2_f1,eq:chapter2_f2}, results in
+%
+\begin{equation}
+	H^{2}
+	%
+	= \frac{1}{3M_{\text{pl}}^{2}} \bigg(\frac{1}{2}\dot{\phi}^{2} + V(\phi)\bigg)
+\end{equation}
+%
+and
+%
+\begin{equation}
+	\dot{H}
+	%
+	= -\frac{1}{2M_{\text{pl}}^{2}} \dot{\phi}^{2}.
+\end{equation}
 %
 By combining these one derives the \emph{Klein-Gordon equation}
 %
-\begin{equation}\label{eq:chapter2_KG}
+\begin{equation}\label{eq:chapter2_kg}
 	\ddot{\phi} + 3H\dot{\phi}
 	%
-	= -V_{,\phi}
+	= -V_{,\phi},
 \end{equation}
 %
-where \(V_{,\phi} = \dv{V}{\phi}\).
+where
+%
+\begin{equation}
+	V_{,\phi}
+	%
+	= \dv{V}{\phi}.
+\end{equation}
+%
 The potential acts like a force and the expansion of the Universe adds friction.
 The condition for inflation to occur is
 %
@@ -777,7 +797,7 @@ The condition for inflation to occur is
 	%
 	= \frac{1}{M_{\text{pl}}^{2}} \frac{\dot{\phi}^{2}}{H^{2}}
 	%
-	< 1
+	< 1,
 \end{equation}
 %
 and hence inflation occurs if the kinetic energy is small.
@@ -789,7 +809,7 @@ Now define
 	%
 	= -\frac{\ddot{\phi}}{H\dot{\phi}}
 	%
-	< 1
+	< 1,
 \end{equation}
 %
 which shows
@@ -797,11 +817,11 @@ which shows
 \begin{equation}
 	\eta
 	%
-	= 2(\varepsilon - \delta)
+	= 2(\varepsilon - \delta),
 \end{equation}
 %
-so the inflationary conditions \((\varepsilon<1,\ \eta<1)\) and \((\varepsilon<1,\ \delta<1)\) are the same.
-The \emph{slow-roll approximations} \(\varepsilon \ll 1\) and \(\delta \ll 1\) mean that one ignores the kinetic term from \cref{eq:chapter2_F1} and the acceleration term from \cref{eq:chapter2_KG} resulting in
+such that the inflationary conditions \((\varepsilon<1,\ \eta<1)\) and \((\varepsilon<1,\ \delta<1)\) are the same.
+The \emph{slow-roll approximations} \(\varepsilon \ll 1\) and \(\delta \ll 1\) mean that one ignores the kinetic term from \cref{eq:chapter2_f1} and the acceleration term from \cref{eq:chapter2_kg} resulting in
 %
 \begin{subequations}
 	\begin{align}
@@ -823,7 +843,7 @@ Defined through the potential the slow-roll parameters are
 %
 Through these parameters the total number of e-folds of accelerated expansion is
 %
-\begin{equation}\label{eq:chapter2_N_tot}
+\begin{equation}\label{eq:chapter2_n_tot}
 	N_{\text{tot}}
 	%
 	= \int\limits_{a_{I}}^{a_{E}} \dd{\ln{a}}
@@ -844,7 +864,7 @@ In the slow-roll regime
 	\approx \frac{1}{\sqrt{2\epsilon_{V}}} \frac{\abs{\dd{\phi}}}{M_{\text{pl}}},
 \end{equation}
 %
-and \cref{eq:chapter2_N_tot} is an integral in the field space of inflation
+and \cref{eq:chapter2_n_tot} is an integral in the field space of inflation
 %
 \begin{equation}
 	N_{\text{tot}}
