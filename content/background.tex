@@ -572,7 +572,6 @@ The horizon problem states that the comoving horizon grows with time
 \end{equation}
 %
 As long as this occurs, the observation of causally disconnected regions would break the cosmological principle.
-
 Thus, a solution to the horizon problem is a phase of decreasing Hubble radius in the early Universe
 %
 \begin{equation}\label{eq:chapter2_horizon_solution}
@@ -583,141 +582,151 @@ Thus, a solution to the horizon problem is a phase of decreasing Hubble radius i
 %
 which would mean that causally connected regions exit the horizon.
 Hence, when these regions re-enter at late times, when the comoving horizon is growing, the regions look the same.
-\cref{eq:chapter2_horizon_solution} implies \((1+3w) < 0\) such that
+\cref{eq:chapter2_horizon_solution} implies \((1+3w) < 0\), such that
 %
 \begin{equation}
 	\tau_{i}
 	%
 	= \frac{2H_{0}^{-1}}{(1+3w)} a_{i}^{\frac{1}{2}(1+3w)}
 	%
-	\xrightarrow{a_{i} \rightarrow 0,\ w < -\frac{1}{3}} -\infty,
+	\rightarrow -\infty
 \end{equation}
 %
-which implies all regions have had contact.
-
+as \(a_{i} \rightarrow 0\), which indicates that all regions have had contact.
 The shrinking Hubble sphere is an important definition of inflation since it directly relates to the horizon problem; and is crucial for the mechanism of generating fluctuations.
 This definition of inflation is akin to other popular ways of describing inflation.
-%
-\begin{itemize}
-	\item \textsc{Accelerated expansion}:
-	      \begin{equation}
-		      \dv{t} \big(\mathcal{H}^{-1}\big)
-		      %
-		      = \dv{t} \big(\dot{a}^{-1}\big)
-		      %
-		      = -\frac{\ddot{a}}{\dot{a}^{2}}
-	      \end{equation}
-	      %
-	      from this relation the shrinking Hubble radius implies accelerated expansion
-	      %
-	      \begin{equation}
-		      \ddot{a}
-		      %
-		      > 0.
-	      \end{equation}
+Some of these popular descriptions are given below.
 
-	\item \textsc{Slowly varying Hubble parameter}:
-	      \begin{equation}
-		      \dv{t} \big(\mathcal{H}^{-1}\big)
-		      %
-		      = -\frac{\dot{a}H + a\dot{H}}{\mathcal{H}^{2}}
-		      %
-		      = -\frac{1}{a}(1-\varepsilon)
-	      \end{equation}
-	      %
-	      thus the shrinking Hubble sphere corresponds to
-	      %
-	      \begin{equation}
-		      \varepsilon
-		      %
-		      = -\frac{\dot{H}}{H^{2}}
-		      %
-		      < 1.
-	      \end{equation}
+\begin{hangparas}{24pt}{1}
+	\textbf{Accelerated expansion}:
+	%
+	\begin{equation}
+		\dv{t} \big(\mathcal{H}^{-1}\big)
+		%
+		= \dv{t} \big(\dot{a}^{-1}\big)
+		%
+		= -\frac{\ddot{a}}{\dot{a}^{2}}
+	\end{equation}
+	%
+	from this relation the shrinking Hubble radius implies accelerated expansion
+	%
+	\begin{equation}
+		\ddot{a}
+		%
+		> 0.
+	\end{equation}
 
-	\item \textsc{Exponential expansion}:
-	      for perfect inflation \(\varepsilon=0\) the spacetime becomes de Sitter space
-	      %
-	      \begin{equation}
-		      \dd{s^{2}}
-		      %
-		      = \dd{t^{2}} - e^{2Ht} \dd{\vb*{x}^{2}}
-	      \end{equation}
-	      %
-	      where \(H=constant\).
-	      Inflation has to end and hence cannot be perfect de Sitter space; but for small, finite \({\varepsilon}\) this line element is a good approximation.
+	\textbf{Slowly varying Hubble parameter}:
+	%
+	\begin{equation}
+		\dv{t} \big(\mathcal{H}^{-1}\big)
+		%
+		= -\frac{\dot{a}H + a\dot{H}}{\mathcal{H}^{2}}
+		%
+		= -\frac{1}{a}(1-\varepsilon)
+	\end{equation}
+	%
+	thus the shrinking Hubble sphere corresponds to
+	%
+	\begin{equation}
+		\varepsilon
+		%
+		= -\frac{\dot{H}}{H^{2}}
+		%
+		< 1.
+	\end{equation}
 
-	\item \textsc{Negative pressure}:
-	      consider a perfect fluid with pressure \(P\) and density \({\rho}\)
-	      %
-	      \begin{equation}\label{eq:chapter2_negative_pressure}
-		      \dot{H} + H^{2}
-		      %
-		      = -\frac{1}{6M_{\text{pl}^{2}}}(\rho+3P)
-		      %
-		      = -\frac{H^{2}}{2} \bigg(1 + \frac{3P}{\rho}\bigg)
-	      \end{equation}
-	      %
-	      which can rearranged to find
-	      %
-	      \begin{equation}
-		      \varepsilon
-		      %
-		      = -\frac{\dot{H}^{2}}{H^{2}}
-		      %
-		      = \frac{3}{2} \bigg(1 + \frac{P}{\rho}\bigg) < 1 \Leftrightarrow w = \frac{P}{\rho} < -\frac{1}{3}.
-	      \end{equation}
-	      %
-	      Hence, inflation requires negative pressure or a violation of the strong energy condition.
+	\textbf{Exponential expansion}:
+	%
+	For perfect inflation \(\varepsilon=0\) the spacetime becomes de Sitter space
+	%
+	\begin{equation}
+		\dd{s^{2}}
+		%
+		= \dd{t^{2}} - e^{2Ht} \dd{\vb*{x}^{2}}
+	\end{equation}
+	%
+	where \(H\) is a constant.
+	Inflation has to end and hence cannot be perfect de Sitter space; but for small, finite \({\varepsilon}\) this line element is a good approximation.
 
-	\item \textsc{Constant density}:
-	      combining the continuity equation \cref{eq:chapter2_continuity} with \cref{eq:chapter2_negative_pressure}
-	      %
-	      \begin{equation}
-		      \bigg\lvert\frac{\dd{\ln{\rho}}}{\dd{\ln{a}}}\bigg\rvert
-		      %
-		      = 2\varepsilon
-		      %
-		      < 1.
-	      \end{equation}
-	      %
-	      Assuming \({\varepsilon}\) is small then the energy density is almost constant.
-\end{itemize}
+	\textbf{Negative pressure}:
+	%
+	Consider a perfect fluid with pressure \(P\) and density \({\rho}\)
+	%
+	\begin{equation}\label{eq:chapter2_negative_pressure}
+		\dot{H} + H^{2}
+		%
+		= -\frac{1}{6M_{\text{pl}^{2}}}(\rho+3P)
+		%
+		= -\frac{H^{2}}{2} \bigg(1 + \frac{3P}{\rho}\bigg)
+	\end{equation}
+	%
+	which can rearranged to find
+	%
+	\begin{equation}
+		\varepsilon
+		%
+		= -\frac{\dot{H}^{2}}{H^{2}}
+		%
+		= \frac{3}{2} \bigg(1 + \frac{P}{\rho}\bigg) < 1 \Leftrightarrow w = \frac{P}{\rho} < -\frac{1}{3}.
+	\end{equation}
+	%
+	Hence, inflation requires negative pressure or a violation of the strong energy condition.
+
+	\textbf{Constant density}:
+	%
+	Combining the continuity equation \cref{eq:chapter2_continuity} with \cref{eq:chapter2_negative_pressure}
+	%
+	\begin{equation}
+		\bigg\lvert\frac{\dd{\ln{\rho}}}{\dd{\ln{a}}}\bigg\rvert
+		%
+		= 2\varepsilon
+		%
+		< 1.
+	\end{equation}
+	%
+	Assuming \({\varepsilon}\) is small then the energy density is almost constant.
+\end{hangparas}
 
 \subsubsection{Physics of Inflation}
 
-For inflation to solve the initial condition problems in the Big Bang model it needs four stages
+For inflation to solve the initial condition problems in the Big Bang model it needs three stages.
 
-\paragraph{Occur} A mechanism causing the comoving horizon to shrink, parametrised by
-%
-\begin{equation}
-	\varepsilon
+\begin{hangparas}{24pt}{1}
+	\textbf{Occur}:
 	%
-	= -\frac{\dot{H}}{H^{2}}
+	A mechanism causing the comoving horizon to shrink, parametrised by
 	%
-	= -\dv{\ln{H}}{\ln{a}}
-	%
-	< 1.
-\end{equation}
+	\begin{equation}
+		\varepsilon
+		%
+		= -\frac{\dot{H}}{H^{2}}
+		%
+		= -\dv{\ln{H}}{\ln{a}}
+		%
+		< 1.
+	\end{equation}
 
-\paragraph{Last}
-
-Once started inflation must last for 60 e-folds, parametrised by
-%
-\begin{equation}
-	\eta
+	\textbf{Last}:
 	%
-	= \frac{\dot{\varepsilon}}{H\varepsilon}
+	Once started inflation must last for 60 e-folds, parametrised by
 	%
-	= \dv{\ln{\varepsilon}}{\ln{a}}
+	\begin{equation}
+		\eta
+		%
+		= \frac{\dot{\varepsilon}}{H\varepsilon}
+		%
+		= \dv{\ln{\varepsilon}}{\ln{a}}
+		%
+		< 1.
+	\end{equation}
+
+	\textbf{End}:
 	%
-	< 1.
-\end{equation}
+	To solve the horizon problem one requires a natural mechanism for inflation to end --- known as the \emph{graceful exit problem}.
+\end{hangparas}
 
-\paragraph{End}
-
-To solve the horizon problem one requires a natural mechanism for inflation to end --- known as the \emph{graceful exit problem}.
-
+\noindent
 For a model of inflation one requires a single scalar field \(\phi(t,\vb*{x})\) with energy density \(V(\phi)\).
 For a scalar field the following energy-momentum tensor exists
 %
