@@ -690,7 +690,8 @@ Some of these popular descriptions are given below.
 
 \subsubsection{Physics of Inflation}
 
-For inflation to solve the initial condition problems in the Big Bang model it needs three stages.
+For inflation to solve the initial condition problems in the Big Bang model it requires three stages: to occur, to persist, and to end.
+A brief description of each stage follows.
 
 \begin{hangparas}{24pt}{1}
 	\textbf{Occur}:
@@ -707,7 +708,7 @@ For inflation to solve the initial condition problems in the Big Bang model it n
 		< 1.
 	\end{equation}
 
-	\textbf{Last}:
+	\textbf{Persist}:
 	%
 	Once inflation has started, it must last for 60 e-folds, parametrised by
 	%
@@ -821,37 +822,50 @@ which shows
 \end{equation}
 %
 such that the inflationary conditions \((\varepsilon<1,\ \eta<1)\) and \((\varepsilon<1,\ \delta<1)\) are the same.
-The \emph{slow-roll approximations} \(\varepsilon \ll 1\) and \(\delta \ll 1\) mean that one ignores the kinetic term from \cref{eq:chapter2_f1} and the acceleration term from \cref{eq:chapter2_kg} resulting in
+The \emph{slow-roll approximations} \(\varepsilon \ll 1\) and \(\delta \ll 1\) mean that one ignores the kinetic term from \cref{eq:chapter2_f1} and the acceleration term from \cref{eq:chapter2_kg} resulting in the following approximations
 %
-\begin{subequations}
-	\begin{align}
-		H^{2}        & \approx \frac{V}{3M_{\text{pl}^{2}}} \\
-		%
-		3H\dot{\phi} & \approx -V_{,\phi}.
-	\end{align}
-\end{subequations}
+\begin{equation}
+	H^{2}
+	%
+	\approx \frac{V}{3M_{\text{pl}^{2}}}
+\end{equation}
 %
-Defined through the potential the slow-roll parameters are
+and
 %
-\begin{subequations}
-	\begin{align}
-		\varepsilon & = \frac{M_{\text{pl}}^{2}}{2} {\bigg(\frac{V_{,\phi}}{V}\bigg)}^{2} \equiv \epsilon_{V} \\
-		%
-		\eta        & = M_{\text{pl}}^{2} \frac{V_{,\phi\phi}}{V} \equiv \eta_{V}.
-	\end{align}
-\end{subequations}
+\begin{equation}
+	3H\dot{\phi}
+	%
+	\approx -V_{,\phi}.
+\end{equation}
 %
-Through these parameters the total number of e-folds of accelerated expansion is
+Defined through the potential, the slow-roll parameters are
+%
+\begin{equation}
+	\varepsilon
+	%
+	= \frac{M_{\text{pl}}^{2}}{2} {\bigg(\frac{V_{,\phi}}{V}\bigg)}^{2} \equiv \epsilon_{V}
+\end{equation}
+%
+and
+%
+\begin{equation}
+	\eta
+	%
+	= M_{\text{pl}}^{2} \frac{V_{,\phi\phi}}{V} \equiv \eta_{V}.
+\end{equation}
+%
+%
+Through these parameters, the total number of e-folds of accelerated expansion is
 %
 \begin{equation}\label{eq:chapter2_n_tot}
 	N_{\text{tot}}
 	%
 	= \int\limits_{a_{I}}^{a_{E}} \dd{\ln{a}}
 	%
-	= \int\limits_{t_{I}}^{t_{E}} H \dd{t}
+	= \int\limits_{t_{I}}^{t_{E}} H \dd{t},
 \end{equation}
 %
-where \(t_{I}\) and \(t_{E}\) are the times when \(\varepsilon(t_{I}) = \varepsilon(t_{E}) \equiv 1\).
+where \(t_{I}\) and \(t_{E}\) are the times when \(\varepsilon(t_{I}) = \varepsilon(t_{E}) = 1\).
 In the slow-roll regime
 %
 \begin{equation}
@@ -876,24 +890,39 @@ and \cref{eq:chapter2_n_tot} is an integral in the field space of inflation
 
 \subsubsection{Issues with Inflation}
 
-Inflation can solve the initial condition problems of the Big Bang model, \ie{}
-%
-\begin{itemize}
-	\item \textsc{Flatness}: exponential expansion dilutes curvature;
-	\item \textsc{Relics}: exponential expansion dilutes pre-existing particle number densities to zero;
-	\item \textsc{Horizon}: observable Universe is inside horizon at the beginning of inflation.
-\end{itemize}
-%
+Inflation can solve the initial condition problems of the Big Bang model.
+
+\begin{hangparas}{24pt}{1}
+	\textbf{Flatness}:
+	%
+	Exponential expansion dilutes curvature.
+
+	\textbf{Relics}:
+	%
+	Exponential expansion dilutes pre-existing particle number densities to zero;
+
+	\textbf{Horizon}:
+	%
+	Observable Universe is inside horizon at the beginning of inflation.
+\end{hangparas}
+
+\noindent
 However, problems with the initial conditions for inflation exist.
 Some of these criticisms include:
-%
-\begin{itemize}
-	\item What is the single scalar field \({\phi}\)? Potential candidates exist --- compactification in string theory produces large numbers of scalar fields.
-	      Why is just the one field dynamical? Is this configuration stable?
 
-	\item Is the potential \(V\) natural.
-	      The potential required for inflation needs to be smooth and flat.
-	      The \(\num{60}\) e-folds of inflation involves moving more than a Planck length in field space so would expect corrections to the potential which would destroy the desired properties.
+\begin{hangparas}{24pt}{1}
+	\textbf{Origin of the single scalar field}:
+	%
+	What is the single scalar field \({\phi}\)? Potential candidates exist --- compactification in string theory produces large numbers of scalar fields.
+	Why is just the one field dynamical? Is this configuration stable?
 
-	\item What is the probability of inflation to occur for a given inflationary model? At the possible positions to start at, what is the likelihood that a combination of \({\phi}\) and \(\dot{\phi}\) exist which let inflation to occur?
-\end{itemize}
+	\textbf{A natural interpretation for the potential}:
+	%
+	Is the potential \(V\) natural.
+	The potential required for inflation needs to be smooth and flat.
+	The \(\num{60}\) e-folds of inflation involves moving more than a Planck length in field space so would expect corrections to the potential which would destroy the desired properties.
+
+	\textbf{Probability of inflation occurring}:
+	%
+	What is the probability of inflation to occur for a given inflationary model? At the possible positions to start at, what is the likelihood that a combination of \({\phi}\) and \(\dot{\phi}\) exist which let inflation to occur?
+\end{hangparas}

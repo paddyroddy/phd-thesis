@@ -70,6 +70,7 @@ kirker
 laplace
 lceil
 ldots
+leftrightarrow
 leq
 listoffigures
 listoftables
