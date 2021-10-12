@@ -490,9 +490,12 @@ However, problems with the initial conditions exist, namely: the \emph{flatness 
 	The horizon problem arises due to CMB intensity is uniform to 1 part in \(\num{e5}\) and yet consists of \(\num{30000}\) causally disconnected regions.
 \end{hangparas}
 
-\subsubsection{Horizon Problem}
+\noindent
+The horizon problem is considered in more detail in \cref{sec:chapter2_horizon_problem}.
 
-Taking the FRW metric in conformal time, considering just radial motion
+\subsubsection{Horizon Problem}\label{sec:chapter2_horizon_problem}
+
+Taking the FRW metric in conformal time \(\tau{}\), and considering just radial motion, it follows
 %
 \begin{equation}
 	\dd{s^{2}}
@@ -500,7 +503,7 @@ Taking the FRW metric in conformal time, considering just radial motion
 	= a^{2}(\tau)(-\dd{\tau^{2}} + \dd{\chi^{2}}).
 \end{equation}
 %
-Photons travel on null geodesics \(\dd{s^{2}}=0\), their path is
+Photons travel on null geodesics \(\dd{s^{2}}=0\), and thus, their path is
 %
 \begin{equation}
 	\Delta\chi(\tau)
@@ -520,7 +523,15 @@ Assuming the Big Bang started with a singularity at \(t_{i}=0\) the greatest com
 \end{equation}
 %
 which is the particle horizon.
-Defined In \cref{eq:chapter2_particle_horizon} is the comoving Hubble parameter \(\mathcal{H}=aH\), and \(\mathcal{H}^{-1}\) is the comoving Hubble radius.
+Defined In \cref{eq:chapter2_particle_horizon} is the comoving Hubble parameter
+%
+\begin{equation}
+	\mathcal{H}
+	%
+	= aH,
+\end{equation}
+%
+and \(\mathcal{H}^{-1}\) is the comoving Hubble radius.
 For a perfect fluid \(a \propto t^{2/3(1+w)}\) and
 %
 \begin{equation}
@@ -532,7 +543,7 @@ For a perfect fluid \(a \propto t^{2/3(1+w)}\) and
 which means that both the particle horizon and the Hubble radius are both referred to as the \emph{horizon}.
 In matter domination \(\chi_{\text{ph}} \propto \sqrt{a}\) so the comoving horizon grows with time.
 Thus, regions which are out of causal contact with each other become visible.
-The CMB uniform to one part in \(\num{e5}\) however it consists of causally disconnected regions.
+The CMB is uniform to one part in \(\num{e5}\) however it consists of causally disconnected regions.
 The number of causally disconnected regions grows with volume and hence, assuming matter domination at \(z \approx \num{1100}\),
 %
 \begin{equation}

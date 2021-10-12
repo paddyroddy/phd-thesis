@@ -103,8 +103,10 @@ parameterised
 parindent
 parseval
 pdv
+ph
 phantomsection
 phd
+pl
 pollak
 postaction
 propto
