@@ -73,6 +73,7 @@ ldots
 leq
 listoffigures
 listoftables
+lvert
 makeatletter
 makeatother
 makedeclaration
@@ -87,6 +88,7 @@ multiresolution
 nabla
 neq
 nobibliography
+noindent
 nonumber
 nosep
 notin
@@ -100,6 +102,7 @@ parameterise
 parameterised
 parindent
 parseval
+pdv
 phantomsection
 phd
 pollak
@@ -110,6 +113,7 @@ renewcommand
 resizebox
 rightarrow
 roddy
+rvert
 scriptsize
 se
 secnumdepth
