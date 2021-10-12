@@ -167,7 +167,7 @@ A geodesic is a curve which extremises the proper time \(\Delta s/c\) between tw
 \begin{equation}\label{eq:chapter2_geodesic_equation}
 	\dv{U^{\mu}}{s} + \christoffel{\mu}{\alpha}{\beta} U^{\alpha} U^{\beta}
 	%
-	= 0
+	= 0,
 \end{equation}
 %
 where \(\christoffel{\mu}{\alpha}{\beta}\) are the \emph{Christoffel symbols}
@@ -181,18 +181,25 @@ where \(\christoffel{\mu}{\alpha}{\beta}\) are the \emph{Christoffel symbols}
 	%
 	+ \partial_{\beta}g_{\alpha\lambda}
 	%
-	- \partial_{\lambda}g_{\alpha\beta})
+	- \partial_{\lambda}g_{\alpha\beta}),
 \end{equation}
 %
-through the use of the notation \(\partial_{\mu} = \partial/\partial X^{\mu}\).
-\(U_{\mu}\) advances from a tangent vector to the geodesic to a vector field in the neighbourhood of the particle
+through the use of the notation
+%
+\begin{equation}
+	\partial_{\mu}
+	%
+	= \pdv{X^{\mu}}.
+\end{equation}
+%
+\(U_{\mu}\) advances from a tangent vector to the geodesic to a vector field in the neighbourhood of the particle by
 %
 \begin{equation}
 	\frac{U^{\mu}}{\dd{s}}
 	%
 	= \dv{X^{\alpha}}{s} \frac{U^{\mu}}{\dd{X^{\alpha}}}
 	%
-	= U^{\alpha} \partial_{\alpha} U^{\mu}
+	= U^{\alpha} \partial_{\alpha} U^{\mu},
 \end{equation}
 %
 such that the geodesic equation \cref{eq:chapter2_geodesic_equation} becomes
@@ -202,19 +209,27 @@ such that the geodesic equation \cref{eq:chapter2_geodesic_equation} becomes
 	%
 	= U^{\alpha} \nabla_{\alpha} U^{\mu}
 	%
-	= 0
+	= 0,
 \end{equation}
 %
-where \(\nabla_{\alpha}\) is the covariant derivative.
-Using the \emph{four-momentum} of the particle \cref{eq:chapter2_geodesic_covariant} simplifies to
+where \(\nabla_{\mu}\) is the covariant derivative.
+Using the \emph{four-momentum} of the particle
+%
+\begin{equation}
+	P^{\mu}
+	%
+	= m U^{\mu},
+\end{equation}
+%
+it follows that
 %
 \begin{equation}
 	P^{\alpha} \partial_{\alpha} P^{\mu}
 	%
-	= -\christoffel{\mu}{\alpha}{\beta} P^{\alpha} P^{\beta}
+	= -\christoffel{\mu}{\alpha}{\beta} P^{\alpha} P^{\beta},
 \end{equation}
 %
-which also works for massless particles.
+which also holds for massless particles.
 
 \subsubsection{Redshift}
 
