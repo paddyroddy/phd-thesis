@@ -300,15 +300,16 @@ Due to the assumptions of homogeneity and isotropy the energy-momentum tensor mu
 \begin{equation}\label{eq:chapter2_energy_momentum}
 	T_{\mu\nu}
 	%
-	= (\rho + P) U_{\mu} U_{\nu} + P g_{\mu\nu}.
+	= (\rho + P) U_{\mu} U_{\nu} + P g_{\mu\nu},
 \end{equation}
 %
+where \(\rho{}\) and \(P\) are the density and pressure of the fluid respectively.
 The conservation of the energy-momentum tensor
 %
 \begin{equation}
 	\nabla_{\mu} T^{\mu}_{\nu}
 	%
-	= 0
+	= 0,
 \end{equation}
 %
 implies the continuity equation
@@ -319,7 +320,7 @@ implies the continuity equation
 	= 0.
 \end{equation}
 %
-Assuming a constant equation of state
+By assuming a constant equation of state
 %
 \begin{equation}
 	w
@@ -327,7 +328,7 @@ Assuming a constant equation of state
 	= \frac{\rho}{P}
 \end{equation}
 %
-\cref{eq:chapter2_continuity} becomes
+in \cref{eq:chapter2_continuity}, the density evolves as
 %
 \begin{equation}\label{eq:chapter2_density_equation}
 	\rho
@@ -337,10 +338,10 @@ Assuming a constant equation of state
 %
 The Universe comprises a mixture of different matter components.
 This includes cold dark matter (\(w=0\)), radiation (\(w=1/3\)) and vacuum energy (\(w=-1\)).
-The solutions to \cref{eq:chapter2_density_equation} are
+The solutions to \cref{eq:chapter2_density_equation} are therefore
 %
 \begin{equation}
-	\rho =
+	\rho \propto
 	%
 	\begin{cases}
 		a^{-3} & \text{matter, \ie{} cold dark matter and baryons};           \\
@@ -367,7 +368,7 @@ and
 	= 8\pi G P.
 \end{equation}
 %
-Combining these with the energy-momentum tensor \cref{eq:chapter2_energy_momentum}, retrieves the \emph{Friedmann equations}.
+Combining these with the energy-momentum tensor \cref{eq:chapter2_energy_momentum}, one retrieves the \emph{Friedmann equations}.
 These are the fundamental equations governing the evolution of the Universe:
 %
 % resume numbering after Friedmann equations
@@ -425,24 +426,24 @@ The Friedmann equations now become
 	= H_{0}^{2} (\Omega_{r}a^{-4} + \Omega_{m}a^{-3} + \Omega_{k}a^{-2} + \Omega_{\Lambda}),
 \end{equation}
 %
-where one drops the subscript \(0\), and uses the normalisation of the scale factor \(a_{0}=1\).
+where the subscript \(0\) has been dropped, and the normalisation of the scale factor \(a_{0}=1\) has been used.
 The curvature density parameter is
 %
 \begin{equation}
 	\Omega_{k}
 	%
-	= -\frac{a}{{(aH_{0})}^{2}}.
+	= -\frac{a}{{(aH_{0})}^{2}},
 \end{equation}
 %
-Such that \cref{eq:chapter2_F1} becomes
+such that \cref{eq:chapter2_F1} becomes
 %
 \begin{equation}
 	{\bigg(\frac{\dot{a}}{a}\bigg)}^{2}
 	%
-	= H_{0}^{2} \Omega a^{-3(1+w)}
+	= H_{0}^{2} \Omega a^{-3(1+w)}.
 \end{equation}
 %
-and solve for the scale factor in each era:
+Thus, the scale factor evolves in each era as:
 %
 \begin{equation}
 	a(t) \propto
