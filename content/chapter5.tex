@@ -316,7 +316,7 @@ The sifting convolution~\cite{Roddy2021}, defined in \cref{sec:chapter3}, allows
 By leveraging this convolution, the wavelet transforms in the Slepian domain are built on a region of the sphere (\cf{} manifold) to ensure exact reconstruction.
 Convolutions are typically not well-defined on manifolds.
 The sifting convolution, however, is a product in Fourier space and as such can be applied effectively to manifolds.
-Note that performing convolutions on manifolds has been considered before; for example, in geometric deep learning, where convolutional neural network (CNN) models have been generalised to graphs by leveraging convolutions in the spectral-domain~\cite{Bruna2014,Henaff2015,Defferrard2016}.
+Note that performing convolutions on manifolds has been considered before; for example, in geometric deep learning, where convolutional neural network (CNN) models have been generalised to graphs by leveraging convolutions in the spectral-domain~\cite{Bruna2014,Henaff2015,Defferrard2016}, which are analogous to the sifting convolution.
 In \cref{sec:chapter5_working_with_manifolds}, the Slepian spatial-spectral concentration problem is presented in the manifold setting --- in particular, the spatial concentration of a bandlimited function.
 The sifting convolution is then defined similarly, allowing for wavelet transforms on the manifold to be constructed.
 Whilst all formulae are given explicitly in the manifold setting (through continuous integrals), they can be trivially extended to graphs through summations.
@@ -550,10 +550,7 @@ It can be shown that the translation operator is a sifting convolution of a func
 %
 where the first and last lines follow by \cref{eq:chapter5_harmonic_convolution} and \cref{eq:chapter5_translation_mesh} respectively.
 The sifting convolution and translation of the manifold are therefore natural analogues of their respective Euclidean operators.
-
-Similar convolutions on manifolds have been considered before, such as in the construction of graph CNNs,
-in which the convolutions developed in the Euclidean setting are extended to the graph domain~\cite{Bruna2014,Henaff2015,Defferrard2016}.
-This convolution can be used to define wavelets restricted to a region of the manifold using the basis functions introduced in \cref{sec:chapter5_slepian_concentration_problem_manifolds} in the translation.
+In \cref{sec:chapter5_slepian_wavelets}, this convolution is leveraged to define wavelets restricted to a region of the manifold using the basis functions introduced in \cref{sec:chapter5_slepian_concentration_problem_manifolds}.
 
 \section{Slepian Wavelets}\label{sec:chapter5_slepian_wavelets}
 
