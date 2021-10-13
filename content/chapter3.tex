@@ -173,11 +173,11 @@ as
 \begin{align}
 	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{f}
 	%
-	 & = \integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{f} \nonumber{}                                      \\
+	 & = \integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{f} \nonumber{}                                                                                \\
 	%
-	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \harmonicSum['] \harmonic[']{f} \pixel{\harmonic[']{Y}} \nonumber{}     \\
+	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \harmonicSum['] \harmonic[']{f} \pixel{\harmonic[']{Y}} \nonumber{} \\
 	%
-	 & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \nonumber{} \\
+	 & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \nonumber{}                                                                                                 \\
 	%
 	 & = \pixel[']{f},
 \end{align}
@@ -637,7 +637,7 @@ First, consider the standard axisymmetric Gaussian on the sphere, \ie{}
 %
 where \(\sigma{}\) is the standard deviation of the Gaussian.
 \cref{fig:chapter3_gaussian} presents the Gaussian kernel (left panel) and the result of the translation (right panel); where it is clear that the axisymmetric symmetry is preserved.
-This function has no directional components and is therefore unsuitable for general convolution purposes.
+This function has no directional components and is therefore only useful for some convolution purposes.
 
 \input{figures/chapter3/gaussian}
 
@@ -655,8 +655,7 @@ Define the \emph{squashed Gaussian} in real space as the standard Gaussian (\ie{
 %
 where \(\mean{\theta}\)/\(\sigma_{\theta}\) and \(\nu_{\phi}\) are parameters controlling the mean/standard deviation of the Gaussian and the frequency of the sine wave respectively.
 The squashed Gaussian kernel is shown in the left panel of \cref{fig:chapter3_squashed_gaussian}, and the translated kernel is shown in the right panel.
-The odd symmetry in the kernel definition results in the axisymmetric translated function.
-Evidently, the squashed Gaussian is not suitable for smoothing purposes as the behaviour is analogous to the axisymmetric Gaussian case.
+Under translation, the odd symmetry in the kernel definition is preserved; and hence, the squashed Gaussian is not suitable for smoothing purposes.
 
 \input{figures/chapter3/squashed_gaussian}
 
@@ -694,6 +693,7 @@ Note this function is not real --- if required one can define only the positive 
 The function is directional, and hence, is useful in illustrating the effect of the sifting convolution on the sphere.
 Consider two differently sized harmonic Gaussians on the sphere to see the effect on the sifting convolution.
 \cref{fig:chapter3_harmonic_gaussian} shows both an elongated (top-left panel) and symmetric (top-right panel) harmonic Gaussians on the north pole, with the result of the corresponding translations in the bottom-left and bottom-right panels respectively.
+In contrast to the other kernels, the harmonic Gaussian seems the most appropriate for anisotropic smoothing as it translates to a single point.
 
 \input{figures/chapter3/harmonic_gaussian}
 
