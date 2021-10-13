@@ -1,7 +1,7 @@
 \chapter{Sifting Convolution on the Sphere}\label{sec:chapter3}
 
 A novel spherical convolution is defined through the sifting property of the Dirac delta on the sphere.
-The so-called sifting convolution is defined by the inner product of one function with a translated version of another, but with the adoption of an alternative translation operator on the sphere.
+The so-called sifting convolution is defined by the inner product of one function with a translated version of another, that follows by the adoption of an alternative translation operator on the sphere.
 This translation operator follows by analogy with the Euclidean translation when viewed in harmonic space.
 The sifting convolution satisfies a variety of desirable properties that are lacking in alternate definitions, namely: it supports directional kernels; it has an output which remains on the sphere; and is efficient to compute.
 An illustration of the sifting convolution on a topographic map of the Earth demonstrates that it supports directional kernels to perform anisotropic filtering, while its output remains on the sphere.
@@ -90,19 +90,19 @@ The phase convention adopted here is
 \begin{equation}\label{eq:chapter3_spherical_harmonic_phase}
 	\pixel{\conj{\harmonic{Y}}}
 	%
-	= {(-1)}^{m} \pixel{Y_{\ell(-m)}}
+	= {(-1)}^{m} \pixel{Y_{\ell(-m)}},
 \end{equation}
 %
 such that
 %
-\begin{equation}\label{eq:chapter3_f_phase}
+\begin{equation}
 	\conj{\harmonic{f}}
 	%
 	= {(-1)}^{m} f_{\ell(-m)}
 \end{equation}
 %
 for a real field.
-One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signals such that \(\harmonic{f} = 0,\ \forall \ell \geq L\); and adopts the shorthand notation
+One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signals such that \(\harmonic{f} = 0,\ \forall \ell \geq L\), and adopts the shorthand notation
 %
 \begin{equation}
 	\harmonicSum
@@ -159,11 +159,11 @@ as
 	 & = 1,
 \end{align}
 %
-where the second and third lines follow by: substituting \(\sqrt{4\pi}\pixel{Y_{00}}=1\) (\cf{} \cref{eq:chapter3_spherical_harmonic}) and the orthonormality of the spherical harmonics respectively.
+where the second and third lines follow by substituting \(\sqrt{4\pi}\pixel{Y_{00}}=1\) (\cf{} \cref{eq:chapter3_spherical_harmonic}) and the orthonormality of the spherical harmonics respectively.
 The sifting property of the Dirac delta is
 %
 \begin{equation}
-	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{\conj{f}}
+	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{f}
 	%
 	= \pixel[']{f},
 \end{equation}
@@ -171,22 +171,18 @@ The sifting property of the Dirac delta is
 as
 %
 \begin{align}
-	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{\conj{f}}
+	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{f}
 	%
-	 & = \integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{\conj{f}} \nonumber{}                                      \\
+	 & = \integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{f} \nonumber{}                                      \\
 	%
-	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \pixel{\conj{f}} \nonumber{}     \\
+	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \harmonicSum['] \harmonic[']{f} \pixel{\harmonic[']{Y}} \nonumber{}     \\
 	%
-	 & = \harmonicSum \pixel[']{\harmonic{Y}} \integrateSphere{\omega} {(-1)}^{m} \pixel{Y_{\ell(-m)}} \pixel{\conj{f}} \nonumber{} \\
-	%
-	 & = \harmonicSum \pixel[']{\harmonic{Y}} {(-1)}^{m} \conj{f_{\ell(-m)}} \nonumber{}                                            \\
-	%
-	 & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \nonumber{}                                                              \\
+	 & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \nonumber{} \\
 	%
 	 & = \pixel[']{f},
 \end{align}
 %
-where the first line holds due to the reality of the Dirac delta \cref{eq:chapter3_dirac_delta_real}, and the middle lines follow by the phase conventions \cref{eq:chapter3_spherical_harmonic_phase,eq:chapter3_f_phase}.
+where the first line holds due to the reality of the Dirac delta \cref{eq:chapter3_dirac_delta_real}.
 
 \subsubsection{Rotation of a Signal on the 2-Sphere}
 
@@ -225,14 +221,16 @@ where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} given by
 \end{equation}
 %
 which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
-The \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention, and satisfy
+The \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention and satisfy many symmetry relations.
+One such symmetry relation is
 %
 \begin{equation}\label{eq:chapter3_reduced_wigner_symmetry}
 	\reducedWigner{\ell}{m'}{m}(-\beta)
 	%
-	= \reducedWigner{\ell}{m}{m'}(\beta).
+	= \reducedWigner{\ell}{m}{m'}(\beta),
 \end{equation}
 %
+which is explicitly used later.
 Note the proportionality of the axisymmetric rotation matrices and the spherical harmonics:
 %
 \begin{equation}\label{eq:chapter3_wigner_axisymmetric}
