@@ -16,6 +16,7 @@ chktex
 circledast
 circledcirc
 circleddash
+colatitudinal
 color
 config
 conj

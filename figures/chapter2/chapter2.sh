@@ -1,6 +1,7 @@
 #!/bin/bash
 L=128
 l_max=4
+PLOTS=$HOME/project/src/s2sleplet/pys2sleplet/plotting/polar_cap
 
 for l in $(seq 0 $l_max); do
     for m in $(seq 0 $l); do
@@ -11,3 +12,6 @@ for l in $(seq 0 $l_max); do
             -z
     done
 done
+
+echo fried egg
+python $PLOTS/fried_egg.py
