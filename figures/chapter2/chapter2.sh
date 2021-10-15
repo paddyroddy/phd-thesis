@@ -15,3 +15,9 @@ done
 
 echo fried egg
 python $PLOTS/fried_egg.py
+
+echo colatidue
+python $PLOTS/eigenfunctions.py
+
+echo eigenvalues
+python $PLOTS/eigenvalues.py
