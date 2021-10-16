@@ -23,10 +23,11 @@ RANK_RANGE=$(seq 2 9)
 SIGMA=1
 SNR=-5
 
-for r in ${RANK_RANGE[@]}; do
+for r in $RANK_RANGE; do
     echo figure: 2, r: $r
     mesh $MESH \
-        -e $r
+        -e $r \
+        -u
 done
 
 echo figure: 4

@@ -25,6 +25,7 @@ for l in $ELL_RANGE; do
         sphere spherical_harmonic \
             -e $l $m \
             -L $L \
+            -u \
             -z
     done
 done
