@@ -90,6 +90,7 @@ parindent
 parseval
 phantomsection
 phd
+planck
 pollak
 postaction
 rceil
