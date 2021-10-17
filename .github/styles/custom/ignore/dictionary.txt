@@ -45,6 +45,7 @@ fwhm
 gaussian
 gaussians
 geq
+giga
 hangparas
 helvetica
 hfill
