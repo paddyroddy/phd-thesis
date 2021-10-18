@@ -126,7 +126,36 @@ The two sub-spaces of interest of all square-integrable functions on the sphere 
 Similar to the Euclidean setting, no function can be strictly spacelimited as well as strictly bandlimited, \ie{} no \(\pixel{f}\) can be in both sub-spaces \(\spaceSpacelimit{}\) and \(\spaceBandlimit{}\) at the same time.
 Thus, one may find either: the spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) whose spectrum is optimally concentrated within the interval \(0 \leq \ell < L\), or the bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) which are optimally concentrated within a region \(R\).
 
-
+To maximise the concentration of a spacelimited function \(\pixel{h} \in \spaceSpacelimit{}\) within an interval \(0 \leq \ell < L\) one must maximise the ratio:
+%
+\begin{equation}\label{eq:chapter2_spacelimited_ratio}
+	\mu
+	%
+	= \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \displaystyle\sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}}
+	%
+	{\displaystyle\sum\limits_{\ell=0}^{\infty} \displaystyle\sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}},
+\end{equation}
+%
+which is analogous to the one-dimensional problem \cref{eq:chapter2_timelimited_ratio}.
+By substituting the expansion of the spherical harmonic coefficients
+%
+\begin{equation}
+	\harmonic{h}
+	%
+	= \integrateRegion{\sphereVolume} \pixel{h} \pixel{\harmonic{Y}},
+\end{equation}
+%
+and swapping the order of summation and integration, the variational problem \cref{eq:chapter2_spacelimited_ratio} becomes
+%
+\begin{equation}
+	\mu
+	%
+	= \frac{\integrateRegion{\sphereVolume} \integrateRegion{\sphereVolume[']} \pixel{h} D(\omega,\omega') \pixel{\conj{h}}}
+	%
+	{\integrateRegion{\sphereVolume} \abs{\pixel[']{h}}^{2}},
+\end{equation}
+%
+where \(D(\omega,\omega')\) is the bandlimited Dirac delta function.
 
 \input{figures/chapter2/slepian_polar_cap}
 
