@@ -74,7 +74,7 @@ By the completeness of spherical harmonics, any \(f \in \hilbert{\twoSphere}\) m
 \begin{equation}
 	\pixel{f}
 	%
-	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
+	= \displaystyle\sum\limits_{\ell=0}^{\infty} \displaystyle\sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
 \end{equation}
 %
 where \(\harmonic{f}\) are the spherical harmonic coefficients given by
@@ -107,7 +107,7 @@ One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signa
 \begin{equation}
 	\harmonicSum
 	%
-	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell}.
+	= \displaystyle\sum\limits_{\ell=0}^{L-1} \displaystyle\sum\limits_{m=-\ell}^{\ell}.
 \end{equation}
 
 \subsubsection{Dirac Delta}
@@ -129,7 +129,7 @@ which can be shown to be real
 	%
 	 & = \harmonicSum {(-1)}^{m} \pixel[']{Y_{\ell(-m)}} {(-1)}^{m} \pixel{\conj{Y_{\ell(-m)}}} \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell m'} \pixel[']{Y_{\ell m'}} \pixel{\conj{Y_{\ell m'}}} \nonumber{}                \\
+	 & = \displaystyle\sum\limits_{\ell m'} \pixel[']{Y_{\ell m'}} \pixel{\conj{Y_{\ell m'}}} \nonumber{}                \\
 	%
 	 & = \pixel{\conj{\delta_{\omega'}}},
 \end{align}
@@ -209,7 +209,7 @@ The spherical harmonic coefficients of a rotated function read
 \begin{equation}\label{eq:chapter3_rotation_matrix}
 	\harmonic{(\rotation{\rho}f)}
 	%
-	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) f_{\ell m'},
+	= \displaystyle\sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) f_{\ell m'},
 \end{equation}
 %
 where \(\wigner{\ell}{m'}{m}(\rho)\) are \emph{Wigner D matrices} given by
@@ -246,7 +246,7 @@ The conventional convolution between two functions on two-dimensional Euclidean 
 \begin{equation}
 	(f \star g)(x)
 	%
-	= \int\limits_{\mathbb{R}^{2}} \dd{y} f(x-y) g(y),
+	= \displaystyle\int\limits_{\mathbb{R}^{2}} \dd{y} f(x-y) g(y),
 \end{equation}
 %
 where \(x,\ y \in \mathbb{R}^{n}\).
@@ -344,9 +344,9 @@ To prove this, first consider the forward harmonic transform
 	%
 	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \conj{\harmonic{Y}}(\rho\omega) \nonumber{}                                                                      \\
 	%
-	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \sum\limits_{m'=-\ell}^{\ell} \conj{\big( \wigner{\ell}{m'}{m}(\rho^{-1}) \pixel{Y_{\ell m'}} \big)} \nonumber{} \\
+	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \displaystyle\sum\limits_{m'=-\ell}^{\ell} \conj{\big( \wigner{\ell}{m'}{m}(\rho^{-1}) \pixel{Y_{\ell m'}} \big)} \nonumber{} \\
 	%
-	 & = \sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho),
+	 & = \displaystyle\sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho),
 \end{align}
 %
 where the last line follows by (\cf{} \cref{eq:chapter3_reduced_wigner_define,eq:chapter3_reduced_wigner_symmetry})
@@ -381,7 +381,7 @@ Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be th
 	%
 	 & = \axiHarmonic{g} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                               \\
 	%
-	 & = \axiHarmonic{g} \int\limits_{0}^{2\pi} \dd{\gamma} \integrateSphere{\omega} \pixel{f} \sqrt{\inverseFactor} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
+	 & = \axiHarmonic{g} \displaystyle\int\limits_{0}^{2\pi} \dd{\gamma} \integrateSphere{\omega} \pixel{f} \sqrt{\inverseFactor} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
 	%
 	 & = 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
 \end{align}
@@ -414,7 +414,7 @@ Upon expanding in harmonic space, this becomes (\eg{}~\cite{McEwen2007,Wandelt20
 \begin{equation}
 	(f \circledast g) (\rho)
 	%
-	= \harmonicSum \harmonic{f} \sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m'}{m}(\rho) g_{\ell m'}\big)},
+	= \harmonicSum \harmonic{f} \displaystyle\sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m'}{m}(\rho) g_{\ell m'}\big)},
 \end{equation}
 %
 as
@@ -428,7 +428,7 @@ as
 	%
 	 & = \harmonicSum \harmonic{f} \conj{\harmonic[']{(\rotation{\rho}g)}} \nonumber{}                                                                                              \\
 	%
-	 & = \harmonicSum \harmonic{f} \sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m'}{m}(\rho) g_{\ell m'}\big)},
+	 & = \harmonicSum \harmonic{f} \displaystyle\sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m'}{m}(\rho) g_{\ell m'}\big)},
 \end{align}
 %
 and hence, the output is on \(\rotationGroup{}\).
@@ -456,7 +456,7 @@ which on expansion reads
 \begin{equation}
 	\pixel{(f \oplus g)}
 	%
-	= \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}},
+	= \harmonicSum \displaystyle\sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}},
 \end{equation}
 %
 as
@@ -470,7 +470,7 @@ as
 	%
 	 & = \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \conj{\harmonic{g}} \nonumber{}                                                                                                        \\
 	%
-	 & = \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
+	 & = \harmonicSum \displaystyle\sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
 \end{align}
 %
 The limitation here is that one must specify the initial rotation as \({\gamma=\pi-\alpha}\) in order for the convolution to be commutative.

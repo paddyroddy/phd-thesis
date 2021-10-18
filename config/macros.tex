@@ -55,7 +55,7 @@
 \newcommand{\harmonic}[2][]{{#2}_{\ell#1 m#1}}
 
 % spherical harmonic sum
-\newcommand{\harmonicSum}[1][]{\sum\limits_{\ell#1 m#1}}
+\newcommand{\harmonicSum}[1][]{\displaystyle\sum\limits_{\ell#1 m#1}}
 
 % Hermitian conjugate
 \newcommand{\hermitian}[1]{#1^{\dagger}}
@@ -67,16 +67,16 @@
 \newcommand{\imax}{i_{\text{max}}}
 
 % integrate over the manifold
-\newcommand{\integrateManifold}[1]{\int\limits_{\mathcal{M}} \dd{#1}}
+\newcommand{\integrateManifold}[1]{\displaystyle\int\limits_{\mathcal{M}} \dd{#1}}
 
 % integrate over the region
-\newcommand{\integrateRegion}[1]{\int\limits_{R} #1}
+\newcommand{\integrateRegion}[1]{\displaystyle\int\limits_{R} #1}
 
 % intergral over SO3
-\newcommand{\integrateRotation}[1]{\int\limits_{\text{SO(3)}} \dd{\rho(#1)}} % chktex 36
+\newcommand{\integrateRotation}[1]{\displaystyle\int\limits_{\text{SO(3)}} \dd{\rho(#1)}} % chktex 36
 
 % integral over S2
-\newcommand{\integrateSphere}[1]{\int\limits_{\mathbb{S}^{2}} \dd{\Omega(#1)}}
+\newcommand{\integrateSphere}[1]{\displaystyle\int\limits_{\mathbb{S}^{2}} \dd{\Omega(#1)}}
 
 % inverse spherical harmonic factor
 \newcommand{\inverseFactor}[1][]{\frac{4\pi}{2\ell#1+1}}
@@ -95,8 +95,8 @@
 \newcommand{\meshY}[1]{#1(y)}
 
 % summing in harmonic space of the mesh
-\newcommand{\meshSum}{\sum\limits_{i}}
-\newcommand{\meshYSum}{\sum\limits_{j}}
+\newcommand{\meshSum}{\displaystyle\sum\limits_{i}}
+\newcommand{\meshYSum}{\displaystyle\sum\limits_{j}}
 
 % volume element of the mesh
 \newcommand{\meshVolume}{\dd{x}}
@@ -123,7 +123,7 @@
 \newcommand{\slepian}[2][]{{#2}_{p#1}}
 
 % Slepian sum
-\newcommand{\slepianSum}[1][]{\sum\limits_{p#1}}
+\newcommand{\slepianSum}[1][]{\displaystyle\sum\limits_{p#1}}
 
 % signal-to-noise
 \newcommand{\snr}[1]{\text{SNR}(#1)} % chktex 36
@@ -153,4 +153,4 @@
 \newcommand{\wigner}[4][]{D^{#2#1}_{#3#4}}
 
 % sum over wavelet coefficients
-\newcommand{\waveletSum}{\sum\limits_{j=J_{0}}^{J}}
+\newcommand{\waveletSum}{\displaystyle\sum\limits_{j=J_{0}}^{J}}

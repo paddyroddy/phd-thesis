@@ -128,7 +128,7 @@ A function \(f \in \hilbert{\manifold}\) can therefore be decomposed into this b
 \begin{equation}
 	\mesh{f}
 	%
-	= \sum\limits_{i=1}^{\imax} f_{i} \mesh{\psi_{i}},
+	= \displaystyle\sum\limits_{i=1}^{\imax} f_{i} \mesh{\psi_{i}},
 \end{equation}
 %
 where \(f_{i}\) are the Fourier coefficients given by the usual projection onto the basis functions
@@ -160,7 +160,7 @@ The graph divergence operator \(\div: \hilbert{\edges} \to \hilbert{\vertices}\)
 \begin{equation}\label{eq:chapter5_graph_div}
 	{(\div F)}_{i}
 	%
-	= \frac{1}{a_{i}} \sum\limits_{j : (i,j) \in \edges} w_{i j} F_{i j}.
+	= \frac{1}{a_{i}} \displaystyle\sum\limits_{j : (i,j) \in \edges} w_{i j} F_{i j}.
 \end{equation}
 %
 The graph Laplacian is an operator \(\laplace{G} : \hilbert{\vertices} \to \hilbert{\vertices}\) defined as
@@ -178,7 +178,7 @@ By substituting the definitions of the gradient \cref{eq:chapter5_graph_grad} an
 \begin{equation}\label{eq:chapter5_graph_laplace_indices}
 	{(\laplace{G} f)}_{i}
 	%
-	= \frac{1}{a_{i}} \sum\limits_{(i,j) \in \edges} w_{i j} (f_{i} - f_{j}).
+	= \frac{1}{a_{i}} \displaystyle\sum\limits_{(i,j) \in \edges} w_{i j} (f_{i} - f_{j}).
 \end{equation}
 %
 Intuitively, this captures the geometric interpretation of the Laplacian --- as the difference between the local average of a function around a point and the value of the function itself at that point.
@@ -211,7 +211,7 @@ are the vertex weights,
 \begin{equation}
 	\vb*{K}
 	%
-	= \diag{\sum\limits_{j: j \neq i} w_{i j}}
+	= \diag{\displaystyle\sum\limits_{j: j \neq i} w_{i j}}
 \end{equation}
 %
 is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb*{f}\).
@@ -252,7 +252,7 @@ The corresponding vertex weights of the mesh Laplacian are
 \begin{equation}\label{eq:chapter5_vertex_weight}
 	a_{i}
 	%
-	= \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{i j k},
+	= \frac{1}{3} \displaystyle\sum\limits_{j k : (i,j,k) \in \faces} a_{i j k},
 \end{equation}
 %
 which results in the red hexagonal region in \cref{fig:chapter5_mesh_laplace}.
@@ -413,7 +413,7 @@ The Slepian functions provide an alternative orthogonal basis of the manifold, d
 \begin{equation}
 	\mesh{f}
 	%
-	= \sum\limits_{p=1}^{\imax} \slepian{f} \mesh{\slepian{S}},
+	= \displaystyle\sum\limits_{p=1}^{\imax} \slepian{f} \mesh{\slepian{S}},
 \end{equation}
 %
 where the sum is over all basis functions of the manifold.
@@ -422,7 +422,7 @@ For a well-localised function in the region \(R\) (\ie{} \(f \in \hilbert{R}\)) 
 \begin{equation}
 	\mesh{f}
 	%
-	\approx \sum\limits_{p=1}^{N} \slepian{f} \mesh{\slepian{S}}
+	\approx \displaystyle\sum\limits_{p=1}^{N} \slepian{f} \mesh{\slepian{S}}
 	%
 	= \slepianSum \slepian{f} \mesh{\slepian{S}},
 \end{equation}
