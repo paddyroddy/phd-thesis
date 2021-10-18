@@ -19,34 +19,97 @@ In this chapter the mathematical background that later chapters rely on is intro
 \subsection{Euclidean}
 
 Before considering the Slepian spatial-spectral concentration problem in the spherical domain, first consider the one-dimensional, continuous-continuous, time-frequency concentration problem.
-Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(F(\omega)\) are related by
+Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(F(\varpi)\) are related by
 %
 \begin{equation}
 	f(t)
 	%
-	= \frac{1}{2\pi} \int\limits_{\infty}^{\infty} F(\omega) \exp(i\omega t) \dd{\omega}
+	= \frac{1}{2\pi} \int\limits_{\infty}^{\infty} F(\varpi) \exp(i\varpi t) \dd{\varpi}
 \end{equation}
 %
 and
 %
 \begin{equation}
-	F(\omega)
+	F(\varpi)
 	%
-	= \int\limits_{\infty}^{\infty} f(t) \exp(-i\omega t) \dd{\omega},
+	= \int\limits_{\infty}^{\infty} f(t) \exp(-i\varpi t) \dd{\varpi},
 \end{equation}
 %
-where \(t\) and \(\omega{}\) denote the time and angular frequency respectively.
-Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concentrating a strictly bandlimited signal \(f(t)\), with a spectrum \(F(\omega)\) which disappears into a time interval \(\abs{t} < T\) for frequencies \(\abs{\omega} < W\).
-As a result of the \emph{Paley-Wiener} theorem, no bandlimited signal \(f(t)\) can be perfectly concentrated within a finite interval~\cite{Daubechies1992,Mallat2008}.
-A signal is considered optimally concentrated if it has the least energy outside the interval
+where \(t\) and \(\varpi{}\) denote the time and angular frequency respectively.
+Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concentrating a strictly bandlimited signal \(f(t)\), with a spectrum \(F(\varpi)\) which disappears into a time interval \(\abs{t} \leq T\) for frequencies \(\abs{\varpi} < W\).
+Through the \emph{Paley-Wiener} theorem, no bandlimited signal \(g(t)\) can be exactly concentrated within a finite interval~\cite{Daubechies1992,Mallat2008}.
+To find the optimally concentrated signal, one must maximise the following ratio:
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_bandlimited_ratio}
 	\mu
 	%
-	= \frac{\int\limits_{-T}^{T} f^{2}(t) \dd{t}}{\int\limits_{-\infty}^{\infty} f^{2}(t) \dd{t}}
+	= \frac{\int\limits_{-T}^{T} g^{2}(t) \dd{t}}{\int\limits_{-\infty}^{\infty} g^{2}(t) \dd{t}},
 \end{equation}
+%
+although other criteria have been considered~\cite{Freeden1997,Riedel1995}.
+Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_bandlimited_ratio} have spectra \(G(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
+%
+\begin{equation}
+	\int\limits_{-W}^{W} \frac{\sin T(\varpi-\varpi')}{\pi(\varpi-\varpi')} G(\varpi') \dd{\varpi'}
+	%
+	= \mu G(\varpi),
+\end{equation}
+%
+where \(\abs{\varpi} \leq W\).
 
-~\cite{Freeden1997,Riedel1995}.
+Slepian also considered the similar case of concentrating the spectrum \(H(\varpi)\) of a strictly timelimited function \(h(t)\), which disappears into a spectral interval \(\abs{\varpi} \leq W\) for times \(\abs{t} < T\).
+The ratio to maximise here is
+%
+\begin{equation}\label{eq:chapter2_timelimited_ratio}
+	\mu
+	%
+	= \frac{\int\limits_{-W}^{W} \abs{H(\varpi)}^{2} \dd{\varpi}}{\int\limits_{-\infty}^{\infty} \abs{H(\varpi)}^{2} \dd{\varpi}},
+\end{equation}
+%
+which results in the time-domain eigenproblem
+%
+\begin{equation}
+	\int\limits_{-T}^{T} \frac{\sin W(t-t')}{\pi(t-t')} h(t') \dd{t'}
+	%
+	= \mu h(t),
+\end{equation}
+%
+where \(\abs{t} < T\).
+In either case, the eigenvalues (which represent effective concentration) satisfy
+%
+\begin{equation}
+	1 > \mu_{1} \geq \mu_{2} \geq \ldots > 0, % chktex 11
+\end{equation}
+%
+with associated eigenfunctions, \eg{}
+%
+\begin{equation}
+	g_{1}(t),\ g_{2}(t),\ \ldots
+\end{equation}
+%
+which exist in the interval \(\abs{t} \leq T\).
+Through a change of variables, the ratios \cref{eq:chapter2_bandlimited_ratio,eq:chapter2_timelimited_ratio} may be transformed into one dimensionless eigenproblem:
+%
+\begin{equation}
+	\int\limits_{-1}^{1} \frac{\sin TW(x-x')}{\pi(x-x')} \psi(x') \dd{x'}
+	%
+	= \mu \psi(x),
+\end{equation}
+%
+where \(\abs{x} \leq 1\).
+Hence, the eigenvalues and scaled eigenfunctions only depend on the time-bandwith product \(TW\).
+Consider the sum of the eigenvalues
+%
+\begin{equation}
+	N
+	%
+	= \sum\limits_{\alpha=1}^{\infty} \mu_{\alpha}
+	%
+	= \frac{2TW}{\pi}.
+\end{equation}
+%
+The so-called Shannon number~\cite{Percival1993} \(N\) introduced here is a good estimate of the number of significant eigenvalues, which arises due to the characteristic shape of the eigenvalue spectrum~\cite{Landau1965,Slepian1965}.
+Equivalently, this can be viewed as the number of signals \(f(t)\) which can be well-concentrated both into a finite time interval \(\abs{t} \leq T\) and a finite frequency interval \(\abs{\varpi} \leq W\).
 
 \subsection{Sphere}
 

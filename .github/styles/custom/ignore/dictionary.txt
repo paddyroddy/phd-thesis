@@ -121,6 +121,7 @@ textwidth
 thresholded
 thresholding
 tikzpicture
+timelimited
 toc
 tocdepth
 toprule
@@ -130,6 +131,7 @@ uk
 url
 usepackage
 varphi
+varpi
 vb
 vdots
 wigner
