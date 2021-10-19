@@ -44,16 +44,16 @@ Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concen
 Through the \emph{Paley-Wiener} theorem, no bandlimited signal \(g(t)\) can be exactly concentrated within a finite interval~\cite{Daubechies1992,Mallat2008}.
 To find the optimally concentrated signal, one must maximise the following ratio:
 %
-\begin{equation}\label{eq:chapter2_bandlimited_ratio}
+\begin{equation}\label{eq:chapter2_frequency_ratio}
 	\mu
 	%
-	= \frac{\displaystyle\int\limits_{-T}^{T} \dd{t} g^{2}(t)}
+	= \frac{\displaystyle\int\limits_{-T}^{T} \dd{t} \abs{g(t)}^{2}}
 	%
-	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{t} g^{2}(t)},
+	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{t} \abs{g(t)}^{2}},
 \end{equation}
 %
 although other criteria have been considered~\cite{Freeden1997,Riedel1995}.
-Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_bandlimited_ratio} have spectra \(G(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
+Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_frequency_ratio}, have spectra \(G(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
 %
 \begin{equation}\label{eq:chapter2_frequency_eigenproblem}
 	\int\limits_{-W}^{W} \dd{\varpi'} \frac{\sin T(\varpi-\varpi')}{\pi(\varpi-\varpi')} G(\varpi')
@@ -66,7 +66,7 @@ where \(\abs{\varpi} \leq W\).
 Slepian also considered the similar case of concentrating the spectrum \(H(\varpi)\) of a strictly timelimited function \(h(t)\), which disappears into a spectral interval \(\abs{\varpi} \leq W\) for times \(\abs{t} < T\).
 The ratio to maximise here is
 %
-\begin{equation}\label{eq:chapter2_timelimited_ratio}
+\begin{equation}\label{eq:chapter2_time_ratio}
 	\mu
 	%
 	= \frac{\displaystyle\int\limits_{-W}^{W} \dd{\varpi} \abs{H(\varpi)}^{2}}
@@ -96,7 +96,7 @@ with associated eigenfunctions, \eg{}
 \end{equation}
 %
 which exist in the interval \(\abs{t} \leq T\).
-Through a change of variables, the ratios \cref{eq:chapter2_bandlimited_ratio,eq:chapter2_timelimited_ratio} may be transformed into one dimensionless eigenproblem:
+Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into one dimensionless eigenproblem:
 %
 \begin{equation}
 	\int\limits_{-1}^{1} \dd{x'} \frac{\sin TW(x-x')}{\pi(x-x')} \psi(x')
@@ -126,6 +126,8 @@ The two sub-spaces of interest of all square-integrable functions on the sphere 
 Similar to the Euclidean setting, no function can be strictly spacelimited as well as strictly bandlimited, \ie{} no \(\pixel{f}\) can be in both sub-spaces \(\spaceSpacelimit{}\) and \(\spaceBandlimit{}\) at the same time.
 Thus, one may find either: the spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) whose spectrum is optimally concentrated within the interval \(0 \leq \ell < L\), or the bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) which are optimally concentrated within a region \(R\).
 
+\subsubsection{Spectral Concentration of a Spacelimited Function}
+
 To maximise the concentration of a spacelimited function \(\pixel{h} \in \spaceSpacelimit{}\) within an interval \(0 \leq \ell < L\) one must maximise the ratio:
 %
 \begin{equation}\label{eq:chapter2_spacelimited_ratio}
@@ -136,7 +138,7 @@ To maximise the concentration of a spacelimited function \(\pixel{h} \in \spaceS
 	{\displaystyle\sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}},
 \end{equation}
 %
-which is analogous to the one-dimensional problem \cref{eq:chapter2_timelimited_ratio}.
+which is analogous to the one-dimensional problem \cref{eq:chapter2_time_ratio}.
 By substituting the expansion of the spherical harmonic coefficients
 %
 \begin{equation}
@@ -169,10 +171,52 @@ The maximally spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) are th
 \begin{equation}
 	\integrateRegion{\sphereVolume} \pixel{\delta_{\omega'}} \pixel{\conj{h}}
 	%
-	= \mu \pixel[']{h},
+	= \mu \pixel[']{\conj{h}},
 \end{equation}
 %
 which is the spherical equivalent of the one-dimensional time-domain eigenproblem \cref{eq:chapter2_time_eigenproblem}.
+
+\subsubsection{Spatial Concentration of a Bandlimited Function}
+
+Alternatively, to find the maximally concentrated bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) within a region \(R\) one must maximise the ratio:
+%
+\begin{equation}\label{eq:chapter2_bandlimited_ratio}
+	\mu
+	%
+	= \frac{\integrateRegion{\sphereVolume} \abs{\pixel{g}}^{2}}{\integrateSphere{\omega} \abs{\pixel{g}}^{2}}
+\end{equation}
+%
+which is, as before, analogous to the one-dimensional problem \cref{eq:chapter2_frequency_ratio}.
+Expanding in harmonic space, and swapping the order of summation and integration, \cref{eq:chapter2_bandlimited_ratio} becomes
+%
+\begin{equation}
+	\mu
+	%
+	= \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \harmonic{g}
+		%
+		\sum\limits_{\ell'=0}^{L-1} \sum\limits_{m'=-\ell'}^{\ell'} \Dmatrix \conj{\harmonic[']{g}}}
+	%
+	{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{g}}^{2}},
+\end{equation}
+%
+where
+%
+\begin{equation}
+	\Dmatrix
+	%
+	= \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
+\end{equation}
+%
+has been defined.
+The eigenproblem, of which the maximally bandlimited functions arise from, is
+%
+\begin{equation}
+	\sum\limits_{\ell'=0}^{L-1} \sum\limits_{m'=-\ell'}^{\ell'} \Dmatrix \conj{\harmonic[']{g}}
+	%
+	= \mu \conj{\harmonic{g}},
+\end{equation}
+%
+which is analogous to the one-dimensional frequency-domain eigenproblem \cref{eq:chapter2_frequency_eigenproblem}.
 
 \input{figures/chapter2/slepian_polar_cap}
 
