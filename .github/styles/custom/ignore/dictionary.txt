@@ -38,6 +38,7 @@ eigensystem
 emph
 eq
 essinfo
+etal
 expval
 fionn
 forall

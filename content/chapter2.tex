@@ -14,7 +14,7 @@ In this chapter the mathematical background that later chapters rely on is intro
 
 \input{figures/chapter2/axisymmetric_wavelets}
 
-\section{Spectral Concentration Problem}
+\section{Slepian Concentration Problem}
 
 In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of optimally concentrating a signal simultaneously in time and frequency~\cite{Landau1961,Landau1962,Slepian1983,Slepian1961}.
 The resulting orthogonal family of functions, and their discrete and multidimensional counterparts~\cite{Bronez1988,Hanssen1997,Liu1992,Slepian1964,Slepian1978}, form the basis of a range of spectral analyses (\eg{}~\cite{Thomson1982,Thomson1990}).
@@ -28,7 +28,7 @@ Here, a normalisation convention is adopted such that a real-valued time-domain 
 \begin{equation}
 	f(t)
 	%
-	= \frac{1}{2\pi} \int\limits_{\infty}^{\infty} \dd{\varpi} F(\varpi) \exp(i\varpi t)
+	= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dd{\varpi} F(\varpi) \exp(i\varpi t)
 \end{equation}
 %
 and
@@ -36,11 +36,11 @@ and
 \begin{equation}
 	F(\varpi)
 	%
-	= \int\limits_{\infty}^{\infty} \dd{\varpi} f(t) \exp(-i\varpi t),
+	= \int\limits_{-\infty}^{\infty} \dd{\varpi} f(t) \exp(-i\varpi t),
 \end{equation}
 %
 where \(t\) and \(\varpi{}\) denote the time and angular frequency respectively.
-Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concentrating a strictly bandlimited signal \(f(t)\), with a spectrum \(F(\varpi)\) which disappears into a time interval \(\abs{t} \leq T\) for frequencies \(\abs{\varpi} < W\).
+Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concentrating a strictly bandlimited signal \(f(t)\), with a spectrum \(F(\varpi)\) which disappears into a time interval \(\abs{t} \leq T\) for frequencies \(\abs{\varpi} > W\).
 Through the \emph{Paley-Wiener} theorem, no bandlimited signal \(g(t)\) can be exactly concentrated within a finite interval~\cite{Daubechies1992,Mallat2008}.
 To find the optimally concentrated signal, one must maximise the following ratio:
 %
@@ -63,7 +63,7 @@ Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_frequency_ratio}, h
 %
 where \(\abs{\varpi} \leq W\).
 
-Slepian also considered the similar case of concentrating the spectrum \(H(\varpi)\) of a strictly timelimited function \(h(t)\), which disappears into a spectral interval \(\abs{\varpi} \leq W\) for times \(\abs{t} < T\).
+Slepian \etal{} also considered the similar case of concentrating the spectrum \(H(\varpi)\) of a strictly timelimited function \(h(t)\), which disappears into a spectral interval \(\abs{\varpi} \leq W\) for times \(\abs{t} > T\).
 The ratio to maximise here is
 %
 \begin{equation}\label{eq:chapter2_time_ratio}
@@ -111,7 +111,7 @@ Consider the sum of the eigenvalues
 \begin{equation}
 	N
 	%
-	= \sum\limits_{\alpha=1}^{\infty} \mu_{\alpha}
+	= \sum\limits_{p=1}^{\infty} \mu_{p}
 	%
 	= \frac{2TW}{\pi}.
 \end{equation}
@@ -210,7 +210,7 @@ where
 \end{equation}
 %
 is an \(L \times L\) matrix.
-The eigenproblem, of which the maximally bandlimited functions arise from, is
+The eigenproblem, of which the maximally bandlimited functions derive from, is
 %
 \begin{equation}
 	\sum\limits_{\ell'=0}^{L-1} \sum\limits_{m'=-\ell'}^{\ell'} \Dmatrix \conj{\harmonic[']{g}}
@@ -231,8 +231,8 @@ To explore this further, consider the straightforward case of finding the maxima
 \cref{fig:chapter2_slepian_polar_cap} presents the first sixteen Slepian functions \(\pixel{\slepian{S}}\) for a colatitude \(\Theta=\SI{40}{\degree}\) and bandlimit \(L=16\).
 The Shannon number is \(N=30\) for this region and bandlimit, and therefore all Slepian functions shown are well-concentrated within the region --- as shown by the eigenvalues \(\mu_{p}\), which are all \(\almost{1}\).
 Visually, these polar cap Slepian functions look like the spherical harmonics (\cf{} \cref{fig:chapter2_spherical_harmonics}); where the number of positive/negative regions relates to the order \(m\) in the submatrix \(D_{\ell m,\ell'm}\).
-The colatitudinal dependence is examined for this region in \cref{fig:chapter2_slepian_colatitude}, by keeping \(\phi{}\) constant, for \(p \in \set{1,6,15,30,51,72}\) shown left-to-right, top-to-bottom.
-For the early \(p\) values the majority of the power of the signal is in the blue curve, however, by the final plot most of the content of the signal is in the orange curve.
+The colatitudinal dependence is examined (by keeping \(\phi{}\) constant) for this region in \cref{fig:chapter2_slepian_colatitude} for \(p \in \set{1,6,15,30,51,72}\) shown left-to-right, top-to-bottom.
+For the early \(p\) values the majority of the power of the signal is in the blue curve; however, by the final plot, most of the content of the signal is in the orange curve.
 The corresponding eigenvalues \(\mu_{p}\) for this region are given in \cref{fig:chapter2_polar_cap_eigenvalues}, whereby the characteristic step shape around the Shannon number is observed.
 
 \input{figures/chapter2/slepian_polar_cap}
