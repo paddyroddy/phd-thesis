@@ -123,7 +123,7 @@ Many of the results discussed above have analogues in the spatial-spectral conce
 \subsection{Sphere: Spatial-Spectral Domain}\label{sec:chapter2_slepian_sphere}
 
 The two sub-spaces of interest of all square-integrable functions on the sphere \(\twoSphere{}\) are: \(\spaceSpacelimit{}\) the space of all spacelimited functions strictly contained within a region \(R\), and \(\spaceBandlimit{}\) the space of all bandlimited functions with no power above the bandlimit \(L\).
-Similar to the Euclidean setting, no function can be strictly spacelimited as well as strictly bandlimited, \ie{} no \(\pixel{f}\) can be in both sub-spaces \(\spaceSpacelimit{}\) and \(\spaceBandlimit{}\) at the same time.
+Akin to the Euclidean setting, no function can be strictly spacelimited as well as strictly bandlimited, \ie{} no \(\pixel{f}\) can be in both sub-spaces \(\spaceSpacelimit{}\) and \(\spaceBandlimit{}\) at the same time.
 Thus, one may find either: the spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) whose spectrum is optimally concentrated within the interval \(0 \leq \ell < L\), or the bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) which are optimally concentrated within a region \(R\).
 
 \subsubsection{Spectral Concentration of a Spacelimited Function}
@@ -174,16 +174,18 @@ The maximally spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) are th
 	= \mu \pixel[']{\conj{h}},
 \end{equation}
 %
-which is the spherical equivalent of the one-dimensional time-domain eigenproblem \cref{eq:chapter2_time_eigenproblem}.
+which is the spherical analogue of the one-dimensional time-domain eigenproblem \cref{eq:chapter2_time_eigenproblem}.
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
 
-Alternatively, to find the maximally concentrated bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) within a region \(R\) one must maximise the ratio:
+Conversely, to find the maximally concentrated bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) within a region \(R\) one must maximise the ratio:
 %
 \begin{equation}\label{eq:chapter2_bandlimited_ratio}
 	\mu
 	%
-	= \frac{\integrateRegion{\sphereVolume} \abs{\pixel{g}}^{2}}{\integrateSphere{\omega} \abs{\pixel{g}}^{2}}
+	= \frac{\integrateRegion{\sphereVolume} \abs{\pixel{g}}^{2}}
+	%
+	{\integrateSphere{\omega} \abs{\pixel{g}}^{2}},
 \end{equation}
 %
 which is, as before, analogous to the one-dimensional problem \cref{eq:chapter2_frequency_ratio}.
@@ -227,10 +229,11 @@ To explore this further, consider the straightforward case of finding the maxima
 \end{equation}
 %
 \cref{fig:chapter2_slepian_polar_cap} presents the first sixteen Slepian functions \(\pixel{\slepian{S}}\) for a colatitude \(\Theta=\SI{40}{\degree}\) and bandlimit \(L=16\).
-The Shannon number for this region and bandlimit is \(N=30\), and therefore all Slepian functions shown are well-concentrated within the region --- as shown by the eigenvalues \(\mu_{p}\) being \(\almost{1}\).
-Visually, these polar cap Slepian functions look similar to the spherical harmonics (\cf{} \cref{fig:chapter2_spherical_harmonics}); where the number of positive/negative regions relates to the order \(m\) in the submatrix \(D_{\ell m,\ell'm}\).
-
-
+The Shannon number is \(N=30\) for this region and bandlimit, and therefore all Slepian functions shown are well-concentrated within the region --- as shown by the eigenvalues \(\mu_{p}\), which are all \(\almost{1}\).
+Visually, these polar cap Slepian functions look like the spherical harmonics (\cf{} \cref{fig:chapter2_spherical_harmonics}); where the number of positive/negative regions relates to the order \(m\) in the submatrix \(D_{\ell m,\ell'm}\).
+The colatitudinal dependence is examined for this region in \cref{fig:chapter2_slepian_colatitude}, by keeping \(\phi{}\) constant, for \(p \in \set{1,6,15,30,51,72}\) shown left-to-right, top-to-bottom.
+For the early \(p\) values the majority of the power of the signal is in the blue curve, however, by the final plot most of the content of the signal is in the orange curve.
+The corresponding eigenvalues \(\mu_{p}\) for this region are given in \cref{fig:chapter2_polar_cap_eigenvalues}, whereby the characteristic step shape around the Shannon number is observed.
 
 \input{figures/chapter2/slepian_polar_cap}
 

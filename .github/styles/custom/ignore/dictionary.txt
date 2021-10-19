@@ -27,6 +27,7 @@ denoised
 denoising
 diag
 dirac
+displaystyle
 div
 dmatrix
 documentclass
@@ -109,6 +110,7 @@ slepian
 snr
 spacelimited
 ssht
+submatrix
 subseteq
 subsubsection
 tableofcontents
