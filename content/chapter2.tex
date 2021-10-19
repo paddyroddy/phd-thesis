@@ -55,7 +55,7 @@ To find the optimally concentrated signal, one must maximise the following ratio
 although other criteria have been considered~\cite{Freeden1997,Riedel1995}.
 Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_bandlimited_ratio} have spectra \(G(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_frequency_eigenproblem}
 	\int\limits_{-W}^{W} \dd{\varpi'} \frac{\sin T(\varpi-\varpi')}{\pi(\varpi-\varpi')} G(\varpi')
 	%
 	= \mu G(\varpi),
@@ -76,7 +76,7 @@ The ratio to maximise here is
 %
 which results in the time-domain eigenproblem
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_time_eigenproblem}
 	\int\limits_{-T}^{T} \dd{t'} \frac{\sin W(t-t')}{\pi(t-t')} h(t')
 	%
 	= \mu h(t),
@@ -142,7 +142,7 @@ By substituting the expansion of the spherical harmonic coefficients
 \begin{equation}
 	\harmonic{h}
 	%
-	= \integrateRegion{\sphereVolume} \pixel{h} \pixel{\harmonic{Y}},
+	= \integrateRegion{\sphereVolume} \pixel{h} \pixel{\conj{\harmonic{Y}}},
 \end{equation}
 %
 and swapping the order of summation and integration, the variational problem \cref{eq:chapter2_spacelimited_ratio} becomes
@@ -150,12 +150,29 @@ and swapping the order of summation and integration, the variational problem \cr
 \begin{equation}
 	\mu
 	%
-	= \frac{\integrateRegion{\sphereVolume} \integrateRegion{\sphereVolume[']} \pixel{h} D(\omega,\omega') \pixel{\conj{h}}}
+	= \frac{\integrateRegion{\sphereVolume[']} \pixel[']{h} \integrateRegion{\sphereVolume} \pixel{\delta_{\omega'}} \pixel{\conj{h}}}
 	%
-	{\integrateRegion{\sphereVolume} \abs{\pixel[']{h}}^{2}},
+	{\integrateRegion{\sphereVolume} \abs{\pixel{h}}^{2}},
 \end{equation}
 %
-where \(D(\omega,\omega')\) is the bandlimited Dirac delta function.
+where
+%
+\begin{equation}
+	\pixel{\delta_{\omega'}}
+	%
+	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}}
+\end{equation}
+%
+is the bandlimited Dirac delta function.
+The maximally spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) are therefore the solutions to the integral equation
+%
+\begin{equation}
+	\integrateRegion{\sphereVolume} \pixel{\delta_{\omega'}} \pixel{\conj{h}}
+	%
+	= \mu \pixel[']{h},
+\end{equation}
+%
+which is the spherical equivalent of the one-dimensional time-domain eigenproblem \cref{eq:chapter2_time_eigenproblem}.
 
 \input{figures/chapter2/slepian_polar_cap}
 
