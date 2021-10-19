@@ -116,7 +116,7 @@ Consider the sum of the eigenvalues
 	= \frac{2TW}{\pi}.
 \end{equation}
 %
-The so-called Shannon number~\cite{Percival1993} \(N\) introduced here is a good estimate of the number of significant eigenvalues, which arises due to the characteristic shape of the eigenvalue spectrum~\cite{Landau1965,Slepian1965}.
+The so-called Shannon number~\cite{Percival1993} \(N\) introduced here is a good estimate of the number of significant eigenvalues, which arises due to the characteristic shape of the eigenvalue spectrum~\cite{Landau1965,Slepian1965} (see \cref{fig:chapter2_polar_cap_eigenvalues}).
 Equivalently, this can be viewed as the number of signals \(f(t)\) which can be well-concentrated both into a finite time interval \(\abs{t} \leq T\) and a finite frequency interval \(\abs{\varpi} \leq W\).
 Many of the results discussed above have analogues in the spatial-spectral concentration problem on the sphere, which is elaborated in \cref{sec:chapter2_slepian_sphere}.
 
@@ -207,7 +207,7 @@ where
 	= \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
 \end{equation}
 %
-has been defined.
+is an \(L \times L\) matrix.
 The eigenproblem, of which the maximally bandlimited functions arise from, is
 %
 \begin{equation}
@@ -217,6 +217,20 @@ The eigenproblem, of which the maximally bandlimited functions arise from, is
 \end{equation}
 %
 which is analogous to the one-dimensional frequency-domain eigenproblem \cref{eq:chapter2_frequency_eigenproblem}.
+
+To explore this further, consider the straightforward case of finding the maximally concentrated functions within an axisymmetric polar cap of colatitudinal radius \(\Theta{}\), centred on the north pole, \ie{}
+%
+\begin{equation}
+	R
+	%
+	= \set{\theta: 0 \leq \theta \leq \Theta}.
+\end{equation}
+%
+\cref{fig:chapter2_slepian_polar_cap} presents the first sixteen Slepian functions \(\pixel{\slepian{S}}\) for a colatitude \(\Theta=\SI{40}{\degree}\) and bandlimit \(L=16\).
+The Shannon number for this region and bandlimit is \(N=30\), and therefore all Slepian functions shown are well-concentrated within the region --- as shown by the eigenvalues \(\mu_{p}\) being \(\almost{1}\).
+Visually, these polar cap Slepian functions look similar to the spherical harmonics (\cf{} \cref{fig:chapter2_spherical_harmonics}); where the number of positive/negative regions relates to the order \(m\) in the submatrix \(D_{\ell m,\ell'm}\).
+
+
 
 \input{figures/chapter2/slepian_polar_cap}
 
