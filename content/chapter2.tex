@@ -28,7 +28,7 @@ Here, a normalisation convention is adopted such that a real-valued time-domain 
 \begin{equation}
 	f(t)
 	%
-	= \frac{1}{2\pi} \displaystyle\int\limits_{\infty}^{\infty} F(\varpi) \exp(i\varpi t) \dd{\varpi}
+	= \frac{1}{2\pi} \int\limits_{\infty}^{\infty} \dd{\varpi} F(\varpi) \exp(i\varpi t)
 \end{equation}
 %
 and
@@ -36,7 +36,7 @@ and
 \begin{equation}
 	F(\varpi)
 	%
-	= \displaystyle\int\limits_{\infty}^{\infty} f(t) \exp(-i\varpi t) \dd{\varpi},
+	= \int\limits_{\infty}^{\infty} \dd{\varpi} f(t) \exp(-i\varpi t),
 \end{equation}
 %
 where \(t\) and \(\varpi{}\) denote the time and angular frequency respectively.
@@ -47,16 +47,16 @@ To find the optimally concentrated signal, one must maximise the following ratio
 \begin{equation}\label{eq:chapter2_bandlimited_ratio}
 	\mu
 	%
-	= \frac{\displaystyle\int\limits_{-T}^{T} g^{2}(t) \dd{t}}
+	= \frac{\displaystyle\int\limits_{-T}^{T} \dd{t} g^{2}(t)}
 	%
-	{\displaystyle\int\limits_{-\infty}^{\infty} g^{2}(t) \dd{t}},
+	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{t} g^{2}(t)},
 \end{equation}
 %
 although other criteria have been considered~\cite{Freeden1997,Riedel1995}.
 Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_bandlimited_ratio} have spectra \(G(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
 %
 \begin{equation}
-	\displaystyle\int\limits_{-W}^{W} \frac{\sin T(\varpi-\varpi')}{\pi(\varpi-\varpi')} G(\varpi') \dd{\varpi'}
+	\int\limits_{-W}^{W} \dd{\varpi'} \frac{\sin T(\varpi-\varpi')}{\pi(\varpi-\varpi')} G(\varpi')
 	%
 	= \mu G(\varpi),
 \end{equation}
@@ -69,15 +69,15 @@ The ratio to maximise here is
 \begin{equation}\label{eq:chapter2_timelimited_ratio}
 	\mu
 	%
-	= \frac{\displaystyle\int\limits_{-W}^{W} \abs{H(\varpi)}^{2} \dd{\varpi}}
+	= \frac{\displaystyle\int\limits_{-W}^{W} \dd{\varpi} \abs{H(\varpi)}^{2}}
 	%
-	{\displaystyle\int\limits_{-\infty}^{\infty} \abs{H(\varpi)}^{2} \dd{\varpi}},
+	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{\varpi} \abs{H(\varpi)}^{2}},
 \end{equation}
 %
 which results in the time-domain eigenproblem
 %
 \begin{equation}
-	\displaystyle\int\limits_{-T}^{T} \frac{\sin W(t-t')}{\pi(t-t')} h(t') \dd{t'}
+	\int\limits_{-T}^{T} \dd{t'} \frac{\sin W(t-t')}{\pi(t-t')} h(t')
 	%
 	= \mu h(t),
 \end{equation}
@@ -99,7 +99,7 @@ which exist in the interval \(\abs{t} \leq T\).
 Through a change of variables, the ratios \cref{eq:chapter2_bandlimited_ratio,eq:chapter2_timelimited_ratio} may be transformed into one dimensionless eigenproblem:
 %
 \begin{equation}
-	\displaystyle\int\limits_{-1}^{1} \frac{\sin TW(x-x')}{\pi(x-x')} \psi(x') \dd{x'}
+	\int\limits_{-1}^{1} \dd{x'} \frac{\sin TW(x-x')}{\pi(x-x')} \psi(x')
 	%
 	= \mu \psi(x),
 \end{equation}
@@ -111,7 +111,7 @@ Consider the sum of the eigenvalues
 \begin{equation}
 	N
 	%
-	= \displaystyle\sum\limits_{\alpha=1}^{\infty} \mu_{\alpha}
+	= \sum\limits_{\alpha=1}^{\infty} \mu_{\alpha}
 	%
 	= \frac{2TW}{\pi}.
 \end{equation}
@@ -131,9 +131,9 @@ To maximise the concentration of a spacelimited function \(\pixel{h} \in \spaceS
 \begin{equation}\label{eq:chapter2_spacelimited_ratio}
 	\mu
 	%
-	= \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \displaystyle\sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}}
+	= \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}}
 	%
-	{\displaystyle\sum\limits_{\ell=0}^{\infty} \displaystyle\sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}},
+	{\displaystyle\sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}},
 \end{equation}
 %
 which is analogous to the one-dimensional problem \cref{eq:chapter2_timelimited_ratio}.

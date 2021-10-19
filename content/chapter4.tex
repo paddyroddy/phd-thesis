@@ -99,7 +99,7 @@ By the completeness of the spherical harmonics one may decompose any signal \(f 
 \begin{equation}
 	\pixel{f}
 	%
-	= \displaystyle\sum\limits_{\ell=0}^{\infty} \displaystyle\sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
+	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
 \end{equation}
 %
 where \(\harmonic{f}\) are the spherical harmonic coefficients given by the usual projection onto the basis functions
@@ -133,14 +133,14 @@ The shorthand convention
 \begin{equation}
 	\harmonicSum
 	%
-	= \displaystyle\sum\limits_{\ell=0}^{L-1} \displaystyle\sum\limits_{m=-\ell}^{\ell}
+	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell}
 \end{equation}
 %
 may be adopted.
 The \emph{addition theorem} of the spherical harmonics states
 %
 \begin{equation}\label{eq:chapter4_addition_theorem}
-	\displaystyle\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
+	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
 	%
 	= \factor P_{\ell}(\omega \cdot \omega'),
 \end{equation}
@@ -172,7 +172,7 @@ A rotated function in harmonic space is
 \begin{equation}
 	\harmonic{(\rotation{\rho}f)}
 	%
-	= \displaystyle\sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) f_{\ell m'},
+	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) f_{\ell m'},
 \end{equation}
 %
 where the \emph{Wigner D matrices} \(\wigner{\ell}{m'}{m}(\rho)\) form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
@@ -262,7 +262,7 @@ Consider the sum of the eigenvalues
 	%
 	 & = \harmonicSum \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
 	%
-	 & = \displaystyle\sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\sphereVolume} \nonumber                        \\
+	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\sphereVolume} \nonumber                        \\
 	%
 	 & = \frac{A}{4\pi} L^{2},
 \end{align}
@@ -277,7 +277,7 @@ The Slepian functions offer an alternative orthogonal basis on the sphere, decom
 \begin{equation}
 	\pixel{f}
 	%
-	= \displaystyle\sum\limits_{p=1}^{L^{2}} \slepian{f}\pixel{\slepian{S}}.
+	= \sum\limits_{p=1}^{L^{2}} \slepian{f}\pixel{\slepian{S}}.
 \end{equation}
 %
 If the function is well-localised in the region \(R\) (\ie{} \(f \in \hilbert{R}\)), then \(N\) well-localised Slepian functions can describe it
@@ -285,7 +285,7 @@ If the function is well-localised in the region \(R\) (\ie{} \(f \in \hilbert{R}
 \begin{equation}\label{eq:chapter4_slepian_inverse}
 	\pixel{f}
 	%
-	\approx \displaystyle\sum\limits_{p=1}^{N} \slepian{f}\pixel{\slepian{S}} \\
+	\approx \sum\limits_{p=1}^{N} \slepian{f}\pixel{\slepian{S}} \\
 	%
 	= \slepianSum \slepian{f}\pixel{\slepian{S}},
 \end{equation}
