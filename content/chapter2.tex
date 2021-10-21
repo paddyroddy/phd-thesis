@@ -10,7 +10,7 @@ Lastly, limitations of existing approaches and the aim of this thesis is covered
 
 \subsection{Spherical Harmonics}
 
-The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer \(\ell \geq 0\) and integer \(m \leq \abs{\ell}\) form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\).
+The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer \(\ell \geq 0\) and integer \(m \leq \abs{\ell}\) form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\), which arise from the solutions to the Laplace equation in spherical coordinates.
 In spherical coordinates, the Laplacian is given by:
 %
 \begin{equation}
@@ -18,7 +18,7 @@ In spherical coordinates, the Laplacian is given by:
 	%
 	= \frac{1}{r^{2}} \pdv{r} \bigg(r^{2} \pdv{r}\bigg)
 	%
-	+ \frac{1}{r^{2}\sin^{2}{\theta}} \pdv{\theta} \bigg(\sin{\theta} \pdv{\theta}\bigg)
+	+ \frac{1}{r^{2}\sin{\theta}} \pdv{\theta} \bigg(\sin{\theta} \pdv{\theta}\bigg)
 	%
 	+ \frac{1}{r^{2}\sin^{2}{\theta}} \pdv[2]{\phi}.
 \end{equation}
@@ -39,19 +39,19 @@ and substituting in a separation of variables
 	= R(r)\Theta(\theta)\Phi(\phi).
 \end{equation}
 %
-Inserting this decomposition into the Laplace equation \cref{eq:chapter2_laplace} and multiplying by \(r^{2}\sin^{2}{\theta}/R\Theta\Phi{}\) yields
+Inserting this decomposition into the Laplace equation \cref{eq:chapter2_laplace}, and multiplying by \(r^{2}\sin^{2}{\theta}/R\Theta\Phi{}\) yields
 %
-\begin{equation}
-	\frac{\sin^{2}{\theta}}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
+\begin{equation}\label{eq:chapter2_laplace_m2}
+	\frac{1}{\Phi} \pdv[2]{\Phi}{\phi}
 	%
-	+ \frac{1}{\Theta} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
+	= -\frac{\sin^{2}{\theta}}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
 	%
-	= -\frac{1}{\Phi} \pdv[2]{\Phi}{\phi}
+	- \frac{\sin{\theta}}{\Theta} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
 	%
-	= m^{2},
+	= -m^{2},
 \end{equation}
 %
-where \(m^{2}\) is a constant chosen such that the solutions for \(\Phi(\phi)\) are periodic in \(\phi{}\), \ie{}
+where \(-m^{2}\) is a constant chosen such that the solutions for \(\Phi(\phi)\) are periodic in \(\phi{}\), \ie{}
 %
 \begin{equation}
 	\Phi(\phi) =
@@ -64,15 +64,46 @@ where \(m^{2}\) is a constant chosen such that the solutions for \(\Phi(\phi)\) 
 	%
 	\forall m=0,1,2,3,\ldots.
 \end{equation}
-
+%
+Now, after dividing through by \(\sin^{2}{\theta}\), \cref{eq:chapter2_laplace_m2} may be recast as
+%
+\begin{equation}
+	\frac{1}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
+	%
+	= -\frac{1}{\Theta\sin{\theta}} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
+	%
+	+ \frac{m^{2}}{\sin^{2}{\theta}}
+	%
+	= \ell(\ell+1),
+\end{equation}
+%
+where \(\ell(\ell+1)\) is a carefully chosen constant.
+Through a change of variables \(x=\cos{\theta}\) and \(y=\Theta(\theta)\), the polar angle part reduces to
+%
+\begin{equation}
+	(1-x^{2}) \dv[2]{y}{x} - 2x\dv{y}{x} + \bigg[\ell(\ell+1) - \frac{m^{2}}{(1 - x^{2})}\bigg] y
+	%
+	= 0,
+\end{equation}
+%
+which is the differential equation for the \emph{associated Legendre polynomials} \(y(x) = P^{m}_{\ell}(x)\).
+The spherical harmonics are then formed by combining the solutions in the polar angle \(\theta{}\) and azimuthal angle \(\phi{}\) with a suitable normalisation factor by
 %
 \begin{equation}
 	\pixel{\harmonic{Y}}
 	%
-	= \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi),
+	= {(-1)}^{m} \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
 \end{equation}
 %
-where \(P^{m}_{\ell}(x)\) are the \emph{associated Legendre polynomials}.
+The Condon-Shortley \({(-1)}^{m}\) phase factor is included here to ensure the conjugate symmetry relation
+%
+\begin{equation}
+	\pixel{\conj{\harmonic{Y}}}
+	%
+	= {(-1)}^{m} \pixel{Y_{\ell(-m)}}
+\end{equation}
+%
+holds.
 
 \input{figures/chapter2/spherical_harmonics}
 
