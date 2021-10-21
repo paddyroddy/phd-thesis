@@ -31,6 +31,7 @@ displaystyle
 div
 dmatrix
 documentclass
+dv
 eg
 eigenhomers
 eigenproblem
@@ -62,6 +63,7 @@ inpainted
 int
 kirker
 laplace
+laplacian
 lceil
 ldots
 leq
@@ -92,6 +94,7 @@ parameterise
 parameterised
 parindent
 parseval
+pdv
 phantomsection
 phd
 planck
