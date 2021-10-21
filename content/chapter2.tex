@@ -10,8 +10,8 @@ Lastly, limitations of existing approaches and the aim of this thesis is covered
 
 \subsection{Spherical Harmonics}
 
-The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer \(\ell \geq 0\) and integer \(m \leq \abs{\ell}\) form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\), which arise from the solutions to the Laplace equation in spherical coordinates.
-In spherical coordinates, the Laplacian is given by:
+The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer degree \(\ell \geq 0\) and integer order \(m \leq \abs{\ell}\) form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\).
+Consider the Laplacian in spherical coordinates
 %
 \begin{equation}
 	\laplacian
@@ -95,15 +95,65 @@ The spherical harmonics are then formed by combining the solutions in the polar 
 	= {(-1)}^{m} \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
 \end{equation}
 %
-The Condon-Shortley \({(-1)}^{m}\) phase factor is included here to ensure the conjugate symmetry relation
+Included here is the Condon-Shortley \({(-1)}^{m}\) phase factor, to ensure the following conjugate symmetry relation holds
 %
 \begin{equation}
 	\pixel{\conj{\harmonic{Y}}}
 	%
-	= {(-1)}^{m} \pixel{Y_{\ell(-m)}}
+	= {(-1)}^{m} \pixel{Y_{\ell(-m)}}.
 \end{equation}
 %
-holds.
+The spherical harmonics satisfy the below orthogonality and completeness relations by
+%
+\begin{equation}
+	\integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
+	%
+	= \delta_{\ell\ell'} \delta_{mm'},
+\end{equation}
+%
+and
+%
+\begin{equation}
+	\sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
+	%
+	= \delta(\omega-\omega')
+\end{equation}
+%
+respectively, where
+%
+\begin{equation}
+	\delta(\omega-\omega')
+	%
+	= \delta(\phi-\phi') \delta(\cos{\theta} - \cos{\theta'})
+\end{equation}
+%
+and \(\delta(x),\ x \in \mathbb{R}\) is the Dirac delta function.
+A function on the sphere \(f \in \hilbert{\twoSphere}\) may be decomposed into this basis by
+%
+\begin{equation}
+	\pixel{f}
+	%
+	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
+\end{equation}
+%
+where \(\harmonic{f}\) are the spherical harmonic coefficients given by
+%
+\begin{equation}
+	\harmonic{f}
+	%
+	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
+\end{equation}
+%
+A useful relation for the spherical harmonics is the \emph{addition theorem} which states
+%
+\begin{equation}
+	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
+	%
+	= \factor P_{\ell}(\omega \cdot \omega'),
+\end{equation}
+%
+where \(P_{\ell}(x)\) are the \emph{Legendre polynomials}.
+A pictorial representation of the spherical harmonics is given in \cref{fig:chapter2_spherical_harmonics}.
 
 \input{figures/chapter2/spherical_harmonics}
 
