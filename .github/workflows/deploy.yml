@@ -33,7 +33,7 @@ jobs:
                       "tables"
                       ]'
 
-    build-pdfs:
+    compile-latex:
         runs-on: ubuntu-latest
         steps:
             - name: checkout source
@@ -44,6 +44,24 @@ jobs:
               with:
                   run: |
                       latexmk -quiet
+
+            - name: Upload artifaxts
+              uses: actions/upload-artifact@v2
+              with:
+                  name: artifacts
+                  path: |
+                      *.pdf
+                      *.bcf
+                  if-no-files-found: error
+
+    check-citations-referenced:
+        runs-on: ubuntu-latest
+        needs: compile-latex
+        steps:
+            - name: Download artifacts
+              uses: actions/download-artifact@v2
+              with:
+                  name: artifacts
 
             - name: Fix regex for checkcites
               uses: xu-cheng/texlive-action/full@v1
@@ -61,25 +79,17 @@ jobs:
                   script: |
                       core.setFailed('Not all references cited')
 
-            - name: Upload PDFs
-              uses: actions/upload-artifact@v2
-              with:
-                  name: pdfs
-                  path: |
-                      *.pdf
-                  if-no-files-found: error
-
     upload-to-dropbox:
         runs-on: ubuntu-latest
-        needs: build-pdfs
+        needs: compile-latex
         steps:
             - name: checkout source
               uses: actions/checkout@v2
 
-            - name: Download PDFs
+            - name: Download artifacts
               uses: actions/download-artifact@v2
               with:
-                  name: pdfs
+                  name: artifacts
 
             - name: Set up Dropbox
               run: |
@@ -93,6 +103,6 @@ jobs:
                   OAUTH_APP_SECRET: ${{secrets.OAUTH_APP_SECRET}}
                   OAUTH_REFRESH_TOKEN: ${{secrets.OAUTH_REFRESH_TOKEN}}
 
-            - name: Upload PDFs
+            - name: Upload PDF
               run: |
                   ./dropbox_uploader.sh upload thesis.pdf patrick_roddy_thesis.pdf
