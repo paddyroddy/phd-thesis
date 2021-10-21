@@ -10,13 +10,69 @@ Lastly, limitations of existing approaches and the aim of this thesis is covered
 
 \subsection{Spherical Harmonics}
 
-The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer \(\ell \geq 0\) and integer \(m \leq \abs{\ell}\) form an orthogonal basis of the Hilbert space \(\hilbert{\twoSphere}\)
+The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer \(\ell \geq 0\) and integer \(m \leq \abs{\ell}\) form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\).
+In spherical coordinates, the Laplacian is given by:
+%
+\begin{equation}
+	\laplacian
+	%
+	= \frac{1}{r^{2}} \pdv{r} \bigg(r^{2} \pdv{r}\bigg)
+	%
+	+ \frac{1}{r^{2}\sin^{2}{\theta}} \pdv{\theta} \bigg(\sin{\theta} \pdv{\theta}\bigg)
+	%
+	+ \frac{1}{r^{2}\sin^{2}{\theta}} \pdv[2]{\phi}.
+\end{equation}
+%
+The spherical harmonics are found by solving Laplace's equation
+%
+\begin{equation}\label{eq:chapter2_laplace}
+	\laplacian{f(r,\theta,\phi)}
+	%
+	= 0,
+\end{equation}
+%
+and substituting in a separation of variables
+%
+\begin{equation}
+	f(r,\theta,\phi)
+	%
+	= R(r)\Theta(\theta)\Phi(\phi).
+\end{equation}
+%
+Inserting this decomposition into the Laplace equation \cref{eq:chapter2_laplace} and multiplying by \(r^{2}\sin^{2}{\theta}/R\Theta\Phi{}\) yields
+%
+\begin{equation}
+	\frac{\sin^{2}{\theta}}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
+	%
+	+ \frac{1}{\Theta} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
+	%
+	= -\frac{1}{\Phi} \pdv[2]{\Phi}{\phi}
+	%
+	= m^{2},
+\end{equation}
+%
+where \(m^{2}\) is a constant chosen such that the solutions for \(\Phi(\phi)\) are periodic in \(\phi{}\), \ie{}
+%
+\begin{equation}
+	\Phi(\phi) =
+	%
+	\begin{cases}
+		\exp(im\phi) \\
+		%
+		\exp(-im\phi)
+	\end{cases}
+	%
+	\forall m=0,1,2,3,\ldots.
+\end{equation}
+
 %
 \begin{equation}
 	\pixel{\harmonic{Y}}
 	%
 	= \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi),
 \end{equation}
+%
+where \(P^{m}_{\ell}(x)\) are the \emph{associated Legendre polynomials}.
 
 \input{figures/chapter2/spherical_harmonics}
 
