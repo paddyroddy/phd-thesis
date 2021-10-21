@@ -119,7 +119,7 @@ The spherical harmonics are then formed by combining the solutions in the polar 
 	= {(-1)}^{m} \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
 \end{equation}
 %
-Included here is the Condon-Shortley \({(-1)}^{m}\) phase factor, to ensure the following conjugate symmetry relation holds
+Included here is the \emph{Condon-Shortley} \({(-1)}^{m}\) phase factor, to ensure the following conjugate symmetry relation holds
 %
 \begin{equation}
 	\pixel{\conj{\harmonic{Y}}}
@@ -180,6 +180,63 @@ where \(P_{\ell}(x)\) are the \emph{Legendre polynomials}.
 A pictorial representation of the spherical harmonics is given in \cref{fig:chapter2_spherical_harmonics}.
 
 \input{figures/chapter2/spherical_harmonics}
+
+\subsection{Rotations on the Sphere}
+
+Rotations of functions defined on the sphere form an integral part of analysis on the sphere.
+The Euler angles \(\rho=(\alpha,\beta,\gamma) \in \rotationGroup{}\) may parametrise three-dimensional rotations, where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
+The sequence of rotations:
+%
+\begin{enumerate}[(i),nosep,left=\parindent]
+	\item \({\gamma}\) rotation about the \(z\)-axis;
+	\item \({\beta}\) rotation about the \(y\)-axis; and
+	\item \({\alpha}\) rotation about the \(z\)-axis;
+\end{enumerate}
+%
+define the rotation operator \(\rotation{\rho}\).
+A function \(\pixel{f} \in \hilbert{\twoSphere}\) rotated on the sphere is defined by
+%
+\begin{equation}
+	\pixel{(\rotation{\rho}f)}
+	%
+	= f(\vb*{R}_{\rho}^{-1} \omega),
+\end{equation}
+%
+where \(\vb*{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
+A rotation of a spherical harmonic function may be represented by
+%
+\begin{equation}\label{eq:chapter2_wigner_ylm}
+	\rotation{\rho} \pixel{\harmonic{Y}}
+	%
+	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) \pixel{Y_{\ell m'}},
+\end{equation}
+%
+where \(\wigner{\ell}{m'}{m}(\rho)\) are the \emph{Wigner D matrices}~\cite{Brink1993,Ritchie1999}.
+The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rotation group \(\rotationGroup{}\) and are given by
+%
+\begin{equation}
+	\wigner{\ell}{m'}{m}(\rho)
+	%
+	= \exp(-i m'\alpha) \reducedWigner{\ell}{m'}{m}(\beta) \exp(-i m\gamma),
+\end{equation}
+%
+where \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices} which are real in this phase convention.
+It follows that the harmonic coefficients of a rotated function read
+%
+\begin{equation}
+	\harmonic{(\rotation{\rho}f)}
+	%
+	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m}{m'}(\rho) f_{\ell m'}.
+\end{equation}
+%
+Note the order of the indices on \(\wigner{\ell}{m}{m'}(\rho)\) here compared to \cref{eq:chapter2_wigner_ylm}.
+The spherical harmonics are related to the axisymmetric rotation matrices by
+%
+\begin{equation}
+	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
+	%
+	= \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.
+\end{equation}
 
 \section{Wavelets}\label{sec:chapter2_wavelets}
 
