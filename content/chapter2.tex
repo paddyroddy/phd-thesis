@@ -8,6 +8,36 @@ Lastly, limitations of existing approaches and the aim of this thesis is covered
 
 \section{Signals on the Sphere}\label{sec:chapter2_signals_sphere}
 
+\subsection{Notation}
+
+The 2-sphere \(\twoSphere{}\) is defined as
+%
+\begin{equation}
+	\twoSphere{}
+	%
+	= \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1},
+\end{equation}
+%
+where \(\omega=(\theta,\phi)\) parameterise a point on the unit sphere, \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
+The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex valued square-integrable functions \(\pixel{f}\), with inner product
+%
+\begin{equation}
+	\braket*{f}{g}
+	%
+	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{g}},
+\end{equation}
+%
+where \(\sphereVolume{} = \sin{\theta} \dd{\theta} \dd{\phi}\) is the usual rotation invariant measure on the sphere.
+The complex inner product induces a norm
+%
+\begin{equation}
+	\norm{f}
+	%
+	= \sqrt{\braket*{f}}.
+\end{equation}
+%
+Signals on the sphere are functions with a finite induced norm.
+
 \subsection{Spherical Harmonics}
 
 The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer degree \(\ell \geq 0\) and integer order \(m \leq \abs{\ell}\) form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\).
