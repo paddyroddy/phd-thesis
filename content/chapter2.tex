@@ -212,7 +212,7 @@ A rotation of a spherical harmonic function may be represented by
 \end{equation}
 %
 where \(\wigner{\ell}{n}{m}(\rho)\) are the \emph{Wigner D matrices}~\cite{Brink1993,Ritchie1999}.
-The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rotation group \(\rotationGroup{}\) and are given by
+The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rotation group \(\rotationGroup{}\) for a given \(\ell{}\) and are given by
 %
 \begin{equation}
 	\wigner{\ell}{n}{m}(\rho)
@@ -220,7 +220,17 @@ The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rot
 	= \exp(-i n\alpha) \reducedWigner{\ell}{n}{m}(\beta) \exp(-i m\gamma),
 \end{equation}
 %
-where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the \emph{reduced d matrices} which are real in this phase convention.
+where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the \emph{reduced d matrices} which are real in this phase convention and satisfy many symmetry relations.
+By the \emph{Peter-Weyl} theorem, the matrix elements \(\wigner{\ell}{n}{m}(\rho)\) form an orthonormal basis on \(\hilbert{\rotationGroup}\), \ie{}
+%
+\begin{equation}
+	\integrateRotation{\rho} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell'}{n'}{m'}(\rho)
+	%
+	= \frac{8\pi^{2}}{2\ell+1} \delta_{\ell\ell'} \delta_{nn'} \delta_{mm'},
+\end{equation}
+%
+where \(\rotationVolume = \sin{\beta}\dd{\alpha}\dd{\beta}\dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
+%
 It follows that the harmonic coefficients of a rotated function read
 %
 \begin{equation}

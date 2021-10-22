@@ -316,7 +316,7 @@ The definition of the left convolution~\cite{Kennedy2011,Driscoll1994} in real s
 	= \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega),
 \end{equation}
 %
-where \({\eta}\) is the north pole, and \(\dd{\rho(\rho)}=\sin{\beta} \dd{\alpha} \dd{\beta} \dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
+where \({\eta}\) is the north pole, and \(\rotationVolume=\sin{\beta} \dd{\alpha} \dd{\beta} \dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
 The harmonic representation of this convolution is
 %
 \begin{equation}
@@ -342,7 +342,7 @@ To prove this, first consider the forward harmonic transform
 \end{align}
 %
 where the second and last line follow by \cref{eq:chapter3_rotation_operator,eq:chapter3_rotation_matrix} respectively.
-Due to the invariant measure \(\dd{\rho(\rho)}\) and considering a right rotation about the \(z\)-axis by \({\chi}\), \ie{} \(\rho = (\alpha,\beta,\gamma) \rightarrow \rho' = (\alpha,\beta,\gamma+\chi)\), it follows
+Due to the invariant measure \(\rotationVolume{}\) and considering a right rotation about the \(z\)-axis by \({\chi}\), \ie{} \(\rho = (\alpha,\beta,\gamma) \rightarrow \rho' = (\alpha,\beta,\gamma+\chi)\), it follows
 %
 \begin{align}\label{eq:chapter3_so3_integral}
 	\integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho)
