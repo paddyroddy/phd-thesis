@@ -209,19 +209,19 @@ The spherical harmonic coefficients of a rotated function read
 \begin{equation}\label{eq:chapter3_rotation_operator}
 	\harmonic{(\rotation{\rho}f)}
 	%
-	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m}{m'}(\rho) f_{\ell m'},
+	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\rho) f_{\ell n},
 \end{equation}
 %
-where \(\wigner{\ell}{m}{m'}(\rho)\) are \emph{Wigner D matrices} given by
+where \(\wigner{\ell}{m}{n}(\rho)\) are \emph{Wigner D matrices} given by
 %
 \begin{equation}
-	\wigner{\ell}{m}{m'}(\rho)
+	\wigner{\ell}{m}{n}(\rho)
 	%
-	= \exp(-i m\alpha) \reducedWigner{\ell}{m}{m'}(\beta) \exp(-i m'\gamma),
+	= \exp(-i m\alpha) \reducedWigner{\ell}{m}{n}(\beta) \exp(-i n\gamma),
 \end{equation}
 %
 which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
-The \(\reducedWigner{\ell}{m}{m'}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention and satisfy many symmetry relations.
+The \(\reducedWigner{\ell}{m}{n}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention and satisfy many symmetry relations.
 Note the proportionality of the axisymmetric rotation matrices and the spherical harmonics:
 %
 \begin{equation}\label{eq:chapter3_wigner_axisymmetric}
@@ -338,24 +338,24 @@ To prove this, first consider the forward harmonic transform
 	%
 	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \harmonic{(\rotation{\rho}g)} \nonumber{}                                                                                                 \\
 	%
-	 & = \sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho),
+	 & = \sum\limits_{n=-\ell}^{\ell} g_{\ell n} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
 \end{align}
 %
 where the second and last line follow by \cref{eq:chapter3_rotation_operator,eq:chapter3_rotation_matrix} respectively.
 Due to the invariant measure \(\dd{\rho(\rho)}\) and considering a right rotation about the \(z\)-axis by \({\chi}\), \ie{} \(\rho = (\alpha,\beta,\gamma) \rightarrow \rho' = (\alpha,\beta,\gamma+\chi)\), it follows
 %
 \begin{align}\label{eq:chapter3_so3_integral}
-	\integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho)
+	\integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho)
 	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{m'}(\rho') \nonumber{}             \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{n}(\rho') \nonumber{}             \\
 	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \exp(-i m'\chi) \wigner{\ell}{m}{m'}(\rho) \nonumber{} \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \exp(-i n\chi) \wigner{\ell}{m}{n}(\rho) \nonumber{} \\
 	%
-	 & = \exp(-i m'\chi) \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho),
+	 & = \exp(-i n\chi) \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
 \end{align}
 %
 where the penultimate line follows since a rotation of \({\eta}\) about the \(z\)-axis leaves \({\eta}\) unchanged, \ie{} \(f(\rotationMatrix[']\eta) = f(\rotationMatrix\eta)\).
-Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be the case that \(m'=0\) unless the integral is zero, \ie{}:
+Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be the case that \(n=0\) unless the integral is zero, \ie{}:
 %
 \begin{align}
 	\harmonic{(f \circleddash g)}
@@ -394,7 +394,7 @@ Upon expanding in harmonic space, this becomes (\eg{}~\cite{McEwen2007,Wandelt20
 \begin{equation}
 	(f \circledast g) (\rho)
 	%
-	= \harmonicSum \harmonic{f} \sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m}{m'}(\rho) g_{\ell m'}\big)},
+	= \harmonicSum \harmonic{f} \sum\limits_{n=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
 \end{equation}
 %
 as
@@ -406,9 +406,9 @@ as
 	%
 	 & = \integrateSphere{\omega} \harmonicSum \harmonic{f} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\rho}g)}} \pixel{\conj{\harmonic[']{Y}}} \nonumber{} \\
 	%
-	 & = \harmonicSum \harmonic{f} \conj{\harmonic[']{(\rotation{\rho}g)}} \nonumber{}                                                                                              \\
+	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\rho}g)}} \nonumber{}                                                                                              \\
 	%
-	 & = \harmonicSum \harmonic{f} \sum\limits_{m'=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m}{m'}(\rho) g_{\ell m'}\big)},
+	 & = \harmonicSum \harmonic{f} \sum\limits_{n=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
 \end{align}
 %
 and hence, the output is on \(\rotationGroup{}\).
@@ -436,7 +436,7 @@ which on expansion reads
 \begin{equation}
 	\pixel{(f \oplus g)}
 	%
-	= \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m}{m'}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}},
+	= \harmonicSum \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
 \end{equation}
 %
 as
@@ -450,7 +450,7 @@ as
 	%
 	 & = \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \conj{\harmonic{g}} \nonumber{}                                                                                                        \\
 	%
-	 & = \harmonicSum \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m}{m'}(\phi,\theta,\pi-\phi) f_{\ell m'} \conj{\harmonic{g}}.
+	 & = \harmonicSum \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}}.
 \end{align}
 %
 The limitation here is that one must specify the initial rotation as \({\gamma=\pi-\alpha}\) in order for the convolution to be commutative.

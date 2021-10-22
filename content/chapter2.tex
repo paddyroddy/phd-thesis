@@ -208,28 +208,28 @@ A rotation of a spherical harmonic function may be represented by
 \begin{equation}\label{eq:chapter2_wigner_ylm}
 	\rotation{\rho} \pixel{\harmonic{Y}}
 	%
-	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m'}{m}(\rho) \pixel{Y_{\ell m'}},
+	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \pixel{Y_{\ell n}},
 \end{equation}
 %
-where \(\wigner{\ell}{m'}{m}(\rho)\) are the \emph{Wigner D matrices}~\cite{Brink1993,Ritchie1999}.
+where \(\wigner{\ell}{n}{m}(\rho)\) are the \emph{Wigner D matrices}~\cite{Brink1993,Ritchie1999}.
 The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rotation group \(\rotationGroup{}\) and are given by
 %
 \begin{equation}
-	\wigner{\ell}{m'}{m}(\rho)
+	\wigner{\ell}{n}{m}(\rho)
 	%
-	= \exp(-i m'\alpha) \reducedWigner{\ell}{m'}{m}(\beta) \exp(-i m\gamma),
+	= \exp(-i n\alpha) \reducedWigner{\ell}{n}{m}(\beta) \exp(-i m\gamma),
 \end{equation}
 %
-where \(\reducedWigner{\ell}{m'}{m}(\beta)\) are the \emph{reduced d matrices} which are real in this phase convention.
+where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the \emph{reduced d matrices} which are real in this phase convention.
 It follows that the harmonic coefficients of a rotated function read
 %
 \begin{equation}
 	\harmonic{(\rotation{\rho}f)}
 	%
-	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m}{m'}(\rho) f_{\ell m'}.
+	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\rho) f_{\ell n}.
 \end{equation}
 %
-Note the order of the indices on \(\wigner{\ell}{m}{m'}(\rho)\) here compared to \cref{eq:chapter2_wigner_ylm}.
+Note the order of the indices on \(\wigner{\ell}{m}{n}(\rho)\) here compared to \cref{eq:chapter2_wigner_ylm}.
 The spherical harmonics are related to the axisymmetric rotation matrices by
 %
 \begin{equation}
