@@ -197,16 +197,16 @@ The rotation operator \(\rotation{\rho}\) consists of the sequence of rotations:
 %
 The rotation of a function on the sphere is defined by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter3_rotation_matrix}
 	\pixel{(\rotation{\rho}f)}
 	%
-	= f(\vb*{R}_{\rho}^{-1} \omega),
+	= f(\rotationMatrix^{-1} \omega),
 \end{equation}
 %
-where \(\vb*{R}_{\rho}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
+where \(\rotationMatrix{}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
 The spherical harmonic coefficients of a rotated function read
 %
-\begin{equation}\label{eq:chapter3_rotation_matrix}
+\begin{equation}\label{eq:chapter3_rotation_operator}
 	\harmonic{(\rotation{\rho}f)}
 	%
 	= \sum\limits_{m'=-\ell}^{\ell} \wigner{\ell}{m}{m'}(\rho) f_{\ell m'},
@@ -214,7 +214,7 @@ The spherical harmonic coefficients of a rotated function read
 %
 where \(\wigner{\ell}{m}{m'}(\rho)\) are \emph{Wigner D matrices} given by
 %
-\begin{equation}\label{eq:chapter3_reduced_wigner_define}
+\begin{equation}
 	\wigner{\ell}{m}{m'}(\rho)
 	%
 	= \exp(-i m\alpha) \reducedWigner{\ell}{m}{m'}(\beta) \exp(-i m'\gamma),
@@ -222,15 +222,6 @@ where \(\wigner{\ell}{m}{m'}(\rho)\) are \emph{Wigner D matrices} given by
 %
 which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
 The \(\reducedWigner{\ell}{m}{m'}(\beta)\) are the \emph{reduced d matrices}, which are real in this phase convention and satisfy many symmetry relations.
-One such symmetry relation is
-%
-\begin{equation}\label{eq:chapter3_reduced_wigner_symmetry}
-	\reducedWigner{\ell}{m}{m'}(-\beta)
-	%
-	= \reducedWigner{\ell}{m}{m'}(\beta),
-\end{equation}
-%
-which is explicitly used later.
 Note the proportionality of the axisymmetric rotation matrices and the spherical harmonics:
 %
 \begin{equation}\label{eq:chapter3_wigner_axisymmetric}
@@ -323,7 +314,7 @@ The definition of the left convolution~\cite{Kennedy2011,Driscoll1994} in real s
 \begin{equation}
 	\pixel{(f \circleddash g)}
 	%
-	= \integrateRotation{\rho} f(\rho\eta) g(\rho^{-1}\omega),
+	= \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega),
 \end{equation}
 %
 where \({\eta}\) is the north pole, and \(\dd{\rho(\rho)}=\sin{\beta} \dd{\alpha} \dd{\beta} \dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
@@ -340,46 +331,37 @@ To prove this, first consider the forward harmonic transform
 \begin{align}
 	\harmonic{(f \circleddash g)}
 	%
-	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rho\eta) g(\rho^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                 \\
+	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                 \\
 	%
-	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \conj{\harmonic{Y}}(\rho\omega) \nonumber{}                                                                      \\
+	& = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \pixel{(\rotation{\rho}g)} \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                      \\
 	%
-	 & = \integrateRotation{\rho} f(\rho\eta) \integrateSphere{\omega} \pixel{g} \sum\limits_{m'=-\ell}^{\ell} \conj{\big( \wigner{\ell}{m'}{m}(\rho^{-1}) \pixel{Y_{\ell m'}} \big)} \nonumber{} \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \harmonicSum['] \harmonic[']{(\rotation{\rho}g)} \pixel{\harmonic[']{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                      \\
 	%
-	 & = \sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho),
+	& = \integrateRotation{\rho} f(\rotationMatrix\eta) \harmonic{(\rotation{\rho}g)} \nonumber{}    \\
+	%
+	 & = \sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho),
 \end{align}
 %
-where the last line follows by (\cf{} \cref{eq:chapter3_reduced_wigner_define,eq:chapter3_reduced_wigner_symmetry})
-%
-\begin{align}
-	\wigner{\ell}{m}{m'} (\rho^{-1})
-	%
-	 & = \exp(-i m(-\gamma)) \reducedWigner{\ell}{m}{m'}(-\beta) \exp(-i m'(-\alpha)) \nonumber{}           \\
-	%
-	 & = \conj{\big(\exp(-i m'\alpha) \reducedWigner{\ell}{m'}{m}(\beta) \exp(-i m\gamma)\big)} \nonumber{} \\
-	%
-	 & = \wigner[\ast]{\ell}{m'}{m}(\rho).
-\end{align}
-%
+where the second and last line follow by \cref{eq:chapter3_rotation_operator,eq:chapter3_rotation_matrix} respectively.
 Due to the invariant measure \(\dd{\rho(\rho)}\) and considering a right rotation about the \(z\)-axis by \({\chi}\), \ie{} \(\rho = (\alpha,\beta,\gamma) \rightarrow \rho' = (\alpha,\beta,\gamma+\chi)\), it follows
 %
 \begin{align}\label{eq:chapter3_so3_integral}
-	\integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho)
+	\integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho)
 	%
-	 & = \integrateRotation{\rho} f(\rho'\eta) \wigner{\ell}{m}{m'}(\rho') \nonumber{}               \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{m'}(\rho') \nonumber{}               \\
 	%
-	 & = \integrateRotation{\rho} f(\rho\eta) \exp(-i m'\chi) \wigner{\ell}{m}{m'}(\rho) \nonumber{} \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \exp(-i m'\chi) \wigner{\ell}{m}{m'}(\rho) \nonumber{} \\
 	%
-	 & = \exp(-i m'\chi) \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{m'}(\rho),
+	 & = \exp(-i m'\chi) \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho),
 \end{align}
 %
-where the penultimate line follows since a rotation of \({\eta}\) about the \(z\)-axis leaves \({\eta}\) unchanged, \ie{} \(f(\rho'\eta) = f(\rho\eta)\).
+where the penultimate line follows since a rotation of \({\eta}\) about the \(z\)-axis leaves \({\eta}\) unchanged, \ie{} \(f(\rotationMatrix[']\eta) = f(\rotationMatrix\eta)\).
 Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be the case that \(m'=0\) unless the integral is zero, \ie{}:
 %
 \begin{align}
 	\harmonic{(f \circleddash g)}
 	%
-	 & = \axiHarmonic{g} \integrateRotation{\rho} f(\rho\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                               \\
+	 & = \axiHarmonic{g} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                               \\
 	%
 	 & = \axiHarmonic{g} \int\limits_{0}^{2\pi} \dd{\gamma} \integrateSphere{\omega} \pixel{f} \sqrt{\inverseFactor} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
 	%
