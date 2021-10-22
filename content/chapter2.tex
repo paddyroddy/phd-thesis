@@ -53,7 +53,7 @@ Consider the Laplacian in spherical coordinates
 	+ \frac{1}{r^{2}\sin^{2}{\theta}} \pdv[2]{\phi}.
 \end{equation}
 %
-The spherical harmonics are found by solving Laplace's equation
+The spherical harmonics are found by solving the Laplace equation
 %
 \begin{equation}\label{eq:chapter2_laplace}
 	\laplacian{f(r,\theta,\phi)}
@@ -168,6 +168,14 @@ where \(\harmonic{f}\) are the spherical harmonic coefficients given by
 	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
 \end{equation}
 %
+The conjugate symmetry relation of the spherical harmonic coefficients of a real function is
+%
+\begin{equation}
+	\conj{\harmonic{f}}
+	%
+	= {(-1)}^{m} f_{\ell(-m)}.
+\end{equation}
+%
 A useful relation for the spherical harmonics is the \emph{addition theorem} which states
 %
 \begin{equation}
@@ -230,8 +238,23 @@ By the \emph{Peter-Weyl} theorem, the matrix elements \(\wigner{\ell}{n}{m}(\rho
 \end{equation}
 %
 where \(\rotationVolume = \sin{\beta}\dd{\alpha}\dd{\beta}\dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
+Similarly, they satisfy the following completeness relation
 %
-It follows that the harmonic coefficients of a rotated function read
+\begin{equation}
+	\sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \sum\limits_{n=-\ell}^{\ell} \sum\limits_{m=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell}{n}{m}(\rho')
+	%
+	= \delta(\rho-\rho'),
+\end{equation}
+%
+where
+%
+\begin{equation}
+	\delta(\rho-\rho')
+	%
+	= \delta(\alpha-\alpha') \delta(\cos{\beta} - \cos{\beta'}) \delta(\gamma-\gamma').
+\end{equation}
+%
+From \cref{eq:chapter2_wigner_ylm}, it follows that the harmonic coefficients of a rotated function read
 %
 \begin{equation}
 	\harmonic{(\rotation{\rho}f)}
@@ -240,7 +263,23 @@ It follows that the harmonic coefficients of a rotated function read
 \end{equation}
 %
 Note the order of the indices on \(\wigner{\ell}{m}{n}(\rho)\) here compared to \cref{eq:chapter2_wigner_ylm}.
-The spherical harmonics are related to the axisymmetric rotation matrices by
+A function on the rotation group \(F \in \hilbert{\rotationGroup}\) may be represented by an expansion in the Wigner D matrices
+%
+\begin{equation}
+	F(\rho)
+	%
+	= \sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{n=-\ell}^{\ell} F^{\ell}_{mn} \wigner{\ell}{m}{n}(\rho),
+\end{equation}
+%
+where the Wigner harmonic coefficients \(F^{\ell}_{mn}\) are given by
+%
+\begin{equation}
+	F^{\ell}_{mn}
+	%
+	= \integrateRotation{\rho} F(\rho) \wigner[\ast]{\ell}{m}{n}(\rho).
+\end{equation}
+%
+A useful relation to note is the connection between the spherical harmonics and the axisymmetric rotation matrices
 %
 \begin{equation}
 	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
