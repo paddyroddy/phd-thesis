@@ -426,6 +426,8 @@
 %  \begin{macro}{\@maketitle}
 %  Create a separate title page with the usual material on it.
 %    \begin{macrocode}
+\usepackage[en-GB]{datetime2}
+\DTMlangsetup[en-GB]{ord=raise}
 \newcommand \@maketitle{%
     \newpage%
     \null%
