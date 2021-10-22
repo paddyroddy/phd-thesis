@@ -251,7 +251,6 @@ The convolution is commutative
 %
 A spherical counterpart of the convolution is required for functions defined on the sphere.
 Alternative definitions of such a convolution exist in the literature but, while already useful, lack certain desirable properties.
-
 The properties desired in the spherical extension of the convolution include:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
@@ -331,13 +330,13 @@ To prove this, first consider the forward harmonic transform
 \begin{align}
 	\harmonic{(f \circleddash g)}
 	%
-	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                 \\
+	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{}                                            \\
 	%
-	& = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \pixel{(\rotation{\rho}g)} \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                      \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \pixel{(\rotation{\rho}g)} \pixel{\conj{\harmonic{Y}}} \nonumber{}                                               \\
 	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \harmonicSum['] \harmonic[']{(\rotation{\rho}g)} \pixel{\harmonic[']{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber{}                                                                      \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \harmonicSum['] \harmonic[']{(\rotation{\rho}g)} \pixel{\harmonic[']{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
 	%
-	& = \integrateRotation{\rho} f(\rotationMatrix\eta) \harmonic{(\rotation{\rho}g)} \nonumber{}    \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \harmonic{(\rotation{\rho}g)} \nonumber{}                                                                                                 \\
 	%
 	 & = \sum\limits_{m'=-\ell}^{\ell} g_{\ell m'} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho),
 \end{align}
@@ -348,7 +347,7 @@ Due to the invariant measure \(\dd{\rho(\rho)}\) and considering a right rotatio
 \begin{align}\label{eq:chapter3_so3_integral}
 	\integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{m'}(\rho)
 	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{m'}(\rho') \nonumber{}               \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{m'}(\rho') \nonumber{}             \\
 	%
 	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \exp(-i m'\chi) \wigner{\ell}{m}{m'}(\rho) \nonumber{} \\
 	%
@@ -361,7 +360,7 @@ Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be th
 \begin{align}
 	\harmonic{(f \circleddash g)}
 	%
-	 & = \axiHarmonic{g} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                               \\
+	 & = \axiHarmonic{g} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                    \\
 	%
 	 & = \axiHarmonic{g} \int\limits_{0}^{2\pi} \dd{\gamma} \integrateSphere{\omega} \pixel{f} \sqrt{\inverseFactor} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
 	%
@@ -369,7 +368,6 @@ Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be th
 \end{align}
 %
 where the penultimate line follows by \cref{eq:chapter3_wigner_axisymmetric}.
-
 As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
 Hence, the properties are similar.
 The left convolution has the following properties:
