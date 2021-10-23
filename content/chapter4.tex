@@ -19,7 +19,7 @@ A possible approach to solve this problem is to construct wavelets that are conc
 
 Extracting non-trivial patterns and structures of interest is a common problem in data analysis.
 To overcome this problem the data may be projected onto an appropriate basis.
-In Fourier analyses one considers oscillatory features; whereas wavelets extract the contributions of scale-dependent features in both space and scale concurrently.
+In Fourier analyses, one considers oscillatory features; whereas wavelets extract the contributions of scale-dependent features in both space and scale concurrently.
 Wavelets on the sphere have been effectively applied in fields such as astrophysics and cosmology~\cite{Pen1999,Barreiro2001,Rocha2004,McEwen2004}, where datasets are increasingly large and require analysis at high resolutions for accurate theoretical predictions.
 Wavelet theory is well established in the Euclidean domain.
 In the spherical domain, however, few wavelet frameworks lead to exact transforms in both the continuous and discrete settings.
@@ -27,8 +27,8 @@ Scale-discretised wavelets~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,Mc
 
 Functions cannot simultaneously have finite support in both the spatial (time) and spectral (frequency) domains~\cite{Slepian1961,Slepian1983}.
 Slepian, Landau and Pollak solved the fundamental problem of finding and representing the functions which are optimally energy concentrated in both the time and frequency domains~\cite{Slepian1961,Landau1961,Landau1962}.
-The \emph{Slepian spatial-spectral concentration problem}, or \emph{Slepian concentration problem} for short, produces the orthogonal functions optimally concentrated in the spatial (spectral) domain and exactly limited in the spectral (spatial) domain.
-The \emph{Slepian functions} and their multidimensional counterparts~\cite{Slepian1964,Simons2011a} have been used in many branches of science and engineering (\eg{} signal processing~\cite{Mathews1985,Thomson1982}, geophysics~\cite{Thomson1976,Simons2006a,Simons2011}, medical imaging~\cite{Jackson1991}).
+The Slepian spatial-spectral concentration problem, or Slepian concentration problem for short, produces the orthogonal functions optimally concentrated in the spatial (spectral) domain and exactly limited in the spectral (spatial) domain.
+The Slepian functions and their multidimensional counterparts~\cite{Slepian1964,Simons2011a} have been used in many branches of science and engineering (\eg{} signal processing~\cite{Mathews1985,Thomson1982}, geophysics~\cite{Thomson1976,Simons2006a,Simons2011}, and medical imaging~\cite{Jackson1991}).
 In particular, these functions have been used in solving partial differential equations~\cite{Boyd2003,Chen2005}, inverse problems~\cite{Villiers2001,Abdelmoula2015}, interpolation~\cite{Moore2004,Shkolnisky2006} and extrapolation~\cite{Xu1983}.
 In fields with spatially limited observations, the functions have become the dominant spatial or spectral windows for regularisation of quadratic inverse problems of power spectral estimation~\cite{Thomson1976}.
 
@@ -41,18 +41,18 @@ Wavelets constructed on Slepian functions in the Euclidean setting (\ie{} prolat
 Many techniques on the sphere have also been developed, often motivated by applications in geophysics or cosmology.
 Sometimes the Slepian functions on the sphere themselves have been used~\cite{Simons2009}; whereas other times, spatially localised spherical harmonic transforms are used instead (\eg{}~\cite{Simons1997,Wieczorek2005,Khalid2013,Khalid2013a}).
 Slepian frames on the sphere are constructed in~\cite{Simons2011}, which provide a wavelet-like representation but do not constitute a tight frame with an explicit inverse transform.
-An approach to solve inverse problems with regional data on the sphere is presented in~\cite{Michel2017}, which results in Slepian functions that can be used to derive a singular value decomposition (SVD) approach.
+An approach to solving inverse problems with regional data on the sphere is presented in~\cite{Michel2017}, which results in Slepian functions that can be used to derive a singular value decomposition (SVD) approach.
 Standard regularisation techniques based on a known SVD can then be applied to inverse problems where data are only defined on a region.
 
 This chapter presents a novel spherical wavelet basis designed for incomplete spherical datasets.
-Here, the scale-discretised wavelet construction on the sphere~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} is extended to support situations where data is only defined over a partial region of the sphere.
+Here, the scale-discretised wavelet construction on the sphere~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} is extended to support situations where data are only defined over a partial region of the sphere.
 Scale-discretised wavelets have the advantage that they constitute a tight frame, exhibit an explicit inversion formula, and have excellent localisation properties in both spatial and spectral domains.
 The eigenfunctions of the Slepian concentration problem provide the orthogonal basis functions (the Slepian functions) for the region from which they are constructed, on which the scale-discretised wavelet transform is constructed.
 A tiling of the Slepian line --- akin to the spherical harmonic line --- allows one to define Slepian scale-discretised wavelets.
-By generalising the \emph{sifting convolution}~\cite{Roddy2021}, discussed in \cref{sec:chapter3}, one may perform convolutions over the incomplete sphere using the Slepian functions as a basis.
+By generalising the sifting convolution~\cite{Roddy2021}, discussed in \cref{sec:chapter3}, one may perform convolutions over the incomplete sphere using the Slepian functions as a basis.
 The Slepian wavelet transform then follows by performing convolutions of signals defined over the incomplete sphere with the Slepian wavelets.
 The original function can then be reconstructed from its Slepian wavelet coefficients.
-\emph{Slepian scale-discretised wavelets on the sphere} have many possible applications wherever data are defined over a partial region of the sphere; for example, in many cosmological analyses.
+Slepian scale-discretised wavelets on the sphere have many possible applications wherever data are defined over a partial region of the sphere; for example, in many cosmological analyses.
 
 The remainder of this chapter is as follows.
 \cref{sec:chapter4_mathematical_background_problem_formulation} presents some mathematical preliminaries of signals on the sphere, the spherical harmonic basis functions, and rotations on the sphere.
@@ -137,7 +137,7 @@ The shorthand convention
 \end{equation}
 %
 may be adopted.
-The \emph{addition theorem} of the spherical harmonics states
+The addition theorem of the spherical harmonics states
 %
 \begin{equation}\label{eq:chapter4_addition_theorem}
 	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
@@ -145,7 +145,7 @@ The \emph{addition theorem} of the spherical harmonics states
 	= \factor P_{\ell}(\omega \cdot \omega'),
 \end{equation}
 %
-where \(P_{\ell}(x)\) are the \emph{Legendre polynomials}.
+where \(P_{\ell}(x)\) are the Legendre polynomials.
 
 \subsubsection{Rotation of a Signal on the 2-Sphere}
 
@@ -175,7 +175,7 @@ A rotated function in harmonic space is
 	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\rho) f_{\ell n},
 \end{equation}
 %
-where the \emph{Wigner D matrices} \(\wigner{\ell}{m}{n}(\rho)\) form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
+where the Wigner D matrices \(\wigner{\ell}{m}{n}(\rho)\) form the \(2\ell+1\)-dimensional representation of the rotation group for a given \({\ell}\).
 
 \subsection{Sifting Convolution on the Sphere}\label{sec:chapter4_sifting_convolution_sphere}
 
@@ -196,7 +196,7 @@ This chapter considers optimally concentrated functions within a region \(R\), a
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
 
-To maximise the spatial concentration of a bandlimited function \(f \in \hilbert{\twoSphere}\) within a region \(R\) one must maximise the following ratio:
+To maximise the spatial concentration of a bandlimited function \(f \in \hilbert{\twoSphere}\) within a region \(R\) one must maximise the following ratio
 %
 \begin{equation}
 	\mu
@@ -268,7 +268,7 @@ Consider the sum of the eigenvalues
 \end{align}
 %
 where the second line follows by the addition theorem \cref{eq:chapter4_addition_theorem}, and \(A\) is the area of the region \(R\).
-This \(N\) is the spherical analogue of the \emph{Shannon number}~\cite{Simons2006}, which is a good estimate of the number of significant eigenvalues~\cite{Percival1993}.
+This \(N\) is the spherical analogue of the Shannon number~\cite{Simons2006}, which is a good estimate of the number of significant eigenvalues~\cite{Percival1993}.
 
 \subsubsection{Slepian Decomposition}
 
@@ -431,7 +431,7 @@ One may probe spatially localised, scale-dependent content through a scale-discr
 These wavelets are defined similarly to~\cite{Wiaux2008,McEwen2018} but expanded in the Slepian basis rather than the spherical harmonics.
 
 Now consider a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\).
-Wavelet coefficients \(W^{\Psi^{j}} \in \hilbert{R}\) may be defined by a sifting convolution of \(f\) with the wavelet \(\Psi^{j} \in \hilbert{R}\) for wavelet scale \(j\):
+Wavelet coefficients \(W^{\Psi^{j}} \in \hilbert{R}\) may be defined by a sifting convolution of \(f\) with the wavelet \(\Psi^{j} \in \hilbert{R}\) for wavelet scale \(j\)
 %
 \begin{align}\label{eq:chapter4_slepian_wavelet_omega}
 	\pixel{W^{\Psi^{j}}}
@@ -452,7 +452,7 @@ or in Slepian space
 where \(\slepian{\Psi}^{j}\) are the Slepian harmonic coefficients of the wavelet at scale \(j\).
 
 Typically, wavelets are complemented with scaling functions, with each capturing different scales of the underlying function.
-Similarly to the wavelet coefficients, scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\):
+Similarly to the wavelet coefficients, scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\)
 %
 \begin{align}\label{eq:chapter4_slepian_scaling_omega}
 	\pixel{W^{\Phi}}
@@ -510,7 +510,7 @@ One may now define wavelets and a scaling function that satisfy this admissibili
 \subsection{Generating Functions}\label{sec:chapter4_generating_functions}
 
 To tile the Slepian line, consider the smooth generating functions defined by~\cite{Wiaux2008}.
-Consider the \(C^{\infty}\) Schwartz function with compact support on \(\interval{-1}{1}\):
+Consider the \(C^{\infty}\) Schwartz function with compact support on \(\interval{-1}{1}\)
 %
 \begin{equation}
 	s(t) \equiv
@@ -568,7 +568,7 @@ A natural approach is to define the wavelets \(\slepian{\Psi}^{j}\) from the gen
 \end{equation}
 %
 The admissibility condition \cref{eq:chapter4_admissibility} is satisfied for these wavelets for \(p \geq \lambda^{J_{0}}\), where \(J_{0}\) is the lowest wavelet scale used in the decomposition.
-The scaling function \(\Phi{}\) is constructed to extract the modes that cannot be probed by the wavelets (\ie{} modes with \(p < \lambda^{J_{0}}\)):
+The scaling function \(\Phi{}\) is constructed to extract the modes that cannot be probed by the wavelets (\ie{} modes with \(p < \lambda^{J_{0}}\))
 %
 \begin{equation}
 	\slepian{\Phi}
@@ -621,7 +621,7 @@ Similarly, the scaling function energy is
 
 \subsubsection{Parseval Frame}
 
-Slepian scale-discretised wavelets on the sphere satisfy the following \emph{Parseval frame} property
+Slepian scale-discretised wavelets on the sphere satisfy the following Parseval frame property
 %
 \begin{equation}
 	A\norm{f}^{2} \leq \integrateSphere{\omega}
@@ -674,7 +674,7 @@ where the expected value of the wavelet/scaling coefficients is
 	= \slepianSum \slepian{\varphi} \pixel{\slepian{S}} \expval*{\conj{\slepian{f}}}.
 \end{equation}
 %
-For the common case of zero-mean Gaussian noise the expected value of the Slepian coefficients is zero, and hence the wavelet/scaling coefficient expectation \cref{eq:chapter4_expected_wavelet} is zero.
+For the common case of zero-mean Gaussian noise, the expected value of the Slepian coefficients is zero, and hence the wavelet/scaling coefficient expectation \cref{eq:chapter4_expected_wavelet} is zero.
 Thus, the variance of the wavelet/scaling coefficients is
 %
 \begin{equation}\label{eq:chapter4_slepian_isotropic_noise}
@@ -692,7 +692,7 @@ To simplify \cref{eq:chapter4_slepian_isotropic_noise} further, consider homogen
 \end{equation}
 %
 where \(C_{\ell} = \sigma^{2}\) for white noise.
-The power spectrum in harmonic space may be converted to the Slepian space by:
+The power spectrum in harmonic space may be converted to the Slepian space by
 %
 \begin{align}
 	\expval*{\slepian{f} \conj{\slepian[']{f}}}
@@ -723,7 +723,7 @@ All computations are performed with the \texttt{SSHT}\footnote{\url{http://astro
 
 \subsection{South America Region}\label{sec:chapter4_south_america_region}
 
-A region on the sphere is constructed from the \emph{Earth Gravitational Model EGM2008} dataset~\cite{Pavlis2013}, which is a topographic map of the Earth.
+A region on the sphere is constructed from the Earth Gravitational Model EGM2008 dataset~\cite{Pavlis2013}, which is a topographic map of the Earth.
 The left panel of \cref{fig:chapter4_south_america_region} presents the dataset up to an order of \(L=128\), smoothed with a \(\fwhm{1.17}\) to avoid aliasing, and centred on a view of South America.
 A masked region \(R\) is constructed by centring a polar cap of angular opening \(\SI{40}{\degree}\) over South America, and then:
 %
@@ -771,7 +771,7 @@ Wavelets localise features in the data to different scales, hence the important 
 To test the efficacy of Slepian wavelets, white noise is added to the constructed region \(R\) in the right panel of \cref{fig:chapter4_south_america_region}.
 A straightforward hard-thresholding scheme is developed to perform the denoising.
 
-To calculate the covariance of a filtered field (wavelet coefficients) consider a signal localised in \(R\) in the presence of noise
+To calculate the covariance of a filtered field (wavelet coefficients), consider a signal localised in \(R\) in the presence of noise
 %
 \begin{equation}\label{eq:chapter4_noised_signal}
 	\pixel{x} = \pixel{s} + \pixel{n},
@@ -868,7 +868,7 @@ Thus, it is clear that this hard-thresholding scheme increases the power of the 
 
 \section{Conclusions}\label{sec:chapter4_conclusion}
 
-This chapter presents the construction of \emph{Slepian scale-discretised wavelets on the sphere}, which are wavelets restricted to a region of the sphere.
+This chapter presents the construction of Slepian scale-discretised wavelets on the sphere, which are wavelets restricted to a region of the sphere.
 These wavelets can be used in many fields of science and engineering where data are measured on the sphere but are missing on a particular region.
 A common approach to analysing data of this form is by using spherical wavelets, which allow one to probe spatially localised, scale-dependent features of the signal.
 However, wavelet methods on the whole sphere suffer problems when data are only defined on a particular region, as the wavelet coefficients are contaminated near the boundaries of the region.
@@ -876,7 +876,7 @@ Slepian wavelets offer a solution to this problem.
 
 Slepian wavelets are constructed on the eigenfunctions of the Slepian spatial-spectral concentration problem on the sphere, which are the basis functions of the region.
 Through a tiling of the Slepian line one may define Slepian scale-discretised wavelets that are localised within the region of interest.
-The current chapter generalises the \emph{sifting convolution}~\cite{Roddy2021} on the sphere (introduced in \cref{sec:chapter3}) beyond the spherical harmonic setting to any basis, where here the Slepian functions define the basis.
+The current chapter generalises the sifting convolution~\cite{Roddy2021} on the sphere (introduced in \cref{sec:chapter3}) beyond the spherical harmonic setting to any basis, where here the Slepian functions define the basis.
 The Slepian wavelet transform then follows by performing convolutions over the incomplete sphere with the Slepian wavelets.
 The original function can then be reconstructed from its Slepian wavelet coefficients.
 

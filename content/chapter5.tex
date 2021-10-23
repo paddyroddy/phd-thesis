@@ -11,7 +11,7 @@ Through a wavelet transform, the wavelet coefficients of a field defined on the 
 \section{Introduction}
 
 Many fields measure data which are intrinsically non-Euclidean in structure and are better modelled by manifolds or graphs.
-One manifold, in particular, which is in commonplace in science and engineering is the sphere; such as in: cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, computer graphics~\cite{Ramamoorthi2004}, and signal processing~\cite{Roddy2021a}.
+One manifold, in particular, which is commonplace in science and engineering is the sphere; such as in: cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, computer graphics~\cite{Ramamoorthi2004}, and signal processing~\cite{Roddy2021a}.
 Often data are not observed in some region of the manifold, and hence methods which work over the whole manifold may not be appropriate.
 One such example, in the spherical setting, is in cosmic microwave background analyses where foreground microwave emissions dominate the region around the  Galactic plane and are often removed~\cite{Mortlock2002}.
 Wavelets are a typical approach to deal with problems of this form, which allow the probing of spatially localised, scale-dependent features of the signal.
@@ -26,25 +26,25 @@ Wavelets, however, simultaneously extract contributions of scale-dependent featu
 Wavelets on the sphere (\cf{} manifold) have been applied in fields such as: astrophysics and cosmology~\cite{Pen1999,Barreiro2001,Rocha2004,McEwen2004}, planetary science~\cite{Audet2011,Audet2014}, and geophysics~\cite{Loris2010,Simons2011,Simons2011b}.
 Scale-discretised wavelets (on the sphere)~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} lean on a tiling of the harmonic line to produce an exact wavelet transform in both the continuous and discrete settings.
 
-A new research direction, \emph{geometric deep learning}, has evolved from an increasing interest in non-Euclidean data geometries; where convolutional networks are generalised to graph and manifold structured data (\eg{}~\cite{Bronstein2017,Perlmutter2020}).
+A new research direction, geometric deep learning, has evolved from an increasing interest in non-Euclidean data geometries; where convolutional networks are generalised to graph and manifold structured data (\eg{}~\cite{Bronstein2017,Perlmutter2020}).
 In general, geometric learning problems are split into two categories: characterising the structure of the data, and analysing functions defined on a non-Euclidean domain.
 Manifold learning models (\eg{}~\cite{Tenenbaum2000,Coifman2006b,VanDerMaaten2008}) are a set of unsupervised algorithms which capture the intrinsic structure in the data through data-driven geometries.
 Moreover, signals on manifolds are increasingly prevalent in areas such as shape matching and computer graphics.
 Thus, many works are emerging to generalise spectral and signal processing methods to manifolds~\cite{Coifman2006} and graphs~\cite{Shuman2013}.
-In these settings, functions are supported on the manifold/the vertices of the graph, and the Fourier harmonics are the eigenfunctions of the \emph{Laplace-Beltrami operator}/eigenvectors of the \emph{graph Laplacian}.
+In these settings, functions are supported on the manifold/the vertices of the graph, and the Fourier harmonics are the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian.
 
 Graphs are a fundamental data structure, which are useful in describing geometric structures of data in domains such as: social~\cite{Nettleton2013}, transportation~\cite{Mohan2014}, sensor~\cite{Kenniche2010}, and neuronal~\cite{Tang2012} networks.
 Each edge in a graph is associated with a weight, which is often a measure of the similarity between two connected vertices in a graph.
 The physics of the problem or the data at hand dictate which vertices are connected and their respective weights, \ie{} the weight may not necessarily be the physical distance between two vertices.
-A \emph{graph signal} is a finite collection of samples with some value at each vertex at a graph.
+A graph signal is a finite collection of samples with some value at each vertex at a graph.
 In computer graphics, working with intrinsically geometric shapes is commonplace.
 In this field, three-dimensional shapes are often modelled as Riemannian manifolds and discretised as triangular meshes.
 
 It is well-known that functions cannot have finite support in the spatial and spectral domains simultaneously~\cite{Slepian1961,Slepian1983}.
 In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of finding and representing signals which are optimally concentrated in both domains~\cite{Slepian1961,Landau1961,Landau1962}.
-The \emph{Slepian spatial-spectral concentration problem} (or the \emph{Slepian concentration problem} for short) results in the families of functions which are optimally concentrated in the spatial (spectral) domain, and exactly limited in the spectral (spatial) domain.
+The Slepian spatial-spectral concentration problem (or the Slepian concentration problem for short) results in the families of functions which are optimally concentrated in the spatial (spectral) domain, and exactly limited in the spectral (spatial) domain.
 The Slepian concentration problem was initially formed in the Euclidean domain; however, it has since been generalised to other geometries, such as: the sphere~\cite{Simons2006,Wieczorek2005,Albertella1999,Cohen1989,Meaney1984,Daubechies1988}, and graphs~\cite{VanDeVille2017,VanDeVille2017a,Bolton2018}.
-The so-called \emph{Slepian functions} arise in many fields within science and engineering, such as: medical imaging~\cite{Jackson1991}, signal processing~\cite{Mathews1985,Thomson1982}, and geophysics~\cite{Thomson1976,Simons2006a,Simons2011}.
+The so-called Slepian functions arise in many fields within science and engineering, such as: medical imaging~\cite{Jackson1991}, signal processing~\cite{Mathews1985,Thomson1982}, and geophysics~\cite{Thomson1976,Simons2006a,Simons2011}.
 Notably, these functions have been used in interpolation~\cite{Moore2004,Shkolnisky2006}, extrapolation~\cite{Xu1983}, inverse problems~\cite{Villiers2001,Abdelmoula2015}, and solving partial differential equations~\cite{Boyd2003,Chen2005}.
 
 Due to recent interest in geometric deep learning, many fields are extending existing methods developed in the Euclidean domain to manifolds or graphs, \ie{}~\cite{Perlmutter2020}.
@@ -53,7 +53,7 @@ These wavelets constitute a basis designed for incomplete data on manifolds or g
 Here, the scale-discretised wavelet construction on the sphere~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} is extended to the Slepian domain; however, the Slepian functions are now constructed on a region of a general manifold (rather than strictly the sphere).
 As before, scale-discretised wavelets exhibit an explicit inversion formula, constitute a tight frame, and have excellent localisation properties in both spectral and spatial domains.
 The wavelets themselves are constructed through a tiling of the Slepian harmonic line --- built from the eigenfunctions of the Slepian concentration problem on the manifold.
-The wavelet transform follows through a generalisation of the \emph{sifting convolution}~\cite{Roddy2021}, discussed in \cref{sec:chapter3}, which allows one to perform convolutions on (incomplete) manifolds.
+The wavelet transform follows through a generalisation of the sifting convolution~\cite{Roddy2021}, discussed in \cref{sec:chapter3}, which allows one to perform convolutions on (incomplete) manifolds.
 The wavelet construction is analogous to the spherical case, but with the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian, rather than the spherical harmonics.
 
 In \cref{sec:chapter4}, Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} were introduced.
@@ -67,7 +67,7 @@ Extending wavelets and wavelet techniques to manifold and graph domains has been
 The remainder of this chapter is as follows.
 \cref{sec:chapter5_mathematical_background_problem_formulation} presents some mathematical preliminaries of Riemannian manifolds, their representations as graphs, and triangular meshes.
 The Laplace-Beltrami operator and the graph/mesh Laplacian are also introduced.
-A brief review of Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} follows, which this works builds upon.
+A brief review of Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} follows, which this work builds upon.
 In \cref{sec:chapter5_working_with_manifolds} the Slepian concentration problem is adapted to the manifold setting, which results in the basis functions of a region of the manifold, \ie{} the Slepian functions.
 A review of the sifting convolution~\cite{Roddy2021} follows, which allows one to perform convolutions on the (incomplete) manifold --- which are typically not well-defined.
 The Slepian wavelet theory is developed in \cref{sec:chapter5_slepian_wavelets}.
@@ -91,14 +91,14 @@ This chapter extends Slepian scale-discretised wavelets on the sphere to manifol
 \subsubsection{Riemannian Manifolds}
 
 In short, a manifold is a space that is locally Euclidean.
-For example, at a point on the surface of the Earth (\ie{} \(\twoSphere{}\)) the Earth's surface appears planar --- leading to the so-called \emph{flat Earth} theory.
-More formally, a \(d\)-dimensional manifold \(\manifold{}\) is a topological space, where each point \(x\) exists in a neighbourhood that is topologically homeomorphic to a \(d\)-dimensional Euclidean space --- called the \emph{tangent space}.
+For example, at a point on the surface of the Earth (\ie{} \(\twoSphere{}\)) the Earth's surface appears planar --- leading to the so-called flat Earth theory.
+More formally, a \(d\)-dimensional manifold \(\manifold{}\) is a topological space, where each point \(x\) exists in a neighbourhood that is topologically homeomorphic to a \(d\)-dimensional Euclidean space --- called the tangent space.
 Let \(\manifold{}\) denote a compact, smooth, connected \(d\)-dimensional Riemannian manifold without boundary contained in \(\mathbb{R}^{n}\).
 The Hilbert space \(\hilbert{\manifold}\) is formed by the set of functions \(f : \manifold \to \mathbb{R}\) that are square-integrable with respect to the Riemannian volume \(\meshVolume{}\).
 The geodesic distance between two points is denoted \(r(x,y)\), and the Laplace-Beltrami operator on \(\manifold{}\) is denoted \(\laplace{M}\).
 
 Let \(f \in \hilbert{\manifold}\) be a real-valued function defined on a Riemannian manifold \(\manifold{}\).
-The \emph{Laplace-Beltrami} operator is
+The Laplace-Beltrami operator is
 %
 \begin{equation}
 	\laplace{M} f
@@ -215,13 +215,13 @@ are the vertex weights,
 \end{equation}
 %
 is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb*{f}\).
-The \emph{non-normalised graph Laplacian} refers to setting \(\vb*{A} = \vb*{I}\) in \cref{eq:chapter5_graph_laplace_matrix}; other choices exist, such as the random walk Laplacian which occurs when \(\vb*{A} = \vb*{K}\)~\cite{VonLuxburg2007}.
+The non-normalised graph Laplacian refers to setting \(\vb*{A} = \vb*{I}\) in \cref{eq:chapter5_graph_laplace_matrix}; other choices exist, such as the random walk Laplacian which occurs when \(\vb*{A} = \vb*{K}\)~\cite{VonLuxburg2007}.
 
 \subsubsection{Triangular Meshes}
 
 In computer graphics applications, three-dimensional shapes are often modelled by locally two-dimensional manifolds.
 A manifold is sampled at a set of \(n\) points, and a graph is then constructed on these points (vertices) where the edges represent the local connectivity of the manifold.
-A set of edge weights are then computed, for example Gaussian weights
+A set of edge weights are then computed, for example, Gaussian weights
 %
 \begin{equation}
 	w_{i j}
@@ -302,7 +302,7 @@ and the usual expression for the area of a triangle
 \end{equation}
 %
 Through an analogous expression for the interior angle \(\beta_{i j}\), it is clear that \cref{eq:chapter5_cotangent_laplace} follows from \cref{eq:chapter5_mesh_laplace_weights}, as elaborated in~\cite{Meyer2003}.
-This \emph{cotangent Laplacian} is used extensively in computer graphics~\cite{Pinkall1993}, and in the rest of this chapter.
+This cotangent Laplacian is used extensively in computer graphics~\cite{Pinkall1993}, and in the rest of this chapter.
 A set of mesh Laplacian eigenvectors for a given mesh are presented in \cref{fig:chapter5_eigenhomers}.
 
 \input{figures/chapter5/mesh_laplace}
@@ -339,7 +339,7 @@ This chapter considers optimally concentrated functions within a region \(R\) of
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
 
-To maximise the spatial energy concentration of a bandlimited signal \(f \in \hilbert{\manifold}\), the following ratio must be maximised:
+To maximise the spatial energy concentration of a bandlimited signal \(f \in \hilbert{\manifold}\), the following ratio must be maximised
 %
 \begin{equation}
 	\mu
@@ -395,7 +395,7 @@ of the corresponding eigenvectors
 %
 No bandlimited function can be restricted exactly within a region \(R\) and hence \(\mu_{1}<1\).
 Due to the positive definiteness of \(\vb*{D}\), the smallest eigenvalue \(\mu_{\imax}\) is strictly greater than zero.
-A manifold analogue of the \emph{Shannon number} can be constructed by
+A manifold analogue of the Shannon number can be constructed by
 %
 \begin{equation}\label{eq:chapter5_shannon}
 	N
@@ -436,7 +436,7 @@ The Slepian coefficients \(\slepian{f}\) are calculated through the usual projec
 	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}.
 \end{equation}
 %
-The Slepian coefficients of a well-localised function may be computed with an integral over the region \(R\) rather than an integral over the whole manifold \(\manifold{}\):
+The Slepian coefficients of a well-localised function may be computed with an integral over the region \(R\) rather than an integral over the whole manifold \(\manifold{}\)
 %
 \begin{equation}
 	\slepian{f}
@@ -455,7 +455,7 @@ To transform from Slepian coefficients to the basis functions of the manifold
 	= \slepianSum \slepian{f} {(\slepian{S})}_{i},
 \end{equation}
 %
-where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:chapter5_eigenproblem}:
+where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:chapter5_eigenproblem}
 %
 \begin{equation}
 	{(\slepian{S})}_{i}
@@ -538,7 +538,7 @@ as
 \end{align}
 %
 Note that the Fourier representation of the convolution is a product and, hence, is efficient to compute.
-It can be shown that the translation operator is a sifting convolution of a function with the shifted Dirac delta function:
+It can be shown that the translation operator is a sifting convolution of a function with the shifted Dirac delta function
 %
 \begin{align}
 	\mesh{\convolution{f}{\delta_{y}}}
@@ -577,7 +577,7 @@ A Slepian wavelet transform can be constructed through a tiling of Slepian space
 Spatially localised, scale-dependent content of a signal may be probed through a scale-discretised wavelet transform.
 The construction of these wavelets is in an analogous manner to~\cite{Wiaux2008,McEwen2018} but are computed in the Slepian basis rather than the basis functions of the sphere (\cf{} manifold).
 
-For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\), the wavelet coefficients \(W^{\Psi^{j}} \in \hilbert{R}\) are defined through a sifting convolution of \(f\) with the wavelet \(\Psi^{j} \in \hilbert{R}\) for wavelet scale \(j\):
+For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\), the wavelet coefficients \(W^{\Psi^{j}} \in \hilbert{R}\) are defined through a sifting convolution of \(f\) with the wavelet \(\Psi^{j} \in \hilbert{R}\) for wavelet scale \(j\)
 %
 \begin{align}
 	\mesh{W^{\Psi^{j}}}
@@ -588,7 +588,7 @@ For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\
 \end{align}
 %
 Wavelets are typically paired with a scaling function, each capturing different underlying scales of the signal.
-Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\):
+Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\)
 %
 \begin{align}
 	\mesh{W^{\Phi}}
@@ -652,7 +652,7 @@ An instinctive approach is to define the wavelets \(\slepian{\Psi}^{j}\) from th
 \end{equation}
 %
 For \(p \geq \lambda^{J_{0}}\) the admissibility condition \cref{eq:chapter5_admissibility} is satisfied for these wavelets, where \(J_{0}\) is the lowest wavelet scale used in the decomposition.
-Modes that cannot be probed by wavelets can be extracted through the construction of a scaling function \(\Phi{}\) (\ie{} modes with \(p < \lambda^{J_{0}}\)):
+Modes that cannot be probed by wavelets can be extracted through the construction of a scaling function \(\Phi{}\) (\ie{} modes with \(p < \lambda^{J_{0}}\))
 %
 \begin{equation}
 	\slepian{\Phi}
@@ -696,7 +696,7 @@ A similar expression exists for the scaling function energy.
 
 \subsubsection{Parseval Frame}
 
-A \emph{Parseval frame} is satisfied by Slepian scale-discretised wavelets on manifolds
+A Parseval frame is satisfied by Slepian scale-discretised wavelets on manifolds
 %
 \begin{equation}
 	A\norm{f}^{2} \leq \integrateManifold{x}
@@ -737,7 +737,7 @@ The corresponding power spectrum in Slepian space is
 	= \sigma^{2} \delta_{pp'}.
 \end{equation}
 %
-For the common case of zero-mean Gaussian noise the expected value of the wavelet/scaling coefficients is zero, and hence the wavelet domain variance is
+For the common case of zero-mean Gaussian noise, the expected value of the wavelet/scaling coefficients is zero, and hence the wavelet domain variance is
 %
 \begin{equation}
 	\variance{\mesh{W^{\varphi}}}
@@ -882,7 +882,7 @@ Note that the wavelet parameters \(\lambda{}\) and \(J_{0}\) have not been optim
 \section{Conclusions}\label{sec:chapter5_conclusions}
 
 Due to recent interest in geometric deep learning, many fields are extending existing methods in the Euclidean domain to the manifold or graph settings.
-This chapter generalises \emph{Slepian scale-discretised wavelets on the sphere}~\cite{Roddy2021a} (\cf{} \cref{sec:chapter4}) to Riemannian manifolds, whereby the wavelets themselves are restricted to a region of the manifold.
+This chapter generalises Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} (\cf{} \cref{sec:chapter4}) to Riemannian manifolds, whereby the wavelets themselves are restricted to a region of the manifold.
 Slepian wavelets have many possible use cases in various fields of science and engineering, where data only exists in a particular region.
 A typical approach to problems of this kind is to analyse the signal with wavelets defined over the whole manifold, where spatially localised, scale-dependent features of the signal may be extracted.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.

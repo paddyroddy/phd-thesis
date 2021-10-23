@@ -2,7 +2,7 @@
 
 In this chapter the mathematical background that later chapters rely on is introduced.
 \cref{sec:chapter2_signals_sphere} begins with a review of signals on the sphere on which much of this work is built.
-Localised spatial-scale analysis is considered through wavelets in \cref{sec:chapter2_wavelets}, followed by localised spatial-spectral analysis via the \emph{Slepian concentration problem} in \cref{sec:chapter2_slepian_concentration_problem}.
+Localised spatial-scale analysis is considered through wavelets in \cref{sec:chapter2_wavelets}, followed by localised spatial-spectral analysis via the Slepian concentration problem in \cref{sec:chapter2_slepian_concentration_problem}.
 The primary motivation behind this work, namely: observations over the partial sphere in cosmology is discussed in \cref{sec:chapter2_motivation}.
 Lastly, limitations of existing approaches and the aim of this thesis is covered in \cref{sec:chapter2_outlook}.
 
@@ -113,7 +113,7 @@ Through a change of variables \(x=\cos{\theta}\) and \(y=\Theta(\theta)\), the p
 	= 0,
 \end{equation}
 %
-which is the differential equation for the \emph{associated Legendre polynomials} \(y(x) = P^{m}_{\ell}(x)\).
+which is the differential equation for the associated Legendre polynomials \(y(x) = P^{m}_{\ell}(x)\).
 The spherical harmonics are then formed by combining the solutions in the polar angle \(\theta{}\) and azimuthal angle \(\phi{}\) with a suitable normalisation factor by
 %
 \begin{equation}
@@ -122,7 +122,7 @@ The spherical harmonics are then formed by combining the solutions in the polar 
 	= {(-1)}^{m} \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
 \end{equation}
 %
-Included here is the \emph{Condon-Shortley} \({(-1)}^{m}\) phase factor, to ensure the following conjugate symmetry relation holds
+Included here is the Condon-Shortley \({(-1)}^{m}\) phase factor, to ensure the following conjugate symmetry relation holds
 %
 \begin{equation}
 	\pixel{\conj{\harmonic{Y}}}
@@ -179,7 +179,7 @@ The conjugate symmetry relation of the spherical harmonic coefficients of a real
 	= {(-1)}^{m} f_{\ell(-m)}.
 \end{equation}
 %
-A useful relation for the spherical harmonics is the \emph{addition theorem} which states
+A useful relation for the spherical harmonics is the addition theorem which states
 %
 \begin{equation}
 	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
@@ -187,7 +187,7 @@ A useful relation for the spherical harmonics is the \emph{addition theorem} whi
 	= \factor P_{\ell}(\omega \cdot \omega'),
 \end{equation}
 %
-where \(P_{\ell}(x)\) are the \emph{Legendre polynomials}.
+where \(P_{\ell}(x)\) are the Legendre polynomials.
 A pictorial representation of the spherical harmonics is given in \cref{fig:chapter2_spherical_harmonics}.
 
 \input{figures/chapter2/spherical_harmonics}
@@ -222,7 +222,7 @@ A rotation of a spherical harmonic function may be represented by
 	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \pixel{Y_{\ell n}},
 \end{equation}
 %
-where \(\wigner{\ell}{n}{m}(\rho)\) are the \emph{Wigner D matrices}~\cite{Brink1993,Ritchie1999}.
+where \(\wigner{\ell}{n}{m}(\rho)\) are the Wigner D matrices~\cite{Brink1993,Ritchie1999}.
 The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rotation group \(\rotationGroup{}\) for a given \(\ell{}\) and are given by
 %
 \begin{equation}
@@ -231,8 +231,8 @@ The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rot
 	= \exp(-i n\alpha) \reducedWigner{\ell}{n}{m}(\beta) \exp(-i m\gamma),
 \end{equation}
 %
-where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the \emph{reduced d matrices} which are real in this phase convention and satisfy many symmetry relations.
-By the \emph{Peter-Weyl} theorem, the matrix elements \(\wigner{\ell}{n}{m}(\rho)\) form an orthonormal basis on \(\hilbert{\rotationGroup}\), \ie{}
+where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the reduced d matrices which are real in this phase convention and satisfy many symmetry relations.
+By the Peter-Weyl theorem, the matrix elements \(\wigner{\ell}{n}{m}(\rho)\) form an orthonormal basis on \(\hilbert{\rotationGroup}\), \ie{}
 %
 \begin{equation}
 	\integrateRotation{\rho} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell'}{n'}{m'}(\rho)
@@ -327,8 +327,8 @@ and
 %
 where \(t\) and \(\varpi{}\) denote the time and angular frequency respectively.
 Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concentrating a strictly bandlimited signal \(f(t)\), with a spectrum \(F(\varpi)\) which disappears into a time interval \(\abs{t} \leq T\) for frequencies \(\abs{\varpi} > W\).
-Through the \emph{Paley-Wiener} theorem, no bandlimited signal \(g(t)\) can be exactly concentrated within a finite interval~\cite{Daubechies1992,Mallat2008}.
-To find the optimally concentrated signal, one must maximise the following ratio:
+Through the Paley-Wiener theorem, no bandlimited signal \(g(t)\) can be exactly concentrated within a finite interval~\cite{Daubechies1992,Mallat2008}.
+To find the optimally concentrated signal, one must maximise the following ratio
 %
 \begin{equation}\label{eq:chapter2_frequency_ratio}
 	\mu
@@ -382,7 +382,7 @@ with associated eigenfunctions, \eg{}
 \end{equation}
 %
 which exist in the interval \(\abs{t} \leq T\).
-Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into one dimensionless eigenproblem:
+Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into one dimensionless eigenproblem
 %
 \begin{equation}
 	\int\limits_{-1}^{1} \dd{x'} \frac{\sin{TW(x-x')}}{\pi(x-x')} \psi(x')
@@ -414,7 +414,7 @@ Thus, one may find either: the spacelimited functions \(\pixel{h} \in \spaceSpac
 
 \subsubsection{Spectral Concentration of a Spacelimited Function}
 
-To maximise the concentration of a spacelimited function \(\pixel{h} \in \spaceSpacelimit{}\) within an interval \(0 \leq \ell < L\) one must maximise the ratio:
+To maximise the concentration of a spacelimited function \(\pixel{h} \in \spaceSpacelimit{}\) within an interval \(0 \leq \ell < L\) one must maximise the ratio
 %
 \begin{equation}\label{eq:chapter2_spacelimited_ratio}
 	\mu
@@ -464,7 +464,7 @@ which is the spherical analogue of the one-dimensional time-domain eigenproblem 
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
 
-Conversely, to find the maximally concentrated bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) within a region \(R\) one must maximise the ratio:
+Conversely, to find the maximally concentrated bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) within a region \(R\) one must maximise the ratio
 %
 \begin{equation}\label{eq:chapter2_bandlimited_ratio}
 	\mu
@@ -533,7 +533,7 @@ The corresponding eigenvalues \(\mu_{p}\) for this region are given in \cref{fig
 
 \subsection{Cosmology}
 
-The so-called Slepian functions allow one to perform localised spatial-spectral analyses; however, other methods such as the \emph{Karhunen-Loève} theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
+The so-called Slepian functions allow one to perform localised spatial-spectral analyses; however, other methods such as the Karhunen-Loève theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
 
 \input{figures/chapter2/planck_frequency}
 
