@@ -298,13 +298,14 @@ Thus, one must seek alternative methods to essentially represent a signal in tim
 In these time-frequency joint representations, the idea is to cut the signal into multiple parts and analyse them independently, which may give more information on the frequency components.
 Although, making a suitable cut is non-trivial due to the Heisenberg uncertainty problem, which, in signal processing terms, states that it is impossible to know both the exact frequency, and the exact time of occurrence of this frequency in the signal.
 Wavelet analysis is an important signal processing technique which can tackle the shortcomings of the Fourier transform.
-A fully scalable modulated window solves the signal-cutting problem; whereby, the window moves along the signal and a spectrum is calculated at all positions.
+A fully scalable, modulated window solves the signal-cutting problem; whereby, the window moves along the signal and a spectrum is calculated at all positions.
 After repeating this process multiple times with progressively shorter/longer windows, the end result is a collection of time-frequency representations of the signal, all at different resolutions --- which is often referred to a multiresolution analysis.
-In wavelet analysis, one typically refers to time-scale representations, as opposed to time-frequency, where scale is effectively the opposite of frequency.
+In wavelet analysis, one typically refers to time-scale representations, as opposed to time-frequency (like in Fourier theory), where scale is effectively the opposite of frequency.
+\cref{sec:chapter2_wavelets_euclidean} follows with some notable examples of wavelets in the Euclidean setting, some spherical analogues are then discussed in \cref{sec:chapter2_wavelets_sphere}.
 
-\subsection{Euclidean}
+\subsection{Euclidean}\label{sec:chapter2_wavelets_euclidean}
 
-\subsection{Sphere}
+\subsection{Sphere}\label{sec:chapter2_wavelets_sphere}
 
 \input{figures/chapter2/axisymmetric_tiling}
 
