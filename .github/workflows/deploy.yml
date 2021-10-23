@@ -69,6 +69,7 @@ jobs:
               with:
                   run: |
                       sed -i 's#\sglob="false"##' thesis.bcf
+                      checkcites -b biber thesis -u
                       echo ::set-output name=uncited::\
                         $(checkcites -b biber thesis -u | grep -c "=>")
 
