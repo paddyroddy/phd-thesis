@@ -209,7 +209,7 @@ The spherical harmonic coefficients of a rotated function read
 \begin{equation}\label{eq:chapter3_rotation_operator}
 	\harmonic{(\rotation{\rho}f)}
 	%
-	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\rho) f_{\ell n},
+	= \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n},
 \end{equation}
 %
 where \(\wigner{\ell}{m}{n}(\rho)\) are Wigner D matrices given by
@@ -260,7 +260,7 @@ The properties desired in the spherical extension of the convolution include:
 \end{enumerate}
 %
 A convolution is considered computationally efficient here if its computational cost is no greater than the cost of fast spherical harmonic transforms, \ie{} \(\mathcal{O}(L^{3})\) (\eg{}~\cite{Driscoll1994,McEwen2011}).
-Formulations of spherical convolutions exist in the literature, but none satisfy all of these properties.
+Formulations of spherical convolutions exist in the literature, but none satisfy all properties.
 A summary of existing spherical convolutions and their properties follows.
 
 \subsubsection{Isotropic Convolution}
@@ -338,7 +338,7 @@ To prove this, first consider the forward harmonic transform
 	%
 	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \harmonic{(\rotation{\rho}g)} \nonumber{}                                                                                                 \\
 	%
-	 & = \sum\limits_{n=-\ell}^{\ell} g_{\ell n} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
+	 & = \wignerSum g_{\ell n} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
 \end{align}
 %
 where the second and last line follow by \cref{eq:chapter3_rotation_operator,eq:chapter3_rotation_matrix} respectively.
@@ -394,7 +394,7 @@ Upon expanding in harmonic space, this becomes (\eg{}~\cite{McEwen2007,Wandelt20
 \begin{equation}
 	(f \circledast g) (\rho)
 	%
-	= \harmonicSum \harmonic{f} \sum\limits_{n=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
+	= \harmonicSum \harmonic{f} \wignerSum \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
 \end{equation}
 %
 as
@@ -408,7 +408,7 @@ as
 	%
 	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\rho}g)}} \nonumber{}                                                                                              \\
 	%
-	 & = \harmonicSum \harmonic{f} \sum\limits_{n=-\ell}^{\ell} \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
+	 & = \harmonicSum \harmonic{f} \wignerSum \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
 \end{align}
 %
 and hence, the output is on \(\rotationGroup{}\).
@@ -436,7 +436,7 @@ which on expansion reads
 \begin{equation}
 	\pixel{(f \oplus g)}
 	%
-	= \harmonicSum \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
+	= \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
 \end{equation}
 %
 as
@@ -450,7 +450,7 @@ as
 	%
 	 & = \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \conj{\harmonic{g}} \nonumber{}                                                                                                        \\
 	%
-	 & = \harmonicSum \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}}.
+	 & = \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}}.
 \end{align}
 %
 The limitation here is that one must specify the initial rotation as \({\gamma=\pi-\alpha}\) in order for the convolution to be commutative.

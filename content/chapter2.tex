@@ -219,7 +219,7 @@ A rotation of a spherical harmonic function may be represented by
 \begin{equation}\label{eq:chapter2_wigner_ylm}
 	\rotation{\rho} \pixel{\harmonic{Y}}
 	%
-	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \pixel{Y_{\ell n}},
+	= \wignerSum \wigner{\ell}{n}{m}(\rho) \pixel{Y_{\ell n}},
 \end{equation}
 %
 where \(\wigner{\ell}{n}{m}(\rho)\) are the Wigner D matrices~\cite{Brink1993,Ritchie1999}.
@@ -237,14 +237,14 @@ By the Peter-Weyl theorem, the matrix elements \(\wigner{\ell}{n}{m}(\rho)\) for
 \begin{equation}
 	\integrateRotation{\rho} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell'}{n'}{m'}(\rho)
 	%
-	= \frac{8\pi^{2}}{2\ell+1} \delta_{\ell\ell'} \delta_{nn'} \delta_{mm'},
+	= \frac{8\pi^{2}}{2\ell+1} \delta_{\ell\ell'} \delta_{n n'} \delta_{mm'},
 \end{equation}
 %
 where \(\rotationVolume = \sin{\beta}\dd{\alpha}\dd{\beta}\dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
 Similarly, they satisfy the following completeness relation
 %
 \begin{equation}
-	\sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \sum\limits_{n=-\ell}^{\ell} \sum\limits_{m=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell}{n}{m}(\rho')
+	\sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \wignerSum \sum\limits_{m=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell}{n}{m}(\rho')
 	%
 	= \delta(\rho-\rho'),
 \end{equation}
@@ -262,7 +262,7 @@ From \cref{eq:chapter2_wigner_ylm}, it follows that the harmonic coefficients of
 \begin{equation}
 	\harmonic{(\rotation{\rho}f)}
 	%
-	= \sum\limits_{n=-\ell}^{\ell} \wigner{\ell}{m}{n}(\rho) f_{\ell n}.
+	= \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n}.
 \end{equation}
 %
 Note the order of the indices on \(\wigner{\ell}{m}{n}(\rho)\) here compared to \cref{eq:chapter2_wigner_ylm}.
@@ -271,13 +271,13 @@ A function on the rotation group \(F \in \hilbert{\rotationGroup}\) may be repre
 \begin{equation}
 	F(\rho)
 	%
-	= \sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{n=-\ell}^{\ell} F^{\ell}_{mn} \wigner{\ell}{m}{n}(\rho),
+	= \sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \sum\limits_{m=-\ell}^{\ell} \wignerSum F^{\ell}_{m n} \wigner{\ell}{m}{n}(\rho),
 \end{equation}
 %
-where the Wigner harmonic coefficients \(F^{\ell}_{mn}\) are given by
+where the Wigner harmonic coefficients \(F^{\ell}_{m n}\) are given by
 %
 \begin{equation}
-	F^{\ell}_{mn}
+	F^{\ell}_{m n}
 	%
 	= \integrateRotation{\rho} F(\rho) \wigner[\ast]{\ell}{m}{n}(\rho).
 \end{equation}
