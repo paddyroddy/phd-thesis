@@ -142,5 +142,6 @@ varphi
 varpi
 vb
 vdots
+widetilde
 wigner
 ylm

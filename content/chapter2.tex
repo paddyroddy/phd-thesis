@@ -343,6 +343,19 @@ The wavelets derive from a single wavelet \(\Psi(t)\), the so-called mother wave
 where the factor \(s^{-1/2}\) is for energy normalisation across different scales.
 Here, a general framework has been developed, where the mother wavelet \(\Psi(t)\) is chosen for specific requirements, \eg{} Ricker wavelets are used in seismic wave propagation analyses~\cite{Wang2014}.
 
+\subsubsection{Wavelet Properties}
+
+The term wavelets arose from the fact that they satisfy the admissibility and regularity conditions.
+The admissibility condition states that the square-integrable functions \(\Psi(t)\) which satisfy
+%
+\begin{equation}
+	\int \dd{\varpi} \frac{\abs{\widetilde{\Psi}(\varpi)}^{2}}{\abs{\varpi}}
+	%
+	< \infty,
+\end{equation}
+%
+can be used to analyse and then reconstruct a signal without loss of information~\cite{Sheng2010}, where \(\widetilde{\Psi}(\varpi)\) is the Fourier transform of the wavelet \(\Psi(t)\).
+
 \subsection{Sphere}\label{sec:chapter2_wavelets_sphere}
 
 \input{figures/chapter2/axisymmetric_tiling}
