@@ -4,12 +4,15 @@ ELL_RANGE=$(seq 0 4)
 J_MIN=2
 J_RANGE=$(seq 0 3)
 L=128
-PLOTS=$HOME/project/src/s2sleplet/pys2sleplet/plotting/polar_cap
+PLOTS=$HOME/project/src/s2sleplet/pys2sleplet/plotting
 
 echo scaling function
 sphere axisymmetric_wavelets \
     -L 128 \
     -u
+
+echo dirac fft
+python $PLOTS/misc/dirac_impulse.py
 
 for j in $J_RANGE; do
     echo wavelet j: $j
@@ -31,10 +34,10 @@ for l in $ELL_RANGE; do
 done
 
 echo fried egg
-python $PLOTS/fried_egg.py
+python $PLOTS/polar_cap/fried_egg.py
 
 echo colatidue
-python $PLOTS/eigenfunctions.py
+python $PLOTS/polar_cap/eigenfunctions.py
 
 echo eigenvalues
-python $PLOTS/eigenvalues.py
+python $PLOTS/polar_cap/eigenvalues.py
