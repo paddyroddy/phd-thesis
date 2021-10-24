@@ -14,6 +14,9 @@ sphere axisymmetric_wavelets \
 echo dirac fft
 python $PLOTS/misc/dirac_impulse.py
 
+echo ricker wavelets
+python $PLOTS/misc/wavelet_transform.py
+
 for j in $J_RANGE; do
     echo wavelet j: $j
     sphere axisymmetric_wavelets \
