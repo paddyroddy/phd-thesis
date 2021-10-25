@@ -40,6 +40,7 @@ emph
 eq
 essinfo
 etal
+etc
 expval
 fionn
 forall

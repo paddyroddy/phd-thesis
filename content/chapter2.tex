@@ -373,6 +373,10 @@ It also follows that, the average value of the wavelet in the time-domain must b
 \end{equation}
 %
 which indicates that it must be an oscillatory function (a wave).
+Regularity conditions are imposed such that the wavelets are somewhat smooth and concentrated in both time and frequency.
+In \cref{eq:chapter2_cwt}, the wavelet transform of a one-dimensional function \(f(t)\) is two-dimensional --- and a two-dimensional function would have a four-dimensional transform \etc{}
+Moreover, the square of the input signal is the time-bandlimit product of the wavelet transform.
+Thus, some extra constraints are imposed on the wavelets such that they decrease rapidly as the scale \(s\) decreases.
 
 \subsection{Sphere}\label{sec:chapter2_wavelets_sphere}
 
@@ -471,7 +475,7 @@ Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:c
 \end{equation}
 %
 where \(\abs{x} \leq 1\).
-Hence, the eigenvalues and scaled eigenfunctions only depend on the time-bandwith product \(TW\).
+Hence, the eigenvalues and scaled eigenfunctions only depend on the time-bandlimit product \(TW\).
 Consider the sum of the eigenvalues
 %
 \begin{equation}
