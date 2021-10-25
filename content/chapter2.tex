@@ -319,23 +319,23 @@ The wavelet analysis described above is more formerly known as the continuous wa
 \begin{equation}\label{eq:chapter2_cwt}
 	\cwt{f}
 	%
-	= \int \dd{t} f(t) \conj{\Psi_{s,\tau}}(t),
+	= \int \dd{t} f(t) \Psi^{s\ast}_{\tau}(t),
 \end{equation}
 %
-where \(\Psi_{s,\tau}(t)\) are the wavelets, and \(s\) and \(t\) are dimensionless variables which refer to scale and translation respectively.
-\cref{eq:chapter2_cwt} demonstrates how a function \(f(t)\) may be decomposed into a set of wavelets \(\Psi_{s,\tau}(t)\) as basis functions.
+where \(\Psi^{s}_{\tau}(t)\) are the wavelets, and \(s\) and \(\tau{}\) are dimensionless variables which refer to scale and translation respectively.
+\cref{eq:chapter2_cwt} demonstrates how a function \(f(t)\) may be decomposed into a set of wavelets \(\Psi^{s}_{\tau}(t)\) as basis functions.
 The inverse wavelet transform is thus
 %
 \begin{equation}
 	f(t)
 	%
-	= \int \dd{s} \int \dd{\tau} \cwt{f} \Psi_{s,\tau}(t).
+	= \int \dd{s} \int \dd{\tau} \cwt{f} \Psi^{s}_{\tau}(t).
 \end{equation}
 %
 The wavelets derive from a single wavelet \(\Psi(t)\), the so-called mother wavelet, by scaling and translating, \ie{}
 %
 \begin{equation}\label{eq:mother_wavelet}
-	\Psi_{s,\tau}(t)
+	\Psi^{s}_{\tau}(t)
 	%
 	= \frac{1}{\sqrt{s}} \Psi\bigg(\frac{t-\tau}{s}\bigg),
 \end{equation}
