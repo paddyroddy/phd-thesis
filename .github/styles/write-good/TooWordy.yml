@@ -199,7 +199,7 @@ tokens:
     - subsequent
     - substantial
     - successfully complete
-    - sufficient
+    # - sufficient
     - terminate
     - the month of
     - the point I am trying to make

@@ -334,7 +334,7 @@ The inverse wavelet transform is thus
 %
 The wavelets derive from a single wavelet \(\Psi(t)\), the so-called mother wavelet, by scaling and translating, \ie{}
 %
-\begin{equation}\label{eq:mother_wavelet}
+\begin{equation}\label{eq:chapter2_mother_wavelet}
 	\Psi^{s}_{\tau}(t)
 	%
 	= \frac{1}{\sqrt{s}} \Psi\bigg(\frac{t-\tau}{s}\bigg),
@@ -378,6 +378,55 @@ In \cref{eq:chapter2_cwt}, the wavelet transform of a one-dimensional function \
 Moreover, the square of the input signal is the time-bandlimit product of the wavelet transform.
 Thus, some extra constraints are imposed on the wavelets such that they decrease rapidly as the scale \(s\) decreases.
 For more detail on regularity see~\cite{Burrus1997,Daubechies1992}.
+
+\subsubsection{Discrete Wavelets}
+
+In practice, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} is impractical to use: namely, the wavelet transform \cref{eq:chapter2_cwt} is redundant, \ie{} the scaled functions do not form an orthogonal basis; the CWT has an infinite number of wavelets in the wavelet transform; and, most wavelet transforms do not have analytical solutions and hence must be computed numerically.
+Discrete wavelets overcome these problems by modifying the continuous wavelet \cref{eq:chapter2_mother_wavelet} by
+%
+\begin{equation}
+	\Psi^{j}_{k}(t)
+	%
+	= \frac{1}{\sqrt{s^{j}_{0}}} \Psi\Bigg(\frac{t - k\tau_{0}s^{j}_{0}}{s^{j}_{0}}\Bigg),
+\end{equation}
+%
+where \(j\) and \(k\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor (typically \(\tau_{0}=1\) for dyadic sampling).
+Thus, discrete wavelets may only be scaled and translated in discrete steps.
+Discrete wavelets are used to transform a continuous signal into a series of wavelet coefficients, known as a wavelet decomposition.
+A necessary and sufficient condition for stable signal reconstruction is the so-called Parseval frame property
+%
+\begin{equation}
+	A \norm{f}^{2}
+	%
+	\leq \sum\limits_{j} \sum\limits_{k} \abs{\braket*{f}{\Psi^{j}_{k}}}^{2}
+	%
+	\leq B \norm{f}^{2},
+\end{equation}
+%
+with \(A,\ B \in \realPosParam{}\)~\cite{Daubechies1992}.
+When \(A=B=1\) the energy of \(f\) is conserved in wavelet space, and as such the wavelets act like an orthonormal basis, \ie{}
+%
+\begin{equation}
+	\int \dd{t} \Psi^{j}_{k}(t) \Psi^{j'\ast}_{k'}(t)
+	%
+	= \delta_{j j'} \delta_{k k'}.
+\end{equation}
+%
+Therefore, a signal may be constructed by
+%
+\begin{equation}
+	f(t)
+	%
+	= \sum\limits_{j} \sum\limits_{k} W^{j}_{k} \Psi^{j}_{k}(t),
+\end{equation}
+%
+where \(W^{j}_{k}\) are the wavelet coefficients given by
+%
+\begin{equation}
+	W^{j}_{k}
+	%
+	= \int \dd{t} f(t) \Psi^{j\ast}_{k}(t).
+\end{equation}
 
 \subsection{Sphere}\label{sec:chapter2_wavelets_sphere}
 
