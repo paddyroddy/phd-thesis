@@ -409,10 +409,11 @@ When \(A=B=1\) the energy of \(f\) is conserved in wavelet space, and as such th
 \begin{equation}
 	\int \dd{t} \Psi^{j}_{k}(t) \Psi^{j'\ast}_{k'}(t)
 	%
-	= \delta_{j j'} \delta_{k k'}.
+	= \delta_{j j'} \delta_{k k'},
 \end{equation}
 %
-Therefore, a signal may be constructed by
+which solves the redundancy problem.
+Therefore, a signal may be constructed by~\cite{Sheng2010}
 %
 \begin{equation}
 	f(t)
@@ -427,6 +428,9 @@ where \(W^{j}_{k}\) are the wavelet coefficients given by
 	%
 	= \int \dd{t} f(t) \Psi^{j\ast}_{k}(t).
 \end{equation}
+%
+To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} frequency) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
+A scaling function \(\Phi_{k}(t)\), in blue, captures the lower scales of the underlying function --- introduced by~\cite{Mallat1989}.
 
 \subsection{Sphere}\label{sec:chapter2_wavelets_sphere}
 
