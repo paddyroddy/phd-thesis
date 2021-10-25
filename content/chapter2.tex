@@ -22,7 +22,7 @@ The 2-sphere \(\twoSphere{}\) is defined as
 \end{equation}
 %
 where \(\omega=(\theta,\phi)\) parameterise a point on the unit sphere, \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
-The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex valued square-integrable functions \(\pixel{f}\), with inner product
+The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex valued square-integrable functions \(\pixel{f}\), \(\pixel{g}\), with inner product
 %
 \begin{equation}
 	\braket*{f}{g}
@@ -43,7 +43,7 @@ Signals on the sphere are functions with a finite induced norm.
 
 \subsection{Spherical Harmonics}
 
-The spherical harmonics \(\pixel{\harmonic{Y}}\) with integer degree \(\ell \geq 0\) and integer order \(m \leq \abs{\ell}\) form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\).
+The spherical harmonics \(\pixel{\harmonic{Y}}\), with integer degree \(\ell \geq 0\) and integer order \(m \leq \abs{\ell}\), form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\).
 Consider the Laplacian in spherical coordinates
 %
 \begin{equation}
@@ -345,25 +345,25 @@ Here, a general framework has been developed, where the mother wavelet \(\Psi(t)
 
 \subsubsection{Wavelet Properties}
 
-The term wavelets arose from the fact that they satisfy the admissibility and regularity conditions.
+The term wavelets arose from the satisfaction of the admissibility and regularity conditions.
 The admissibility condition states that the square-integrable functions \(\Psi(t)\) which satisfy
 %
 \begin{equation}\label{eq:chapter2_admissibility}
-	\int \dd{\varpi} \frac{\abs{\widetilde{\Psi}(\varpi)}^{2}}{\abs{\varpi}}
+	\int \dd{\varpi} \frac{\abs{\fourier{\Psi}(\varpi)}^{2}}{\abs{\varpi}}
 	%
 	< \infty
 \end{equation}
 %
-can be used to analyse and then reconstruct a signal without loss of information~\cite{Sheng2010}, where \(\widetilde{\Psi}(\varpi)\) is the Fourier transform of the wavelet \(\Psi(t)\).
+can be used to analyse and then reconstruct a signal without loss of information~\cite{Sheng2010}, where \(\fourier{\Psi}(\varpi)\) is the Fourier transform of the wavelet \(\Psi(t)\).
 Therefore, \cref{eq:chapter2_admissibility} implies that the Fourier transform of the wavelet vanishes at zero frequency, \ie{}
 %
 \begin{equation}
-	\abs{\widetilde{\Psi}(\varpi)} \bigg\rvert_{\varpi=0}
+	\abs{\fourier{\Psi}(\varpi)} \bigg\rvert_{\varpi=0}
 	%
 	= 0;
 \end{equation}
 %
-which means the spectrum must have bandpass behaviour.
+which means the spectrum experiences bandpass behaviour.
 It also follows that, the average value of the wavelet in the time-domain must be zero, \ie{}
 %
 \begin{equation}
@@ -384,29 +384,29 @@ which indicates that it must be an oscillatory function (a wave).
 
 In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of optimally concentrating a signal simultaneously in time and frequency~\cite{Landau1961,Landau1962,Slepian1983,Slepian1961}.
 The resulting orthogonal family of functions, and their discrete and multidimensional counterparts~\cite{Bronez1988,Hanssen1997,Liu1992,Slepian1964,Slepian1978}, form the basis of a range of spectral analyses (\eg{}~\cite{Thomson1982,Thomson1990}).
-\cref{sec:chapter2_slepian_euclidean} follows with a brief review of the initial time-frequency concentration problem, this is then proceeded with the extension to the spherical domain in \cref{sec:chapter2_slepian_sphere}.
+\cref{sec:chapter2_slepian_euclidean} follows with a brief review of the initial time-frequency concentration problem, this is then extended to the spherical domain in \cref{sec:chapter2_slepian_sphere}.
 
 \subsection{Euclidean: Time-Frequency Domain}\label{sec:chapter2_slepian_euclidean}
 
 Before considering the Slepian spatial-spectral concentration problem in the spherical domain, first consider the one-dimensional, continuous-continuous, time-frequency concentration problem.
-Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(F(\varpi)\) are related by
+Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(\fourier{f}(\varpi)\) are related by
 %
 \begin{equation}
 	f(t)
 	%
-	= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dd{\varpi} F(\varpi) \exp(i\varpi t)
+	= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dd{\varpi} \fourier{f}(\varpi) \exp(i\varpi t)
 \end{equation}
 %
 and
 %
 \begin{equation}
-	F(\varpi)
+	\fourier{f}(\varpi)
 	%
 	= \int\limits_{-\infty}^{\infty} \dd{\varpi} f(t) \exp(-i\varpi t),
 \end{equation}
 %
 where \(t\) and \(\varpi{}\) denote the time and angular frequency respectively.
-Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concentrating a strictly bandlimited signal \(f(t)\), with a spectrum \(F(\varpi)\) which vanishes into a time interval \(\abs{t} \leq T\) for frequencies \(\abs{\varpi} > W\).
+Slepian and Pollak~\cite{Slepian1961} considered the problem of optimally concentrating a strictly bandlimited signal \(f(t)\), with a spectrum \(\fourier{f}(\varpi)\) which vanishes into a time interval \(\abs{t} \leq T\) for frequencies \(\abs{\varpi} > W\).
 Through the Paley-Wiener theorem, no bandlimited signal \(g(t)\) can be exactly concentrated within a finite interval~\cite{Daubechies1992,Mallat2008}.
 To find the optimally concentrated signal, one must maximise the following ratio
 %
@@ -419,25 +419,25 @@ To find the optimally concentrated signal, one must maximise the following ratio
 \end{equation}
 %
 although other criteria have been considered~\cite{Freeden1997,Riedel1995}.
-Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_frequency_ratio}, have spectra \(G(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
+Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_frequency_ratio}, have spectra \(\fourier{g}(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
 %
 \begin{equation}\label{eq:chapter2_frequency_eigenproblem}
-	\int\limits_{-W}^{W} \dd{\varpi'} \frac{\sin{T(\varpi-\varpi')}}{\pi(\varpi-\varpi')} G(\varpi')
+	\int\limits_{-W}^{W} \dd{\varpi'} \frac{\sin{T(\varpi-\varpi')}}{\pi(\varpi-\varpi')} \fourier{g}(\varpi')
 	%
-	= \mu G(\varpi),
+	= \mu \fourier{g}(\varpi),
 \end{equation}
 %
 where \(\abs{\varpi} \leq W\).
 
-Slepian \etal{} also considered the similar case of concentrating the spectrum \(H(\varpi)\) of a strictly timelimited function \(h(t)\), which vanishes into a spectral interval \(\abs{\varpi} \leq W\) for times \(\abs{t} > T\).
+Slepian \etal{} also considered the similar case of concentrating the spectrum \(\fourier{h}(\varpi)\) of a strictly timelimited function \(h(t)\), which vanishes into a spectral interval \(\abs{\varpi} \leq W\) for times \(\abs{t} > T\).
 The ratio to maximise here is
 %
 \begin{equation}\label{eq:chapter2_time_ratio}
 	\mu
 	%
-	= \frac{\displaystyle\int\limits_{-W}^{W} \dd{\varpi} \abs{H(\varpi)}^{2}}
+	= \frac{\displaystyle\int\limits_{-W}^{W} \dd{\varpi} \abs{\fourier{h}(\varpi)}^{2}}
 	%
-	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{\varpi} \abs{H(\varpi)}^{2}},
+	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{\varpi} \abs{\fourier{h}(\varpi)}^{2}},
 \end{equation}
 %
 which results in the time-domain eigenproblem

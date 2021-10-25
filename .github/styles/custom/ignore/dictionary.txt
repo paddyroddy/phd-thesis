@@ -107,6 +107,7 @@ resizebox
 ricker
 rightarrow
 roddy
+rvert
 scriptsize
 se
 secnumdepth
@@ -142,6 +143,5 @@ varphi
 varpi
 vb
 vdots
-widetilde
 wigner
 ylm
