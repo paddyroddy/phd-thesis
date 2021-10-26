@@ -343,7 +343,7 @@ The wavelets derive from a single wavelet \(\Psi(t)\), the so-called mother wave
 where the factor \(s^{-1/2}\) is for energy normalisation across different scales.
 Here, a general framework has been developed, where the mother wavelet \(\Psi(t)\) is chosen for specific requirements, \eg{} Ricker wavelets are used in seismic wave propagation analyses~\cite{Wang2014}.
 
-\subsubsection{Wavelet Properties}
+\subsection{Wavelet Properties}
 
 The term wavelets arose from the satisfaction of the admissibility and regularity conditions.
 The admissibility condition states that the square-integrable functions \(\Psi(t)\) which satisfy
@@ -379,7 +379,7 @@ Moreover, the square of the input signal is the time-bandlimit product of the wa
 Thus, some extra constraints are imposed on the wavelets such that they decrease rapidly as the scale \(s\) decreases.
 For more detail on regularity see~\cite{Burrus1997,Daubechies1992}.
 
-\subsubsection{Discrete Wavelets}
+\subsection{Discrete Wavelets}
 
 In practice, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} is impractical to use: namely, the wavelet transform \cref{eq:chapter2_cwt} is redundant, \ie{} the scaled functions do not form an orthogonal basis; the CWT has an infinite number of wavelets in the wavelet transform; and, most wavelet transforms do not have analytical solutions and hence must be computed numerically.
 Discrete wavelets overcome these problems by modifying the continuous wavelet \cref{eq:chapter2_mother_wavelet} by
@@ -445,7 +445,7 @@ The resulting orthogonal family of functions, and their discrete and multidimens
 In contrast to wavelets, described in \cref{sec:chapter2_wavelets}, the so-called Slepian functions allow one to compute localised spatial-spectral analysis, as opposed to spatial-scale.
 \cref{sec:chapter2_slepian_euclidean} follows with a brief review of the initial time-frequency concentration problem, this is then extended to the spherical domain in \cref{sec:chapter2_slepian_sphere}.
 
-\subsection{Euclidean: Time-Frequency Domain}\label{sec:chapter2_slepian_euclidean}
+\subsection{Time-Frequency Domain}\label{sec:chapter2_slepian_euclidean}
 
 Before considering the Slepian spatial-spectral concentration problem in the spherical domain, first consider the one-dimensional, continuous-continuous, time-frequency concentration problem.
 Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(\fourier{f}(\varpi)\) are related by
@@ -545,7 +545,7 @@ The so-called Shannon number~\cite{Percival1993} \(N\) introduced here is a good
 Equivalently, this can be viewed as the number of signals \(f(t)\) which can be well-concentrated both into a finite time interval \(\abs{t} \leq T\) and a finite frequency interval \(\abs{\varpi} \leq W\).
 Many of the results discussed above have analogues in the spatial-spectral concentration problem on the sphere, which is elaborated in \cref{sec:chapter2_slepian_sphere}.
 
-\subsection{Sphere: Spatial-Spectral Domain}\label{sec:chapter2_slepian_sphere}
+\subsection{Spatial-Spectral Domain}\label{sec:chapter2_slepian_sphere}
 
 The two sub-spaces of interest of all square-integrable functions on the sphere \(\twoSphere{}\) are: \(\spaceSpacelimit{}\) the space of all spacelimited functions strictly contained within a region \(R\), and \(\spaceBandlimit{}\) the space of all bandlimited functions with no power above the bandlimit \(L\).
 Akin to the Euclidean setting, no function can be strictly spacelimited as well as strictly bandlimited, \ie{} no \(\pixel{f}\) can be in both sub-spaces \(\spaceSpacelimit{}\) and \(\spaceBandlimit{}\) at the same time.
