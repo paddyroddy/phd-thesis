@@ -298,7 +298,7 @@ Thus, one must seek alternative methods to essentially represent a signal in tim
 In these time-frequency joint representations, the idea is to cut the signal into multiple parts and analyse them independently, which can give more detail about the individual frequency components~\cite{Mallat2008}.
 Although, making a suitable cut --- which corresponds to a convolution between the signal and the cutting window --- is non-trivial.
 Suppose one seeks to find all frequency components present at a given time; naively, this could be achieved by performing a cut with a Dirac delta function.
-However, since convolution in the time domain is the same as multiplication in the frequency domain, and that the Fourier transform of a Dirac delta consists of all possible frequencies (see \cref{fig:chapter2_dirac_fourier}), the signal would be smeared out on the frequency axis.
+However, since the Fourier transform of a Dirac delta consists of all possible frequencies (see \cref{fig:chapter2_dirac_fourier}), and a convolution in the time domain corresponds to multiplication in the frequency domain, the signal would be smeared out on the frequency axis.
 This problem occurs due to the Heisenberg uncertainty problem; which, in signal processing terms, states that it is impossible to know both the exact frequency, and the exact time of occurrence of this frequency in the signal.
 
 Wavelet analysis is an important signal processing technique which can tackle the shortcomings of the Fourier transform.
@@ -390,7 +390,7 @@ Discrete wavelets overcome these problems by modifying the continuous wavelet \c
 	= \frac{1}{\sqrt{s^{j}_{0}}} \Psi\Bigg(\frac{t - k\tau_{0}s^{j}_{0}}{s^{j}_{0}}\Bigg),
 \end{equation}
 %
-where \(j\) and \(k\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor (typically \(\tau_{0}=1\) for dyadic sampling).
+where \(j\) and \(k\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor.
 Thus, discrete wavelets may only be scaled and translated in discrete steps.
 Discrete wavelets are used to transform a continuous signal into a series of wavelet coefficients, known as a wavelet decomposition.
 A necessary and sufficient condition for stable signal reconstruction is the so-called Parseval frame property
@@ -430,7 +430,7 @@ where \(W^{j}_{k}\) are the wavelet coefficients given by
 \end{equation}
 %
 To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} frequency) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
-A scaling function \(\Phi_{k}(t)\), in blue, captures the lower scales of the underlying function --- introduced by~\cite{Mallat1989}.
+A scaling function \(\Phi_{k}(t)\), in blue, captures the lower scales of the underlying function~\cite{Mallat1989}.
 
 \subsection{Sphere}\label{sec:chapter2_wavelets_sphere}
 
