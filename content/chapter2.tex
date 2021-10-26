@@ -382,7 +382,7 @@ Moreover, the square of the input signal is the time-bandlimit product of the wa
 Thus, some extra constraints are imposed on the wavelets such that they decrease rapidly as the scale \(s\) decreases.
 For more detail on regularity see~\cite{Burrus1997,Daubechies1992}.
 
-\subsection{Discrete Wavelets}
+\subsection{Discrete Wavelets}\label{sec:chapter2_discrete_wavelets}
 
 In practice, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} is impractical to use: namely, the wavelet transform \cref{eq:chapter2_cwt} is redundant, \ie{} the scaled functions do not form an orthogonal basis; the CWT has an infinite number of wavelets in the wavelet transform; and, most wavelet transforms do not have analytical solutions and hence must be computed numerically.
 Discrete wavelets overcome these problems by modifying the continuous wavelet \cref{eq:chapter2_mother_wavelet} by
@@ -433,7 +433,20 @@ where \(W^{j}_{k}\) are the wavelet coefficients given by
 \end{equation}
 %
 To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} frequency) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
-A scaling function \(\Phi_{k}(t)\), in blue, captures the lower scales of the underlying function~\cite{Mallat1989}.
+A scaling function \(\Phi_{k}(t)\), in blue, is typically introduced to capture the lower scales of the underlying function~\cite{Mallat1989}.
+
+\subsection{Discrete Wavelet Transform}
+
+The discrete wavelets introduced in \cref{sec:chapter2_discrete_wavelets} are discretised in translation and scale, but not in time.
+In reality, most signals of interest are sampled, and are in fact not time-continuous.
+Thus, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} must be discretised as well.
+Consider the multiresolution formulation~\cite{Burrus1997} or two-scale relation~\cite{Sheng2010}
+%
+\begin{equation}
+	\Phi(2^{j}t)
+	%
+	= \sum\limits_{k} h^{j+1}(k) \Phi(2^{j+1}t - k).
+\end{equation}
 
 \subsection{Extension to the Sphere}
 
