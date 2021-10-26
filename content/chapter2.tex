@@ -292,6 +292,8 @@ A useful relation to note is the connection between the spherical harmonics and 
 
 \section{Wavelets}\label{sec:chapter2_wavelets}
 
+\subsection{Comparison to the Fourier Transform}\label{sec:chapter2_comparison_fourier_transform}
+
 In Fourier theory, a (Euclidean) signal may be expressed as an infinite sum of sines and cosines.
 A significant problem with Fourier analyses, however, is that only the frequency resolutions are known, and not the time resolutions.
 Thus, one must seek alternative methods to essentially represent a signal in time and frequency simultaneously.
@@ -306,7 +308,6 @@ A fully scalable, modulated window solves the signal-cutting problem; whereby, t
 After repeating this process multiple times with progressively shorter/longer windows, the end result is a collection of time-frequency representations of the signal, all at different resolutions --- which is often referred to a multiresolution analysis.
 \cref{fig:chapter2_ricker_wavelets} presents some example wavelets, Ricker wavelets~\cite{Ricker1953}, where each wavelet is constructed to probe specific frequency ranges.
 In wavelet analysis, one typically refers to time-scale (or space-scale) representations, as opposed to time-frequency (like in Fourier theory), where scale is the reciprocal frequency.
-\cref{sec:chapter2_continuous_wavelet_transform} follows with the introduction of the continuous wavelet transform.
 
 \input{figures/chapter2/dirac_fourier}
 
@@ -314,7 +315,7 @@ In wavelet analysis, one typically refers to time-scale (or space-scale) represe
 
 \subsection{Continuous Wavelet Transform}\label{sec:chapter2_continuous_wavelet_transform}
 
-The wavelet analysis described above is more formerly known as the continuous wavelet transform (CWT), which sates
+The wavelet analysis described in \cref{sec:chapter2_comparison_fourier_transform} is more formerly known as the continuous wavelet transform (CWT), which sates
 %
 \begin{equation}\label{eq:chapter2_cwt}
 	\cwt{f}
@@ -432,7 +433,7 @@ where \(W^{j}_{k}\) are the wavelet coefficients given by
 To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} frequency) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
 A scaling function \(\Phi_{k}(t)\), in blue, captures the lower scales of the underlying function~\cite{Mallat1989}.
 
-\subsection{Sphere}\label{sec:chapter2_wavelets_sphere}
+\subsection{Extension to the Sphere}
 
 \input{figures/chapter2/axisymmetric_tiling}
 
