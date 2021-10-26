@@ -122,13 +122,13 @@ This eigensystem forms the square-integrable basis of the manifold \(\manifold{}
 	0 \leq \mu_{1} \leq \mu_{2} \leq \ldots < \mu_{\imax} < \infty, % chktex 11
 \end{equation}
 %
-and eigenfunctions \(\psi_{i}\).
+and eigenfunctions \(\zeta_{i}\).
 A function \(f \in \hilbert{\manifold}\) can therefore be decomposed into this basis by
 %
 \begin{equation}
 	\mesh{f}
 	%
-	= \sum\limits_{i=1}^{\imax} f_{i} \mesh{\psi_{i}},
+	= \sum\limits_{i=1}^{\imax} f_{i} \mesh{\zeta_{i}},
 \end{equation}
 %
 where \(f_{i}\) are the Fourier coefficients given by the usual projection onto the basis functions
@@ -136,7 +136,7 @@ where \(f_{i}\) are the Fourier coefficients given by the usual projection onto 
 \begin{equation}
 	f_{i}
 	%
-	= \integrateManifold{x} \mesh{f} \mesh{\conj{\psi_{i}}}.
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\zeta_{i}}}.
 \end{equation}
 %
 In practice, one may discretise the manifolds and represent them as graphs.
@@ -361,7 +361,7 @@ where
 \begin{equation}
 	D_{i,j}
 	%
-	= \integrateRegion{\meshVolume \mesh{\psi_{i}} \mesh{\conj{\psi_{j}}}}
+	= \integrateRegion{\meshVolume \mesh{\zeta_{i}} \mesh{\conj{\zeta_{j}}}}
 \end{equation}
 %
 is an \(\imax \times \imax{}\) matrix including all basis functions of the manifold.
@@ -450,7 +450,7 @@ To transform from Slepian coefficients to the basis functions of the manifold
 \begin{equation}\label{eq:chapter5_slepian_to_harmonic}
 	f_{i}
 	%
-	= \integrateManifold{x} \mesh{f} \mesh{\conj{\psi_{i}}}
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\zeta_{i}}}
 	%
 	= \slepianSum \slepian{f} {(\slepian{S})}_{i},
 \end{equation}
@@ -460,7 +460,7 @@ where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:
 \begin{equation}
 	{(\slepian{S})}_{i}
 	%
-	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\psi_{i}}}.
+	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\zeta_{i}}}.
 \end{equation}
 %
 The inverse operation of \cref{eq:chapter5_slepian_to_harmonic} is
@@ -485,9 +485,9 @@ A translation is defined through a shift of coordinates, which results in a prod
 In an analogous manner, a translation operator on the manifold may be defined
 %
 \begin{equation}
-	\mesh{(\translation{y}\psi_{i})}
+	\mesh{(\translation{y}\zeta_{i})}
 	%
-	\equiv \meshY{\psi_{i}} \mesh{\psi_{i}},
+	\equiv \meshY{\zeta_{i}} \mesh{\zeta_{i}},
 \end{equation}
 %
 where \(y\) is a point on the manifold.
@@ -496,7 +496,7 @@ A natural way to define the translation of an arbitrary function \(f \in \hilber
 \begin{equation}\label{eq:chapter5_translation_mesh}
 	\mesh{(\translation{y}f)}
 	%
-	= \meshSum f_{i} \meshY{\psi_{i}} \mesh{\psi_{i}},
+	= \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}},
 \end{equation}
 %
 which implies
@@ -504,7 +504,7 @@ which implies
 \begin{equation}
 	{(\translation{y}f)}_{i}
 	%
-	= f_{i} \meshY{\psi_{i}}.
+	= f_{i} \meshY{\zeta_{i}}.
 \end{equation}
 
 The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows in the usual manner by the inner product
@@ -532,9 +532,9 @@ as
 	%
 	 & = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{}                                                    \\
 	%
-	 & = \integrateManifold{y} \meshSum f_{i} \mesh{\psi_{i}} \meshY{\psi_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\psi_{j}}} \nonumber{} \\
+	 & = \integrateManifold{y} \meshSum f_{i} \mesh{\zeta_{i}} \meshY{\zeta_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\zeta_{j}}} \nonumber{} \\
 	%
-	 & = \meshSum f_{i} \conj{g_{i}} \mesh{\psi_{i}}.
+	 & = \meshSum f_{i} \conj{g_{i}} \mesh{\zeta_{i}}.
 \end{align}
 %
 Note that the Fourier representation of the convolution is a product and, hence, is efficient to compute.
@@ -543,9 +543,9 @@ It can be shown that the translation operator is a sifting convolution of a func
 \begin{align}
 	\mesh{\convolution{f}{\delta_{y}}}
 	%
-	 & = \meshSum f_{i} \conj{{(\delta_{y})}_{i}} \mesh{\psi_{i}} \nonumber{} \\
+	 & = \meshSum f_{i} \conj{{(\delta_{y})}_{i}} \mesh{\zeta_{i}} \nonumber{} \\
 	%
-	 & = \meshSum f_{i} \meshY{\psi_{i}} \mesh{\psi_{i}} \nonumber{}          \\
+	 & = \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}} \nonumber{}          \\
 	%
 	 & = \mesh{(\translation{y}f)},
 \end{align}
