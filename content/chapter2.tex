@@ -292,8 +292,6 @@ A useful relation to note is the connection between the spherical harmonics and 
 
 \section{Wavelets}\label{sec:chapter2_wavelets}
 
-Presented here is a brief review of wavelet analysis, for more detail see, \eg{}~\cite{Rioul1991,Graps1995,Valens1999,Kaiser2011}.
-
 \subsection{Comparison to the Fourier Transform}\label{sec:chapter2_comparison_fourier_transform}
 
 In Fourier theory, a (Euclidean) signal may be expressed as an infinite sum of sines and cosines.
@@ -387,7 +385,7 @@ For more detail on regularity see~\cite{Burrus1997,Daubechies1992}.
 In practice, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} is impractical to use: namely, the wavelet transform \cref{eq:chapter2_cwt} is redundant, \ie{} the scaled functions do not form an orthogonal basis; the CWT has an infinite number of wavelets in the wavelet transform; and, most wavelet transforms do not have analytical solutions and hence must be computed numerically.
 Discrete wavelets overcome these problems by modifying the continuous wavelet \cref{eq:chapter2_mother_wavelet} by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_discrete_wavelets}
 	\Psi^{j}_{k}(t)
 	%
 	= \frac{1}{\sqrt{s^{j}_{0}}} \Psi\Bigg(\frac{t - k\tau_{0}s^{j}_{0}}{s^{j}_{0}}\Bigg),
@@ -396,6 +394,14 @@ Discrete wavelets overcome these problems by modifying the continuous wavelet \c
 where \(j\) and \(k\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor.
 Thus, discrete wavelets may only be scaled and translated in discrete steps.
 Discrete wavelets are used to transform a continuous signal into a series of wavelet coefficients, known as a wavelet decomposition.
+A natural choice for the parameters in \cref{eq:chapter2_discrete_wavelets} are \(s_{0}=2\) and \(\tau_{0}=1\) which corresponds to dyadic scaling, the discrete wavelets are thus
+%
+\begin{equation}
+	\Psi^{j}_{k}(t)
+	%
+	= 2^{-j/2} \Psi(2^{-j}t - k).
+\end{equation}
+%
 A necessary and sufficient condition for stable signal reconstruction is the so-called Parseval frame property
 %
 \begin{equation}
@@ -432,21 +438,41 @@ where \(W^{j}_{k}\) are the wavelet coefficients given by
 	= \int \dd{t} f(t) \Psi^{j\ast}_{k}(t).
 \end{equation}
 %
-To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} frequency) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
+To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} scale) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
 A scaling function \(\Phi_{k}(t)\), in blue, is typically introduced to capture the lower scales of the underlying function~\cite{Mallat1989}.
 
 \subsection{Discrete Wavelet Transform}
 
 The discrete wavelets introduced in \cref{sec:chapter2_discrete_wavelets} are discretised in translation and scale, but not in time.
 In reality, most signals of interest are sampled, and are in fact not time-continuous.
-Thus, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} must be discretised as well.
-Consider the multiresolution formulation~\cite{Burrus1997} or two-scale relation~\cite{Sheng2010}
+Thus, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} becomes
 %
 \begin{equation}
-	\Phi(2^{j}t)
+	\text{DWT}_{f}(j,k)
 	%
-	= \sum\limits_{k} h^{j+1}(k) \Phi(2^{j+1}t - k).
+	= \sum\limits_{i} f[t_{i}] \Psi^{j\ast}_{k}[t_{i}],
 \end{equation}
+%
+where a sum replaces the integral in \cref{eq:chapter2_cwt}.
+Upon introduction of a scaling function (to capture the lower scales), a signal may be reconstructed from its scaling/wavelet coefficients by
+%
+\begin{equation}
+	f(t)
+	%
+	= \sum\limits_{i} \sum\limits_{k} W^{\Phi}_{k} \Phi_{k}[t_{i}]
+	%
+	+ \sum\limits_{j} W^{\Psi^{j}}_{k} \Psi^{j}_{k}[t_{i}],
+\end{equation}
+%
+where the scaling coefficients (and similarly for the wavelet coefficients \(W^{\Psi^{j}}_{k}\)) are found by
+%
+\begin{equation}
+	W^{\Phi}_{k}
+	%
+	= \sum\limits_{i} f[t_{i}] \conj{\Phi}_{k}[t_{i}].
+\end{equation}
+%
+Presented here is a brief review of (Euclidean) wavelet analysis, for more detail see, \eg{}~\cite{Rioul1991,Graps1995,Addison2005,Valens1999,Kaiser2011}.
 
 \subsection{Extension to the Sphere}
 
