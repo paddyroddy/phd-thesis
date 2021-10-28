@@ -388,20 +388,20 @@ In practice, the CWT described in \cref{sec:chapter2_continuous_wavelet_transfor
 Discrete wavelets overcome these problems by modifying the continuous wavelet \cref{eq:chapter2_mother_wavelet} by
 %
 \begin{equation}\label{eq:chapter2_discrete_wavelets}
-	\Psi^{j}_{k}(t)
+	\Psi^{j}_{\lambda}(t)
 	%
-	= \frac{1}{\sqrt{s^{j}_{0}}} \Psi\Bigg(\frac{t - k\tau_{0}s^{j}_{0}}{s^{j}_{0}}\Bigg),
+	= \frac{1}{\sqrt{s^{j}_{0}}} \Psi\Bigg(\frac{t - \lambda\tau_{0}s^{j}_{0}}{s^{j}_{0}}\Bigg),
 \end{equation}
 %
-where \(j\) and \(k\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor.
+where \(j\) and \(\lambda{}\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor.
 Thus, discrete wavelets may only be scaled and translated in discrete steps.
 Discrete wavelets are used to transform a continuous signal into a series of wavelet coefficients, known as a wavelet decomposition.
 A natural choice for the parameters in \cref{eq:chapter2_discrete_wavelets} are \(s_{0}=2\) and \(\tau_{0}=1\) which corresponds to dyadic scaling, the discrete wavelets are thus
 %
 \begin{equation}
-	\Psi^{j}_{k}(t)
+	\Psi^{j}_{\lambda}(t)
 	%
-	= 2^{-j/2} \Psi(2^{-j}t - k).
+	= 2^{-j/2} \Psi(2^{-j}t - \lambda).
 \end{equation}
 %
 A necessary and sufficient condition for stable signal reconstruction is the so-called Parseval frame property
@@ -409,7 +409,7 @@ A necessary and sufficient condition for stable signal reconstruction is the so-
 \begin{equation}
 	A \norm{f}^{2}
 	%
-	\leq \sum\limits_{j} \sum\limits_{k} \abs{\braket*{f}{\Psi^{j}_{k}}}^{2}
+	\leq \sum\limits_{j} \sum\limits_{\lambda} \abs{\braket*{f}{\Psi^{j}_{\lambda}}}^{2}
 	%
 	\leq B \norm{f}^{2},
 \end{equation}
@@ -418,9 +418,9 @@ with \(A,\ B \in \realPosParam{}\)~\cite{Daubechies1992}.
 When \(A=B=1\) the energy of \(f\) is conserved in wavelet space, and as such the wavelets act like an orthonormal basis, \ie{}
 %
 \begin{equation}
-	\int \dd{t} \Psi^{j}_{k}(t) \Psi^{j'\ast}_{k'}(t)
+	\int \dd{t} \Psi^{j}_{\lambda}(t) \Psi^{j'\ast}_{\lambda'}(t)
 	%
-	= \delta_{j j'} \delta_{k k'},
+	= \delta_{j j'} \delta_{\lambda\lambda'},
 \end{equation}
 %
 which solves the redundancy problem.
@@ -429,19 +429,19 @@ Therefore, a signal may be constructed by~\cite{Sheng2010}
 \begin{equation}
 	f(t)
 	%
-	= \sum\limits_{j} \sum\limits_{k} W^{j}_{k} \Psi^{j}_{k}(t),
+	= \sum\limits_{j} \sum\limits_{\lambda} W^{j}_{\lambda} \Psi^{j}_{\lambda}(t),
 \end{equation}
 %
-where \(W^{j}_{k}\) are the wavelet coefficients given by
+where \(W^{j}_{\lambda}\) are the wavelet coefficients given by
 %
 \begin{equation}
-	W^{j}_{k}
+	W^{j}_{\lambda}
 	%
-	= \int \dd{t} f(t) \Psi^{j\ast}_{k}(t).
+	= \int \dd{t} f(t) \Psi^{j\ast}_{\lambda}(t).
 \end{equation}
 %
 To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} scale) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
-A scaling function \(\Phi_{k}(t)\), in blue, is typically introduced to capture the lower scales of the underlying function~\cite{Mallat1989}.
+A scaling function \(\Phi_{\lambda}(t)\), in blue, is typically introduced to capture the lower scales of the underlying function~\cite{Mallat1989}.
 
 \subsection{Discrete Wavelet Transform}
 
@@ -450,9 +450,9 @@ In reality, most signals of interest are sampled, and are in fact not time-conti
 Thus, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} becomes
 %
 \begin{equation}
-	\text{DWT}_{f}(j,k)
+	\text{DWT}_{f}(j,\lambda)
 	%
-	= \sum\limits_{i} f[t_{i}] \Psi^{j\ast}_{k}[t_{i}],
+	= \sum\limits_{i} f[t_{i}] \Psi^{j\ast}_{\lambda}[t_{i}],
 \end{equation}
 %
 where a sum replaces the integral in \cref{eq:chapter2_cwt}.
