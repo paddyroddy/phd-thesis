@@ -461,25 +461,29 @@ Upon introduction of a scaling function (to capture the lower scales), a signal 
 \begin{equation}
 	f(t)
 	%
-	= \sum\limits_{i} \sum\limits_{k} W^{\Phi}_{k} \Phi_{k}[t_{i}]
+	= \sum\limits_{i} \sum\limits_{\lambda} W^{\Phi}_{\lambda} \Phi_{\lambda}[t_{i}]
 	%
-	+ \sum\limits_{j} W^{\Psi^{j}}_{k} \Psi^{j}_{k}[t_{i}],
+	+ \sum\limits_{j} W^{\Psi^{j}}_{\lambda} \Psi^{j}_{\lambda}[t_{i}],
 \end{equation}
 %
-where the scaling coefficients (and similarly for the wavelet coefficients \(W^{\Psi^{j}}_{k}\)) are found by
+where the scaling coefficients (and similarly for the wavelet coefficients \(W^{\Psi^{j}}_{\lambda}\)) are found by
 %
 \begin{equation}
-	W^{\Phi}_{k}
+	W^{\Phi}_{\lambda}
 	%
-	= \sum\limits_{i} f[t_{i}] \conj{\Phi}_{k}[t_{i}].
+	= \sum\limits_{i} f[t_{i}] \conj{\Phi}_{\lambda}[t_{i}].
 \end{equation}
 %
 Fast algorithms exist~\cite{Beylkin1991,Rioul1992}, in which recursion relations allow one to compute the wavelet at scale \(j+1\) from scale \(j\).
 
 \subsection{Extension to the Sphere}
 
-Continuous~\cite{Torresani1995,Holschneider1996,Freeden1997,Antoine1998,Antoine1999,Antoine2002,Demanet2003,Wiaux2005,Sanz2006,McEwen2006}.
-Discrete~\cite{Sweldens1996,Schroder2000,Wiaux2005,Starck2006,Wiaux2008,Starck2009,Leistedt2013,McEwen2019,McEwen2018}.
+Whilst wavelet theory was initially considered in the Euclidean domain, it has since been generalised to the sphere in both the continuous~\cite{Torresani1995,Holschneider1996,Freeden1997,Antoine1998,Antoine1999,Antoine2002,Demanet2003,Wiaux2005,Sanz2006,McEwen2006} and discrete~\cite{Sweldens1996,Schroder2000,Wiaux2005,Starck2006,Wiaux2008,Starck2009,Leistedt2013,McEwen2019,McEwen2018} settings.
+Few wavelet frameworks on the sphere have exact transforms in both settings.
+Scale-discretised wavelets~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} are such a framework, which lean on a tiling of the (spherical) harmonic line to produce the wavelet transform.
+\cref{fig:chapter2_axisymmetric_wavelets} presents some example axisymmetric scale-discretised wavelets on the sphere, constructed from the tiling shown in \cref{fig:chapter2_tiling}.
+Here, the parameter combination \(\lambda=3\), \(J_{0}=2\) and bandlimit \(L=128\) results in a scaling function in panel (a) and four wavelets shown in panels (b-e).
+Much like in the Euclidean setting, a signal (on the sphere) is probed by multiple wavelets at different scales such as these.
 
 \input{figures/chapter2/axisymmetric_tiling}
 
