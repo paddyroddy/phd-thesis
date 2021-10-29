@@ -181,7 +181,7 @@ The conjugate symmetry relation of the spherical harmonic coefficients of a real
 %
 A useful relation for the spherical harmonics is the addition theorem which states
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_addition_theorem}
 	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
 	%
 	= \factor P_{\ell}(\omega \cdot \omega'),
@@ -738,39 +738,56 @@ Theory alone limits oneself to the prediction of just the statistical properties
 Here one explores the basic statistical properties enforced on such fields, by assuming the physics that generates the initial fluctuations, and subsequently processes them, respects the symmetries of the background cosmology, \ie{} isotropy and homogeneity.
 
 Consider a random field \(f(\vb*{x})\) with zero-mean, \(\expval*{f(\vb*{x})} = 0\).
-The probability of realising some field configuration is a \emph{functional} \(\text{Pr}[f(\vb*{x})]\).
-\emph{Correlators} of fields are expectation values of products of fields at different spatial points.
+The probability of realising some field configuration is a functional \(\text{Pr}[f(\vb*{x})]\).
+Correlators of fields are expectation values of products of fields at different spatial points.
 Recall the definition of the two-point correlator (power spectrum)
 %
 \begin{equation}
-	\expval*{f(\vb*{k}) \conj{f}(\vb*{k'})} = \frac{2\pi^{2}}{k^{3}} \mathcal{P}_{f}(k) \delta^{3}(\vb*{k}-\vb*{k'})
+	\expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})}
+	%
+	= {(2\pi)}^{3} \powerSpectrum{f} \delta^{3}(\vb*{k} - \vb*{k'})
 \end{equation}
 %
 where the Fourier convention is such that
 %
-\begin{subequations}
-	\begin{align}
-		f(\vb*{k}) & = \int \frac{\dd[3]{\vb*{x}}}{{(2\pi)}^{3/2}} f(\vb*{x}) e^{-i\vb*{k}\cdot\vb*{x}} \\
-		%
-		f(\vb*{x}) & = \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} f(\vb*{k}) e^{i\vb*{k}\cdot\vb*{x}}.
-	\end{align}
-\end{subequations}
+\begin{equation}
+	f(\vb*{r})
+	%
+	= \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r}).
+\end{equation}
 %
-Note for real fields \(f(\vb*{k}) = \conj{f}(-\vb*{k})\).
-Here, \(\mathcal{P}_{f}(k)\) is the \emph{dimensionless power spectrum}.
+and
+%
+\begin{equation}
+	\fourier{f}(\vb*{k})
+	%
+	= \int \dd[3]{\vb*{r}} f(\vb*{r}) \exp(-i\vb*{k}\cdot\vb*{r}).
+\end{equation}
+%
+Note for real fields
+%
+\begin{equation}
+	\fourier{f}(\vb*{k})
+	%
+	= \conj{\fourier{f}}(-\vb*{k}).
+\end{equation}
+%
+Here, \(\powerSpectrum{f}\) is the dimensionless power spectrum.
 It depends solely on \(k = \abs{\vb*{k}}\) due to statistical isotropy.
-The Dirac delta function appears because of statistical homogeneity, the correlator has to be invariant under the active translation of the field --- a transformation in Fourier space \(f(\vb*{k}) \rightarrow f(\vb*{k}) e^{-i\vb*{k}\cdot\vb*{a}}\).
+The Dirac delta function appears because of statistical homogeneity, the correlator has to be invariant under the active translation of the field --- a transformation in Fourier space \(\fourier{f}(\vb*{k}) \rightarrow \fourier{f}(\vb*{k}) \exp(-i\vb*{k}\cdot\vb*{a})\).
 For the three-point correlator
 %
 \begin{equation}
-	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3})} \propto B_{f}(k_{1},k_{2},k_{3}) \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3})
+	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3})}
+	%
+	\propto B_{f}(k_{1},k_{2},k_{3}) \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3})
 \end{equation}
 %
-where \(B_{f}(k_{1},k_{2},k_{3})\) is the \emph{bispectrum} of \(f\), which is a symmetric function of the three wavenumbers.
+where \(B_{f}(k_{1},k_{2},k_{3})\) is the bispectrum of \(f\), which is a symmetric function of the three wavenumbers.
 The Dirac delta again appears from statistical homogeneity.
 Although starting with nine degrees of freedom corresponding to the three wavevectors, statistical isotropy eliminates three of these, and a further three from statistical isotropy.
 The three-point function depends solely on the three rotational-invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
-The three-point function vanishes for zero-mean \emph{Gaussian random fields} and so provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
+The three-point function vanishes for zero-mean Gaussian random fields and so provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
 
 In cosmology, one observes the projection of some 3D random field onto the celestial sphere.
 For example, the CMB anisotropies are mainly the projection of photon density, bulk velocity and gravitational potential over the surface of last scattering.
@@ -780,23 +797,35 @@ The language used to describe random fields on the sphere is now described.
 
 The two-point function must be invariant under all rotations and hence
 %
-\begin{equation}\label{eq:two_point_rotate}
-	\expval*{\harmonic{f} \conj{\harmonic[']{f}}} = \sum\limits_{n n'} \wigner{\ell}{m}{n} \wigner[\ast]{\ell}{m'}{n'} \expval*{f_{\ell n} \conj{f_{\ell' n'}}}.
+\begin{equation}
+	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+	%
+	= \wignerSum \wignerSum['] \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n'} \expval*{f_{\ell n} \conj{f_{\ell' n'}}}.
 \end{equation}
 %
-This holds if
+This only holds if
 %
 \begin{equation}
-	\expval*{f_{\ell n} \conj{f_{\ell' n'}}} = C_{\ell} \delta_{\ell \ell'} \delta_{m m'}
+	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+	%
+	= C_{\ell} \delta_{\ell\ell'} \delta_{m m'},
 \end{equation}
 %
-since \cref{eq:two_point_rotate} is equal to
+such that
 %
-\begin{equation}
-	\sum\limits_{n n'} \wigner{\ell}{m}{n} \wigner[\ast]{\ell}{m'}{n'} C_{\ell} \delta_{\ell \ell'} \delta_{m m'} = C_{\ell} \delta_{\ell \ell'} \sum\limits_{n} \wigner{\ell}{m}{n} \wigner[\ast]{\ell}{m'}{n'}.
-\end{equation}
+\begin{align}
+	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+	%
+	&= \wignerSum \wignerSum['] \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n'} \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{} \\
+	%
+	&= \wignerSum \wignerSum['] \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n'} C_{\ell} \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
+	%
+	&= C_{\ell} \delta_{\ell\ell'} \wignerSum \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n} \nonumber{} \\
+	%
+	&= C_{\ell} \delta_{\ell\ell'} \delta_{m m'}.
+\end{align}
 %
-The real quantity \(C_{\ell}\) is the \emph{angular power spectrum} of \(\pixel{f}\).
+The real quantity \(C_{\ell}\) is the angular power spectrum of \(\pixel{f}\).
 Zero-mean Gaussian random fields are fully determined by their two-point function and hence their power spectrum.
 
 In real space the two-point function is
@@ -804,37 +833,41 @@ In real space the two-point function is
 \begin{align}
 	\expval*{\pixel{f} \pixel[']{\conj{f}}}
 	%
-	 & = \harmonicSum \harmonicSum['] \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	 %
+	 &= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell} \delta_{\ell\ell'} \delta_{m m'} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell} C_{\ell} \sum\limits_{m} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}} \nonumber{}                                   \\
+	 & = \sum\limits_{\ell=0}^{\infty} C_{\ell} \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}} \nonumber{}                                   \\
 	%
-	 & = \sum\limits_{\ell} \factor C_{\ell} P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                 \\
+	 & = \sum\limits_{\ell=0}^{\infty} \factor C_{\ell} P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                 \\
 	%
 	 & = C(\theta)
 \end{align}
 %
-where \({\omega\cdot\omega' = \cos{\theta}}\), and using the spherical harmonic addition theorem
-%
-\begin{equation}
-	\sum\limits_{m} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}} = \factor P_{\ell}(\omega\cdot\omega').
-\end{equation}
+where \({\omega\cdot\omega' = \cos{\theta}}\), and using the spherical harmonic addition theorem \cref{eq:chapter2_addition_theorem}.
 %
 Hence, the two-point correlation function depends on the angle between the two points, as required by statistical isotropy.
 The variance of the field is
 %
 \begin{equation}
-	C(0) = \sum\limits_{\ell} \factor C_{\ell} \approx \int \dd{\ln{\ell}} \frac{\ell(\ell+1) C_{\ell}}{2\pi}.
+	C(0)
+	%
+	= \sum\limits_{\ell=0}^{\infty} \factor C_{\ell}
+	%
+	\approx \int \dd{\ln{\ell}} \frac{\ell(\ell+1) C_{\ell}}{2\pi}.
 \end{equation}
 %
 Inverting the correlation function retrieves the power spectrum using the orthogonality of the Legendre polynomials
 %
 \begin{equation}
-	C_{\ell} = 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} \pixel{C} P_{\ell}(\cos{\theta}).
+	C_{\ell}
+	%
+	= 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} \pixel{C} P_{\ell}(\cos{\theta}).
 \end{equation}
 
 \subsubsection{Projection of 3D Random Fields}
 The CMB decoupled from matter around recombination.
-The temperature anisotropies observed are the projection of the conditions at that time over the surface of \emph{last scattering}.
+The temperature anisotropies observed are the projection of the conditions at that time over the surface of last scattering.
 
 A statistically isotropic 2D field on the sphere is the projection of a 3D statistically isotropic and homogeneous random field.
 Consider projecting a random field \(F(\vb*{x})\) over a sphere of radius \(r\), centred on the origin, to form \(f(\vu{n}) = F(r\vu{n})\).
@@ -843,22 +876,26 @@ Expanding \(F(\vb*{x})\) in Fourier space
 \begin{align}
 	f(\vu{n})
 	%
-	 & = \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} F(\vb*{k}) e^{ikr \vu{k}\cdot\vu{n}} \nonumber{}                                                                \\
+	 & = \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \fourier{f}(\vb*{k}) \exp(ikr \vu{k}\cdot\vu{n}) \nonumber{}                                                                \\
 	%
-	 & = 4\pi \harmonicSum i^{\ell} \bigg(\int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} F(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k})\bigg) \harmonic{Y}(\vu{n})
+	 & = 4\pi \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} i^{\ell} \bigg(\int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k})\bigg) \harmonic{Y}(\vu{n})
 \end{align}
 %
-where one uses \emph{Rayleigh plane-wave expansion}
+where one uses Rayleigh plane-wave expansion
 %
 \begin{equation}
-	e^{i\vb*{k}\cdot\vb*{x}} = 4\pi \harmonicSum i^{\ell} j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k}) \harmonic{Y}(\vu{n}),
+	\exp(i\vb*{k}\cdot\vb*{x})
+	%
+	= 4\pi \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} i^{\ell} j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k}) \harmonic{Y}(\vu{n}),
 \end{equation}
 %
-and \(r = \abs{\vb*{x}}\) and \(j_{l}(kr)\) are the \emph{spherical Bessel functions}.
+and \(r = \abs{\vb*{x}}\) and \(j_{l}(kr)\) are the spherical Bessel functions.
 The spherical multipole coefficients of \(f(\vu{n})\) are
 %
 \begin{equation}
-	\harmonic{f} = 4\pi i^{\ell} \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} F(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k}).
+	\harmonic{f}
+	%
+	= 4\pi i^{\ell} \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k}).
 \end{equation}
 %
 The two-point correlator of the \(\harmonic{f}\) is hence
@@ -866,7 +903,7 @@ The two-point correlator of the \(\harmonic{f}\) is hence
 \begin{align}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
 	%
-	 & = {(4\pi)}^{2} i^{\ell-\ell'} \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \frac{\dd[3]{\vb*{k'}}}{{(2\pi)}^{3/2}} \expval*{F(\vb*{k}) \conj{F}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu{k}) \harmonic[']{Y}(\vu{k'}) \nonumber{} \\
+	 & = {(4\pi)}^{2} i^{\ell-\ell'} \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \frac{\dd[3]{\vb*{k'}}}{{(2\pi)}^{3/2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu{k}) \harmonic[']{Y}(\vu{k'}) \nonumber{} \\
 	%
 	 & = {(4\pi)}^{2} i^{\ell-\ell'} \bigg(\int \dd{\ln{k}} \mathcal{P}_{F}(k) j_{\ell}(kr) j_{\ell'}(kr)\bigg) \bigg(\int \dd{\vu{k}} \conj{\harmonic{Y}}(\vu{k}) \harmonic[']{Y}(\vu{k})\bigg) \nonumber{}                                                  \\
 	%
@@ -876,7 +913,9 @@ The two-point correlator of the \(\harmonic{f}\) is hence
 Thus, \(f(\vu{n})\) is a statistically isotropic field with angular power spectrum
 %
 \begin{equation}
-	C_{\ell} = 4\pi \int \dd{\ln{k}} \mathcal{P}_{F}(k) j^{2}_{\ell}(kr).
+	C_{\ell}
+	%
+	= 4\pi \int \dd{\ln{k}} \powerSpectrum(F) j^{2}_{\ell}(kr).
 \end{equation}
 %
 The spherical Bessel functions have a sharp peak at \({kr = \ell}\) and for small arguments are \(\mathcal{O}{(kr)}^{\ell}\).
@@ -890,7 +929,7 @@ This arises from Fourier modes that are not aligned with their wavevector perpen
 It is impossible to predict the exact form that cosmological fields must take.
 A given model makes a prediction for the probability distribution, from which one draws the single realisation of the fields observed.
 An estimate made of the properties of the underlying probability distribution, \ie{} its power spectrum, has some random error due to attempting to estimate ensemble-averaged quantities from a single realisation.
-\emph{Cosmic variance} is the random error which contributes to the error budget of most inferences made in observational cosmology.
+Cosmic variance is the random error which contributes to the error budget of most inferences made in observational cosmology.
 Whilst this is not the dominant error if the measurements are noisy, cosmologists aim to reach this cosmic variance limit.
 
 Consider estimating the angular power spectrum of a zero-mean random field \(f(\vu{n})\).
@@ -898,14 +937,16 @@ Suppose that the observations of \(\vu{n}\) that existed are full-sky and noise-
 Using the spherical multipoles \(\harmonic{f}\) forms the following estimator for \(C_{\ell}\)
 %
 \begin{equation}
-	\hat{C}_{\ell} = \frac{1}{2\ell+1} \sum\limits_{m} \harmonic{f} \conj{\harmonic{f}}.
+	\hat{C}_{\ell}
+	%
+	= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \conj{\harmonic{f}}.
 \end{equation}
 %
 This unbiased estimator, \ie{} \(\expval*{\hat{C}_{\ell}} = C_{\ell}\), and the sum over \(m\) means for a given \({\ell}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
 Using Wick's theorem one calculates the variance of a Gaussian random field
 %
 \begin{align}
-	\operatorname{Var}(\hat{C}_{\ell})
+	\variance{\hat{C}_{\ell}}
 	%
 	 & = \expval*{\hat{C}_{\ell}\hat{C}_{\ell}} - \expval*{\hat{C}_{\ell}}^{2} \nonumber{}                                                                                                                                                             \\
 	%

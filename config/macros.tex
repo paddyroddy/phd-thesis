@@ -110,6 +110,9 @@
 % real space
 \newcommand{\pixel}[2][]{#2(\omega#1)}
 
+% power spectrum
+\newcommand{\powerSpectrum}[1]{\mathcal{P}_{#1}(k)}
+
 % real positive parameter
 \newcommand{\realPosParam}{\mathbb{R}_{\ast}^{+}}
 
@@ -165,7 +168,7 @@
 \newcommand{\wigner}[4][]{D^{#2#1}_{#3#4}}
 
 % third sum in Wigner D
-\newcommand{\wignerSum}{\displaystyle\sum\limits_{n=-\ell}^{\ell}}
+\newcommand{\wignerSum}[1][]{\displaystyle\sum\limits_{n#1=-\ell#1}^{\ell#1}}
 
 % sum over wavelet coefficients
 \newcommand{\waveletSum}{\displaystyle\sum\limits_{j=J_{0}}^{J}}
