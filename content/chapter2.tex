@@ -119,15 +119,15 @@ The spherical harmonics are then formed by combining the solutions in the polar 
 \begin{equation}
 	\pixel{\harmonic{Y}}
 	%
-	= {(-1)}^{m} \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
+	= \phaseFactor \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
 \end{equation}
 %
-Included here is the Condon-Shortley \({(-1)}^{m}\) phase factor, to ensure the following conjugate symmetry relation holds
+Included here is the Condon-Shortley \(\phaseFactor{}\) phase factor, to ensure the following conjugate symmetry relation holds
 %
 \begin{equation}
 	\pixel{\conj{\harmonic{Y}}}
 	%
-	= {(-1)}^{m} \pixel{Y_{\ell(-m)}}.
+	= \phaseFactor \pixel{Y_{\ell(-m)}}.
 \end{equation}
 %
 The spherical harmonics satisfy the below orthonormality and completeness relations by
@@ -176,7 +176,7 @@ The conjugate symmetry relation of the spherical harmonic coefficients of a real
 \begin{equation}
 	\conj{\harmonic{f}}
 	%
-	= {(-1)}^{m} f_{\ell(-m)}.
+	= \phaseFactor f_{\ell(-m)}.
 \end{equation}
 %
 A useful relation for the spherical harmonics is the addition theorem which states
@@ -699,7 +699,7 @@ The eigenproblem, of which the maximally bandlimited functions derive from, is
 %
 which is analogous to the one-dimensional frequency-domain eigenproblem \cref{eq:chapter2_frequency_eigenproblem}.
 
-To explore this further, consider the straightforward case of finding the maximally concentrated functions within an axisymmetric polar cap of colatitudinal radius \(\theta_{0}{}\), centred on the north pole, \ie{}
+To explore this further, consider the straightforward case of finding the maximally concentrated functions within an axisymmetric polar cap of colatitudinal radius \(\theta_{0}\), centred on the north pole, \ie{}
 %
 \begin{equation}
 	R
@@ -964,19 +964,19 @@ Using Wick's theorem one calculates the variance of a Gaussian random field
 \begin{align}
 	\variance{\hat{C}_{\ell}}
 	%
-	 & = - \expval*{\hat{C}_{\ell}}^{2} + \expval*{\hat{C}_{\ell}\hat{C}_{\ell}} \nonumber{}                                                                                                           \\
+	 & = - \expval*{\hat{C}_{\ell}}^{2} + \expval*{\hat{C}_{\ell}\hat{C}_{\ell}} \nonumber{}                                                                                                                                                                                                                  \\
 	%
-	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{} \\
+	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                                        \\
 	%
-	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
+	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                              \\
 	%
-	\begin{aligned}
-		  & \expval*{\harmonic{f} \conj{\harmonic{f}}} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{} \\
-		%
-		+ & \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} \nonumber{} \\
-		%
-		+ & \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}}
-	\end{aligned} \nonumber{}                                     \\
+	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \bigg(\sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}\bigg) \nonumber{} \\
+	%
+	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \phaseFactor['] \expval*{\harmonic{f} \conj{f_{\ell(-m')}}} \phaseFactor['] \expval*{\conj{\harmonic{f}} f_{\ell(-m')}} \nonumber{}                                                                           \\
+	%
+	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell}^{2} \delta_{m m'} \nonumber{}                                                                                                                                                            \\
+	%
+	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} C_{\ell}^{2} \nonumber{}                                                                                                                                                                                                                      \\
 	%
 	 & = \frac{2}{2\ell+1} C_{\ell}^{2}.
 \end{align}
