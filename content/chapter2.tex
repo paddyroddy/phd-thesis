@@ -325,7 +325,7 @@ The wavelet analysis described in \cref{sec:chapter2_comparison_fourier_transfor
 \begin{equation}\label{eq:chapter2_cwt}
 	\cwt{f}
 	%
-	= \int \dd{t} f(t) \Psi^{s\ast}_{\tau}(t),
+	= \int\dd{t} f(t) \Psi^{s\ast}_{\tau}(t),
 \end{equation}
 %
 where \(\Psi^{s}_{\tau}(t)\) are the wavelets, and \(s\) and \(\tau{}\) are dimensionless variables which refer to scale and translation respectively.
@@ -335,7 +335,7 @@ The inverse wavelet transform is thus
 \begin{equation}
 	f(t)
 	%
-	= \int \dd{s} \int \dd{\tau} \cwt{f} \Psi^{s}_{\tau}(t).
+	= \int\dd{s} \int\dd{\tau} \cwt{f} \Psi^{s}_{\tau}(t).
 \end{equation}
 %
 The wavelets derive from a single wavelet \(\Psi(t)\), the so-called mother wavelet, by scaling and translating, \ie{}
@@ -355,7 +355,7 @@ The term wavelets arose from the satisfaction of the admissibility and regularit
 The admissibility condition states that the square-integrable functions \(\Psi(t)\) which satisfy
 %
 \begin{equation}\label{eq:chapter2_admissibility}
-	\int \dd{\varpi} \frac{\abs{\fourier{\Psi}(\varpi)}^{2}}{\abs{\varpi}}
+	\int\dd{\varpi} \frac{\abs{\fourier{\Psi}(\varpi)}^{2}}{\abs{\varpi}}
 	%
 	< \infty
 \end{equation}
@@ -373,7 +373,7 @@ which means the spectrum experiences bandpass behaviour.
 It also follows that, the average value of the wavelet in the time-domain must be zero, \ie{}
 %
 \begin{equation}
-	\int \dd{t} \Psi(t)
+	\int\dd{t} \Psi(t)
 	%
 	= 0,
 \end{equation}
@@ -421,7 +421,7 @@ with \(A,\ B \in \realPosParam{}\)~\cite{Daubechies1992}.
 When \(A=B=1\) the energy of \(f\) is conserved in wavelet space, and as such the wavelets act like an orthonormal basis, \ie{}
 %
 \begin{equation}
-	\int \dd{t} \Psi^{j}_{\lambda}(t) \Psi^{j'\ast}_{\lambda'}(t)
+	\int\dd{t} \Psi^{j}_{\lambda}(t) \Psi^{j'\ast}_{\lambda'}(t)
 	%
 	= \delta_{j j'} \delta_{\lambda\lambda'},
 \end{equation}
@@ -440,7 +440,7 @@ where \(W^{j}_{\lambda}\) are the wavelet coefficients given by
 \begin{equation}
 	W^{j}_{\lambda}
 	%
-	= \int \dd{t} f(t) \Psi^{j\ast}_{\lambda}(t).
+	= \int\dd{t} f(t) \Psi^{j\ast}_{\lambda}(t).
 \end{equation}
 %
 To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} scale) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
@@ -753,7 +753,7 @@ where the Fourier convention is such that
 \begin{equation}
 	f(\vb*{r})
 	%
-	= \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r}).
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r}).
 \end{equation}
 %
 and
@@ -761,7 +761,7 @@ and
 \begin{equation}
 	\fourier{f}(\vb*{k})
 	%
-	= \int \dd[3]{\vb*{r}} f(\vb*{r}) \exp(-i\vb*{k}\cdot\vb*{r}).
+	= \int\dd[3]{\vb*{r}} f(\vb*{r}) \exp(-i\vb*{k}\cdot\vb*{r}).
 \end{equation}
 %
 Note for real fields
@@ -800,7 +800,7 @@ The two-point function must be invariant under all rotations and hence
 \begin{equation}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
 	%
-	= \wignerSum \wignerSum['] \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n'} \expval*{f_{\ell n} \conj{f_{\ell' n'}}}.
+	= \expval*{\harmonic{(\rotation{\rho}f)}\harmonic[']{(\rotation{\rho}f)}}.
 \end{equation}
 %
 This only holds if
@@ -816,13 +816,15 @@ such that
 \begin{align}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
 	%
-	&= \wignerSum \wignerSum['] \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n'} \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{} \\
+	 & = \expval*{\harmonic{(\rotation{\rho}f)}\harmonic[']{(\rotation{\rho}f)}} \nonumber{}                                                          \\
 	%
-	&= \wignerSum \wignerSum['] \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n'} C_{\ell} \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
+	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{}   \\
 	%
-	&= C_{\ell} \delta_{\ell\ell'} \wignerSum \wigner{\ell}{m}{n} \wigner[\ast]{\ell'}{m'}{n} \nonumber{} \\
+	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) C_{\ell} \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
 	%
-	&= C_{\ell} \delta_{\ell\ell'} \delta_{m m'}.
+	 & = C_{\ell} \delta_{\ell\ell'} \wignerSum \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n}(\rho) \nonumber{}                               \\
+	%
+	 & = C_{\ell} \delta_{\ell\ell'} \delta_{m m'}.
 \end{align}
 %
 The real quantity \(C_{\ell}\) is the angular power spectrum of \(\pixel{f}\).
@@ -831,15 +833,15 @@ Zero-mean Gaussian random fields are fully determined by their two-point functio
 In real space the two-point function is
 %
 \begin{align}
-	\expval*{\pixel{f} \pixel[']{\conj{f}}}
+	\expval*{f(\vu*{n}) \pixel[']{\conj{f}}}
 	%
 	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
-	 %
-	 &= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell} \delta_{\ell\ell'} \delta_{m m'} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} C_{\ell} \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}} \nonumber{}                                   \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell} \delta_{\ell\ell'} \delta_{m m'} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{}     \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \factor C_{\ell} P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                 \\
+	 & = \sum\limits_{\ell=0}^{\infty} C_{\ell} \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}} \nonumber{}                                                                                                        \\
+	%
+	 & = \sum\limits_{\ell=0}^{\infty} \factor C_{\ell} P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                                                                                                   \\
 	%
 	 & = C(\theta)
 \end{align}
@@ -854,7 +856,7 @@ The variance of the field is
 	%
 	= \sum\limits_{\ell=0}^{\infty} \factor C_{\ell}
 	%
-	\approx \int \dd{\ln{\ell}} \frac{\ell(\ell+1) C_{\ell}}{2\pi}.
+	\approx \int\dd{\ln{\ell}} \frac{\ell(\ell+1) C_{\ell}}{2\pi}.
 \end{equation}
 %
 Inverting the correlation function retrieves the power spectrum using the orthogonality of the Legendre polynomials
@@ -870,52 +872,66 @@ The CMB decoupled from matter around recombination.
 The temperature anisotropies observed are the projection of the conditions at that time over the surface of last scattering.
 
 A statistically isotropic 2D field on the sphere is the projection of a 3D statistically isotropic and homogeneous random field.
-Consider projecting a random field \(F(\vb*{x})\) over a sphere of radius \(r\), centred on the origin, to form \(f(\vu{n}) = F(r\vu{n})\).
-Expanding \(F(\vb*{x})\) in Fourier space
+Consider projecting a random field \(f(\vb*{x})\) over a sphere of radius \(r\), centred on the origin, to form \(f(\vu*{n}) = f(r\vu*{n})\).
+Consider \(f(\vu*{n})\) in Fourier space
+%
+\begin{equation}
+	f(\vu*{n})
+	%
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\vu*{n}),
+\end{equation}
+%
+and the Rayleigh plane-wave expansion
 %
 \begin{align}
-	f(\vu{n})
+	\exp(i\vb*{k}\cdot\vb*{r})
 	%
-	 & = \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \fourier{f}(\vb*{k}) \exp(ikr \vu{k}\cdot\vu{n}) \nonumber{}                                                                \\
+	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} j_{\ell}(kr) P_{\ell}(\vu*{k}\cdot\vu*{r}) \nonumber{}                                   \\
 	%
-	 & = 4\pi \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} i^{\ell} \bigg(\int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k})\bigg) \harmonic{Y}(\vu{n})
+	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} j_{\ell}(kr) \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
 \end{align}
 %
-where one uses Rayleigh plane-wave expansion
+where \(r = \abs{\vb*{x}}\) and \(j_{l}(kr)\) are the spherical Bessel functions.
+The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
 %
-\begin{equation}
-	\exp(i\vb*{k}\cdot\vb*{x})
-	%
-	= 4\pi \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} i^{\ell} j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k}) \harmonic{Y}(\vu{n}),
-\end{equation}
-%
-and \(r = \abs{\vb*{x}}\) and \(j_{l}(kr)\) are the spherical Bessel functions.
-The spherical multipole coefficients of \(f(\vu{n})\) are
-%
-\begin{equation}
+\begin{align}
 	\harmonic{f}
 	%
-	= 4\pi i^{\ell} \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu{k}).
-\end{equation}
+	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                         \\
+	%
+	 & = \integrateSphere{\vu*{n}} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
+	%
+	 & = 4\pi \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \sum\limits_{\ell'=0}^{\infty} i^{\ell'} j_{\ell'}(kr) \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \integrateSphere{\vu*{n}} \harmonic[']{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
+	%
+	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                     \\
+	%
+	 & = i^{\ell} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}).
+\end{align}
 %
 The two-point correlator of the \(\harmonic{f}\) is hence
 %
 \begin{align}
-	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
 	%
-	 & = {(4\pi)}^{2} i^{\ell-\ell'} \int \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3/2}} \frac{\dd[3]{\vb*{k'}}}{{(2\pi)}^{3/2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu{k}) \harmonic[']{Y}(\vu{k'}) \nonumber{} \\
+	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vu*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
-	 & = {(4\pi)}^{2} i^{\ell-\ell'} \bigg(\int \dd{\ln{k}} \mathcal{P}_{F}(k) j_{\ell}(kr) j_{\ell'}(kr)\bigg) \bigg(\int \dd{\vu{k}} \conj{\harmonic{Y}}(\vu{k}) \harmonic[']{Y}(\vu{k})\bigg) \nonumber{}                                                  \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrum{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                             \\
 	%
-	 & = 4\pi \delta_{\ell \ell'} \delta_{m m'} \int \dd{\ln{k}} \mathcal{P}_{F}(k) j^{2}_{\ell}(kr).
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrum{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                              \\
+	%
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrum{f}}{2\pi^{2}} j_{\ell}(kr) j_{\ell'}(kr) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                              \\
+	%
+	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(kr) \nonumber{}                                                                                                                                                 \\
+	%
+	 & = C_{\ell} \delta_{\ell\ell'} \delta_{m m'}.
 \end{align}
 %
-Thus, \(f(\vu{n})\) is a statistically isotropic field with angular power spectrum
+Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spectrum
 %
 \begin{equation}
 	C_{\ell}
 	%
-	= 4\pi \int \dd{\ln{k}} \powerSpectrum(F) j^{2}_{\ell}(kr).
+	= 4\pi \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(kr).
 \end{equation}
 %
 The spherical Bessel functions have a sharp peak at \({kr = \ell}\) and for small arguments are \(\mathcal{O}{(kr)}^{\ell}\).
@@ -932,8 +948,8 @@ An estimate made of the properties of the underlying probability distribution, \
 Cosmic variance is the random error which contributes to the error budget of most inferences made in observational cosmology.
 Whilst this is not the dominant error if the measurements are noisy, cosmologists aim to reach this cosmic variance limit.
 
-Consider estimating the angular power spectrum of a zero-mean random field \(f(\vu{n})\).
-Suppose that the observations of \(\vu{n}\) that existed are full-sky and noise-free.
+Consider estimating the angular power spectrum of a zero-mean random field \(f(\vu*{n})\).
+Suppose that the observations of \(\vu*{n}\) that existed are full-sky and noise-free.
 Using the spherical multipoles \(\harmonic{f}\) forms the following estimator for \(C_{\ell}\)
 %
 \begin{equation}
@@ -948,11 +964,19 @@ Using Wick's theorem one calculates the variance of a Gaussian random field
 \begin{align}
 	\variance{\hat{C}_{\ell}}
 	%
-	 & = \expval*{\hat{C}_{\ell}\hat{C}_{\ell}} - \expval*{\hat{C}_{\ell}}^{2} \nonumber{}                                                                                                                                                             \\
+	 & = - \expval*{\hat{C}_{\ell}}^{2} + \expval*{\hat{C}_{\ell}\hat{C}_{\ell}} \nonumber{}                                                                                                           \\
 	%
-	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m m'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} - C_{\ell}^{2} \nonumber{}                                                                                             \\
+	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{} \\
 	%
-	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m m'} \Big(\expval*{\harmonic{f} f_{\ell m'}} \expval*{ \conj{\harmonic{f}} \conj{f_{\ell m'}}} + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}\Big) \nonumber{} \\
+	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
+	%
+	\begin{aligned}
+		  & \expval*{\harmonic{f} \conj{\harmonic{f}}} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{} \\
+		%
+		+ & \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} \nonumber{} \\
+		%
+		+ & \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}}
+	\end{aligned} \nonumber{}                                     \\
 	%
 	 & = \frac{2}{2\ell+1} C_{\ell}^{2}.
 \end{align}
