@@ -833,20 +833,20 @@ Zero-mean Gaussian random fields are fully determined by their two-point functio
 In real space the two-point function is
 %
 \begin{align}
-	\expval*{f(\vu*{n}) \pixel[']{\conj{f}}}
+	\expval*{f(\vu*{n}) \conj{f}(\vu*{n'})}
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell} \delta_{\ell\ell'} \delta_{m m'} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{}     \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell} \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{}     \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} C_{\ell} \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}} \nonumber{}                                                                                                        \\
+	 & = \sum\limits_{\ell=0}^{\infty} C_{\ell} \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n'}) \nonumber{}                                                                                                        \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \factor C_{\ell} P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                                                                                                   \\
+	 & = \sum\limits_{\ell=0}^{\infty} \factor C_{\ell} P_{\ell}(\vu*{n}\cdot\vu*{n'})  \nonumber{}                                                                                                                                                 \\
 	%
 	 & = C(\theta)
 \end{align}
 %
-where \({\omega\cdot\omega' = \cos{\theta}}\), and using the spherical harmonic addition theorem \cref{eq:chapter2_addition_theorem}.
+where \({\vu*{n}\cdot\vu*{n'} = \cos{\theta}}\), and using the spherical harmonic addition theorem \cref{eq:chapter2_addition_theorem}.
 %
 Hence, the two-point correlation function depends on the angle between the two points, as required by statistical isotropy.
 The variance of the field is
