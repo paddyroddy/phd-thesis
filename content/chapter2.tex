@@ -753,7 +753,7 @@ where the Fourier convention is such that
 \begin{equation}
 	f(\vb*{r})
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r}).
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r}),
 \end{equation}
 %
 and
@@ -958,7 +958,19 @@ Using the spherical multipoles \(\harmonic{f}\) forms the following estimator fo
 	= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \conj{\harmonic{f}}.
 \end{equation}
 %
-This unbiased estimator, \ie{} \(\expval*{\hat{C}_{\ell}} = C_{\ell}\), and the sum over \(m\) means for a given \({\ell}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
+This unbiased estimator, \ie{}
+%
+\begin{align}
+	\expval*{\hat{C}_{\ell}}
+	%
+	&= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \nonumber{} \\
+	%
+	&= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} C_{\ell} \nonumber{} \\
+	%
+	&= C_{\ell},
+\end{align}
+%
+and the sum over \(m\) means for a given \({\ell}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
 Using Wick's theorem one calculates the variance of a Gaussian random field
 %
 \begin{align}
