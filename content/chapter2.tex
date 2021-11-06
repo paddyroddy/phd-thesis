@@ -504,7 +504,7 @@ In contrast to wavelets, described in \cref{sec:chapter2_wavelets}, the so-calle
 Before considering the Slepian spatial-spectral concentration problem in the spherical domain, first consider the one-dimensional, continuous-continuous, time-frequency concentration problem.
 Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(\fourier{f}(\varpi)\) are related by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_fourier_time}
 	f(t)
 	%
 	= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dd{\varpi} \fourier{f}(\varpi) \exp(i\varpi t)
@@ -512,7 +512,7 @@ Here, a normalisation convention is adopted such that a real-valued time-domain 
 %
 and
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_fourier_frequency}
 	\fourier{f}(\varpi)
 	%
 	= \int\limits_{-\infty}^{\infty} \dd{\varpi} f(t) \exp(-i\varpi t),
@@ -737,68 +737,58 @@ The so-called Slepian functions allow one to perform localised spatial-spectral 
 The current favoured model for creating fluctuations in the Universe is cosmological inflation.
 Due to the quantum nature of inflation, one cannot predict the exact shape of the Universe, but only its statistical properties.
 Many realisations of the Universe are statistically equivalent.
-To compare theory and observation, one must measure statistical properties of the Universe, and compare these to a model of the Universe.
+To compare theory and observation, one must measure statistical properties of the Universe, and compare these to the same statistical properties evaluated on a model of the Universe.
 The cosmological principle states that, on sufficiently large scales, the Universe is invariant under rotations (statistically isotropic) and invariant under translations (statistically homogeneous).
-Here, only zero-mean fields are considered, such as the temperature fluctuations in the CMB
-%
-\begin{equation}
-	\theta
-	%
-	= \frac{T}{\mean{T}} - 1
-	%
-	= \frac{\Delta T}{T},
-\end{equation}
-%
-or the overdensity
-%
-\begin{equation}
-	\delta
-	=
-	\frac{\rho}{\mean{\rho}} - 1
-	%
-	= \frac{n}{\mean{n}} - 1,
-\end{equation}
-%
-where \(\rho\) is the density and
-%
-\begin{equation}
-	n = \frac{N}{V}
-\end{equation}
-%
-is the number density.
+Here, only zero-mean fields are considered, such as the temperature fluctuations in the CMB or the matter overdensity.
 
 \subsubsection{Power Spectrum}
 
-Theory alone limits oneself to the prediction of just the statistical properties of cosmological fields, \ie{} the matter overdensity \({\delta\rho}\).
-Here one explores the basic statistical properties enforced on such fields, by assuming the physics that generates the initial fluctuations, and subsequently processes them, respects the symmetries of the background cosmology, \ie{} isotropy and homogeneity.
-
-Consider a random field \(f(\vb*{x})\) with zero-mean, \(\expval*{f(\vb*{x})} = 0\).
-The probability of realising some field configuration is a functional \(\text{Pr}[f(\vb*{x})]\).
+Consider a three-dimensional, zero-mean, random field \(f(\vb*{x})\).
+The probability of realising some field configuration is a functional.
 Correlators of fields are expectation values of products of fields at different spatial points.
-Recall the definition of the two-point correlator (power spectrum)
+In Fourier space, the two-point correlator (or power spectrum) is given by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_power_spectrum}
 	\expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})}
 	%
-	= {(2\pi)}^{3} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'})
+	= {(2\pi)}^{3} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}),
 \end{equation}
 %
-where the Fourier convention is such that
+where \(\powerSpectrumDim{f}\) is the dimensionless power spectrum which, by statistical isotropy, depends only on the magnitude of \(k=\abs{\vb*{k}}\).
+Due to statistical homogeneity, the Dirac delta function is present in \cref{eq:chapter2_power_spectrum}, such that the correlator is invariant under spatial translations.
+Sometimes one considers the power in a shell rather than per unit Fourier space volume
 %
 \begin{equation}
-	f(\vb*{r})
+	\powerSpectrumShell{f}
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r}),
+	= \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}},
 \end{equation}
 %
-and
+such that
+%
+\begin{equation}
+	\powerSpectrumShell{f} \dd{\ln{k}}
+	%
+	= \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \powerSpectrumDim{f}.
+\end{equation}
+%
+The Fourier convention adopted here is
+%
+\begin{equation}
+	f(\vb*{x})
+	%
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{x}),
+\end{equation}
+%
+\cf{} \cref{eq:chapter2_fourier_time}, and
 %
 \begin{equation}
 	\fourier{f}(\vb*{k})
 	%
-	= \int\dd[3]{\vb*{r}} f(\vb*{r}) \exp(-i\vb*{k}\cdot\vb*{r}).
+	= \int\dd[3]{\vb*{x}} f(\vb*{x}) \exp(-i\vb*{k}\cdot\vb*{x}),
 \end{equation}
 %
+\cf{} \cref{eq:chapter2_fourier_frequency}.
 Note for real fields
 %
 \begin{equation}
@@ -806,19 +796,16 @@ Note for real fields
 	%
 	= \conj{\fourier{f}}(-\vb*{k}).
 \end{equation}
-%
-Here, \(\powerSpectrumDim{f}\) is the dimensionless power spectrum.
-It depends solely on \(k = \abs{\vb*{k}}\) due to statistical isotropy.
-The Dirac delta function appears because of statistical homogeneity, the correlator has to be invariant under the active translation of the field --- a transformation in Fourier space \(\fourier{f}(\vb*{k}) \rightarrow \fourier{f}(\vb*{k}) \exp(-i\vb*{k}\cdot\vb*{a})\).
-For the three-point correlator
+%.
+Similarly, the three-point correlator
 %
 \begin{equation}
 	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3})}
 	%
-	\propto B_{f}(k_{1},k_{2},k_{3}) \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3})
+	= {(2\pi)}^{3} \mathcal{B}_{f}(k_{1},k_{2},k_{3}) \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3}),
 \end{equation}
 %
-where \(B_{f}(k_{1},k_{2},k_{3})\) is the bispectrum of \(f\), which is a symmetric function of the three wavenumbers.
+gives rise to the bispectrum \(\mathcal{B}_{f}(k_{1},k_{2},k_{3})\) which is a symmetric function (due to statistical isotropy) of the three wavenumbers.
 The Dirac delta again appears from statistical homogeneity.
 Although starting with nine degrees of freedom corresponding to the three wavevectors, statistical isotropy eliminates three of these, and a further three from statistical isotropy.
 The three-point function depends solely on the three rotational-invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
