@@ -745,7 +745,7 @@ Recall the definition of the two-point correlator (power spectrum)
 \begin{equation}
 	\expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})}
 	%
-	= {(2\pi)}^{3} \powerSpectrum{f} \delta^{3}(\vb*{k} - \vb*{k'})
+	= {(2\pi)}^{3} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'})
 \end{equation}
 %
 where the Fourier convention is such that
@@ -772,7 +772,7 @@ Note for real fields
 	= \conj{\fourier{f}}(-\vb*{k}).
 \end{equation}
 %
-Here, \(\powerSpectrum{f}\) is the dimensionless power spectrum.
+Here, \(\powerSpectrumDim{f}\) is the dimensionless power spectrum.
 It depends solely on \(k = \abs{\vb*{k}}\) due to statistical isotropy.
 The Dirac delta function appears because of statistical homogeneity, the correlator has to be invariant under the active translation of the field --- a transformation in Fourier space \(\fourier{f}(\vb*{k}) \rightarrow \fourier{f}(\vb*{k}) \exp(-i\vb*{k}\cdot\vb*{a})\).
 For the three-point correlator
@@ -808,7 +808,7 @@ This only holds if
 \begin{equation}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
 	%
-	= C_{\ell} \delta_{\ell\ell'} \delta_{m m'},
+	= \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
 \end{equation}
 %
 such that
@@ -820,14 +820,14 @@ such that
 	%
 	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{}   \\
 	%
-	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) C_{\ell} \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
+	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \powerSpectrum \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
 	%
-	 & = C_{\ell} \delta_{\ell\ell'} \wignerSum \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n}(\rho) \nonumber{}                               \\
+	 & = \powerSpectrum \delta_{\ell\ell'} \wignerSum \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n}(\rho) \nonumber{}                               \\
 	%
-	 & = C_{\ell} \delta_{\ell\ell'} \delta_{m m'}.
+	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'}.
 \end{align}
 %
-The real quantity \(C_{\ell}\) is the angular power spectrum of \(\pixel{f}\).
+The real quantity \(\powerSpectrum{}\) is the angular power spectrum of \(\pixel{f}\).
 Zero-mean Gaussian random fields are fully determined by their two-point function and hence their power spectrum.
 
 In real space the two-point function is
@@ -837,11 +837,11 @@ In real space the two-point function is
 	%
 	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell} \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{}     \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{}     \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} C_{\ell} \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n'}) \nonumber{}                                                                                                        \\
+	 & = \sum\limits_{\ell=0}^{\infty} \powerSpectrum \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n'}) \nonumber{}                                                                                                        \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \factor C_{\ell} P_{\ell}(\vu*{n}\cdot\vu*{n'})  \nonumber{}                                                                                                                                                 \\
+	 & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\vu*{n}\cdot\vu*{n'})  \nonumber{}                                                                                                                                                 \\
 	%
 	 & = C(\theta)
 \end{align}
@@ -854,15 +854,15 @@ The variance of the field is
 \begin{equation}
 	C(0)
 	%
-	= \sum\limits_{\ell=0}^{\infty} \factor C_{\ell}
+	= \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum
 	%
-	\approx \int\dd{\ln{\ell}} \frac{\ell(\ell+1) C_{\ell}}{2\pi}.
+	\approx \int\dd{\ln{\ell}} \frac{\ell(\ell+1) \powerSpectrum}{2\pi}.
 \end{equation}
 %
 Inverting the correlation function retrieves the power spectrum using the orthogonality of the Legendre polynomials
 %
 \begin{equation}
-	C_{\ell}
+	\powerSpectrum
 	%
 	= 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} \pixel{C} P_{\ell}(\cos{\theta}).
 \end{equation}
@@ -915,21 +915,21 @@ The two-point correlator of the \(\harmonic{f}\) is hence
 	%
 	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vu*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrum{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                             \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                             \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrum{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                              \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                              \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrum{f}}{2\pi^{2}} j_{\ell}(kr) j_{\ell'}(kr) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                              \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} j_{\ell}(kr) j_{\ell'}(kr) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                              \\
 	%
 	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(kr) \nonumber{}                                                                                                                                                 \\
 	%
-	 & = C_{\ell} \delta_{\ell\ell'} \delta_{m m'}.
+	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'}.
 \end{align}
 %
 Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spectrum
 %
 \begin{equation}
-	C_{\ell}
+	\powerSpectrum
 	%
 	= 4\pi \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(kr).
 \end{equation}
@@ -950,10 +950,10 @@ Whilst this is not the dominant error if the measurements are noisy, cosmologist
 
 Consider estimating the angular power spectrum of a zero-mean random field \(f(\vu*{n})\).
 Suppose that the observations of \(\vu*{n}\) that existed are full-sky and noise-free.
-Using the spherical multipoles \(\harmonic{f}\) forms the following estimator for \(C_{\ell}\)
+Using the spherical multipoles \(\harmonic{f}\) forms the following estimator for \(\powerSpectrum{}\)
 %
 \begin{equation}
-	\hat{C}_{\ell}
+	\powerSpectrumHat
 	%
 	= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \conj{\harmonic{f}}.
 \end{equation}
@@ -961,36 +961,36 @@ Using the spherical multipoles \(\harmonic{f}\) forms the following estimator fo
 This unbiased estimator, \ie{}
 %
 \begin{align}
-	\expval*{\hat{C}_{\ell}}
+	\expval*{\powerSpectrumHat}
 	%
 	&= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \nonumber{} \\
 	%
-	&= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} C_{\ell} \nonumber{} \\
+	&= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum \nonumber{} \\
 	%
-	&= C_{\ell},
+	&= \powerSpectrum,
 \end{align}
 %
 and the sum over \(m\) means for a given \({\ell}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
 Using Wick's theorem one calculates the variance of a Gaussian random field
 %
 \begin{align}
-	\variance{\hat{C}_{\ell}}
+	\variance{\powerSpectrumHat}
 	%
-	 & = - \expval*{\hat{C}_{\ell}}^{2} + \expval*{\hat{C}_{\ell}\hat{C}_{\ell}} \nonumber{}                                                                                                                                                                                                                  \\
+	 & = - \expval*{\powerSpectrumHat}^{2} + \expval*{\powerSpectrumHat\powerSpectrumHat} \nonumber{}                                                                                                                                                                                                                  \\
 	%
-	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                                        \\
+	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                                        \\
 	%
-	 & = - C_{\ell}^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                              \\
+	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                              \\
 	%
 	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \bigg(\sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}\bigg) \nonumber{} \\
 	%
 	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \phaseFactor['] \expval*{\harmonic{f} \conj{f_{\ell(-m')}}} \phaseFactor['] \expval*{\conj{\harmonic{f}} f_{\ell(-m')}} \nonumber{}                                                                           \\
 	%
-	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} C_{\ell}^{2} \delta_{m m'} \nonumber{}                                                                                                                                                            \\
+	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum^{2} \delta_{m m'} \nonumber{}                                                                                                                                                            \\
 	%
-	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} C_{\ell}^{2} \nonumber{}                                                                                                                                                                                                                      \\
+	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum^{2} \nonumber{}                                                                                                                                                                                                                      \\
 	%
-	 & = \frac{2}{2\ell+1} C_{\ell}^{2}.
+	 & = \frac{2}{2\ell+1} \powerSpectrum^{2}.
 \end{align}
 %
 Irreducible cosmic variance arises from having \(2\ell+1\) independent modes at each multipole \({\ell}\) with which to estimate the variance of their distribution.

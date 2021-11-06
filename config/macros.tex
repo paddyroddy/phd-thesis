@@ -24,10 +24,6 @@
 % axisymmetric spherical harmonic indices
 \newcommand{\axiHarmonic}[2][]{{#2}_{\ell#1 0}}
 
-% power spectrum
-\newcommand{\Cell}{C_{\ell}}
-\newcommand{\CellHat}{\hat{C}_{\ell}}
-
 % conjugate
 \newcommand{\conj}[1]{#1^{\ast}}
 
@@ -118,7 +114,9 @@
 \newcommand{\phaseFactor}[1][]{{(-1)}^{m#1}}
 
 % power spectrum
-\newcommand{\powerSpectrum}[1]{\mathcal{P}_{#1}(k)} % chktex 36
+\newcommand{\powerSpectrum}{C_{\ell}}
+\newcommand{\powerSpectrumDim}[1]{\mathcal{P}_{#1}(k)} % chktex 36
+\newcommand{\powerSpectrumHat}{\hat{C}_{\ell}}
 
 % real positive parameter
 \newcommand{\realPosParam}{\mathbb{R}_{\ast}^{+}}
