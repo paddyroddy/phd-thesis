@@ -816,9 +816,9 @@ such that
 \begin{align}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
 	%
-	 & = \expval*{\harmonic{(\rotation{\rho}f)}\harmonic[']{(\rotation{\rho}f)}} \nonumber{}                                                          \\
+	 & = \expval*{\harmonic{(\rotation{\rho}f)}\harmonic[']{(\rotation{\rho}f)}} \nonumber{}                                                                \\
 	%
-	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{}   \\
+	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{}         \\
 	%
 	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \powerSpectrum \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
 	%
@@ -835,13 +835,13 @@ In real space the two-point function is
 \begin{align}
 	\expval*{f(\vu*{n}) \conj{f}(\vu*{n'})}
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{} \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{}   \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{}     \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \powerSpectrum \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n'}) \nonumber{}                                                                                                        \\
+	 & = \sum\limits_{\ell=0}^{\infty} \powerSpectrum \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n'}) \nonumber{}                                                                                                    \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\vu*{n}\cdot\vu*{n'})  \nonumber{}                                                                                                                                                 \\
+	 & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\vu*{n}\cdot\vu*{n'})  \nonumber{}                                                                                                                                             \\
 	%
 	 & = C(\theta)
 \end{align}
@@ -915,11 +915,11 @@ The two-point correlator of the \(\harmonic{f}\) is hence
 	%
 	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vu*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                             \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                          \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                              \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                           \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} j_{\ell}(kr) j_{\ell'}(kr) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                              \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} j_{\ell}(kr) j_{\ell'}(kr) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                           \\
 	%
 	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(kr) \nonumber{}                                                                                                                                                 \\
 	%
@@ -963,11 +963,11 @@ This unbiased estimator, \ie{}
 \begin{align}
 	\expval*{\powerSpectrumHat}
 	%
-	&= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \nonumber{} \\
+	 & = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \nonumber{} \\
 	%
-	&= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum \nonumber{} \\
+	 & = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum \nonumber{}                             \\
 	%
-	&= \powerSpectrum,
+	 & = \powerSpectrum,
 \end{align}
 %
 and the sum over \(m\) means for a given \({\ell}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
@@ -976,19 +976,19 @@ Using Wick's theorem one calculates the variance of a Gaussian random field
 \begin{align}
 	\variance{\powerSpectrumHat}
 	%
-	 & = - \expval*{\powerSpectrumHat}^{2} + \expval*{\powerSpectrumHat\powerSpectrumHat} \nonumber{}                                                                                                                                                                                                                  \\
+	 & = - \expval*{\powerSpectrumHat}^{2} + \expval*{\powerSpectrumHat\powerSpectrumHat} \nonumber{}                                                                                                                                                                                                         \\
 	%
-	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                                        \\
+	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                                  \\
 	%
-	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                              \\
+	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                        \\
 	%
 	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \bigg(\sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}\bigg) \nonumber{} \\
 	%
 	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \phaseFactor['] \expval*{\harmonic{f} \conj{f_{\ell(-m')}}} \phaseFactor['] \expval*{\conj{\harmonic{f}} f_{\ell(-m')}} \nonumber{}                                                                           \\
 	%
-	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum^{2} \delta_{m m'} \nonumber{}                                                                                                                                                            \\
+	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum^{2} \delta_{m m'} \nonumber{}                                                                                                                                                      \\
 	%
-	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum^{2} \nonumber{}                                                                                                                                                                                                                      \\
+	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum^{2} \nonumber{}                                                                                                                                                                                                                \\
 	%
 	 & = \frac{2}{2\ell+1} \powerSpectrum^{2}.
 \end{align}
