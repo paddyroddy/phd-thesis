@@ -842,7 +842,7 @@ where the trispectrum \(\trispectrum{f}\) here depends on just six degrees of fr
 
 \subsubsection{Two-Point Function}
 
-The two-point function must be invariant under all rotations and hence
+The two-point function must be invariant under all rotations due to statistical isotropy, and hence
 %
 \begin{equation}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
@@ -876,26 +876,24 @@ such that
 %
 The real quantity \(\powerSpectrum{}\) is the angular power spectrum of \(\pixel{f}\).
 Zero-mean Gaussian random fields are fully determined by their two-point function and hence their power spectrum.
-
 In real space the two-point function is
 %
 \begin{align}
-	\expval*{f(\vu*{n}) \conj{f}(\vu*{n'})}
+	\expval*{f(\omega) \conj{f}(\omega')}
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{}   \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\omega) \conj{\harmonic[']{Y}}(\omega') \nonumber{}   \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\vu*{n}) \conj{\harmonic[']{Y}}(\vu*{n'}) \nonumber{} \\
+	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\omega) \conj{\harmonic[']{Y}}(\omega') \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \powerSpectrum \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n'}) \nonumber{}                                                                                                    \\
+	 & = \sum\limits_{\ell=0}^{\infty} \powerSpectrum \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\omega) \conj{\harmonic{Y}}(\omega') \nonumber{}                                                                                                    \\
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\vu*{n}\cdot\vu*{n'})  \nonumber{}                                                                                                                                             \\
+	 & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                                                                                             \\
 	%
 	 & = C(\theta)
 \end{align}
 %
-where \({\vu*{n}\cdot\vu*{n'} = \cos{\theta}}\), and using the spherical harmonic addition theorem \cref{eq:chapter2_addition_theorem}.
-%
-Hence, the two-point correlation function depends on the angle between the two points, as required by statistical isotropy.
+where the penultimate line follows by the spherical harmonic addition theorem \cref{eq:chapter2_addition_theorem}, and in the last line \({\omega\cdot\omega' = \cos{\theta}}\).
+Hence, the two-point function depends on the angle between the two points, as required by statistical isotropy.
 The variance of the field is
 %
 \begin{equation}
@@ -919,13 +917,13 @@ The CMB decoupled from matter around recombination.
 The temperature anisotropies observed are the projection of the conditions at that time over the surface of last scattering.
 
 A statistically isotropic two-dimensional field on the sphere is the projection of a three-dimensional statistically isotropic and homogeneous random field.
-Consider projecting a random field \(f(\vb*{x})\) over a sphere of radius \(r\), centred on the origin, to form \(f(\vu*{n}) = f(r\vu*{n})\).
-Consider \(f(\vu*{n})\) in Fourier space
+Consider projecting a random field \(f(\vb*{x})\) over a sphere of radius \(r\), centred on the origin, to form \(f(\omega) = f(r\omega)\).
+Consider \(f(\omega)\) in Fourier space
 %
 \begin{equation}
-	f(\vu*{n})
+	f(\omega)
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\vu*{n}),
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\omega),
 \end{equation}
 %
 and the Rayleigh plane-wave expansion
@@ -939,18 +937,18 @@ and the Rayleigh plane-wave expansion
 \end{align}
 %
 where \(r = \abs{\vb*{x}}\) and \(j_{l}(kr)\) are the spherical Bessel functions.
-The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
+The spherical multipole coefficients of \(f(\omega)\) are therefore
 %
 \begin{align}
 	\harmonic{f}
 	%
-	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                         \\
+	 & = \integrateSphere{\omega} f(\omega) \conj{\harmonic{Y}}(\omega) \nonumber{}                                                                                                                                                                                                         \\
 	%
-	 & = \integrateSphere{\vu*{n}} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
+	 & = \integrateSphere{\omega} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\omega) \conj{\harmonic{Y}}(\omega) \nonumber{}                                                                                                                         \\
 	%
-	 & = 4\pi \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \sum\limits_{\ell'=0}^{\infty} i^{\ell'} j_{\ell'}(kr) \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \integrateSphere{\vu*{n}} \harmonic[']{Y}(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
+	 & = 4\pi \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \sum\limits_{\ell'=0}^{\infty} i^{\ell'} j_{\ell'}(kr) \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \integrateSphere{\omega} \harmonic[']{Y}(\omega) \conj{\harmonic{Y}}(\omega) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                     \\
+	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                  \\
 	%
 	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}).
 \end{align}
@@ -973,7 +971,7 @@ The two-point correlator of the \(\harmonic{f}\) is hence
 	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'}.
 \end{align}
 %
-Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spectrum
+Thus, \(f(\omega)\) is a statistically isotropic field with angular power spectrum
 %
 \begin{equation}
 	\powerSpectrum
@@ -995,8 +993,8 @@ An estimate made of the properties of the underlying probability distribution, \
 Cosmic variance is the random error which contributes to the error budget of most inferences made in observational cosmology.
 Whilst this is not the dominant error if the measurements are noisy, cosmologists aim to reach this cosmic variance limit.
 
-Consider estimating the angular power spectrum of a zero-mean random field \(f(\vu*{n})\).
-Suppose that the observations of \(\vu*{n}\) that existed are full-sky and noise-free.
+Consider estimating the angular power spectrum of a zero-mean random field \(f(\omega)\).
+Suppose that the observations of \(\omega\) that existed are full-sky and noise-free.
 Using the spherical multipoles \(\harmonic{f}\) forms the following estimator for \(\powerSpectrum{}\)
 %
 \begin{equation}
