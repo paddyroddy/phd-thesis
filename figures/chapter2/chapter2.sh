@@ -44,3 +44,6 @@ python $PLOTS/polar_cap/eigenfunctions.py
 
 echo eigenvalues
 python $PLOTS/polar_cap/eigenvalues.py
+
+echo bessel
+python $PLOTS/misc/spherical_bessel.py
