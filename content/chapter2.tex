@@ -923,7 +923,7 @@ Consider \(f(\vu*{n})\) in Fourier space
 \begin{equation}
 	f(\vu*{n})
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ik r\vu*{k}\cdot\vu*{n}),
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n}),
 \end{equation}
 %
 and the Rayleigh plane-wave expansion
@@ -944,7 +944,7 @@ The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
 	%
 	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                                      \\
 	%
-	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ik r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
+	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                        \\
 	%
 	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} j_{\ell'}(k r) \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
 	%
