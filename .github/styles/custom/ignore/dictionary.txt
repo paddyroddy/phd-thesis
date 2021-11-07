@@ -6,6 +6,7 @@ bandlimited
 bibentry
 bibintoc
 bigg
+bispectrum
 bottomrule
 braket
 capstart
@@ -90,6 +91,7 @@ num
 odot
 oneside
 oplus
+overdensity
 overfullrule
 overpic
 parameterise
@@ -135,6 +137,7 @@ timelimited
 toc
 tocdepth
 toprule
+trispectrum
 twoside
 ucl
 uk
@@ -144,5 +147,7 @@ varphi
 varpi
 vb
 vdots
+wavenumber
+wavenumbers
+wavevectors
 wigner
-ylm
