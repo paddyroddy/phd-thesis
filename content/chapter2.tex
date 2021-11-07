@@ -751,12 +751,12 @@ In Fourier space, the two-point correlator (or power spectrum) is given by
 \begin{equation}\label{eq:chapter2_power_spectrum}
 	\expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})}
 	%
-	= {(2\pi)}^{3} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}),
+	= {(2\pi)}^{3} \delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f},
 \end{equation}
 %
 where \(\powerSpectrumDim{f}\) is the dimensionless power spectrum which, by statistical isotropy, depends only on the magnitude of \(k=\abs{\vb*{k}}\).
 Due to statistical homogeneity, the Dirac delta function is present in \cref{eq:chapter2_power_spectrum}, such that the correlator is invariant under spatial translations.
-Sometimes one considers the power in a shell rather than per unit Fourier space volume
+Often one considers the power in a shell rather than per unit Fourier space volume, \ie{}
 %
 \begin{equation}
 	\powerSpectrumShell{f}
@@ -769,9 +769,10 @@ such that
 \begin{equation}
 	\powerSpectrumShell{f} \dd{\ln{k}}
 	%
-	= \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \powerSpectrumDim{f}.
+	= \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \powerSpectrumDim{f},
 \end{equation}
 %
+after integrating out the angular part.
 The Fourier convention adopted here is
 %
 \begin{equation}
@@ -789,27 +790,51 @@ The Fourier convention adopted here is
 \end{equation}
 %
 \cf{} \cref{eq:chapter2_fourier_frequency}.
-Note for real fields
+Note for real fields, the following conjugate symmetry relation holds
 %
 \begin{equation}
 	\fourier{f}(\vb*{k})
 	%
-	= \conj{\fourier{f}}(-\vb*{k}).
+	= \conj{\fourier{f}}(-\vb*{k}),
 \end{equation}
-%.
-Similarly, the three-point correlator
+%
+and similarly
+%
+\begin{equation}
+	f(\vb*{x})
+	%
+	= \conj{f}(\vb*{-x}).
+\end{equation}
+
+For linearly evolved fluctuations from single field inflation, the power spectrum is sufficient to describe the statistics.
+However, sometimes higher order statistics are required to analyse deviations from straightforward inflationary models.
+The simplest of these is the three-point correlator
 %
 \begin{equation}
 	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3})}
 	%
-	= {(2\pi)}^{3} \mathcal{B}_{f}(k_{1},k_{2},k_{3}) \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3}),
+	= {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3}) \bispectrum{f},
 \end{equation}
 %
-gives rise to the bispectrum \(\mathcal{B}_{f}(k_{1},k_{2},k_{3})\) which is a symmetric function (due to statistical isotropy) of the three wavenumbers.
-The Dirac delta again appears from statistical homogeneity.
-Although starting with nine degrees of freedom corresponding to the three wavevectors, statistical isotropy eliminates three of these, and a further three from statistical isotropy.
-The three-point function depends solely on the three rotational-invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
-The three-point function vanishes for zero-mean Gaussian random fields and so provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
+which gives rise to the bispectrum \(\bispectrum{f}\) which is a symmetric function (due to statistical isotropy) of the three wavenumbers.
+The Dirac delta again appears due to statistical homogeneity.
+Although starting with nine degrees of freedom (due to the three three-dimensional wavevectors), the bispectrum only depends on three of these.
+Statistical isotropy and statistical homogeneity both eliminate three of these degrees of freedom.
+The three-point correlator depends solely on the three rotational-invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
+The three-point correlator vanishes for zero-mean Gaussian random fields, and as such provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
+Other higher order statistics may be computed, such as the four-point correlator
+%
+\begin{align}
+	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3}) f(\vb*{k}_{4})} =
+	%
+	\begin{aligned}
+		& {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3} + \vb*{k}_{4}) \\
+		%
+		& \trispectrum{f},
+	\end{aligned}
+\end{align}
+%
+where the trispectrum \(\trispectrum{f}\) depends on six degrees of freedom (down from an initial twelve).
 
 In cosmology, one observes the projection of some 3D random field onto the celestial sphere.
 For example, the CMB anisotropies are mainly the projection of photon density, bulk velocity and gravitational potential over the surface of last scattering.
@@ -927,7 +952,7 @@ The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
 	%
 	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                     \\
 	%
-	 & = i^{\ell} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}).
+	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}).
 \end{align}
 %
 The two-point correlator of the \(\harmonic{f}\) is hence
@@ -935,11 +960,11 @@ The two-point correlator of the \(\harmonic{f}\) is hence
 \begin{align}
 	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
 	%
-	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vu*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
+	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                          \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                          \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vu*{k}}}{2\pi^{2}} \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                           \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                           \\
 	%
 	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} j_{\ell}(kr) j_{\ell'}(kr) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                           \\
 	%
