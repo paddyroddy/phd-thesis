@@ -936,8 +936,8 @@ and the Rayleigh plane-wave expansion
 	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{kr} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
 \end{align}
 %
-where \(\bessel{kr}\) are the spherical Bessel functions.
-The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
+where \(\bessel{kr}\) are the spherical Bessel functions (see \cref{fig:chapter2_spherical_bessel}).
+The spherical harmonic coefficients of \(f(\vu*{n})\) are therefore
 %
 \begin{align}
 	\harmonic{f}
@@ -948,13 +948,13 @@ The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
 	%
 	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{kr} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \bessel{kr} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                 \\
+	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \bessel{kr} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                   \\
 	%
 	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) \bessel{kr} \conj{\harmonic{Y}}(\vu*{k}),
 \end{align}
 %
 where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_ortho}.
-The two-point function of the \(\harmonic{f}\) is hence
+The two-point function in harmonic space is hence
 %
 \begin{align}
 	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
@@ -963,19 +963,18 @@ The two-point function of the \(\harmonic{f}\) is hence
 	%
 	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] \bessel{kr} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                  \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                   \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                               \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} \bessel{kr} \bessel[']{kr} \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                          \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} \bessel{kr} \bessel[']{kr} \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                           \\
 	%
-	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r) \nonumber{}                                                                                                                                                 \\
+	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r) \nonumber{}                                                                                                                                                \\
 	%
 	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
 \end{align}
 %
 where the penultimate line follows by \cref{eq:chapter2_power_shell}.
-%
 Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spectrum
 %
 \begin{equation}
@@ -983,12 +982,6 @@ Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spect
 	%
 	= 4\pi \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r).
 \end{equation}
-%
-The spherical Bessel functions have a sharp peak at \({k r = \ell}\) and for small arguments are \(\mathcal{O}{(k r)}^{\ell}\).
-The multipoles \({\ell}\) predominately probe the spatial structure in the three-dimensional fields \(F(\vb*{x})\) with wavenumber \(k \almost{\ell/r}\).
-Projecting a plane wave over a sphere of radius much less than the wavelength cannot generate small-scale anisotropies --- reflected by the smallness of the Bessel functions at high \({\ell}\) for small arguments.
-The Bessel functions tails are oscillatory which means that some power from a given \(k\) does also enter large-scale anisotropy.
-This arises from Fourier modes that are not aligned with their wavevector perpendicular to the line-of-sight.
 
 \input{figures/chapter2/spherical_bessel}
 
@@ -1022,7 +1015,7 @@ This unbiased estimator, \ie{}
 	 & = \powerSpectrum,
 \end{align}
 %
-and the sum over \(m\) means for a given \({\ell}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
+and the sum over \(m\) means for a given \(\ell{}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
 Using Wick's theorem one calculates the variance of a Gaussian random field
 %
 \begin{align}
@@ -1045,7 +1038,7 @@ Using Wick's theorem one calculates the variance of a Gaussian random field
 	 & = \frac{2}{2\ell+1} \powerSpectrum^{2}.
 \end{align}
 %
-Irreducible cosmic variance arises from having \(2\ell+1\) independent modes at each multipole \({\ell}\) with which to estimate the variance of their distribution.
+Irreducible cosmic variance arises from having \(2\ell+1\) independent modes at each multipole \(\ell{}\) with which to estimate the variance of their distribution.
 
 The cosmic variance dominates the current measurements of the error bars of the angular power spectrum of the CMB temperature anisotropies up to multipoles \(\ell \almost{\num{2000}}\).
 
