@@ -132,7 +132,7 @@ Included here is the Condon-Shortley \(\phaseFactor{}\) phase factor, to ensure 
 %
 The spherical harmonics satisfy the below orthonormality and completeness relations by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_spherical_harmonics_ortho}
 	\integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
 	%
 	= \delta_{\ell\ell'} \delta_{mm'},
@@ -747,7 +747,7 @@ Here, only zero-mean fields are considered, such as the temperature fluctuations
 
 \subsubsection{Power Spectrum}
 
-Consider a three-dimensional, zero-mean, random field \(f(\vb*{x})\).
+Consider a three-dimensional, zero-mean, random field \(f(\vb*{r})\).
 The probability of realising some field configuration is a functional.
 Correlators of fields are expectation values of products of fields at different spatial points.
 In Fourier space, the two-point correlator (or power spectrum) is given by
@@ -762,7 +762,7 @@ where \(\powerSpectrumDim{f}\) is the dimensionless power spectrum which, by sta
 Due to statistical homogeneity, the Dirac delta function is present in \cref{eq:chapter2_power_spectrum}, such that the correlator is invariant under spatial translations.
 Often one considers the power in a shell, rather than per unit Fourier space volume, \ie{}
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_power_shell}
 	\powerSpectrumShell{f}
 	%
 	= \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}},
@@ -780,9 +780,9 @@ after integrating out the angular part.
 The Fourier convention adopted here is
 %
 \begin{equation}
-	f(\vb*{x})
+	f(\vb*{r})
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{x})
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r})
 \end{equation}
 %
 (\cf{} \cref{eq:chapter2_fourier_time}), and
@@ -790,7 +790,7 @@ The Fourier convention adopted here is
 \begin{equation}
 	\fourier{f}(\vb*{k})
 	%
-	= \int\dd[3]{\vb*{x}} f(\vb*{x}) \exp(-i\vb*{k}\cdot\vb*{x})
+	= \int\dd[3]{\vb*{r}} f(\vb*{r}) \exp(-i\vb*{k}\cdot\vb*{r})
 \end{equation}
 %
 (\cf{} \cref{eq:chapter2_fourier_frequency}).
@@ -805,9 +805,9 @@ Note for real fields, the following conjugate symmetry relation holds
 and similarly
 %
 \begin{equation}
-	f(\vb*{x})
+	f(\vb*{r})
 	%
-	= \conj{f}(\vb*{-x}).
+	= \conj{f}(-\vb*{r}).
 \end{equation}
 
 For linearly evolved fluctuations from single field inflation, the power spectrum is sufficient to describe the statistics.
@@ -823,7 +823,7 @@ The simplest of these is the three-point correlator
 which gives rise to the bispectrum \(\bispectrum{f}\) which is a symmetric function (due to statistical isotropy) of the three wavenumbers.
 The Dirac delta again appears due to statistical homogeneity.
 Although starting with nine degrees of freedom (due to the three three-dimensional wavevectors), the bispectrum only depends on three of these.
-Statistical isotropy and statistical homogeneity both eliminate three of these degrees of freedom.
+Statistical isotropy and homogeneity both eliminate three of these degrees of freedom.
 The three-point correlator depends solely on the three rotational-invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
 The three-point correlator vanishes for zero-mean Gaussian random fields, and as such provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
 Other higher order statistics may be computed, such as the four-point correlator
@@ -840,9 +840,9 @@ Other higher order statistics may be computed, such as the four-point correlator
 %
 where the trispectrum \(\trispectrum{f}\) here depends on just six degrees of freedom (down from an initial twelve).
 
-\subsubsection{Two-Point Function}
+\subsubsection{Rotations of Random Fields}
 
-The two-point function must be invariant under all rotations due to statistical isotropy, and hence
+The two-point function must be invariant under all rotations due to statistical isotropy, which implies
 %
 \begin{equation}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
@@ -858,7 +858,7 @@ This only holds if
 	= \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
 \end{equation}
 %
-such that
+as
 %
 \begin{align}
 	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
@@ -889,7 +889,7 @@ In real space the two-point function is
 	%
 	 & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                                                                                             \\
 	%
-	 & = C(\theta)
+	 & = C(\theta),
 \end{align}
 %
 where the penultimate line follows by the spherical harmonic addition theorem \cref{eq:chapter2_addition_theorem}, and in the last line \({\omega\cdot\omega' = \cos{\theta}}\).
@@ -913,17 +913,17 @@ Inverting the correlation function retrieves the power spectrum using the orthog
 \end{equation}
 
 \subsubsection{Projection of Three-Dimensional Random Fields}
+
 The CMB decoupled from matter around recombination.
 The temperature anisotropies observed are the projection of the conditions at that time over the surface of last scattering.
-
 A statistically isotropic two-dimensional field on the sphere is the projection of a three-dimensional statistically isotropic and homogeneous random field.
-Consider projecting a random field \(f(\vb*{x})\) over a sphere of radius \(r\), centred on the origin, to form \(f(\omega) = f(r\omega)\).
-Consider \(f(\omega)\) in Fourier space
+Consider projecting a random field \(f\) (\ie{} CMB temperature fluctuations) over a sphere of radius \(r\) (the distance to the surface of last scattering), centred on the origin.
+Consider \(f(\vu*{n})\) in Fourier space
 %
 \begin{equation}
-	f(\omega)
+	f(\vu*{n})
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\omega),
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\vu*{n}),
 \end{equation}
 %
 and the Rayleigh plane-wave expansion
@@ -936,42 +936,47 @@ and the Rayleigh plane-wave expansion
 	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} j_{\ell}(kr) \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
 \end{align}
 %
-where \(r = \abs{\vb*{x}}\) and \(j_{l}(kr)\) are the spherical Bessel functions.
-The spherical multipole coefficients of \(f(\omega)\) are therefore
+where \(j_{l}(kr)\) are the spherical Bessel functions.
+The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
 %
 \begin{align}
 	\harmonic{f}
 	%
-	 & = \integrateSphere{\omega} f(\omega) \conj{\harmonic{Y}}(\omega) \nonumber{}                                                                                                                                                                                                         \\
+	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                                     \\
 	%
-	 & = \integrateSphere{\omega} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\omega) \conj{\harmonic{Y}}(\omega) \nonumber{}                                                                                                                         \\
+	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(ikr\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
 	%
-	 & = 4\pi \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \sum\limits_{\ell'=0}^{\infty} i^{\ell'} j_{\ell'}(kr) \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \integrateSphere{\omega} \harmonic[']{Y}(\omega) \conj{\harmonic{Y}}(\omega) \nonumber{} \\
+	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} j_{\ell'}(kr) \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                  \\
+	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                 \\
 	%
-	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}).
+	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) j_{\ell}(kr) \conj{\harmonic{Y}}(\vu*{k}),
 \end{align}
 %
-The two-point correlator of the \(\harmonic{f}\) is hence
+where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_ortho}.
+The two-point function of the \(\harmonic{f}\) is hence
 %
 \begin{align}
 	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
 	%
 	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \powerSpectrumDim{f} \delta^{3}(\vb*{k} - \vb*{k'}) j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                                          \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] j_{\ell}(kr) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                           \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                   \\
+	%
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} j_{\ell}(kr) j_{\ell'}(kr) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                \\
 	%
 	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} j_{\ell}(kr) j_{\ell'}(kr) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                           \\
 	%
 	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(kr) \nonumber{}                                                                                                                                                 \\
 	%
-	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'}.
+	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
 \end{align}
 %
-Thus, \(f(\omega)\) is a statistically isotropic field with angular power spectrum
+where the penultimate line follows by \cref{eq:chapter2_power_shell}.
+%
+Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spectrum
 %
 \begin{equation}
 	\powerSpectrum
