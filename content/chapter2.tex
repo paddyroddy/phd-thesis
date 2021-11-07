@@ -931,12 +931,12 @@ and the Rayleigh plane-wave expansion
 \begin{align}
 	\exp(i\vb*{k}\cdot\vb*{r})
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} j_{\ell}(k r) P_{\ell}(\vu*{k}\cdot\vu*{r}) \nonumber{}                                   \\
+	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} \bessel{kr} P_{\ell}(\vu*{k}\cdot\vu*{r}) \nonumber{}                                   \\
 	%
-	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} j_{\ell}(k r) \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
+	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{kr} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
 \end{align}
 %
-where \(j_{l}(k r)\) are the spherical Bessel functions.
+where \(\bessel{kr}\) are the spherical Bessel functions.
 The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
 %
 \begin{align}
@@ -946,11 +946,11 @@ The spherical multipole coefficients of \(f(\vu*{n})\) are therefore
 	%
 	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                        \\
 	%
-	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} j_{\ell'}(k r) \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
+	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{kr} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) j_{\ell}(k r) \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                 \\
+	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \bessel{kr} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                 \\
 	%
-	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) j_{\ell}(k r) \conj{\harmonic{Y}}(\vu*{k}),
+	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) \bessel{kr} \conj{\harmonic{Y}}(\vu*{k}),
 \end{align}
 %
 where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_ortho}.
@@ -959,15 +959,15 @@ The two-point function of the \(\harmonic{f}\) is hence
 \begin{align}
 	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
 	%
-	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} j_{\ell}(k r) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
+	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} \bessel{kr} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] j_{\ell}(k r) j_{\ell'}(k'r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] \bessel{kr} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} j_{\ell}(k r) j_{\ell'}(k r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                  \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                  \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} j_{\ell}(k r) j_{\ell'}(k r) \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                               \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                               \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} j_{\ell}(k r) j_{\ell'}(k r) \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                          \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} \bessel{kr} \bessel[']{kr} \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                          \\
 	%
 	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r) \nonumber{}                                                                                                                                                 \\
 	%
