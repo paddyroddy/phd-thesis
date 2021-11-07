@@ -994,8 +994,8 @@ Cosmic variance is the random error which contributes to the error budget of mos
 Whilst this is not the dominant error if the measurements are noisy, cosmologists aim to reach this cosmic variance limit.
 
 Consider estimating the angular power spectrum of a zero-mean random field \(f(\omega)\).
-Suppose that the observations of \(\omega{}\) that existed are full-sky and noise-free.
-Using the spherical multipoles \(\harmonic{f}\) forms the following estimator for \(\powerSpectrum{}\)
+Suppose that the observations of \(f(\omega)\) that existed are full-sky and noise-free.
+The estimator for the \(\powerSpectrum{}\) is as follows
 %
 \begin{equation}
 	\powerSpectrumHat
@@ -1003,7 +1003,7 @@ Using the spherical multipoles \(\harmonic{f}\) forms the following estimator fo
 	= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \conj{\harmonic{f}}.
 \end{equation}
 %
-This unbiased estimator, \ie{}
+This estimator is unbiased, \ie{} \(\expval*{\powerSpectrumHat} = \powerSpectrum{}\), as
 %
 \begin{align}
 	\expval*{\powerSpectrumHat}
@@ -1012,28 +1012,30 @@ This unbiased estimator, \ie{}
 	%
 	 & = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum \nonumber{}                             \\
 	%
-	 & = \powerSpectrum,
+	 & = \powerSpectrum.
 \end{align}
 %
-and the sum over \(m\) means for a given \(\ell{}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles --- however, this estimator has non-zero variance.
-Using Wick's theorem one calculates the variance of a Gaussian random field
+Here, the sum in \(m\) means for a given \(\ell{}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom in the multipoles; however, this estimator has non-zero variance.
+Using Wick's theorem one calculates the variance of a Gaussian random field by
 %
 \begin{align}
 	\variance{\powerSpectrumHat}
 	%
-	 & = - \expval*{\powerSpectrumHat}^{2} + \expval*{\powerSpectrumHat\powerSpectrumHat} \nonumber{}                                                                                                                                                                                                         \\
+	 & = - \expval*{\powerSpectrumHat}^{2} + \expval*{\powerSpectrumHat^{2}} \nonumber{}                                                                                                                                            \\
 	%
-	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                                  \\
+	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                        \\
 	%
-	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}                                                                                        \\
+	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}              \\
 	%
-	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \bigg(\sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}\bigg) \nonumber{} \\
+	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} \nonumber{}                         \\
 	%
-	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \phaseFactor['] \expval*{\harmonic{f} \conj{f_{\ell(-m')}}} \phaseFactor['] \expval*{\conj{\harmonic{f}} f_{\ell(-m')}} \nonumber{}                                                                           \\
+	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}} \nonumber{}                         \\
 	%
-	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum^{2} \delta_{m m'} \nonumber{}                                                                                                                                                      \\
+	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \phaseFactor['] \expval*{\harmonic{f} \conj{f_{\ell(-m')}}} \phaseFactor['] \expval*{\conj{\harmonic{f}} f_{\ell(-m')}} \nonumber{} \\
 	%
-	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum^{2} \nonumber{}                                                                                                                                                                                                                \\
+	 & \phantom{=} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum^{2} \delta_{m m'} \nonumber{}                                                                            \\
+	%
+	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum^{2} \nonumber{}                                                                                                                                      \\
 	%
 	 & = \frac{2}{2\ell+1} \powerSpectrum^{2}.
 \end{align}
