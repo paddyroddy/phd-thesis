@@ -732,7 +732,11 @@ The so-called Slepian functions allow one to perform localised spatial-spectral 
 
 \input{figures/chapter2/planck_masked}
 
-\subsection{Statistics of Random Fields on the Sphere}
+In cosmology, one observes the projection of some three-dimensional random field onto the celestial sphere.
+For example, the CMB anisotropies are mainly the projection of photon density, bulk velocity, and gravitational potential over the surface of last scattering.
+The language used to describe random fields on the sphere is now described in \cref{sec:chapter2_statistics_random_fields_sphere}.
+
+\subsection{Statistics of Random Fields on the Sphere}\label{sec:chapter2_statistics_random_fields_sphere}
 
 The current favoured model for creating fluctuations in the Universe is cosmological inflation.
 Due to the quantum nature of inflation, one cannot predict the exact shape of the Universe, but only its statistical properties.
@@ -756,7 +760,7 @@ In Fourier space, the two-point correlator (or power spectrum) is given by
 %
 where \(\powerSpectrumDim{f}\) is the dimensionless power spectrum which, by statistical isotropy, depends only on the magnitude of \(k=\abs{\vb*{k}}\).
 Due to statistical homogeneity, the Dirac delta function is present in \cref{eq:chapter2_power_spectrum}, such that the correlator is invariant under spatial translations.
-Often one considers the power in a shell rather than per unit Fourier space volume, \ie{}
+Often one considers the power in a shell, rather than per unit Fourier space volume, \ie{}
 %
 \begin{equation}
 	\powerSpectrumShell{f}
@@ -778,18 +782,18 @@ The Fourier convention adopted here is
 \begin{equation}
 	f(\vb*{x})
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{x}),
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{x})
 \end{equation}
 %
-\cf{} \cref{eq:chapter2_fourier_time}, and
+(\cf{} \cref{eq:chapter2_fourier_time}), and
 %
 \begin{equation}
 	\fourier{f}(\vb*{k})
 	%
-	= \int\dd[3]{\vb*{x}} f(\vb*{x}) \exp(-i\vb*{k}\cdot\vb*{x}),
+	= \int\dd[3]{\vb*{x}} f(\vb*{x}) \exp(-i\vb*{k}\cdot\vb*{x})
 \end{equation}
 %
-\cf{} \cref{eq:chapter2_fourier_frequency}.
+(\cf{} \cref{eq:chapter2_fourier_frequency}).
 Note for real fields, the following conjugate symmetry relation holds
 %
 \begin{equation}
@@ -828,17 +832,13 @@ Other higher order statistics may be computed, such as the four-point correlator
 	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3}) f(\vb*{k}_{4})} =
 	%
 	\begin{aligned}
-		& {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3} + \vb*{k}_{4}) \\
+		 & {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3} + \vb*{k}_{4}) \\
 		%
-		& \trispectrum{f},
+		 & \trispectrum{f},
 	\end{aligned}
 \end{align}
 %
-where the trispectrum \(\trispectrum{f}\) depends on six degrees of freedom (down from an initial twelve).
-
-In cosmology, one observes the projection of some 3D random field onto the celestial sphere.
-For example, the CMB anisotropies are mainly the projection of photon density, bulk velocity and gravitational potential over the surface of last scattering.
-The language used to describe random fields on the sphere is now described.
+where the trispectrum \(\trispectrum{f}\) here depends on just six degrees of freedom (down from an initial twelve).
 
 \subsubsection{Two-Point Function}
 
@@ -914,11 +914,11 @@ Inverting the correlation function retrieves the power spectrum using the orthog
 	= 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} \pixel{C} P_{\ell}(\cos{\theta}).
 \end{equation}
 
-\subsubsection{Projection of 3D Random Fields}
+\subsubsection{Projection of Three-Dimensional Random Fields}
 The CMB decoupled from matter around recombination.
 The temperature anisotropies observed are the projection of the conditions at that time over the surface of last scattering.
 
-A statistically isotropic 2D field on the sphere is the projection of a 3D statistically isotropic and homogeneous random field.
+A statistically isotropic two-dimensional field on the sphere is the projection of a three-dimensional statistically isotropic and homogeneous random field.
 Consider projecting a random field \(f(\vb*{x})\) over a sphere of radius \(r\), centred on the origin, to form \(f(\vu*{n}) = f(r\vu*{n})\).
 Consider \(f(\vu*{n})\) in Fourier space
 %
@@ -982,7 +982,7 @@ Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spect
 \end{equation}
 %
 The spherical Bessel functions have a sharp peak at \({kr = \ell}\) and for small arguments are \(\mathcal{O}{(kr)}^{\ell}\).
-The multipoles \({\ell}\) predominately probe the spatial structure in the 3D fields \(F(\vb*{x})\) with wavenumber \(k \thicksim \ell/r\).
+The multipoles \({\ell}\) predominately probe the spatial structure in the three-dimensional fields \(F(\vb*{x})\) with wavenumber \(k \thicksim \ell/r\).
 Projecting a plane wave over a sphere of radius much less than the wavelength cannot generate small-scale anisotropies --- reflected by the smallness of the Bessel functions at high \({\ell}\) for small arguments.
 The Bessel functions tails are oscillatory which means that some power from a given \(k\) does also enter large-scale anisotropy.
 This arises from Fourier modes that are not aligned with their wavevector perpendicular to the line-of-sight.
