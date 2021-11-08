@@ -318,9 +318,9 @@ In wavelet analysis, one typically refers to time-scale (or space-scale) represe
 
 \input{figures/chapter2/ricker_wavelets}
 
-\subsection{Continuous Wavelet Transform}\label{sec:chapter2_continuous_wavelet_transform}
+\subsection{Continuous Wavelet Transform (CWT)}\label{sec:chapter2_continuous_wavelet_transform}
 
-The wavelet analysis described in \cref{sec:chapter2_comparison_fourier_transform} is more formerly known as the continuous wavelet transform (CWT), which sates
+The wavelet analysis described in \cref{sec:chapter2_comparison_fourier_transform} is more formerly known as the CWT, which sates
 %
 \begin{equation}\label{eq:chapter2_cwt}
 	\cwt{f}
@@ -446,7 +446,7 @@ where \(W^{j}_{\lambda}\) are the wavelet coefficients given by
 To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} scale) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
 A scaling function \(\Phi_{\lambda}(t)\), in blue, is typically introduced to capture the lower scales of the underlying function~\cite{Mallat1989}.
 
-\subsection{Discrete Wavelet Transform}
+\subsection{Discrete Wavelet Transform (DWT)}
 
 The discrete wavelets introduced in \cref{sec:chapter2_discrete_wavelets} are discretised in translation and scale, but not in time.
 In reality, most signals of interest are sampled, and are in fact not time-continuous.
@@ -931,26 +931,26 @@ and the Rayleigh plane-wave expansion
 \begin{align}
 	\exp(i\vb*{k}\cdot\vb*{r})
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} \bessel{kr} P_{\ell}(\vu*{k}\cdot\vu*{r}) \nonumber{}                                   \\
+	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} \bessel{k r} P_{\ell}(\vu*{k}\cdot\vu*{r}) \nonumber{}                                   \\
 	%
-	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{kr} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
+	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{k r} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
 \end{align}
 %
-where \(\bessel{kr}\) are the spherical Bessel functions (see \cref{fig:chapter2_spherical_bessel}).
+where \(\bessel{k r}\) are the spherical Bessel functions (see \cref{fig:chapter2_spherical_bessel}).
 The spherical harmonic coefficients of \(f(\vu*{n})\) are therefore
 %
 \begin{align}
 	\harmonic{f}
 	%
-	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                                      \\
+	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                                       \\
 	%
-	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                        \\
+	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
 	%
-	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{kr} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
+	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{k r} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \bessel{kr} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                   \\
+	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                   \\
 	%
-	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) \bessel{kr} \conj{\harmonic{Y}}(\vu*{k}),
+	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}),
 \end{align}
 %
 where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_ortho}.
@@ -959,17 +959,17 @@ The two-point function in harmonic space is hence
 \begin{align}
 	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
 	%
-	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} \bessel{kr} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
+	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] \bessel{kr} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                   \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} \bessel{k r} \bessel[']{k r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                  \\
 	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} \bessel{kr} \bessel[']{kr} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                \\
+	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} \bessel{k r} \bessel[']{k r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                               \\
 	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} \bessel{kr} \bessel[']{kr} \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                           \\
+	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} \bessel{k r} \bessel[']{k r} \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                          \\
 	%
-	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r) \nonumber{}                                                                                                                                                \\
+	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r) \nonumber{}                                                                                                                                                 \\
 	%
 	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
 \end{align}

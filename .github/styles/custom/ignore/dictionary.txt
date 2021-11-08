@@ -3,6 +3,7 @@ america
 ast
 bandlimit
 bandlimited
+bessel
 bibentry
 bibintoc
 bigg
@@ -149,5 +150,6 @@ vb
 vdots
 wavenumber
 wavenumbers
+wavevector
 wavevectors
 wigner
