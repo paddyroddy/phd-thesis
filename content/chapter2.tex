@@ -747,10 +747,10 @@ Here, only zero-mean fields are considered, such as the temperature fluctuations
 
 \subsubsection{Power Spectrum}
 
-Consider a three-dimensional, zero-mean, random field \(f(\vb*{r})\).
+Consider a three-dimensional, zero-mean, random field \(f(\vb*{x})\).
 The probability of realising some field configuration is a functional.
 Correlators of fields are expectation values of products of fields at different spatial points.
-In Fourier space, the two-point correlator (or power spectrum) is given by
+In Fourier space (\ie{} \(\fourier{f}(\vb*{k})\)), the two-point correlator (or power spectrum) is given by
 %
 \begin{equation}\label{eq:chapter2_power_spectrum}
 	\expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})}
@@ -780,9 +780,9 @@ after integrating out the angular part.
 The Fourier convention adopted here is
 %
 \begin{equation}
-	f(\vb*{r})
+	f(\vb*{x})
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{r})
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{x})
 \end{equation}
 %
 (\cf{} \cref{eq:chapter2_fourier_time}), and
@@ -790,7 +790,7 @@ The Fourier convention adopted here is
 \begin{equation}
 	\fourier{f}(\vb*{k})
 	%
-	= \int\dd[3]{\vb*{r}} f(\vb*{r}) \exp(-i\vb*{k}\cdot\vb*{r})
+	= \int\dd[3]{\vb*{x}} f(\vb*{x}) \exp(-i\vb*{k}\cdot\vb*{x})
 \end{equation}
 %
 (\cf{} \cref{eq:chapter2_fourier_frequency}).
@@ -805,9 +805,9 @@ Note for real fields, the following conjugate symmetry relation holds
 and similarly
 %
 \begin{equation}
-	f(\vb*{r})
+	f(\vb*{x})
 	%
-	= \conj{f}(-\vb*{r}).
+	= \conj{f}(-\vb*{x}).
 \end{equation}
 
 For linearly evolved fluctuations from single field inflation, the power spectrum is sufficient to describe the statistics.
@@ -917,23 +917,25 @@ Inverting the correlation function retrieves the power spectrum using the orthog
 The CMB decoupled from matter around recombination.
 The temperature anisotropies observed are the projection of the conditions at that time over the surface of last scattering.
 A statistically isotropic two-dimensional field on the sphere is the projection of a three-dimensional statistically isotropic and homogeneous random field.
-Consider projecting a random field \(f\) (for example, CMB temperature fluctuations) over a sphere of radius \(r\) (the distance to the surface of last scattering), centred on the origin.
-Consider \(f(\vu*{n})\) in Fourier space
+Consider projecting a random field \(F(\vb*{x})\) (for example, CMB temperature fluctuations) over a sphere of radius \(r\) (the distance to the surface of last scattering), centred on the origin, \ie{} \(f(\vu*{n}) = F(r\vu*{n})\).
+Consider the expansion of \(F(r\vu*{n})\) in Fourier space
 %
 \begin{equation}
 	f(\vu*{n})
 	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n}),
+	= F(r\vu*{n})
+	%
+	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n}),
 \end{equation}
 %
 and the Rayleigh plane-wave expansion
 %
 \begin{align}
-	\exp(i\vb*{k}\cdot\vb*{r})
+	\exp(i k r\vu*{k}\cdot\vu*{n})
 	%
-	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} \bessel{k r} P_{\ell}(\vu*{k}\cdot\vu*{r}) \nonumber{}                                   \\
+	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} \bessel{k r} P_{\ell}(\vu*{k}\cdot\vu*{n}) \nonumber{}                                   \\
 	%
-	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{k r} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{r}),
+	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{k r} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{n}),
 \end{align}
 %
 where \(\bessel{k r}\) are the spherical Bessel functions (see \cref{fig:chapter2_spherical_bessel}).
@@ -944,13 +946,13 @@ The spherical harmonic coefficients of \(f(\vu*{n})\) are therefore
 	%
 	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                                       \\
 	%
-	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
+	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
 	%
-	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{k r} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
+	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{k r} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
 	%
-	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                   \\
+	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                   \\
 	%
-	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{f}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}),
+	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{F}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}),
 \end{align}
 %
 where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_ortho}.
@@ -959,7 +961,7 @@ The two-point function in harmonic space is hence
 \begin{align}
 	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
 	%
-	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})} \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
+	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{F}(\vb*{k}) \conj{\fourier{F}}(\vb*{k'})} \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
 	%
 	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
 	%
