@@ -1,4 +1,5 @@
 addcontentsline
+allowdisplaybreaks
 america
 ast
 bandlimit

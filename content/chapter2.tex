@@ -132,7 +132,7 @@ Included here is the Condon-Shortley \(\phaseFactor{}\) phase factor, to ensure 
 %
 The spherical harmonics satisfy the below orthonormality and completeness relations by
 %
-\begin{equation}\label{eq:chapter2_spherical_harmonics_ortho}
+\begin{equation}\label{eq:chapter2_spherical_harmonics_orthonormal}
 	\integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
 	%
 	= \delta_{\ell\ell'} \delta_{mm'},
@@ -216,7 +216,7 @@ A function \(\pixel{f} \in \hilbert{\twoSphere}\) rotated on the sphere is defin
 where \(\rotationMatrix{}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
 A rotation of a spherical harmonic function may be represented by
 %
-\begin{equation}\label{eq:chapter2_wigner_ylm}
+\begin{equation}\label{eq:chapter2_rotate_spherical_harmonics}
 	\rotation{\rho} \pixel{\harmonic{Y}}
 	%
 	= \wignerSum \wigner{\ell}{n}{m}(\rho) \pixel{Y_{\ell n}},
@@ -257,7 +257,7 @@ where
 	= \delta(\alpha-\alpha') \delta(\cos{\beta} - \cos{\beta'}) \delta(\gamma-\gamma').
 \end{equation}
 %
-From \cref{eq:chapter2_wigner_ylm}, it follows that the harmonic coefficients of a rotated function read
+From \cref{eq:chapter2_rotate_spherical_harmonics}, it follows that the harmonic coefficients of a rotated function read
 %
 \begin{equation}
 	\harmonic{(\rotation{\rho}f)}
@@ -265,7 +265,7 @@ From \cref{eq:chapter2_wigner_ylm}, it follows that the harmonic coefficients of
 	= \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n}.
 \end{equation}
 %
-Note the order of the indices on \(\wigner{\ell}{m}{n}(\rho)\) here compared to \cref{eq:chapter2_wigner_ylm}.
+Note the order of the indices on \(\wigner{\ell}{m}{n}(\rho)\) here compared to \cref{eq:chapter2_rotate_spherical_harmonics}.
 A function on the rotation group \(F \in \hilbert{\rotationGroup}\) may be represented by an expansion in the Wigner D matrices
 %
 \begin{equation}
@@ -823,7 +823,7 @@ The simplest of these is the three-point correlator
 which gives rise to the bispectrum \(\bispectrum{f}\) which is a symmetric function (due to statistical isotropy) of the three wavenumbers.
 The Dirac delta again appears due to statistical homogeneity.
 Although starting with nine degrees of freedom (due to the three three-dimensional wavevectors), the bispectrum only depends on three of these.
-Statistical isotropy and homogeneity both eliminate three of these degrees of freedom.
+Statistical isotropy and homogeneity both remove three of these degrees of freedom.
 The three-point correlator depends solely on the three rotational-invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
 The three-point correlator vanishes for zero-mean Gaussian random fields, and as such provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
 Other higher order statistics may be computed, such as the four-point correlator
@@ -955,7 +955,7 @@ The spherical harmonic coefficients of \(f(\vu*{n})\) are therefore
 	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{F}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}),
 \end{align}
 %
-where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_ortho}.
+where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_orthonormal}.
 The two-point function in harmonic space is hence
 %
 \begin{align}
@@ -992,8 +992,7 @@ A given model makes a prediction for the probability distribution, from which on
 An estimate made of the properties of the underlying probability distribution, \ie{} its power spectrum, has some random error due to attempting to estimate ensemble-averaged quantities from a single realisation.
 Cosmic variance is the random error which contributes to the error budget of most inferences made in observational cosmology.
 Whilst this is not the dominant error if the measurements are noisy, cosmologists aim to reach this cosmic variance limit.
-Consider estimating the angular power spectrum of a zero-mean random field \(f(\omega)\).
-Suppose that the observations of \(f(\omega)\) that existed are full-sky and noise-free.
+Consider estimating the angular power spectrum of a zero-mean random field \(f(\omega)\), supposing that the observations that existed are full-sky and noise-free.
 The estimator for the \(\powerSpectrum{}\) is as follows
 %
 \begin{equation}

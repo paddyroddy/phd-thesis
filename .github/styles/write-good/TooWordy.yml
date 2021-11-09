@@ -77,7 +77,7 @@ tokens:
     - endeavor
     # - enumerate
     - equitable
-    - equivalent
+    # - equivalent
     - evaluate
     - evidenced
     - exclusively
@@ -136,7 +136,7 @@ tokens:
     # - it is
     - it seems that
     - it was
-    - magnitude
+    # - magnitude
     - maximum
     - methodology
     - minimize
