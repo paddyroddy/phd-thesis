@@ -36,6 +36,8 @@ Lastly, \cref{sec:chapter3_conclusion} sets out some concluding remarks.
 
 \subsection{Mathematical Preliminaries}
 
+A brief of review of the mathematical preliminaries required for this chapter is presented here, for more detail see \cref{sec:chapter2}.
+
 \subsubsection{Signals on the Sphere}
 
 Consider a complex valued square-integrable function \(\pixel{f}\) on the 2-sphere
@@ -125,11 +127,11 @@ which can be shown to be real
 \begin{align}\label{eq:chapter3_dirac_delta_real}
 	\pixel{\delta_{\omega'}}
 	%
-	 & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                       \\
+	 & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                           \\
 	%
 	 & = \harmonicSum \phaseFactor \pixel[']{Y_{\ell(-m)}} \phaseFactor \pixel{\conj{Y_{\ell(-m)}}} \nonumber{} \\
 	%
-	 & = \sum\limits_{\ell m'} \pixel[']{Y_{\ell m'}} \pixel{\conj{Y_{\ell m'}}} \nonumber{}                \\
+	 & = \sum\limits_{\ell m'} \pixel[']{Y_{\ell m'}} \pixel{\conj{Y_{\ell m'}}} \nonumber{}                    \\
 	%
 	 & = \pixel{\conj{\delta_{\omega'}}},
 \end{align}
@@ -347,7 +349,7 @@ Due to the invariant measure \(\rotationVolume{}\) and considering a right rotat
 \begin{align}\label{eq:chapter3_so3_integral}
 	\integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho)
 	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{n}(\rho') \nonumber{}             \\
+	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{n}(\rho') \nonumber{}            \\
 	%
 	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \exp(-i n\chi) \wigner{\ell}{m}{n}(\rho) \nonumber{} \\
 	%
@@ -406,7 +408,7 @@ as
 	%
 	 & = \integrateSphere{\omega} \harmonicSum \harmonic{f} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\rho}g)}} \pixel{\conj{\harmonic[']{Y}}} \nonumber{} \\
 	%
-	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\rho}g)}} \nonumber{}                                                                                              \\
+	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\rho}g)}} \nonumber{}                                                                                                 \\
 	%
 	 & = \harmonicSum \harmonic{f} \wignerSum \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
 \end{align}
