@@ -107,6 +107,7 @@ planck
 pollak
 postaction
 rceil
+rec
 renewcommand
 resizebox
 ricker

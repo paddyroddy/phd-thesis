@@ -99,7 +99,7 @@ tokens:
     - joyously
     - justly
     - kindly
-    - largely
+    # - largely
     - lately
     - lazily
     - likely
@@ -185,7 +185,7 @@ tokens:
     - tenderly
     - tensely
     - thoughtfully
-    - tightly
+    # - tightly
     - timely
     - truthfully
     - unexpectedly
