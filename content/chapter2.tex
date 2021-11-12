@@ -722,10 +722,6 @@ The corresponding eigenvalues \(\mu_{p}\) for this region are given in \cref{fig
 
 \section{Motivation}\label{sec:chapter2_motivation}
 
-In cosmology, one observes the projection of some three-dimensional random field onto the celestial sphere.
-For example, the CMB anisotropies are mainly the projection of photon density, bulk velocity, and gravitational potential over the surface of last scattering.
-The language used to describe random fields on the sphere is now described in \cref{sec:chapter2_statistics_random_fields_sphere}.
-
 \subsection{Cosmic Microwave Background (CMB)}
 
 In the early Universe, the temperature was sufficiently hot such that photons had enough energy to ionise neutral hydrogen.
@@ -734,7 +730,7 @@ The mean free path of photons was tiny due to frequent scattering.
 Thus, the Universe at this point consisted of an opaque photon-baryon fluid.
 Over time, this primordial plasma cooled as the Universe expanded until photons were no longer sufficiently energetic to ionise neutral hydrogen.
 As a result, the fraction of ionised electrons decreased, the photons decoupled from the baryons, and the Universe became effectively transparent to radiation.
-This process occurred when the temperature of the Universe fell to \(\almost{\SI{3000}{\kelvin}}\) corresponding to a redshift \(z_{\text{rec}} \almost{1000}\) and is known as recombination.
+This process occurred when the temperature of the Universe fell to \(\almost{\SI{3000}{\kelvin}}\), corresponding to a redshift \(z_{\text{rec}} \almost{1000}\), and is known as recombination.
 The surface of last scattering refers to the end of recombination, which is when the photons last scattered.
 The CMB radiation observed today is from these photons, which were free to propagate (largely) unobstructed through space.
 
@@ -742,7 +738,16 @@ Before recombination, the Universe was in thermal equilibrium and exhibited a bl
 This thermal spectrum is still present now, despite the redshifting of photons as they propagated through the expanding Universe.
 CMB photons are observed today as a near-perfect blackbody spectrum in the microwave frequency range, with a mean temperature of \(\mean{T} = \SI{2.72548(0.00057)}{\kelvin}\)~\cite{Fixsen2009}.
 Moreover, the CMB spectrum is the most precisely measured blackbody spectrum in nature~\cite{White1994}.
+The CMB is highly isotropic --- primordial perturbations generate anisotropies in the CMB at a level of just \(10^{-5}\).
+However, the dipole contribution in the CMB is not considered in cosmological analyses, as this is not of cosmological origin.
+The anisotropies induced in the CMB dipole (at a level of \(10^{-3}\)) occur due to the Doppler shift created by the relative motion between the Solar System and the CMB rest frame.
+It is these small anisotropies that contain the majority of the cosmological information.
 
+\cref{fig:chapter2_planck_frequency} presents maps of the fluctuations of sky emission in each of the nine Planck frequency bands, upon removal of a common dipole moment.
+Note that at all frequencies \(\SIrange{30}{857}{\giga\hertz}\), the CMB is obstructed by foreground microwave emissions from the Galactic bulge.
+In cosmology, one observes the projection of some three-dimensional random field onto the celestial sphere.
+For example, the CMB anisotropies are mainly the projection of photon density, bulk velocity, and gravitational potential over the surface of last scattering.
+The language used to describe random fields on the sphere is now described in \cref{sec:chapter2_statistics_random_fields_sphere}.
 
 \input{figures/chapter2/planck_frequency}
 
