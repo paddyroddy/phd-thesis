@@ -1089,9 +1089,11 @@ Cosmic variance dominates the current measurements of the error bars of the angu
 \subsection{Observations Over the Partial Sphere}
 
 In practice, the statistical methods used to analyse random fields on the sphere, discussed in \cref{sec:chapter2_statistics_random_fields_sphere}, are not suitable when data are only measured over a partial region.
-Therefore, one must either fill in the data by some method (\eg{} interpolation, statistics, machine learning, or simply setting the values to zero), or design methods to work only with the data that are present.
-\cref{fig:chapter2_planck_masked} presents the \texttt{Commander}~\cite{Eriksen2004,Eriksen2008,Planck2016}
-
+Therefore, one must either fill in the data by some method (\eg{} interpolation, statistics, machine learning, or simply setting the values to zero) or design methods to work only with the data that are present.
+\cref{fig:chapter2_planck_masked} presents the Planck temperature map (\cf{} \cref{fig:chapter2_planck_frequency}) with the \texttt{Commander}~\cite{Eriksen2004,Eriksen2008,Planck2016} mask applied (in grey) which blocks out the foreground microwave emissions --- this masked map is used for likelihood analysis.
+In non-Gaussianity analysis of the CMB, the so-called Kp0 exclusion mask is applied to the data~\cite{Vielva2004,McEwen2004}; however, this contaminates the wavelet coefficients that overlap with the mask.
+Thus, the contaminated wavelet coefficients must be removed before any analysis.
+The solutions of the Slepian concentration problem are the basis functions of the region (of the sphere); hence, wavelets may be constructed on these basis functions outside the masked region in \cref{fig:chapter2_planck_masked}.
 The so-called Slepian functions allow one to perform localised spatial-spectral analyses; however, other methods such as the Karhunen-Loève theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
 
 \input{figures/chapter2/planck_masked}
