@@ -655,7 +655,7 @@ The maximally spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) are th
 %
 which is the spherical analogue of the one-dimensional time-domain eigenproblem \cref{eq:chapter2_time_eigenproblem}.
 
-\subsubsection{Spatial Concentration of a Bandlimited Function}
+\subsubsection{Spatial Concentration of a Bandlimited Function}\label{sec:chapter2_spatial_concentration_bandlimited_function}
 
 Conversely, to find the maximally concentrated bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) within a region \(R\) one must maximise the ratio
 %
@@ -707,7 +707,6 @@ To explore this further, consider the straightforward case of finding the maxima
 	= \set{\theta: 0 \leq \theta \leq \theta_{0}}.
 \end{equation}
 %
-This example region often occurs in geodesy, where satellites map out gravitational or magnetic fields of planets whilst flying on inclined polar orbits --- leaving behind a gap between two antipodal axisymmetric polar caps~\cite{Simons2006a}.
 \cref{fig:chapter2_slepian_polar_cap} presents the first sixteen Slepian functions \(\pixel{\slepian{S}}\) for a colatitude \(\theta_{0}=\SI{40}{\degree}\) and bandlimit \(L=16\).
 The Shannon number is \(N=30\) for this region and bandlimit, and therefore all Slepian functions shown are well-concentrated within the region --- as shown by the eigenvalues \(\mu_{p}\), which are all \(\almost{1}\).
 Visually, these polar cap Slepian functions look like the spherical harmonics (\cf{} \cref{fig:chapter2_spherical_harmonics}); where the number of positive/negative regions relates to the order \(m\) in the submatrix \(D_{\ell m,\ell'm}\).
@@ -725,6 +724,12 @@ The corresponding eigenvalues \(\mu_{p}\) for this region are given in \cref{fig
 
 As discussed in \cref{sec:chapter2_signals_sphere}, many fields of science and engineering measure data on the sphere.
 Often these data are not observed over the whole sphere and are missing in some region.
+The polar cap region analysed in \cref{sec:chapter2_spatial_concentration_bandlimited_function} occurs in geodesy, where satellites map out gravitational or magnetic fields of planets whilst flying on inclined polar orbits --- leaving behind a gap between two antipodal axisymmetric polar caps~\cite{Simons2006a}.
+In astronomy, ground-based measurements are confined to a small patch of the sky~\cite{Peebles1973,Tegmark1995}.
+
+In geomagnetism, our observation level may be the Earth’s surface, and the source level at or near the core-mantle boundary.
+In cosmology, the unit sphere constituting the sky is observed from the inside out, and the galactic plane masking spacecraft measurements has the shape of a latitudinal belt (Tegmark 1996; Hinshaw et al. 2003).
+Finally, in planetary science, knowledge of the estimation statistics of properties observed over mere portions of the planetary surface is important in the absence of groundtruthing observations.
 
 \subsection{Cosmic Microwave Background (CMB)}
 
