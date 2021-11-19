@@ -1112,7 +1112,13 @@ Here, the limitations of existing approaches are discussed.
 
 \subsubsection{Signal Analysis}
 
-In wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
+To analyse data on the sphere of this form, one may simply work with spherical harmonics directly.
+Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will introduce much error in any analysis, due to the foreground microwave emissions dominating the equator.
+Naively, one may either interpolate missing values with the existing data or set the missing pixel values to zero.
+However, neither of these approaches are satisfying.
+Other methods such as the Karhunen-Loève theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
+Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
+In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
 To overcome this, an extended wavelet coefficient mask for each scale may be constructed, to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
 
@@ -1123,6 +1129,5 @@ Likelihood-free inference for cosmology can also handle masks.
 \subsection{Thesis Aim}\label{sec:chapter2_thesis_aim}
 
 Wavelets may be constructed on the solutions of the Slepian concentration problem, where the region of interest here is outside the mask in \cref{fig:chapter2_planck_masked}.
-The so-called Slepian functions allow one to perform localised spatial-spectral analyses; however, other methods such as the Karhunen-Loève theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
 
 \eg{} brain imaging~\cite{Hammond2011}, and geophysics~\cite{Pavlis2013}.
