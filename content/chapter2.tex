@@ -1094,27 +1094,35 @@ Cosmic variance dominates the current measurements of the error bars of the angu
 
 \input{figures/chapter2/power_spectrum}
 
-\subsection{Observations Over the Partial Sphere}
+\section{Outlook}\label{sec:chapter2_outlook}
 
 In practice, the statistical methods used to analyse random fields on the sphere, discussed in \cref{sec:chapter2_statistics_random_fields_sphere}, are not suitable when data are only measured over a partial region.
 Therefore, one must either fill in the data by some method (\eg{} interpolation, statistics, machine learning, or simply setting the values to zero) or design methods to work only with the data that are present.
-\cref{fig:chapter2_planck_masked} presents the Planck temperature map (\cf{} \cref{fig:chapter2_planck_frequency}) with the \texttt{Commander}~\cite{Eriksen2004,Eriksen2008,Planck2016} mask applied (in grey) which blocks out the foreground microwave emissions.
-This masked map is used for likelihood analysis.
-In tests of non-Gaussianity in the CMB, a suitable mask is applied to the data which (after a wavelet transform) contaminates the wavelet coefficients that overlap with it~\cite{Vielva2004,McEwen2004}.
-Thus, the contaminated wavelet coefficients must be removed before any analysis.
-Wavelets may be constructed on the solutions of the Slepian concentration problem, where the region of interest here is outside the mask in \cref{fig:chapter2_planck_masked}.
-The so-called Slepian functions allow one to perform localised spatial-spectral analyses; however, other methods such as the Karhunen-Loève theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
+\cref{fig:chapter2_planck_masked} demonstrates this latter case for the Planck temperature map, where the \texttt{Commander}~\cite{Eriksen2004,Eriksen2008,Planck2016} mask is applied (in grey) which blocks out the foreground microwave emissions (which can be seen in \cref{fig:chapter2_planck_frequency}).
+In \cref{sec:chapter2_limitations_existing_approaches}, limitations of existing approaches are discussed, in particular signal analysis as well as more general analysis techniques.
+The aim of this thesis follows in \cref{sec:chapter2_thesis_aim}.
 
 \input{figures/chapter2/planck_masked}
 
-\section{Outlook}\label{sec:chapter2_outlook}
+\subsection{Limitations of Existing Approaches}\label{sec:chapter2_limitations_existing_approaches}
 
-\subsection{Limitations of Existing Approaches}
+In cosmological analyses, a series of techniques have been developed to maximally extract information from the CMB\@.
+These can largely be split into strictly signal processing methods, as well as more general analysis such as statistical methods.
+Here, the limitations of existing approaches are discussed.
 
 \subsubsection{Signal Analysis}
 
+In wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
+Thus, the contaminated wavelet coefficients must be removed before any analysis.
+To overcome this, an extended wavelet coefficient mask for each scale may be constructed, to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
+
 \subsubsection{General Analysis}
 
-\subsection{Thesis Aim}
+Likelihood-free inference for cosmology can also handle masks.
+
+\subsection{Thesis Aim}\label{sec:chapter2_thesis_aim}
+
+Wavelets may be constructed on the solutions of the Slepian concentration problem, where the region of interest here is outside the mask in \cref{fig:chapter2_planck_masked}.
+The so-called Slepian functions allow one to perform localised spatial-spectral analyses; however, other methods such as the Karhunen-Loève theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
 
 \eg{} brain imaging~\cite{Hammond2011}, and geophysics~\cite{Pavlis2013}.
