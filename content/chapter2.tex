@@ -1097,8 +1097,8 @@ Cosmic variance dominates the current measurements of the error bars of the angu
 \section{Outlook}\label{sec:chapter2_outlook}
 
 In practice, the statistical methods used to analyse random fields on the sphere, discussed in \cref{sec:chapter2_statistics_random_fields_sphere}, are not suitable when data are only measured over a partial region.
-Therefore, one must either fill in the data by some method (\eg{} interpolation, statistics, machine learning, or simply setting the values to zero) or design methods to work only with the data that are present.
-\cref{fig:chapter2_planck_masked} demonstrates this latter case for the Planck temperature map, where the \texttt{Commander}~\cite{Eriksen2004,Eriksen2008,Planck2016} mask is applied (in grey) which blocks out the foreground microwave emissions (which can be seen in \cref{fig:chapter2_planck_frequency}).
+Therefore, one must either fill in the data by some method or design methods to work only with the data that are present.
+\cref{fig:chapter2_planck_masked} demonstrates this latter case for the Planck temperature map, where the \texttt{Commander}~\cite{Eriksen2004,Eriksen2008,Planck2016,Planck2020a} mask is applied (in grey) which blocks out the foreground microwave emissions (which can be seen in \cref{fig:chapter2_planck_frequency}).
 In \cref{sec:chapter2_limitations_existing_approaches}, limitations of existing approaches are discussed, in particular signal analysis as well as more general analysis techniques.
 The aim of this thesis follows in \cref{sec:chapter2_thesis_aim}.
 
@@ -1107,20 +1107,25 @@ The aim of this thesis follows in \cref{sec:chapter2_thesis_aim}.
 \subsection{Limitations of Existing Approaches}\label{sec:chapter2_limitations_existing_approaches}
 
 In cosmological analyses, a series of techniques have been developed to maximally extract information from the CMB\@.
-These can largely be split into strictly signal processing methods, as well as more general analysis such as statistical methods.
+These can largely be split into two types: strictly signal processing methods and more general analysis such as statistical methods.
 Here, the limitations of existing approaches are discussed.
 
 \subsubsection{Signal Analysis}
 
-To analyse data on the sphere of this form, one may simply work with spherical harmonics directly.
-Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will introduce much error in any analysis, due to the foreground microwave emissions dominating the equator.
-Naively, one may either interpolate missing values with the existing data or set the missing pixel values to zero.
+To analyse data on the sphere of this form, one may work with spherical harmonics directly.
+Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will introduce much error in any analysis due to the foreground microwave emissions dominating the equator.
+Naively, to remove this foreground, one may either interpolate missing values with the existing data or simply set the missing pixel values to zero.
 However, neither of these approaches are satisfying.
-Other methods such as the Karhunen-Loève theorem has enjoyed success in cosmology~\cite{Tegmark1997,Bond1994,Bunn1995}.
+Another method that has enjoyed success in cosmology is the Karhunen-Loève theorem~\cite{Tegmark1997,Bond1994,Bunn1995}.
 Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
 In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
-To overcome this, an extended wavelet coefficient mask for each scale may be constructed, to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
+To overcome this, an extended wavelet coefficient mask for each scale may be constructed to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
+A typical approach in CMB analyses is to estimate the missing values in the mask with sophisticated statistical methods such as \texttt{Commander}.
+\texttt{Commander} is a Bayesian approach which leverages Gibbs sampling --- a popular Monte Carlo method.
+In this framework, a parametric model is fitted to the CMB data with standard sampling, posterior or maximisation techniques.
+Astrophysical, instrumental, and cosmological parameters are included in the model.
+Other methodologies used to estimate the missing data include: \texttt{NILC}~\cite{Basak2011,Basak2013,Planck2016,Planck2020a} which leverages needlets~\cite{Narcowich2006}, \texttt{SEVEM}~\cite{Leach2008,FernandezCobos2012,Planck2016,Planck2020a} which is a method based on templates, and \texttt{SMICA}~\cite{Cardoso2008,Planck2016,Planck2020a} in which a full-sky CMB map is estimated by a weighted sum of all Planck frequency maps (\cf{} \cref{fig:chapter2_planck_frequency}).
 
 \subsubsection{General Analysis}
 

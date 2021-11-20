@@ -85,6 +85,7 @@ midrule
 mphil
 mres
 multiresolution
+needlets
 neq
 nobibliography
 nonumber
