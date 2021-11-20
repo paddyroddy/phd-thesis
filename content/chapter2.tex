@@ -1110,7 +1110,7 @@ In cosmological analyses, a series of techniques have been developed to maximall
 These can largely be split into two types: strictly signal processing methods and more general analysis such as statistical methods.
 Here, the limitations of existing approaches are discussed.
 
-\subsubsection{Signal Analysis}
+\subsubsection{Signal Analysis}\label{sec:chapter2_signal_analysis}
 
 To analyse data on the sphere of this form, one may work with spherical harmonics directly.
 Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will introduce much error in any analysis due to the foreground microwave emissions dominating the equator.
@@ -1130,6 +1130,9 @@ Other methodologies used to estimate the missing data include: \texttt{NILC}~\ci
 Whilst these mask estimation methods are superior to simply setting pixel values to zero or interpolation, inherent error in the mask region still propagates into whole sphere methods.
 
 \subsubsection{General Analysis}
+
+The methods discussed in \cref{sec:chapter2_signal_analysis} are primarily signal processing techniques.
+Here, the focus is on more general analysis, \ie{} statistics and machine learning.
 
 Likelihood-free inference for cosmology can also handle masks.
 
