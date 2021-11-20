@@ -479,7 +479,7 @@ where the scaling coefficients (and similarly for the wavelet coefficients \(W^{
 %
 Fast algorithms exist~\cite{Beylkin1991,Rioul1992}, in which recursion relations allow one to compute the wavelet at scale \(j+1\) from scale \(j\).
 
-\subsection{Extension to the Sphere}
+\subsection{Extension to the Sphere}\label{sec:chapter2_extension_sphere}
 
 Whilst wavelet theory was initially considered in the Euclidean domain, it has since been generalised to the sphere in both the continuous~\cite{Torresani1995,Holschneider1996,Freeden1997,Antoine1998,Antoine1999,Antoine2002,Demanet2003,Wiaux2005,Sanz2006,McEwen2006} and discrete~\cite{Sweldens1996,Schroder2000,Wiaux2005,Starck2006,Wiaux2008,Starck2009,Leistedt2013,McEwen2019,McEwen2018} settings.
 Few wavelet frameworks on the sphere have exact transforms in both settings.
@@ -1135,6 +1135,10 @@ Likelihood-free inference for cosmology can also handle masks.
 
 \subsection{Thesis Aim}\label{sec:chapter2_thesis_aim}
 
-Wavelets may be constructed on the solutions of the Slepian concentration problem, where the region of interest here is outside the mask in \cref{fig:chapter2_planck_masked}.
-
-\eg{} brain imaging~\cite{Hammond2011}, and geophysics~\cite{Pavlis2013}.
+This thesis focuses on the intersection between localised spatial-scale analysis through wavelets and localised spatial-spectral analysis through the Slepian concentration problem.
+The so-called Slepian wavelets exhibit the benefits of both techniques.
+In the context of CMB analysis, the solutions to the Slepian concentration problem are computed in the region outside the mask in \cref{fig:chapter2_planck_masked}.
+Through a tiling of the Slepian line, wavelets may be constructed in an analogous manner to scale-discretised wavelets~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} (\cf{} \cref{fig:chapter2_axisymmetric_wavelets}) discussed in \cref{sec:chapter2_extension_sphere}.
+A suitable wavelet transform is constructed on the convolution designed in \cref{sec:chapter3}.
+Often spherical manifolds are used to model a near-spherical domain, \eg{} brain imaging~\cite{Hammond2011}, and geophysics~\cite{Pavlis2013}.
+Although initially designed with the sphere in mind (in \cref{sec:chapter4}), Slepian wavelets may be generalised to arbitrary domains through manifolds (and indeed graphs) which is the focus of \cref{sec:chapter5}.
