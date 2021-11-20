@@ -1121,11 +1121,13 @@ Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentrati
 In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
 To overcome this, an extended wavelet coefficient mask for each scale may be constructed to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
+
 A typical approach in CMB analyses is to estimate the missing values in the mask with sophisticated statistical methods such as \texttt{Commander}.
 \texttt{Commander} is a Bayesian approach which leverages Gibbs sampling --- a popular Monte Carlo method.
 In this framework, a parametric model is fitted to the CMB data with standard sampling, posterior or maximisation techniques.
 Astrophysical, instrumental, and cosmological parameters are included in the model.
 Other methodologies used to estimate the missing data include: \texttt{NILC}~\cite{Basak2011,Basak2013,Planck2016,Planck2020a} which leverages needlets~\cite{Narcowich2006}, \texttt{SEVEM}~\cite{Leach2008,FernandezCobos2012,Planck2016,Planck2020a} which is a method based on templates, and \texttt{SMICA}~\cite{Cardoso2008,Planck2016,Planck2020a} in which a full-sky CMB map is estimated by a weighted sum of all Planck frequency maps (\cf{} \cref{fig:chapter2_planck_frequency}).
+Whilst these mask estimation methods are superior to simply setting pixel values to zero or interpolation, inherent error in the mask region still propagates into whole sphere methods.
 
 \subsubsection{General Analysis}
 
