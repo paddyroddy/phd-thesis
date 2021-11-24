@@ -497,9 +497,9 @@ Much like in the Euclidean setting, a signal (on the sphere) is probed by multip
 In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of optimally concentrating a signal simultaneously in time and frequency~\cite{Landau1961,Landau1962,Slepian1983,Slepian1961}.
 The resulting orthogonal family of functions, and their discrete and multidimensional counterparts~\cite{Bronez1988,Hanssen1997,Liu1992,Slepian1964,Slepian1978}, form the basis of a range of spectral analyses (\eg{}~\cite{Thomson1982,Thomson1990}).
 In contrast to wavelets, described in \cref{sec:chapter2_wavelets}, the so-called Slepian functions allow one to compute localised spatial-spectral analysis, as opposed to spatial-scale.
-\cref{sec:chapter2_slepian_euclidean} follows with a brief review of the initial time-frequency concentration problem, this is then extended to the spherical domain in \cref{sec:chapter2_slepian_sphere}.
+\cref{sec:chapter2_time_frequency_domain} follows with a brief review of the initial time-frequency concentration problem, this is then extended to the spherical domain in \cref{sec:chapter2_spatial_spectral_domain}.
 
-\subsection{Time-Frequency Domain}\label{sec:chapter2_slepian_euclidean}
+\subsection{Time-Frequency Domain}\label{sec:chapter2_time_frequency_domain}
 
 Before considering the Slepian spatial-spectral concentration problem in the spherical domain, first consider the one-dimensional, continuous-continuous, time-frequency concentration problem.
 Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(\fourier{f}(\varpi)\) are related by
@@ -597,9 +597,9 @@ Consider the sum of the eigenvalues
 %
 The so-called Shannon number~\cite{Percival1993} \(N\) introduced here is a good estimate of the number of significant eigenvalues, which arises due to the characteristic shape of the eigenvalue spectrum~\cite{Landau1965,Slepian1965} (see \cref{fig:chapter2_polar_cap_eigenvalues}).
 Equivalently, this can be viewed as the number of signals \(f(t)\) which can be well-concentrated both into a finite time interval \(\abs{t} \leq T\) and a finite frequency interval \(\abs{\varpi} \leq W\).
-Many of the results discussed above have analogues in the spatial-spectral concentration problem on the sphere, which is elaborated in \cref{sec:chapter2_slepian_sphere}.
+Many of the results discussed above have analogues in the spatial-spectral concentration problem on the sphere, which is now elaborated.
 
-\subsection{Spatial-Spectral Domain}\label{sec:chapter2_slepian_sphere}
+\subsection{Spatial-Spectral Domain}\label{sec:chapter2_spatial_spectral_domain}
 
 The two sub-spaces of interest of all square-integrable functions on the sphere \(\twoSphere{}\) are: \(\spaceSpacelimit{}\) the space of all spacelimited functions strictly contained within a region \(R\), and \(\spaceBandlimit{}\) the space of all bandlimited functions with no power above the bandlimit \(L\).
 Akin to the Euclidean setting, no function can be strictly spacelimited as well as strictly bandlimited, \ie{} no \(\pixel{f}\) can be in both sub-spaces \(\spaceSpacelimit{}\) and \(\spaceBandlimit{}\) at the same time.
@@ -729,7 +729,7 @@ In astronomy, ground-based measurements are often confined to a small patches of
 Groundtruthing is not typically possible in planetary science, and as such, knowledge of estimation statistics of properties observed over portions of the planetary surface is imperative.
 In geomagnetism, one is interested in the field value over the whole of the Earth's surface, but in practice can only make a finite number of measurements.
 Lastly, in cosmology, the sky is effectively a sphere observed from inside out, and observations of the cosmic microwave background are masked by the Galactic plane~\cite{Tegmark1996,Hinshaw2003}.
-Cosmology has been the primary motivating factor of this thesis, and as such, \cref{sec:chapter2_cosmic_microwave_background} follows with more detail on the cosmic microwave background.
+Cosmology has been the primary motivating factor of this thesis, and as such, the following section delves into more detail on the cosmic microwave background.
 
 \subsection{Cosmic Microwave Background (CMB)}\label{sec:chapter2_cosmic_microwave_background}
 
@@ -757,7 +757,7 @@ For more detail on the physics of the anisotropies of the CMB see~\cite{Bucher20
 Note that at all frequencies \(\qtylist[list-units=single]{30;44;70;100;143;217;353;545;857}{\giga\hertz}\), the CMB is obstructed by foreground microwave emissions from the Galactic bulge.
 In cosmology, one observes the projection of some three-dimensional random field onto the celestial sphere.
 For example, the CMB anisotropies are mainly the projection of photon density, bulk velocity, and gravitational potential over the surface of last scattering.
-The language used to describe random fields on the sphere is now described in \cref{sec:chapter2_statistics_random_fields_sphere}.
+The language used to describe random fields on the sphere is now described.
 
 \input{figures/chapter2/planck_frequency}
 
@@ -1138,7 +1138,7 @@ In ABC, one seeks to perform Bayesian inference from (CMB) data where the likeli
 Otherwise, machine learning methods have been leveraged to perform a series of different aspects of CMB analysis.
 Much like in \cref{sec:chapter2_signal_analysis}, machine learning may be utilised to estimate the missing data in the region masked by foreground emissions (\eg{}~\cite{Puglisi2020,Petroff2020,VafaeiSadr2021}).
 Analysis may then follow using established whole-sphere techniques.
-However, much like likelihood-free inference discussed before, machine learning may also use the observed data directly~\cite{Chanda2021}, thus ignoring the mask altogether.
+However, much like likelihood-free inference discussed before, machine learning may also work with the observed data directly~\cite{Chanda2021}, thus ignoring the mask altogether.
 
 \subsection{Thesis Aim}\label{sec:chapter2_thesis_aim}
 
