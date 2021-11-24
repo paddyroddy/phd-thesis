@@ -1127,15 +1127,18 @@ A typical approach in CMB analyses is to estimate the missing values in the mask
 In this framework, a parametric model is fitted to the CMB data with standard sampling, posterior or maximisation techniques.
 Astrophysical, instrumental, and cosmological parameters are included in the model.
 Other methodologies used to estimate the missing data include: \texttt{NILC}~\cite{Basak2011,Basak2013,Planck2016,Planck2020a} which leverages needlets~\cite{Narcowich2006}, \texttt{SEVEM}~\cite{Leach2008,FernandezCobos2012,Planck2016,Planck2020a} which is a method based on templates, and \texttt{SMICA}~\cite{Cardoso2008,Planck2016,Planck2020a} in which a full-sky CMB map is estimated by a weighted sum of all Planck frequency maps (\cf{} \cref{fig:chapter2_planck_frequency}).
-Whilst these mask estimation methods are superior to simply setting pixel values to zero or interpolation, inherent error in the mask region still propagates into whole sphere methods.
+Whilst these mask estimation methods are superior to simply setting pixel values to zero or interpolation, inherent error in the mask region still propagates into whole-sphere methods.
 
 \subsubsection{General Analysis}
 
 The methods discussed in \cref{sec:chapter2_signal_analysis} are primarily signal processing techniques.
 Here, the focus is on more general analysis, \ie{} statistics and machine learning.
-
-Likelihood-free inference for cosmology can also handle masks~\cite{Schafer2012,Alsing2018,Alsing2019}.
-Alternatively, many machine learning methods have been developed (\eg{}~\cite{Puglisi2020,Petroff2020,VafaeiSadr2021}).
+Likelihood-free inference, or approximate Bayesian computation (ABC), is a popular statistical tool in cosmology which can work with masked data of this form~\cite{Schafer2012,Alsing2018,Alsing2019}.
+In ABC, one seeks to perform Bayesian inference from (CMB) data where the likelihood function is intractable, but synthetic data may be generated through forward simulations.
+Otherwise, machine learning methods have been leveraged to perform a series of different aspects of CMB analysis.
+Much like in \cref{sec:chapter2_signal_analysis}, machine learning may be utilised to estimate the missing data in the region masked by foreground emissions (\eg{}~\cite{Puglisi2020,Petroff2020,VafaeiSadr2021}).
+Analysis may then follow using established whole-sphere techniques.
+However, much like likelihood-free inference discussed before, machine learning may also use the observed data directly~\cite{Chanda2021}, thus ignoring the mask altogether.
 
 \subsection{Thesis Aim}\label{sec:chapter2_thesis_aim}
 

@@ -5,7 +5,7 @@ link: http://www.plainlanguage.gov/howto/wordsuggestions/simplewords.cfm
 ignorecase: true
 level: error
 swap:
-    "approximate(?:ly)?": "'about'"
+    # "approximate(?:ly)?": "'about'"
     absent: "'none' or 'not here'"
     # abundance: "'plenty'"
     accelerate: "'speed up'"
