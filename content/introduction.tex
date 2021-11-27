@@ -21,11 +21,11 @@ In the spherical setting, a signal on the surface of the sphere may be expressed
 Spherical harmonic transforms follow as an analogy of Fourier transforms, whereby one can transform between real space and harmonic space.
 Wavelets may be used as an alternative basis, which have been extended to other geometries in recent times.
 Wavelets enable one to analyse contributions of scale-dependent features in both space and scale.
-Applications of wavelets include: computer vision, compression, denoising, and time series analysis.
+Applications of wavelets include: computer vision, compression and denoising.
 A wavelet transform, again analogous to the Fourier transform, inherently relies on a suitable convolution for synthesis and analysis.
 
 Often data are only observed over a partial region of a given manifold, \ie{} the sphere.
-For example, strong foreground microwave emissions are typically removed in analyses of the cosmic microwave background which are caused by the Galactic bulge of the Milky Way.
+For example, strong foreground microwave emissions are typically removed in analyses of the cosmic microwave background around the Galactic plane.
 Thus, whole sphere methods may not be suitable for accurate analysis.
 By leveraging the Slepian concentration problem, one may find the set of bandlimited functions which are optimally concentrated within a particular region.
 A signal restricted to a given region (due to a limited set of observations) may then be decomposed into this basis as before.
@@ -35,10 +35,10 @@ The focus of this thesis is to build a framework that leverages both wavelets an
 The resulting set of functions, known as Slepian wavelets, thus profit from both approaches.
 Whilst wavelets and Slepian functions both involve localised analysis, (spherical) wavelets involve spatial-scale analysis whilst Slepian functions perform spatial-spectral analysis.
 A tiling of the Slepian harmonic line is utilised to develop Slepian scale-discretised wavelets.
-The scale-discretised wavelet transform allows for an exact wavelet transform, where the only limiting factor is the precision of the Slepian functions themselves.
+The scale-discretised framework allows for an exact wavelet transform, where the only limiting factor is the precision of the Slepian functions themselves.
 A spherical convolution is first developed which preserves a variety of desirable properties from the standard Euclidean definition.
 However, the convolution described may be generalised to other manifolds beyond the sphere, and hence Slepian scale-discretised wavelets may also be arbitrarily extended.
-Although analysis of the foreground contaminated cosmic microwave background has served as the primary motivation for this work, the resulting Slepian wavelets may be used for applications on the sphere and beyond.
+Although cosmology has served as the primary motivation for this work, the resulting Slepian wavelets may be used for applications on the sphere and beyond.
 
 \section{Outline}
 
