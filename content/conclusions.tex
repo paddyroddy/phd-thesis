@@ -18,3 +18,16 @@ The sifting convolution is defined in the usual manner via an inner product but 
 This translation operator may be viewed as a sifting convolution of a function with a shifted Dirac delta function, which follows as a natural analogue of the Euclidean definition.
 A convolution is performed on a topographic map of the Earth, thus demonstrating the support of directional kernels to perform anisotropic filtering whilst the output remains on the sphere.
 Although the sifting convolution was designed with the sphere in mind, the framework is entirely generic and hence may be used with any set of appropriate basis functions.
+
+Wavelets allow one to probe spatially localised, scale-dependent features of a given signal.
+Whilst wavelets have been put to great use in cosmological analyses, the addition of a mask contaminates neighbouring wavelet coefficients which overlap with the masked region.
+These distorted coefficients may then be easily detected and removed for accurate analysis.
+However, by removing the wavelet coefficients near the boundary, the power of the data is not fully utilised.
+Alternatively, the missing data on the manifold may be estimated, which may then be analysed through some whole manifold method.
+Instead, by leveraging the eigenfunctions of the Slepian spatial-spectral concentration problem, wavelets may be constructed within the regions of which data are present.
+Thus ensuring the maximal use of the data.
+Constructed in this thesis, the so-called Slepian wavelets designed here follow by a tiling of the Slepian harmonic line using the scale-discretised framework.
+A wavelet transform is developed which allows for exact reconstruction --- conditional on the accuracy of the Slepian functions on which the wavelets are built.
+This wavelet transform relies on a generalisation of the sifting convolution described above to work with the Slepian functions as a basis.
+The wavelets and corresponding wavelet coefficients are found of an example region, constructed from a topographic map of the Earth.
+This signal is then corrupted with Gaussian white noise, and a straightforward denoising scheme produces a boost in the signal-to-nose ratio of the data.
