@@ -528,9 +528,9 @@ as
 \begin{align}
 	\mesh{\convolution{f}{g}}
 	%
-	 & = \braket*{\translation{x}f}{g} \nonumber{}                                                                                        \\
+	 & = \braket*{\translation{x}f}{g} \nonumber{}                                                                                           \\
 	%
-	 & = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{}                                                    \\
+	 & = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{}                                                       \\
 	%
 	 & = \integrateManifold{y} \meshSum f_{i} \mesh{\zeta_{i}} \meshY{\zeta_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\zeta_{j}}} \nonumber{} \\
 	%
@@ -545,7 +545,7 @@ It can be shown that the translation operator is a sifting convolution of a func
 	%
 	 & = \meshSum f_{i} \conj{{(\delta_{y})}_{i}} \mesh{\zeta_{i}} \nonumber{} \\
 	%
-	 & = \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}} \nonumber{}          \\
+	 & = \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}} \nonumber{}         \\
 	%
 	 & = \mesh{(\translation{y}f)},
 \end{align}
@@ -776,7 +776,7 @@ The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter5
 The Slepian scaling function and wavelets defined in \cref{sec:chapter5_slepian_scale_discretised_wavelets} are built on a tiling of the Slepian line with parameters \(\lambda=3\) and \(J_{0}=2\).
 This tiling is shown in \cref{fig:chapter5_tiling} for \(\imax=\num{1275}\) basis functions of the Homer mesh, where the Shannon number \(N=329\) is highlighted.
 Hence, for this region the scaling function and wavelets for scales \(j \in \set{2, 3, 4, 5, 6}\) are the only non-zero functions.
-These wavelets are presented in \cref{fig:chapter5_wavelets}, which show a similar pattern to the Slepian functions where the scaling function is more concentrated in the region than the wavelet scale \(j=6\).
+These wavelets are presented in \cref{fig:chapter5_wavelets}, in which a similar pattern to the Slepian functions is observed whereby the scaling function is more concentrated than the \(j=6\) wavelet.
 To perform a scale-discretised wavelet transform, one requires a signal on the mesh.
 \cref{fig:chapter5_homer_data} presents such a signal, the \(z\)-component of the per vertex normals of the Homer mesh.
 With some data to hand, the scaling and wavelet coefficients of the Homer head region are given in \cref{fig:chapter5_wavelet_coefficients}.
@@ -883,7 +883,7 @@ Note that the wavelet parameters \(\lambda{}\) and \(J_{0}\) have not been optim
 
 Due to recent interest in geometric deep learning, many fields are extending existing methods in the Euclidean domain to the manifold or graph settings.
 This chapter generalises Slepian scale-discretised wavelets on the sphere~\cite{Roddy2021a} (\cf{} \cref{sec:chapter4}) to Riemannian manifolds, whereby the wavelets themselves are restricted to a region of the manifold.
-Slepian wavelets have many possible use cases in various fields of science and engineering, where data only exists in a particular region.
+Slepian wavelets have many possible uses in various branches of science and engineering, where data only exists in a particular region.
 A typical approach to problems of this kind is to analyse the signal with wavelets defined over the whole manifold, where spatially localised, scale-dependent features of the signal may be extracted.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.
 Slepian scale-discretised wavelets (on manifolds) offer a potential solution to this obstacle.
@@ -897,6 +897,6 @@ In computer graphics applications, three-dimensional shapes are often modelled b
 A region is constructed on a mesh of Homer Simpson and the resulting Slepian functions are found.
 A field is then placed on this mesh, and through a wavelet transform, the wavelets and corresponding wavelet coefficients of the field are presented.
 The signal on the mesh is distorted with Gaussian white noise, and a straightforward denoising procedure is developed --- a common wavelet technique.
-The wavelet coefficients are hard-thresholded with \(N_{\sigma}=1\), in which a boost in signal-to-noise ratio is observed.
-This same denoising formalism is performed on a series of other meshes, resulting in a signal boost in all.
-As before, Slepian wavelets on manifolds can be used for many standard wavelet applications; for example, solving inverse problems via sparse regularisation~\cite{McEwen2013a,Wallis2017,Price2021}.
+The wavelet coefficients are hard-thresholded with \(N_{\sigma}=1\), in which a boost in signal-to-noise is observed.
+This same denoising formalism is performed on some other meshes, resulting in a signal boost in all.
+Slepian wavelets on manifolds can be used for many standard wavelet applications; for example, solving inverse problems via sparse regularisation~\cite{McEwen2013a,Wallis2017,Price2021}.
