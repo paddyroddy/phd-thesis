@@ -6,11 +6,11 @@ Whilst many signal processing methods were initially developed in the one-dimens
 Due to recent interest in geometric deep learning, many methods may be generalised further to handle manifold and graph data.
 Sometimes data are not observed over the whole manifold and, as such, whole manifold methods may not be appropriate for accurate analysis.
 In this thesis, a new wavelet basis has been developed which is built on the eigenfunctions of the Slepian concentration problem.
-These eigenfunctions and indeed subsequent wavelets are optimally concentrated within a given region.
+These eigenfunctions and indeed ensuing wavelets are optimally concentrated within a given region.
 The so-called Slepian wavelets developed here may find use in many applications, such as in analyses of the cosmic microwave background, in which foreground emissions dominate the central region of the spherical data.
 
 An important tool in signal processing is the convolution.
-Initially developed in the one-dimensional Euclidean setting, the convolution has since been successfully extended to other geometries, such as the sphere.
+Initially developed in the one-dimensional Euclidean setting, the convolution has since been extended to other geometries, such as the sphere.
 However, often these convolutions do not fully emulate the Euclidean setting.
 Developed in this thesis, the so-called sifting convolution has been designed to directly tackle the shortcomings of existing spherical convolutions.
 In particular, the sifting convolution accepts directional functions as inputs, has an output that remains on the sphere, and is efficient to compute.
@@ -21,9 +21,9 @@ Although the sifting convolution was designed with the sphere in mind, the frame
 
 Wavelets allow one to probe spatially localised, scale-dependent features of a given signal.
 Whilst wavelets have been put to great use in cosmological analyses, the addition of a mask contaminates neighbouring wavelet coefficients which overlap with the masked region.
-These distorted coefficients may then be easily detected and removed for accurate analysis.
+These distorted coefficients may then be detected and removed for accurate analysis.
 However, by removing the wavelet coefficients near the boundary, the power of the data is not fully utilised.
-Alternatively, the missing data on the manifold may be estimated, which may then be analysed through some whole manifold method.
+Otherwise, the missing data on the manifold may be estimated, which may then be analysed through some whole manifold method.
 Instead, by leveraging the eigenfunctions of the Slepian spatial-spectral concentration problem, wavelets may be constructed within the regions of which data are present.
 Thus ensuring the maximal use of the data.
 Constructed in this thesis, the so-called Slepian wavelets designed here follow by a tiling of the Slepian harmonic line using the scale-discretised framework.
@@ -31,3 +31,7 @@ A wavelet transform is developed which allows for exact reconstruction --- condi
 This wavelet transform relies on a generalisation of the sifting convolution described above to work with the Slepian functions as a basis.
 The wavelets and corresponding wavelet coefficients are found of an example region, constructed from a topographic map of the Earth.
 This signal is then corrupted with Gaussian white noise, and a straightforward denoising scheme produces a boost in the signal-to-nose ratio of the data.
+
+Whilst the motivation and initial development of the methods in this thesis was developed with the sphere in mind, the framework is entirely generic.
+The sifting convolution may be expressed both in the real and Fourier domains, and as such may handle any set of basis functions.
+Moreover, although the Slepian concentration problem was first considered in the one-dimensional Euclidean setting as a time-frequency concentration problem, the Slepian functions may be found for any region of a manifold.
