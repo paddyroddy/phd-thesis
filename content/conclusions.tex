@@ -33,5 +33,9 @@ The wavelets and corresponding wavelet coefficients are found of an example regi
 This signal is then corrupted with Gaussian white noise, and a straightforward denoising scheme produces a boost in the signal-to-nose ratio of the data.
 
 Whilst the motivation and initial development of the methods in this thesis was developed with the sphere in mind, the framework is entirely generic.
-The sifting convolution may be expressed both in the real and Fourier domains, and as such may handle any set of basis functions.
-Moreover, although the Slepian concentration problem was first considered in the one-dimensional Euclidean setting as a time-frequency concentration problem, the Slepian functions may be found for any region of a manifold.
+The sifting convolution has a representation in both the real and Fourier domains and, as such, may handle any set of basis functions.
+Moreover, the Slepian spatial-spectral problem may be formulated for a given region of any manifold to find the set of optimally concentrated bandlimited functions.
+The Slepian wavelet construction in the manifold/graph settings is analogous to the spherical case, but where the basis functions are instead the eigenfunctions of the Laplace-Beltrami operator/eigenvectors of the graph Laplacian.
+By way of demonstration, a region is constructed on a mesh of a Homer Simpson and the resulting Slepian functions are computed.
+Upon construction of a suitable field on the mesh, the Slepian wavelets and corresponding wavelet coefficients are found and presented.
+Following the denoising scheme developed for the spherical setting, a signal-to-noise boost is observed for the Homer mesh along with a series of other meshes.
