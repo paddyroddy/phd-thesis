@@ -7,7 +7,7 @@ Due to recent interest in geometric deep learning, many methods may be generalis
 Sometimes data are not observed over the whole manifold and, as such, whole manifold methods may not be appropriate for accurate analysis.
 In this thesis, a new wavelet basis has been developed which is built on the eigenfunctions of the Slepian concentration problem.
 These eigenfunctions and indeed ensuing wavelets are optimally concentrated within a given region.
-The so-called Slepian wavelets developed here may find use in many applications, such as in analyses of the cosmic microwave background, in which foreground emissions dominate the central region of the spherical data.
+The so-called Slepian wavelets developed here may find use in many applications, such as in analyses of the CMB, in which foreground emissions dominate the central region of the spherical data.
 
 An important tool in signal processing is the convolution.
 Initially developed in the one-dimensional Euclidean setting, the convolution has since been extended to other geometries, such as the sphere.
@@ -39,3 +39,8 @@ The Slepian wavelet construction in the manifold/graph settings is analogous to 
 By way of demonstration, a region is constructed on a mesh of a Homer Simpson and the resulting Slepian functions are computed.
 Upon construction of a suitable field on the mesh, the Slepian wavelets and corresponding wavelet coefficients are found and presented.
 Following the denoising scheme developed for the spherical setting, a signal-to-noise boost is observed for the Homer mesh along with a series of other meshes.
+
+Slepian wavelets have many potential applications in analyses of manifolds where data are only observed over a partial region.
+One such application is in CMB analyses where observations are inherently made on the celestial sphere.
+In fields such as astrophysics and cosmology, datasets are increasingly large and thus require analysis at high resolutions for accurate predictions.
+However, the computation of the spherical Slepian functions are computationally complex as the \(\Dmatrix{}\) matrix scales as the bandlimit \(L^{4}\).
