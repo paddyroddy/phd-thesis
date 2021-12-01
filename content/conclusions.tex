@@ -48,6 +48,6 @@ Whilst Slepian wavelets may be trivially computed from a set of Slepian function
 Although symmetries of this matrix and the spherical harmonics have been exploited, filling in this matrix is inherently slow due to performing many integrals.
 The matrix is filled in parallel in \texttt{Python} using \texttt{multiprocessing}, and the spherical harmonic transforms are computed in \texttt{C} using \texttt{SSHT}.
 This may be sped up further by utilising the new \texttt{ducc0} backend for \texttt{SSHT}, which may allow for a multithreaded solution.
-Moreover, Planck measurements extend to \(L \almost{3000}\) and thus the resultant complex matrix would be \(\SI{1.3}{\peta\byte}\) in size.
+Moreover, Planck measurements extend to \(\ell \almost{3000}\) and thus the resultant complex matrix would be \(\SI{1.3}{\peta\byte}\) in size.
 Therefore, to work with high-resolution data such as these, one requires HPC methods on supercomputers with massive memory and storage.
 To this end, Slepian wavelets may be exploited at present at low resolutions, but further work is required for them to be fully scalable.
