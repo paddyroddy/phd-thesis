@@ -35,35 +35,23 @@
 \end{abstract}
 
 \begin{impactstatement}
+	This thesis is primarily split into two parts: the development of a spherical convolution, and the construction of wavelet basis built on this convolution.
+	The sifting convolution is a convolution designed as an Euclidean analogue; although initially designed for the sphere, it is indeed general.
+	Slepian wavelets were again considered for the sphere, but may be generalised further to graph and manifold data.
+	These wavelets are intended for the analysis of incomplete manifolds.
 
-	UCL theses now have to include an impact statement. The following text is the description from the guide linked from the formatting and submission website of what that involves. (Link to the guide: {\scriptsize \url{http://www.grad.ucl.ac.uk/essinfo/docs/Impact-Statement-Guidance-Notes-for-Research-Students-and-Supervisors.pdf}})
+	The convolution is a fundamental technique in signal processing and used widely in scientific and engineering applications.
+	Often the convolution is part of a wider technique, although they may be used directly in their own right.
+	Existing convolutions in the spherical domain impose certain restrictions on one or both inputs.
+	The sifting convolution therefore may find use in various applications where one seeks to accept directional inputs whilst remaining on the sphere.
+	Moreover, the convolution is general and as such may find success in general manifold settings.
 
-	\begin{quote}
-		The statement describes, in no more than 500 words, how the expertise, knowledge, analysis,
-		discovery or insight presented in your thesis could be put to a beneficial use. Consider benefits both
-		inside and outside academia and the ways in which these benefits could be brought about.
-
-		The benefits inside academia could be to the discipline and future scholarship, research methods,
-		the curriculum; they might be within your research area and within other
-		research areas.
-
-		The benefits outside academia could occur to commercial activity, social enterprise, professional
-		practice, clinical use, public health, public policy design, public service delivery, laws, public
-		discourse, culture, the quality of the environment or quality of life.
-
-		The impact could occur locally, regionally, nationally or internationally, to individuals, communities or
-		organisations and could be immediate or occur incrementally, in the context of a broader field of
-		research, over many years, decades or longer.
-
-		Impact could be brought about through disseminating outputs (either in scholarly journals or
-		elsewhere such as specialist or mainstream media), education, public engagement, translational
-		research, commercial and social enterprise activity, engaging with public policymakers and public
-		service delivery practitioners, influencing ministers, collaborating with academics and non-academics.
-
-		Further information including a searchable list of hundreds of examples of UCL impact outside of
-		academia please see \url{https://www.ucl.ac.uk/impact/}. For thousands more examples, please see
-		\url{http://results.ref.ac.uk/Results/SelectUoa}.
-	\end{quote}
+	Wavelets are also widely used in various disciplines to analyse signals both in space and scale.
+	Whilst many fields measure data on manifolds (\ie{} the sphere), often data are only observed on a partial region of the manifold.
+	Wavelets are a typical approach to data of this form, but the wavelet coefficients which overlap with the boundary become contaminated and must be removed for accurate analysis.
+	Another approach is to estimate the region of missing data and use existing whole manifold methods for analysis.
+	However, both approaches introduce uncertainty into any analysis.
+	Slepian wavelets enable one to work directly with only the data present thus avoiding problems discussed.
 \end{impactstatement}
 
 \begin{acknowledgements}
