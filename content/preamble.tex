@@ -17,7 +17,7 @@
 	Many fields in science and engineering measure data that inherently live on non-Euclidean geometries, such as the sphere.
 	It is important that techniques developed in the Euclidean setting are extended to other geometries.
 	Due to recent interest in geometric deep learning, analogues of Euclidean techniques must also handle general manifolds or graphs.
-	Often, data are only observed over partial regions of manifolds, and thus standard whole manifold techniques may not yield accurate predictions.
+	Often, data are only observed over partial regions of manifolds, and thus standard whole-manifold techniques may not yield accurate predictions.
 	In this thesis, a new wavelet basis is designed for datasets like these.
 
 	Although many definitions of spherical convolutions exist, none fully emulate the Euclidean definition.
@@ -35,23 +35,25 @@
 \end{abstract}
 
 \begin{impactstatement}
-	This thesis is primarily split into two parts: the development of a spherical convolution, and the construction of wavelet basis built on this convolution.
-	The sifting convolution is a convolution designed as an Euclidean analogue; although initially designed for the sphere, it is indeed general.
-	Slepian wavelets were again considered for the sphere, but may be generalised further to graph and manifold data.
-	These wavelets are intended for the analysis of incomplete manifolds.
+    This thesis is primarily split into two parts: the development of a spherical convolution, and the construction of a wavelet basis built on this convolution.
+    The sifting convolution is a convolution designed as a Euclidean analogue; although initially designed for the sphere, it is indeed general.
+    Slepian wavelets were again considered for the sphere, but may be generalised further to graph and manifold data.
+    These wavelets are intended for the analysis of incomplete manifolds.
 
-	The convolution is a fundamental technique in signal processing and used widely in scientific and engineering applications.
-	Often the convolution is part of a wider technique, although they may be used directly in their own right.
-	Existing convolutions in the spherical domain impose certain restrictions on one or both inputs.
-	The sifting convolution therefore may find use in various applications where one seeks to accept directional inputs whilst remaining on the sphere.
-	Moreover, the convolution is general and as such may find success in general manifold settings.
+    The convolution is a fundamental technique in signal processing and is used widely in scientific and engineering applications.
+    Often the convolution is part of a wider technique, although they may be used directly in their own right.
+    Existing convolutions in the spherical domain impose certain restrictions on one or both inputs.
+    The sifting convolution therefore may find use in various applications where one seeks to accept directional inputs whilst remaining on the sphere.
+    Moreover, the convolution is general and as such may find success in general manifold settings.
+    With the recent interest in geometric deep learning, the sifting convolution may find application in the development of convolutional neural networks on manifolds.
 
-	Wavelets are also widely used in various disciplines to analyse signals both in space and scale.
-	Whilst many fields measure data on manifolds (\ie{} the sphere), often data are only observed on a partial region of the manifold.
-	Wavelets are a typical approach to data of this form, but the wavelet coefficients which overlap with the boundary become contaminated and must be removed for accurate analysis.
-	Another approach is to estimate the region of missing data and use existing whole manifold methods for analysis.
-	However, both approaches introduce uncertainty into any analysis.
-	Slepian wavelets enable one to work directly with only the data present thus avoiding problems discussed.
+    Wavelets are also widely used in various disciplines to analyse signals both in space and scale.
+    Whilst many fields measure data on manifolds (\ie{} the sphere), often data are only observed on a partial region of the manifold.
+    Wavelets are a typical approach to data of this form, but the wavelet coefficients which overlap with the boundary become contaminated and must be removed for accurate analysis.
+    Another approach is to estimate the region of missing data and use existing whole-manifold methods for analysis.
+    However, both approaches introduce uncertainty into any analysis.
+    Slepian wavelets enable one to work directly with only the data present, thus avoiding problems discussed.
+    Possible applications of Slepian wavelets to areas of research measuring data on the partial sphere include: gravitational/magnetic fields in geodesy; ground-based measurements in astronomy; measurements of whole-planet properties in planetary science; geomagnetism of the Earth; and in analyses of the cosmic microwave background.
 \end{impactstatement}
 
 \begin{acknowledgements}
