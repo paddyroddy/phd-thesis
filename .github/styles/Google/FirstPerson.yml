@@ -8,6 +8,6 @@ tokens:
     # - (?:^|\s)I\s
     - (?:^|\s)I,\s
     - \bI'm\b
-    - \bme\b
-    - \bmy\b
+    # - \bme\b
+    # - \bmy\bx
     - \bmine\b

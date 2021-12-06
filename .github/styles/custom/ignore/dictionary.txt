@@ -26,6 +26,7 @@ config
 conj
 cref
 dd
+degonde
 denoise
 denoised
 denoising
@@ -56,6 +57,7 @@ gaussians
 geq
 giga
 groundtruthing
+guion
 hangparas
 helvetica
 hfill
@@ -73,6 +75,7 @@ laplace
 laplacian
 lceil
 ldots
+legg
 leq
 listoffigures
 listoftables
@@ -118,6 +121,7 @@ resizebox
 ricker
 rightarrow
 roddy
+romain
 rvert
 scriptsize
 se
@@ -128,6 +132,7 @@ slepian
 snr
 spacelimited
 ssht
+stegmann
 submatrix
 subseteq
 subsubsection
@@ -142,6 +147,7 @@ thresholded
 thresholding
 tikzpicture
 timelimited
+tino
 toc
 tocdepth
 toprule
@@ -155,6 +161,7 @@ varphi
 varpi
 vb
 vdots
+vortexa
 wavenumber
 wavenumbers
 wavevector
