@@ -47,7 +47,9 @@ essinfo
 etal
 etc
 expval
+feeney
 fionn
+fitzmaurice
 forall
 fourier
 frac
@@ -62,6 +64,7 @@ hangparas
 helvetica
 hfill
 hilbert
+hl
 hspace
 ie
 imax
@@ -86,6 +89,7 @@ maketitle
 mathbb
 mathcal
 midrule
+mortlock
 mphil
 mres
 multiresolution
@@ -167,3 +171,4 @@ wavenumbers
 wavevector
 wavevectors
 wigner
+zubair
