@@ -8,6 +8,7 @@ bandlimit
 bandlimited
 bessel
 bibentry
+biber
 bibintoc
 bigg
 bispectrum
@@ -85,6 +86,7 @@ legg
 leq
 listoffigures
 listoftables
+lua
 makeatletter
 makeatother
 makedeclaration
