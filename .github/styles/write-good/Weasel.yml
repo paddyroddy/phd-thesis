@@ -177,7 +177,7 @@ tokens:
     - sternly
     - stupidly
     - substantially
-    - successfully
+    # - successfully
     - suddenly
     - surprisingly
     - suspiciously
