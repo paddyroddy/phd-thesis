@@ -53,6 +53,7 @@ expval
 feeney
 fionn
 fitzmaurice
+fn
 forall
 fourier
 frac
@@ -80,10 +81,12 @@ int
 kirker
 laplace
 laplacian
+laplacians
 lceil
 ldots
 legg
 leq
+libigl
 listoffigures
 listoftables
 lua
@@ -93,6 +96,7 @@ makedeclaration
 maketitle
 mathbb
 mathcal
+matplotlib
 midrule
 mijolla
 mortlock
@@ -122,6 +126,7 @@ phantomsection
 phd
 piras
 planck
+plotly
 pollak
 postaction
 rceil
@@ -136,6 +141,7 @@ romain
 rvert
 scriptsize
 se
+seaborn
 secnumdepth
 setcounter
 shannon
