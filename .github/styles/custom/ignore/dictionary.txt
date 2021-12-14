@@ -74,6 +74,7 @@ imax
 impactstatement
 includeonly
 infty
+inpaint
 int
 kirker
 laplace

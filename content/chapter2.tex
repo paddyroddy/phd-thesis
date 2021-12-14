@@ -130,7 +130,7 @@ Included here is the Condon-Shortley \(\phaseFactor{}\) phase factor, to ensure 
 	= \phaseFactor \pixel{Y_{\ell(-m)}}.
 \end{equation}
 %
-The spherical harmonics satisfy the below orthonormality and completeness relations by
+The spherical harmonics satisfy the orthonormality and completeness relations
 %
 \begin{equation}\label{eq:chapter2_spherical_harmonics_orthonormal}
 	\integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
@@ -195,7 +195,7 @@ A pictorial representation of the spherical harmonics is given in \cref{fig:chap
 \subsection{Rotations on the Sphere}
 
 Rotations of functions defined on the sphere form an integral part of analysis on the sphere.
-The Euler angles \(\rho=(\alpha,\beta,\gamma) \in \rotationGroup{}\) may parametrise three-dimensional rotations, where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
+The Euler angles \(\rho=(\alpha,\beta,\gamma) \in \rotationGroup{}\) may be used to parametrise three-dimensional rotations, where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
 The sequence of rotations:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
@@ -294,7 +294,7 @@ A useful relation to note is the connection between the spherical harmonics and 
 
 Wavelet transforms are ubiquitous in signal processing applications.
 In signal analysis, the continuous wavelet transform is more appropriate, \eg{}~\cite{Goupillaud1984,KronlandMartinet1987,Flandrin1989,Holschneider1990,Bertrand1990,Pierce1991}.
-Whereas, discrete wavelets and the discrete wavelet transform have greater success in signal coding applications, such as in image compression~\cite{Antonini1990,Mallat1992} and computer vision~\cite{Mallat1989,Shensa1992}.
+Whereas, discrete wavelets and the discrete wavelet transform have greater success in signal reconstruction applications, such as in image compression~\cite{Antonini1990,Mallat1992} and computer vision~\cite{Mallat1989,Shensa1992}.
 Presented here is a brief review of wavelet analysis, for more detail see, \eg{}~\cite{Rioul1991,Graps1995,Addison2005,Valens1999,Kaiser2011}.
 
 \subsection{Comparison to the Fourier Transform}\label{sec:chapter2_comparison_fourier_transform}
@@ -497,7 +497,7 @@ Much like in the Euclidean setting, a signal (on the sphere) is probed by multip
 In the 1960s, Slepian, Landau and Pollak solved the fundamental problem of optimally concentrating a signal simultaneously in time and frequency~\cite{Landau1961,Landau1962,Slepian1983,Slepian1961}.
 The resulting orthogonal family of functions, and their discrete and multidimensional counterparts~\cite{Bronez1988,Hanssen1997,Liu1992,Slepian1964,Slepian1978}, form the basis of a range of spectral analyses (\eg{}~\cite{Thomson1982,Thomson1990}).
 In contrast to wavelets, described in \cref{sec:chapter2_wavelets}, the so-called Slepian functions allow one to compute localised spatial-spectral analysis, as opposed to spatial-scale.
-\cref{sec:chapter2_time_frequency_domain} follows with a brief review of the initial time-frequency concentration problem, this is then extended to the spherical domain in \cref{sec:chapter2_spatial_spectral_domain}.
+\cref{sec:chapter2_time_frequency_domain} follows with a brief review of the initial time-frequency concentration problem, this is then extended to the spherical domain in \cref{sec:chapter2_spatial_spectral_domain_sphere}.
 
 \subsection{Time-Frequency Domain}\label{sec:chapter2_time_frequency_domain}
 
@@ -599,9 +599,9 @@ The so-called Shannon number~\cite{Percival1993} \(N\) introduced here is a good
 Equivalently, this can be viewed as the number of signals \(f(t)\) which can be well-concentrated both into a finite time interval \(\abs{t} \leq T\) and a finite frequency interval \(\abs{\varpi} \leq W\).
 Many of the results discussed above have analogues in the spatial-spectral concentration problem on the sphere, which is now elaborated.
 
-\subsection{Spatial-Spectral Domain}\label{sec:chapter2_spatial_spectral_domain}
+\subsection{Spatial-Spectral Domain on the Sphere}\label{sec:chapter2_spatial_spectral_domain_sphere}
 
-The two sub-spaces of interest of all square-integrable functions on the sphere \(\twoSphere{}\) are: \(\spaceSpacelimit{}\) the space of all spacelimited functions strictly contained within a region \(R\), and \(\spaceBandlimit{}\) the space of all bandlimited functions with no power above the bandlimit \(L\).
+Two sub-spaces of interest of all square-integrable functions on the sphere \(\twoSphere{}\) are: \(\spaceSpacelimit{}\) the space of all spacelimited functions strictly contained within a region \(R\), and \(\spaceBandlimit{}\) the space of all bandlimited functions with no power above the bandlimit \(L\).
 Akin to the Euclidean setting, no function can be strictly spacelimited as well as strictly bandlimited, \ie{} no \(\pixel{f}\) can be in both sub-spaces \(\spaceSpacelimit{}\) and \(\spaceBandlimit{}\) at the same time.
 Thus, one may find either: the spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) whose spectrum is optimally concentrated within the interval \(0 \leq \ell < L\), or the bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) which are optimally concentrated within a region \(R\).
 
@@ -924,9 +924,7 @@ The variance of the field is
 \begin{equation}
 	C(0)
 	%
-	= \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum
-	%
-	\approx \int\dd{\ln{\ell}} \frac{\ell(\ell+1) \powerSpectrum}{2\pi}.
+	= \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum.
 \end{equation}
 %
 Inverting the correlation function retrieves the power spectrum using the orthogonality of the Legendre polynomials
@@ -934,7 +932,7 @@ Inverting the correlation function retrieves the power spectrum using the orthog
 \begin{equation}
 	\powerSpectrum
 	%
-	= 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} \pixel{C} P_{\ell}(\cos{\theta}).
+	= 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} C(\theta) P_{\ell}(\cos{\theta}).
 \end{equation}
 
 \subsubsection{Projection of Three-Dimensional Random Fields}
@@ -1114,7 +1112,7 @@ Here, the limitations of existing approaches are discussed.
 
 To analyse data on the sphere of this form, one may work with spherical harmonics directly.
 Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will introduce much error in any analysis due to the foreground microwave emissions dominating the equator.
-Naively, to remove this foreground, one may either interpolate missing values with the existing data or simply set the missing pixel values to zero.
+Naively, to remove this foreground, one may either interpolate or \emph{inpaint} missing values with the existing data or simply set the missing pixel values to zero.
 However, neither of these approaches are satisfying.
 Another method that has enjoyed success in cosmology is the Karhunen-Loève theorem~\cite{Tegmark1997,Bond1994,Bunn1995}.
 Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
