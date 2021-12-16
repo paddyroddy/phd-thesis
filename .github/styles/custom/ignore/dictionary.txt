@@ -119,7 +119,6 @@ parameterised
 parindent
 parseval
 pdv
-peta
 phd
 piras
 planck
