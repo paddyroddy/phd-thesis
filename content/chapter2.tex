@@ -305,8 +305,8 @@ Thus, one must seek alternative methods to essentially represent a signal in tim
 In these time-frequency joint representations, the idea is to cut the signal into multiple parts and analyse them independently, which can give more detail about the individual frequency components~\cite{Mallat2008}.
 Although, making a suitable cut --- which corresponds to a convolution between the signal and the cutting window --- is non-trivial.
 Suppose one seeks to find all frequency components present at a given time; naively, this could be achieved by performing a cut with a Dirac delta function.
-However, since the Fourier transform of a Dirac delta consists of all possible frequencies, and a convolution in the time domain corresponds to multiplication in the frequency domain, the signal would be smeared out on the frequency axis.
-This problem occurs due to the Heisenberg uncertainty problem; which, in signal processing terms, states that it is impossible to know both the exact frequency, and the exact time of occurrence of this frequency in the signal.
+However, by the Heisenberg uncertainty principle, the resultant signal would be smeared out over the frequency axis.
+In signal processing terms, the Heisenberg uncertainty problem states that it is impossible to know both the exact frequency, and the exact time of occurrence of this frequency in the signal.
 
 Wavelet analysis is an important signal processing technique which can tackle the shortcomings of the Fourier transform.
 A fully scalable, modulated window solves the signal-cutting problem; whereby, the window moves along the signal and a spectrum is calculated at all positions.
