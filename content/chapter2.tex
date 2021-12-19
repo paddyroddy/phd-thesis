@@ -1114,10 +1114,11 @@ Here, the limitations of existing approaches are discussed.
 
 To analyse data on the sphere of this form, one may work with spherical harmonics directly.
 Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will introduce much error in any analysis due to the foreground microwave emissions dominating the equator.
-Naively, to remove this foreground, one may either interpolate or \emph{inpaint} missing values with the existing data or simply set the missing pixel values to zero.
-However, neither of these approaches are satisfying.
+Naively, to remove this foreground, one may either interpolate (or \emph{inpaint}) missing values with the existing data or simply set the missing pixel values to zero.
+However, neither of these approaches are particularly satisfying.
 Another method that has enjoyed success in cosmology is the Karhunen-Loève theorem~\cite{Tegmark1997,Bond1994,Bunn1995}.
 Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
+Wavelets, due to their duel spatial-spectral localisation, are an alternative method which may handle masks, but not optimally.
 In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
 To overcome this, an extended wavelet coefficient mask for each scale may be constructed to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
