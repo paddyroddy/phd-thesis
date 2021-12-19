@@ -1118,7 +1118,7 @@ Naively, to remove this foreground, one may either interpolate (or \emph{inpaint
 However, neither of these approaches are particularly satisfying.
 Another method that has enjoyed success in cosmology is the Karhunen-Loève theorem~\cite{Tegmark1997,Bond1994,Bunn1995}.
 Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
-Wavelets, due to their duel spatial-spectral localisation, are an alternative method which may handle masks, but not optimally.
+Wavelets, due to their duel spatial-spectral localisation, are an alternative method which may suboptimally handle masks.
 In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
 To overcome this, an extended wavelet coefficient mask for each scale may be constructed to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
