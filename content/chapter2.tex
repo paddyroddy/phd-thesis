@@ -1129,10 +1129,10 @@ Astrophysical, instrumental, and cosmological parameters are included in the mod
 Other methodologies used to estimate the missing data include: \texttt{NILC}~\cite{Basak2011,Basak2013,Planck2016,Planck2020a} which leverages needlets~\cite{Narcowich2006}, \texttt{SEVEM}~\cite{Leach2008,FernandezCobos2012,Planck2016,Planck2020a} which is a method based on templates, and \texttt{SMICA}~\cite{Cardoso2008,Planck2016,Planck2020a} in which a full-sky CMB map is estimated by a weighted sum of all Planck frequency maps (\cf{} \cref{fig:chapter2_planck_frequency}).
 Whilst these mask estimation methods are superior to simply setting pixel values to zero or interpolation, inherent error in the mask region still propagates into whole-sphere methods.
 
-\subsubsection{General Analysis}
+\subsubsection{General Analysis}\label{sec:chapter2_general_analysis}
 
-The methods discussed in \cref{sec:chapter2_signal_analysis} are primarily signal processing techniques.
-Here, the focus is on more general analysis, \ie{} statistics and machine learning.
+The methods discussed in \cref{sec:chapter2_signal_analysis} are primarily well-established signal processing techniques.
+Here, the focus is on more recent general analysis methods, \ie{} statistics and machine learning.
 Likelihood-free inference, or approximate Bayesian computation (ABC), is a popular statistical tool in cosmology which can work with masked data of this form~\cite{Schafer2012,Alsing2018,Alsing2019}.
 In ABC, one seeks to perform Bayesian inference from (CMB) data where the likelihood function is intractable, but synthetic data may be generated through forward simulations.
 Otherwise, machine learning methods have been leveraged to perform a series of different aspects of CMB analysis.
@@ -1143,9 +1143,8 @@ However, much like likelihood-free inference discussed before, machine learning 
 \subsection{Thesis Aim}\label{sec:chapter2_thesis_aim}
 
 This thesis focuses on the intersection between localised spatial-scale analysis through wavelets and localised spatial-spectral analysis through the Slepian concentration problem.
-The so-called Slepian wavelets exhibit the benefits of both techniques.
+The wavelets developed in this thesis exhibit the benefits of both techniques.
 In the context of CMB analysis, the solutions to the Slepian concentration problem are computed in the region outside the mask in \cref{fig:chapter2_planck_masked}.
-Through a tiling of the Slepian line, wavelets may be constructed in an analogous manner to scale-discretised wavelets~\cite{Wiaux2008,McEwen2018,Leistedt2013,McEwen2013,McEwen2015} (\cf{} \cref{fig:chapter2_axisymmetric_wavelets}) discussed in \cref{sec:chapter2_extension_sphere}.
-A suitable wavelet transform is constructed on the convolution designed in \cref{sec:chapter3}.
+Slepian wavelets provide an alternative formalism to overcome the problems discussed in \cref{sec:chapter2_signal_analysis,sec:chapter2_general_analysis}.
 Often spherical manifolds are used to model a near-spherical domain, \eg{} brain imaging~\cite{Hammond2011}, and geophysics~\cite{Pavlis2013}.
 Although initially designed with the sphere in mind (in \cref{sec:chapter4}), Slepian wavelets may be generalised to arbitrary domains through manifolds (and indeed graphs) which is the focus of \cref{sec:chapter5}.
