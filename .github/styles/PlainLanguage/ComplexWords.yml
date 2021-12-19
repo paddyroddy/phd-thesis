@@ -111,7 +111,7 @@ swap:
     relocate: "'move'"
     request: "'ask'"
     solicit: "'request'"
-    state-of-the-art: "'latest'"
+    # state-of-the-art: "'latest'"
     subsequent: "'later' or 'next'"
     substantial: "'large'"
     # sufficient: "'enough'"
