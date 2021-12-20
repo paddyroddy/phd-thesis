@@ -467,7 +467,7 @@ Upon introduction of a scaling function (to capture the lower scales), a signal 
 	+ \sum\limits_{j} W^{\Psi^{j}}_{\lambda} \Psi^{j}_{\lambda}[t_{i}],
 \end{equation}
 %
-where the scaling coefficients (and similarly for the wavelet coefficients \(W^{\Psi^{j}}_{\lambda}\)) are found by
+where the scaling coefficients (and similarly the wavelet coefficients \(W^{\Psi^{j}}_{\lambda}\)) are found by
 %
 \begin{equation}
 	W^{\Phi}_{\lambda}
@@ -573,7 +573,7 @@ with associated eigenfunctions, \eg{}
 \end{equation}
 %
 which exist in the interval \(\abs{t} \leq T\).
-Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into one dimensionless eigenproblem
+Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into an one dimensionless eigenproblem
 %
 \begin{equation}
 	\int\limits_{-1}^{1} \dd{y} \frac{\sin{TW(x-y)}}{\pi(x-y)} \zeta(y)
@@ -1127,7 +1127,7 @@ A typical approach in CMB analyses is to use component separation techniques to 
 Many sophisticated statistical methods have been developed for this purpose such as \texttt{Commander} --- a Bayesian approach which leverages Gibbs sampling (a popular Monte Carlo method).
 In this framework, a parametric model is fitted to the CMB data with standard sampling, posterior or maximisation techniques.
 Astrophysical, instrumental, and cosmological parameters are included in the model.
-Other methodologies used to estimate the missing data include: \texttt{NILC}~\cite{Basak2011,Basak2013,Planck2016,Planck2020a} which leverages needlets~\cite{Narcowich2006}, \texttt{SEVEM}~\cite{Leach2008,FernandezCobos2012,Planck2016,Planck2020a} which is a method based on templates, and \texttt{SMICA}~\cite{Cardoso2008,Planck2016,Planck2020a} in which a full-sky CMB map is estimated by a weighted sum of all Planck frequency maps (\cf{} \cref{fig:chapter2_planck_frequency}).
+Other methodologies used to estimate the missing data include: \texttt{NILC}~\cite{Basak2011,Basak2013,Planck2016,Planck2020a} which leverages needlets~\cite{Narcowich2006} (a type of spherical wavelet), \texttt{SEVEM}~\cite{Leach2008,FernandezCobos2012,Planck2016,Planck2020a} which is a method based on templates, and \texttt{SMICA}~\cite{Cardoso2008,Planck2016,Planck2020a} in which a full-sky CMB map is estimated by a weighted sum of all Planck frequency maps (\cf{} \cref{fig:chapter2_planck_frequency}).
 Whilst these component separation methods have long been the state-of-the-art in cosmology, contamination in the masked region may still propagate into whole-sphere methods.
 
 \subsubsection{General Analysis}\label{sec:chapter2_general_analysis}
