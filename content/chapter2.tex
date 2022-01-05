@@ -385,7 +385,10 @@ For more detail on regularity see~\cite{Burrus1997,Daubechies1992}.
 
 \subsection{Discrete Wavelets}\label{sec:chapter2_discrete_wavelets}
 
-In practice, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} is impractical to use: namely, the wavelet transform \cref{eq:chapter2_cwt} is redundant, \ie{} the scaled functions do not form an orthogonal basis; the CWT has an infinite number of wavelets in the wavelet transform; and, most wavelet transforms do not have analytical solutions and hence must be computed numerically.
+In practice, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} is impractical to use for several reasons.
+First, the wavelet transform \cref{eq:chapter2_cwt} is redundant, \ie{} the scaled functions do not form an orthogonal basis.
+Second, the CWT has an infinite number of wavelets in the wavelet transform.
+Furthermore, most wavelet transforms do not have analytical solutions and hence must be computed numerically.
 Discrete wavelets overcome these problems by modifying the continuous wavelet \cref{eq:chapter2_mother_wavelet} by
 %
 \begin{equation}\label{eq:chapter2_discrete_wavelets}
@@ -573,7 +576,7 @@ with associated eigenfunctions, \eg{}
 \end{equation}
 %
 which exist in the interval \(\abs{t} \leq T\).
-Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into an one dimensionless eigenproblem
+Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into a dimensionless eigenproblem
 %
 \begin{equation}
 	\int\limits_{-1}^{1} \dd{y} \frac{\sin{TW(x-y)}}{\pi(x-y)} \zeta(y)
@@ -721,9 +724,9 @@ The corresponding eigenvalues \(\mu_{p}\) for this region are given in \cref{fig
 \section{Motivation}\label{sec:chapter2_motivation}
 
 As discussed in \cref{sec:chapter2_signals_sphere}, many fields of science and engineering measure data on the sphere.
-Often these data are not observed over the whole sphere and are missing in some region.
+Often these data are not observed over the whole sphere and are missing in some regions.
 The polar cap region analysed in \cref{sec:chapter2_spatial_concentration_bandlimited_function} occurs in geodesy, where satellites map out gravitational or magnetic fields of planets whilst flying on inclined polar orbits --- leaving behind a gap between two antipodal axisymmetric polar caps~\cite{Simons2006a}.
-In astronomy, ground-based measurements are often confined to a small patches of the sky~\cite{Peebles1973,Tegmark1995}.
+In astronomy, ground-based measurements are often confined to small patches of the sky~\cite{Peebles1973,Tegmark1995}.
 Groundtruthing is not typically possible in planetary science, and as such, knowledge of estimation statistics of properties observed over portions of the planetary surface is imperative.
 In geomagnetism, one is interested in the field value over the whole of the Earth's surface, but in practice can only make a finite number of measurements.
 Lastly, in cosmology, the sky is effectively a sphere observed from inside out, and observations of the cosmic microwave background are masked by the Galactic plane~\cite{Tegmark1996,Hinshaw2003}.
@@ -1115,10 +1118,10 @@ Here, the limitations of existing approaches are discussed.
 To analyse data on the sphere of this form, one may work with spherical harmonics directly.
 Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will introduce much error in any analysis due to the foreground microwave emissions dominating the equator.
 Naively, to remove this foreground, one may either interpolate (or \emph{inpaint}) missing values with the existing data or simply set the missing pixel values to zero.
-However, neither of these approaches are particularly satisfying.
+However, neither of these approaches is particularly satisfying.
 Another method that has enjoyed success in cosmology is the Karhunen-Loève theorem~\cite{Tegmark1997,Bond1994,Bunn1995}.
 Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
-Wavelets, due to their duel spatial-spectral localisation, are an alternative method which may suboptimally handle masks.
+Wavelets, due to their dual spatial-spectral localisation, are an alternative method which may suboptimally handle masks.
 In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
 To overcome this, an extended wavelet coefficient mask for each scale may be constructed to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
