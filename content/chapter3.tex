@@ -48,7 +48,7 @@ Consider a complex-valued square-integrable function \(\pixel{f}\) on the 2-sphe
 	= \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1}.
 \end{equation}
 %
-Here \(\omega=(\theta,\phi)\) parameterise a point on the unit sphere, where \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
+Here, \(\omega=(\theta,\phi)\) parameterise a point on the unit sphere, where \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
 The functions \(\pixel{f}\) form the Hilbert space \(\hilbert{\twoSphere}\).
 The complex inner product induces a norm
 %
@@ -257,7 +257,7 @@ The properties desired in the spherical extension of the convolution include:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
 	\item the support of directional kernels;
-	\item an output which remains on the sphere; and
+	\item an output that remains on the sphere; and
 	\item efficient computation.
 \end{enumerate}
 %
@@ -304,7 +304,7 @@ The isotropic convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
 	\item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
-	\item an output which remains on the sphere; and
+	\item an output that remains on the sphere; and
 	\item efficient computation since it is a product in harmonic space.
 \end{enumerate}
 
@@ -376,7 +376,7 @@ The left convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
 	\item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
-	\item an output which remains on the sphere; and
+	\item an output that remains on the sphere; and
 	\item efficient computation since it is a product in harmonic space.
 \end{enumerate}
 
@@ -419,7 +419,7 @@ The directional convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
 	\item does support directional kernels;
-	\item an output which does not remain on the sphere due to the three-dimensional rotation of the kernel; and
+	\item an output that does not remain on the sphere due to the three-dimensional rotation of the kernel; and
 	\item expensive computation.
 \end{enumerate}
 
@@ -461,7 +461,7 @@ The convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
 	\item it supports directional kernels;
-	\item an output which remains on the sphere; and
+	\item an output that remains on the sphere; and
 	\item expensive computation.
 \end{enumerate}
 
@@ -484,7 +484,7 @@ The sifting convolution is constructed using a novel translation operator define
 In real space, the rotation operator on the sphere is the usual analogue of the translation operator in the Euclidean setting.
 One may define an alternative operator, \(\translation{\omega}\), which follows as the analogue of the Euclidean setting but in harmonic space.
 This translation is in contrast to the standard rotation as it considers two angles rather than three and thereby its output remains on the sphere.
-In practice the translation operator is defined as a product of basis functions.
+In practice, the translation operator is defined as a product of basis functions.
 In the Euclidean setting, \eg{} \(\mathbb{R}\), the complex exponentials
 %
 \begin{equation}\label{eq:chapter3_complex_exponentials}
@@ -542,7 +542,7 @@ With a translation operator to hand, one may define the sifting convolution on t
 \end{equation}
 %
 noting the use of the alternative translation operator defined in \cref{sec:chapter3_translation_operator}.
-In harmonic space this simplifies to the product
+In harmonic space, this simplifies to the product
 %
 \begin{equation}\label{eq:chapter3_convolution_harmonic}
 	\harmonic{\convolution{f}{g}}
@@ -584,7 +584,7 @@ The sifting convolution and translation are thus natural analogues of the respec
 
 \subsection{Properties}\label{sec:chapter3_properties}
 
-The sifting convolution has all the desired properties discussed in \cref{sec:chapter3_spherical_convolutions}, namely, the convolution accepts directional inputs, has an output which remains on the sphere, and is efficient to compute.
+The sifting convolution has all the desired properties discussed in \cref{sec:chapter3_spherical_convolutions}, namely, the convolution accepts directional inputs, has an output that remains on the sphere, and is efficient to compute.
 \cref{tab:chapter3_properties} summarises the properties of the sifting convolution and compares them to the properties of alternative spherical convolutions.
 
 The translation preserves symmetries, which means that any symmetry that exists in the initial kernel definition will be present after the translation.
@@ -592,7 +592,7 @@ Thus, one must be careful when choosing a kernel for a convolution to ensure tha
 To perform anisotropic smoothing that is localised (the usual interpretation), the translated kernel also needs to be localised.
 If the kernel has, say, even azimuthal symmetry, when it is translated to \(\omega'=(\theta', \phi')\) it will have a localised component both at \(\phi'\) and \(-\phi'\).
 While this is not a problem \emph{per se}, for the usual interpretation of smoothing one would desire a localised component at \(\phi'\) only.
-This can be achieved by ensuring that the original kernel does not exhibit a symmetry that would lead to multiple localised components once translated.
+This can be achieved by ensuring that the original kernel does not exhibit a symmetry that leads to multiple localised components once translated.
 The harmonic Gaussian introduced in \cref{sec:chapter3_numerical_illustration} satisfies the desired property.
 
 \section{Numerical Illustration}\label{sec:chapter3_numerical_illustration}
@@ -684,9 +684,9 @@ In contrast to the other kernels, the harmonic Gaussian seems the most appropria
 To study the effect of the sifting convolution, consider the Earth Gravitational Model EGM2008 dataset~\cite{Pavlis2013}.
 This dataset is the topographic map of the Earth.
 \cref{fig:chapter3_earth} presents the dataset up to an order of \(L=128\).
-The sifting convolution is then performed between the Earth representation and the harmonic Gaussian with the resultant plot given in \cref{fig:chapter3_convolved}.
+The sifting convolution is then performed between the Earth representation and the harmonic Gaussian, with the resultant plot given in \cref{fig:chapter3_convolved}.
 As expected, when the elongated kernel is considered, as shown in the left panel, the result exhibits greater anisotropic smoothing than when considering the symmetric kernel, as shown in the right panel.
-It is clear that the sifting convolution supports directional kernels to perform anisotropic filtering (smoothing), while the output remains on the sphere.
+The sifting convolution supports directional kernels to perform anisotropic filtering (smoothing), while the output remains on the sphere.
 
 \input{figures/chapter3/egm2008_dataset}
 
@@ -695,7 +695,7 @@ It is clear that the sifting convolution supports directional kernels to perform
 \section{Conclusions}\label{sec:chapter3_conclusions}
 
 This chapter presents the sifting convolution on the sphere and demonstrates its application.
-The convolution accepts directional functions as inputs, has an output which remains on the sphere, and is efficient to compute.
+The convolution accepts directional functions as inputs, has an output that remains on the sphere, and is efficient to compute.
 The sifting convolution is defined in the usual manner through the inner product but with an alternative translation operator on the sphere.
 This follows by analogy with the Euclidean translation when viewed as a convolution with a shifted Dirac delta function.
 An illustration of the sifting convolution on the topographic map of the Earth demonstrates that it supports directional kernels to perform anisotropic filtering, while its output remains on the sphere.
