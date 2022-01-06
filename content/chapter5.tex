@@ -301,7 +301,7 @@ and the usual expression for the area of a triangle
 	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{4a_{i j k}}.
 \end{equation}
 %
-Through an analogous expression for the interior angle \(\beta_{i j}\), it is clear that \cref{eq:chapter5_cotangent_laplace} follows from \cref{eq:chapter5_mesh_laplace_weights}, as elaborated in~\cite{Meyer2003}.
+Through an analogous expression for the interior angle \(\beta_{i j}\), \cref{eq:chapter5_cotangent_laplace} follows from \cref{eq:chapter5_mesh_laplace_weights}, as elaborated in~\cite{Meyer2003}.
 This cotangent Laplacian is used extensively in computer graphics~\cite{Pinkall1993}, and in the rest of this chapter.
 A set of mesh Laplacian eigenvectors for a given mesh are presented in \cref{fig:chapter5_eigenhomers}.
 
@@ -674,13 +674,13 @@ The Slepian wavelets are constructed by the tiling of the Slepian line as shown 
 \subsection{Properties}\label{sec:chapter5_properties}
 
 The properties of Slepian wavelets on manifolds are reviewed here.
-These properties are the same as the spherical case, and are extensively discussed in \cref{sec:chapter4_properties}.
+These properties are the same as the spherical case and are extensively discussed in \cref{sec:chapter4_properties}.
 In comparison to standard scale-discretised wavelets, the properties are often similar, but not always.
 
 \subsubsection{Localisation}\label{sec:chapter5_localisation}
 
 Standard scale-discretised wavelet constructions are built on a tiling of the harmonic line, and hence a higher value of \(j\) in the wavelets \(\Psi^{j}\) corresponds to smaller scales.
-In contrast, Slepian wavelets are built on the Slepian harmonic line, and thus \(j\) is a measure of localisation rather than scale.
+In contrast, Slepian wavelets are built on the Slepian harmonic line, and thus, \(j\) is a measure of localisation rather than scale.
 
 \subsubsection{Wavelet Energy}
 
@@ -709,7 +709,7 @@ A Parseval frame is satisfied by Slepian scale-discretised wavelets on manifolds
 \end{equation}
 %
 where \(A,\ B \in \realPosParam{}\).
-It can be shown that this holds true for \(A = B = 1\), implying that the energy of \(f\) is conserved in wavelet space.
+It can be shown that this holds for \(A = B = 1\), implying that the energy of \(f\) is conserved in wavelet space.
 
 \subsubsection{Wavelet Domain Variance}
 
@@ -775,10 +775,10 @@ The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter5
 
 The Slepian scaling function and wavelets defined in \cref{sec:chapter5_slepian_scale_discretised_wavelets} are built on a tiling of the Slepian line with parameters \(\lambda=3\) and \(J_{0}=2\).
 This tiling is shown in \cref{fig:chapter5_tiling} for \(\imax=\num{1275}\) basis functions of the Homer mesh, where the Shannon number \(N=329\) is highlighted.
-Hence, for this region the scaling function and wavelets for scales \(j \in \set{2, 3, 4, 5, 6}\) are the only non-zero functions.
+Hence, for this region, the scaling function and wavelets for scales \(j \in \set{2, 3, 4, 5, 6}\) are the only non-zero functions.
 These wavelets are presented in \cref{fig:chapter5_wavelets}, in which a similar pattern to the Slepian functions is observed whereby the scaling function is more concentrated than the \(j=6\) wavelet.
 To perform a scale-discretised wavelet transform, one requires a signal on the mesh.
-\cref{fig:chapter5_homer_data} presents such a signal, the \(z\)-component of the per vertex normals of the Homer mesh.
+\cref{fig:chapter5_homer_data} presents such a signal, the \(z\)-component of the per-vertex normals of the Homer mesh.
 With some data to hand, the scaling and wavelet coefficients of the Homer head region are given in \cref{fig:chapter5_wavelet_coefficients}.
 
 \input{figures/chapter5/homer_wavelets}
