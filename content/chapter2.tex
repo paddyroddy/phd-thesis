@@ -1,10 +1,10 @@
 \chapter{Background}\label{sec:chapter2}
 
-In this chapter the mathematical background that later chapters rely on is introduced.
+In this chapter, the mathematical background that later chapters rely on is introduced.
 \cref{sec:chapter2_signals_sphere} begins with a review of signals on the sphere on which much of this work is built.
 Localised spatial-scale analysis is considered through wavelets in \cref{sec:chapter2_wavelets}, followed by localised spatial-spectral analysis via the Slepian concentration problem in \cref{sec:chapter2_slepian_concentration_problem}.
-The primary motivation behind this work, namely: observations over the partial sphere in cosmology is discussed in \cref{sec:chapter2_motivation}.
-Lastly, limitations of existing approaches and the aim of this thesis is covered in \cref{sec:chapter2_outlook}.
+The primary motivation behind this work, namely: observations over the partial sphere in cosmology are discussed in \cref{sec:chapter2_motivation}.
+Lastly, the limitations of existing approaches and the aim of this thesis are covered in \cref{sec:chapter2_outlook}.
 
 \section{Signals on the Sphere}\label{sec:chapter2_signals_sphere}
 
@@ -22,7 +22,7 @@ The 2-sphere \(\twoSphere{}\) is defined as
 \end{equation}
 %
 where \(\omega=(\theta,\phi)\) parameterise a point on the unit sphere, \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
-The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex valued square-integrable functions \(\pixel{f}\), \(\pixel{g}\), with inner product
+The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex-valued square-integrable functions \(\pixel{f}\), \(\pixel{g}\), with inner product
 %
 \begin{equation}
 	\braket*{f}{g}
@@ -194,7 +194,7 @@ A pictorial representation of the spherical harmonics is given in \cref{fig:chap
 
 \subsection{Rotations on the Sphere}
 
-Rotations of functions defined on the sphere form an integral part of analysis on the sphere.
+Rotations of functions defined on the sphere form an integral part of analyses on the sphere.
 The Euler angles \(\rho=(\alpha,\beta,\gamma) \in \rotationGroup{}\) may be used to parametrise three-dimensional rotations, where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
 The sequence of rotations:
 %
@@ -231,7 +231,7 @@ The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rot
 	= \exp(-i n\alpha) \reducedWigner{\ell}{n}{m}(\beta) \exp(-i m\gamma),
 \end{equation}
 %
-where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the reduced d matrices which are real in this phase convention and satisfy many symmetry relations.
+where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the reduced d matrices that are real in this phase convention and satisfy many symmetry relations.
 By the Peter-Weyl theorem, the matrix elements \(\wigner{\ell}{n}{m}(\rho)\) form an orthonormal basis on \(\hilbert{\rotationGroup}\), \ie{}
 %
 \begin{equation}
@@ -306,11 +306,11 @@ In these time-frequency joint representations, the idea is to cut the signal int
 However, making a suitable cut --- which corresponds to a convolution between the signal and the cutting window --- is non-trivial.
 Suppose one seeks to find all frequency components present at a given time; naively, this could be achieved by performing a cut with a Dirac delta function.
 However, by the Heisenberg uncertainty principle, the resultant signal would be smeared out over the frequency axis.
-In signal processing terms, the Heisenberg uncertainty problem states that it is impossible to know both the exact frequency, and the exact time of occurrence of this frequency in the signal.
+In signal processing terms, the Heisenberg uncertainty problem states that it is impossible to know both the exact frequency and the exact time of occurrence of this frequency in the signal.
 
-Wavelet analysis is an important signal processing technique which can tackle the shortcomings of the Fourier transform.
+Wavelet analysis is an important signal processing technique that can tackle the shortcomings of the Fourier transform.
 A fully scalable, modulated window solves the signal-cutting problem; whereby, the window moves along the signal and a spectrum is calculated at all positions.
-After repeating this process multiple times with progressively shorter/longer windows, the end result is a collection of time-frequency representations of the signal, all at different resolutions --- which is often referred to a multiresolution analysis.
+After repeating this process multiple times with progressively shorter/longer windows, the result is a collection of time-frequency representations of the signal, all at different resolutions --- which is often referred to as a multiresolution analysis.
 \cref{fig:chapter2_ricker_wavelets} presents some example wavelets, Ricker wavelets~\cite{Ricker1953}, where each wavelet is constructed to probe specific frequency ranges.
 In wavelet analysis, one typically refers to time-scale (or space-scale) representations, as opposed to time-frequency (like in Fourier theory), where scale is reciprocal in nature.
 
@@ -326,7 +326,7 @@ The wavelet analysis described in \cref{sec:chapter2_comparison_fourier_transfor
 	= \int\dd{t} f(t) \Psi^{s\ast}_{\tau}(t),
 \end{equation}
 %
-where \(\Psi^{s}_{\tau}(t)\) are the wavelets, and \(s\) and \(\tau{}\) are dimensionless variables which refer to scale and translation respectively.
+where \(\Psi^{s}_{\tau}(t)\) are the wavelets, and \(s\) and \(\tau{}\) are dimensionless variables that refer to scale and translation respectively.
 \cref{eq:chapter2_cwt} demonstrates how a function \(f(t)\) may be decomposed into a set of wavelets \(\Psi^{s}_{\tau}(t)\) as basis functions.
 Supposing that some certain conditions are satisfied (which are discussed later), the inverse wavelet transform is thus
 %
@@ -368,7 +368,7 @@ Therefore, \cref{eq:chapter2_admissibility} implies that the Fourier transform o
 \end{equation}
 %
 which means the spectrum experiences bandpass behaviour.
-It also follows that, the average value of the wavelet in the time-domain must be zero, \ie{}
+It also follows that the average value of the wavelet in the time-domain must be zero, \ie{}
 %
 \begin{equation}
 	\int\dd{t} \Psi(t)
@@ -400,7 +400,7 @@ Discrete wavelets overcome these problems by modifying the continuous wavelet \c
 where \(j\) and \(\lambda{}\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor.
 Thus, discrete wavelets may only be scaled and translated in discrete steps.
 Discrete wavelets are used to transform a continuous signal into a series of wavelet coefficients, known as a wavelet decomposition.
-A natural choice for the parameters in \cref{eq:chapter2_discrete_wavelets} are \(s_{0}=2\) and \(\tau_{0}=1\) which corresponds to dyadic scaling, the discrete wavelets are thus
+A natural choice for the parameters in \cref{eq:chapter2_discrete_wavelets} is \(s_{0}=2\) and \(\tau_{0}=1\) which corresponds to dyadic scaling, the discrete wavelets are thus
 %
 \begin{equation}
 	\Psi^{j}_{\lambda}(t)
@@ -714,7 +714,7 @@ To explore this further, consider the straightforward case of finding the maxima
 The Shannon number is \(N=30\) for this region and bandlimit, and therefore all Slepian functions shown are well-concentrated within the region --- as shown by the eigenvalues \(\mu_{p}\), which are all \(\almost{1}\).
 Visually, these polar cap Slepian functions look like the spherical harmonics (\cf{} \cref{fig:chapter2_spherical_harmonics}); where the number of positive/negative regions relates to the order \(m\) in the submatrix \(D_{\ell m,\ell'm}\).
 The colatitudinal dependence is examined (by keeping \(\phi{}\) constant) for this region in \cref{fig:chapter2_slepian_colatitude} for \(p \in \set{1,6,15,30,51,72}\) shown left-to-right, top-to-bottom.
-For the early \(p\) values the majority of the power of the signal is in the blue curve; however, by the final plot, most of the content of the signal is in the orange curve.
+For the early \(p\) values, the majority of the power of the signal is in the blue curve; however, by the final plot, most of the content of the signal is in the orange curve.
 The corresponding eigenvalues \(\mu_{p}\) for this region are given in \cref{fig:chapter2_polar_cap_eigenvalues}, whereby the characteristic step shape around the Shannon number is observed.
 
 \input{figures/chapter2/slepian_polar_cap}
@@ -767,7 +767,7 @@ Later in this thesis, homogeneous and isotropic noise is defined in Slepian spac
 Noise in wavelet space is inherently related to the wavelet domain variance.
 Here, the language used to describe random fields on the sphere is now described.
 
-The current favoured model for creating fluctuations in the Universe is cosmological inflation.
+The currently favoured model for creating fluctuations in the Universe is cosmological inflation.
 Due to the quantum nature of inflation, one cannot predict the exact shape of the Universe, but only its statistical properties.
 Many realisations of the Universe are statistically equivalent.
 To compare theory and observation, one must measure statistical properties of the Universe, and compare these to the same statistical properties evaluated on a model of the Universe.
@@ -839,8 +839,8 @@ and similarly
 	= \conj{f}(-\vb*{x}).
 \end{equation}
 
-For linearly evolved fluctuations from single field inflation, the power spectrum is sufficient to describe the statistics.
-However, sometimes higher order statistics are required to analyse deviations from straightforward inflationary models.
+For linearly evolved fluctuations from single-field inflation, the power spectrum is sufficient to describe the statistics.
+However, sometimes higher-order statistics are required to analyse deviations from straightforward inflationary models.
 The simplest of these is the three-point correlator
 %
 \begin{equation}
@@ -853,9 +853,9 @@ which gives rise to the bispectrum \(\bispectrum{f}\) which is a symmetric funct
 The Dirac delta again appears due to statistical homogeneity.
 Although starting with nine degrees of freedom (due to the three three-dimensional wavevectors), the bispectrum only depends on three of these.
 Statistical isotropy and homogeneity both remove three of these degrees of freedom.
-The three-point correlator depends solely on the three rotational-invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
+The three-point correlator depends solely on the three rotational invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
 The three-point correlator vanishes for zero-mean Gaussian random fields, and as such provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
-Other higher order statistics may be computed, such as the four-point correlator
+Other higher-order statistics may be computed, such as the four-point correlator
 %
 \begin{align}
 	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3}) f(\vb*{k}_{4})} =
@@ -1025,7 +1025,7 @@ Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spect
 It is impossible to predict the exact form that cosmological fields must take.
 A given model makes a prediction for the probability distribution, from which one draws the single realisation of the fields observed.
 An estimate made of the properties of the underlying probability distribution, \ie{} its power spectrum, has some random error due to attempting to estimate ensemble-averaged quantities from a single realisation.
-Cosmic variance is the random error which contributes to the error budget of most inferences made in observational cosmology.
+Cosmic variance is the random error that contributes to the error budget of most inferences made in observational cosmology.
 Whilst this is not the dominant error if the measurements are noisy, cosmologists aim to reach this cosmic variance limit.
 Consider estimating the angular power spectrum of a zero-mean random field \(f(\omega)\), supposing that the observations that existed are full-sky and noise-free.
 The estimator for the \(\powerSpectrum{}\) is as follows
@@ -1120,13 +1120,13 @@ Naively, to remove this foreground, one may either interpolate (or \emph{inpaint
 However, neither of these approaches is particularly satisfying.
 Another method that has enjoyed success in cosmology is the Karhunen-Loève theorem~\cite{Tegmark1997,Bond1994,Bunn1995}.
 Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
-Wavelets, due to their dual spatial-spectral localisation, are an alternative method which may suboptimally handle masks.
+Wavelets, due to their dual spatial-spectral localisation, are an alternative method that may suboptimally handle masks.
 In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
 To overcome this, an extended wavelet coefficient mask for each scale may be constructed to remove contaminated coefficients from the analysis~\cite{McEwen2007a}.
 
 A typical approach in CMB analyses is to use component separation techniques to produce a resultant cleaned CMB map.
-Many sophisticated statistical methods have been developed for this purpose such as \texttt{Commander} --- a Bayesian approach which leverages Gibbs sampling (a popular Monte Carlo method).
+Many sophisticated statistical methods have been developed for this purpose such as \texttt{Commander} --- a Bayesian approach that leverages Gibbs sampling (a popular Monte Carlo method).
 Other methodologies used to estimate the missing data include: \texttt{NILC}~\cite{Basak2011,Basak2013,Planck2016,Planck2020a} which leverages needlets~\cite{Narcowich2006} (a variant of spherical wavelet), \texttt{SEVEM}~\cite{Leach2008,FernandezCobos2012,Planck2016,Planck2020a} which is a method based on templates, and \texttt{SMICA}~\cite{Cardoso2008,Planck2016,Planck2020a} in which a full-sky CMB map is estimated by a weighted sum of all Planck frequency maps (\cf{} \cref{fig:chapter2_planck_frequency}).
 These component separation frameworks aim to isolate the cosmological contribution to the data from the astrophysical and instrumental contributions.
 Whilst component separation methods have proved successful in cosmology, often they are not designed to recover a full-sky map.
@@ -1136,7 +1136,7 @@ Typically, a mask is applied after the cosmological contribution is isolated, an
 
 The methods discussed in \cref{sec:chapter2_signal_analysis} are primarily well-established signal processing techniques.
 In this section, the focus is on more recent general analysis methods, \ie{} statistics and machine learning.
-Likelihood-free inference, or approximate Bayesian computation (ABC), is a popular statistical tool in cosmology which can work with masked data of this form~\cite{Schafer2012,Alsing2018,Alsing2019}.
+Likelihood-free inference, or approximate Bayesian computation (ABC), is a popular statistical tool in cosmology that can work with masked data of this form~\cite{Schafer2012,Alsing2018,Alsing2019}.
 In ABC, one seeks to perform Bayesian inference from (CMB) data where the likelihood function is intractable, but synthetic data may be generated through forward simulations.
 Otherwise, machine learning methods have been leveraged to perform a series of different aspects of CMB analysis.
 Much like in \cref{sec:chapter2_signal_analysis}, machine learning may be utilised to estimate the missing data in the region masked by foreground emissions (\eg{}~\cite{Puglisi2020,Petroff2020,VafaeiSadr2021}).

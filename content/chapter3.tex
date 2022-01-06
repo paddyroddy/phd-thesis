@@ -3,7 +3,7 @@
 A novel spherical convolution is defined through the sifting property of the Dirac delta on the sphere.
 The so-called sifting convolution is defined by the inner product of one function with a translated version of another, that follows by the adoption of an alternative translation operator on the sphere.
 This translation operator follows by analogy with the Euclidean translation when viewed in harmonic space.
-The sifting convolution satisfies a variety of desirable properties that are lacking in alternate definitions, namely: it supports directional kernels; it has an output which remains on the sphere; and, is efficient to compute.
+The sifting convolution satisfies a variety of desirable properties that are lacking in alternate definitions, namely: it supports directional kernels; it has an output that remains on the sphere; and, is efficient to compute.
 An illustration of the sifting convolution on a topographic map of the Earth demonstrates that it supports directional kernels to perform anisotropic filtering, while its output remains on the sphere.
 This chapter is adapted from~\cite{Roddy2021}, in which I was the lead author.
 
@@ -24,7 +24,7 @@ No existing spherical convolution satisfies all three desirable properties.
 This chapter presents an alternative spherical convolution, the sifting convolution, defined through the sifting property of the Dirac delta --- in analogy to the Euclidean definition.
 The convolution is anisotropic in nature and supports directional kernels.
 The output remains on the sphere, even when both inputs are directional.
-Moreover, the convolution is efficient to compute, and is commutative up to a complex conjugate.
+Moreover, the convolution is efficient to compute and is commutative up to a complex conjugate.
 
 The remainder of this chapter is as follows.
 \cref{sec:chapter3_preliminaries} includes some mathematical preliminaries and reviews existing spherical convolutions in the literature.
@@ -40,7 +40,7 @@ A brief review of the mathematical preliminaries required for this chapter is pr
 
 \subsubsection{Signals on the Sphere}
 
-Consider a complex valued square-integrable function \(\pixel{f}\) on the 2-sphere
+Consider a complex-valued square-integrable function \(\pixel{f}\) on the 2-sphere
 %
 \begin{equation}
 	\twoSphere{}
@@ -267,7 +267,7 @@ A summary of existing spherical convolutions and their properties follows.
 
 \subsubsection{Isotropic Convolution}
 
-In real space the isotropic convolution (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2011}) is
+In real space, the isotropic convolution (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2011}) is
 %
 \begin{equation}
 	\pixel{(f \odot g)}
