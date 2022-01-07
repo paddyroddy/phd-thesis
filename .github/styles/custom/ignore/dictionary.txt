@@ -116,6 +116,7 @@ overfullrule
 overpic
 parameterise
 parameterised
+parameterises
 parindent
 parseval
 pdv
