@@ -221,7 +221,7 @@ The non-normalised graph Laplacian refers to setting \(\vb*{A} = \vb*{I}\) in \c
 
 In computer graphics applications, three-dimensional shapes are often modelled by locally two-dimensional manifolds.
 A manifold is sampled at a set of \(n\) points, and a graph is then constructed on these points (vertices) where the edges represent the local connectivity of the manifold.
-A set of edge weights are then computed, for example, Gaussian weights
+A set of edge weights is then computed, for example, Gaussian weights
 %
 \begin{equation}
 	w_{i j}
@@ -303,7 +303,7 @@ and the usual expression for the area of a triangle
 %
 Through an analogous expression for the interior angle \(\beta_{i j}\), \cref{eq:chapter5_cotangent_laplace} follows from \cref{eq:chapter5_mesh_laplace_weights}, as elaborated in~\cite{Meyer2003}.
 This cotangent Laplacian is used extensively in computer graphics~\cite{Pinkall1993}, and in the rest of this chapter.
-A set of mesh Laplacian eigenvectors for a given mesh are presented in \cref{fig:chapter5_eigenhomers}.
+A set of mesh Laplacian eigenvectors for a given mesh is presented in \cref{fig:chapter5_eigenhomers}.
 
 \input{figures/chapter5/mesh_laplace}
 
@@ -760,7 +760,7 @@ The wavelet generating functions, discussed in \cref{sec:chapter5_generating_fun
 A region of a manifold is created on a mesh of Homer Simpson; \cref{fig:chapter5_homer_region} presents the masked region of Homer's head.
 The Slepian functions of this region are computed by solving the eigenproblem \cref{eq:chapter5_eigenproblem}, and then performing an inverse Fourier transform on the mesh.
 The resulting Shannon number \cref{eq:chapter5_shannon} of the region \(R\) is \(N=329\).
-A set of Slepian functions of the mesh are shown in \cref{fig:chapter5_slepian_functions} for \(p \in \set{1, 10, 25, 50, 100, 200}\).
+A set of Slepian functions of the mesh is shown in \cref{fig:chapter5_slepian_functions} for \(p \in \set{1, 10, 25, 50, 100, 200}\).
 Comparing panel (f) to the earlier panels, one can see that the Slepian functions become more spread out in the region, representing worse concentration.
 The corresponding eigenvalues \(\slepian{\mu}\) are a measure of spatial concentration, which remain \(\almost{1}\) for many \(p\) values before rapidly decreasing towards zero around \(N\).
 The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter5_slepian_eigenvalues}; were the plot to extend to all \(\imax{}\) Slepian eigenvalues then the rest of the eigenvalues would be \(\almost{0}\).
