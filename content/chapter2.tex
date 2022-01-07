@@ -8,7 +8,7 @@ Lastly, the limitations of existing approaches and the aim of this thesis are co
 
 \section{Signals on the Sphere}\label{sec:chapter2_signals_sphere}
 
-Much of this thesis is based on signals on the sphere, and as such some appropriate mathematical background is introduced here.
+Much of this thesis is based on signals on the sphere and, as such, some appropriate mathematical background is introduced here.
 Signals on the sphere arise in many areas of science and engineering, including: cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, quantum chemistry~\cite{Choi1999}, computer vision~\cite{Cohen2018,Esteves2020,Cobb2021}, and computer graphics~\cite{Ramamoorthi2004}.
 
 \subsection{Notation}
@@ -419,7 +419,7 @@ A necessary and sufficient condition for stable signal reconstruction is the so-
 \end{equation}
 %
 with \(A,\ B \in \realPosParam{}\)~\cite{Daubechies1992}.
-When \(A=B=1\) the energy of \(f\) is conserved in wavelet space, and as such the wavelets act like an orthonormal basis, \ie{}
+When \(A=B=1\) the energy of \(f\) is conserved in wavelet space and, as such, the wavelets act like an orthonormal basis, \ie{}
 %
 \begin{equation}
 	\int\dd{t} \Psi^{j}_{\lambda}(t) \Psi^{j'\ast}_{\lambda'}(t)
@@ -727,10 +727,10 @@ As discussed in \cref{sec:chapter2_signals_sphere}, many fields of science and e
 Often these data are not observed over the whole sphere and are missing in some regions.
 The polar cap region analysed in \cref{sec:chapter2_spatial_concentration_bandlimited_function} occurs in geodesy, where satellites map out gravitational or magnetic fields of planets whilst flying on inclined polar orbits --- leaving behind a gap between two antipodal axisymmetric polar caps~\cite{Simons2006a}.
 In astronomy, ground-based measurements are often confined to small patches of the sky~\cite{Peebles1973,Tegmark1995}.
-Groundtruthing is not typically possible in planetary science, and as such, knowledge of estimation statistics of properties observed over portions of the planetary surface is imperative.
+Groundtruthing is not typically possible in planetary science and, as such, knowledge of estimation statistics of properties observed over portions of the planetary surface is imperative.
 In geomagnetism, one is interested in the field value over the whole of the Earth's surface, but in practice can only make a finite number of measurements.
 Lastly, in cosmology, the sky is effectively a sphere observed from inside out, and observations of the cosmic microwave background are masked by the Galactic plane~\cite{Tegmark1996,Hinshaw2003}.
-Cosmology has been the primary motivating factor of this thesis, and as such, the following section delves into more detail on the cosmic microwave background.
+Cosmology has been the primary motivating factor of this thesis and, as such, the following section delves into more detail on the cosmic microwave background.
 
 \subsection{Cosmic Microwave Background (CMB)}\label{sec:chapter2_cosmic_microwave_background}
 
@@ -854,7 +854,7 @@ The Dirac delta again appears due to statistical homogeneity.
 Although starting with nine degrees of freedom (due to the three three-dimensional wavevectors), the bispectrum only depends on three of these.
 Statistical isotropy and homogeneity both remove three of these degrees of freedom.
 The three-point correlator depends solely on the three rotational invariants associated with the triangular configurations of the three wavevectors --- which are the magnitudes.
-The three-point correlator vanishes for zero-mean Gaussian random fields, and as such provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
+The three-point correlator vanishes for zero-mean Gaussian random fields and, as such, provides a good test of theories, \ie{} straightforward inflationary models which predict near-Gaussian primordial perturbations.
 Other higher-order statistics may be computed, such as the four-point correlator
 %
 \begin{align}
@@ -1119,7 +1119,7 @@ Working with the unmasked CMB data in \cref{fig:chapter2_planck_frequency} will 
 Naively, to remove this foreground, one may either interpolate (or \emph{inpaint}) missing values with the existing data or simply set the missing pixel values to zero.
 However, neither of these approaches is particularly satisfying.
 Another method that has enjoyed success in cosmology is the Karhunen-Loève theorem~\cite{Tegmark1997,Bond1994,Bunn1995}.
-Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis, and as such may be computed in the region outside the mask.
+Much like Slepian functions, discussed in \cref{sec:chapter2_slepian_concentration_problem}, these functions allow one to perform localised spatial-spectral analysis and, as such, may be computed in the region outside the mask.
 Wavelets, due to their dual spatial-spectral localisation, are an alternative method that may suboptimally handle masks.
 In (spherical) wavelet analyses, the addition of a mask contaminates the wavelet coefficients corresponding to wavelets with support that overlap the mask exclusion region~\cite{Vielva2004,McEwen2004}.
 Thus, the contaminated wavelet coefficients must be removed before any analysis.
