@@ -1,8 +1,9 @@
 repos:
-    - repo: https://gitlab.salort.eu/jsalort/latexhook
-      rev: 7879fc02
+    - repo: https://github.com/cmhughes/latexindent.pl
+      rev: V3.15
       hooks:
           - id: latexindent
+            args: [-s]
     - repo: https://github.com/pre-commit/pre-commit-hooks
       rev: v4.0.1
       hooks:
