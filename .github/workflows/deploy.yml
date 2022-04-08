@@ -45,8 +45,8 @@ jobs:
                   run: |
                       latexmk -quiet
 
-            - name: Upload artifaxts
-              uses: actions/upload-artifact@v3
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v2
               with:
                   name: artifacts
                   path: |
