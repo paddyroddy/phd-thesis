@@ -45,10 +45,10 @@ jobs:
                   run: |
                       latexmk -quiet
 
-            - name: Upload artifacts
+            - name: Upload artefacts
               uses: actions/upload-artifact@v2
               with:
-                  name: artifacts
+                  name: artefacts
                   path: |
                       *.bib
                       *.bcf
@@ -59,10 +59,10 @@ jobs:
         runs-on: ubuntu-latest
         needs: compile-latex
         steps:
-            - name: Download artifacts
+            - name: Download artefacts
               uses: actions/download-artifact@v3
               with:
-                  name: artifacts
+                  name: artefacts
 
             - name: Fix regex for checkcites
               uses: xu-cheng/texlive-action/full@v1
@@ -87,10 +87,10 @@ jobs:
             - name: checkout source
               uses: actions/checkout@v3
 
-            - name: Download artifacts
+            - name: Download artefacts
               uses: actions/download-artifact@v3
               with:
-                  name: artifacts
+                  name: artefacts
 
             - name: Set up Dropbox
               run: |
