@@ -69,7 +69,7 @@ jobs:
               id: references
               with:
                   run: |
-                      sed -i 's#\sglob="false"##' thesis.bcf
+                      # sed -i 's#\sglob="false"##' thesis.bcf
                       echo ::set-output name=uncited::\
                         $(checkcites -b biber thesis -u | grep -c "=>")
 
