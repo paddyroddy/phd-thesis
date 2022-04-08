@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout source
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: Run chktex
               uses: xu-cheng/texlive-action/full@v1
@@ -19,10 +19,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout source
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: Run Vale
-              uses: errata-ai/vale-action@v1.4.2
+              uses: errata-ai/vale-action@v1.5.0
               env:
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               with:
@@ -37,7 +37,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout source
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: Build PDF
               uses: xu-cheng/texlive-action/full@v1
@@ -46,7 +46,7 @@ jobs:
                       latexmk -quiet
 
             - name: Upload artifaxts
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v3
               with:
                   name: artifacts
                   path: |
@@ -60,7 +60,7 @@ jobs:
         needs: compile-latex
         steps:
             - name: Download artifacts
-              uses: actions/download-artifact@v2
+              uses: actions/download-artifact@v3
               with:
                   name: artifacts
 
@@ -75,7 +75,7 @@ jobs:
 
             - name: Check all references cited
               if: ${{ steps.references.outputs.uncited > 0 }}
-              uses: actions/github-script@v5
+              uses: actions/github-script@v6
               with:
                   script: |
                       core.setFailed('Not all references cited')
@@ -85,10 +85,10 @@ jobs:
         needs: compile-latex
         steps:
             - name: checkout source
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: Download artifacts
-              uses: actions/download-artifact@v2
+              uses: actions/download-artifact@v3
               with:
                   name: artifacts
 
