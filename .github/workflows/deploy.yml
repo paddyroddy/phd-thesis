@@ -28,7 +28,7 @@ jobs:
               with:
                   fail_on_error: true
                   reporter: github-check
-                  vale_flags: "--glob='!config/*'"
+                  vale_flags: "--glob='!{config/,figures/*/example_,thesis}*'"
 
     compile-latex:
         runs-on: ubuntu-latest
