@@ -27,7 +27,7 @@ jobs:
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               with:
                   fail_on_error: true
-                  filter: nofilter
+                  filter_mode: nofilter
                   reporter: github-check
                   vale_flags: "--glob='!{config/,figures/*/example_,thesis}*'"
 
