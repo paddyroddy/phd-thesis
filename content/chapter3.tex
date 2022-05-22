@@ -447,14 +447,17 @@ as
 	\pixel{(f \oplus g)}
 	%
 	 & = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g} \nonumber{}                                                                                                  \\
+	 %
+	 & = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                                  \\
 	%
 	 & = \integrateSphere{\omega'} \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
 	%
 	 & = \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \conj{\harmonic{g}} \nonumber{}                                                                                                        \\
 	%
-	 & = \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}}.
+	 & = \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
 \end{align}
 %
+where the second line follows for real \(\pixel{g}\).
 The limitation here is that one must specify the initial rotation as \({\gamma=\pi-\alpha}\) in order for the convolution to be commutative.
 The complexity of the convolution is \(\mathcal{O}(L^{3}\log{L})\), and hence, it is less efficient than a spherical harmonic transform.
 The convolution has the following properties:
