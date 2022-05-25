@@ -11,9 +11,6 @@ sphere axisymmetric_wavelets \
     -L ${L} \
     -u
 
-echo dirac fft
-python ${PLOTS}/misc/dirac_impulse.py
-
 echo ricker wavelets
 python ${PLOTS}/misc/wavelet_transform.py
 
