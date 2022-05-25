@@ -43,7 +43,7 @@ python \
 for p in ${P_RANGE[@]}; do
     echo figure: 6, p: $p
     mesh $MESH \
-        -m slepian \
+        -m slepian_functions \
         -e $p \
         -u \
         -z
@@ -56,7 +56,7 @@ python \
 
 echo figure: 8, scaling
 mesh $MESH \
-    -m wavelets \
+    -m slepian_wavelets \
     -u \
     -z
 
@@ -69,21 +69,21 @@ for j in $J_RANGE; do
     echo figure: 8, j: $j
     mesh $MESH \
         -e $B $J_MIN $j \
-        -m wavelets \
+        -m slepian_wavelets \
         -u \
         -z
 
     echo figure: 10, j: $j
     mesh $MESH \
         -e $B $J_MIN $j \
-        -m coefficients \
+        -m slepian_wavelet_coefficients \
         -u \
         -z
 done
 
 echo figure: 10, scaling
 mesh $MESH \
-    -m coefficients \
+    -m slepian_wavelet_coefficients \
     -u \
     -z
 
