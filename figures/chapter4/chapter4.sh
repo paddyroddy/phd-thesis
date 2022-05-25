@@ -50,7 +50,7 @@ sphere slepian_wavelets \
     -L $L \
     -u
 echo scaling wavelet coefficient
-sphere slepian_wavelet_coefficients \
+sphere slepian_wavelet_coefficients_south_america \
     -L $L \
     -s $SMOOTHING \
     -u
@@ -63,7 +63,7 @@ for j in $J_RANGE; do
         -u
 
     echo wavelet coefficient j: $j
-    sphere slepian_wavelet_coefficients \
+    sphere slepian_wavelet_coefficients_south_america \
         -e $B $J_MIN $j \
         -L $L \
         -s $SMOOTHING \
