@@ -67,117 +67,12 @@ Lastly, \cref{sec:chapter4_conclusion} sets out some concluding remarks.
 
 \section{Mathematical Background and Problem Formulation}\label{sec:chapter4_mathematical_background_problem_formulation}
 
-Some mathematical preliminaries are introduced in \cref{sec:chapter4_mathematical_preliminaries} with a recap of signals on the sphere, the spherical harmonic basis functions, and rotations on the sphere.
 A directional convolution on the sphere, the sifting convolution, is reviewed in \cref{sec:chapter4_sifting_convolution_sphere} which was discussed in \cref{sec:chapter3}.
 Lastly, in \cref{sec:chapter4_slepian_concentration_problem} the Slepian spatial concentration problem is presented, which results in the Slepian functions which are the basis functions of a region.
 
 \subsection{Mathematical Preliminaries}\label{sec:chapter4_mathematical_preliminaries}
 
-A brief review of the mathematical preliminaries required for this chapter is presented here, for more detail see the relevant sections in \cref{sec:chapter2,sec:chapter3}.
-
-\subsubsection{Signals on the Sphere}
-
-The 2-sphere \(\twoSphere{}\) is defined as such
-%
-\begin{equation}
-	\twoSphere{} = \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1}.
-\end{equation}
-%
-A point on the unit sphere is parameterised by \(\omega=(\theta,\phi)\), where the colatitude is \(\theta \in \interval{0}{\pi}\) and the longitude is \(\phi \in \interval[open right]{0}{2\pi}\).
-The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex-valued square-integrable functions \(\pixel{f}\).
-The inner product induces a norm
-%
-\begin{equation}
-	\norm{f} = \sqrt{\braket*{f}}.
-\end{equation}
-%
-Functions with a finite induced norm are signals on the sphere.
-
-\subsubsection{Spherical Harmonics}
-
-The complete set of orthonormal basis functions for the Hilbert space \(\hilbert{\twoSphere}\) is the spherical harmonics.
-By the completeness of the spherical harmonics one may decompose any signal \(f \in \hilbert{\twoSphere}\) as
-%
-\begin{equation}
-	\pixel{f}
-	%
-	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
-\end{equation}
-%
-where \(\harmonic{f}\) are the spherical harmonic coefficients given by the usual projection onto the basis functions
-%
-\begin{equation}
-	\harmonic{f}
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
-\end{equation}
-%
-The phase convention adopted here is
-%
-\begin{equation}
-	\pixel{\conj{\harmonic{Y}}}
-	%
-	= \phaseFactor \pixel{Y_{\ell(-m)}},
-\end{equation}
-%
-such that
-%
-\begin{equation}
-	\conj{\harmonic{f}}
-	%
-	= \phaseFactor f_{\ell(-m)}
-\end{equation}
-%
-for a real field.
-One often considers functions bandlimited at \(L\), \ie{} signals such that \(\harmonic{f} = 0,\ \forall \ell \geq L\).
-The shorthand convention
-%
-\begin{equation}
-	\harmonicSum
-	%
-	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell}
-\end{equation}
-%
-may be adopted.
-The addition theorem of the spherical harmonics states
-%
-\begin{equation}\label{eq:chapter4_addition_theorem}
-	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
-	%
-	= \factor P_{\ell}(\omega \cdot \omega'),
-\end{equation}
-%
-where \(P_{\ell}(x)\) are the Legendre polynomials.
-
-\subsubsection{Rotation of a Signal on the 2-Sphere}
-
-The Euler angles may be used to describe three-dimensional rotations with \(\rho = (\alpha,\beta,\gamma) \in \rotationGroup{}\), where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
-A rotation \(\rotation{\rho}\) consists of the sequence of rotations:
-%
-\begin{enumerate}[(i),nosep,left=\parindent]
-	\item \({\gamma}\) rotation about the \(z\)-axis;
-	\item \({\beta}\) rotation about the \(y\)-axis; and
-	\item \({\alpha}\) rotation about the \(z\)-axis.
-\end{enumerate}
-%
-A function rotated on the sphere is defined by
-%
-\begin{equation}
-	\pixel{(\rotation{\rho}f)}
-	%
-	= f(\rotationMatrix^{-1} \omega)
-\end{equation}
-%
-where the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\) is \(\rotationMatrix{}\).
-A rotated function in harmonic space is
-%
-\begin{equation}
-	\harmonic{(\rotation{\rho}f)}
-	%
-	= \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n},
-\end{equation}
-%
-where the Wigner D matrices \(\wigner{\ell}{m}{n}(\rho)\) form the \(2\ell+1\)-dimensional representation of the rotation group for a given \(\ell{}\).
+The mathematical preliminaries assumed for this chapter are covered in \cref{sec:chapter2_notation,sec:chapter2_spherical_harmonics,sec:chapter2_rotations_sphere}.
 
 \subsection{Sifting Convolution on the Sphere}\label{sec:chapter4_sifting_convolution_sphere}
 
@@ -269,7 +164,7 @@ Consider the sum of the eigenvalues
 	 & = \frac{A}{4\pi} L^{2},
 \end{align}
 %
-where the second line follows by the addition theorem \cref{eq:chapter4_addition_theorem}, and \(A\) is the area of the region \(R\).
+where the second line follows by the addition theorem \cref{eq:chapter2_addition_theorem}, and \(A\) is the area of the region \(R\).
 This \(N\) is the spherical analogue of the Shannon number~\cite{Simons2006}, which is a good estimate of the number of significant eigenvalues~\cite{Percival1993}.
 
 \subsubsection{Slepian Decomposition}
