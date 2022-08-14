@@ -72,7 +72,7 @@ Lastly, in \cref{sec:chapter4_slepian_concentration_problem} the Slepian spatial
 
 \subsection{Mathematical Preliminaries}\label{sec:chapter4_mathematical_preliminaries}
 
-The mathematical preliminaries assumed for this chapter are covered in \cref{sec:chapter2_notation,sec:chapter2_spherical_harmonics,sec:chapter2_rotations_sphere}.
+\hl{The mathematical preliminaries assumed for this chapter are covered in \mbox{\cref{sec:chapter2_notation,sec:chapter2_spherical_harmonics,sec:chapter2_rotations_sphere}}}.
 
 \subsection{Sifting Convolution on the Sphere}\label{sec:chapter4_sifting_convolution_sphere}
 
@@ -93,48 +93,16 @@ This chapter considers optimally concentrated functions within a region \(R\), a
 
 \subsubsection{Spatial Concentration of a Bandlimited Function}
 
-To maximise the spatial concentration of a bandlimited function \(f \in \hilbert{\twoSphere}\) within a region \(R\) one must maximise the following ratio
-%
-\begin{equation}
-	\mu
-	%
-	= \frac{\integrateRegion{\sphereVolume} \abs{\pixel{f}}^{2}}{\integrateSphere{\omega} \abs{\pixel{f}}^{2}},
-\end{equation}
-%
-where \(0 < \mu < 1\) is a measure of the spatial concentration.
-This simplifies to a harmonic sum
-%
-\begin{equation}\label{eq:chapter4_spatial_concentration_ratio}
-	\mu
-	%
-	= \frac{\harmonicSum \harmonic{f} \harmonicSum['] \Dmatrix \conj{\harmonic[']{f}}}{\harmonicSum \abs{\harmonic{f}}^{2}},
-\end{equation}
-%
-where
-%
-\begin{equation}\label{eq:chapter4_d_matrix}
-	\Dmatrix
-	%
-	= \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
-\end{equation}
-%
-is an \(L^{2} \times{} L^{2}\) matrix if including all \(\ell{}\) and \(m\).
-One may rewrite \cref{eq:chapter4_spatial_concentration_ratio} as a classical matrix variational problem
-%
-\begin{equation}
-	\mu
-	%
-	= \frac{\hermitian{\vb*{f}} \vb*{D} \vb*{f}}{\hermitian{\vb*{f}}\vb*{f}},
-\end{equation}
-%
-where \(\vb*{f}\), the harmonic coefficients of \(\pixel{f}\), are the solutions to the \(L^{2} \times{} L^{2}\) eigenproblem
+\hl{This section expands on the work in \mbox{\cref{sec:chapter2_spatial_concentration_bandlimited_function}}.
+For a bandlimited function \mbox{\(f \in \hilbert{\twoSphere}\)} within a region \mbox{\(R\)}, one may express \mbox{\cref{eq:chapter2_harmonic_eigenproblem}} in matrix form by}
 %
 \begin{equation}\label{eq:chapter4_eigenproblem}
 	\vb*{D}\vb*{f}
 	%
-	= \mu\vb*{f}.
+	= \mu\vb*{f},
 \end{equation}
 %
+where \(\vb*{f}\), the harmonic coefficients of \(\pixel{f}\), are the solutions to the above \(L^{2} \times{} L^{2}\) eigenproblem.
 The matrix \(\vb*{D}\) is real, symmetric and positive definite; hence, the eigenvalues \(\slepian{\mu}\) are always real.
 The eigenvalues are a measure of how well concentrated the given eigenvector is.
 Hence, the eigenvalues satisfy
