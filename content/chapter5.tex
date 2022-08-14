@@ -13,7 +13,7 @@ Through a wavelet transform, the wavelet coefficients of a field defined on the 
 Many fields measure data that are intrinsically non-Euclidean in structure and are better modelled by manifolds or graphs.
 One manifold, in particular, which is commonplace in science and engineering is the sphere; such as in: cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, computer graphics~\cite{Ramamoorthi2004}, and signal processing~\cite{Roddy2021a}.
 Often data are not observed in some regions of the manifold, and hence methods which work over the whole manifold may not be appropriate.
-One such example, in the spherical setting, is in CMB analyses where foreground microwave emissions dominate the region around the  Galactic plane and are often removed~\cite{Mortlock2002}.
+One such example, in the spherical setting, is in CMB analyses where foreground microwave emissions dominate the region around the Galactic plane and are often removed~\cite{Mortlock2002}.
 Wavelets are a typical approach to deal with problems of this form, which allow the probing of spatially localised, scale-dependent features of the signal.
 Contamination of the wavelet coefficients at the boundaries of the region, however, still presents a problem.
 To overcome this, in \cref{sec:chapter4}, Slepian wavelets are constructed within a region of the sphere.
@@ -763,7 +763,7 @@ The resulting Shannon number \cref{eq:chapter5_shannon} of the region \(R\) is \
 A set of Slepian functions of the mesh is shown in \cref{fig:chapter5_slepian_functions} for \(p \in \set{1, 10, 25, 50, 100, 200}\).
 Comparing panel (f) to the earlier panels, one can see that the Slepian functions become more spread out in the region, representing worse concentration.
 The corresponding eigenvalues \(\slepian{\mu}\) are a measure of spatial concentration, which remain \(\almost{1}\) for many \(p\) values before rapidly decreasing towards zero around \(N\).
-The first \(N\) eigenvalues of this Homer region are shown in \cref{fig:chapter5_slepian_eigenvalues}; were the plot to extend to all \(\imax{}\) Slepian eigenvalues then the rest of the eigenvalues would be \(\almost{0}\).
+The eigenvalues of this Homer region are shown in \cref{fig:chapter5_slepian_eigenvalues}.
 
 \input{figures/chapter5/homer_region}
 
