@@ -11,7 +11,7 @@ Lastly, the limitations of existing approaches and the aim of this thesis are co
 Much of this thesis is based on signals on the sphere and, as such, some appropriate mathematical background is introduced here.
 Signals on the sphere arise in many areas of science and engineering, including: cosmology~\cite{Bennett1996}, geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, quantum chemistry~\cite{Choi1999}, computer vision~\cite{Cohen2018,Esteves2020,Cobb2021}, and computer graphics~\cite{Ramamoorthi2004}.
 
-\subsection{Notation}
+\subsection{Notation}\label{sec:chapter2_notation}
 
 The 2-sphere \(\twoSphere{}\) is defined as
 %
@@ -41,7 +41,7 @@ The complex inner product induces a norm
 %
 Signals on the sphere are functions with a finite induced norm.
 
-\subsection{Spherical Harmonics}
+\subsection{Spherical Harmonics}\label{sec:chapter2_spherical_harmonics}
 
 The spherical harmonics \(\pixel{\harmonic{Y}}\), with integer degree \(\ell \geq 0\) and integer order \(m \leq \abs{\ell}\), form an orthonormal basis of the Hilbert space \(\hilbert{\twoSphere}\).
 Consider the Laplacian in spherical coordinates
@@ -116,7 +116,7 @@ Through a change of variables \(x=\cos{\theta}\) and \(y=\Theta(\theta)\), the p
 which is the differential equation for the associated Legendre polynomials \(y(x) = P^{m}_{\ell}(x)\).
 The spherical harmonics are then formed by combining the solutions in the polar angle \(\theta{}\) and azimuthal angle \(\phi{}\) with a suitable normalisation factor by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_spherical_harmonic}
 	\pixel{\harmonic{Y}}
 	%
 	= \phaseFactor \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
@@ -124,7 +124,7 @@ The spherical harmonics are then formed by combining the solutions in the polar 
 %
 Included here is the Condon-Shortley \(\phaseFactor{}\) phase factor, to ensure that the following conjugate symmetry relation holds
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_spherical_harmonic_phase}
 	\pixel{\conj{\harmonic{Y}}}
 	%
 	= \phaseFactor \pixel{Y_{\ell(-m)}}.
@@ -192,7 +192,7 @@ A pictorial representation of the spherical harmonics is given in \cref{fig:chap
 
 \input{figures/chapter2/spherical_harmonics}
 
-\subsection{Rotations on the Sphere}
+\subsection{Rotations on the Sphere}\label{sec:chapter2_rotations_sphere}
 
 Rotations of functions defined on the sphere form an integral part of analyses on the sphere.
 The Euler angles \(\rho=(\alpha,\beta,\gamma) \in \rotationGroup{}\) may be used to parametrise three-dimensional rotations, where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
@@ -207,7 +207,7 @@ The sequence of rotations:
 define the rotation operator \(\rotation{\rho}\).
 A function \(\pixel{f} \in \hilbert{\twoSphere}\) rotated on the sphere is defined by
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_rotation_matrix}
 	\pixel{(\rotation{\rho}f)}
 	%
 	= f(\rotationMatrix^{-1} \omega),
@@ -259,7 +259,7 @@ where
 %
 From \cref{eq:chapter2_rotate_spherical_harmonics}, it follows that the harmonic coefficients of a rotated function read
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_rotation_operator}
 	\harmonic{(\rotation{\rho}f)}
 	%
 	= \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n}.
@@ -284,7 +284,7 @@ where the Wigner harmonic coefficients \(F^{\ell}_{m n}\) are given by
 %
 A useful relation to note is the connection between the spherical harmonics and the axisymmetric rotation matrices
 %
-\begin{equation}
+\begin{equation}\label{eq:chapter2_wigner_axisymmetric}
 	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
 	%
 	= \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.

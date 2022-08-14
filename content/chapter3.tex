@@ -36,81 +36,8 @@ Lastly, \cref{sec:chapter3_conclusions} sets out some concluding remarks.
 
 \subsection{Mathematical Preliminaries}
 
-A brief review of the mathematical preliminaries required for this chapter is presented here, for more detail see the relevant sections in \cref{sec:chapter2}.
-
-\subsubsection{Signals on the Sphere}
-
-Consider a complex-valued square-integrable function \(\pixel{f}\) on the 2-sphere
-%
-\begin{equation}
-	\twoSphere{}
-	%
-	= \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1}.
-\end{equation}
-%
-Here, \(\omega=(\theta,\phi)\) parameterises a point on the unit sphere, where \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
-The functions \(\pixel{f}\) form the Hilbert space \(\hilbert{\twoSphere}\).
-The complex inner product induces a norm
-%
-\begin{equation}
-	\norm{f}
-	%
-	= \sqrt{\braket*{f}}.
-\end{equation}
-%
-Signals on the sphere are functions with a finite induced norm.
-
-\subsubsection{Spherical Harmonics}
-
-The spherical harmonics are the complete orthonormal set of basis functions of the Hilbert space \(\hilbert{\twoSphere}\)
-%
-\begin{equation}\label{eq:chapter3_spherical_harmonic}
-	\pixel{\harmonic{Y}}
-	%
-	= \phaseFactor \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi),
-\end{equation}
-%
-where \(P^{m}_{\ell}(x)\) are the associated Legendre polynomials.
-By the completeness of spherical harmonics, any \(f \in \hilbert{\twoSphere}\) may be decomposed as
-%
-\begin{equation}
-	\pixel{f}
-	%
-	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
-\end{equation}
-%
-where \(\harmonic{f}\) are the spherical harmonic coefficients given by
-%
-\begin{equation}
-	\harmonic{f}
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
-\end{equation}
-%
-The phase convention adopted here is
-%
-\begin{equation}\label{eq:chapter3_spherical_harmonic_phase}
-	\pixel{\conj{\harmonic{Y}}}
-	%
-	= \phaseFactor \pixel{Y_{\ell(-m)}},
-\end{equation}
-%
-such that
-%
-\begin{equation}
-	\conj{\harmonic{f}}
-	%
-	= \phaseFactor f_{\ell(-m)}
-\end{equation}
-%
-for a real field.
-One often considers signals on the sphere with a bandlimit of \(L\), \ie{} signals such that \(\harmonic{f} = 0,\ \forall \ell \geq L\), and adopts the shorthand notation
-%
-\begin{equation}
-	\harmonicSum
-	%
-	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell}.
-\end{equation}
+A brief review of the mathematical preliminaries required for this chapter is presented here.
+Recall also \cref{sec:chapter2_notation,sec:chapter2_spherical_harmonics,sec:chapter2_rotations_sphere}.
 
 \subsubsection{Dirac Delta}
 
@@ -136,7 +63,7 @@ which can be shown to be real
 	 & = \pixel{\conj{\delta_{\omega'}}},
 \end{align}
 %
-where the second line follows by \cref{eq:chapter3_spherical_harmonic_phase}.
+where the second line follows by \cref{eq:chapter2_spherical_harmonic_phase}.
 The Dirac delta on the sphere is normalised
 %
 \begin{equation}
@@ -161,7 +88,7 @@ as
 	 & = 1,
 \end{align}
 %
-where the second and third lines follow by substituting \(\sqrt{4\pi}\pixel{Y_{00}}=1\) (\cf{} \cref{eq:chapter3_spherical_harmonic}) and the orthonormality of the spherical harmonics respectively.
+where the second and third lines follow by substituting \(\sqrt{4\pi}\pixel{Y_{00}}=1\) (\cf{} \cref{eq:chapter2_spherical_harmonic}) and the orthonormality of the spherical harmonics respectively.
 The sifting property of the Dirac delta is
 %
 \begin{equation}
@@ -185,52 +112,6 @@ as
 \end{align}
 %
 where the first line holds due to the reality of the Dirac delta \cref{eq:chapter3_dirac_delta_real}.
-
-\subsubsection{Rotation of a Signal on the 2-Sphere}
-
-The Euler angles may parameterise three-dimensional rotations with \(\rho = (\alpha,\beta,\gamma) \in \rotationGroup{}\), where \(\alpha \in \interval[open right]{0}{2\pi}\), \(\beta \in \interval{0}{\pi}\), and \(\gamma \in \interval[open right]{0}{2\pi}\).
-The rotation operator \(\rotation{\rho}\) consists of the sequence of rotations:
-%
-\begin{enumerate}[(i),nosep,left=\parindent]
-	\item \({\gamma}\) rotation about the \(z\)-axis;
-	\item \({\beta}\) rotation about the \(y\)-axis; and
-	\item \({\alpha}\) rotation about the \(z\)-axis.
-\end{enumerate}
-%
-The rotation of a function on the sphere is defined by
-%
-\begin{equation}\label{eq:chapter3_rotation_matrix}
-	\pixel{(\rotation{\rho}f)}
-	%
-	= f(\rotationMatrix^{-1} \omega),
-\end{equation}
-%
-where \(\rotationMatrix{}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
-The spherical harmonic coefficients of a rotated function read
-%
-\begin{equation}\label{eq:chapter3_rotation_operator}
-	\harmonic{(\rotation{\rho}f)}
-	%
-	= \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n},
-\end{equation}
-%
-where \(\wigner{\ell}{m}{n}(\rho)\) are Wigner D matrices given by
-%
-\begin{equation}
-	\wigner{\ell}{m}{n}(\rho)
-	%
-	= \exp(-i m\alpha) \reducedWigner{\ell}{m}{n}(\beta) \exp(-i n\gamma),
-\end{equation}
-%
-which form the \(2\ell+1\)-dimensional representation of the rotation group for a given \(\ell{}\).
-The \(\reducedWigner{\ell}{m}{n}(\beta)\) are the reduced d matrices, which are real in this phase convention and satisfy many symmetry relations.
-Note the proportionality of the axisymmetric rotation matrices and the spherical harmonics
-%
-\begin{equation}\label{eq:chapter3_wigner_axisymmetric}
-	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
-	%
-	= \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.
-\end{equation}
 
 \subsection{Spherical Convolutions}\label{sec:chapter3_spherical_convolutions}
 
@@ -299,7 +180,7 @@ as
 	 & = \harmonicSum \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}} \pixel{\harmonic{Y}},
 \end{align}
 %
-where the last line follows by \cref{eq:chapter3_wigner_axisymmetric}.
+where the last line follows by \cref{eq:chapter2_wigner_axisymmetric}.
 The isotropic convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
@@ -343,7 +224,7 @@ To prove this, first consider the forward harmonic transform
 	 & = \wignerSum g_{\ell n} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
 \end{align}
 %
-where the second and last line follow by \cref{eq:chapter3_rotation_operator,eq:chapter3_rotation_matrix} respectively.
+where the second and last line follow by \cref{eq:chapter2_rotation_operator,eq:chapter2_rotation_matrix} respectively.
 Due to the invariant measure \(\rotationVolume{}\) and considering a right rotation about the \(z\)-axis by \({\chi}\), \ie{} \(\rho = (\alpha,\beta,\gamma) \rightarrow \rho' = (\alpha,\beta,\gamma+\chi)\), it follows
 %
 \begin{align}\label{eq:chapter3_so3_integral}
@@ -369,7 +250,7 @@ Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be th
 	 & = 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
 \end{align}
 %
-where the penultimate line follows by \cref{eq:chapter3_wigner_axisymmetric}.
+where the penultimate line follows by \cref{eq:chapter2_wigner_axisymmetric}.
 As the harmonic representations suggest, the isotropic and left convolutions are closely related, as elaborated in~\cite{Kennedy2011}.
 Hence, the properties are similar.
 The left convolution has the following properties:
