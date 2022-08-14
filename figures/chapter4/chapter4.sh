@@ -11,7 +11,7 @@ P_RANGE=(
     99
     199
 )
-PLOTS=${HOME}/project/src/s2sleplet/pys2sleplet/plotting/arbitrary
+PLOTS=${HOME}/project/src/s2sleplet/pys2sleplet/plotting/arbitrary/south_america
 SIGMA=(
     2
     3
@@ -21,7 +21,7 @@ SMOOTHING=2
 SNR=-10
 
 echo tiling
-python ${PLOTS}/tiling.py
+python ${PLOTS}/tiling_south_america.py
 
 echo Earth
 sphere earth \
