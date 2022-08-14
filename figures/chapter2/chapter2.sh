@@ -6,25 +6,9 @@ J_RANGE=$(seq 0 3)
 L=128
 PLOTS=${HOME}/project/src/s2sleplet/pys2sleplet/plotting
 
-echo scaling function
-sphere axisymmetric_wavelets \
-    -L ${L} \
-    -u
-
-echo ricker wavelets
-python ${PLOTS}/misc/wavelet_transform.py
-
-for j in ${J_RANGE}; do
-    echo wavelet j: ${j}
-    sphere axisymmetric_wavelets \
-        -e ${B} ${J_MIN} ${j} \
-        -L ${L} \
-        -u
-done
-
 for ell in ${ELL_RANGE}; do
     for m in $(seq 0 ${ell}); do
-        echo ell: ${ell}, m: ${m}
+        echo figure: 1, ell: ${ell}, m: ${m}
         sphere spherical_harmonic \
             -e ${ell} ${m} \
             -L ${L} \
@@ -33,11 +17,30 @@ for ell in ${ELL_RANGE}; do
     done
 done
 
-echo fried egg
+echo figure: 2, ricker wavelets
+python ${PLOTS}/misc/wavelet_transform.py
+
+echo figure: 3, wavelet tiling
+python ${PLOTS}/wavelets/axisymmetric_tiling.py
+
+echo figure: 4, scaling function
+sphere axisymmetric_wavelets \
+    -L ${L} \
+    -u
+
+for j in ${J_RANGE}; do
+    echo figure: 4, wavelet j: ${j}
+    sphere axisymmetric_wavelets \
+        -e ${B} ${J_MIN} ${j} \
+        -L ${L} \
+        -u
+done
+
+echo figure: 5, eigenvalues
+python ${PLOTS}/polar_cap/eigenvalues.py
+
+echo figure: 6, fried egg
 python ${PLOTS}/polar_cap/fried_egg.py
 
-echo colatidue
+echo figure: 7, colatidue
 python ${PLOTS}/polar_cap/eigenfunctions.py
-
-echo eigenvalues
-python ${PLOTS}/polar_cap/eigenvalues.py

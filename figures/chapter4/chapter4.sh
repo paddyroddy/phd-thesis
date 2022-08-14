@@ -20,49 +20,49 @@ SIGMA=(
 SMOOTHING=2
 SNR=-10
 
-echo tiling
+echo figure: 2, tiling
 python ${PLOTS}/tiling_south_america.py
 
-echo Earth
+echo figure: 3, Earth
 sphere earth \
     -L ${L} \
     -s ${SMOOTHING} \
     -u
-echo Slepian South America
+echo figure 3: Slepian South America
 sphere slepian_south_america \
     -L ${L} \
     -s ${SMOOTHING} \
     -u
 
 for p in ${P_RANGE[@]}; do
-    echo Slepian p: ${p}
+    echo figure: 4, Slepian p: ${p}
     sphere slepian \
         -e ${p} \
         -L ${L} \
         -u
 done
 
-echo eigenvalues
+echo figure: 5, eigenvalues
 python ${PLOTS}/eigenvalues_south_america.py
 
-echo scaling wavelet
+echo figure: 6, scaling wavelet
 sphere slepian_wavelets \
     -L ${L} \
     -u
-echo scaling wavelet coefficient
+echo figure: 7, scaling wavelet coefficient
 sphere slepian_wavelet_coefficients_south_america \
     -L ${L} \
     -s ${SMOOTHING} \
     -u
 
 for j in ${J_RANGE}; do
-    echo wavelet j: ${j}
+    echo figure: 6, wavelet j: ${j}
     sphere slepian_wavelets \
         -e ${B} ${J_MIN} ${j} \
         -L ${L} \
         -u
 
-    echo wavelet coefficient j: ${j}
+    echo figure: 7, wavelet coefficient j: ${j}
     sphere slepian_wavelet_coefficients_south_america \
         -e ${B} ${J_MIN} ${j} \
         -L ${L} \
@@ -70,7 +70,7 @@ for j in ${J_RANGE}; do
         -u
 done
 
-echo fnoised
+echo figure: 8, noised
 sphere slepian_south_america \
     -L ${L} \
     -n ${SNR} \
@@ -78,7 +78,7 @@ sphere slepian_south_america \
     -u
 
 for s in ${SIGMA[@]}; do
-    echo denoised sigma: ${s}
+    echo figure: 8, denoised sigma: ${s}
     python \
         ${PLOTS}/denoising_slepian_south_america.py \
         -n ${SNR} \

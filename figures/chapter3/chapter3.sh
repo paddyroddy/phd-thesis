@@ -5,7 +5,7 @@ FUNCTIONS=(gaussian elongated_gaussian squashed_gaussian)
 L=128
 L_SIGMA=$(seq 1 2)
 
-echo earth
+echo figure: 5, earth
 sphere earth \
     -L ${L}
 
