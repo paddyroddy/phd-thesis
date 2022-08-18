@@ -1,5 +1,17 @@
 # clean all files -c
-$clean_ext = "synctex.gz synctex.gz(busy) run.xml tex.bak bbl bcf fdb_latexmk run tdo %R-blx.bib";
+$clean_ext = "\
+    %R-blx.bib \
+    auxlock
+    bbl \
+    bcf \
+    fdb_latexmk \
+    run \
+    run.xml \
+    synctex.gz \
+    synctex.gz(busy)\
+    tdo \
+    tex.bak \
+    ";
 
 # file to build
 @default_files = ('thesis.tex');
