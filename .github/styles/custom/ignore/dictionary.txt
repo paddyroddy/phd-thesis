@@ -99,6 +99,8 @@ odot
 oplus
 overdensity
 overpic
+parameterised
+parameterises
 parindent
 parseval
 pdv
