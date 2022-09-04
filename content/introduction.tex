@@ -1,35 +1,35 @@
 \chapter{Introduction}\label{sec:chapter1}
 
 Many fields in science and engineering measure data that are intrinsically non-Euclidean in nature.
-The sphere, in particular, features commonly in disciplines such as geophysics, planetary science, computer graphics, signal processing, and cosmology.
+The sphere, in particular, features commonly in disciplines such as geophysics~\cite{Simons2006}, planetary science~\cite{Turcotte1981}, computer graphics~\cite{Ramamoorthi2004}, and cosmology~\cite{Bennett1996}.
 The latter of these serves as the primary motivation for the work performed in this thesis.
 Of increasing importance is the necessity to translate methods developed in the Euclidean domain to other geometries, such as the sphere.
 Inspired by recent interest in geometric deep learning, many methods may be generalised further to other manifolds besides the sphere.
 
 Convolutions are a fundamental technique in signal processing.
 The convolution is a mathematical operation between two signals which produces a third signal which expresses how the shape of one signal is affected by the other.
-Upon selection of a suitable kernel, convolutions have enjoyed success in many applications, such as: smoothing, sharpening, high pass filtering, differentiation, and edge detection.
-Initially developed in the one-dimensional Euclidean domain, convolutions have since been used extensively in the two-dimensional setting, primarily for images.
-In the spherical domain, however, existing definitions often do not capture all aspects of the Euclidean definition.
+Upon selection of a suitable kernel, convolutions have enjoyed success in many applications, such as: smoothing~\cite{Gorry1990}, sharpening~\cite{Hu2020}, high pass filtering~\cite{Huang2009}, differentiation~\cite{Gorry1990}, and edge detection~\cite{Shen1996}.
+Initially developed in the one-dimensional Euclidean domain, convolutions have since been used extensively in the two-dimensional setting, primarily for images~\cite{Rahmouni2017,Unser1995,Sahiner1996,Kumar2020}.
+In the spherical domain, however, existing definitions (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2011,Kennedy2011,Driscoll1994,Wandelt2001,Sadeghi2012,Khalid2012}) often do not capture all aspects of the Euclidean definition.
 Moreover, such a convolution would ideally be generalisable to other manifolds.
 
 Another important technique in signal processing is that of projecting a signal onto an appropriate basis.
 In Fourier analyses, a one-dimensional signal may be expressed as an infinite sum of sines and cosines.
 A Fourier transform allows one to go from the representation of a signal in time into a representation in frequency.
-The signal may then be analysed in more detail by performing a cut in frequency space and analysing the resulting components independently.
+The signal may then be analysed in more detail by performing a cut in frequency space and analysing the resulting components independently~\cite{Mallat2008}.
 In the spherical setting, a signal on the surface of the sphere may be expressed as a weighted sum of the spherical harmonics.
 Spherical harmonic transforms follow as an analogy of Fourier transforms, whereby one can transform between real space and harmonic space.
-Wavelets may be used as an alternative basis, which have been extended to other geometries in recent times.
+Wavelets may be used as an alternative basis, which have been extended to other geometries in recent times~\cite{Pen1999,Barreiro2001,Rocha2004,McEwen2004,Audet2011,Audet2014,Loris2010,Simons2011,Simons2011b}.
 Wavelets enable one to analyse contributions of scale-dependent features in both space and scale.
-Applications of wavelets include: computer vision, compression and denoising.
+Applications of wavelets include: computer vision~\cite{Shi1997}, compression~\cite{Antonini1990,Mallat1992} and denoising~\cite{Mittermayr1996}.
 Wavelet transforms typically rely on a suitable convolution for synthesis and analysis.
 
 Often, data are only observed over a partial region of a given manifold, \ie{} the sphere.
-For example, strong foreground microwave emissions are typically removed in analyses of the cosmic microwave background around the Galactic plane.
+For example, strong foreground microwave emissions are typically removed in analyses of the cosmic microwave background around the Galactic plane~\cite{Mortlock2002}.
 Thus, whole-sphere methods may not be suitable for accurate analysis.
 By leveraging the Slepian concentration problem, one may find the set of bandlimited functions which are optimally concentrated within a particular region.
 A signal restricted to a given region (due to a limited set of observations) may then be decomposed into this basis as before.
-Initially developed in the one-dimensional Euclidean setting as a time-frequency concentration problem, the so-called Slepian functions have since been used in spatial-spectral applications in geophysics, planetary sciences, and medical imaging.
+Initially developed in the one-dimensional Euclidean setting as a time-frequency concentration problem~\cite{Slepian1961,Landau1961,Landau1962}, the so-called Slepian functions have since been used in spatial-spectral applications in geophysics~\cite{Thomson1976,Simons2006a,Simons2011}, signal processing~\cite{Mathews1985,Thomson1982}, and medical imaging~\cite{Jackson1991}.
 
 The focus of this thesis is to build a framework that leverages both wavelets and the basis functions of the Slepian concentration problem.
 The resulting set of functions, known as Slepian wavelets, thus profit from both approaches.
