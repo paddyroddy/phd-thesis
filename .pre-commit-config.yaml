@@ -1,11 +1,11 @@
 repos:
     - repo: https://github.com/cmhughes/latexindent.pl
-      rev: V3.17.2
+      rev: V3.18
       hooks:
           - id: latexindent
             args: [-s]
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.2.0
+      rev: v4.3.0
       hooks:
           - id: check-executables-have-shebangs
           - id: check-merge-conflict
