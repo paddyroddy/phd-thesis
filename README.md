@@ -1,4 +1,4 @@
-# phd_thesis
+# Slepian Wavelets for the Analysis of Incomplete Manifolds 
 
 [![thesis PDF](https://img.shields.io/badge/thesis-PDF-blue.svg)](https://www.dropbox.com/s/5t3pon5nagnm5tl/patrick_roddy_thesis.pdf?dl=0)
 [![deploy](https://github.com/paddyroddy/phd_thesis/actions/workflows/deploy.yml/badge.svg)](https://github.com/paddyroddy/phd_thesis/actions/workflows/deploy.yml)
