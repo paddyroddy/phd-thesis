@@ -1,6 +1,6 @@
-# Slepian Wavelets for the Analysis of Incomplete Manifolds 
+# Slepian Wavelets for the Analysis of Incomplete Manifolds
 
-[![thesis PDF](https://img.shields.io/badge/thesis-PDF-blue.svg)](https://discovery.ucl.ac.uk/id/eprint/10156089/2/patrick_roddy_thesis.pdf)
+[![thesis PDF](https://img.shields.io/badge/thesis-PDF-blue.svg)](https://paddyroddy.github.io/thesis)
 [![deploy](https://github.com/paddyroddy/phd_thesis/actions/workflows/deploy.yml/badge.svg)](https://github.com/paddyroddy/phd_thesis/actions/workflows/deploy.yml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
