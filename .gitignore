@@ -1,5 +1,6 @@
 __latexindent_temp.tex
 .DS_Store
+.envrc
 .vscode
 *.aux*
 *.bak*
