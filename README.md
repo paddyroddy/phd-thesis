@@ -41,10 +41,7 @@ construction may be utilised for manifold or graph data.
 
 Simply run `latexmk` at the top level.
 
-## Formatting
+## Software
 
-To install `pre-commit` hooks locally, execute `pip install pre-commit`
-followed by `pre-commit install`. This only needs to be done once per repo,
-and from then on checks are made whenever committing. See steps
-[here](https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories)
-to enable these checks always.
+The SLEPLET code has been developed to perform the work here
+https://github.com/astro-informatics/sleplet.
