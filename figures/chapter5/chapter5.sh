@@ -18,7 +18,7 @@ P_RANGE=(
     99
     199
 )
-PLOTS=${HOME}/project/src/s2sleplet/pys2sleplet/plotting/mesh
+PLOTS=${HOME}/project/src/sleplet/sleplet/plotting/mesh
 RANK_RANGE=$(seq 2 9)
 SIGMA=1
 SNR=-5

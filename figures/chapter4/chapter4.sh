@@ -11,7 +11,7 @@ P_RANGE=(
     99
     199
 )
-PLOTS=${HOME}/project/src/s2sleplet/pys2sleplet/plotting/arbitrary/south_america
+PLOTS=${HOME}/project/src/sleplet/sleplet/plotting/arbitrary/south_america
 SIGMA=(
     2
     3

@@ -6,7 +6,7 @@ J_MIN=2
 J_RANGE=$(seq 0 3)
 L=128
 P_SIGMA=-1
-PLOTS=${HOME}/project/src/s2sleplet/pys2sleplet/plotting
+PLOTS=${HOME}/project/src/sleplet/sleplet/plotting
 ROTATION=elongated_gaussian
 T_SIGMA=-1
 
