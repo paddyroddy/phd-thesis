@@ -6,7 +6,6 @@ J_MIN=2
 J_RANGE=$(seq 0 3)
 L=128
 P_SIGMA=-1
-PLOTS=${HOME}/project/src/sleplet/sleplet/plotting
 ROTATION=elongated_gaussian
 T_SIGMA=-1
 
@@ -38,10 +37,10 @@ for angle in ${ANGLES}; do
 done
 
 echo figure: 3, ricker wavelets
-python ${PLOTS}/misc/wavelet_transform.py
+python -m sleplet.plotting.misc.wavelet_transform
 
 echo figure: 4, wavelet tiling
-python ${PLOTS}/wavelets/axisymmetric_tiling.py
+python -m sleplet.plotting.wavelets.axisymmetric_tiling
 
 echo figure: 5, scaling function
 sphere axisymmetric_wavelets \
@@ -57,10 +56,10 @@ for j in ${J_RANGE}; do
 done
 
 echo figure: 6, eigenvalues
-python ${PLOTS}/polar_cap/eigenvalues.py
+python -m sleplet.plotting.polar_cap.eigenvalues
 
 echo figure: 7, fried egg
-python ${PLOTS}/polar_cap/fried_egg.py
+python -m sleplet.plotting.polar_cap.fried_egg
 
 echo figure: 8, colatidue
-python ${PLOTS}/polar_cap/eigenfunctions.py
+python -m sleplet.plotting.polar_cap.eigenfunctions

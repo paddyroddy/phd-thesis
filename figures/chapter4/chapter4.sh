@@ -11,7 +11,6 @@ P_RANGE=(
     99
     199
 )
-PLOTS=${HOME}/project/src/sleplet/sleplet/plotting/arbitrary/south_america
 SIGMA=(
     2
     3
@@ -21,7 +20,7 @@ SMOOTHING=2
 SNR=-10
 
 echo figure: 2, tiling
-python ${PLOTS}/tiling_south_america.py
+python -m sleplet.plotting.arbitrary.south_america.tiling_south_america
 
 echo figure: 3, Earth
 sphere earth \
@@ -43,7 +42,7 @@ for p in ${P_RANGE[@]}; do
 done
 
 echo figure: 5, eigenvalues
-python ${PLOTS}/eigenvalues_south_america.py
+python -m sleplet.plotting.arbitrary.south_america.eigenvalues_south_america
 
 echo figure: 6, scaling wavelet
 sphere slepian_wavelets \
@@ -79,8 +78,8 @@ sphere slepian_south_america \
 
 for s in ${SIGMA[@]}; do
     echo figure: 8, denoised sigma: ${s}
-    python \
-        ${PLOTS}/denoising_slepian_south_america.py \
+    python -m \
+        sleplet.plotting.arbitrary.south_america.denoising_slepian_south_america \
         -n ${SNR} \
         -s ${s}
 done

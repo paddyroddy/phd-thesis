@@ -18,7 +18,6 @@ P_RANGE=(
     99
     199
 )
-PLOTS=${HOME}/project/src/sleplet/sleplet/plotting/mesh
 RANK_RANGE=$(seq 2 9)
 SIGMA=1
 SNR=-5
@@ -31,13 +30,13 @@ for r in ${RANK_RANGE}; do
 done
 
 echo figure: 4
-python \
-    ${PLOTS}/mesh_tiling.py \
+python -m \
+    sleplet.plotting.mesh.mesh_tiling \
     ${MESH}
 
 echo figure: 5
-python \
-    ${PLOTS}/mesh_region.py \
+python -m \
+    sleplet.plotting.mesh.mesh_region \
     ${MESH}
 
 for p in ${P_RANGE[@]}; do
@@ -50,8 +49,8 @@ for p in ${P_RANGE[@]}; do
 done
 
 echo figure: 7
-python \
-    ${PLOTS}/mesh_slepian_eigenvalues.py \
+python -m \
+    sleplet.plotting.mesh.mesh_slepian_eigenvalues \
     ${MESH}
 
 echo figure: 8, scaling
@@ -101,15 +100,15 @@ mesh ${MESH} \
     -z
 
 echo figure: 11, denoised
-python \
-    ${PLOTS}/denoising_slepian_mesh.py \
+python -m \
+    sleplet.plotting.mesh.denoising_slepian_mesh \
     ${MESH} \
     -n ${SNR} \
     -s ${SIGMA}
 
 for f in ${OTHER_MESHES[@]}; do
     echo figure: 12, mesh: ${f}
-    python \
-        ${PLOTS}/mesh_region.py \
+    python -m \
+        sleplet.plotting.mesh.mesh_region \
         ${f}
 done
