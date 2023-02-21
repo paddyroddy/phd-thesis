@@ -44,6 +44,8 @@ done
 echo figure: 5, eigenvalues
 python -m sleplet.plotting.arbitrary.south_america.eigenvalues_south_america
 
+sed -i 's/south_america/africa/g' src/sleplet/config/settings.toml
+
 echo figure: 6, scaling wavelet
 sphere slepian_wavelets \
     -L ${L} \
