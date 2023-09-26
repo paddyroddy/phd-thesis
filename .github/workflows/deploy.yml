@@ -1,6 +1,11 @@
 name: deploy
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+      - "renovate/**"
+  pull_request:
 
 jobs:
     chktex:
