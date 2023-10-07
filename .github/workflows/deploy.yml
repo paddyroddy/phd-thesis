@@ -15,7 +15,7 @@ jobs:
               uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
 
             - name: Run chktex
-              uses: xu-cheng/texlive-action/full@v1
+              uses: xu-cheng/texlive-action/full@v2
               with:
                   run: |
                       chktex thesis.tex | tee /dev/stderr | (! grep -q ^)
@@ -43,7 +43,7 @@ jobs:
               uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
 
             - name: Build PDF
-              uses: xu-cheng/texlive-action/full@v1
+              uses: xu-cheng/texlive-action/full@v2
               with:
                   run: |
                       latexmk -quiet
@@ -68,7 +68,7 @@ jobs:
                   name: artefacts
 
             - name: Fix regex for checkcites
-              uses: xu-cheng/texlive-action/full@v1
+              uses: xu-cheng/texlive-action/full@v2
               id: references
               with:
                   run: |
