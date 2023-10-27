@@ -16,27 +16,27 @@ Signals on the sphere arise in many areas of science and engineering, including:
 The 2-sphere \(\twoSphere{}\) is defined as
 %
 \begin{equation}
-	\twoSphere{}
-	%
-	= \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1},
+    \twoSphere{}
+    %
+    = \set{\omega \in \mathbb{R}^{3} : \norm{\omega} = 1},
 \end{equation}
 %
 where \(\omega=(\theta,\phi)\) parameterises a point on the unit sphere, \(\theta \in \interval{0}{\pi}\) is the colatitude and \(\phi \in \interval[open right]{0}{2\pi}\) is the longitude.
 The Hilbert space \(\hilbert{\twoSphere}\) is formed by the complex-valued square-integrable functions \(\pixel{f}\), \(\pixel{g}\), with inner product
 %
 \begin{equation}
-	\braket*{f}{g}
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{g}},
+    \braket*{f}{g}
+    %
+    = \integrateSphere{\omega} \pixel{f} \pixel{\conj{g}},
 \end{equation}
 %
 where \(\sphereVolume{} = \sin{\theta} \dd{\theta} \dd{\phi}\) is the usual rotation invariant measure on the sphere.
 The complex inner product induces a norm
 %
 \begin{equation}
-	\norm{f}
-	%
-	= \sqrt{\braket*{f}}.
+    \norm{f}
+    %
+    = \sqrt{\braket*{f}}.
 \end{equation}
 %
 Signals on the sphere are functions with a finite induced norm.
@@ -47,144 +47,144 @@ The spherical harmonics \(\pixel{\harmonic{Y}}\), with integer degree \(\ell \ge
 Consider the Laplacian in spherical coordinates
 %
 \begin{equation}
-	\laplacian
-	%
-	= \frac{1}{r^{2}} \pdv{r} \bigg(r^{2} \pdv{r}\bigg)
-	%
-	+ \frac{1}{r^{2}\sin{\theta}} \pdv{\theta} \bigg(\sin{\theta} \pdv{\theta}\bigg)
-	%
-	+ \frac{1}{r^{2}\sin^{2}{\theta}} \pdv[2]{\phi}.
+    \laplacian
+    %
+    = \frac{1}{r^{2}} \pdv{r} \bigg(r^{2} \pdv{r}\bigg)
+    %
+    + \frac{1}{r^{2}\sin{\theta}} \pdv{\theta} \bigg(\sin{\theta} \pdv{\theta}\bigg)
+    %
+    + \frac{1}{r^{2}\sin^{2}{\theta}} \pdv[2]{\phi}.
 \end{equation}
 %
 The spherical harmonics are found by solving the Laplace equation
 %
 \begin{equation}\label{eq:chapter2_laplace}
-	\laplacian{f(r,\theta,\phi)}
-	%
-	= 0,
+    \laplacian{f(r,\theta,\phi)}
+    %
+    = 0,
 \end{equation}
 %
 and substituting in a separation of variables
 %
 \begin{equation}
-	f(r,\theta,\phi)
-	%
-	= R(r)\Theta(\theta)\Phi(\phi).
+    f(r,\theta,\phi)
+    %
+    = R(r)\Theta(\theta)\Phi(\phi).
 \end{equation}
 %
 Inserting this decomposition into the Laplace equation \cref{eq:chapter2_laplace}, and multiplying by \(r^{2}\sin^{2}{\theta}/R\Theta\Phi{}\) yields
 %
 \begin{equation}\label{eq:chapter2_laplace_m2}
-	\frac{1}{\Phi} \pdv[2]{\Phi}{\phi}
-	%
-	= -\frac{\sin^{2}{\theta}}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
-	%
-	- \frac{\sin{\theta}}{\Theta} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
-	%
-	= -m^{2},
+    \frac{1}{\Phi} \pdv[2]{\Phi}{\phi}
+    %
+    = -\frac{\sin^{2}{\theta}}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
+    %
+    - \frac{\sin{\theta}}{\Theta} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
+    %
+    = -m^{2},
 \end{equation}
 %
 where \(-m^{2}\) is a constant chosen such that the solutions for \(\Phi(\phi)\) are periodic in \(\phi{}\), \ie{}
 %
 \begin{equation}
-	\Phi(\phi)
-	%
-	= \exp(\pm i m\phi).
+    \Phi(\phi)
+    %
+    = \exp(\pm i m\phi).
 \end{equation}
 %
 Now, after dividing through by \(\sin^{2}{\theta}\), \cref{eq:chapter2_laplace_m2} may be recast as
 %
 \begin{equation}
-	\frac{1}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
-	%
-	= -\frac{1}{\Theta\sin{\theta}} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
-	%
-	+ \frac{m^{2}}{\sin^{2}{\theta}}
-	%
-	= \ell(\ell+1),
+    \frac{1}{R} \dv{r} \bigg(r^{2} \dv{R}{r}\bigg)
+    %
+    = -\frac{1}{\Theta\sin{\theta}} \dv{\theta} \bigg(\sin{\theta} \dv{\Theta}{\theta}\bigg)
+    %
+    + \frac{m^{2}}{\sin^{2}{\theta}}
+    %
+    = \ell(\ell+1),
 \end{equation}
 %
 where \(\ell(\ell+1)\) is a constant, the choice of which will become clear.
 Through a change of variables \(x=\cos{\theta}\) and \(y=\Theta(\theta)\), the polar angle part reduces to
 %
 \begin{equation}
-	(1-x^{2}) \dv[2]{y}{x} - 2x\dv{y}{x} + \bigg[\ell(\ell+1) - \frac{m^{2}}{(1 - x^{2})}\bigg] y
-	%
-	= 0,
+    (1-x^{2}) \dv[2]{y}{x} - 2x\dv{y}{x} + \bigg[\ell(\ell+1) - \frac{m^{2}}{(1 - x^{2})}\bigg] y
+    %
+    = 0,
 \end{equation}
 %
 which is the differential equation for the associated Legendre polynomials \(y(x) = P^{m}_{\ell}(x)\).
 The spherical harmonics are then formed by combining the solutions in the polar angle \(\theta{}\) and azimuthal angle \(\phi{}\) with a suitable normalisation factor by
 %
 \begin{equation}\label{eq:chapter2_spherical_harmonic}
-	\pixel{\harmonic{Y}}
-	%
-	= \phaseFactor \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
+    \pixel{\harmonic{Y}}
+    %
+    = \phaseFactor \sqrt{\factor \frac{(\ell-m)!}{(\ell+m)!}} P^{m}_{\ell}(\cos{\theta}) \exp(i m\phi).
 \end{equation}
 %
 Included here is the Condon-Shortley \(\phaseFactor{}\) phase factor, to ensure that the following conjugate symmetry relation holds
 %
 \begin{equation}\label{eq:chapter2_spherical_harmonic_phase}
-	\pixel{\conj{\harmonic{Y}}}
-	%
-	= \phaseFactor \pixel{Y_{\ell(-m)}}.
+    \pixel{\conj{\harmonic{Y}}}
+    %
+    = \phaseFactor \pixel{Y_{\ell(-m)}}.
 \end{equation}
 %
 The spherical harmonics satisfy the orthonormality and completeness relations
 %
 \begin{equation}\label{eq:chapter2_spherical_harmonics_orthonormal}
-	\integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
-	%
-	= \delta_{\ell\ell'} \delta_{mm'},
+    \integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
+    %
+    = \delta_{\ell\ell'} \delta_{mm'},
 \end{equation}
 %
 and
 %
 \begin{equation}
-	\sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
-	%
-	= \delta(\omega-\omega')
+    \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
+    %
+    = \delta(\omega-\omega')
 \end{equation}
 %
 respectively, where
 %
 \begin{equation}
-	\delta(\omega-\omega')
-	%
-	= \delta(\phi-\phi') \delta(\cos{\theta} - \cos{\theta'})
+    \delta(\omega-\omega')
+    %
+    = \delta(\phi-\phi') \delta(\cos{\theta} - \cos{\theta'})
 \end{equation}
 %
 and \(\delta(x),\ x \in \mathbb{R}\) is the Dirac delta function.
 A function on the sphere \(f \in \hilbert{\twoSphere}\) may be decomposed into this basis by
 %
 \begin{equation}
-	\pixel{f}
-	%
-	= \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
+    \pixel{f}
+    %
+    = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \pixel{\harmonic{Y}},
 \end{equation}
 %
 where \(\harmonic{f}\) are the spherical harmonic coefficients given by
 %
 \begin{equation}
-	\harmonic{f}
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
+    \harmonic{f}
+    %
+    = \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}.
 \end{equation}
 %
 The conjugate symmetry relation of the spherical harmonic coefficients of a real function is
 %
 \begin{equation}
-	\conj{\harmonic{f}}
-	%
-	= \phaseFactor f_{\ell(-m)}.
+    \conj{\harmonic{f}}
+    %
+    = \phaseFactor f_{\ell(-m)}.
 \end{equation}
 %
 A useful relation for the spherical harmonics is the addition theorem which states
 %
 \begin{equation}\label{eq:chapter2_addition_theorem}
-	\sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
-	%
-	= \factor P_{\ell}(\omega \cdot \omega'),
+    \sum\limits_{m=-\ell}^{\ell} \pixel{\harmonic{Y}} \pixel[']{\conj{\harmonic{Y}}}
+    %
+    = \factor P_{\ell}(\omega \cdot \omega'),
 \end{equation}
 %
 where \(P_{\ell}(x)\) are the Legendre polynomials.
@@ -199,18 +199,18 @@ The Euler angles \(\rho=(\alpha,\beta,\gamma) \in \rotationGroup{}\) may be used
 The sequence of rotations:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
-	\item \({\gamma}\) rotation about the \(z\)-axis;
-	\item \({\beta}\) rotation about the \(y\)-axis; and
-	\item \({\alpha}\) rotation about the \(z\)-axis;
+    \item \({\gamma}\) rotation about the \(z\)-axis;
+    \item \({\beta}\) rotation about the \(y\)-axis; and
+    \item \({\alpha}\) rotation about the \(z\)-axis;
 \end{enumerate}
 %
 define the rotation operator \(\rotation{\rho}\).
 A function \(\pixel{f} \in \hilbert{\twoSphere}\) rotated on the sphere is defined by
 %
 \begin{equation}\label{eq:chapter2_rotation_matrix}
-	\pixel{(\rotation{\rho}f)}
-	%
-	= f(\rotationMatrix^{-1} \omega),
+    \pixel{(\rotation{\rho}f)}
+    %
+    = f(\rotationMatrix^{-1} \omega),
 \end{equation}
 %
 where \(\rotationMatrix{}\) is the three-dimensional rotation matrix corresponding to \(\rotation{\rho}\).
@@ -218,77 +218,77 @@ The effect of the three-dimensional rotation on a directional function on the sp
 A rotation of a spherical harmonic function may be represented by
 %
 \begin{equation}\label{eq:chapter2_rotate_spherical_harmonics}
-	\rotation{\rho} \pixel{\harmonic{Y}}
-	%
-	= \wignerSum \wigner{\ell}{n}{m}(\rho) \pixel{Y_{\ell n}},
+    \rotation{\rho} \pixel{\harmonic{Y}}
+    %
+    = \wignerSum \wigner{\ell}{n}{m}(\rho) \pixel{Y_{\ell n}},
 \end{equation}
 %
 where \(\wigner{\ell}{n}{m}(\rho)\) are the Wigner D matrices~\cite{Brink1993,Ritchie1999}.
 The Wigner D matrices form the \(2\ell+1\)-dimensional representation of the rotation group \(\rotationGroup{}\) for a given \(\ell{}\) and are given by
 %
 \begin{equation}
-	\wigner{\ell}{n}{m}(\rho)
-	%
-	= \exp(-i n\alpha) \reducedWigner{\ell}{n}{m}(\beta) \exp(-i m\gamma),
+    \wigner{\ell}{n}{m}(\rho)
+    %
+    = \exp(-i n\alpha) \reducedWigner{\ell}{n}{m}(\beta) \exp(-i m\gamma),
 \end{equation}
 %
 where \(\reducedWigner{\ell}{n}{m}(\beta)\) are the reduced d matrices that are real in this phase convention and satisfy many symmetry relations.
 By the Peter-Weyl theorem, the matrix elements \(\wigner{\ell}{n}{m}(\rho)\) form an orthonormal basis on \(\hilbert{\rotationGroup}\), \ie{}
 %
 \begin{equation}
-	\integrateRotation{\rho} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell'}{n'}{m'}(\rho)
-	%
-	= \frac{8\pi^{2}}{2\ell+1} \delta_{\ell\ell'} \delta_{n n'} \delta_{mm'},
+    \integrateRotation{\rho} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell'}{n'}{m'}(\rho)
+    %
+    = \frac{8\pi^{2}}{2\ell+1} \delta_{\ell\ell'} \delta_{n n'} \delta_{mm'},
 \end{equation}
 %
 where \(\rotationVolume = \sin{\beta}\dd{\alpha}\dd{\beta}\dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
 Similarly, they satisfy the following completeness relation
 %
 \begin{equation}
-	\sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \wignerSum \sum\limits_{m=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell}{n}{m}(\rho')
-	%
-	= \delta(\rho-\rho'),
+    \sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \wignerSum \sum\limits_{m=-\ell}^{\ell} \wigner{\ell}{n}{m}(\rho) \wigner[\ast]{\ell}{n}{m}(\rho')
+    %
+    = \delta(\rho-\rho'),
 \end{equation}
 %
 where
 %
 \begin{equation}
-	\delta(\rho-\rho')
-	%
-	= \delta(\alpha-\alpha') \delta(\cos{\beta} - \cos{\beta'}) \delta(\gamma-\gamma').
+    \delta(\rho-\rho')
+    %
+    = \delta(\alpha-\alpha') \delta(\cos{\beta} - \cos{\beta'}) \delta(\gamma-\gamma').
 \end{equation}
 %
 From \cref{eq:chapter2_rotate_spherical_harmonics}, it follows that the harmonic coefficients of a rotated function read
 %
 \begin{equation}\label{eq:chapter2_rotation_operator}
-	\harmonic{(\rotation{\rho}f)}
-	%
-	= \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n}.
+    \harmonic{(\rotation{\rho}f)}
+    %
+    = \wignerSum \wigner{\ell}{m}{n}(\rho) f_{\ell n}.
 \end{equation}
 %
 Note the order of the indices on \(\wigner{\ell}{m}{n}(\rho)\) here compared to \cref{eq:chapter2_rotate_spherical_harmonics}.
 A function on the rotation group \(F \in \hilbert{\rotationGroup}\) may be represented by an expansion in the Wigner D matrices
 %
 \begin{equation}
-	F(\rho)
-	%
-	= \sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \sum\limits_{m=-\ell}^{\ell} \wignerSum F^{\ell}_{m n} \wigner{\ell}{m}{n}(\rho),
+    F(\rho)
+    %
+    = \sum\limits_{\ell=0}^{\infty} \frac{2\ell+1}{8\pi^{2}} \sum\limits_{m=-\ell}^{\ell} \wignerSum F^{\ell}_{m n} \wigner{\ell}{m}{n}(\rho),
 \end{equation}
 %
 where the Wigner harmonic coefficients \(F^{\ell}_{m n}\) are given by
 %
 \begin{equation}
-	F^{\ell}_{m n}
-	%
-	= \integrateRotation{\rho} F(\rho) \wigner[\ast]{\ell}{m}{n}(\rho).
+    F^{\ell}_{m n}
+    %
+    = \integrateRotation{\rho} F(\rho) \wigner[\ast]{\ell}{m}{n}(\rho).
 \end{equation}
 %
 A useful relation to note is the connection between the spherical harmonics and the axisymmetric rotation matrices
 %
 \begin{equation}\label{eq:chapter2_wigner_axisymmetric}
-	\wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
-	%
-	= \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.
+    \wigner[\ast]{\ell}{m}{0}(\phi,\theta,0)
+    %
+    = \sqrt{\inverseFactor} \pixel{\harmonic{Y}}.
 \end{equation}
 
 \input{figures/chapter2/rotation_sphere.tex}
@@ -324,9 +324,9 @@ In wavelet analysis, one typically refers to time-scale (or space-scale) represe
 The wavelet analysis described in \cref{sec:chapter2_comparison_fourier_transform} is more formally known as the CWT, which sates
 %
 \begin{equation}\label{eq:chapter2_cwt}
-	\cwt{f}
-	%
-	= \int\dd{t} f(t) \Psi^{s\ast}_{\tau}(t),
+    \cwt{f}
+    %
+    = \int\dd{t} f(t) \Psi^{s\ast}_{\tau}(t),
 \end{equation}
 %
 where \(\Psi^{s}_{\tau}(t)\) are the wavelets, and \(s\) and \(\tau{}\) are dimensionless variables that refer to scale and translation respectively.
@@ -334,17 +334,17 @@ where \(\Psi^{s}_{\tau}(t)\) are the wavelets, and \(s\) and \(\tau{}\) are dime
 Supposing that some certain conditions are satisfied (which are discussed later), the inverse wavelet transform is thus
 %
 \begin{equation}
-	f(t)
-	%
-	= \int\dd{s} \int\dd{\tau} \cwt{f} \Psi^{s}_{\tau}(t).
+    f(t)
+    %
+    = \int\dd{s} \int\dd{\tau} \cwt{f} \Psi^{s}_{\tau}(t).
 \end{equation}
 %
 The wavelets derive from a single wavelet \(\Psi(t)\), the so-called mother wavelet, by scaling and translating, \ie{}
 %
 \begin{equation}\label{eq:chapter2_mother_wavelet}
-	\Psi^{s}_{\tau}(t)
-	%
-	= \frac{1}{\sqrt{s}} \Psi\bigg(\frac{t-\tau}{s}\bigg),
+    \Psi^{s}_{\tau}(t)
+    %
+    = \frac{1}{\sqrt{s}} \Psi\bigg(\frac{t-\tau}{s}\bigg),
 \end{equation}
 %
 where the factor \(s^{-1/2}\) is for energy normalisation across different scales.
@@ -356,27 +356,27 @@ The term wavelets arose from the satisfaction of the admissibility and regularit
 The admissibility condition states that the square-integrable functions \(\Psi(t)\) which satisfy
 %
 \begin{equation}\label{eq:chapter2_admissibility}
-	\int\dd{\varpi} \frac{\abs{\fourier{\Psi}(\varpi)}^{2}}{\abs{\varpi}}
-	%
-	< \infty
+    \int\dd{\varpi} \frac{\abs{\fourier{\Psi}(\varpi)}^{2}}{\abs{\varpi}}
+    %
+    < \infty
 \end{equation}
 %
 can be used to analyse and then reconstruct a signal without loss of information~\cite{Sheng2010}, where \(\fourier{\Psi}(\varpi)\) is the Fourier transform of the wavelet \(\Psi(t)\).
 Therefore, \cref{eq:chapter2_admissibility} implies that the Fourier transform of the wavelet vanishes at zero frequency, \ie{}
 %
 \begin{equation}
-	\abs{\fourier{\Psi}(\varpi)} \bigg\rvert_{\varpi=0}
-	%
-	= 0;
+    \abs{\fourier{\Psi}(\varpi)} \bigg\rvert_{\varpi=0}
+    %
+    = 0;
 \end{equation}
 %
 which means the spectrum experiences bandpass behaviour.
 It also follows that the average value of the wavelet in the time-domain must be zero, \ie{}
 %
 \begin{equation}
-	\int\dd{t} \Psi(t)
-	%
-	= 0,
+    \int\dd{t} \Psi(t)
+    %
+    = 0,
 \end{equation}
 %
 which indicates that it must be an oscillatory function (a wave).
@@ -395,9 +395,9 @@ Furthermore, most wavelet transforms do not have analytical solutions and hence 
 Discrete wavelets overcome these problems by modifying the continuous wavelet \cref{eq:chapter2_mother_wavelet} by
 %
 \begin{equation}\label{eq:chapter2_discrete_wavelets}
-	\Psi^{j}_{\lambda}(t)
-	%
-	= \frac{1}{\sqrt{s^{j}_{0}}} \Psi\Bigg(\frac{t - \lambda\tau_{0}s^{j}_{0}}{s^{j}_{0}}\Bigg),
+    \Psi^{j}_{\lambda}(t)
+    %
+    = \frac{1}{\sqrt{s^{j}_{0}}} \Psi\Bigg(\frac{t - \lambda\tau_{0}s^{j}_{0}}{s^{j}_{0}}\Bigg),
 \end{equation}
 %
 where \(j\) and \(\lambda{}\) are integers, \(s_{0}>1\) is a fixed dilation step, and \(\tau_{0}\) is the translation factor.
@@ -406,45 +406,45 @@ Discrete wavelets are used to transform a continuous signal into a series of wav
 A natural choice for the parameters in \cref{eq:chapter2_discrete_wavelets} is \(s_{0}=2\) and \(\tau_{0}=1\) which corresponds to dyadic scaling, the discrete wavelets are thus
 %
 \begin{equation}
-	\Psi^{j}_{\lambda}(t)
-	%
-	= 2^{-j/2} \Psi(2^{-j}t - \lambda).
+    \Psi^{j}_{\lambda}(t)
+    %
+    = 2^{-j/2} \Psi(2^{-j}t - \lambda).
 \end{equation}
 %
 A necessary and sufficient condition for stable signal reconstruction is the so-called Parseval frame property
 %
 \begin{equation}
-	A \norm{f}^{2}
-	%
-	\leq \sum\limits_{j} \sum\limits_{\lambda} \abs{\braket*{f}{\Psi^{j}_{\lambda}}}^{2}
-	%
-	\leq B \norm{f}^{2},
+    A \norm{f}^{2}
+    %
+    \leq \sum\limits_{j} \sum\limits_{\lambda} \abs{\braket*{f}{\Psi^{j}_{\lambda}}}^{2}
+    %
+    \leq B \norm{f}^{2},
 \end{equation}
 %
 with \(A,\ B \in \realPosParam{}\)~\cite{Daubechies1992}.
 When \(A=B=1\) the energy of \(f\) is conserved in wavelet space and, as such, the wavelets act like an orthonormal basis, \ie{}
 %
 \begin{equation}
-	\int\dd{t} \Psi^{j}_{\lambda}(t) \Psi^{j'\ast}_{\lambda'}(t)
-	%
-	= \delta_{j j'} \delta_{\lambda\lambda'},
+    \int\dd{t} \Psi^{j}_{\lambda}(t) \Psi^{j'\ast}_{\lambda'}(t)
+    %
+    = \delta_{j j'} \delta_{\lambda\lambda'},
 \end{equation}
 %
 which solves the redundancy problem.
 Therefore, a signal may be constructed by~\cite{Sheng2010}
 %
 \begin{equation}
-	f(t)
-	%
-	= \sum\limits_{j} \sum\limits_{\lambda} W^{j}_{\lambda} \Psi^{j}_{\lambda}(t),
+    f(t)
+    %
+    = \sum\limits_{j} \sum\limits_{\lambda} W^{j}_{\lambda} \Psi^{j}_{\lambda}(t),
 \end{equation}
 %
 where \(W^{j}_{\lambda}\) are the wavelet coefficients given by
 %
 \begin{equation}
-	W^{j}_{\lambda}
-	%
-	= \int\dd{t} f(t) \Psi^{j\ast}_{\lambda}(t).
+    W^{j}_{\lambda}
+    %
+    = \int\dd{t} f(t) \Psi^{j\ast}_{\lambda}(t).
 \end{equation}
 %
 To get good coverage with a finite number of wavelets, a logarithmic tiling of Fourier space (\ie{} scale) is used to construct the wavelets, such as in \cref{fig:chapter2_tiling}.
@@ -457,28 +457,28 @@ In reality, most signals of interest are sampled, and are in fact not time-conti
 Thus, the CWT described in \cref{sec:chapter2_continuous_wavelet_transform} becomes
 %
 \begin{equation}
-	\text{DWT}_{f}(j,\lambda)
-	%
-	= \sum\limits_{i} f[t_{i}] \Psi^{j\ast}_{\lambda}[t_{i}],
+    \text{DWT}_{f}(j,\lambda)
+    %
+    = \sum\limits_{i} f[t_{i}] \Psi^{j\ast}_{\lambda}[t_{i}],
 \end{equation}
 %
 where a sum replaces the integral in \cref{eq:chapter2_cwt}.
 Upon introduction of a scaling function (to capture the lower scales), a signal may be reconstructed from its scaling/wavelet coefficients by
 %
 \begin{equation}
-	f(t)
-	%
-	= \sum\limits_{\lambda} W^{\Phi}_{\lambda} \Phi_{\lambda}(t)
-	%
-	+ \sum\limits_{j} W^{\Psi^{j}}_{\lambda} \Psi^{j}_{\lambda}(t),
+    f(t)
+    %
+    = \sum\limits_{\lambda} W^{\Phi}_{\lambda} \Phi_{\lambda}(t)
+    %
+    + \sum\limits_{j} W^{\Psi^{j}}_{\lambda} \Psi^{j}_{\lambda}(t),
 \end{equation}
 %
 where the scaling coefficients (and similarly the wavelet coefficients \(W^{\Psi^{j}}_{\lambda}\)) are found by
 %
 \begin{equation}
-	W^{\Phi}_{\lambda}
-	%
-	= \sum\limits_{i} f[t_{i}] \conj{\Phi}_{\lambda}[t_{i}].
+    W^{\Phi}_{\lambda}
+    %
+    = \sum\limits_{i} f[t_{i}] \conj{\Phi}_{\lambda}[t_{i}].
 \end{equation}
 %
 Fast algorithms exist~\cite{Beylkin1991,Rioul1992}, in which recursion relations allow one to compute the wavelet at scale \(j+1\) from scale \(j\).
@@ -509,17 +509,17 @@ Before considering the Slepian spatial-spectral concentration problem in the sph
 Here, a normalisation convention is adopted such that a real-valued time-domain single \(f(t)\) and its Fourier transform \(\fourier{f}(\varpi)\) are related by
 %
 \begin{equation}\label{eq:chapter2_fourier_time}
-	f(t)
-	%
-	= \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dd{\varpi} \fourier{f}(\varpi) \exp(i\varpi t)
+    f(t)
+    %
+    = \frac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dd{\varpi} \fourier{f}(\varpi) \exp(i\varpi t)
 \end{equation}
 %
 and
 %
 \begin{equation}\label{eq:chapter2_fourier_frequency}
-	\fourier{f}(\varpi)
-	%
-	= \int\limits_{-\infty}^{\infty} \dd{t} f(t) \exp(-i\varpi t),
+    \fourier{f}(\varpi)
+    %
+    = \int\limits_{-\infty}^{\infty} \dd{t} f(t) \exp(-i\varpi t),
 \end{equation}
 %
 where \(t\) and \(\varpi{}\) denote the time and angular frequency respectively.
@@ -528,20 +528,20 @@ Through the Paley-Wiener theorem, no bandlimited signal \(g(t)\) can be exactly 
 To find the optimally concentrated signal, one must maximise the following ratio
 %
 \begin{equation}\label{eq:chapter2_frequency_ratio}
-	\mu
-	%
-	= \frac{\displaystyle\int\limits_{-T}^{T} \dd{t} \abs{g(t)}^{2}}
-	%
-	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{t} \abs{g(t)}^{2}},
+    \mu
+    %
+    = \frac{\displaystyle\int\limits_{-T}^{T} \dd{t} \abs{g(t)}^{2}}
+    %
+    {\displaystyle\int\limits_{-\infty}^{\infty} \dd{t} \abs{g(t)}^{2}},
 \end{equation}
 %
 although other criteria have been considered~\cite{Freeden1997,Riedel1995}.
 Bandlimited signals \(g(t)\) which satisfy \cref{eq:chapter2_frequency_ratio}, have spectra \(\fourier{g}(\varpi)\) which satisfy the convolutional integral eigenproblem in the frequency-domain
 %
 \begin{equation}\label{eq:chapter2_frequency_eigenproblem}
-	\int\limits_{-W}^{W} \dd{\varpi'} \frac{\sin{T(\varpi-\varpi')}}{\pi(\varpi-\varpi')} \fourier{g}(\varpi')
-	%
-	= \mu \fourier{g}(\varpi),
+    \int\limits_{-W}^{W} \dd{\varpi'} \frac{\sin{T(\varpi-\varpi')}}{\pi(\varpi-\varpi')} \fourier{g}(\varpi')
+    %
+    = \mu \fourier{g}(\varpi),
 \end{equation}
 %
 where \(\abs{\varpi} \leq W\).
@@ -550,41 +550,41 @@ Slepian \etal{} also considered the similar case of concentrating the spectrum \
 The ratio to maximise here is
 %
 \begin{equation}\label{eq:chapter2_time_ratio}
-	\mu
-	%
-	= \frac{\displaystyle\int\limits_{-W}^{W} \dd{\varpi} \abs{\fourier{h}(\varpi)}^{2}}
-	%
-	{\displaystyle\int\limits_{-\infty}^{\infty} \dd{\varpi} \abs{\fourier{h}(\varpi)}^{2}},
+    \mu
+    %
+    = \frac{\displaystyle\int\limits_{-W}^{W} \dd{\varpi} \abs{\fourier{h}(\varpi)}^{2}}
+    %
+    {\displaystyle\int\limits_{-\infty}^{\infty} \dd{\varpi} \abs{\fourier{h}(\varpi)}^{2}},
 \end{equation}
 %
 which results in the time-domain eigenproblem
 %
 \begin{equation}\label{eq:chapter2_time_eigenproblem}
-	\int\limits_{-T}^{T} \dd{t'} \frac{\sin{W(t-t')}}{\pi(t-t')} h(t')
-	%
-	= \mu h(t),
+    \int\limits_{-T}^{T} \dd{t'} \frac{\sin{W(t-t')}}{\pi(t-t')} h(t')
+    %
+    = \mu h(t),
 \end{equation}
 %
 where \(\abs{t} < T\).
 In either case, the eigenvalues (which represent effective concentration) satisfy
 %
 \begin{equation}
-	1 > \mu_{1} \geq \mu_{2} \geq \ldots > 0, % chktex 11
+    1 > \mu_{1} \geq \mu_{2} \geq \ldots > 0, % chktex 11
 \end{equation}
 %
 with associated eigenfunctions, \eg{}
 %
 \begin{equation}
-	g_{1}(t),\ g_{2}(t),\ \ldots
+    g_{1}(t),\ g_{2}(t),\ \ldots
 \end{equation}
 %
 which exist in the interval \(\abs{t} \leq T\).
 Through a change of variables, the ratios \cref{eq:chapter2_frequency_ratio,eq:chapter2_time_ratio} may be transformed into a dimensionless eigenproblem
 %
 \begin{equation}
-	\int\limits_{-1}^{1} \dd{y} \frac{\sin{TW(x-y)}}{\pi(x-y)} \zeta(y)
-	%
-	= \mu \zeta(x),
+    \int\limits_{-1}^{1} \dd{y} \frac{\sin{TW(x-y)}}{\pi(x-y)} \zeta(y)
+    %
+    = \mu \zeta(x),
 \end{equation}
 %
 where \(\abs{x} \leq 1\).
@@ -592,11 +592,11 @@ Hence, the eigenvalues and scaled eigenfunctions only depend on the time-bandlim
 Consider the sum of the eigenvalues
 %
 \begin{equation}
-	N
-	%
-	= \sum\limits_{p=1}^{\infty} \slepian{\mu}
-	%
-	= \frac{2TW}{\pi}.
+    N
+    %
+    = \sum\limits_{p=1}^{\infty} \slepian{\mu}
+    %
+    = \frac{2TW}{\pi}.
 \end{equation}
 %
 The so-called Shannon number~\cite{Percival1993} \(N\) introduced here is a good estimate of the number of significant eigenvalues, which arises due to the characteristic shape of the eigenvalue spectrum~\cite{Landau1965,Slepian1965} (see \cref{fig:chapter2_polar_cap_eigenvalues}).
@@ -616,47 +616,47 @@ Thus, one may find either: the spacelimited functions \(\pixel{h} \in \spaceSpac
 To maximise the concentration of a spacelimited function \(\pixel{h} \in \spaceSpacelimit{}\) within an interval \(0 \leq \ell < L\) one must maximise the ratio
 %
 \begin{equation}\label{eq:chapter2_spacelimited_ratio}
-	\mu
-	%
-	= \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}}
-	%
-	{\displaystyle\sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}},
+    \mu
+    %
+    = \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}}
+    %
+    {\displaystyle\sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{h}}^{2}},
 \end{equation}
 %
 which is analogous to the one-dimensional problem \cref{eq:chapter2_time_ratio}.
 By substituting the expansion of the spherical harmonic coefficients
 %
 \begin{equation}
-	\harmonic{h}
-	%
-	= \integrateRegion{\sphereVolume} \pixel{h} \pixel{\conj{\harmonic{Y}}},
+    \harmonic{h}
+    %
+    = \integrateRegion{\sphereVolume} \pixel{h} \pixel{\conj{\harmonic{Y}}},
 \end{equation}
 %
 and swapping the order of summation and integration, the variational problem \cref{eq:chapter2_spacelimited_ratio} becomes
 %
 \begin{equation}
-	\mu
-	%
-	= \frac{\integrateRegion{\sphereVolume[']} \pixel[']{h} \integrateRegion{\sphereVolume} \pixel{\delta_{\omega'}} \pixel{\conj{h}}}
-	%
-	{\integrateRegion{\sphereVolume} \abs{\pixel{h}}^{2}},
+    \mu
+    %
+    = \frac{\integrateRegion{\sphereVolume[']} \pixel[']{h} \integrateRegion{\sphereVolume} \pixel{\delta_{\omega'}} \pixel{\conj{h}}}
+    %
+    {\integrateRegion{\sphereVolume} \abs{\pixel{h}}^{2}},
 \end{equation}
 %
 where
 %
 \begin{equation}
-	\pixel{\delta_{\omega'}}
-	%
-	= \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}}
+    \pixel{\delta_{\omega'}}
+    %
+    = \sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}}
 \end{equation}
 %
 is the bandlimited Dirac delta function.
 The maximally spacelimited functions \(\pixel{h} \in \spaceSpacelimit{}\) are therefore the solutions to the integral equation
 %
 \begin{equation}
-	\integrateRegion{\sphereVolume} \pixel{\delta_{\omega'}} \pixel{\conj{h}}
-	%
-	= \mu \pixel[']{\conj{h}},
+    \integrateRegion{\sphereVolume} \pixel{\delta_{\omega'}} \pixel{\conj{h}}
+    %
+    = \mu \pixel[']{\conj{h}},
 \end{equation}
 %
 which is the spherical analogue of the one-dimensional time-domain eigenproblem \cref{eq:chapter2_time_eigenproblem}.
@@ -666,41 +666,41 @@ which is the spherical analogue of the one-dimensional time-domain eigenproblem 
 Conversely, to find the maximally concentrated bandlimited functions \(\pixel{g} \in \spaceBandlimit{}\) within a region \(R\) one must maximise the ratio
 %
 \begin{equation}\label{eq:chapter2_bandlimited_ratio}
-	\mu
-	%
-	= \frac{\integrateRegion{\sphereVolume} \abs{\pixel{g}}^{2}}
-	%
-	{\integrateSphere{\omega} \abs{\pixel{g}}^{2}},
+    \mu
+    %
+    = \frac{\integrateRegion{\sphereVolume} \abs{\pixel{g}}^{2}}
+    %
+    {\integrateSphere{\omega} \abs{\pixel{g}}^{2}},
 \end{equation}
 %
 which is, as before, analogous to the one-dimensional problem \cref{eq:chapter2_frequency_ratio}.
 Expanding in harmonic space, and swapping the order of summation and integration, \cref{eq:chapter2_bandlimited_ratio} becomes
 %
 \begin{equation}
-	\mu
-	%
-	= \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \harmonic{g}
-		%
-		\sum\limits_{\ell'=0}^{L-1} \sum\limits_{m'=-\ell'}^{\ell'} \Dmatrix \conj{\harmonic[']{g}}}
-	%
-	{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{g}}^{2}},
+    \mu
+    %
+    = \frac{\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \harmonic{g}
+        %
+        \sum\limits_{\ell'=0}^{L-1} \sum\limits_{m'=-\ell'}^{\ell'} \Dmatrix \conj{\harmonic[']{g}}}
+    %
+    {\displaystyle\sum\limits_{\ell=0}^{L-1} \sum\limits_{m=-\ell}^{\ell} \abs{\harmonic{g}}^{2}},
 \end{equation}
 %
 where
 %
 \begin{equation}
-	\Dmatrix
-	%
-	= \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
+    \Dmatrix
+    %
+    = \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic[']{Y}}}
 \end{equation}
 %
 is an \(L^{2} \times L^{2}\) matrix if including all \(\ell{}\) and \(m\).
 The eigenproblem, from which the maximally bandlimited functions derive, is
 %
 \begin{equation}\label{eq:chapter2_harmonic_eigenproblem}
-	\sum\limits_{\ell'=0}^{L-1} \sum\limits_{m'=-\ell'}^{\ell'} \Dmatrix \conj{\harmonic[']{g}}
-	%
-	= \mu \conj{\harmonic{g}},
+    \sum\limits_{\ell'=0}^{L-1} \sum\limits_{m'=-\ell'}^{\ell'} \Dmatrix \conj{\harmonic[']{g}}
+    %
+    = \mu \conj{\harmonic{g}},
 \end{equation}
 %
 which is analogous to the one-dimensional frequency-domain eigenproblem \cref{eq:chapter2_frequency_eigenproblem}.
@@ -708,9 +708,9 @@ which is analogous to the one-dimensional frequency-domain eigenproblem \cref{eq
 To explore this further, consider the straightforward case of finding the maximally concentrated functions within an axisymmetric polar cap of colatitudinal radius \(\theta_{0}\), centred on the north pole, \ie{}
 %
 \begin{equation}
-	R
-	%
-	= \set{\theta: 0 \leq \theta \leq \theta_{0}}.
+    R
+    %
+    = \set{\theta: 0 \leq \theta \leq \theta_{0}}.
 \end{equation}
 %
 \cref{fig:chapter2_slepian_polar_cap} presents the first sixteen Slepian functions \(\pixel{\slepian{S}}\) for a colatitude \(\theta_{0}=\SI{40}{\degree}\) and bandlimit \(L=16\).
@@ -785,9 +785,9 @@ Correlators of fields are expectation values of products of fields at different 
 In Fourier space, the two-point correlator (or power spectrum) is given by
 %
 \begin{equation}\label{eq:chapter2_power_spectrum}
-	\expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})}
-	%
-	= {(2\pi)}^{3} \delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f},
+    \expval*{\fourier{f}(\vb*{k}) \conj{\fourier{f}}(\vb*{k'})}
+    %
+    = {(2\pi)}^{3} \delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f},
 \end{equation}
 %
 where \(\powerSpectrumDim{f}\) is the dimensionless power spectrum which, by statistical isotropy, depends only on the magnitude of \(k=\abs{\vb*{k}}\).
@@ -795,51 +795,51 @@ Due to statistical homogeneity, the Dirac delta function is present in \cref{eq:
 Often one considers the power in a shell, rather than per unit Fourier space volume, \ie{}
 %
 \begin{equation}\label{eq:chapter2_power_shell}
-	\powerSpectrumShell{f}
-	%
-	= \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}},
+    \powerSpectrumShell{f}
+    %
+    = \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}},
 \end{equation}
 %
 such that
 %
 \begin{equation}
-	\powerSpectrumShell{f} \dd{\ln{k}}
-	%
-	= \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \powerSpectrumDim{f},
+    \powerSpectrumShell{f} \dd{\ln{k}}
+    %
+    = \frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \powerSpectrumDim{f},
 \end{equation}
 %
 after integrating out the angular part.
 The Fourier convention adopted here is
 %
 \begin{equation}
-	f(\vb*{x})
-	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{x})
+    f(\vb*{x})
+    %
+    = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{f}(\vb*{k}) \exp(i\vb*{k}\cdot\vb*{x})
 \end{equation}
 %
 (\cf{} \cref{eq:chapter2_fourier_time}), and
 %
 \begin{equation}
-	\fourier{f}(\vb*{k})
-	%
-	= \int\dd[3]{\vb*{x}} f(\vb*{x}) \exp(-i\vb*{k}\cdot\vb*{x})
+    \fourier{f}(\vb*{k})
+    %
+    = \int\dd[3]{\vb*{x}} f(\vb*{x}) \exp(-i\vb*{k}\cdot\vb*{x})
 \end{equation}
 %
 (\cf{} \cref{eq:chapter2_fourier_frequency}).
 Note for real fields, the following conjugate symmetry relation holds
 %
 \begin{equation}
-	\fourier{f}(\vb*{k})
-	%
-	= \conj{\fourier{f}}(-\vb*{k}),
+    \fourier{f}(\vb*{k})
+    %
+    = \conj{\fourier{f}}(-\vb*{k}),
 \end{equation}
 %
 and similarly
 %
 \begin{equation}
-	f(\vb*{x})
-	%
-	= \conj{f}(-\vb*{x}).
+    f(\vb*{x})
+    %
+    = \conj{f}(-\vb*{x}).
 \end{equation}
 
 For linearly evolved fluctuations from single-field inflation, the power spectrum is sufficient to describe the statistics.
@@ -847,9 +847,9 @@ However, sometimes higher-order statistics are required to analyse deviations fr
 The simplest of these is the three-point correlator
 %
 \begin{equation}
-	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3})}
-	%
-	= {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3}) \bispectrum{f},
+    \expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3})}
+    %
+    = {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3}) \bispectrum{f},
 \end{equation}
 %
 which gives rise to the bispectrum \(\bispectrum{f}\) --- a symmetric function (due to statistical isotropy) of the three wavenumbers.
@@ -861,13 +861,13 @@ The three-point correlator vanishes for zero-mean Gaussian random fields and, as
 Other higher-order statistics may be computed, such as the four-point correlator
 %
 \begin{align}
-	\expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3}) f(\vb*{k}_{4})} =
-	%
-	\begin{aligned}
-		 & {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3} + \vb*{k}_{4}) \\
-		%
-		 & \times \trispectrum{f},
-	\end{aligned}
+    \expval*{f(\vb*{k}_{1}) f(\vb*{k}_{2}) f(\vb*{k}_{3}) f(\vb*{k}_{4})} =
+    %
+    \begin{aligned}
+         & {(2\pi)}^{3} \delta^{3}(\vb*{k}_{1} + \vb*{k}_{2} + \vb*{k}_{3} + \vb*{k}_{4}) \\
+        %
+         & \times \trispectrum{f},
+    \end{aligned}
 \end{align}
 %
 where the trispectrum \(\trispectrum{f}\) here depends on just six degrees of freedom (down from an initial twelve).
@@ -877,33 +877,33 @@ where the trispectrum \(\trispectrum{f}\) here depends on just six degrees of fr
 The two-point function must be invariant under all rotations due to statistical isotropy, which implies
 %
 \begin{equation}
-	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
-	%
-	= \expval*{\harmonic{(\rotation{\rho}f)}\conj{\harmonic[']{(\rotation{\rho}f)}}}.
+    \expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+    %
+    = \expval*{\harmonic{(\rotation{\rho}f)}\conj{\harmonic[']{(\rotation{\rho}f)}}}.
 \end{equation}
 %
 This only holds if
 %
 \begin{equation}
-	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
-	%
-	= \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
+    \expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+    %
+    = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
 \end{equation}
 %
 as
 %
 \begin{align}
-	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
-	%
-	 & = \expval*{\harmonic{(\rotation{\rho}f)}\conj{\harmonic[']{(\rotation{\rho}f)}}} \nonumber{}                                                                \\
-	%
-	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{}         \\
-	%
-	 & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \powerSpectrum \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
-	%
-	 & = \powerSpectrum \delta_{\ell\ell'} \wignerSum \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n}(\rho) \nonumber{}                               \\
-	%
-	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'}.
+    \expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+    %
+     & = \expval*{\harmonic{(\rotation{\rho}f)}\conj{\harmonic[']{(\rotation{\rho}f)}}} \nonumber{}                                                                \\
+    %
+     & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \expval*{f_{\ell n} \conj{f_{\ell' n'}}} \nonumber{}         \\
+    %
+     & = \wignerSum \wignerSum['] \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n'}(\rho) \powerSpectrum \delta_{\ell \ell'} \delta_{n n'} \nonumber{} \\
+    %
+     & = \powerSpectrum \delta_{\ell\ell'} \wignerSum \wigner{\ell}{m}{n}(\rho) \wigner[\ast]{\ell'}{m'}{n}(\rho) \nonumber{}                               \\
+    %
+     & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'}.
 \end{align}
 %
 The real quantity \(\powerSpectrum{}\) is the angular power spectrum of \(\pixel{f}\).
@@ -911,17 +911,17 @@ Zero-mean Gaussian random fields are fully determined by their two-point functio
 In real space the two-point function is
 %
 \begin{align}
-	\expval*{f(\omega) \conj{f}(\omega')}
-	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\omega) \conj{\harmonic[']{Y}}(\omega') \nonumber{}   \\
-	%
-	 & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\omega) \conj{\harmonic[']{Y}}(\omega') \nonumber{} \\
-	%
-	 & = \sum\limits_{\ell=0}^{\infty} \powerSpectrum \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\omega) \conj{\harmonic{Y}}(\omega') \nonumber{}                                                                                                    \\
-	%
-	 & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                                                                                             \\
-	%
-	 & = C(\theta),
+    \expval*{f(\omega) \conj{f}(\omega')}
+    %
+     & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \harmonic{Y}(\omega) \conj{\harmonic[']{Y}}(\omega') \nonumber{}   \\
+    %
+     & = \sum\limits_{\ell=0}^{\infty} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{\ell'=0}^{\infty} \sum\limits_{m'=-\ell'}^{\ell'} \powerSpectrum \delta_{\ell\ell'} \delta_{m m'} \harmonic{Y}(\omega) \conj{\harmonic[']{Y}}(\omega') \nonumber{} \\
+    %
+     & = \sum\limits_{\ell=0}^{\infty} \powerSpectrum \sum\limits_{m=-\ell}^{\ell} \harmonic{Y}(\omega) \conj{\harmonic{Y}}(\omega') \nonumber{}                                                                                                    \\
+    %
+     & = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum P_{\ell}(\omega\cdot\omega')  \nonumber{}                                                                                                                                             \\
+    %
+     & = C(\theta),
 \end{align}
 %
 where the penultimate line follows by the spherical harmonic addition theorem \cref{eq:chapter2_addition_theorem}, and in the last line \({\omega\cdot\omega' = \cos{\theta}}\).
@@ -929,17 +929,17 @@ Hence, the two-point function depends on the angle between the two points, as re
 The variance of the field is
 %
 \begin{equation}
-	C(0)
-	%
-	= \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum.
+    C(0)
+    %
+    = \sum\limits_{\ell=0}^{\infty} \factor \powerSpectrum.
 \end{equation}
 %
 Inverting the correlation function retrieves the power spectrum using the orthogonality of the Legendre polynomials
 %
 \begin{equation}
-	\powerSpectrum
-	%
-	= 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} C(\theta) P_{\ell}(\cos{\theta}).
+    \powerSpectrum
+    %
+    = 2\pi \int\limits_{-1}^{1} \dd{\cos{\theta}} C(\theta) P_{\ell}(\cos{\theta}).
 \end{equation}
 
 \subsubsection{Projection of Three-Dimensional Random Fields}
@@ -949,77 +949,77 @@ A statistically isotropic two-dimensional field on the sphere is the projection 
 Consider projecting a random field \(F(\vb*{x})\) (for example, CMB temperature fluctuations) over a sphere of radius \(r\) (the distance to the surface of last scattering), centred on the origin, \ie{}
 %
 \begin{equation}
-	f(\vu*{n})
-	%
-	= F(r\vu*{n}),
+    f(\vu*{n})
+    %
+    = F(r\vu*{n}),
 \end{equation}
 %
 where \(\vu*{n}\) is a unit vector along the line-of-sight.
 Consider the expansion of \(F(r\vu*{n})\) in Fourier space
 %
 \begin{equation}
-	f(\vu*{n})
-	%
-	= F(r\vu*{n})
-	%
-	= \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n}),
+    f(\vu*{n})
+    %
+    = F(r\vu*{n})
+    %
+    = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n}),
 \end{equation}
 %
 and the Rayleigh plane-wave expansion
 %
 \begin{align}
-	\exp(i k r\vu*{k}\cdot\vu*{n})
-	%
-	 & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} \bessel{k r} P_{\ell}(\vu*{k}\cdot\vu*{n}) \nonumber{}                                   \\
-	%
-	 & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{k r} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{n}),
+    \exp(i k r\vu*{k}\cdot\vu*{n})
+    %
+     & = \sum\limits_{\ell=0}^{\infty} (2\ell+1) i^{\ell} \bessel{k r} P_{\ell}(\vu*{k}\cdot\vu*{n}) \nonumber{}                                   \\
+    %
+     & = 4\pi \sum\limits_{\ell=0}^{\infty} i^{\ell} \bessel{k r} \sum\limits_{m=-\ell}^{\ell} \conj{\harmonic{Y}}(\vu*{k}) \harmonic{Y}(\vu*{n}),
 \end{align}
 %
 where \(\bessel{k r}\) are the spherical Bessel functions.
 The spherical harmonic coefficients of \(f(\vu*{n})\) are therefore
 %
 \begin{align}
-	\harmonic{f}
-	%
-	 & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                                       \\
-	%
-	 & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
-	%
-	 & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{k r} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
-	%
-	 & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                   \\
-	%
-	 & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{F}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}),
+    \harmonic{f}
+    %
+     & = \integrateSphere{\vu*{n}} f(\vu*{n}) \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                                                                                                                       \\
+    %
+     & = \integrateSphere{\vu*{n}} \bigg[\int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \exp(i k r\vu*{k}\cdot\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{}                                                                                                                         \\
+    %
+     & = \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \integrateSphere{\vu*{n}} \bigg[4\pi \sum\limits_{\ell'=0}^{\infty} i^{\ell'} \bessel[']{k r} \sum\limits_{m'=-\ell'}^{\ell'} \conj{\harmonic[']{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{n})\bigg] \conj{\harmonic{Y}}(\vu*{n}) \nonumber{} \\
+    %
+     & = 4\pi i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{{(2\pi)}^{3}} \fourier{F}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}) \nonumber{}                                                                                                                                                                   \\
+    %
+     & = i^{\ell} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \fourier{F}(\vb*{k}) \bessel{k r} \conj{\harmonic{Y}}(\vu*{k}),
 \end{align}
 %
 where the penultimate line follows by the orthonormality of the spherical harmonics \cref{eq:chapter2_spherical_harmonics_orthonormal}.
 The two-point function in harmonic space is hence
 %
 \begin{align}
-	\expval*{\harmonic{f}\conj{\harmonic[']{f}}}
-	%
-	 & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{F}(\vb*{k}) \conj{\fourier{F}}(\vb*{k'})} \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
-	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
-	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} \bessel{k r} \bessel[']{k r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                  \\
-	%
-	 & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} \bessel{k r} \bessel[']{k r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                               \\
-	%
-	 & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} \bessel{k r} \bessel[']{k r} \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                          \\
-	%
-	 & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r) \nonumber{}                                                                                                                                                 \\
-	%
-	 & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
+    \expval*{\harmonic{f}\conj{\harmonic[']{f}}}
+    %
+     & = i^{\ell-\ell'} \int\frac{\dd[3]{\vb*{k}}}{2\pi^{2}} \int\frac{\dd[3]{\vb*{k'}}}{2\pi^{2}} \expval*{\fourier{F}(\vb*{k}) \conj{\fourier{F}}(\vb*{k'})} \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{} \\
+    %
+     & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \int\dd[3]{\vb*{k'}} [\delta^{3}(\vb*{k} - \vb*{k'}) \powerSpectrumDim{f}] \bessel{k r} \bessel[']{k'r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k'}) \nonumber{}                           \\
+    %
+     & = \frac{i^{\ell-\ell'}}{\pi/2} \int\dd[3]{\vb*{k}} \powerSpectrumDim{f} \bessel{k r} \bessel[']{k r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                                                                  \\
+    %
+     & = \frac{i^{\ell-\ell'}}{\pi/2} \bigg[\int\dd{k} k^{2} \integrateSphere{\vu*{k}}\bigg] \powerSpectrumDim{f} \bessel{k r} \bessel[']{k r} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                               \\
+    %
+     & = 4\pi i^{\ell-\ell'} \int\frac{\dd{k}}{k} \frac{k^{3}\powerSpectrumDim{f}}{2\pi^{2}} \bessel{k r} \bessel[']{k r} \integrateSphere{\vu*{k}} \conj{\harmonic{Y}}(\vu*{k}) \harmonic[']{Y}(\vu*{k}) \nonumber{}                                          \\
+    %
+     & = 4\pi \delta_{\ell\ell'} \delta_{m m'} \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r) \nonumber{}                                                                                                                                                 \\
+    %
+     & = \powerSpectrum \delta_{\ell\ell'} \delta_{m m'},
 \end{align}
 %
 where the penultimate line follows by \cref{eq:chapter2_power_shell}.
 Thus, \(f(\vu*{n})\) is a statistically isotropic field with angular power spectrum
 %
 \begin{equation}
-	\powerSpectrum
-	%
-	= 4\pi \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r).
+    \powerSpectrum
+    %
+    = 4\pi \int\dd{\ln{k}} \Delta_{f}^{2}(k) j^{2}_{\ell}(k r).
 \end{equation}
 
 \subsubsection{Cosmic Variance}
@@ -1033,63 +1033,63 @@ Consider estimating the angular power spectrum of a zero-mean random field \(f(\
 The estimator for the \(\powerSpectrum{}\) is as follows
 %
 \begin{equation}
-	\powerSpectrumHat
-	%
-	= \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \conj{\harmonic{f}}.
+    \powerSpectrumHat
+    %
+    = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \harmonic{f} \conj{\harmonic{f}}.
 \end{equation}
 %
 This estimator is unbiased, \ie{} \(\expval*{\powerSpectrumHat} = \powerSpectrum{}\), as
 %
 \begin{align}
-	\expval*{\powerSpectrumHat}
-	%
-	 & = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \nonumber{} \\
-	%
-	 & = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum \nonumber{}                             \\
-	%
-	 & = \powerSpectrum.
+    \expval*{\powerSpectrumHat}
+    %
+     & = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \expval*{\harmonic{f} \conj{\harmonic{f}}} \nonumber{} \\
+    %
+     & = \frac{1}{2\ell+1} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum \nonumber{}                             \\
+    %
+     & = \powerSpectrum.
 \end{align}
 %
 Here, the sum in \(m\) means for a given \(\ell{}\) one uses all the available information in the \(2\ell+1\) independent degrees of freedom; however, this estimator has non-zero variance.
 The variance of a Gaussian random field follows by
 %
 \begin{align}
-	\variance{\powerSpectrumHat}
-	%
-	 & = - \expval*{\powerSpectrumHat}^{2} + \expval*{\powerSpectrumHat^{2}} \nonumber{}                                                                                                                     \\
-	%
-	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{} \\
-	%
-	 & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
-	%
-	\begin{aligned}
-		 & \expval*{\harmonic{f} \conj{\harmonic{f}}}  \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}  \\
-		%
-		 & + \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} \nonumber{} \\
-		%
-		 & + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}
-	\end{aligned} \nonumber{}                                          \\
-	%
-	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
-	%
-	\begin{aligned}
-		 & \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} \nonumber{} \\
-		%
-		 & + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}
-	\end{aligned} \nonumber{}                                                                \\
-	%
-	 & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
-	%
-	\begin{aligned}
-		 & \phaseFactor['] \expval*{\harmonic{f} \conj{f_{\ell(-m')}}} \phaseFactor['] \expval*{\conj{\harmonic{f}} f_{\ell(-m')}} \nonumber{} \\
-		%
-		 & + \powerSpectrum^{2} \delta_{m m'}
-	\end{aligned} \nonumber{}                                \\
-	%
-	%
-	 & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum^{2} \nonumber{}                                                                                                               \\
-	%
-	 & = \frac{2}{2\ell+1} \powerSpectrum^{2},
+    \variance{\powerSpectrumHat}
+    %
+     & = - \expval*{\powerSpectrumHat}^{2} + \expval*{\powerSpectrumHat^{2}} \nonumber{}                                                                                                                     \\
+    %
+     & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'} \expval*{\harmonic{f} \conj{\harmonic{f}} f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{} \\
+    %
+     & = - \powerSpectrum^{2} + \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
+    %
+    \begin{aligned}
+         & \expval*{\harmonic{f} \conj{\harmonic{f}}}  \expval*{f_{\ell m'} \conj{f_{\ell m'}}} \nonumber{}  \\
+        %
+         & + \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} \nonumber{} \\
+        %
+         & + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}
+    \end{aligned} \nonumber{}                                          \\
+    %
+     & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
+    %
+    \begin{aligned}
+         & \expval*{\harmonic{f} f_{\ell m'}} \expval*{\conj{\harmonic{f}} \conj{f_{\ell m'}}} \nonumber{} \\
+        %
+         & + \expval*{\harmonic{f} \conj{f_{\ell m'}}} \expval*{\conj{\harmonic{f}} f_{\ell m'}}
+    \end{aligned} \nonumber{}                                                                \\
+    %
+     & = \frac{1}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \sum\limits_{m'=-\ell'}^{\ell'}
+    %
+    \begin{aligned}
+         & \phaseFactor['] \expval*{\harmonic{f} \conj{f_{\ell(-m')}}} \phaseFactor['] \expval*{\conj{\harmonic{f}} f_{\ell(-m')}} \nonumber{} \\
+        %
+         & + \powerSpectrum^{2} \delta_{m m'}
+    \end{aligned} \nonumber{}                                \\
+    %
+    %
+     & = \frac{2}{{(2\ell+1)}^{2}} \sum\limits_{m=-\ell}^{\ell} \powerSpectrum^{2} \nonumber{}                                                                                                               \\
+    %
+     & = \frac{2}{2\ell+1} \powerSpectrum^{2},
 \end{align}
 %
 where the third line follows by Wick's theorem.

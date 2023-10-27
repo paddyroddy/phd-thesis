@@ -7,116 +7,79 @@ on:
       - "renovate/**"
   pull_request:
 
+concurrency:
+  cancel-in-progress: true
+  group: >-
+    ${{ github.workflow }}-
+    ${{ github.event.pull_request.number || github.ref }}
+
 jobs:
-    chktex:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout source
-              uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+  chktex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: paddyroddy/.github/actions/latex/chktex@v0.14.0
 
-            - name: Run chktex
-              uses: xu-cheng/texlive-action@v2
-              with:
-                  scheme: full
-                  run: |
-                      chktex thesis.tex | tee /dev/stderr | (! grep -q ^)
+  vale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: paddyroddy/.github/actions/latex/vale@v0.14.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
 
-    vale:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout source
-              uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+  compile-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: paddyroddy/.github/actions/latex/compile@v0.14.0
 
-            - name: Run Vale
-              uses: errata-ai/vale-action@v2
-              env:
-                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-              with:
-                  fail_on_error: true
-                  filter_mode: nofilter
-                  reporter: github-check
-                  vale_flags: "--glob='!{config/,figures/*/example_,thesis}*'"
+      - name: Upload artefacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: artefacts
+          path: |-
+            *.bib
+            *.bcf
+            *.pdf
+          if-no-files-found: error
 
-    compile-latex:
-        runs-on: ubuntu-latest
-        steps:
-            - name: checkout source
-              uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+  check-citations-referenced:
+    runs-on: ubuntu-latest
+    needs: compile-latex
+    steps:
+      - name: Download artefacts
+        uses: actions/download-artifact@v3
+        with:
+          name: artefacts
 
-            - name: Build PDF
-              uses: xu-cheng/texlive-action@v2
-              with:
-                  scheme: full
-                  run: |
-                      latexmk -quiet
+      - name: Fix regex for checkcites
+        uses: xu-cheng/texlive-action@v2
+        id: references
+        with:
+          scheme: full
+          run: |-
+            sed -i 's#\sglob="false"##' thesis.bcf
+            echo ::set-output name=uncited::\
+            $(checkcites -b biber thesis -u | grep -c "=>")
 
-            - name: Upload artefacts
-              uses: actions/upload-artifact@v3
-              with:
-                  name: artefacts
-                  path: |
-                      *.bib
-                      *.bcf
-                      *.pdf
-                  if-no-files-found: error
+      - name: Check all references cited
+        if: ${{ steps.references.outputs.uncited > 0 }}
+        uses: actions/github-script@v6
+        with:
+          script: core.setFailed('Not all references cited')
 
-    check-citations-referenced:
-        runs-on: ubuntu-latest
-        needs: compile-latex
-        steps:
-            - name: Download artefacts
-              uses: actions/download-artifact@v3
-              with:
-                  name: artefacts
+  upload-to-dropbox:
+    runs-on: ubuntu-latest
+    needs: compile-latex
+    steps:
+      - name: Download artefacts
+        uses: actions/download-artifact@v3
+        with:
+          name: artefacts
 
-            - name: Fix regex for checkcites
-              uses: xu-cheng/texlive-action@v2
-              id: references
-              with:
-                  scheme: full
-                  run: |
-                      sed -i 's#\sglob="false"##' thesis.bcf
-                      echo ::set-output name=uncited::\
-                        $(checkcites -b biber thesis -u | grep -c "=>")
-
-            - name: Check all references cited
-              if: ${{ steps.references.outputs.uncited > 0 }}
-              uses: actions/github-script@v6
-              with:
-                  script: |
-                      core.setFailed('Not all references cited')
-
-    upload-to-dropbox:
-        runs-on: ubuntu-latest
-        needs: compile-latex
-        steps:
-            - name: checkout source
-              uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-
-            - name: Download artefacts
-              uses: actions/download-artifact@v3
-              with:
-                  name: artefacts
-
-            - name: Set up Dropbox
-              run: |
-                  echo "CONFIGFILE_VERSION=$CONFIGFILE_VERSION" > ~/.dropbox_uploader
-                  echo "OAUTH_APP_KEY=$OAUTH_APP_KEY" >> ~/.dropbox_uploader
-                  echo "OAUTH_APP_SECRET=$OAUTH_APP_SECRET" >> ~/.dropbox_uploader
-                  echo "OAUTH_REFRESH_TOKEN=$OAUTH_REFRESH_TOKEN" >> ~/.dropbox_uploader
-              env:
-                  CONFIGFILE_VERSION: ${{secrets.CONFIGFILE_VERSION}}
-                  OAUTH_APP_KEY: ${{secrets.OAUTH_APP_KEY}}
-                  OAUTH_APP_SECRET: ${{secrets.OAUTH_APP_SECRET}}
-                  OAUTH_REFRESH_TOKEN: ${{secrets.OAUTH_REFRESH_TOKEN}}
-
-            - name: Retieve Dropbox uploader script
-              run: |
-                curl "https://raw.githubusercontent.com/andreafabrizi/\
-                Dropbox-Uploader/master/dropbox_uploader.sh" \
-                -o dropbox_uploader.sh
-                chmod +x dropbox_uploader.sh
-
-            - name: Upload PDF
-              run: |
-                  ./dropbox_uploader.sh upload thesis.pdf patrick_roddy_thesis.pdf
+      - uses: paddyroddy/.github/actions/dropbox@v0.14.0
+        with:
+          configfile-version: ${{ secrets.CONFIGFILE_VERSION }}
+          files-to-upload: $(find . -maxdepth 1 -name '*.pdf' -print)
+          oauth-app-key: ${{ secrets.OAUTH_APP_KEY }}
+          oauth-app-secret: ${{ secrets.OAUTH_APP_SECRET }}
+          oauth-refresh-token: ${{ secrets.OAUTH_REFRESH_TOKEN }}

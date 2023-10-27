@@ -3,37 +3,37 @@ message: Use '%s' instead of '%s'
 ignorecase: true
 level: error
 swap:
-    2D: two-dimensional
-    3D: three-dimensional
-    band-limit: bandlimit
-    band-limited: bandlimited
-    band-pass: bandpass
-    co-latitude: colatitude
-    co-latitudinal: colatitudinal
-    discretized: discretised
-    four dimensional: four-dimensional
-    full sky: full-sky
-    hard threshold: hard-threshold
-    hard thresholded: hard-thresholded
-    hard thresholding: hard-thresholding
-    harmonic-space: harmonic space
-    high frequency: high-frequency
-    low frequency: low-frequency
-    non zero: non-zero
-    one dimensional: one-dimensional
-    photo: photon
-    photos: photons
-    pixel space: real space
-    pixel-space: real space
-    real-space: real space
-    scale dependent: scale-dependent
-    scale discretised: scale-discretised
-    signal to noise: signal-to-noise
-    so called: so-called
-    square integrable: square-integrable
-    three dimensional: three-dimensional
-    time frequency: time-frequency
-    top to bottom: top-to-bottom
-    two dimensional: two-dimensional
-    well localised: well-localised
-    zero mean: zero-mean
+  2D: two-dimensional
+  3D: three-dimensional
+  band-limit: bandlimit
+  band-limited: bandlimited
+  band-pass: bandpass
+  co-latitude: colatitude
+  co-latitudinal: colatitudinal
+  discretized: discretised
+  four dimensional: four-dimensional
+  full sky: full-sky
+  hard threshold: hard-threshold
+  hard thresholded: hard-thresholded
+  hard thresholding: hard-thresholding
+  harmonic-space: harmonic space
+  high frequency: high-frequency
+  low frequency: low-frequency
+  non zero: non-zero
+  one dimensional: one-dimensional
+  photo: photon
+  photos: photons
+  pixel space: real space
+  pixel-space: real space
+  real-space: real space
+  scale dependent: scale-dependent
+  scale discretised: scale-discretised
+  signal to noise: signal-to-noise
+  so called: so-called
+  square integrable: square-integrable
+  three dimensional: three-dimensional
+  time frequency: time-frequency
+  top to bottom: top-to-bottom
+  two dimensional: two-dimensional
+  well localised: well-localised
+  zero mean: zero-mean

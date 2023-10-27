@@ -4,8 +4,8 @@ link: "https://developers.google.com/style/abbreviations"
 ignorecase: true
 level: error
 tokens:
-    - "tl;dr"
-    - ymmv
-    - rtfm
-    - imo
-    - fwiw
+  - "tl;dr"
+  - ymmv
+  - rtfm
+  - imo
+  - fwiw

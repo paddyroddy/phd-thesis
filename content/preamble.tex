@@ -14,78 +14,78 @@
 \makedeclaration{}
 
 \begin{abstract} % 300 word limit
-	Many fields in science and engineering measure data that inherently live on non-Euclidean geometries, such as the sphere.
-	Techniques developed in the Euclidean setting must be extended to other geometries.
-	Due to recent interest in geometric deep learning, analogues of Euclidean techniques must also handle general manifolds or graphs.
-	Often, data are only observed over partial regions of manifolds, and thus standard whole-manifold techniques may not yield accurate predictions.
-	In this thesis, a new wavelet basis is designed for datasets like these.
+    Many fields in science and engineering measure data that inherently live on non-Euclidean geometries, such as the sphere.
+    Techniques developed in the Euclidean setting must be extended to other geometries.
+    Due to recent interest in geometric deep learning, analogues of Euclidean techniques must also handle general manifolds or graphs.
+    Often, data are only observed over partial regions of manifolds, and thus standard whole-manifold techniques may not yield accurate predictions.
+    In this thesis, a new wavelet basis is designed for datasets like these.
 
-	Although many definitions of spherical convolutions exist, none fully emulate the Euclidean definition.
-	A novel spherical convolution is developed, designed to tackle the shortcomings of existing methods.
-	The so-called sifting convolution exploits the sifting property of the Dirac delta and follows by the inner product of a function with the translated version of another.
-	This translation operator is analogous to the Euclidean translation in harmonic space and exhibits some useful properties.
-	In particular, the sifting convolution supports directional kernels; has an output that remains on the sphere; and is efficient to compute.
-	The convolution is entirely generic and thus may be used with any set of basis functions.
-	An application of the sifting convolution with a topographic map of the Earth demonstrates that it supports directional kernels to perform anisotropic filtering.
+    Although many definitions of spherical convolutions exist, none fully emulate the Euclidean definition.
+    A novel spherical convolution is developed, designed to tackle the shortcomings of existing methods.
+    The so-called sifting convolution exploits the sifting property of the Dirac delta and follows by the inner product of a function with the translated version of another.
+    This translation operator is analogous to the Euclidean translation in harmonic space and exhibits some useful properties.
+    In particular, the sifting convolution supports directional kernels; has an output that remains on the sphere; and is efficient to compute.
+    The convolution is entirely generic and thus may be used with any set of basis functions.
+    An application of the sifting convolution with a topographic map of the Earth demonstrates that it supports directional kernels to perform anisotropic filtering.
 
-	Slepian wavelets are built upon the eigenfunctions of the Slepian concentration problem of the manifold --- a set of bandlimited functions which are maximally concentrated within a given region.
-	Wavelets are constructed through a tiling of the Slepian harmonic line by leveraging the existing scale-discretised framework.
-	A straightforward denoising formalism demonstrates a boost in signal-to-noise for both a spherical and general manifold example.
-	Whilst these wavelets were inspired by spherical datasets, like in cosmology, the wavelet construction may be utilised for manifold or graph data.
+    Slepian wavelets are built upon the eigenfunctions of the Slepian concentration problem of the manifold --- a set of bandlimited functions which are maximally concentrated within a given region.
+    Wavelets are constructed through a tiling of the Slepian harmonic line by leveraging the existing scale-discretised framework.
+    A straightforward denoising formalism demonstrates a boost in signal-to-noise for both a spherical and general manifold example.
+    Whilst these wavelets were inspired by spherical datasets, like in cosmology, the wavelet construction may be utilised for manifold or graph data.
 \end{abstract}
 
 \begin{impactstatement} % 500 word limit
-	This thesis is primarily split into two parts: the development of a spherical convolution, and the construction of a wavelet basis built on this convolution.
-	The sifting convolution is designed as a Euclidean analogue; although initially designed for the sphere, it is indeed general.
-	Slepian wavelets were again considered for the sphere, but may be generalised further to graph and manifold data.
-	These wavelets are intended for the analysis of incomplete manifolds.
+    This thesis is primarily split into two parts: the development of a spherical convolution, and the construction of a wavelet basis built on this convolution.
+    The sifting convolution is designed as a Euclidean analogue; although initially designed for the sphere, it is indeed general.
+    Slepian wavelets were again considered for the sphere, but may be generalised further to graph and manifold data.
+    These wavelets are intended for the analysis of incomplete manifolds.
 
-	Convolutions are a fundamental technique in signal processing that are used widely in scientific and engineering applications.
-	Often the convolution is part of a wider technique, although they may be used directly in their own right.
-	Existing convolutions in the spherical domain impose certain restrictions on one or both inputs.
-	The sifting convolution therefore may find use in various applications where one seeks to accept directional inputs whilst remaining on the sphere.
-	Moreover, the convolution is general and, as such, may find success in general manifold settings.
-	With the recent interest in geometric deep learning, the sifting convolution may find application in the development of convolutional neural networks on manifolds.
+    Convolutions are a fundamental technique in signal processing that are used widely in scientific and engineering applications.
+    Often the convolution is part of a wider technique, although they may be used directly in their own right.
+    Existing convolutions in the spherical domain impose certain restrictions on one or both inputs.
+    The sifting convolution therefore may find use in various applications where one seeks to accept directional inputs whilst remaining on the sphere.
+    Moreover, the convolution is general and, as such, may find success in general manifold settings.
+    With the recent interest in geometric deep learning, the sifting convolution may find application in the development of convolutional neural networks on manifolds.
 
-	Wavelets are also widely used in various disciplines to analyse signals both in space and scale.
-	Whilst many fields measure data on manifolds (\ie{} the sphere), often data are only observed on a partial region of the manifold.
-	Wavelets are a typical approach to data of this form, but the wavelet coefficients which overlap with the boundary become contaminated and must be removed for accurate analysis.
-	Another approach is to estimate the region of missing data and to use existing whole-manifold methods for analysis.
-	However, both approaches introduce uncertainty into any analysis.
-	Slepian wavelets enable one to work directly with only the data present, thus avoiding the problems discussed above.
-	Possible applications of Slepian wavelets to areas of research measuring data on the partial sphere include: gravitational/magnetic fields in geodesy; ground-based measurements in astronomy; measurements of whole-planet properties in planetary science; geomagnetism of the Earth; and in analyses of the cosmic microwave background.
+    Wavelets are also widely used in various disciplines to analyse signals both in space and scale.
+    Whilst many fields measure data on manifolds (\ie{} the sphere), often data are only observed on a partial region of the manifold.
+    Wavelets are a typical approach to data of this form, but the wavelet coefficients which overlap with the boundary become contaminated and must be removed for accurate analysis.
+    Another approach is to estimate the region of missing data and to use existing whole-manifold methods for analysis.
+    However, both approaches introduce uncertainty into any analysis.
+    Slepian wavelets enable one to work directly with only the data present, thus avoiding the problems discussed above.
+    Possible applications of Slepian wavelets to areas of research measuring data on the partial sphere include: gravitational/magnetic fields in geodesy; ground-based measurements in astronomy; measurements of whole-planet properties in planetary science; geomagnetism of the Earth; and in analyses of the cosmic microwave background.
 \end{impactstatement}
 
 \begin{acknowledgements}
-	First, I would like to express my gratitude to my supervisor Jason D.~McEwen for providing me with advice throughout the last four years.
-	Although I was initially overwhelmed with the mathematical background required to undertake this work, Jason's support over whiteboard discussions proved invaluable.
-	Many of the methods developed in the thesis originated from Jason's scrawled notes from some time ago, it has been a great pleasure to build on these in practice.
-	I hope that, in the future, Slepian wavelets will be successfully applied to cosmology, which is Jason's principal line of research.
+    First, I would like to express my gratitude to my supervisor Jason D.~McEwen for providing me with advice throughout the last four years.
+    Although I was initially overwhelmed with the mathematical background required to undertake this work, Jason's support over whiteboard discussions proved invaluable.
+    Many of the methods developed in the thesis originated from Jason's scrawled notes from some time ago, it has been a great pleasure to build on these in practice.
+    I hope that, in the future, Slepian wavelets will be successfully applied to cosmology, which is Jason's principal line of research.
 
-	I would like to thank the Centre for Doctoral Training in Data Intensive Science (CDT DIS) for providing experiences beyond a standard PhD programme.
-	The first-year training was varied and gave me insights into areas of mathematical, statistical and computational methods which I had not studied before, and deepened my existing knowledge of other topics.
-	In our first year, James Legg, Kelvin Mulder and I undertook a group project titled Towards Developing Intrusion Detection Techniques.
-	This work was performed with aid from Matt Lewis of NCC Group and provided me with insight into how the skills developed on the courses can be applied in industry.
+    I would like to thank the Centre for Doctoral Training in Data Intensive Science (CDT DIS) for providing experiences beyond a standard PhD programme.
+    The first-year training was varied and gave me insights into areas of mathematical, statistical and computational methods which I had not studied before, and deepened my existing knowledge of other topics.
+    In our first year, James Legg, Kelvin Mulder and I undertook a group project titled Towards Developing Intrusion Detection Techniques.
+    This work was performed with aid from Matt Lewis of NCC Group and provided me with insight into how the skills developed on the courses can be applied in industry.
 
-	Through the CDT, I undertook a six-month placement in my third year with Vortexa, which was a fast-growing SME at the time.
-	At Vortexa, I was a data engineer in the Signal Processing and Enrichment team (SPET) whose responsibilities largely included ingesting the data from multiple sources, and bringing it all together in a coherent and useful manner for the downstream teams.
-	I would like to thank the members of the SPET team in particular: Nat Day, Arthur Degonde, Romain Guion, Tino von Stegmann, and Ed Wright, for making me feel welcome and a valued member of the team.
-	Although Romain had high expectations, he was a kind and thoughtful manager who always asked for my opinion on how the team could improve their workflow.
-	I met many friendly faces at Vortexa, and the placement gave me useful insight into data science and engineering in industry.
+    Through the CDT, I undertook a six-month placement in my third year with Vortexa, which was a fast-growing SME at the time.
+    At Vortexa, I was a data engineer in the Signal Processing and Enrichment team (SPET) whose responsibilities largely included ingesting the data from multiple sources, and bringing it all together in a coherent and useful manner for the downstream teams.
+    I would like to thank the members of the SPET team in particular: Nat Day, Arthur Degonde, Romain Guion, Tino von Stegmann, and Ed Wright, for making me feel welcome and a valued member of the team.
+    Although Romain had high expectations, he was a kind and thoughtful manager who always asked for my opinion on how the team could improve their workflow.
+    I met many friendly faces at Vortexa, and the placement gave me useful insight into data science and engineering in industry.
 
-	I have been fortunate to receive support during my PhD.
-	In particular, I would like to thank Zubair Khalid for providing his \texttt{MATLAB} implementation to compute the Slepian functions of a polar cap region, as well as the formulation for a limited colatitude-longitude region.
-	Furthermore, I am also grateful to Fionn Fitzmaurice for proving advice on the creation of \cref{fig:chapter5_region}.
+    I have been fortunate to receive support during my PhD.
+    In particular, I would like to thank Zubair Khalid for providing his \texttt{MATLAB} implementation to compute the Slepian functions of a polar cap region, as well as the formulation for a limited colatitude-longitude region.
+    Furthermore, I am also grateful to Fionn Fitzmaurice for proving advice on the creation of \cref{fig:chapter5_region}.
 
-	At UCL, I have made many friends who have helped in one way or another, too many to mention explicitly.
-	Through the CDT office in my first year and the astrophysics office in later years, I have had many great colleagues.
-	In our first year, I recall many discussions with Tarek Allam Jr.\ on all things on the command line and good software practices --- which I now use all the time.
-	I would also like to thank, in particular, Damien De Mijolla, Davide Piras, Gordon (Kai Hou) Yip, among others who were always willing to chat about my research --- whether they fully understood what I was talking about or not.
-	Lastly, to RAX (the university running club) through which I met students from all over UCL, including my various wonderful housemates.
+    At UCL, I have made many friends who have helped in one way or another, too many to mention explicitly.
+    Through the CDT office in my first year and the astrophysics office in later years, I have had many great colleagues.
+    In our first year, I recall many discussions with Tarek Allam Jr.\ on all things on the command line and good software practices --- which I now use all the time.
+    I would also like to thank, in particular, Damien De Mijolla, Davide Piras, Gordon (Kai Hou) Yip, among others who were always willing to chat about my research --- whether they fully understood what I was talking about or not.
+    Lastly, to RAX (the university running club) through which I met students from all over UCL, including my various wonderful housemates.
 
-	Outside of UCL, I would also like to thank my friends from Kenilworth, Cambridge and London who have supported me in one way another.
-	My thanks also to my family, in particular to my poor father Peter who has painstakingly proofread my thesis, and my uncle Dermot who has been there for academic advice.
-	Thank you also to my housemates over the years, who have always been around to talk to.
+    Outside of UCL, I would also like to thank my friends from Kenilworth, Cambridge and London who have supported me in one way another.
+    My thanks also to my family, in particular to my poor father Peter who has painstakingly proofread my thesis, and my uncle Dermot who has been there for academic advice.
+    Thank you also to my housemates over the years, who have always been around to talk to.
 \end{acknowledgements}
 
 \setcounter{tocdepth}{2}

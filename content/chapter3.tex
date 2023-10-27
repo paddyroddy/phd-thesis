@@ -44,71 +44,71 @@ Recall also \cref{sec:chapter2_notation,sec:chapter2_spherical_harmonics,sec:cha
 In harmonic space the Dirac delta on the sphere rotated to some \(\omega'=(\theta',\phi')\) is
 %
 \begin{equation}
-	\pixel{\delta_{\omega'}}
-	%
-	= \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}},
+    \pixel{\delta_{\omega'}}
+    %
+    = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}},
 \end{equation}
 %
 which can be shown to be real
 %
 \begin{align}\label{eq:chapter3_dirac_delta_real}
-	\pixel{\delta_{\omega'}}
-	%
-	 & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                           \\
-	%
-	 & = \harmonicSum \phaseFactor \pixel[']{Y_{\ell(-m)}} \phaseFactor \pixel{\conj{Y_{\ell(-m)}}} \nonumber{} \\
-	%
-	 & = \sum\limits_{\ell m'} \pixel[']{Y_{\ell m'}} \pixel{\conj{Y_{\ell m'}}} \nonumber{}                    \\
-	%
-	 & = \pixel{\conj{\delta_{\omega'}}},
+    \pixel{\delta_{\omega'}}
+    %
+     & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                           \\
+    %
+     & = \harmonicSum \phaseFactor \pixel[']{Y_{\ell(-m)}} \phaseFactor \pixel{\conj{Y_{\ell(-m)}}} \nonumber{} \\
+    %
+     & = \sum\limits_{\ell m'} \pixel[']{Y_{\ell m'}} \pixel{\conj{Y_{\ell m'}}} \nonumber{}                    \\
+    %
+     & = \pixel{\conj{\delta_{\omega'}}},
 \end{align}
 %
 where the second line follows by \cref{eq:chapter2_spherical_harmonic_phase}.
 The Dirac delta on the sphere is normalised
 %
 \begin{equation}
-	\integrateSphere{\omega} \pixel{\delta_{\omega'}}
-	%
-	= 1,
+    \integrateSphere{\omega} \pixel{\delta_{\omega'}}
+    %
+    = 1,
 \end{equation}
 %
 as
 %
 \begin{align}
-	\integrateSphere{\omega} \pixel{\delta_{\omega'}}
-	%
-	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                            \\
-	%
-	 & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{Y_{00}} \sqrt{4\pi} \nonumber{} \\
-	%
-	 & = \sqrt{4\pi} \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \delta_{\ell0} \delta_{m0} \nonumber{}                                   \\
-	%
-	 & = \sqrt{4\pi} \pixel[']{\conj{Y_{00}}} \nonumber{}                                                                                 \\
-	%
-	 & = 1,
+    \integrateSphere{\omega} \pixel{\delta_{\omega'}}
+    %
+     & = \integrateSphere{\omega} \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \pixel{\harmonic{Y}} \nonumber{}                            \\
+    %
+     & = \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \integrateSphere{\omega} \pixel{\harmonic{Y}} \pixel{Y_{00}} \sqrt{4\pi} \nonumber{} \\
+    %
+     & = \sqrt{4\pi} \harmonicSum \pixel[']{\conj{\harmonic{Y}}} \delta_{\ell0} \delta_{m0} \nonumber{}                                   \\
+    %
+     & = \sqrt{4\pi} \pixel[']{\conj{Y_{00}}} \nonumber{}                                                                                 \\
+    %
+     & = 1,
 \end{align}
 %
 where the second and third lines follow by substituting \(\sqrt{4\pi}\pixel{Y_{00}}=1\) (\cf{} \cref{eq:chapter2_spherical_harmonic}) and the orthonormality of the spherical harmonics respectively.
 The sifting property of the Dirac delta is
 %
 \begin{equation}
-	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{f}
-	%
-	= \pixel[']{f},
+    \integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{f}
+    %
+    = \pixel[']{f},
 \end{equation}
 %
 as
 %
 \begin{align}
-	\integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{f}
-	%
-	 & = \integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{f} \nonumber{}                                                                                \\
-	%
-	 & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \harmonicSum['] \harmonic[']{f} \pixel{\harmonic[']{Y}} \nonumber{} \\
-	%
-	 & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \nonumber{}                                                                                                 \\
-	%
-	 & = \pixel[']{f},
+    \integrateSphere{\omega} \pixel{\delta_{\omega'}} \pixel{f}
+    %
+     & = \integrateSphere{\omega} \pixel{\conj{\delta_{\omega'}}} \pixel{f} \nonumber{}                                                                                \\
+    %
+     & = \integrateSphere{\omega} \harmonicSum \pixel[']{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \harmonicSum['] \harmonic[']{f} \pixel{\harmonic[']{Y}} \nonumber{} \\
+    %
+     & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \nonumber{}                                                                                                 \\
+    %
+     & = \pixel[']{f},
 \end{align}
 %
 where the first line holds due to the reality of the Dirac delta \cref{eq:chapter3_dirac_delta_real}.
@@ -118,18 +118,18 @@ where the first line holds due to the reality of the Dirac delta \cref{eq:chapte
 The conventional convolution between two functions on two-dimensional Euclidean space \(\mathbb{R}^{n}\) is
 %
 \begin{equation}
-	(f \star g)(x)
-	%
-	= \int\limits_{\mathbb{R}^{2}} \dd{y} f(x-y) g(y),
+    (f \star g)(x)
+    %
+    = \int\limits_{\mathbb{R}^{2}} \dd{y} f(x-y) g(y),
 \end{equation}
 %
 where \(x,\ y \in \mathbb{R}^{n}\).
 The convolution is commutative
 %
 \begin{equation}
-	f \star g
-	%
-	= g \star f.
+    f \star g
+    %
+    = g \star f.
 \end{equation}
 %
 A spherical counterpart of the convolution is required for functions defined on the sphere.
@@ -137,9 +137,9 @@ Alternative definitions of such a convolution exist in the literature but, while
 The properties desired in the spherical extension of the convolution include:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
-	\item the support of directional kernels;
-	\item an output that remains on the sphere; and
-	\item efficient computation.
+    \item the support of directional kernels;
+    \item an output that remains on the sphere; and
+    \item efficient computation.
 \end{enumerate}
 %
 A convolution is considered computationally efficient here if its computational cost is no greater than the cost of fast spherical harmonic transforms, \ie{} \(\mathcal{O}(L^{3})\) (\eg{}~\cite{Driscoll1994,McEwen2011}).
@@ -151,42 +151,42 @@ A summary of existing spherical convolutions and their properties follows.
 In real space, the isotropic convolution (\eg{}~\cite{McEwen2007,Wei2011,Kennedy2011}) is
 %
 \begin{equation}
-	\pixel{(f \odot g)}
-	%
-	= \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}},
+    \pixel{(f \odot g)}
+    %
+    = \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}},
 \end{equation}
 %
 which in harmonic space becomes (\eg{}~\cite{McEwen2007})
 %
 \begin{equation}\label{eq:chapter3_isotropic_harmonic}
-	\harmonic{(f \odot g)}
-	%
-	= \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}},
+    \harmonic{(f \odot g)}
+    %
+    = \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}},
 \end{equation}
 %
 as
 %
 \begin{align}
-	\pixel{(f \odot g)}
-	%
-	 & = \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}} \nonumber{}                                                                                           \\
-	%
-	 & = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\omega}g)}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
-	%
-	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\omega}g)}} \nonumber                                                                                                          \\
-	%
-	 & = \harmonicSum \harmonic{f} \conj{\big(\wigner{\ell}{m}{0}(\phi,\theta,0) \axiHarmonic{g}\big)} \nonumber{}                                                                           \\
-	%
-	 & = \harmonicSum \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}} \pixel{\harmonic{Y}},
+    \pixel{(f \odot g)}
+    %
+     & = \integrateSphere{\omega'} \pixel[']{f} \pixel[']{\conj{(\rotation{\omega}g)}} \nonumber{}                                                                                           \\
+    %
+     & = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\omega}g)}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+    %
+     & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\omega}g)}} \nonumber                                                                                                          \\
+    %
+     & = \harmonicSum \harmonic{f} \conj{\big(\wigner{\ell}{m}{0}(\phi,\theta,0) \axiHarmonic{g}\big)} \nonumber{}                                                                           \\
+    %
+     & = \harmonicSum \sqrt{\inverseFactor} \harmonic{f} \conj{\axiHarmonic{g}} \pixel{\harmonic{Y}},
 \end{align}
 %
 where the last line follows by \cref{eq:chapter2_wigner_axisymmetric}.
 The isotropic convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
-	\item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
-	\item an output that remains on the sphere; and
-	\item efficient computation since it is a product in harmonic space.
+    \item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
+    \item an output that remains on the sphere; and
+    \item efficient computation since it is a product in harmonic space.
 \end{enumerate}
 
 \subsubsection{Left Convolution}
@@ -194,60 +194,60 @@ The isotropic convolution has the following properties:
 The definition of the left convolution~\cite{Kennedy2011,Driscoll1994} in real space is
 %
 \begin{equation}
-	\pixel{(f \circleddash g)}
-	%
-	= \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega),
+    \pixel{(f \circleddash g)}
+    %
+    = \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega),
 \end{equation}
 %
 where \({\eta}\) is the north pole, and \(\rotationVolume=\sin{\beta} \dd{\alpha} \dd{\beta} \dd{\gamma}\) is the usual invariant measure on \(\rotationGroup{}\).
 The harmonic representation of this convolution is
 %
 \begin{equation}
-	\harmonic{(f \circleddash g)}
-	%
-	= 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g}.
+    \harmonic{(f \circleddash g)}
+    %
+    = 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g}.
 \end{equation}
 %
 To prove this, first consider the forward harmonic transform
 %
 \begin{align}
-	\harmonic{(f \circleddash g)}
-	%
-	 & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{}                                            \\
-	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \pixel{(\rotation{\rho}g)} \pixel{\conj{\harmonic{Y}}} \nonumber{}                                               \\
-	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \harmonicSum['] \harmonic[']{(\rotation{\rho}g)} \pixel{\harmonic[']{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
-	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \harmonic{(\rotation{\rho}g)} \nonumber{}                                                                                                 \\
-	%
-	 & = \wignerSum g_{\ell n} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
+    \harmonic{(f \circleddash g)}
+    %
+     & = \integrateSphere{\omega} \integrateRotation{\rho} f(\rotationMatrix\eta) g(\rotationMatrix^{-1}\omega) \pixel{\conj{\harmonic{Y}}} \nonumber{}                                            \\
+    %
+     & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \pixel{(\rotation{\rho}g)} \pixel{\conj{\harmonic{Y}}} \nonumber{}                                               \\
+    %
+     & = \integrateRotation{\rho} f(\rotationMatrix\eta) \integrateSphere{\omega} \harmonicSum['] \harmonic[']{(\rotation{\rho}g)} \pixel{\harmonic[']{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
+    %
+     & = \integrateRotation{\rho} f(\rotationMatrix\eta) \harmonic{(\rotation{\rho}g)} \nonumber{}                                                                                                 \\
+    %
+     & = \wignerSum g_{\ell n} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
 \end{align}
 %
 where the second and last line follow by \cref{eq:chapter2_rotation_operator,eq:chapter2_rotation_matrix} respectively.
 Due to the invariant measure \(\rotationVolume{}\) and considering a right rotation about the \(z\)-axis by \({\chi}\), \ie{} \(\rho = (\alpha,\beta,\gamma) \rightarrow \rho' = (\alpha,\beta,\gamma+\chi)\), it follows
 %
 \begin{align}\label{eq:chapter3_so3_integral}
-	\integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho)
-	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{n}(\rho') \nonumber{}            \\
-	%
-	 & = \integrateRotation{\rho} f(\rotationMatrix\eta) \exp(-i n\chi) \wigner{\ell}{m}{n}(\rho) \nonumber{} \\
-	%
-	 & = \exp(-i n\chi) \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
+    \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho)
+    %
+     & = \integrateRotation{\rho} f(\rotationMatrix[']\eta) \wigner{\ell}{m}{n}(\rho') \nonumber{}            \\
+    %
+     & = \integrateRotation{\rho} f(\rotationMatrix\eta) \exp(-i n\chi) \wigner{\ell}{m}{n}(\rho) \nonumber{} \\
+    %
+     & = \exp(-i n\chi) \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{n}(\rho),
 \end{align}
 %
 where the penultimate line follows since a rotation of \({\eta}\) about the \(z\)-axis leaves \({\eta}\) unchanged, \ie{} \(f(\rotationMatrix[']\eta) = f(\rotationMatrix\eta)\).
 Thus, as \cref{eq:chapter3_so3_integral} holds for all \(\chi{}\), it must be the case that \(n=0\) unless the integral is zero, \ie{}
 %
 \begin{align}
-	\harmonic{(f \circleddash g)}
-	%
-	 & = \axiHarmonic{g} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                    \\
-	%
-	 & = \axiHarmonic{g} \int\limits_{0}^{2\pi} \dd{\gamma} \integrateSphere{\omega} \pixel{f} \sqrt{\inverseFactor} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
-	%
-	 & = 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
+    \harmonic{(f \circleddash g)}
+    %
+     & = \axiHarmonic{g} \integrateRotation{\rho} f(\rotationMatrix\eta) \wigner{\ell}{m}{0} (\alpha,\beta,0) \nonumber{}                                    \\
+    %
+     & = \axiHarmonic{g} \int\limits_{0}^{2\pi} \dd{\gamma} \integrateSphere{\omega} \pixel{f} \sqrt{\inverseFactor} \pixel{\conj{\harmonic{Y}}} \nonumber{} \\
+    %
+     & = 2\pi \sqrt{\inverseFactor} \harmonic{f} \axiHarmonic{g},
 \end{align}
 %
 where the penultimate line follows by \cref{eq:chapter2_wigner_axisymmetric}.
@@ -256,9 +256,9 @@ Hence, the properties are similar.
 The left convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
-	\item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
-	\item an output that remains on the sphere; and
-	\item efficient computation since it is a product in harmonic space.
+    \item does not support directional kernels since \(\pixel{g}\) must be axisymmetric;
+    \item an output that remains on the sphere; and
+    \item efficient computation since it is a product in harmonic space.
 \end{enumerate}
 
 \subsubsection{Directional Convolution}
@@ -267,31 +267,31 @@ Rotations on the sphere are the spherical counterpart of translations in the Euc
 Hence, the standard directional convolution is
 %
 \begin{equation}\label{eq:chapter3_directional_convolution}
-	(f \circledast g)(\rho)
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}}.
+    (f \circledast g)(\rho)
+    %
+    = \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}}.
 \end{equation}
 %
 Upon expanding in harmonic space, this becomes (\eg{}~\cite{McEwen2007,Wandelt2001})
 %
 \begin{equation}
-	(f \circledast g) (\rho)
-	%
-	= \harmonicSum \harmonic{f} \wignerSum \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
+    (f \circledast g) (\rho)
+    %
+    = \harmonicSum \harmonic{f} \wignerSum \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
 \end{equation}
 %
 as
 %
 \begin{align}
-	(f \circledast g)(\rho)
-	%
-	 & = \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}} \nonumber{}                                                                                           \\
-	%
-	 & = \integrateSphere{\omega} \harmonicSum \harmonic{f} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\rho}g)}} \pixel{\conj{\harmonic[']{Y}}} \nonumber{} \\
-	%
-	 & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\rho}g)}} \nonumber{}                                                                                                 \\
-	%
-	 & = \harmonicSum \harmonic{f} \wignerSum \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
+    (f \circledast g)(\rho)
+    %
+     & = \integrateSphere{\omega} \pixel{f} \pixel{\conj{(\rotation{\rho}g)}} \nonumber{}                                                                                           \\
+    %
+     & = \integrateSphere{\omega} \harmonicSum \harmonic{f} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{(\rotation{\rho}g)}} \pixel{\conj{\harmonic[']{Y}}} \nonumber{} \\
+    %
+     & = \harmonicSum \harmonic{f} \conj{\harmonic{(\rotation{\rho}g)}} \nonumber{}                                                                                                 \\
+    %
+     & = \harmonicSum \harmonic{f} \wignerSum \conj{\big(\wigner{\ell}{m}{n}(\rho) g_{\ell n}\big)},
 \end{align}
 %
 and hence, the output is on \(\rotationGroup{}\).
@@ -299,9 +299,9 @@ Fast algorithms exist~\cite{McEwen2007,Wandelt2001,Wiaux2007,McEwen2013}, but th
 The directional convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
-	\item does support directional kernels;
-	\item an output that does not remain on the sphere due to the three-dimensional rotation of the kernel; and
-	\item expensive computation.
+    \item does support directional kernels;
+    \item an output that does not remain on the sphere due to the three-dimensional rotation of the kernel; and
+    \item expensive computation.
 \end{enumerate}
 
 \subsubsection{Commutative Anisotropic Convolution}
@@ -309,33 +309,33 @@ The directional convolution has the following properties:
 The definition of the commutative anisotropic convolution~\cite{Sadeghi2012,Khalid2012} is
 %
 \begin{equation}
-	\pixel{(f \oplus g)}
-	%
-	= \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g},
+    \pixel{(f \oplus g)}
+    %
+    = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g},
 \end{equation}
 %
 which on expansion reads
 %
 \begin{equation}
-	\pixel{(f \oplus g)}
-	%
-	= \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
+    \pixel{(f \oplus g)}
+    %
+    = \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
 \end{equation}
 %
 as
 %
 \begin{align}
-	\pixel{(f \oplus g)}
-	%
-	 & = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g} \nonumber{}                                                                                                  \\
-	 %
-	 & = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                                  \\
-	%
-	 & = \integrateSphere{\omega'} \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
-	%
-	 & = \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \conj{\harmonic{g}} \nonumber{}                                                                                                        \\
-	%
-	 & = \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
+    \pixel{(f \oplus g)}
+    %
+     & = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{g} \nonumber{}                                                                                                  \\
+     %
+     & = \integrateSphere{\omega'} \pixel[']{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                                  \\
+    %
+     & = \integrateSphere{\omega'} \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \pixel[']{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+    %
+     & = \harmonicSum \harmonic{(\rotation{(\phi,\theta,\pi-\phi)}f)} \conj{\harmonic{g}} \nonumber{}                                                                                                        \\
+    %
+     & = \harmonicSum \wignerSum \wigner{\ell}{m}{n}(\phi,\theta,\pi-\phi) f_{\ell n} \conj{\harmonic{g}},
 \end{align}
 %
 where the second line follows for real \(\pixel{g}\).
@@ -344,9 +344,9 @@ The complexity of the convolution is \(\mathcal{O}(L^{3}\log{L})\), and hence, i
 The convolution has the following properties:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
-	\item it supports directional kernels;
-	\item an output that remains on the sphere; and
-	\item expensive computation.
+    \item it supports directional kernels;
+    \item an output that remains on the sphere; and
+    \item expensive computation.
 \end{enumerate}
 
 \subsection{Problem Formulation}
@@ -372,27 +372,27 @@ In practice, the translation operator is defined as a product of basis functions
 In the Euclidean setting, \eg{} \(\mathbb{R}\), the complex exponentials
 %
 \begin{equation}\label{eq:chapter3_complex_exponentials}
-	\zeta_{u}(x)
-	%
-	= \exp(i u x),
+    \zeta_{u}(x)
+    %
+    = \exp(i u x),
 \end{equation}
 %
 with \(x,\ u \in \mathbb{R}\) form the standard orthonormal basis.
 A shift of coordinates defines the translation of the basis functions
 %
 \begin{equation}\label{eq:chapter3_exponentials_shift}
-	\zeta_{u}(x + y)
-	%
-	= \zeta_{u}(y) \zeta_{u}(x),
+    \zeta_{u}(x + y)
+    %
+    = \zeta_{u}(y) \zeta_{u}(x),
 \end{equation}
 %
 with \(y \in \mathbb{R}\) and where the final equality follows by the standard rule for exponents.
 The definition of the translation of the spherical harmonics on the sphere follows by analogy with the representation as a product of basis functions
 %
 \begin{equation}\label{eq:chapter3_translation_basis_functions}
-	\pixel{(\translation{\omega'}\harmonic{Y})}
-	%
-	\equiv \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
+    \pixel{(\translation{\omega'}\harmonic{Y})}
+    %
+    \equiv \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
 \end{equation}
 %
 where \(\omega'=(\theta',\phi')\).
@@ -400,17 +400,17 @@ where \(\omega'=(\theta',\phi')\).
 This leads to a natural harmonic expression for the translation of a general arbitrary function \(f \in \hilbert{\twoSphere}\)
 %
 \begin{equation}\label{eq:chapter3_translation_real}
-	\pixel{(\translation{\omega'}f)}
-	%
-	= \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
+    \pixel{(\translation{\omega'}f)}
+    %
+    = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}},
 \end{equation}
 %
 implying
 %
 \begin{equation}\label{eq:chapter3_translation_harmonic}
-	\harmonic{(\translation{\omega'}f)}
-	%
-	= \harmonic{f} \pixel[']{\harmonic{Y}}.
+    \harmonic{(\translation{\omega'}f)}
+    %
+    = \harmonic{f} \pixel[']{\harmonic{Y}}.
 \end{equation}
 %
 This translation operator is considered further in \cref{sec:chapter3_translation_interpretation} to build greater intuition.
@@ -420,32 +420,32 @@ This translation operator is considered further in \cref{sec:chapter3_translatio
 With a translation operator to hand, one may define the sifting convolution on the sphere of \(f,\ g \in \hilbert{\twoSphere}\) in the usual manner by the inner product
 %
 \begin{equation}\label{eq:chapter3_convolution_real}
-	\pixel{\convolution{f}{g}}
-	%
-	\equiv \braket*{\translation{\omega}f}{g},
+    \pixel{\convolution{f}{g}}
+    %
+    \equiv \braket*{\translation{\omega}f}{g},
 \end{equation}
 %
 noting the use of the alternative translation operator defined in \cref{sec:chapter3_translation_operator}.
 In harmonic space, this simplifies to the product
 %
 \begin{equation}\label{eq:chapter3_convolution_harmonic}
-	\harmonic{\convolution{f}{g}}
-	%
-	= \harmonic{f} \conj{\harmonic{g}},
+    \harmonic{\convolution{f}{g}}
+    %
+    = \harmonic{f} \conj{\harmonic{g}},
 \end{equation}
 %
 as
 %
 \begin{align}
-	\pixel{(f \circledcirc g)}
-	%
-	 & = \braket*{\translation{\omega}f}{g} \nonumber{}                                                                                                                                        \\
-	%
-	 & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                          \\
-	%
-	 & = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
-	%
-	 & = \harmonicSum \harmonic{f} \conj{\harmonic{g}} \pixel{\harmonic{Y}}.
+    \pixel{(f \circledcirc g)}
+    %
+     & = \braket*{\translation{\omega}f}{g} \nonumber{}                                                                                                                                        \\
+    %
+     & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}} \nonumber{}                                                                                          \\
+    %
+     & = \integrateSphere{\omega'} \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \harmonicSum['] \conj{\harmonic[']{g}} \pixel[']{\conj{\harmonic[']{Y}}} \nonumber{} \\
+    %
+     & = \harmonicSum \harmonic{f} \conj{\harmonic{g}} \pixel{\harmonic{Y}}.
 \end{align}
 %
 Since the harmonic representation of the convolution is simply a product (again by analogy with the harmonic representation of the Euclidean convolution), it is efficient to compute.
@@ -456,11 +456,11 @@ Note that harmonic multiplication has been considered before~\cite{Kennedy2011};
 One may show that the translation operator is simply a (sifting) convolution of a function with the shifted Dirac delta function
 %
 \begin{align}
-	\pixel{\convolution{f}{\delta_{\omega'}}}
-	%
-	 & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \nonumber{} \\
-	%
-	 & = \pixel{(\translation{\omega'}f)},
+    \pixel{\convolution{f}{\delta_{\omega'}}}
+    %
+     & = \harmonicSum \harmonic{f} \pixel[']{\harmonic{Y}} \pixel{\harmonic{Y}} \nonumber{} \\
+    %
+     & = \pixel{(\translation{\omega'}f)},
 \end{align}
 %
 by noting \cref{eq:chapter3_convolution_harmonic} and where the final equality follows by \cref{eq:chapter3_translation_real}.
@@ -496,9 +496,9 @@ Hence, one must consider the desired properties in the translated kernel, \eg{} 
 First, consider an axisymmetric Gaussian in \(\ell{}\) on the sphere, \ie{}
 %
 \begin{equation}\label{eq:chapter3_gaussian}
-	\harmonic{\mathcal{G}}
-	%
-	= \exp(-\frac{{\ell}^{2}}{2\sigma^{2}}),
+    \harmonic{\mathcal{G}}
+    %
+    = \exp(-\frac{{\ell}^{2}}{2\sigma^{2}}),
 \end{equation}
 %
 where \(\sigma{}\) is the standard deviation of the Gaussian.
@@ -513,11 +513,11 @@ Here the effect of the translation on signals with odd symmetry is considered.
 One may define a \emph{squashed Gaussian} in real space as the standard Gaussian (\ie{} in the polar angle \(\theta{}\)) modulated by a sinusoidal function in the azimuthal angle \(\phi{}\) by
 %
 \begin{equation}\label{eq:chapter3_squashed_gaussian}
-	\pixel{\mathcal{SG}}
-	%
-	= \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\mean{\theta}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
-	%
-	\sin{(\nu_{\phi}\phi)},
+    \pixel{\mathcal{SG}}
+    %
+    = \exp\Bigg(-\frac{1}{2}{\bigg(\frac{\theta-\mean{\theta}}{\sigma_{\theta}}\bigg)}^{2}\Bigg)
+    %
+    \sin{(\nu_{\phi}\phi)},
 \end{equation}
 %
 where \(\mean{\theta}\)/\(\sigma_{\theta}\) and \(\nu_{\phi}\) are parameters controlling the mean/standard deviation of the Gaussian and the frequency of the sine wave respectively.
@@ -532,11 +532,11 @@ The effect of the translation on signals with even symmetry is now considered.
 One may define an \emph{elongated Gaussian} as a two-dimensional Gaussian in real space in the polar angle \(\theta{}\) and the azimuthal angle \(\phi{}\) by
 %
 \begin{equation}\label{eq:chapter3_elongated_gaussian}
-	\pixel{\mathcal{EG}}
-	%
-	= \exp\bigg(-\bigg(\frac{{(\theta-\mean{\theta})}^{2}}{2\sigma_{\theta}^{2}}
-		%
-		+ \frac{{(\phi-\mean{\phi})}^{2}}{2\sigma_{\phi}^{2}}\bigg)\bigg),
+    \pixel{\mathcal{EG}}
+    %
+    = \exp\bigg(-\bigg(\frac{{(\theta-\mean{\theta})}^{2}}{2\sigma_{\theta}^{2}}
+        %
+        + \frac{{(\phi-\mean{\phi})}^{2}}{2\sigma_{\phi}^{2}}\bigg)\bigg),
 \end{equation}
 %
 where \((\mean{\theta},\mean{\phi})\) are the means, and \((\sigma_{\theta},\sigma_{\phi})\) are the standard deviations of the respective Gaussians.
@@ -552,9 +552,9 @@ One seeks a signal with neither odd nor even symmetry.
 One may define a \emph{harmonic Gaussian} as a two-dimensional Gaussian in harmonic space by
 %
 \begin{equation}\label{eq:chapter3_harmonic_gaussian}
-	\harmonic{f}
-	%
-	= \exp(-\bigg(\frac{{\ell}^{2}}{2\sigma_{\ell}^{2}} + \frac{{m}^{2}}{2\sigma_{m}^{2}}\bigg)).
+    \harmonic{f}
+    %
+    = \exp(-\bigg(\frac{{\ell}^{2}}{2\sigma_{\ell}^{2}} + \frac{{m}^{2}}{2\sigma_{m}^{2}}\bigg)).
 \end{equation}
 %
 In effect, this function is an axisymmetric Gaussian in \(\ell{}\) modulated by a Gaussian in \(m\).

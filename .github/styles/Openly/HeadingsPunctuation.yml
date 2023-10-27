@@ -5,4 +5,4 @@ link: https://github.com/cockroachdb/docs/blob/master/STYLE.md#capitalization-an
 scope: heading
 level: error
 raw:
-    - '(?:\:|\.)$'
+  - '(?:\:|\.)$'

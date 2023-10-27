@@ -3,5 +3,5 @@ message: "Inconsistent use of '%s' ('smart' mixed with 'dumb')"
 level: error
 nonword: true
 either:
-    '"': "[”“]"
-    "'": "[‘’]"
+  '"': "[”“]"
+  "'": "[‘’]"

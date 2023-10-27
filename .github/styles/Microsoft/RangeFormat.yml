@@ -4,10 +4,10 @@ link: https://docs.microsoft.com/en-us/style-guide/numbers
 nonword: true
 level: error
 action:
-    name: edit
-    params:
-        - replace
-        - "-"
-        - "–"
+  name: edit
+  params:
+    - replace
+    - "-"
+    - "–"
 tokens:
-    - '\b\d+\s?[-]\s?\d+\b'
+  - '\b\d+\s?[-]\s?\d+\b'

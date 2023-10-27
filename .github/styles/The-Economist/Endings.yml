@@ -5,11 +5,11 @@ scope: text
 level: error
 ignorecase: true
 tokens:
-    - attendees
-    - draftees
-    - enrollees
-    - escapees
-    - indictees
-    - retirees
-    - standees
-    - '[\w]+-style'
+  - attendees
+  - draftees
+  - enrollees
+  - escapees
+  - indictees
+  - retirees
+  - standees
+  - '[\w]+-style'
