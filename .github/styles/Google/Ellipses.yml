@@ -4,6 +4,6 @@ link: "https://developers.google.com/style/ellipses"
 nonword: true
 level: error
 action:
-    name: remove
+  name: remove
 tokens:
-    - '\.\.\.'
+  - '\.\.\.'

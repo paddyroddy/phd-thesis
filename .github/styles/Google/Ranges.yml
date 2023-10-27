@@ -4,4 +4,4 @@ link: "https://developers.google.com/style/hyphens"
 nonword: true
 level: error
 tokens:
-    - '(?:from|between)\s\d+\s?-\s?\d+'
+  - '(?:from|between)\s\d+\s?-\s?\d+'

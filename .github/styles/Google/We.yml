@@ -4,8 +4,8 @@ link: "https://developers.google.com/style/pronouns#personal-pronouns"
 level: error
 ignorecase: true
 tokens:
-    - we
-    - we'(?:ve|re)
-    # - ours?
-    - us
-    - let's
+  - we
+  - we'(?:ve|re)
+  # - ours?
+  - us
+  - let's

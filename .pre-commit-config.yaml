@@ -1,5 +1,5 @@
 repos:
   - repo: https://github.com/paddyroddy/.github
-    rev: v0.8.0
+    rev: v0.15.0
     hooks:
       - id: latex-hooks

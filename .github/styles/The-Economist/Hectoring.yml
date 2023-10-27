@@ -6,12 +6,12 @@ scope: text
 level: error
 ignorecase: true
 tokens:
-    - stupid
-    - idiotic
-    - imbecile
-    - ignorant
-    - insane
-    - absurd
-    - ridiculous
-    - lunatic
-    - asinine
+  - stupid
+  - idiotic
+  - imbecile
+  - ignorant
+  - insane
+  - absurd
+  - ridiculous
+  - lunatic
+  - asinine

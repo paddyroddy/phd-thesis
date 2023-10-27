@@ -98,9 +98,9 @@ This section expands on the work in \cref{sec:chapter2_spatial_concentration_ban
 For a bandlimited function \(f \in \hilbert{\twoSphere}\) within a region \(R\), one may express \cref{eq:chapter2_harmonic_eigenproblem} in matrix form by
 %
 \begin{equation}\label{eq:chapter4_eigenproblem}
-	\vb*{D}\vb*{f}
-	%
-	= \mu\vb*{f},
+    \vb*{D}\vb*{f}
+    %
+    = \mu\vb*{f},
 \end{equation}
 %
 where \(\vb*{f}\), the harmonic coefficients of \(\pixel{f}\), are the solutions to the above \(L^{2} \times{} L^{2}\) eigenproblem.
@@ -109,28 +109,28 @@ The eigenvalues are a measure of how well concentrated the given eigenvector is.
 Hence, the eigenvalues satisfy
 %
 \begin{equation}
-	1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{L^{2}} > 0, % chktex 11
+    1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{L^{2}} > 0, % chktex 11
 \end{equation}
 %
 with corresponding eigenvectors
 %
 \begin{equation}
-	\vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{L^{2}}.
+    \vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{L^{2}}.
 \end{equation}
 %
 The largest eigenvalue \(\mu_{1}\) is strictly less than one as no bandlimited function may be restricted exactly within a region \(R\), and the smallest eigenvalue \(\mu_{L^{2}}\) is strictly greater than zero due to the positive definiteness of the matrix \(\vb*{D}\).
 Consider the sum of the eigenvalues
 %
 \begin{align}\label{eq:chapter4_shannon}
-	N
-	%
-	= \harmonicSum D_{\ell m,\ell m}
-	%
-	 & = \harmonicSum \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
-	%
-	 & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\sphereVolume} \nonumber                        \\
-	%
-	 & = \frac{A}{4\pi} L^{2},
+    N
+    %
+    = \harmonicSum D_{\ell m,\ell m}
+    %
+     & = \harmonicSum \integrateRegion{\sphereVolume} \pixel{\harmonic{Y}} \pixel{\conj{\harmonic{Y}}} \nonumber \\
+    %
+     & = \sum\limits_{\ell} \factor P_{\ell}(1) \integrateRegion{\sphereVolume} \nonumber                        \\
+    %
+     & = \frac{A}{4\pi} L^{2},
 \end{align}
 %
 where the second line follows by the addition theorem \cref{eq:chapter2_addition_theorem}, and \(A\) is the area of the region \(R\).
@@ -141,100 +141,100 @@ This \(N\) is the spherical analogue of the Shannon number~\cite{Simons2006}, wh
 The Slepian functions offer an alternative orthogonal basis on the sphere, decomposing a function \(f \in \hilbert{\twoSphere}\) into this basis is as follows
 %
 \begin{equation}
-	\pixel{f}
-	%
-	= \sum\limits_{p=1}^{L^{2}} \slepian{f}\pixel{\slepian{S}}.
+    \pixel{f}
+    %
+    = \sum\limits_{p=1}^{L^{2}} \slepian{f}\pixel{\slepian{S}}.
 \end{equation}
 %
 If the function is well-localised in the region \(R\) (\ie{} \(f \in \hilbert{R}\)), then \(N\) well-localised Slepian functions can describe it
 %
 \begin{equation}\label{eq:chapter4_slepian_inverse}
-	\pixel{f}
-	%
-	\approx \sum\limits_{p=1}^{N} \slepian{f}\pixel{\slepian{S}} \\
-	%
-	= \slepianSum \slepian{f}\pixel{\slepian{S}},
+    \pixel{f}
+    %
+    \approx \sum\limits_{p=1}^{N} \slepian{f}\pixel{\slepian{S}} \\
+    %
+    = \slepianSum \slepian{f}\pixel{\slepian{S}},
 \end{equation}
 %
 where a shorthand notation has been introduced.
 The usual projection onto the basis functions permits one to calculate the Slepian coefficients
 %
 \begin{equation}
-	\slepian{f}
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\slepian{S}}}.
+    \slepian{f}
+    %
+    = \integrateSphere{\omega} \pixel{f} \pixel{\conj{\slepian{S}}}.
 \end{equation}
 %
 For a well-localised function, one instead may compute the Slepian coefficients with an integral over the region \(R\) rather than \(\twoSphere{}\)
 %
 \begin{equation}
-	\slepian{f}
-	%
-	= \frac{1}{\slepian{\mu}} \integrateRegion{\sphereVolume} \pixel{f} \pixel{\conj{\slepian{S}}},
+    \slepian{f}
+    %
+    = \frac{1}{\slepian{\mu}} \integrateRegion{\sphereVolume} \pixel{f} \pixel{\conj{\slepian{S}}},
 \end{equation}
 %
 as
 %
 \begin{align}\label{eq:chapter4_integrate_region_proof}
-	\integrateRegion{\sphereVolume} \pixel{f} \pixel{\conj{\slepian{S}}}
-	%
-	 & = \slepianSum['] \slepian[']{f} \integrateRegion{\sphereVolume} \pixel{\slepian[']{S}} \pixel{\conj{\slepian{S}}} \nonumber \\
-	%
-	 & = \slepianSum['] \slepian[']{f} \hermitian{\slepian{\vb*{S}}} \vb*{D} \slepian[']{\vb*{S}} \nonumber                        \\
-	%
-	 & = \slepian{f} \slepian{\mu},
+    \integrateRegion{\sphereVolume} \pixel{f} \pixel{\conj{\slepian{S}}}
+    %
+     & = \slepianSum['] \slepian[']{f} \integrateRegion{\sphereVolume} \pixel{\slepian[']{S}} \pixel{\conj{\slepian{S}}} \nonumber \\
+    %
+     & = \slepianSum['] \slepian[']{f} \hermitian{\slepian{\vb*{S}}} \vb*{D} \slepian[']{\vb*{S}} \nonumber                        \\
+    %
+     & = \slepian{f} \slepian{\mu},
 \end{align}
 %
 where \(\slepian{\vb*{S}}\) are the harmonic coefficients of \(\pixel{\slepian{S}}\).
 Note the use of the orthogonality results in
 %
 \begin{equation}\label{eq:chapter4_orthogonality_sphere}
-	\integrateSphere{\omega} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
-	%
-	= \hermitian{\slepian[']{\vb*{S}}} \slepian{\vb*{S}}
-	%
-	= \delta_{pp'},
+    \integrateSphere{\omega} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
+    %
+    = \hermitian{\slepian[']{\vb*{S}}} \slepian{\vb*{S}}
+    %
+    = \delta_{pp'},
 \end{equation}
 %
 and
 %
 \begin{equation}
-	\integrateRegion{\sphereVolume} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
-	%
-	= \hermitian{\slepian[']{\vb*{S}}} \vb*{D} \slepian{\vb*{S}}
-	%
-	= \slepian{\mu} \hermitian{\slepian[']{\vb*{S}}} \slepian{\vb*{S}}
-	%
-	= \slepian{\mu} \delta_{pp'}.
+    \integrateRegion{\sphereVolume} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}}
+    %
+    = \hermitian{\slepian[']{\vb*{S}}} \vb*{D} \slepian{\vb*{S}}
+    %
+    = \slepian{\mu} \hermitian{\slepian[']{\vb*{S}}} \slepian{\vb*{S}}
+    %
+    = \slepian{\mu} \delta_{pp'}.
 \end{equation}
 
 One may transform from Slepian coefficients to spherical harmonic coefficients by
 %
 \begin{equation}
-	\harmonic{f}
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}
-	%
-	= \slepianSum \slepian{f}\harmonic{(\slepian{S})},
+    \harmonic{f}
+    %
+    = \integrateSphere{\omega} \pixel{f} \pixel{\conj{\harmonic{Y}}}
+    %
+    = \slepianSum \slepian{f}\harmonic{(\slepian{S})},
 \end{equation}
 %
 where
 %
 \begin{equation}\label{eq:chapter4_harmonic_slepian}
-	\harmonic{(\slepian{S})}
-	%
-	= \integrateSphere{\omega} \pixel{\slepian{S}} \pixel{\conj{\harmonic{Y}}}
+    \harmonic{(\slepian{S})}
+    %
+    = \integrateSphere{\omega} \pixel{\slepian{S}} \pixel{\conj{\harmonic{Y}}}
 \end{equation}
 %
 are the eigenvectors of \cref{eq:chapter4_eigenproblem}.
 The corresponding transform from spherical harmonic coefficients to Slepian coefficients is
 %
 \begin{equation}\label{eq:chapter4_harmonic_to_slepian}
-	\slepian{f}
-	%
-	= \integrateSphere{\omega} \pixel{f} \pixel{\conj{\slepian{S}}}
-	%
-	= \harmonicSum \harmonic{f} \conj{\harmonic{(\slepian{S})}}.
+    \slepian{f}
+    %
+    = \integrateSphere{\omega} \pixel{f} \pixel{\conj{\slepian{S}}}
+    %
+    = \harmonicSum \harmonic{f} \conj{\harmonic{(\slepian{S})}}.
 \end{equation}
 
 \section{Slepian Wavelets}\label{sec:chapter4_slepian_wavelets}
@@ -253,38 +253,38 @@ Consider the sifting convolution of a region on the sphere with a localised basi
 The translation can be defined by
 %
 \begin{equation}
-	\pixel{(\translation{\omega'}\slepian{S})}
-	%
-	\equiv \pixel[']{\slepian{S}} \pixel{\slepian{S}},
+    \pixel{(\translation{\omega'}\slepian{S})}
+    %
+    \equiv \pixel[']{\slepian{S}} \pixel{\slepian{S}},
 \end{equation}
 %
 where \(\omega'=(\theta',\phi')\), and the \(\pixel{\slepian{S}}\) are the Slepian functions defined in \cref{sec:chapter4_slepian_concentration_problem}.
 Thus, the translation of an arbitrary function \(f \in \hilbert{R}\) is
 %
 \begin{equation}
-	\pixel{(\translation{\omega'}f)} = \slepianSum \slepian{f} \pixel[']{\slepian{S}} \pixel{\slepian{S}},
+    \pixel{(\translation{\omega'}f)} = \slepianSum \slepian{f} \pixel[']{\slepian{S}} \pixel{\slepian{S}},
 \end{equation}
 %
 which in Slepian space becomes
 %
 \begin{equation}
-	\slepian{(\translation{\omega'}f)} = \slepian{f} \pixel[']{\slepian{S}}.
+    \slepian{(\translation{\omega'}f)} = \slepian{f} \pixel[']{\slepian{S}}.
 \end{equation}
 %
 The sifting convolution between two functions \(f,\ g \in \hilbert{R}\) is as before, \ie{}
 %
 \begin{equation}
-	\pixel{\convolution{f}{g}}
-	%
-	\equiv \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}},
+    \pixel{\convolution{f}{g}}
+    %
+    \equiv \integrateSphere{\omega'} \pixel[']{(\translation{\omega}f)} \pixel[']{\conj{g}},
 \end{equation}
 %
 which is a product in Slepian space
 %
 \begin{equation}
-	\slepian{\convolution{f}{g}}
-	%
-	= \slepian{f} \conj{\slepian{g}},
+    \slepian{\convolution{f}{g}}
+    %
+    = \slepian{f} \conj{\slepian{g}},
 \end{equation}
 %
 and hence is efficient to compute.
@@ -300,19 +300,19 @@ Now consider a signal of interest \(f \in \hilbert{R}\) concentrated within a re
 Wavelet coefficients \(W^{\Psi^{j}} \in \hilbert{R}\) may be defined by a sifting convolution of \(f\) with the wavelet \(\Psi^{j} \in \hilbert{R}\) for wavelet scale \(j\)
 %
 \begin{align}\label{eq:chapter4_slepian_wavelet_omega}
-	\pixel{W^{\Psi^{j}}}
-	%
-	 & = \pixel{\convolution{\Psi^{j}}{f}} \nonumber                                              \\
-	%
-	 & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{\conj{f}},
+    \pixel{W^{\Psi^{j}}}
+    %
+     & = \pixel{\convolution{\Psi^{j}}{f}} \nonumber                                              \\
+    %
+     & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{\conj{f}},
 \end{align}
 %
 or in Slepian space
 %
 \begin{equation}\label{eq:chapter4_slepian_wavelet_p}
-	\slepian{W}^{\Psi^{j}}
-	%
-	= \slepian{\Psi}^{j} \conj{\slepian{f}},
+    \slepian{W}^{\Psi^{j}}
+    %
+    = \slepian{\Psi}^{j} \conj{\slepian{f}},
 \end{equation}
 %
 where \(\slepian{\Psi}^{j}\) are the Slepian harmonic coefficients of the wavelet at scale \(j\).
@@ -321,19 +321,19 @@ Typically, wavelets are complemented with scaling functions, with each capturing
 Similarly to the wavelet coefficients, scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\)
 %
 \begin{align}\label{eq:chapter4_slepian_scaling_omega}
-	\pixel{W^{\Phi}}
-	%
-	 & = \pixel{\convolution{\Phi}{f}} \nonumber                                              \\
-	%
-	 & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Phi)} \pixel[']{\conj{f}},
+    \pixel{W^{\Phi}}
+    %
+     & = \pixel{\convolution{\Phi}{f}} \nonumber                                              \\
+    %
+     & = \integrateSphere{\omega'} \pixel[']{(\translation{\omega}\Phi)} \pixel[']{\conj{f}},
 \end{align}
 %
 or in Slepian space
 %
 \begin{equation}\label{eq:chapter4_slepian_scaling_p}
-	\slepian{W}^{\Phi}
-	%
-	= \slepian{\Phi} \conj{\slepian{f}},
+    \slepian{W}^{\Phi}
+    %
+    = \slepian{\Phi} \conj{\slepian{f}},
 \end{equation}
 %
 where \(\slepian{\Phi}\) are the Slepian coefficients of the scaling function.
@@ -341,34 +341,34 @@ where \(\slepian{\Phi}\) are the Slepian coefficients of the scaling function.
 The function \(f\) may be reconstructed from its wavelet and scaling coefficients given that the wavelets and scaling function satisfy an admissibility condition by
 %
 \begin{equation}\label{eq:chapter4_synthesis}
-	\pixel{f}
-	%
-	= \integrateSphere{\omega'}
-	%
-	\pixel[']{(\translation{\omega}\Phi)} \pixel[']{W^{\Phi\ast}}
-	%
-	+ \waveletSum \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{W^{\Psi^{j}\ast}},
+    \pixel{f}
+    %
+    = \integrateSphere{\omega'}
+    %
+    \pixel[']{(\translation{\omega}\Phi)} \pixel[']{W^{\Phi\ast}}
+    %
+    + \waveletSum \pixel[']{(\translation{\omega}\Psi^{j})} \pixel[']{W^{\Psi^{j}\ast}},
 \end{equation}
 %
 or in Slepian space
 %
 \begin{equation}
-	\slepian{f}
-	%
-	= \slepian{W}^{\Phi\ast} \slepian{\Phi}
-	%
-	+ \waveletSum \slepian{W}^{\Psi^{j}\ast} \slepian{\Psi}^{j}.
+    \slepian{f}
+    %
+    = \slepian{W}^{\Phi\ast} \slepian{\Phi}
+    %
+    + \waveletSum \slepian{W}^{\Psi^{j}\ast} \slepian{\Psi}^{j}.
 \end{equation}
 %
 The lowest and highest scales \(j\) of the wavelet decomposition are represented by the parameters \(J_{0}\) and \(J\) respectively --- these parameters must be defined consistently to ensure exact reconstruction.
 The admissibility condition on which synthesis of \cref{eq:chapter4_synthesis} relies, is thus
 %
 \begin{equation}\label{eq:chapter4_admissibility}
-	\abs{\slepian{\Phi}}^{2}
-	%
-	+ \waveletSum \abs{\slepian{\Psi}^{j}}^{2}
-	%
-	= 1,\ \forall p.
+    \abs{\slepian{\Phi}}^{2}
+    %
+    + \waveletSum \abs{\slepian{\Psi}^{j}}^{2}
+    %
+    = 1,\ \forall p.
 \end{equation}
 %
 One may now define wavelets and a scaling function that satisfy this admissibility property.
@@ -379,73 +379,73 @@ To tile the Slepian line, consider the smooth generating functions defined by~\c
 Consider the \(C^{\infty}\) Schwartz function with compact support on \(\interval{-1}{1}\)
 %
 \begin{equation}
-	s(t) \equiv
-	%
-	\begin{cases}
-		\exp(1/(t^{2}-1)), & t \in \interval{-1}{1},    \\
-		%
-		0,                 & t \notin \interval{-1}{1},
-	\end{cases}
+    s(t) \equiv
+    %
+    \begin{cases}
+        \exp(1/(t^{2}-1)), & t \in \interval{-1}{1},    \\
+        %
+        0,                 & t \notin \interval{-1}{1},
+    \end{cases}
 \end{equation}
 %
 for \(t \in \mathbb{R}\).
 One may then introduce the positive real parameter \(\lambda \in \realPosParam{}\) to map \(s(t)\) to
 %
 \begin{equation}
-	s_{\lambda}(t)
-	%
-	\equiv s\bigg(\frac{2\lambda}{\lambda-1}(t-\lambda^{-1}) - 1\bigg),
+    s_{\lambda}(t)
+    %
+    \equiv s\bigg(\frac{2\lambda}{\lambda-1}(t-\lambda^{-1}) - 1\bigg),
 \end{equation}
 %
 which has compact support in \(\interval{1/\lambda}{1}\).
 The smoothly decreasing function \(k_{\lambda}\) is then defined by
 %
 \begin{equation}\label{eq:chapter4_k_lambda}
-	k_{\lambda}(t)
-	%
-	\equiv \frac{\displaystyle\int\limits_{t}^{1} \dd{t'} \frac{s^{2}_{\lambda}(t')}{t'}}
-	%
-	{\displaystyle\int\limits_{1/\lambda}^{1} \dd{t'} \frac{s^{2}_{\lambda}(t')}{t'}},
+    k_{\lambda}(t)
+    %
+    \equiv \frac{\displaystyle\int\limits_{t}^{1} \dd{t'} \frac{s^{2}_{\lambda}(t')}{t'}}
+    %
+    {\displaystyle\int\limits_{1/\lambda}^{1} \dd{t'} \frac{s^{2}_{\lambda}(t')}{t'}},
 \end{equation}
 %
 which is unity for \(t < 1/\lambda{}\), zero for \(t > 1\), and smoothly decreasing from unity to zero for \(t \in \interval{1/\lambda}{1}\).
 The wavelet generating function is defined
 %
 \begin{equation}
-	\kappa_{\lambda}(t)
-	%
-	\equiv \sqrt{k_{\lambda}(t/\lambda) - k_{\lambda}(t)},
+    \kappa_{\lambda}(t)
+    %
+    \equiv \sqrt{k_{\lambda}(t/\lambda) - k_{\lambda}(t)},
 \end{equation}
 %
 and the scaling function generating function
 %
 \begin{equation}
-	\eta_{\lambda}(t)
-	%
-	\equiv \sqrt{k_{\lambda}(t)}.
+    \eta_{\lambda}(t)
+    %
+    \equiv \sqrt{k_{\lambda}(t)}.
 \end{equation}
 
 A natural approach is to define the wavelets \(\slepian{\Psi}^{j}\) from the generating functions \(\kappa_{\lambda}\) to have support on \(\interval{\lambda^{j-1}}{\lambda^{j+1}}\), which yields
 %
 \begin{equation}
-	\slepian{\Psi}^{j}
-	%
-	\equiv \kappa_{\lambda}\bigg(\frac{p}{\lambda^{j}}\bigg).
+    \slepian{\Psi}^{j}
+    %
+    \equiv \kappa_{\lambda}\bigg(\frac{p}{\lambda^{j}}\bigg).
 \end{equation}
 %
 The admissibility condition \cref{eq:chapter4_admissibility} is satisfied for these wavelets for \(p \geq \lambda^{J_{0}}\), where \(J_{0}\) is the lowest wavelet scale used in the decomposition.
 The scaling function \(\Phi{}\) is constructed to extract the modes that cannot be probed by the wavelets (\ie{} modes with \(p < \lambda^{J_{0}}\))
 %
 \begin{equation}
-	\slepian{\Phi}
-	%
-	\equiv \eta_{\lambda}\bigg(\frac{p}{\lambda^{J_{0}}}\bigg).
+    \slepian{\Phi}
+    %
+    \equiv \eta_{\lambda}\bigg(\frac{p}{\lambda^{J_{0}}}\bigg).
 \end{equation}
 %
 \(J\) is set to ensure exact reconstruction yielding
 %
 \begin{equation}
-	J = \lceil{} \log_{\lambda}(N)\rceil{}.
+    J = \lceil{} \log_{\lambda}(N)\rceil{}.
 \end{equation}
 %
 The lowest wavelet scale \(J_{0}\) is arbitrary, provided \(0 \leq J_{0} < J\).
@@ -470,19 +470,19 @@ The Slepian wavelets are built on a tiling of the Slepian harmonic line, hence t
 The wavelet energy is
 %
 \begin{equation}
-	\norm{\Psi^{j}}^{2}
-	%
-	= \integrateSphere{\omega} \abs{\pixel{\Psi^{j}}}^{2}
-	%
-	= \slepianSum \abs{\slepian{\Psi}^{j}}^{2}.
+    \norm{\Psi^{j}}^{2}
+    %
+    = \integrateSphere{\omega} \abs{\pixel{\Psi^{j}}}^{2}
+    %
+    = \slepianSum \abs{\slepian{\Psi}^{j}}^{2}.
 \end{equation}
 %
 Similarly, the scaling function energy is
 %
 \begin{equation}
-	\norm{\Phi}^{2}
-	%
-	= \slepianSum \abs{\slepian{\Phi}}^{2}.
+    \norm{\Phi}^{2}
+    %
+    = \slepianSum \abs{\slepian{\Phi}}^{2}.
 \end{equation}
 
 \subsubsection{Parseval Frame}
@@ -490,24 +490,24 @@ Similarly, the scaling function energy is
 Slepian scale-discretised wavelets on the sphere satisfy the following Parseval frame property
 %
 \begin{equation}
-	A\norm{f}^{2} \leq \integrateSphere{\omega}
-	%
-	\abs{\braket*{\translation{\omega}\Phi}{f}}^{2}
-	%
-	+ \waveletSum \abs{\braket*{\translation{\omega}\Psi^{j}}{f}}^{2}
-	%
-	\leq B\norm{f}^{2},
+    A\norm{f}^{2} \leq \integrateSphere{\omega}
+    %
+    \abs{\braket*{\translation{\omega}\Phi}{f}}^{2}
+    %
+    + \waveletSum \abs{\braket*{\translation{\omega}\Psi^{j}}{f}}^{2}
+    %
+    \leq B\norm{f}^{2},
 \end{equation}
 %
 with \(A,\ B \in \realPosParam{}\).
 This can be proved by noting the Slepian representation of the scaling coefficients \cref{eq:chapter4_slepian_scaling_p} and the wavelet coefficients \cref{eq:chapter4_slepian_wavelet_p}, and using the orthogonality of the Slepian functions \cref{eq:chapter4_orthogonality_sphere}
 %
 \begin{equation}
-	\slepianSum \abs{\slepian{\Phi}}^{2} \abs{\slepian{f}}^{2}
-	%
-	+ \waveletSum \abs{\slepian{\Psi}^{j}}^{2} \abs{\slepian{f}}^{2}
-	%
-	= \norm{f}^{2},
+    \slepianSum \abs{\slepian{\Phi}}^{2} \abs{\slepian{f}}^{2}
+    %
+    + \waveletSum \abs{\slepian{\Psi}^{j}}^{2} \abs{\slepian{f}}^{2}
+    %
+    = \norm{f}^{2},
 \end{equation}
 %
 where the equality follows by the admissibility condition \cref{eq:chapter4_admissibility}.
@@ -518,63 +518,63 @@ Thus, scale-discretised wavelets follow a Parseval frame with \(A = B = 1\), imp
 For notational brevity, define a quantity
 %
 \begin{equation}\label{eq:chapter4_scaling_and_wavelet}
-	\varphi \in \set{\Phi,\Psi^{j}}
+    \varphi \in \set{\Phi,\Psi^{j}}
 \end{equation}
 %
 to represent both the scaling function and the wavelets.
 The variance of the wavelet/scaling coefficients is given by
 %
 \begin{equation}
-	\variance{\pixel{W^{\varphi}}}
-	%
-	= \expval*{\abs{\pixel{W^{\varphi}}}^{2}}
-	%
-	-\abs{\expval*{\pixel{W^{\varphi}}}}^{2},
+    \variance{\pixel{W^{\varphi}}}
+    %
+    = \expval*{\abs{\pixel{W^{\varphi}}}^{2}}
+    %
+    -\abs{\expval*{\pixel{W^{\varphi}}}}^{2},
 \end{equation}
 %
 where the expected value of the wavelet/scaling coefficients is
 %
 \begin{equation}\label{eq:chapter4_expected_wavelet}
-	\expval*{\pixel{W^{\varphi}}}
-	%
-	= \slepianSum \slepian{\varphi} \pixel{\slepian{S}} \expval*{\conj{\slepian{f}}}.
+    \expval*{\pixel{W^{\varphi}}}
+    %
+    = \slepianSum \slepian{\varphi} \pixel{\slepian{S}} \expval*{\conj{\slepian{f}}}.
 \end{equation}
 %
 For the common case of zero-mean Gaussian noise, the expected value of the Slepian coefficients is zero, and hence the wavelet/scaling coefficient expectation \cref{eq:chapter4_expected_wavelet} is zero.
 Thus, the variance of the wavelet/scaling coefficients is
 %
 \begin{equation}\label{eq:chapter4_slepian_isotropic_noise}
-	\variance{\pixel{W^{\varphi}}}
-	%
-	= \slepianSum \slepianSum['] \slepian{\varphi} \conj{\slepian[']{\varphi}} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}} \expval*{\conj{\slepian{f}} \slepian[']{f}}.
+    \variance{\pixel{W^{\varphi}}}
+    %
+    = \slepianSum \slepianSum['] \slepian{\varphi} \conj{\slepian[']{\varphi}} \pixel{\slepian{S}} \pixel{\conj{\slepian[']{S}}} \expval*{\conj{\slepian{f}} \slepian[']{f}}.
 \end{equation}
 
 To simplify \cref{eq:chapter4_slepian_isotropic_noise} further, consider homogenous and isotropic noise defined by its power spectrum
 %
 \begin{equation}
-	\expval*{\harmonic{f} \conj{\harmonic[']{f}}}
-	%
-	= \powerSpectrum \delta_{\ell\ell'} \delta_{mm'},
+    \expval*{\harmonic{f} \conj{\harmonic[']{f}}}
+    %
+    = \powerSpectrum \delta_{\ell\ell'} \delta_{mm'},
 \end{equation}
 %
 where \(\powerSpectrum = \sigma^{2}\) for white noise.
 The power spectrum in harmonic space may be converted to the Slepian space by
 %
 \begin{align}
-	\expval*{\slepian{f} \conj{\slepian[']{f}}}
-	%
-	 & = \harmonicSum \harmonicSum['] \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \conj{\harmonic{(\slepian{S})}} \harmonic[']{(\slepian[']{S})} \nonumber \\
-	%
-	 & = \sigma^{2} \delta_{pp'},
+    \expval*{\slepian{f} \conj{\slepian[']{f}}}
+    %
+     & = \harmonicSum \harmonicSum['] \expval*{\harmonic{f} \conj{\harmonic[']{f}}} \conj{\harmonic{(\slepian{S})}} \harmonic[']{(\slepian[']{S})} \nonumber \\
+    %
+     & = \sigma^{2} \delta_{pp'},
 \end{align}
 %
 where the first line follows from \cref{eq:chapter4_harmonic_to_slepian}, and the last line follows from the orthogonality of the Slepian functions \cref{eq:chapter4_orthogonality_sphere}.
 Thus, the final expression for the wavelet domain variance becomes
 %
 \begin{equation}\label{eq:chapter4_wavelet_variance}
-	\variance{\pixel{W^{\varphi}}}
-	%
-	= \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\pixel{\slepian{S}}}^{2},
+    \variance{\pixel{W^{\varphi}}}
+    %
+    = \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\pixel{\slepian{S}}}^{2},
 \end{equation}
 %
 and hence the variance depends on the position on the sphere.
@@ -594,9 +594,9 @@ The left panel of \cref{fig:chapter4_south_america_region} presents the dataset 
 A masked region \(R\) is constructed by centring a polar cap of angular opening \(\SI{40}{\degree}\) over South America, and then:
 %
 \begin{enumerate}[(i),nosep,left=\parindent]
-	\item setting the field value to zero outside the cap; and
-	      %
-	\item setting the negative field value inside the cap to zero.
+    \item setting the field value to zero outside the cap; and
+          %
+    \item setting the negative field value inside the cap to zero.
 \end{enumerate}
 %
 The resulting region is shown in the right panel of \cref{fig:chapter4_south_america_region}.
@@ -639,24 +639,24 @@ A straightforward hard-thresholding scheme is developed to perform the denoising
 To calculate the covariance of a filtered field (wavelet coefficients), consider a signal localised in \(R\) in the presence of noise
 %
 \begin{equation}\label{eq:chapter4_noised_signal}
-	\pixel{x} = \pixel{s} + \pixel{n},
+    \pixel{x} = \pixel{s} + \pixel{n},
 \end{equation}
 %
 where \(\pixel{s}\) and \(\pixel{n}\) are the signal and noise respectively.
 The power spectrum of the noise in Slepian space is as before
 %
 \begin{equation}
-	\expval*{\slepian{n} \conj{\slepian[']{n}}}
-	%
-	= \sigma^{2} \delta_{pp'}.
+    \expval*{\slepian{n} \conj{\slepian[']{n}}}
+    %
+    = \sigma^{2} \delta_{pp'}.
 \end{equation}
 %
 To assess the fidelity of the observed signal, a signal-to-noise-ratio in the region is given by
 %
 \begin{equation}\label{eq:chapter4_signal_to_noise}
-	\snr{x}
-	%
-	\equiv 10 \log_{10} \frac{\norm{s}^{2}}{\norm{x - s}^{2}}.
+    \snr{x}
+    %
+    \equiv 10 \log_{10} \frac{\norm{s}^{2}}{\norm{x - s}^{2}}.
 \end{equation}
 %
 One seeks a denoised version of \(x\), denoted \(d \in \hilbert{R}\), with large \(\snr{d}\) such that \(d\) isolates the informative signal \(s\).
@@ -666,25 +666,25 @@ The Slepian functions, on which the Slepian wavelet scaling function is construc
 The wavelet/scaling coefficients of \cref{eq:chapter4_noised_signal} are given by the sum of the individual elements since the wavelet transform is linear
 %
 \begin{equation}
-	\pixel{X^{\varphi}}
-	%
-	= \pixel{S^{\varphi}} + \pixel{N^{\varphi}}.
+    \pixel{X^{\varphi}}
+    %
+    = \pixel{S^{\varphi}} + \pixel{N^{\varphi}}.
 \end{equation}
 %
 Here, capital letters denote the wavelet coefficients, \ie{}
 %
 \begin{equation}\label{eq:chapter4_capital_letters}
-	\pixel{X^{\varphi}} = \pixel{\convolution{\varphi}{x}}.
+    \pixel{X^{\varphi}} = \pixel{\convolution{\varphi}{x}}.
 \end{equation}
 %
 The noise in wavelet space is as before
 %
 \begin{equation}
-	\variance{\pixel{N^{\varphi}}}
-	%
-	= \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\pixel{\slepian{S}}}^{2}
-	%
-	\equiv {\pixel{\sigma^{\varphi}}}^{2},
+    \variance{\pixel{N^{\varphi}}}
+    %
+    = \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\pixel{\slepian{S}}}^{2}
+    %
+    \equiv {\pixel{\sigma^{\varphi}}}^{2},
 \end{equation}
 %
 where the quantity \(\sigma^{\varphi}\) defines the standard deviation of the noise in wavelet space.
@@ -692,31 +692,31 @@ One may perform denoising by hard-thresholding the wavelet/scaling coefficients 
 The denoised wavelet coefficients
 %
 \begin{equation}\label{eq:chapter4_denoised_wavelet_coefficients}
-	\pixel{D^{\varphi}} = \pixel{\convolution{\varphi}{d}}
+    \pixel{D^{\varphi}} = \pixel{\convolution{\varphi}{d}}
 \end{equation}
 %
 become
 %
 \begin{equation}
-	\pixel{D^{\varphi}} =
-	%
-	\begin{cases}
-		0,
-		%
-		 & \pixel{X^{\varphi}} < \pixel{T^{\varphi}},    \\
-		%
-		\pixel{X^{\varphi}},
-		%
-		 & \pixel{X^{\varphi}} \geq \pixel{T^{\varphi}},
-	\end{cases}
+    \pixel{D^{\varphi}} =
+    %
+    \begin{cases}
+        0,
+        %
+         & \pixel{X^{\varphi}} < \pixel{T^{\varphi}},    \\
+        %
+        \pixel{X^{\varphi}},
+        %
+         & \pixel{X^{\varphi}} \geq \pixel{T^{\varphi}},
+    \end{cases}
 \end{equation}
 %
 where
 %
 \begin{equation}
-	\pixel{T^{\varphi}}
-	%
-	= N_{\sigma}\pixel{\sigma^{\varphi}},
+    \pixel{T^{\varphi}}
+    %
+    = N_{\sigma}\pixel{\sigma^{\varphi}},
 \end{equation}
 %
 with \(N_{\sigma} \in \realPosParam{}\).

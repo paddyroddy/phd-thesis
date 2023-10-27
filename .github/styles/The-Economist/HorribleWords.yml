@@ -5,22 +5,22 @@ description: "Be aware that the use of '%s' may have an emetic effect on some of
 level: error
 ignorecase: true
 tokens:
-    - carer
-    - chattering classes
-    - facilitate
-    - famously
-    - Governance
-    - grow the business
-    - guesstimate
-    - informed
-    - leverage
-    - likely
-    - looking to
-    - materiel
-    - poster child
-    - prestigious
-    - proactive
-    - rack up
-    - savvy
-    - segue
-    - stakeholder
+  - carer
+  - chattering classes
+  - facilitate
+  - famously
+  - Governance
+  - grow the business
+  - guesstimate
+  - informed
+  - leverage
+  - likely
+  - looking to
+  - materiel
+  - poster child
+  - prestigious
+  - proactive
+  - rack up
+  - savvy
+  - segue
+  - stakeholder

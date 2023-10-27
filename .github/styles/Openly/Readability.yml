@@ -4,8 +4,8 @@ message: "Grade level (%s) too high!"
 level: error
 grade: 10
 metrics:
-    - Flesch-Kincaid
-    - Gunning Fog
-    - Coleman-Liau
-    - SMOG
-    - Automated Readability
+  - Flesch-Kincaid
+  - Gunning Fog
+  - Coleman-Liau
+  - SMOG
+  - Automated Readability

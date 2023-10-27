@@ -3,6 +3,6 @@ message: "'%s' is a typo!"
 level: error
 dicpath: .github/styles/custom/dict
 dictionaries:
-    - en_GB
+  - en_GB
 ignore:
-    - custom/ignore/dictionary.txt
+  - custom/ignore/dictionary.txt

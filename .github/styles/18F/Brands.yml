@@ -5,18 +5,18 @@ description: "Avoid using a trademark unless you’re referring to a specific pr
 level: error
 ignorecase: true
 swap:
-    Band-Aid: bandage
-    Bubble Wrap: packaging bubbles
-    Chapstick: lip balm
-    Crayola: crayons
-    Dumpster: waste container, trash container
-    Hi-Liter: highlighting marker
-    iPod: MP3 player
-    Kleenex: tissue
-    Plexiglas: plastic glass
-    Post-it note: adhesive note
-    Q-Tips: cotton swabs
-    Scotch tape: transparent tape
-    Styrofoam: plastic foam
-    Taser: stun gun
-    Xerox: photocopy
+  Band-Aid: bandage
+  Bubble Wrap: packaging bubbles
+  Chapstick: lip balm
+  Crayola: crayons
+  Dumpster: waste container, trash container
+  Hi-Liter: highlighting marker
+  iPod: MP3 player
+  Kleenex: tissue
+  Plexiglas: plastic glass
+  Post-it note: adhesive note
+  Q-Tips: cotton swabs
+  Scotch tape: transparent tape
+  Styrofoam: plastic foam
+  Taser: stun gun
+  Xerox: photocopy
