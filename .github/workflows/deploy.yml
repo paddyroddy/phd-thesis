@@ -25,6 +25,7 @@ jobs:
       - uses: paddyroddy/.github/actions/latex/vale@v0.14.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
 
   compile-latex:
     runs-on: ubuntu-latest
