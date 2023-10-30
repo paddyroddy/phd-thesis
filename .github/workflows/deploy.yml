@@ -17,12 +17,12 @@ jobs:
   chktex:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/chktex@v0.16.0
+      - uses: paddyroddy/.github/actions/latex/chktex@v0.19.0
 
   vale:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/vale@v0.16.0
+      - uses: paddyroddy/.github/actions/latex/vale@v0.19.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
@@ -30,7 +30,7 @@ jobs:
   compile-latex:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/compile@v0.16.0
+      - uses: paddyroddy/.github/actions/latex/compile@v0.19.0
 
       - name: Upload artefacts
         uses: actions/upload-artifact@v3
@@ -76,7 +76,7 @@ jobs:
         with:
           name: artefacts
 
-      - uses: paddyroddy/.github/actions/dropbox@v0.16.0
+      - uses: paddyroddy/.github/actions/dropbox@v0.19.0
         with:
           configfile-version: ${{ secrets.CONFIGFILE_VERSION }}
           files-to-upload: $(find . -maxdepth 1 -name '*.pdf' -print)
