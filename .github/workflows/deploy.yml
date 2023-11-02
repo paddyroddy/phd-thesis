@@ -17,12 +17,12 @@ jobs:
   chktex:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/chktex@v0.20.0
+      - uses: paddyroddy/.github/actions/latex/chktex@909a876d9f25e81524e29bf6463c117d6826855b # v0.20.0
 
   vale:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/vale@v0.20.0
+      - uses: paddyroddy/.github/actions/latex/vale@909a876d9f25e81524e29bf6463c117d6826855b # v0.20.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
@@ -30,10 +30,10 @@ jobs:
   compile-latex:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/compile@v0.20.0
+      - uses: paddyroddy/.github/actions/latex/compile@909a876d9f25e81524e29bf6463c117d6826855b # v0.20.0
 
       - name: Upload artefacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         with:
           name: artefacts
           path: |-
@@ -47,12 +47,12 @@ jobs:
     needs: compile-latex
     steps:
       - name: Download artefacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: artefacts
 
       - name: Fix regex for checkcites
-        uses: xu-cheng/texlive-action@v2
+        uses: xu-cheng/texlive-action@d9f893f837a29f066e3c70080540976b47263721 # v2
         id: references
         with:
           scheme: full
@@ -63,7 +63,7 @@ jobs:
 
       - name: Check all references cited
         if: ${{ steps.references.outputs.uncited > 0 }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         with:
           script: core.setFailed('Not all references cited')
 
@@ -72,11 +72,11 @@ jobs:
     needs: compile-latex
     steps:
       - name: Download artefacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: artefacts
 
-      - uses: paddyroddy/.github/actions/dropbox@v0.20.0
+      - uses: paddyroddy/.github/actions/dropbox@909a876d9f25e81524e29bf6463c117d6826855b # v0.20.0
         with:
           configfile-version: ${{ secrets.CONFIGFILE_VERSION }}
           files-to-upload: $(find . -maxdepth 1 -name '*.pdf' -print)
