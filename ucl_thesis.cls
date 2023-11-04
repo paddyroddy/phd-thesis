@@ -118,7 +118,7 @@
 %  blocked paragraphs.
 %
 %  Fonts.  Times Roman is a font that has been consistently used over a long period of time, and
-%  for that reason is preferable to a more modern font.  An 11pt font is prefered and is the
+%  for that reason is preferable to a more modern font.  An 11pt font is preferred and is the
 %  default but both 10pt and 12pt options are supported.
 %
 %  References.  References should be all at the end of the thesis and in alphabetical order.
@@ -567,7 +567,7 @@
 %    \end{macrocode}
 %  \end{environment}
 %  \begin{environment}{acknowledgement}
-%  Also need an environment for doing the acknowlegements.
+%  Also need an environment for doing the acknowledgements.
 %    \begin{macrocode}
 \newcommand \@acknowledgements{Acknowledgements}
 \newenvironment{acknowledgements}{%
