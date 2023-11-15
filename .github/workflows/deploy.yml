@@ -1,5 +1,6 @@
 name: deploy
 
+# yamllint disable-line rule:truthy
 on:
   push:
     branches:
@@ -16,11 +17,13 @@ jobs:
   chktex:
     runs-on: ubuntu-latest
     steps:
+      # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/latex/chktex@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
 
   vale:
     runs-on: ubuntu-latest
     steps:
+      # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/latex/vale@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -29,9 +32,11 @@ jobs:
   compile-latex:
     runs-on: ubuntu-latest
     steps:
+      # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/latex/compile@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
 
       - name: Upload artefacts
+        # yamllint disable-line rule:line-length
         uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
         with:
           name: artefacts
@@ -46,11 +51,13 @@ jobs:
     needs: compile-latex
     steps:
       - name: Download artefacts
+        # yamllint disable-line rule:line-length
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: artefacts
 
       - name: Fix regex for checkcites
+        # yamllint disable-line rule:line-length
         uses: xu-cheng/texlive-action@d9f893f837a29f066e3c70080540976b47263721 # v2
         id: references
         with:
@@ -62,6 +69,7 @@ jobs:
 
       - name: Check all references cited
         if: ${{ steps.references.outputs.uncited > 0 }}
+        # yamllint disable-line rule:line-length
         uses: actions/github-script@e69ef5462fd455e02edcaf4dd7708eda96b9eda0 # v7
         with:
           script: core.setFailed('Not all references cited')
@@ -71,10 +79,12 @@ jobs:
     needs: compile-latex
     steps:
       - name: Download artefacts
+        # yamllint disable-line rule:line-length
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3
         with:
           name: artefacts
 
+      # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/dropbox@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
         with:
           configfile-version: ${{ secrets.CONFIGFILE_VERSION }}
