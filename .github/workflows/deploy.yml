@@ -16,12 +16,12 @@ jobs:
   chktex:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/chktex@0860bb5de5029a6ef6adbd1da9655eafc9c8231f # v0
+      - uses: paddyroddy/.github/actions/latex/chktex@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
 
   vale:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/vale@0860bb5de5029a6ef6adbd1da9655eafc9c8231f # v0
+      - uses: paddyroddy/.github/actions/latex/vale@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
@@ -29,7 +29,7 @@ jobs:
   compile-latex:
     runs-on: ubuntu-latest
     steps:
-      - uses: paddyroddy/.github/actions/latex/compile@0860bb5de5029a6ef6adbd1da9655eafc9c8231f # v0
+      - uses: paddyroddy/.github/actions/latex/compile@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
 
       - name: Upload artefacts
         uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3
@@ -75,7 +75,7 @@ jobs:
         with:
           name: artefacts
 
-      - uses: paddyroddy/.github/actions/dropbox@0860bb5de5029a6ef6adbd1da9655eafc9c8231f # v0
+      - uses: paddyroddy/.github/actions/dropbox@7958ff821536746ea7a65cd1fa8737d05fa9b870 # v0
         with:
           configfile-version: ${{ secrets.CONFIGFILE_VERSION }}
           files-to-upload: $(find . -maxdepth 1 -name '*.pdf' -print)
