@@ -48,7 +48,7 @@
 %  \author{Russel Winder (modifications by Ian Kirker)}
 %  \maketitle
 %  \begin{abstract}
-%    This class is for theses (MRes, MPhil or PhD) to submit to UCL.
+%    This class is for a thesis (MRes, MPhil or PhD) to submit to UCL.
 %    It is a variant of the standard book class.
 %  \end{abstract}
 %
@@ -154,7 +154,7 @@
 \DeclareOption{MPhil}{\renewcommand\@degree@string{\@master}}
 \DeclareOption{phd}{\renewcommand\@degree@string{\@doctor}}
 \DeclareOption{PhD}{\renewcommand\@degree@string{\@doctor}}
-\DeclareOption{twocolumn}{\ClassError{ucl_thesis}{Option `twocolumn' not supported for UCL theses}{}}
+\DeclareOption{twocolumn}{\ClassError{ucl_thesis}{Option `twocolumn' not supported for a UCL thesis}{}}
 \newif \if@draftmode
 \@draftmodefalse
 \DeclareOption{draft}{\@draftmodetrue\PassOptionsToClass{draft}{book}}
@@ -262,7 +262,7 @@
 %  "Double or one-and-a-half spacing should be used in typescripts, except for indented
 %   quotations or footnotes where single spacing may be used."
 %
-%  One and a half is a sensible choice for theses, especially with a wide margin.
+%  One and a half is a sensible choice for a thesis, especially with a wide margin.
 %    \begin{macrocode}
 \renewcommand \baselinestretch{1.5}
 %    \end{macrocode}
