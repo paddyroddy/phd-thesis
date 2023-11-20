@@ -5,5 +5,5 @@ Unser = "Unser"
 [files]
 extend-exclude = [
     "*.bib",
-    ".github/styles"
+    ".github/styles",
 ]
