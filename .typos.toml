@@ -1,0 +1,9 @@
+[default.extend-words]
+Gorry = "Gorry"
+Unser = "Unser"
+
+[files]
+extend-exclude = [
+    "*.bib",
+    ".github/styles"
+]
