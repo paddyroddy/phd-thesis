@@ -101,42 +101,42 @@ Let \(f \in \hilbert{\manifold}\) be a real-valued function defined on a Riemann
 The Laplace-Beltrami operator is
 %
 \begin{equation}
-    \laplace{M} f
-    %
-    = \div(\grad{f}),
+	\laplace{M} f
+	%
+	= \div(\grad{f}),
 \end{equation}
 %
 where \(\div{}\) and \(\grad{}\) are the divergence and gradient operators on the manifold \(\manifold{}\) respectively.
 The Laplacian eigenproblem is defined as
 %
 \begin{equation}
-    \laplace{M} f
-    %
-    = -\mu f,
+	\laplace{M} f
+	%
+	= -\mu f,
 \end{equation}
 %
 which admits an orthogonal eigensystem due to the semi-positive definiteness of the Laplace-Beltrami operator.
 This eigensystem forms the square-integrable basis of the manifold \(\manifold{}\), with real eigenvalues
 %
 \begin{equation}
-    0 \leq \mu_{1} \leq \mu_{2} \leq \ldots < \mu_{\imax} < \infty, % chktex 11
+	0 \leq \mu_{1} \leq \mu_{2} \leq \ldots < \mu_{\imax} < \infty, % chktex 11
 \end{equation}
 %
 and eigenfunctions \(\zeta_{i}\).
 A function \(f \in \hilbert{\manifold}\) can therefore be decomposed into this basis by
 %
 \begin{equation}
-    \mesh{f}
-    %
-    = \sum\limits_{i=1}^{\imax} f_{i} \mesh{\zeta_{i}},
+	\mesh{f}
+	%
+	= \sum\limits_{i=1}^{\imax} f_{i} \mesh{\zeta_{i}},
 \end{equation}
 %
 where \(f_{i}\) are the Fourier coefficients given by the usual projection onto the basis functions
 %
 \begin{equation}
-    f_{i}
-    %
-    = \integrateManifold{x} \mesh{f} \mesh{\conj{\zeta_{i}}}.
+	f_{i}
+	%
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\zeta_{i}}}.
 \end{equation}
 %
 In practice, one may discretise the manifolds and represent them as graphs.
@@ -150,25 +150,25 @@ The Hilbert spaces \(\hilbert{\vertices}\) and \(\hilbert{\edges}\) are formed b
 The graph gradient operator \(\grad{}: \hilbert{\vertices} \to \hilbert{\edges}\) maps functions defined on the vertices to edges
 %
 \begin{equation}\label{eq:chapter5_graph_grad}
-    {(\grad{f})}_{i j}
-    %
-    = f_{i} - f_{j}.
+	{(\grad{f})}_{i j}
+	%
+	= f_{i} - f_{j}.
 \end{equation}
 %
 The graph divergence operator \(\div: \hilbert{\edges} \to \hilbert{\vertices}\) reverses this mapping
 %
 \begin{equation}\label{eq:chapter5_graph_div}
-    {(\div F)}_{i}
-    %
-    = \frac{1}{a_{i}} \sum\limits_{j : (i,j) \in \edges} w_{i j} F_{i j}.
+	{(\div F)}_{i}
+	%
+	= \frac{1}{a_{i}} \sum\limits_{j : (i,j) \in \edges} w_{i j} F_{i j}.
 \end{equation}
 %
 The graph Laplacian is an operator \(\laplace{G} : \hilbert{\vertices} \to \hilbert{\vertices}\) defined as
 %
 \begin{equation}\label{eq:chapter5_graph_laplace}
-    \laplace{G} f
-    %
-    = \div(\grad{f}),
+	\laplace{G} f
+	%
+	= \div(\grad{f}),
 \end{equation}
 %
 which converges to the Laplace-Beltrami operator as the number of samples goes to infinity~\cite{Belkin2007}.
@@ -176,42 +176,42 @@ which converges to the Laplace-Beltrami operator as the number of samples goes t
 By substituting the definitions of the gradient \cref{eq:chapter5_graph_grad} and divergence operators \cref{eq:chapter5_graph_div} on the graph into \cref{eq:chapter5_graph_laplace}, one finds
 %
 \begin{equation}\label{eq:chapter5_graph_laplace_indices}
-    {(\laplace{G} f)}_{i}
-    %
-    = \frac{1}{a_{i}} \sum\limits_{(i,j) \in \edges} w_{i j} (f_{i} - f_{j}).
+	{(\laplace{G} f)}_{i}
+	%
+	= \frac{1}{a_{i}} \sum\limits_{(i,j) \in \edges} w_{i j} (f_{i} - f_{j}).
 \end{equation}
 %
 Intuitively, this captures the geometric interpretation of the Laplacian --- as the difference between the local average of a function around a point and the value of the function itself at that point.
 \cref{eq:chapter5_graph_laplace_indices} can be rewritten in matrix form as
 %
 \begin{equation}\label{eq:chapter5_graph_laplace_matrix}
-    \vb*{\Delta} \vb*{f}
-    %
-    = \vb*{A}^{-1} (\vb*{K} - \vb*{W}) \vb*{f},
+	\vb*{\Delta} \vb*{f}
+	%
+	= \vb*{A}^{-1} (\vb*{K} - \vb*{W}) \vb*{f},
 \end{equation}
 %
 where
 %
 \begin{equation}
-    \vb*{W}
-    %
-    = (w_{i j})
+	\vb*{W}
+	%
+	= (w_{i j})
 \end{equation}
 %
 are the edge weights,
 %
 \begin{equation}
-    \vb*{A}
-    %
-    = \diag{a_{1},a_{2},\ldots,a_{n}}
+	\vb*{A}
+	%
+	= \diag{a_{1},a_{2},\ldots,a_{n}}
 \end{equation}
 %
 are the vertex weights,
 %
 \begin{equation}
-    \vb*{K}
-    %
-    = \diag{\sum\limits_{j: j \neq i} w_{i j}}
+	\vb*{K}
+	%
+	= \diag{\sum\limits_{j: j \neq i} w_{i j}}
 \end{equation}
 %
 is the degree matrix, and the function \(f \in \hilbert{\vertices}\) is written as a column vector \(\vb*{f}\).
@@ -224,9 +224,9 @@ A manifold is sampled at a set of \(n\) points, and a graph is then constructed 
 A set of edge weights is then computed, for example, Gaussian weights
 %
 \begin{equation}
-    w_{i j}
-    %
-    = \exp(-\frac{\ell_{i j}^{2}}{2\sigma^{2}}),
+	w_{i j}
+	%
+	= \exp(-\frac{\ell_{i j}^{2}}{2\sigma^{2}}),
 \end{equation}
 %
 where \(\ell_{i j}\) represents the length of the edge between the \(i\) and \(j\) vertices.
@@ -239,20 +239,20 @@ Consider such a discretisation shown in \cref{fig:chapter5_mesh_laplace}.
 The mesh Laplacian is then found by first substituting the edge weights into \cref{eq:chapter5_graph_laplace_indices}
 %
 \begin{equation}\label{eq:chapter5_mesh_laplace_weights}
-    w_{i j}
-    %
-    = \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{8 a_{i j k}}
-    %
-    + \frac{-\ell_{i j}^{2} + \ell_{j h}^{2} + \ell_{i h}^{2}}{8 a_{i j h}},
+	w_{i j}
+	%
+	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{8 a_{i j k}}
+	%
+	+ \frac{-\ell_{i j}^{2} + \ell_{j h}^{2} + \ell_{i h}^{2}}{8 a_{i j h}},
 \end{equation}
 %
 where \(a_{i j k}\) represents the area of the triangular face connecting the \(i\), \(j\) and \(k\) vertices~\cite{Bronstein2017,Pinkall1993}.
 The corresponding vertex weights of the mesh Laplacian are
 %
 \begin{equation}\label{eq:chapter5_vertex_weight}
-    a_{i}
-    %
-    = \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{i j k},
+	a_{i}
+	%
+	= \frac{1}{3} \sum\limits_{j k : (i,j,k) \in \faces} a_{i j k},
 \end{equation}
 %
 which results in the red hexagonal region in \cref{fig:chapter5_mesh_laplace}.
@@ -261,44 +261,44 @@ Such a construction can be shown to converge to the continuous Laplacian of the 
 A discrete metric
 %
 \begin{equation}
-    \ell_{i j}
-    %
-    = \norm{\vb*{x}_{i} - \vb*{x}_{j}}
+	\ell_{i j}
+	%
+	= \norm{\vb*{x}_{i} - \vb*{x}_{j}}
 \end{equation}
 %
 is induced by an embedding of the mesh, which changes \cref{eq:chapter5_mesh_laplace_weights} to
 %
 \begin{equation}\label{eq:chapter5_cotangent_laplace}
-    w_{i j}
-    %
-    = \frac{1}{2}(\cot{\alpha_{i j}} + \cot{\beta_{i j}}),
+	w_{i j}
+	%
+	= \frac{1}{2}(\cot{\alpha_{i j}} + \cot{\beta_{i j}}),
 \end{equation}
 %
 where \(\alpha_{i j}\) and \(\beta_{i j}\) are the internal angles opposite to the corresponding edge \(\ell_{i j}\), as shown in \cref{fig:chapter5_mesh_laplace}.
 To prove this, recall the law of cosines
 %
 \begin{equation}\label{eq:chapter5_cosine}
-    \cos{\alpha_{i j}}
-    %
-    = \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{2\ell_{j k}\ell_{i k}},
+	\cos{\alpha_{i j}}
+	%
+	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{2\ell_{j k}\ell_{i k}},
 \end{equation}
 %
 and the usual expression for the area of a triangle
 %
 \begin{equation}\label{eq:chapter5_sine}
-    \sin{\alpha_{i j}}
-    %
-    = \frac{2a_{i j k}}{\ell_{j k} \ell_{i k}}.
+	\sin{\alpha_{i j}}
+	%
+	= \frac{2a_{i j k}}{\ell_{j k} \ell_{i k}}.
 \end{equation}
 %
 \cref{eq:chapter5_cosine,eq:chapter5_sine} may then be combined to find an expression for the cotangent of the interior angle
 %
 \begin{equation}
-    \cot{\alpha_{i j}}
-    %
-    = \frac{\cos{\alpha_{i j}}}{\sin{\alpha_{i j}}}
-    %
-    = \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{4a_{i j k}}.
+	\cot{\alpha_{i j}}
+	%
+	= \frac{\cos{\alpha_{i j}}}{\sin{\alpha_{i j}}}
+	%
+	= \frac{-\ell_{i j}^{2} + \ell_{j k}^{2} + \ell_{i k}^{2}}{4a_{i j k}}.
 \end{equation}
 %
 Through an analogous expression for the interior angle \(\beta_{i j}\), \cref{eq:chapter5_cotangent_laplace} follows from \cref{eq:chapter5_mesh_laplace_weights}, as elaborated in~\cite{Meyer2003}.
@@ -342,55 +342,55 @@ This chapter considers optimally concentrated functions within a region \(R\) of
 To maximise the spatial energy concentration of a bandlimited signal \(f \in \hilbert{\manifold}\), the following ratio must be maximised
 %
 \begin{equation}
-    \mu
-    %
-    = \frac{\integrateRegion{\meshVolume} \abs{\mesh{f}}^{2}}{\integrateManifold{x} \abs{\mesh{f}}^{2}},
+	\mu
+	%
+	= \frac{\integrateRegion{\meshVolume} \abs{\mesh{f}}^{2}}{\integrateManifold{x} \abs{\mesh{f}}^{2}},
 \end{equation}
 %
 where spatial concentration is measured by \(0 < \mu < 1\).
 In Fourier space this can be simplified to a sum
 %
 \begin{equation}\label{eq:chapter5_spatial_concentration_ratio}
-    \mu
-    %
-    = \frac{\meshSum f_{i} \meshYSum D_{i,j} \conj{f_{j}}}{\meshSum \abs{f_{i}}^{2}},
+	\mu
+	%
+	= \frac{\meshSum f_{i} \meshYSum D_{i,j} \conj{f_{j}}}{\meshSum \abs{f_{i}}^{2}},
 \end{equation}
 %
 where
 %
 \begin{equation}
-    D_{i,j}
-    %
-    = \integrateRegion{\meshVolume \mesh{\zeta_{i}} \mesh{\conj{\zeta_{j}}}}
+	D_{i,j}
+	%
+	= \integrateRegion{\meshVolume \mesh{\zeta_{i}} \mesh{\conj{\zeta_{j}}}}
 \end{equation}
 %
 is an \(\imax \times \imax{}\) matrix including all basis functions of the manifold.
 \cref{eq:chapter5_spatial_concentration_ratio} can be rewritten as a matrix variational problem
 %
 \begin{equation}
-    \mu
-    %
-    = \frac{\hermitian{\vb*{f}} \vb*{D} \vb*{f}}{\hermitian{\vb*{f}} \vb*{f}},
+	\mu
+	%
+	= \frac{\hermitian{\vb*{f}} \vb*{D} \vb*{f}}{\hermitian{\vb*{f}} \vb*{f}},
 \end{equation}
 %
 where \(\vb*{f}\) are the Fourier coefficients of \(\mesh{f}\), and are the solutions to the eigenproblem
 %
 \begin{equation}\label{eq:chapter5_eigenproblem}
-    \vb*{D}\vb*{f}
-    %
-    = \mu \vb*{f}.
+	\vb*{D}\vb*{f}
+	%
+	= \mu \vb*{f}.
 \end{equation}
 %
 The eigenvalues \(\slepian{\mu}\) act as a measure of the relative spatial concentration
 %
 \begin{equation}
-    1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{\imax} > 0, % chktex 11
+	1 > \mu_{1} \geq \mu_{2} \geq \ldots \geq \mu_{\imax} > 0, % chktex 11
 \end{equation}
 %
 of the corresponding eigenvectors
 %
 \begin{equation}
-    \vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{\imax}.
+	\vb*{f}_{1},\ \vb*{f}_{2},\ \ldots,\ \vb*{f}_{\imax}.
 \end{equation}
 %
 No bandlimited function can be restricted exactly within a region \(R\) and hence \(\mu_{1}<1\).
@@ -398,9 +398,9 @@ Due to the positive definiteness of \(\vb*{D}\), the smallest eigenvalue \(\mu_{
 A manifold analogue of the Shannon number can be constructed by
 %
 \begin{equation}\label{eq:chapter5_shannon}
-    N
-    %
-    = \frac{A_{R}}{A_{\manifold}} \imax,
+	N
+	%
+	= \frac{A_{R}}{A_{\manifold}} \imax,
 \end{equation}
 %
 where \(A\) denotes the area of the region \(R\)/manifold \(\manifold{}\).
@@ -411,66 +411,66 @@ The Shannon number is a good estimate of the number of significant eigenvalues~\
 The Slepian functions provide an alternative orthogonal basis of the manifold, decomposing a function \(f \in \hilbert{\manifold}\) into this basis
 %
 \begin{equation}
-    \mesh{f}
-    %
-    = \sum\limits_{p=1}^{\imax} \slepian{f} \mesh{\slepian{S}},
+	\mesh{f}
+	%
+	= \sum\limits_{p=1}^{\imax} \slepian{f} \mesh{\slepian{S}},
 \end{equation}
 %
 where the sum is over all basis functions of the manifold.
 For a well-localised function in the region \(R\) (\ie{} \(f \in \hilbert{R}\)) the sum may be truncated at the Shannon number
 %
 \begin{equation}
-    \mesh{f}
-    %
-    \approx \sum\limits_{p=1}^{N} \slepian{f} \mesh{\slepian{S}}
-    %
-    = \slepianSum \slepian{f} \mesh{\slepian{S}},
+	\mesh{f}
+	%
+	\approx \sum\limits_{p=1}^{N} \slepian{f} \mesh{\slepian{S}}
+	%
+	= \slepianSum \slepian{f} \mesh{\slepian{S}},
 \end{equation}
 %
 where the last line introduces a shorthand notation.
 The Slepian coefficients \(\slepian{f}\) are calculated through the usual projection on to the basis functions
 %
 \begin{equation}
-    \slepian{f}
-    %
-    = \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}.
+	\slepian{f}
+	%
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}.
 \end{equation}
 %
 The Slepian coefficients of a well-localised function may be computed with an integral over the region \(R\) rather than an integral over the whole manifold \(\manifold{}\)
 %
 \begin{equation}
-    \slepian{f}
-    %
-    = \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}},
+	\slepian{f}
+	%
+	= \frac{1}{\slepian{\mu}} \integrateRegion{\meshVolume} \mesh{f} \mesh{\conj{\slepian{S}}},
 \end{equation}
 %
 where \(\vb*{S}\) are the Fourier coefficients of \(\mesh{\slepian{S}}\) (see \cref{eq:chapter4_integrate_region_proof} for proof).
 One may transform from Slepian coefficients to the Fourier coefficients of the manifold by
 %
 \begin{equation}\label{eq:chapter5_slepian_to_harmonic}
-    f_{i}
-    %
-    = \integrateManifold{x} \mesh{f} \mesh{\conj{\zeta_{i}}}
-    %
-    = \slepianSum \slepian{f} {(\slepian{S})}_{i},
+	f_{i}
+	%
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\zeta_{i}}}
+	%
+	= \slepianSum \slepian{f} {(\slepian{S})}_{i},
 \end{equation}
 %
 where \({(\slepian{S})}_{i}\) are the eigenvectors of the eigenproblem \cref{eq:chapter5_eigenproblem}
 %
 \begin{equation}
-    {(\slepian{S})}_{i}
-    %
-    = \integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\zeta_{i}}}.
+	{(\slepian{S})}_{i}
+	%
+	= \integrateManifold{x} \mesh{\slepian{S}} \mesh{\conj{\zeta_{i}}}.
 \end{equation}
 %
 The inverse operation of \cref{eq:chapter5_slepian_to_harmonic} is
 %
 \begin{equation}
-    \slepian{f}
-    %
-    = \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}
-    %
-    = \meshSum f_{i} \conj{(\slepian{S})}_{i}.
+	\slepian{f}
+	%
+	= \integrateManifold{x} \mesh{f} \mesh{\conj{\slepian{S}}}
+	%
+	= \meshSum f_{i} \conj{(\slepian{S})}_{i}.
 \end{equation}
 
 \subsection{Sifting Convolution on Manifolds}\label{sec:chapter5_sifting_convolution_manifolds}
@@ -485,69 +485,69 @@ A translation is defined through a shift of coordinates, which results in a prod
 A translation operator on the manifold may be defined analogously by
 %
 \begin{equation}
-    \mesh{(\translation{y}\zeta_{i})}
-    %
-    \equiv \meshY{\zeta_{i}} \mesh{\zeta_{i}},
+	\mesh{(\translation{y}\zeta_{i})}
+	%
+	\equiv \meshY{\zeta_{i}} \mesh{\zeta_{i}},
 \end{equation}
 %
 where \(y\) is a point on the manifold.
 A natural way to define the translation of an arbitrary function \(f \in \hilbert{\manifold}\) is thus
 %
 \begin{equation}\label{eq:chapter5_translation_mesh}
-    \mesh{(\translation{y}f)}
-    %
-    = \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}},
+	\mesh{(\translation{y}f)}
+	%
+	= \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}},
 \end{equation}
 %
 which implies
 %
 \begin{equation}
-    {(\translation{y}f)}_{i}
-    %
-    = f_{i} \meshY{\zeta_{i}}.
+	{(\translation{y}f)}_{i}
+	%
+	= f_{i} \meshY{\zeta_{i}}.
 \end{equation}
 
 The sifting convolution on the manifold of \(f,\ g \in \hilbert{\manifold}\) follows in the usual manner by the inner product
 %
 \begin{equation}
-    \mesh{\convolution{f}{g}}
-    %
-    \equiv \braket*{\translation{x}f}{g},
+	\mesh{\convolution{f}{g}}
+	%
+	\equiv \braket*{\translation{x}f}{g},
 \end{equation}
 %
 which is a product in Fourier space
 %
 \begin{equation}\label{eq:chapter5_harmonic_convolution}
-    {\convolution{f}{g}}_{i}
-    %
-    = f_{i} \conj{g_{i}},
+	{\convolution{f}{g}}_{i}
+	%
+	= f_{i} \conj{g_{i}},
 \end{equation}
 %
 as
 %
 \begin{align}
-    \mesh{\convolution{f}{g}}
-    %
-     & = \braket*{\translation{x}f}{g} \nonumber{}                                                                                           \\
-    %
-     & = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{}                                                       \\
-    %
-     & = \integrateManifold{y} \meshSum f_{i} \mesh{\zeta_{i}} \meshY{\zeta_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\zeta_{j}}} \nonumber{} \\
-    %
-     & = \meshSum f_{i} \conj{g_{i}} \mesh{\zeta_{i}}.
+	\mesh{\convolution{f}{g}}
+	%
+	 & = \braket*{\translation{x}f}{g} \nonumber{}                                                                                           \\
+	%
+	 & = \integrateManifold{y} \meshY{(\translation{x}f)} \meshY{\conj{g}} \nonumber{}                                                       \\
+	%
+	 & = \integrateManifold{y} \meshSum f_{i} \mesh{\zeta_{i}} \meshY{\zeta_{i}} \meshYSum \conj{g_{j}} \meshY{\conj{\zeta_{j}}} \nonumber{} \\
+	%
+	 & = \meshSum f_{i} \conj{g_{i}} \mesh{\zeta_{i}}.
 \end{align}
 %
 Note that the Fourier representation of the convolution is a product and, hence, is efficient to compute.
 It can be shown that the translation operator is a sifting convolution of a function with the shifted Dirac delta function
 %
 \begin{align}
-    \mesh{\convolution{f}{\delta_{y}}}
-    %
-     & = \meshSum f_{i} \conj{{(\delta_{y})}_{i}} \mesh{\zeta_{i}} \nonumber{} \\
-    %
-     & = \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}} \nonumber{}         \\
-    %
-     & = \mesh{(\translation{y}f)},
+	\mesh{\convolution{f}{\delta_{y}}}
+	%
+	 & = \meshSum f_{i} \conj{{(\delta_{y})}_{i}} \mesh{\zeta_{i}} \nonumber{} \\
+	%
+	 & = \meshSum f_{i} \meshY{\zeta_{i}} \mesh{\zeta_{i}} \nonumber{}         \\
+	%
+	 & = \mesh{(\translation{y}f)},
 \end{align}
 %
 where the first and last lines follow by \cref{eq:chapter5_harmonic_convolution,eq:chapter5_translation_mesh} respectively.
@@ -580,45 +580,45 @@ The construction of these wavelets is analogous to~\cite{Wiaux2008,McEwen2018} b
 For a signal of interest \(f \in \hilbert{R}\) concentrated within a region \(R\), the wavelet coefficients \(W^{\Psi^{j}} \in \hilbert{R}\) are defined through a sifting convolution of \(f\) with the wavelet \(\Psi^{j} \in \hilbert{R}\) for wavelet scale \(j\)
 %
 \begin{align}
-    \mesh{W^{\Psi^{j}}}
-    %
-     & = \mesh{\convolution{\Psi^{j}}{f}} \nonumber                                \\
-    %
-     & = \integrateManifold{y} \meshY{(\translation{x}\Psi^{j})} \meshY{\conj{f}}.
+	\mesh{W^{\Psi^{j}}}
+	%
+	 & = \mesh{\convolution{\Psi^{j}}{f}} \nonumber                                \\
+	%
+	 & = \integrateManifold{y} \meshY{(\translation{x}\Psi^{j})} \meshY{\conj{f}}.
 \end{align}
 %
 Wavelets are typically paired with a scaling function, each capturing different underlying scales of the signal.
 Scaling coefficients \(W^{\Phi} \in \hilbert{R}\) may be similarly defined by a sifting convolution between \(f\) and the scaling function \(\Phi \in \hilbert{R}\)
 %
 \begin{align}
-    \mesh{W^{\Phi}}
-    %
-     & = \mesh{\convolution{\Phi}{f}} \nonumber                                \\
-    %
-     & = \integrateManifold{y} \meshY{(\translation{x}\Phi)} \meshY{\conj{f}}.
+	\mesh{W^{\Phi}}
+	%
+	 & = \mesh{\convolution{\Phi}{f}} \nonumber                                \\
+	%
+	 & = \integrateManifold{y} \meshY{(\translation{x}\Phi)} \meshY{\conj{f}}.
 \end{align}
 %
 Supposing that the wavelets and scaling function satisfy an admissibility condition, a function \(f\) may be reconstructed from its wavelet and scaling coefficients by
 %
 \begin{equation}\label{eq:chapter5_synthesis}
-    \mesh{f}
-    %
-    = \integrateManifold{y}
-    %
-    \meshY{(\translation{x}\Phi)} \meshY{W^{\Phi\ast}}
-    %
-    + \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}\ast}}.
+	\mesh{f}
+	%
+	= \integrateManifold{y}
+	%
+	\meshY{(\translation{x}\Phi)} \meshY{W^{\Phi\ast}}
+	%
+	+ \waveletSum \meshY{(\translation{x}\Psi^{j})} \meshY{W^{\Psi^{j}\ast}}.
 \end{equation}
 %
 The parameters \(J_{0}\) and \(J\) here represent the lowest and highest scales \(j\) of the wavelet decomposition respectively --- to ensure exact reconstruction these parameters must be set consistently.
 The admissibility condition required for synthesis \cref{eq:chapter5_synthesis} to hold is thus
 %
 \begin{equation}\label{eq:chapter5_admissibility}
-    \abs{\slepian{\Phi}}^{2}
-    %
-    + \waveletSum \abs{\slepian{\Psi}^{j}}^{2}
-    %
-    = 1,\ \forall p.
+	\abs{\slepian{\Phi}}^{2}
+	%
+	+ \waveletSum \abs{\slepian{\Psi}^{j}}^{2}
+	%
+	= 1,\ \forall p.
 \end{equation}
 %
 Wavelets and a scaling function that satisfy this admissibility condition may now be defined.
@@ -630,40 +630,40 @@ Recall the smoothly decreasing function \(k_{\lambda}\) \cref{eq:chapter4_k_lamb
 The wavelet generating function is defined as
 %
 \begin{equation}
-    \kappa_{\lambda}(t)
-    %
-    \equiv \sqrt{k_{\lambda}(t/\lambda) - k_{\lambda}(t)},
+	\kappa_{\lambda}(t)
+	%
+	\equiv \sqrt{k_{\lambda}(t/\lambda) - k_{\lambda}(t)},
 \end{equation}
 %
 and the scaling function generating function is
 %
 \begin{equation}
-    \eta_{\lambda}(t)
-    %
-    \equiv \sqrt{k_{\lambda}(t)}.
+	\eta_{\lambda}(t)
+	%
+	\equiv \sqrt{k_{\lambda}(t)}.
 \end{equation}
 %
 An instinctive approach is to define the wavelets \(\slepian{\Psi}^{j}\) from the generating functions \(\kappa_{\lambda}\) to have support on \(\interval{\lambda^{j-1}}{\lambda^{j+1}}\), yielding
 %
 \begin{equation}
-    \slepian{\Psi}^{j}
-    %
-    \equiv \kappa_{\lambda}\bigg(\frac{p}{\lambda^{j}}\bigg).
+	\slepian{\Psi}^{j}
+	%
+	\equiv \kappa_{\lambda}\bigg(\frac{p}{\lambda^{j}}\bigg).
 \end{equation}
 %
 For \(p \geq \lambda^{J_{0}}\) the admissibility condition \cref{eq:chapter5_admissibility} is satisfied for these wavelets, where \(J_{0}\) is the lowest wavelet scale used in the decomposition.
 Modes that cannot be probed by wavelets can be extracted through the construction of a scaling function \(\Phi{}\) (\ie{} modes with \(p < \lambda^{J_{0}}\))
 %
 \begin{equation}
-    \slepian{\Phi}
-    %
-    \equiv \eta_{\lambda}\bigg(\frac{p}{\lambda^{J_{0}}}\bigg).
+	\slepian{\Phi}
+	%
+	\equiv \eta_{\lambda}\bigg(\frac{p}{\lambda^{J_{0}}}\bigg).
 \end{equation}
 %
 Exact reconstruction can be achieved by setting \(J\) appropriately
 %
 \begin{equation}
-    J = \lceil{} \log_{\lambda}(N)\rceil{}.
+	J = \lceil{} \log_{\lambda}(N)\rceil{}.
 \end{equation}
 %
 Assuming that \(0 \leq J_{0} < J\) is satisfied, the lowest wavelet scale \(J_{0}\) is arbitrary.
@@ -687,9 +687,9 @@ In contrast, Slepian wavelets are built on the Slepian harmonic line, and thus, 
 The wavelet energy is
 %
 \begin{equation}
-    \norm{\Psi^{j}}^{2}
-    %
-    = \slepianSum \abs{\slepian{\Psi}^{j}}^{2}.
+	\norm{\Psi^{j}}^{2}
+	%
+	= \slepianSum \abs{\slepian{\Psi}^{j}}^{2}.
 \end{equation}
 %
 A similar expression exists for the scaling function energy.
@@ -699,13 +699,13 @@ A similar expression exists for the scaling function energy.
 A Parseval frame is satisfied by Slepian scale-discretised wavelets on manifolds
 %
 \begin{equation}
-    A\norm{f}^{2} \leq \integrateManifold{x}
-    %
-    \abs{\braket*{\translation{x}\Phi}{f}}^{2}
-    %
-    + \waveletSum \abs{\braket*{\translation{x}\Psi^{j}}{f}}^{2}
-    %
-    \leq B\norm{f}^{2},
+	A\norm{f}^{2} \leq \integrateManifold{x}
+	%
+	\abs{\braket*{\translation{x}\Phi}{f}}^{2}
+	%
+	+ \waveletSum \abs{\braket*{\translation{x}\Psi^{j}}{f}}^{2}
+	%
+	\leq B\norm{f}^{2},
 \end{equation}
 %
 where \(A,\ B \in \realPosParam{}\).
@@ -716,33 +716,33 @@ It can be shown that this holds for \(A = B = 1\), implying that the energy of \
 For notational brevity, define a quantity
 %
 \begin{equation}
-    \varphi \in \set{\Phi,\Psi^{j}}
+	\varphi \in \set{\Phi,\Psi^{j}}
 \end{equation}
 %
 to represent both the scaling function and the wavelets.
 Consider homogeneous and isotropic noise defined by its power spectrum
 %
 \begin{equation}
-    \expval*{f_{i} \conj{f_{j}}}
-    %
-    = C_{i} \delta_{i j},
+	\expval*{f_{i} \conj{f_{j}}}
+	%
+	= C_{i} \delta_{i j},
 \end{equation}
 %
 where \(C_{i} = \sigma^{2}\) for white noise.
 The corresponding power spectrum in Slepian space is
 %
 \begin{equation}
-    \expval*{\slepian{f} \conj{\slepian[']{f}}}
-    %
-    = \sigma^{2} \delta_{pp'}.
+	\expval*{\slepian{f} \conj{\slepian[']{f}}}
+	%
+	= \sigma^{2} \delta_{pp'}.
 \end{equation}
 %
 For the common case of zero-mean Gaussian noise, the expected value of the wavelet/scaling coefficients is zero, and hence the wavelet domain variance is
 %
 \begin{equation}
-    \variance{\mesh{W^{\varphi}}}
-    %
-    = \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\mesh{\slepian{S}}}^{2},
+	\variance{\mesh{W^{\varphi}}}
+	%
+	= \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\mesh{\slepian{S}}}^{2},
 \end{equation}
 %
 and, as such, the variance depends on the position on the manifold.
@@ -797,18 +797,18 @@ A straightforward hard-thresholding denoising procedure follows.
 Consider a signal localised in the region \(R\) in the presence of noise
 %
 \begin{equation}\label{eq:chapter5_noised_signal}
-    \mesh{z}
-    %
-    = \mesh{s} + \mesh{n},
+	\mesh{z}
+	%
+	= \mesh{s} + \mesh{n},
 \end{equation}
 %
 where the signal and noise are represented by \(\mesh{s}\) and \(\mesh{n}\) respectively.
 The power spectrum of noise in Slepian space is as before
 %
 \begin{equation}
-    \expval*{\slepian{n} \conj{\slepian[']{n}}}
-    %
-    = \sigma^{2} \delta_{pp'}.
+	\expval*{\slepian{n} \conj{\slepian[']{n}}}
+	%
+	= \sigma^{2} \delta_{pp'}.
 \end{equation}
 %
 A denoised version of \(z\) is desired, denoted by \(d \in \hilbert{R}\), with a large \(\snr{d}\) (defined in \cref{eq:chapter4_signal_to_noise}) such that \(d\) extracts the informative signal \(s\).
@@ -818,20 +818,20 @@ The scaling function in the Slepian setting is not a low-frequency representatio
 Since the wavelet transform is linear, the individual elements sum to give the wavelet/scaling coefficients of \cref{eq:chapter5_noised_signal}
 %
 \begin{equation}
-    \mesh{Z^{\varphi}}
-    %
-    = \mesh{S^{\varphi}} + \mesh{N^{\varphi}},
+	\mesh{Z^{\varphi}}
+	%
+	= \mesh{S^{\varphi}} + \mesh{N^{\varphi}},
 \end{equation}
 %
 where the wavelet coefficients are denoted by capital letters, \ie{} \cref{eq:chapter4_capital_letters}.
 In wavelet space the noise is
 %
 \begin{equation}
-    \variance{\mesh{N^{\varphi}}}
-    %
-    = \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\mesh{\slepian{S}}}^{2}
-    %
-    \equiv {\mesh{\sigma^{\varphi}}}^{2},
+	\variance{\mesh{N^{\varphi}}}
+	%
+	= \sigma^{2} \slepianSum \abs{\slepian{\varphi}}^{2} \abs{\mesh{\slepian{S}}}^{2}
+	%
+	\equiv {\mesh{\sigma^{\varphi}}}^{2},
 \end{equation}
 %
 where \(\sigma^{\varphi}\) represents the standard deviation of the noise in wavelet space.
@@ -839,25 +839,25 @@ To denoise the signal one may hard-threshold the scaling/wavelet coefficients wi
 Hence, the denoised wavelet coefficients \(\mesh{D^{\varphi}}\) (\eg{} \cref{eq:chapter4_denoised_wavelet_coefficients}) are
 %
 \begin{equation}
-    \mesh{D^{\varphi}} =
-    %
-    \begin{cases}
-        0,
-        %
-         & \mesh{Z^{\varphi}} < \mesh{T^{\varphi}},    \\
-        %
-        \mesh{Z^{\varphi}},
-        %
-         & \mesh{Z^{\varphi}} \geq \mesh{T^{\varphi}},
-    \end{cases}
+	\mesh{D^{\varphi}} =
+	%
+	\begin{cases}
+		0,
+		%
+		 & \mesh{Z^{\varphi}} < \mesh{T^{\varphi}},    \\
+		%
+		\mesh{Z^{\varphi}},
+		%
+		 & \mesh{Z^{\varphi}} \geq \mesh{T^{\varphi}},
+	\end{cases}
 \end{equation}
 %
 where
 %
 \begin{equation}
-    \mesh{T^{\varphi}}
-    %
-    = N_{\sigma}\mesh{\sigma^{\varphi}},
+	\mesh{T^{\varphi}}
+	%
+	= N_{\sigma}\mesh{\sigma^{\varphi}},
 \end{equation}
 %
 with \(N_{\sigma} \in \realPosParam{}\).

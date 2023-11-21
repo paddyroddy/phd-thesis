@@ -1,25 +1,25 @@
 \begin{figure}[htpb]
-    \centering\capstart{}
-    \begin{overpic}
-        [width=0.47\textwidth]{mesh_laplacian.pdf}
-        \small
-        \put(101,53){\(h\)}
-        \put(48,32){\(i\)}
-        \put(69,83.5){\(j\)}
-        \put(28,72.5){\(k\)}
-        \put(38,69){\(\alpha_{i j}\)}
-        \put(85,56){\(\beta_{i j}\)}
-        \put(35.5,44.5){\color{red}\(a_{i}\)}
-        \put(50,67){\color{red}\(a_{i j k}\)}
-        \put(65,60){\(\ell_{i j}\)}
-    \end{overpic}
-    \caption[
-        The triangular mesh discretisation of a two-dimensional manifold
-    ]{
-        The triangular mesh discretisation of a two-dimensional manifold.
-        A triangular face is highlighted in red which connects the \(i\), \(j\) and \(k\) vertices, with the corresponding area represented as \(a_{i j k}\).
-        Similarly, the vertex weight \(a_{i}\) is the red hexagonal shape which is effectively one-third of the area of the surrounding faces, \ie{} \cref{eq:chapter5_vertex_weight}.
-        The \(i\) and \(j\) vertices are connected by an edge of length \(\ell_{i j}\), and the corresponding interior angles at the vertices \(k\) and \(h\) are given by \(\alpha_{i j}\) and \(\beta_{i j}\) respectively.
-        These interior angles (in grey) appear in the expression for the cotangent Laplacian, \cf{} \cref{eq:chapter5_cotangent_laplace}.
-    }\label{fig:chapter5_mesh_laplace}
+	\centering\capstart{}
+	\begin{overpic}
+		[width=0.47\textwidth]{mesh_laplacian.pdf}
+		\small
+		\put(101,53){\(h\)}
+		\put(48,32){\(i\)}
+		\put(69,83.5){\(j\)}
+		\put(28,72.5){\(k\)}
+		\put(38,69){\(\alpha_{i j}\)}
+		\put(85,56){\(\beta_{i j}\)}
+		\put(35.5,44.5){\color{red}\(a_{i}\)}
+		\put(50,67){\color{red}\(a_{i j k}\)}
+		\put(65,60){\(\ell_{i j}\)}
+	\end{overpic}
+	\caption[
+		The triangular mesh discretisation of a two-dimensional manifold
+	]{
+		The triangular mesh discretisation of a two-dimensional manifold.
+		A triangular face is highlighted in red which connects the \(i\), \(j\) and \(k\) vertices, with the corresponding area represented as \(a_{i j k}\).
+		Similarly, the vertex weight \(a_{i}\) is the red hexagonal shape which is effectively one-third of the area of the surrounding faces, \ie{} \cref{eq:chapter5_vertex_weight}.
+		The \(i\) and \(j\) vertices are connected by an edge of length \(\ell_{i j}\), and the corresponding interior angles at the vertices \(k\) and \(h\) are given by \(\alpha_{i j}\) and \(\beta_{i j}\) respectively.
+		These interior angles (in grey) appear in the expression for the cotangent Laplacian, \cf{} \cref{eq:chapter5_cotangent_laplace}.
+	}\label{fig:chapter5_mesh_laplace}
 \end{figure}
