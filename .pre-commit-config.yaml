@@ -4,4 +4,7 @@ repos:
     rev: v0.101.0
     hooks:
       - id: general-hooks
-      - id: latex-hooks
+  - repo: https://github.com/cmhughes/latexindent.pl
+    rev: V3.23.4
+    hooks:
+      - id: latexindent
