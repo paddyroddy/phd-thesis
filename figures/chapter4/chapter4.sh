@@ -24,20 +24,20 @@ python -m sleplet.plotting.arbitrary.south_america.tiling_south_america
 
 echo figure: 3, Earth
 sphere earth \
-    -L ${L} \
-    -s ${SMOOTHING} \
+    -L "${L}" \
+    -s "${SMOOTHING}" \
     -u
 echo figure 3: Slepian South America
 sphere slepian_south_america \
-    -L ${L} \
-    -s ${SMOOTHING} \
+    -L "${L}" \
+    -s "${SMOOTHING}" \
     -u
 
-for p in ${P_RANGE[@]}; do
-    echo figure: 4, Slepian p: ${p}
+for p in "${P_RANGE[@]}"; do
+    echo figure: 4, Slepian p: "${p}"
     sphere slepian \
-        -e ${p} \
-        -L ${L} \
+        -e "${p}" \
+        -L "${L}" \
         -u
 done
 
@@ -46,40 +46,40 @@ python -m sleplet.plotting.arbitrary.south_america.eigenvalues_south_america
 
 echo figure: 6, scaling wavelet
 sphere slepian_wavelets \
-    -L ${L} \
+    -L "${L}" \
     -u
 echo figure: 7, scaling wavelet coefficient
 sphere slepian_wavelet_coefficients_south_america \
-    -L ${L} \
-    -s ${SMOOTHING} \
+    -L "${L}" \
+    -s "${SMOOTHING}" \
     -u
 
 for j in ${J_RANGE}; do
-    echo figure: 6, wavelet j: ${j}
+    echo figure: 6, wavelet j: "${j}"
     sphere slepian_wavelets \
-        -e ${B} ${J_MIN} ${j} \
-        -L ${L} \
+        -e "${B}" "${J_MIN}" "${j}" \
+        -L "${L}" \
         -u
 
-    echo figure: 7, wavelet coefficient j: ${j}
+    echo figure: 7, wavelet coefficient j: "${j}"
     sphere slepian_wavelet_coefficients_south_america \
-        -e ${B} ${J_MIN} ${j} \
-        -L ${L} \
-        -s ${SMOOTHING} \
+        -e "${B}" "${J_MIN}" "${j}" \
+        -L "${L}" \
+        -s "${SMOOTHING}" \
         -u
 done
 
 echo figure: 8, noised
 sphere slepian_south_america \
-    -L ${L} \
-    -n ${SNR} \
-    -s ${SMOOTHING} \
+    -L "${L}" \
+    -n "${SNR}" \
+    -s "${SMOOTHING}" \
     -u
 
-for s in ${SIGMA[@]}; do
-    echo figure: 8, denoised sigma: ${s}
+for s in "${SIGMA[@]}"; do
+    echo figure: 8, denoised sigma: "${s}"
     python -m \
         sleplet.plotting.arbitrary.south_america.denoising_slepian_south_america \
-        -n ${SNR} \
-        -s ${s}
+        -n "${SNR}" \
+        -s "${s}"
 done

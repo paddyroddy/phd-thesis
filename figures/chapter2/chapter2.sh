@@ -10,30 +10,30 @@ ROTATION=elongated_gaussian
 T_SIGMA=-1
 
 for ell in ${ELL_RANGE}; do
-    for m in $(seq 0 ${ell}); do
-        echo figure: 1, ell: ${ell}, m: ${m}
+    for m in $(seq 0 "${ell}"); do
+        echo figure: 1, ell: "${ell}", m: "${m}"
         sphere spherical_harmonic \
-            -e ${ell} ${m} \
-            -L ${L} \
+            -e "${ell}" "${m}" \
+            -L "${L}" \
             -u \
             -z
     done
 done
 
 echo figure: 2, rotations
-sphere ${ROTATION} \
+sphere "${ROTATION}" \
     -e ${T_SIGMA} ${P_SIGMA} \
-    -L ${L}
+    -L "${L}"
 for angle in ${ANGLES}; do
-    read -r a b g <<< $(echo ${angle} | tr ',' ' ')
-    echo figure: 2, angle ${angle}
-    sphere ${ROTATION} \
+    read -r a b g <<< "$(echo "${angle}" | tr ',' ' ')"
+    echo figure: 2, angle "${angle}"
+    sphere "${ROTATION}" \
         -e ${T_SIGMA} ${P_SIGMA} \
-        -L ${L} \
+        -L "${L}" \
         -m rotate \
-        -a ${a} \
-        -b ${b} \
-        -g ${g}
+        -a "${a}" \
+        -b "${b}" \
+        -g "${g}"
 done
 
 echo figure: 3, ricker wavelets
@@ -44,14 +44,14 @@ python -m sleplet.plotting.wavelets.axisymmetric_tiling
 
 echo figure: 5, scaling function
 sphere axisymmetric_wavelets \
-    -L ${L} \
+    -L "${L}" \
     -u
 
 for j in ${J_RANGE}; do
-    echo figure: 5, wavelet j: ${j}
+    echo figure: 5, wavelet j: "${j}"
     sphere axisymmetric_wavelets \
-        -e ${B} ${J_MIN} ${j} \
-        -L ${L} \
+        -e "${B}" "${J_MIN}" "${j}" \
+        -L "${L}" \
         -u
 done
 

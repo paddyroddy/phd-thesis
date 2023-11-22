@@ -23,27 +23,27 @@ SIGMA=2
 SNR=-5
 
 for r in ${RANK_RANGE}; do
-    echo figure: 2, r: ${r}
-    mesh ${MESH} \
-        -e ${r} \
+    echo figure: 2, r: "${r}"
+    mesh "${MESH}" \
+        -e "${r}" \
         -u
 done
 
 echo figure: 4
 python -m \
     sleplet.plotting.mesh.mesh_tiling \
-    ${MESH}
+    "${MESH}"
 
 echo figure: 5
 python -m \
     sleplet.plotting.mesh.mesh_region \
-    ${MESH}
+    "${MESH}"
 
-for p in ${P_RANGE[@]}; do
-    echo figure: 6, p: ${p}
-    mesh ${MESH} \
+for p in "${P_RANGE[@]}"; do
+    echo figure: 6, p: "${p}"
+    mesh "${MESH}" \
         -m slepian_functions \
-        -e ${p} \
+        -e "${p}" \
         -u \
         -z
 done
@@ -51,64 +51,64 @@ done
 echo figure: 7
 python -m \
     sleplet.plotting.mesh.mesh_slepian_eigenvalues \
-    ${MESH}
+    "${MESH}"
 
 echo figure: 8, scaling
-mesh ${MESH} \
+mesh "${MESH}" \
     -m slepian_wavelets \
     -u \
     -z
 
 echo figure: 9, field
-mesh ${MESH} \
+mesh "${MESH}" \
     -m field \
     -u
 
 for j in ${J_RANGE}; do
-    echo figure: 8, j: ${j}
-    mesh ${MESH} \
-        -e ${B} ${J_MIN} ${j} \
+    echo figure: 8, j: "${j}"
+    mesh "${MESH}" \
+        -e "${B}" "${J_MIN}" "${j}" \
         -m slepian_wavelets \
         -u \
         -z
 
-    echo figure: 10, j: ${j}
-    mesh ${MESH} \
-        -e ${B} ${J_MIN} ${j} \
+    echo figure: 10, j: "${j}"
+    mesh "${MESH}" \
+        -e "${B}" "${J_MIN}" "${j}" \
         -m slepian_wavelet_coefficients \
         -u \
         -z
 done
 
 echo figure: 10, scaling
-mesh ${MESH} \
+mesh "${MESH}" \
     -m slepian_wavelet_coefficients \
     -u \
     -z
 
 echo figure: 11, original
-mesh ${MESH} \
+mesh "${MESH}" \
     -m slepian_field \
     -u \
     -z
 
 echo figure: 11, noised
-mesh ${MESH} \
+mesh "${MESH}" \
     -m slepian_field \
-    -n ${SNR} \
+    -n "${SNR}" \
     -u \
     -z
 
 echo figure: 11, denoised
 python -m \
     sleplet.plotting.mesh.denoising_slepian_mesh \
-    ${MESH} \
-    -n ${SNR} \
-    -s ${SIGMA}
+    "${MESH}" \
+    -n "${SNR}" \
+    -s "${SIGMA}"
 
-for f in ${OTHER_MESHES[@]}; do
-    echo figure: 12, mesh: ${f}
+for f in "${OTHER_MESHES[@]}"; do
+    echo figure: 12, mesh: "${f}"
     python -m \
         sleplet.plotting.mesh.mesh_region \
-        ${f}
+        "${f}"
 done
