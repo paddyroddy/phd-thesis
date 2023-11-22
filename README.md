@@ -45,7 +45,7 @@ Simply run `latexmk` at the top level.
 ## Software
 
 The SLEPLET code has been developed to perform the work here
-https://github.com/astro-informatics/sleplet.
+<https://github.com/astro-informatics/sleplet>.
 
 ## Associated Publications
 
