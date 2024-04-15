@@ -5,6 +5,9 @@ extend-exclude = [
 ]
 
 [type.tex]
+extend-glob = [
+    "*.tex",
+]
 extend-words = [
     "Gorry",
     "Unser",
