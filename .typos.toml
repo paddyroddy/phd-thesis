@@ -4,6 +4,8 @@ extend-exclude = [
     ".github/styles",
 ]
 
-[type.tex.extend-words]
-Gorry = "Gorry"
-Unser = "Unser"
+[type.tex]
+extend-words = [
+    "Gorry",
+    "Unser",
+]
