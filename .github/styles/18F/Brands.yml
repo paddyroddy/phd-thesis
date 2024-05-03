@@ -1,7 +1,8 @@
 ---
 extends: substitution
 message: Use '%s' instead of '%s.'
-description: "Avoid using a trademark unless you’re referring to a specific product."
+description:
+  "Avoid using a trademark unless you’re referring to a specific product."
 level: error
 ignorecase: true
 swap:

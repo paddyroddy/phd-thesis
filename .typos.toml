@@ -6,4 +6,5 @@ extend-exclude = [
 
 [type.tex.extend-words]
 Gorry = "Gorry"
+SME = "SME"
 Unser = "Unser"
