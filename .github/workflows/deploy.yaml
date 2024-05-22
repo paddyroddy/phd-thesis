@@ -62,10 +62,9 @@ jobs:
         id: references
         with:
           scheme: full
-          run: |-
-            sed -i 's#\sglob="false"##' thesis.bcf
-            echo uncited=$(checkcites -b biber thesis -u | grep -c "=>") >> \
-            $GITHUB_OUTPUT
+          run: >-
+            sed -i 's#\sglob="false"##' thesis.bcf; echo uncited=$(checkcites -b
+            biber thesis -u | grep -c "=>") >> $GITHUB_OUTPUT
 
       - name: Check all references cited
         if: ${{ steps.references.outputs.uncited > 0 }}
