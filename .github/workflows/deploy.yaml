@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/latex/chktex@7bf1cb897ffebf85f1731e7a4696531b48d4ec59 # v0
+      - uses: paddyroddy/.github/actions/latex/chktex@e59369bbd745ef1eae9b8327fba32a4f87ff13ca # v0
 
   vale:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/latex/vale@7bf1cb897ffebf85f1731e7a4696531b48d4ec59 # v0
+      - uses: paddyroddy/.github/actions/latex/vale@e59369bbd745ef1eae9b8327fba32a4f87ff13ca # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/latex/compile@7bf1cb897ffebf85f1731e7a4696531b48d4ec59 # v0
+      - uses: paddyroddy/.github/actions/latex/compile@e59369bbd745ef1eae9b8327fba32a4f87ff13ca # v0
 
       - name: Upload artefacts
         # yamllint disable-line rule:line-length
@@ -84,7 +84,7 @@ jobs:
           name: artefacts
 
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/dropbox@7bf1cb897ffebf85f1731e7a4696531b48d4ec59 # v0
+      - uses: paddyroddy/.github/actions/dropbox@e59369bbd745ef1eae9b8327fba32a4f87ff13ca # v0
         with:
           configfile-version: ${{ secrets.CONFIGFILE_VERSION }}
           files-to-upload: $(find . -maxdepth 1 -name '*.pdf' -print)
