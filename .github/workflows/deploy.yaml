@@ -74,7 +74,7 @@ jobs:
           script: core.setFailed('Not all references cited')
 
   upload-to-dropbox:
-    if: github.event_name == 'push'
+    if: github.ref == 'refs/heads/main'
     needs: compile-latex
     runs-on: ubuntu-latest
     steps:
