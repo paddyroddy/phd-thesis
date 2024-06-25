@@ -74,8 +74,9 @@ jobs:
           script: core.setFailed('Not all references cited')
 
   upload-to-dropbox:
-    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
     needs: compile-latex
+    runs-on: ubuntu-latest
     steps:
       - name: Download artefacts
         # yamllint disable-line rule:line-length
