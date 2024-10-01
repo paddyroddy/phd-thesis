@@ -4,14 +4,6 @@ extend-exclude = [
     ".github/styles",
 ]
 
-[type.cls]
-extend-glob = [
-    "*.cls",
-]
-extend-ignore-re = [
-    "\\\\(begin|end)\\{\\w+\\}",
-]
-
 [type.tex]
 extend-words.Gorry = "Gorry"
 extend-words.SME = "SME"
