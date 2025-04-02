@@ -4,4 +4,5 @@ repos:
     rev: v0.294.0
     hooks:
       - id: general-hooks
+        exclude: .pdf$
       - id: latex-hooks
