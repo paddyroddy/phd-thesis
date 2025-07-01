@@ -1,3 +1,4 @@
+---
 extends: spelling
 message: "'%s' is a typo!"
 level: error

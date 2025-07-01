@@ -1,10 +1,11 @@
+---
 extends: existence
-message: "'%s' is too wordy"
+message: "'%s' is too wordy."
 ignorecase: true
 level: error
 tokens:
   - a number of
-  # - abundance
+  - abundance
   - accede to
   - accelerate
   - accentuate
@@ -14,7 +15,7 @@ tokens:
   - accrue
   - acquiesce
   - acquire
-  - additional
+  # - additional
   - adjacent to
   - adjustment
   - admissible
@@ -43,7 +44,7 @@ tokens:
   - as to
   - as yet
   - ascertain
-  - assistance
+  # - assistance
   - at the present time
   - at this time
   - attain
@@ -54,8 +55,8 @@ tokens:
   - benefit from
   - bestow
   - by means of
-  - by virtue of the fact that
   - by virtue of
+  - by virtue of the fact that
   - cease
   - close proximity
   - commence
@@ -75,9 +76,9 @@ tokens:
   - elucidate
   - employ
   - endeavor
-  # - enumerate
+  - enumerate
   - equitable
-  # - equivalent
+  - equivalent
   - evaluate
   - evidenced
   - exclusively
@@ -132,17 +133,17 @@ tokens:
   - is applicable to
   - is authorized to
   - is responsible for
-  - it is essential
   # - it is
+  - it is essential
   - it seems that
   - it was
-  # - magnitude
-  # - maximum
+  - magnitude
+  - maximum
   - methodology
   - minimize
   - minimum
   - modify
-  - monitor
+  # - monitor
   # - multiple
   - necessitate
   - nevertheless
@@ -163,7 +164,7 @@ tokens:
   - optimum
   - overall
   - owing to the fact that
-  - participate
+  # - participate
   - particulars
   - pass away
   - pertaining to
@@ -183,13 +184,13 @@ tokens:
   - refer back
   - regarding
   - relocate
-  # - remainder
+  - remainder
   - remuneration
   - requirement
   - reside
   - residence
   - retain
-  # - satisfy
+  - satisfy
   - shall
   - should you wish
   - similar to
@@ -199,11 +200,11 @@ tokens:
   - subsequent
   - substantial
   - successfully complete
-  # - sufficient
+  - sufficient
   - terminate
   - the month of
   - the point I am trying to make
-  # - therefore
+  - therefore
   - time period
   - took advantage of
   - transmit
@@ -216,6 +217,6 @@ tokens:
   - various different
   - what I mean to say is
   - whether or not
-  # - with respect to
+  - with respect to
   - with the exception of
   - witnessed

@@ -1,6 +1,6 @@
 ---
 extends: existence
-message: "avoid using '%s'"
+message: avoid using '%s'
 scope: text
 level: error
 ignorecase: true
@@ -12,4 +12,4 @@ tokens:
   - indictees
   - retirees
   - standees
-  - '[\w]+-style'
+  - "[\\w]+-style"

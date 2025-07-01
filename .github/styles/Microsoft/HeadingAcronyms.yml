@@ -1,6 +1,8 @@
+---
 extends: existence
-message: "Avoid using acronyms in a title or heading."
-link: https://docs.microsoft.com/en-us/style-guide/acronyms#be-careful-with-acronyms-in-titles-and-headings
+message: Avoid using acronyms in a title or heading.
+link: >-
+  https://docs.microsoft.com/en-us/style-guide/acronyms#be-careful-with-acronyms-in-titles-and-headings
 level: error
 scope: heading
 tokens:

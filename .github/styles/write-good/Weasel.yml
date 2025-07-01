@@ -1,3 +1,4 @@
+---
 extends: existence
 message: "'%s' is a weasel word!"
 ignorecase: true
@@ -29,7 +30,7 @@ tokens:
   - cautiously
   - cheerfully
   - clearly
-  # - closely
+  - closely
   - coldly
   - completely
   - consequently
@@ -48,7 +49,7 @@ tokens:
   - doubtfully
   - dumbly
   - eagerly
-  # - early
+  - early
   - easily
   - elegantly
   - enormously
@@ -56,17 +57,17 @@ tokens:
   - equally
   - especially
   - eventually
-  # - exactly
+  - exactly
   - exceedingly
   - exclusively
   - extremely
   - fairly
-  - faithfully
+  # - faithfully
   - fatally
   - fiercely
-  # - finally
+  - finally
   - fondly
-  # - few
+  - few
   - foolishly
   - fortunately
   - frankly
@@ -99,7 +100,7 @@ tokens:
   - joyously
   - justly
   - kindly
-  # - largely
+  - largely
   - lately
   - lazily
   - likely
@@ -121,13 +122,13 @@ tokens:
   - nervously
   - nightly
   - noisily
-  - normally
+  # - normally
   - obediently
   - occasionally
   # - only
   - openly
   - painfully
-  # - particularly
+  - particularly
   - patiently
   - perfectly
   - politely
@@ -140,14 +141,14 @@ tokens:
   - quarterly
   - quickly
   - quietly
-  # - rapidly
+  - rapidly
   - rarely
   - really
-  # - recently
+  - recently
   - recklessly
   - regularly
   - remarkably
-  # - relatively
+  - relatively
   - reluctantly
   - repeatedly
   - rightfully
@@ -163,12 +164,12 @@ tokens:
   - shyly
   - significantly
   - silently
-  # - simply
+  - simply
   - sleepily
-  # - slowly
+  - slowly
   - smartly
   - smelly
-  # - smoothly
+  - smoothly
   - softly
   - solemnly
   - sparkly
@@ -177,7 +178,7 @@ tokens:
   - sternly
   - stupidly
   - substantially
-  # - successfully
+  - successfully
   - suddenly
   - surprisingly
   - suspiciously
@@ -185,8 +186,8 @@ tokens:
   - tenderly
   - tensely
   - thoughtfully
-  # - tightly
-  - timely
+  - tightly
+  # - timely
   - truthfully
   - unexpectedly
   - unfortunately

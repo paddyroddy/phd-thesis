@@ -1,6 +1,8 @@
+---
 extends: existence
-message: "Consider removing '%s'."
-link: https://docs.microsoft.com/en-us/style-guide/word-choice/use-simple-words-concise-sentences
+message: Consider removing '%s'.
+link: >-
+  https://docs.microsoft.com/en-us/style-guide/word-choice/use-simple-words-concise-sentences
 ignorecase: true
 level: error
 action:
@@ -33,7 +35,7 @@ tokens:
   - cautiously
   - cheerfully
   - cleverly
-  # - closely
+  - closely
   - coaxingly
   - colorfully
   - continually
@@ -61,7 +63,7 @@ tokens:
   - excitedly
   - extremely
   - fairly
-  - faithfully
+  # - faithfully
   - famously
   - ferociously
   - fervently
@@ -166,7 +168,7 @@ tokens:
   - quirkily
   - quizzically
   - randomly
-  # - rapidly
+  - rapidly
   - rarely
   - readily
   - really
@@ -198,15 +200,15 @@ tokens:
   - shyly
   - silently
   - sleepily
-  # - slowly
-  # - smoothly
+  - slowly
+  - smoothly
   - softly
   - solemnly
   - solidly
   - speedily
   - stealthily
   - sternly
-  # - strictly
+  - strictly
   - suddenly
   - supposedly
   - surprisingly
@@ -220,11 +222,11 @@ tokens:
   - thankfully
   - thoroughly
   - thoughtfully
-  # - tightly
+  - tightly
   - tremendously
   - triumphantly
   - truthfully
-  # - ultimately
+  - ultimately
   - unabashedly
   - unaccountably
   - unbearably

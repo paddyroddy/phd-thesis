@@ -1,3 +1,4 @@
+---
 extends: substitution
 message: Use '%s' instead of '%s'
 ignorecase: true
@@ -21,8 +22,6 @@ swap:
   low frequency: low-frequency
   non zero: non-zero
   one dimensional: one-dimensional
-  photo: photon
-  photos: photons
   pixel space: real space
   pixel-space: real space
   real-space: real space

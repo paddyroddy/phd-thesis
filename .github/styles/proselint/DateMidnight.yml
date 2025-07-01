@@ -1,7 +1,8 @@
+---
 extends: existence
-message: "Use 'midnight' or 'noon'."
+message: Use 'midnight' or 'noon'.
 ignorecase: true
 level: error
 nonword: true
 tokens:
-  - '12 ?[ap]\.?m\.?'
+  - 12 ?[ap]\.?m\.?

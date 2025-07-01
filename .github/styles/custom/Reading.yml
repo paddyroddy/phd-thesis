@@ -1,5 +1,6 @@
+---
 extends: readability
-message: "Grade level (%s) too high!"
+message: Grade level (%s) too high!
 level: error
 grade: 8
 metrics:
