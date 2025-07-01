@@ -1,6 +1,5 @@
----
 extends: existence
-message: Try to avoid using clichés like '%s'.
+message: "'%s' is a cliché"
 ignorecase: true
 level: error
 tokens:
