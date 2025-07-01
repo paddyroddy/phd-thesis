@@ -4,8 +4,8 @@ message: "'%s' - See section 'Journalese and slang'"
 scope: text
 level: error
 description:
-  "Slang, like metaphors, should be used only occasionally if it is to have
-  effect."
+  Slang, like metaphors, should be used only occasionally if it is to have
+  effect.
 ignorecase: true
 tokens:
   - ailing

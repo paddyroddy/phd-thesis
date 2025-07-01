@@ -1,7 +1,7 @@
 ---
 extends: existence
 message: "'%s' doesn't need a hyphen."
-link: "https://developers.google.com/style/hyphens"
+link: https://developers.google.com/style/hyphens
 level: error
 ignorecase: false
 nonword: true
@@ -12,4 +12,4 @@ action:
     - "-"
     - " "
 tokens:
-  - '\s[^\s-]+ly-'
+  - \s[^\s-]+ly-
