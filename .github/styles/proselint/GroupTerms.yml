@@ -2,8 +2,6 @@
 extends: substitution
 message: Consider using '%s' instead of '%s'.
 ignorecase: true
-action:
-  name: replace
 swap:
   (?:bunch|group|pack|flock) of chickens: brood of chickens
   (?:bunch|group|pack|flock) of crows: murder of crows

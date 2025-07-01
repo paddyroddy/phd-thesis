@@ -63,7 +63,7 @@ tokens:
   - excitedly
   - extremely
   - fairly
-  # - faithfully
+  - faithfully
   - famously
   - ferociously
   - fervently
@@ -200,7 +200,7 @@ tokens:
   - shyly
   - silently
   - sleepily
-  - slowly
+  # - slowly
   # - smoothly
   - softly
   - solemnly

@@ -3,8 +3,6 @@ extends: substitution
 message: Consider using '%s' instead of '%s'.
 ignorecase: true
 level: error
-action:
-  name: replace
 swap:
   (?:alumnae|alumni): graduates
   (?:alumna|alumnus): graduate

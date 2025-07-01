@@ -2,8 +2,6 @@
 extends: substitution
 message: Did you mean '%s'?
 ignorecase: false
-action:
-  name: replace
 swap:
   (?:Afrikaaner|Afrikander): Afrikaner
   (?:Hong Kongite|Hong Kongian): Hong Konger
