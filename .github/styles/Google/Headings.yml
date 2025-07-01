@@ -6,8 +6,6 @@ link: >-
 level: error
 scope: heading
 match: $sentence
-indicators:
-  - ":"
 exceptions:
   - Azure
   - CLI
@@ -15,7 +13,6 @@ exceptions:
   - Cosmos
   - Docker
   - Emmet
-  - gRPC
   - I
   - Kubernetes
   - Linux
