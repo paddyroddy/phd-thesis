@@ -1,10 +1,10 @@
 ---
 extends: occurrence
-message: "Keep sentences short and to the point"
+message: Keep sentences short and to the point
 description:
-  "A good rule-of-thumb is to break up any sentence longer than 21 words into
-  two or more separate thoughts."
+  A good rule-of-thumb is to break up any sentence longer than 21 words into two
+  or more separate thoughts.
 scope: sentence
 level: error
 max: 21
-token: '\b(\w+)\b'
+token: \b(\w+)\b

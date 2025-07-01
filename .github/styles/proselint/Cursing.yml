@@ -1,5 +1,6 @@
+---
 extends: existence
-message: "Consider replacing '%s'."
+message: Consider replacing '%s'.
 level: error
 ignorecase: true
 tokens:

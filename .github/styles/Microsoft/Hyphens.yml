@@ -1,6 +1,8 @@
+---
 extends: existence
 message: "'%s' doesn't need a hyphen."
-link: https://docs.microsoft.com/en-us/style-guide/punctuation/dashes-hyphens/hyphens
+link: >-
+  https://docs.microsoft.com/en-us/style-guide/punctuation/dashes-hyphens/hyphens
 level: error
 ignorecase: false
 nonword: true
@@ -11,4 +13,4 @@ action:
     - "-"
     - " "
 tokens:
-  - '\s[^\s-]+ly-'
+  - \s[^\s-]+ly-

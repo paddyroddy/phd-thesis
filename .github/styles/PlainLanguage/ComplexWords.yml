@@ -69,7 +69,7 @@ swap:
   eliminate: "'end'"
   elucidate: "'explain'"
   employ: "'use'"
-  enclosed: "inside or 'included'"
+  enclosed: inside or 'included'
   encounter: "'meet'"
   endeavor: "'try'"
   # enumerate: "'count'"

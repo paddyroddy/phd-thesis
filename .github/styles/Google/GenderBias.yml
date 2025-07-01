@@ -1,6 +1,7 @@
+---
 extends: substitution
-message: "Consider using '%s' instead of '%s'."
-link: "https://developers.google.com/style/inclusive-documentation"
+message: Consider using '%s' instead of '%s'.
+link: https://developers.google.com/style/inclusive-documentation
 ignorecase: true
 level: error
 swap:

@@ -1,5 +1,6 @@
+---
 extends: existence
-message: "Incorrect use of symbols in '%s'."
+message: Incorrect use of symbols in '%s'.
 ignorecase: true
 raw:
   - \$[\d]* ?(?:dollars|usd|us dollars)

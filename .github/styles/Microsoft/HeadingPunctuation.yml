@@ -1,5 +1,6 @@
+---
 extends: existence
-message: "Don't use end punctuation in headings."
+message: Don't use end punctuation in headings.
 link: https://docs.microsoft.com/en-us/style-guide/punctuation/periods
 nonword: true
 level: error
@@ -8,6 +9,6 @@ action:
   name: edit
   params:
     - remove
-    - ".?!"
+    - .?!
 tokens:
-  - '[a-z][.?!](?:\s|$)'
+  - "[a-z][.?!](?:\\s|$)"

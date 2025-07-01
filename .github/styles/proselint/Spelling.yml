@@ -1,5 +1,6 @@
+---
 extends: consistency
-message: "Inconsistent spelling of '%s'."
+message: Inconsistent spelling of '%s'.
 level: error
 ignorecase: true
 either:

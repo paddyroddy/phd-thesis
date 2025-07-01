@@ -1,6 +1,7 @@
+---
 extends: existence
-message: "Don't put a space before or after a dash."
-link: "https://developers.google.com/style/dashes"
+message: Don't put a space before or after a dash.
+link: https://developers.google.com/style/dashes
 nonword: true
 level: error
 action:
@@ -9,4 +10,4 @@ action:
     - remove
     - " "
 tokens:
-  - '\s[—–]\s'
+  - \s[—–]\s
