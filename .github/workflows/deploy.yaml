@@ -15,13 +15,13 @@ concurrency:
 
 jobs:
   chktex:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/latex/chktex@fc1f4d5abb1562679c33f38faf171f5cfc81c969 # v0
 
   vale:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/vale@fc1f4d5abb1562679c33f38faf171f5cfc81c969 # v0
@@ -30,7 +30,7 @@ jobs:
           vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
 
   compile-latex:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/latex/compile@fc1f4d5abb1562679c33f38faf171f5cfc81c969 # v0
@@ -47,7 +47,7 @@ jobs:
           if-no-files-found: error
 
   check-citations-referenced:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     needs: compile-latex
     steps:
       - name: Download artefacts
@@ -76,7 +76,7 @@ jobs:
   upload-to-dropbox:
     if: github.ref == 'refs/heads/main'
     needs: compile-latex
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - name: Download artefacts
         # yamllint disable-line rule:line-length
