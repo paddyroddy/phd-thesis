@@ -15,12 +15,16 @@ concurrency:
 
 jobs:
   chktex:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/latex/chktex@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
 
   vale:
+    permissions:
+      contents: read
     runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
@@ -30,6 +34,8 @@ jobs:
           vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
 
   compile-latex:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
@@ -47,6 +53,8 @@ jobs:
           if-no-files-found: error
 
   check-citations-referenced:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     needs: compile-latex
     steps:
@@ -76,6 +84,8 @@ jobs:
   upload-to-dropbox:
     if: github.ref == 'refs/heads/main'
     needs: compile-latex
+    permissions:
+      contents: read
     runs-on: ubuntu-slim
     steps:
       - name: Download artefacts
@@ -87,8 +97,10 @@ jobs:
       # yamllint disable-line rule:line-length
       - uses: paddyroddy/.github/actions/dropbox@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
         with:
-          configfile-version: ${{ secrets.CONFIGFILE_VERSION }}
+          # yamllint disable rule:line-length
+          configfile-version: ${{ secrets.CONFIGFILE_VERSION }} # zizmor: ignore[secrets-outside-env]
           files-to-upload: $(find . -maxdepth 1 -name '*.pdf' -print)
-          oauth-app-key: ${{ secrets.OAUTH_APP_KEY }}
-          oauth-app-secret: ${{ secrets.OAUTH_APP_SECRET }}
-          oauth-refresh-token: ${{ secrets.OAUTH_REFRESH_TOKEN }}
+          oauth-app-key: ${{ secrets.OAUTH_APP_KEY }} # zizmor: ignore[secrets-outside-env]
+          oauth-app-secret: ${{ secrets.OAUTH_APP_SECRET }} # zizmor: ignore[secrets-outside-env]
+          oauth-refresh-token: ${{ secrets.OAUTH_REFRESH_TOKEN }} # zizmor: ignore[secrets-outside-env]
+          # yamllint enable rule:line-length
