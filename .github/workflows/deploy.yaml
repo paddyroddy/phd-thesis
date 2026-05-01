@@ -67,7 +67,7 @@ jobs:
 
       - name: Fix regex for checkcites
         # yamllint disable-line rule:line-length
-        uses: xu-cheng/texlive-action@475ab07999e9709e524c3708488c8c170d3a6611 # v3
+        uses: xu-cheng/texlive-action@22c04326a5d855880f9d39bb955138bf11c6df80 # v3
         id: references
         with:
           scheme: full
