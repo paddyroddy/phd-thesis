@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/latex/chktex@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
+      - uses: paddyroddy/.github/actions/latex/chktex@d84abe24680d395c2898a89ae7dd26233de0d4cb # v0
 
   vale:
     permissions:
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-slim
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/vale@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
+      - uses: paddyroddy/.github/actions/vale@d84abe24680d395c2898a89ae7dd26233de0d4cb # v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vale-flags: --glob='!{config/,figures/*/example_,thesis}*'
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/latex/compile@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
+      - uses: paddyroddy/.github/actions/latex/compile@d84abe24680d395c2898a89ae7dd26233de0d4cb # v0
 
       - name: Upload artefacts
         # yamllint disable-line rule:line-length
@@ -96,7 +96,7 @@ jobs:
           name: artefacts
 
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/dropbox@0a54f965cd2ff530f3313bbbaf384cf54bbb7374 # v0
+      - uses: paddyroddy/.github/actions/dropbox@d84abe24680d395c2898a89ae7dd26233de0d4cb # v0
         with:
           # yamllint disable rule:line-length
           configfile-version: ${{ secrets.CONFIGFILE_VERSION }} # zizmor: ignore[secrets-outside-env]
